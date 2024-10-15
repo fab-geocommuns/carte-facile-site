@@ -7,6 +7,8 @@
   <!-- Inclure MapLibre GL -->
   <script src="https://unpkg.com/maplibre-gl@4.1.2/dist/maplibre-gl.js"></script>
   <link href="https://unpkg.com/maplibre-gl@4.1.2/dist/maplibre-gl.css" rel="stylesheet" />
+  <!-- Inclure PMTiles -->
+  <script src="https://unpkg.com/pmtiles@latest/dist/index.umd.js"></script>
   <style>
     body { margin: 0; padding: 0; }
     #map { position: absolute; top: 0; bottom: 0; width: 100%; }
@@ -15,10 +17,13 @@
 <body>
   <div id="map"></div>
   <script>
+      // PMtiles protocol configuration
+      let protocol = new pmtiles.Protocol();
+      maplibregl.addProtocol("pmtiles", protocol.tile);
       // Map initialization
       const map = new maplibregl.Map({
          container: 'map',
-         style: 'https://betagouv.github.io/fonds-de-cartes/maps/map_simplified_osm-etalab.json',
+         style: 'https://betagouv.github.io/fonds-de-cartes/maps/map_simplified_osm-world.json',
       });
       map.addControl(new maplibregl.NavigationControl());
   </script>
