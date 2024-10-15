@@ -8,7 +8,7 @@
   <script src="https://unpkg.com/maplibre-gl@4.1.2/dist/maplibre-gl.js"></script>
   <link href="https://unpkg.com/maplibre-gl@4.1.2/dist/maplibre-gl.css" rel="stylesheet" />
   <!-- Inclure PMTiles -->
-  <script src="https://unpkg.com/pmtiles@latest/dist/index.umd.js"></script>
+  <script src="https://unpkg.com/protomaps-themes-base@3/dist/protomaps-themes-base.js" crossorigin="anonymous"></script>
   <style>
     body { margin: 0; padding: 0; }
     #map { position: absolute; top: 0; bottom: 0; width: 100%; }
@@ -18,7 +18,7 @@
   <div id="map"></div>
   <script>
       // PMtiles protocol configuration
-      let protocol = new pmtiles.Protocol();
+      let protocol = new Protocol();
       maplibregl.addProtocol("pmtiles", protocol.tile);
       // Map initialization
       const map = new maplibregl.Map({
