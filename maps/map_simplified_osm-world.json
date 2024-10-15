@@ -26,7 +26,7 @@
   "sources": {
     "openmaptiles": {
       "type": "vector",
-      "url": "https://data.geocommuns.fr/pmtiles/planet.pmtiles"
+      "url": "pmtiles://https://data.geocommuns.fr/pmtiles/planet.pmtiles"
     },
     "decoupage-administratif": {
       "type": "vector",
