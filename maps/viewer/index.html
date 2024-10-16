@@ -9,24 +9,18 @@
   <link href="https://unpkg.com/maplibre-gl@4.1.2/dist/maplibre-gl.css" rel="stylesheet" />
   <!-- Inclure PMTiles -->
   <script src="https://unpkg.com/pmtiles@3.2.0/dist/pmtiles.js"></script>
-  <style>
-    body { margin: 0; padding: 0; }
-    #map { position: absolute; top: 0; bottom: 0; width: 100%; }
-    #zoom-level {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      background-color: white;
-      padding: 5px;
-      font-family: Arial, sans-serif;
-      font-size: 14px;
-      border-radius: 3px;
-      z-index: 1;
-    }
-  </style>
+    <!-- Include viewer stylesheet -->
+  <link href="style.css" rel="stylesheet" />
 </head>
 <body>
   <div id="map"></div>
+  <div id="style-selector">
+    <label for="styles">Carte :</label>
+    <select id="styles">
+      <option value="https://betagouv.github.io/fonds-de-cartes/maps/map_simplified_osm-etalab.json">Épurée - OSM Etalab</option>
+      <option value="https://betagouv.github.io/fonds-de-cartes/maps/map_simplified_osm-world.json">Épurée - OSM World</option>
+    </select>
+  </div>
   <div id="zoom-level">Zoom : </div>
   <script>
       // add the PMTiles plugin to the maplibregl global.
@@ -37,7 +31,7 @@
       // Map initialization
       const map = new maplibregl.Map({
          container: 'map',
-         style: 'https://betagouv.github.io/fonds-de-cartes/maps/map_simplified_osm-world.json',
+         style: 'https://betagouv.github.io/fonds-de-cartes/maps/map_simplified_osm-etalab.json',
       });
       map.addControl(new maplibregl.NavigationControl());
 
@@ -52,6 +46,14 @@
       map.on('load', updateZoomLevel);
       // Écouter les changements de zoom
       map.on('zoom', updateZoomLevel);
+
+      // Sélection du menu déroulant pour changer de style
+      const styleSelector = document.getElementById('styles');
+      // Changement de style quand l'utilisateur sélectionne un autre style
+      styleSelector.addEventListener('change', function() {
+        const selectedStyle = styleSelector.value;
+        map.setStyle(selectedStyle);
+      });
   </script>
 </body>
 </html>
