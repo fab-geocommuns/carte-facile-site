@@ -12,10 +12,22 @@
   <style>
     body { margin: 0; padding: 0; }
     #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+    #zoom-level {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: white;
+      padding: 5px;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      border-radius: 3px;
+      z-index: 1;
+    }
   </style>
 </head>
 <body>
   <div id="map"></div>
+  <div id="zoom-level">Zoom : </div>
   <script>
       // add the PMTiles plugin to the maplibregl global.
       // setting metadata = true fills out the "attribution" field of the source, and is required for some inspector applications,
@@ -28,6 +40,18 @@
          style: 'https://betagouv.github.io/fonds-de-cartes/maps/map_simplified_osm-world.json',
       });
       map.addControl(new maplibregl.NavigationControl());
+
+      // Référence au div pour afficher le niveau de zoom
+      const zoomLevelDiv = document.getElementById('zoom-level');
+      // Fonction pour mettre à jour le niveau de zoom affiché
+      function updateZoomLevel() {
+      const zoom = map.getZoom().toFixed(2); // Obtenir le zoom actuel, arrondi à 2 décimales
+      zoomLevelDiv.innerText = `Zoom level: ${zoom}`;
+      }
+      // Mettre à jour le niveau de zoom au chargement de la carte
+      map.on('load', updateZoomLevel);
+      // Écouter les changements de zoom
+      map.on('zoom', updateZoomLevel);
   </script>
 </body>
 </html>
