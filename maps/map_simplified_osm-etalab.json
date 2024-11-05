@@ -192,11 +192,11 @@
       }
     },
     {
-      "id": "transportation_z15-track",
+      "id": "transportation_z14-track",
       "type": "line",
       "source": "openmaptiles",
       "source-layer": "transportation",
-      "minzoom": 15,
+      "minzoom": 14,
       "filter": ["all", ["==", "class", "track"], ["!=", "brunnel", "tunnel"]],
       "layout": {"visibility": "visible"},
       "paint": {
@@ -205,7 +205,7 @@
           "interpolate",
           ["exponential", 1.4],
           ["zoom"],
-          15,
+          14,
           1,
           20,
           14
@@ -214,11 +214,11 @@
       }
     },
     {
-      "id": "transportation_z15-service",
+      "id": "transportation_z14-service",
       "type": "line",
       "source": "openmaptiles",
       "source-layer": "transportation",
-      "minzoom": 15,
+      "minzoom": 14,
       "maxzoom": 24,
       "filter": [
         "all",
@@ -242,11 +242,11 @@
       }
     },
     {
-      "id": "transportation_z14-minor",
+      "id": "transportation_z13-minor",
       "type": "line",
       "source": "openmaptiles",
       "source-layer": "transportation",
-      "minzoom": 14,
+      "minzoom": 13,
       "maxzoom": 24,
       "filter": ["any", ["==", "class", "minor"]],
       "layout": {"visibility": "visible"},
@@ -502,23 +502,6 @@
         "fill-color": "rgba(219, 219, 219, 1)",
         "fill-outline-color": "#AEAEAE",
         "fill-opacity": 1
-      }
-    },
-    {
-      "id": "boundary_region",
-      "type": "line",
-      "source": "openmaptiles",
-      "source-layer": "boundary",
-      "minzoom": 5,
-      "maxzoom": 24,
-      "filter": ["all", ["==", "maritime", 0], ["==", "admin_level", 4]],
-      "layout": {"visibility": "visible"},
-      "paint": {
-        "line-color": "rgba(169, 169, 169, 1)",
-        "line-blur": 0,
-        "line-width": {"stops": [[10, 1], [15, 1.4]]},
-        "line-translate": [0, 0],
-        "line-dasharray": {"base": 1, "stops": [[5, [1, 1]], [10, [4, 4]]]}
       }
     },
     {
@@ -858,29 +841,6 @@
         "text-halo-color": "#F2F3F0",
         "text-halo-width": 1,
         "text-halo-blur": 1
-      }
-    },
-    {
-      "id": "place_region",
-      "type": "symbol",
-      "source": "openmaptiles",
-      "source-layer": "place",
-      "minzoom": 5,
-      "maxzoom": 8,
-      "filter": ["any", ["==", "class", "state"]],
-      "layout": {
-        "text-field": "{name:latin}{name:nonlatin}",
-        "text-size": 12,
-        "text-font": ["Noto Sans Regular"],
-        "visibility": "visible",
-        "symbol-avoid-edges": false,
-        "symbol-z-order": "auto"
-      },
-      "paint": {
-        "text-color": "rgba(141, 141, 141, 1)",
-        "text-halo-color": "rgba(255, 255, 255, 1)",
-        "text-halo-width": 1,
-        "text-halo-blur": 0
       }
     },
     {
