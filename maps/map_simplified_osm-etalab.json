@@ -27,14 +27,6 @@
     "openmaptiles": {
       "type": "vector",
       "url": "https://openmaptiles.geo.data.gouv.fr/data/france-vector.json"
-    },
-    "decoupage-administratif": {
-      "type": "vector",
-      "url": "https://openmaptiles.geo.data.gouv.fr/data/decoupage-administratif.json"
-    },
-    "cadastre": {
-      "type": "vector",
-      "url": "https://openmaptiles.geo.data.gouv.fr/data/cadastre.json"
     }
   },
   "sprite": "https://openmaptiles.github.io/osm-bright-gl-style/sprite",
@@ -65,7 +57,7 @@
       "type": "fill",
       "source": "openmaptiles",
       "source-layer": "landuse",
-      "minzoom": 6,
+      "minzoom": 7,
       "maxzoom": 24,
       "filter": ["all"],
       "layout": {"visibility": "visible"},
@@ -85,17 +77,37 @@
       }
     },
     {
-      "id": "landcover_grass_wood",
+      "id": "landcover_wood-copy",
       "type": "fill",
       "source": "openmaptiles",
       "source-layer": "landcover",
-      "minzoom": 9,
-      "filter": ["any", ["==", "class", "grass"], ["==", "class", "wood"]],
-      "layout": {"visibility": "visible"},
+      "minzoom": 6,
+      "filter": ["any", ["==", "class", "forest"]],
+      "layout": {"visibility": "none"},
       "paint": {
         "fill-color": "rgba(215, 233, 214, 1)",
-        "fill-opacity": {"stops": [[9, 0], [10, 1]]}
+        "fill-opacity": {"stops": [[6, 0], [8, 1]]}
       }
+    },
+    {
+      "id": "landcover_wood",
+      "type": "fill",
+      "source": "openmaptiles",
+      "source-layer": "landcover",
+      "minzoom": 7,
+      "filter": ["any", ["==", "class", "wood"]],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "rgba(215, 233, 214, 1)", "fill-opacity": 1}
+    },
+    {
+      "id": "landcover_grass",
+      "type": "fill",
+      "source": "openmaptiles",
+      "source-layer": "landcover",
+      "minzoom": 10,
+      "filter": ["any", ["==", "class", "grass"]],
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "rgba(215, 233, 214, 1)", "fill-opacity": 1}
     },
     {
       "id": "waterway",
@@ -114,20 +126,9 @@
       "type": "fill",
       "source": "openmaptiles",
       "source-layer": "water",
+      "filter": ["all", ["!=", "class", "swimming_pool"]],
       "layout": {"visibility": "visible"},
       "paint": {"fill-color": "rgba(193, 218, 225, 1)"}
-    },
-    {
-      "id": "building",
-      "type": "fill",
-      "source": "openmaptiles",
-      "source-layer": "building",
-      "minzoom": 16,
-      "paint": {
-        "fill-color": "rgba(219, 219, 219, 1)",
-        "fill-outline-color": "#AEAEAE",
-        "fill-opacity": 1
-      }
     },
     {
       "id": "transportation_rail-dash",
@@ -477,6 +478,18 @@
       }
     },
     {
+      "id": "building",
+      "type": "fill",
+      "source": "openmaptiles",
+      "source-layer": "building",
+      "minzoom": 16,
+      "paint": {
+        "fill-color": "rgba(219, 219, 219, 1)",
+        "fill-outline-color": "#AEAEAE",
+        "fill-opacity": 1
+      }
+    },
+    {
       "id": "boundary_region",
       "type": "line",
       "source": "openmaptiles",
@@ -513,7 +526,7 @@
       "type": "symbol",
       "source": "openmaptiles",
       "source-layer": "mountain_peak",
-      "minzoom": 9,
+      "minzoom": 11,
       "filter": ["all", ["==", "class", "peak"]],
       "layout": {
         "text-field": "{name:latin}\n{ele}m\n▲",
