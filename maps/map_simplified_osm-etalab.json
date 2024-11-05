@@ -77,19 +77,6 @@
       }
     },
     {
-      "id": "landcover_wood-copy",
-      "type": "fill",
-      "source": "openmaptiles",
-      "source-layer": "landcover",
-      "minzoom": 6,
-      "filter": ["any", ["==", "class", "forest"]],
-      "layout": {"visibility": "none"},
-      "paint": {
-        "fill-color": "rgba(215, 233, 214, 1)",
-        "fill-opacity": {"stops": [[6, 0], [8, 1]]}
-      }
-    },
-    {
       "id": "landcover_wood",
       "type": "fill",
       "source": "openmaptiles",
@@ -182,6 +169,102 @@
       }
     },
     {
+      "id": "transportation_z16-path",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "minzoom": 16,
+      "maxzoom": 24,
+      "filter": ["any", ["==", "class", "path"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "rgba(251, 251, 251, 1)",
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.4],
+          ["zoom"],
+          15,
+          1,
+          20,
+          14
+        ],
+        "line-gap-width": 0
+      }
+    },
+    {
+      "id": "transportation_z15-track",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "minzoom": 15,
+      "filter": ["all", ["==", "class", "track"], ["!=", "brunnel", "tunnel"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "rgba(255, 255, 255, 1)",
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.4],
+          ["zoom"],
+          15,
+          1,
+          20,
+          14
+        ],
+        "line-gap-width": 0
+      }
+    },
+    {
+      "id": "transportation_z15-service",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "minzoom": 15,
+      "maxzoom": 24,
+      "filter": [
+        "all",
+        ["==", "class", "service"],
+        ["!has", "service"],
+        ["!=", "brunnel", "tunnel"]
+      ],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "rgba(255, 255, 255, 1)",
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.4],
+          ["zoom"],
+          13,
+          2,
+          20,
+          20
+        ],
+        "line-gap-width": 0
+      }
+    },
+    {
+      "id": "transportation_z14-minor",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "minzoom": 14,
+      "maxzoom": 24,
+      "filter": ["any", ["==", "class", "minor"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "rgba(255, 255, 255, 1)",
+        "line-width": [
+          "interpolate",
+          ["exponential", 1.4],
+          ["zoom"],
+          13,
+          2,
+          20,
+          20
+        ],
+        "line-gap-width": 0
+      }
+    },
+    {
       "id": "transportation_z12",
       "type": "line",
       "source": "openmaptiles",
@@ -241,74 +324,6 @@
         ],
         "line-gap-width": 0,
         "line-blur": 0.3
-      }
-    },
-    {
-      "id": "transportation_z15-others",
-      "type": "line",
-      "source": "openmaptiles",
-      "source-layer": "transportation",
-      "minzoom": 15,
-      "filter": ["any", ["==", "class", "path"], ["==", "class", "track"]],
-      "layout": {"visibility": "visible"},
-      "paint": {
-        "line-color": "rgba(255, 255, 255, 1)",
-        "line-width": [
-          "interpolate",
-          ["exponential", 1.4],
-          ["zoom"],
-          15,
-          1,
-          20,
-          14
-        ],
-        "line-gap-width": 0
-      }
-    },
-    {
-      "id": "transportation_z15-service",
-      "type": "line",
-      "source": "openmaptiles",
-      "source-layer": "transportation",
-      "minzoom": 15,
-      "maxzoom": 24,
-      "filter": ["any", ["==", "class", "service"]],
-      "layout": {"visibility": "visible"},
-      "paint": {
-        "line-color": "rgba(255, 255, 255, 1)",
-        "line-width": [
-          "interpolate",
-          ["exponential", 1.4],
-          ["zoom"],
-          13,
-          2,
-          20,
-          20
-        ],
-        "line-gap-width": 0
-      }
-    },
-    {
-      "id": "transportation_z14-minor",
-      "type": "line",
-      "source": "openmaptiles",
-      "source-layer": "transportation",
-      "minzoom": 14,
-      "maxzoom": 24,
-      "filter": ["any", ["==", "class", "minor"]],
-      "layout": {"visibility": "visible"},
-      "paint": {
-        "line-color": "rgba(255, 255, 255, 1)",
-        "line-width": [
-          "interpolate",
-          ["exponential", 1.4],
-          ["zoom"],
-          13,
-          2,
-          20,
-          20
-        ],
-        "line-gap-width": 0
       }
     },
     {
@@ -644,12 +659,12 @@
       }
     },
     {
-      "id": "tname_z17-others",
+      "id": "tname_z16-track",
       "type": "symbol",
       "source": "openmaptiles",
       "source-layer": "transportation_name",
-      "minzoom": 17,
-      "filter": ["any", ["==", "class", "path"], ["==", "class", "track"]],
+      "minzoom": 16,
+      "filter": ["any", ["==", "class", "track"]],
       "layout": {
         "text-font": ["Noto Sans Regular"],
         "text-field": "{name}",
