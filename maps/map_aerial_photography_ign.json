@@ -1,0 +1,30 @@
+{
+  "version": 8,
+  "name": "Empty Style",
+  "metadata": {"maputnik:renderer": "mlgljs"},
+  "sources": {
+    "Ortho IGN": {
+      "type": "raster",
+      "tiles": [
+        "https://data.geopf.fr/wmts?&REQUEST=GetTile&SERVICE=WMTS&VERSION=1.0.0&TILEMATRIXSET=PM&LAYER=ORTHOIMAGERY.ORTHOPHOTOS&STYLE=normal&FORMAT=image%2Fjpeg&TILECOL={x}&TILEROW={y}&TILEMATRIX={z}"
+      ],
+      "minzoom": 0,
+      "maxzoom": 24,
+      "scheme": "xyz",
+      "tileSize": 512
+    },
+    "Plan IGN": {
+      "type": "vector",
+      "tiles": ["https://data.geopf.fr/tms/1.0.0/PLAN.IGN/{z}/{x}/{y}.pbf"],
+      "minzoom": 0,
+      "maxzoom": 19,
+      "scheme": "xyz"
+    }
+  },
+  "sprite": "",
+  "glyphs": "https://orangemug.github.io/font-glyphs/glyphs/{fontstack}/{range}.pbf",
+  "layers": [
+    {"id": "photographies_aeriennes", "type": "raster", "source": "Ortho IGN"}
+  ],
+  "id": "i6eoyky"
+}
