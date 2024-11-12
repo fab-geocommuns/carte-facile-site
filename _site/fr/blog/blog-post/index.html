@@ -490,14 +490,14 @@ pre[class*="language-"] {
 
       <p>La mise en page <a href="https://github.com/codegouvfr/eleventy-dsfr/tree/main/_includes/layouts/post.njk"><code>post.njk</code></a> utilisée pour les articles de blog, permet l'ajout d'une bannière en haut, via la variable <code>image</code> du cartouche :</p>
 <pre class="language-markdown" tabindex="0"><code class="language-markdown"><span class="token front-matter-block"><span class="token punctuation">---</span>
-<span class="token front-matter yaml language-yaml">image:
-  path: ./possum.png
-  alt: A possum</span>
+<span class="token front-matter yaml language-yaml"><span class="token key atrule">image</span><span class="token punctuation">:</span>
+  <span class="token key atrule">path</span><span class="token punctuation">:</span> ./possum.png
+  <span class="token key atrule">alt</span><span class="token punctuation">:</span> A possum</span>
 <span class="token punctuation">---</span></span></code></pre>
 <p><strong>Note :</strong> La variable <code>image.path</code> correspond au chemin relatif du fichier depuis l'emplacement de la page dans le dépôt.</p>
 <p>Le fil d'Ariane peut être affiché automatiquement si la variable <code>showBreadcrumb</code> du cartouche est positionnée :</p>
 <pre class="language-markdown" tabindex="0"><code class="language-markdown"><span class="token front-matter-block"><span class="token punctuation">---</span>
-<span class="token front-matter yaml language-yaml">showBreadcrumb: true</span>
+<span class="token front-matter yaml language-yaml"><span class="token key atrule">showBreadcrumb</span><span class="token punctuation">:</span> <span class="token boolean important">true</span></span>
 <span class="token punctuation">---</span></span></code></pre>
 
     </div>
@@ -511,8 +511,8 @@ pre[class*="language-"] {
   <div class="fr-card__body">
     <div class="fr-card__content">
       <h3 class="fr-card__title">
-          <a href="/fr/blog/accordeon/">
-            Accordéon
+          <a href="/fr/blog/alerte/">
+            Alerte
           </a>
       </h3>
       <p class="fr-card__desc"></p>
