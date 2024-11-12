@@ -1,37 +1,48 @@
-{% set items = params.items %}
+{% set items = data.sidemenu %}
 {% macro sidemenuList(subItems) %}
     {% for item in subItems %}
-        <li class="fr-sidemenu__item">
+        <li class="fr-sidemenu__item" data-fr-js-sidemenu-item="true">
             {% if item.children.length > 0 %}
                 <button class="fr-sidemenu__btn"
                         aria-expanded="false"
-                        aria-controls="{{ item.id }}">{{ item.name }}</button>
-                <div class="fr-collapse" id="{{ item.id }}">
+                        aria-controls="{{ item.url }}">{{ item.title }}</button>
+                <div class="fr-collapse" id="{{ item.url }}">
                     <ul class="fr-sidemenu__list">
                         {{ sidemenuList(item.children) }}
                     </ul>
                 </div>
             {% else %}
-                <a class="fr-sidemenu__link" href="#{{ item.id }}" target="_self">{{ item.name }}</a>
+                <li class="fr-sidemenu__item" data-fr-js-sidemenu-item="true">
+                    <a href="{{ item.url }}"
+                                    class="fr-sidemenu__link"
+                                    id="sidemenu__link-accordeon-accordion"
+                                    target="_self"
+                                    data-fr-js-sidemenu-link-actionee="true">
+                        {{ item.title }}
+                    </a>
+                </li>
             {% endif %}
         </li>
     {% endfor %}
 {% endmacro %}
-<nav class="fr-sidemenu fr-sidemenu--sticky-full-height"
-     role="navigation"
-     aria-labelledby="fr-sidemenu-title">
-    <div class="fr-sidemenu__inner">
-        <button class="fr-sidemenu__btn"
-                aria-controls="fr-sidemenu-wrapper"
-                aria-expanded="false">Sommaire</button>
-        <div class="fr-collapse" id="fr-sidemenu-wrapper">
-            <div class="fr-sidemenu__title" id="fr-sidemenu-title">Sommaire</div>
-            <ul class="fr-sidemenu__list">
+
+<nav
+    role="navigation"
+    aria-label="Menu latéral"
+    class="fr-sidemenu fr-sidemenu--sticky-full-height fr-mb-0-5v"
+    data-fr-js-sidemenu-actionee="true">
+    <div class="fr-sidemenu__inner fr-pt-12v">
+        <button aria-controls="sidemenu-286" aria-expanded="false" class="fr-sidemenu__btn" data-fr-js-collapse-button="true">
+            Dans cette rubrique
+        </button>
+       <div id="sidemenu-286" class="fr-collapse" data-fr-js-collapse="true">
+            <ul class="fr-sidemenu__list" data-fr-js-sidemenu-list="true">
                 {{ sidemenuList(items) }}
             </ul>
         </div>
     </div>
 </nav>
+
 <script>
 (() => {
     // trouver le tag "a" correspondant au hash
