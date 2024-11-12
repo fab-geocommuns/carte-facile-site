@@ -1,0 +1,673 @@
+<!doctype html>
+<html lang="fr" data-fr-scheme="system" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="format-detection" content="telephone=no,date=no,address=no,email=no,url=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <meta name="description" content="A compléter">
+  <meta name="theme-color" content="#000091">
+  <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png"><!-- 180×180 -->
+  <link rel="icon" href="/favicon/favicon.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon"><!-- 32×32 -->
+  <link rel="manifest" href="/favicon/manifest.webmanifest" crossorigin="use-credentials">
+  <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Fonds de cartes">
+  <link rel="alternate" href="/feed/feed.json" type="application/json" title="Fonds de cartes">
+
+  <link rel="stylesheet" href="/css/dsfr.min.css">
+  <link rel="stylesheet" href="/css/utility/utility.min.css">
+
+
+
+  <style>/* Defaults */
+:root {
+    --font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+    --syntax-tab-size: 2;
+}
+
+/* Global stylesheet */
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+table {
+    margin: 1em 0;
+}
+
+table td,
+table th {
+    padding-right: 1em;
+}
+
+pre,
+code {
+    font-family: var(--font-family-monospace);
+}
+
+pre[class*="language-"] {
+    margin-bottom: 1.5em !important;
+}
+
+pre:not([class*="language-"]) {
+    margin: .5em 0;
+    line-height: 1.375; /* 22px /16 */
+    -moz-tab-size: var(--syntax-tab-size);
+    -o-tab-size: var(--syntax-tab-size);
+    tab-size: var(--syntax-tab-size);
+    -webkit-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+    direction: ltr;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+}
+
+code {
+    word-break: break-all;
+}
+
+/* Direct Links / Markdown Headers */
+.header-anchor {
+    background-image: none;
+    text-decoration: none;
+    font-style: normal;
+    font-size: 1em;
+    margin-left: .1em;
+}
+
+a[href].header-anchor,
+a[href].header-anchor:visited {
+    color: transparent;
+}
+
+a[href].header-anchor:focus,
+a[href].header-anchor:hover {
+    text-decoration: underline;
+}
+
+a[href].header-anchor:focus,
+:hover > a[href].header-anchor {
+    color: #aaa;
+}
+
+h2 + .header-anchor {
+    font-size: 1.5em;
+}
+
+/* Custom DSFR */
+.fr-pagination__list {
+    justify-content: flex-end !important;
+}
+
+@media (min-width: 48em) {
+    .fr-share__group {
+        justify-content: flex-end !important;
+    }
+}
+
+.fr-responsive-img.fr-ratio-auto {
+    object-fit: contain;
+}
+
+.fr-quote__image img {
+    object-fit: cover;
+}
+
+/** Properly render text in Markdown callout containers **/
+div.fr-callout__text p {
+    font-size: inherit;
+    line-height: inherit;
+}
+
+/** Missing icons **/
+.fr-follow .fr-btn--peertube:before,
+.fr-follow .fr-btn--github:before,
+.fr-follow .fr-btn--sourcehut:before {
+    margin-left: 0;
+    margin-right: 0.5rem;
+    flex: 0 0 auto;
+    display: inline-block;
+    vertical-align: calc((0.75em - var(--icon-size)) * 0.5);
+    background-color: currentColor;
+    width: var(--icon-size);
+    height: var(--icon-size);
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    --icon-size: 2rem;
+    content: "";
+}
+
+.fr-follow .fr-btn--peertube:before {
+    -webkit-mask-image: url(/icons/logo/peertube.svg) !important;
+    mask-image: url(/icons/logo/peertube.svg) !important;
+}
+
+.fr-follow .fr-btn--github:before {
+    -webkit-mask-image: url(/icons/logo/github-fill.svg) !important;
+    mask-image: url(/icons/logo/github-fill.svg) !important;
+}
+
+.fr-follow .fr-btn--sourcehut:before {
+    -webkit-mask-image: url(/icons/logo/sourcehut.svg) !important;
+    mask-image: url(/icons/logo/sourcehut.svg) !important;
+}
+
+/* Custom */
+.text-center {
+    text-align: center;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
+/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}</style>
+
+  <meta name="generator" content="Eleventy v2.0.1">
+
+  <title>Données personnelles</title>
+</head>
+<body id="top">
+<script>
+      // Fix FOUC in dark mode
+      setDarkBeforeRender = () => {
+          const localScheme = localStorage.getItem('scheme')
+          if (localScheme === 'dark' || (localScheme === 'system' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+              document.documentElement.setAttribute('data-fr-theme', 'dark');
+          }
+      }
+      setDarkBeforeRender();
+  </script>
+<header role="banner" class="fr-header">
+  <div class="fr-header__body">
+    <div class="fr-container">
+      <div class="fr-header__body-row">
+        <div class="fr-header__brand fr-enlarge-link">
+          <div class="fr-header__brand-top">
+            <div class="fr-header__logo"><p class="fr-logo">République<br/>française</p></div>
+            <div class="fr-header__navbar">
+              <button class="fr-btn--menu fr-btn" data-fr-opened="false" aria-controls="modal-491" aria-haspopup="menu"
+                      id="button-492" title="Menu">
+                Menu
+              </button>
+            </div>
+          </div>
+          <div class="fr-header__service">
+            <a href="/fr/"
+               title="Accueil - Fonds de cartes - La Fabrique des géocommuns, IGN">
+              <p class="fr-header__service-title"> 
+                Fonds de cartes
+                <span class="fr-badge--sm fr-badge--success fr-badge--no-icon">Bêta</span>
+              </p>
+            </a>
+            <p class="fr-header__service-tagline">Intégrez facilement des cartes à vos applications et sites web</p>
+          </div>
+        </div>
+        <div class="fr-header__tools">
+
+          <div class="fr-header__search fr-modal" id="modal-474">
+            <div class="fr-container fr-container-lg--fluid">
+              <button class="fr-btn--close fr-btn" aria-controls="modal-474" title="Fermer">
+                Fermer
+              </button>
+              <div class="fr-search-bar" id="header-search" role="search">
+                <label class="fr-label" for="search-784-input">
+                  Recherche
+                </label>
+                <input class="fr-input" placeholder="Rechercher" type="search" id="search-784-input"
+                       name="search-784-input">
+                <button class="fr-btn" title="Rechercher">
+                  Rechercher
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="fr-header__menu fr-modal" id="modal-491" aria-labelledby="button-492">
+    <div class="fr-container">
+      <button class="fr-btn--close fr-btn" aria-controls="modal-491" title="Fermer">
+        Fermer
+      </button>
+      <div class="fr-header__menu-links"></div>
+<nav class="fr-nav" id="navigation-494" role="navigation" aria-label="Menu principal">
+  <ul class="fr-nav__list">
+      <li class="fr-nav__item">
+          <a class="fr-nav__link" href="/fr/cartes/">
+            Cartes
+          </a>
+      </li>
+      <li class="fr-nav__item">
+          <a class="fr-nav__link" href="/fr/documentation/">
+            Documentation
+          </a>
+      </li>
+      <li class="fr-nav__item">
+          <button class="fr-nav__btn" aria-expanded="false" aria-controls="menu-3">
+            À propos
+          </button>
+          <div class="fr-collapse fr-menu" id="menu-3">
+            <ul class="fr-menu__list">
+                <li>
+                  <a class="fr-nav__link"
+                     href="/fr/a-propos/" >
+                    Présentation
+                  </a>
+                </li>
+                <li>
+                  <a class="fr-nav__link"
+                     href="/fr/contact/" >
+                    Contact
+                  </a>
+                </li>
+            </ul>
+          </div>
+      </li>
+      <li class="fr-nav__item">
+          <a class="fr-nav__link" href="/fr/blog/">
+            Blog
+          </a>
+      </li>
+  </ul>
+</nav>    </div>
+  </div>
+</header>
+
+<main id="content">
+  <div class="fr-mb-6w">
+  <div class="fr-py-6w fr-background-alt--blue-cumulus">
+    <div class="fr-container">
+      <div class="fr-grid-row">
+        <div class="fr-col-10">
+<nav role="navigation" class="fr-breadcrumb" aria-label="Vous êtes ici:">
+  <button class="fr-breadcrumb__button" aria-expanded="false" aria-controls="breadcrumb-1">
+    Voir le fil d’Ariane
+  </button>
+  <div class="fr-collapse" id="breadcrumb-1">
+    <ol class="fr-breadcrumb__list">
+      <li><a class="fr-breadcrumb__link" href="/fr/">Accueil</a></li>
+      <li><a class="fr-breadcrumb__link" aria-current="page">Données personnelles</a></li>
+    </ol>
+  </div>
+</nav>          <h1 class="fr-mt-6v">Données personnelles</h1>
+            <p class="fr-text--lead">
+              A compléter
+            </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="fr-container fr-mt-6w" data-pagefind-body>
+    <div class="fr-grid-row">
+      <div class="fr-col-12">
+        <p>Ce site ne prélève aucune donnée à caractère personnel. L’outil de mesure d’audience que nous utilisons est paramétré de façon à ce que les informations recueillies soient anonymisées.</p>
+<p>Les <em>cookies</em> déposées sur votre ordinateur lorsque vous le consultez nous permet de connaître le nombre de visites et les pages les plus consultées, sans pour autant permettre de vous identifier personnellement.</p>
+<p>Nous sommes ainsi en conformité avec la <a href="https://www.cnil.fr/fr/solutions-pour-les-cookies-de-mesure-daudience">réglementation de la CNIL</a> et exemptés d’autorisation préalable.</p>
+<p>[ A COMPLETER ]</p>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<div class="fr-follow">
+  <div class="fr-container">
+    <div class="fr-grid-row fr-grid-row--top">
+      <div class="fr-col-12 fr-col-md-8">
+        <div class="fr-follow__newsletter">
+          <div>
+            <p class="fr-h5">Abonnez-vous à notre lettre d’information</p>
+            <p class="fr-text--sm"></p>
+          </div>
+          <div class="fr-btns-group fr-btns-group--inline-md">
+            <a class="fr-btn" title="S&#39;abonner" href="" target="_blank"
+               rel="noopener">
+              S&#39;abonner
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="fr-col-12 fr-col-md-4">
+        <div class="fr-follow__social">
+          <p class="fr-h5">Suivez-nous <br> sur nos réseaux </p>
+          <ul class="fr-btns-group">
+          </ul>
+          <ul class="fr-btns-group">
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><footer class="fr-footer" role="contentinfo" id="footer">
+  <div class="fr-container">
+    <div class="fr-footer__body">
+      <div class="fr-footer__brand fr-enlarge-link">
+        <a href="/fr/" title="Accueil - La Fabrique des géocommuns, IGN">
+          <p class="fr-logo">République<br/>française</p>
+        </a>
+      </div>
+      <div class="fr-footer__content">
+        <p class="fr-footer__content-desc">Cartes faciles est un service développé par La Fabrique des géocommuns, incubateur de communs à l’IGN. Le code source de ce site web et les ressources proposées par le service sont disponible en licence libre.</p>
+        <ul class="fr-footer__content-list">
+          <li class="fr-footer__content-item">
+            <a class="fr-footer__content-link" target="_blank" rel="noopener external"
+               href="https://legifrance.gouv.fr">legifrance.gouv.fr</a>
+          </li>
+          <li class="fr-footer__content-item">
+            <a class="fr-footer__content-link" target="_blank" rel="noopener external"
+               href="https://gouvernement.fr">gouvernement.fr</a>
+          </li>
+          <li class="fr-footer__content-item">
+            <a class="fr-footer__content-link" target="_blank" rel="noopener external"
+               href="https://service-public.fr">service-public.fr</a>
+          </li>
+          <li class="fr-footer__content-item">
+            <a class="fr-footer__content-link" target="_blank" rel="noopener external"
+               href="https://data.gouv.fr">data.gouv.fr</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fr-footer__bottom">
+      <ul class="fr-footer__bottom-list">
+        <li class="fr-footer__bottom-item">
+          <a class="fr-footer__bottom-link" href="/sitemap/">Plan du site</a>
+        </li>
+        <li class="fr-footer__bottom-item">
+          <a class="fr-footer__bottom-link" href="/fr/accessibilite/">
+            Accessibilité : Non conforme
+          </a>
+        </li>
+        <li class="fr-footer__bottom-item">
+          <a class="fr-footer__bottom-link" href="/fr/mentions-legales/">Mentions légales</a>
+        </li>
+        <li class="fr-footer__bottom-item">
+          <a class="fr-footer__bottom-link" href="/fr/donnees-personnelles/">Données personnelles</a>
+        </li>
+        <li class="fr-footer__bottom-item">
+          <a class="fr-footer__bottom-link fr-icon-pencil-line fr-link--icon-left"
+             href="https://github.com/codegouvfr/eleventy-dsfr/blob/main/./content/fr/personal-data/index.md">Modifier cette page</a>
+        </li>
+        
+        <li class="fr-footer__bottom-item">
+          <button class="fr-footer__bottom-link fr-fi-theme-fill fr-link--icon-left" aria-controls="fr-theme-modal"
+                  data-fr-opened="false">
+            Paramètres d&#39;affichage
+          </button>
+        </li>
+      </ul>
+      <div class="fr-footer__bottom-copy">
+        <p>
+          Sauf mention contraire, tous les contenus de ce site sont sous <a
+              href="https://github.com/etalab/licence-ouverte/blob/master/LO.md" target="_blank"
+              rel="noopener">licence etalab-2.0</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<dialog id="fr-theme-modal" class="fr-modal" role="dialog" aria-labelledby="fr-theme-modal-title">
+  <div class="fr-container fr-container--fluid fr-container-md">
+    <div class="fr-grid-row fr-grid-row--center">
+      <div class="fr-col-12 fr-col-md-6 fr-col-lg-4">
+        <div class="fr-modal__body">
+          <div class="fr-modal__header">
+            <button class="fr-btn--close fr-btn" aria-controls="fr-theme-modal" title="Fermer">
+              Fermer
+            </button>
+          </div>
+          <div class="fr-modal__content">
+            <h1 id="fr-theme-modal-title" class="fr-modal__title"> Paramètres d&#39;affichage </h1>
+            <div id="fr-display" class="fr-display">
+              <div class="fr-form-group">
+                <fieldset class="fr-fieldset">
+                  <legend class="fr-fieldset__legend fr-text--regular" id="-legend">
+                    Choisissez un thème pour personnaliser l’apparence du site.
+                  </legend>
+                  <div class="fr-fieldset__content">
+                    <div class="fr-radio-group fr-radio-rich">
+                      <input value="light" type="radio" id="fr-radios-theme-light" name="fr-radios-theme">
+                      <label class="fr-label" for="fr-radios-theme-light"> Thème clair </label>
+                      <div class="fr-radio-rich__img">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="fr-artwork" width="80px"
+                             height="80px" viewBox="0 0 80 80">
+                          <use class="fr-artwork-decorative"
+                               xlink:href="/artwork/light.svg#artwork-decorative"></use>
+                          <use class="fr-artwork-minor"
+                               xlink:href="/artwork/light.svg#artwork-minor"></use>
+                          <use class="fr-artwork-major"
+                               xlink:href="/artwork/light.svg#artwork-major"></use>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="fr-radio-group fr-radio-rich">
+                      <input value="dark" type="radio" id="fr-radios-theme-dark" name="fr-radios-theme">
+                      <label class="fr-label" for="fr-radios-theme-dark"> Thème sombre </label>
+                      <div class="fr-radio-rich__img">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="fr-artwork" width="80px"
+                             height="80px" viewBox="0 0 80 80">
+                          <use class="fr-artwork-decorative"
+                               xlink:href="/artwork/dark.svg#artwork-decorative"></use>
+                          <use class="fr-artwork-minor"
+                               xlink:href="/artwork/dark.svg#artwork-minor"></use>
+                          <use class="fr-artwork-major"
+                               xlink:href="/artwork/dark.svg#artwork-major"></use>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="fr-radio-group fr-radio-rich">
+                      <input value="system" type="radio" id="fr-radios-theme-system" name="fr-radios-theme">
+                      <label class="fr-label" for="fr-radios-theme-system">
+                        Système
+                        <span class="fr-hint-text">Utilise les paramètres système.</span>
+                      </label>
+                      <div class="fr-radio-rich__img">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="fr-artwork" width="80px"
+                             height="80px" viewBox="0 0 80 80">
+                          <use class="fr-artwork-decorative"
+                               xlink:href="/artwork/system.svg#artwork-decorative"></use>
+                          <use class="fr-artwork-minor"
+                               xlink:href="/artwork/system.svg#artwork-minor"></use>
+                          <use class="fr-artwork-major"
+                               xlink:href="/artwork/system.svg#artwork-major"></use>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<!-- Current page: /fr/donnees-personnelles/ -->
+
+<script>
+      const SEARCH_RESULTS_URL = "/fr/search-results/";
+  </script>
+  <script type="text/javascript" src="/js/search.js"></script><!-- Script en version es6 module et nomodule pour les navigateurs le ne supportant pas -->
+<script type="module" src="/js/dsfr.module.min.js"></script>
+<script type="text/javascript" nomodule src="/js/dsfr.nomodule.min.js"></script>
+<!-- Script Matomo pour le suivi des visites -->
+<script type="text/javascript" src="/js/matomo.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+---
+layout: layouts/base.njk
+showMaps: true
+---
+
+<div id="map">
+    <!-- Bloc qui contient le niveau de zoom et le sélecteur de style -->
+    <div id="control-panel">
+        <div class="fr-select-group">  
+            <label class="fr-label" for="select">
+                Fond de carte
+            </label> 
+            <select class="fr-select" id="style-selector" name="select">    
+                <option value="" selected disabled hidden>Sélectionner une option</option>    
+                <option value="https://betagouv.github.io/fonds-de-cartes/maps/map_simplified_osm-etalab.json">Épurée - OSM Etalab</option> 
+                <option value="https://betagouv.github.io/fonds-de-cartes/maps/map_simplified_ign.json">Épurée - Plan IGN</option>
+                <option value="https://betagouv.github.io/fonds-de-cartes/maps/map_aerial_photography_ign.json">Aérienne - Ortho IGN</option>
+            </select>
+        </div>
+        <p id="zoom-level"></p>  
+    </div>
+</div>
+<script>
+    // add the PMTiles plugin to the maplibregl global.
+    // setting metadata = true fills out the "attribution" field of the source, and is required for some inspector applications,
+    // but requires an additional blocking HTTP request before loading the map.
+    let protocol = new pmtiles.Protocol({ metadata: true });
+    maplibregl.addProtocol("pmtiles", protocol.tile);
+    // Map initialization
+    const map = new maplibregl.Map({
+        container: 'map',
+        style: 'https://betagouv.github.io/fonds-de-cartes/maps/map_simplified_osm-etalab.json',
+    });
+    map.addControl(new maplibregl.NavigationControl());
+    // Référence au div pour afficher le niveau de zoom
+    const zoomLevelDiv = document.getElementById('zoom-level');
+    // Fonction pour mettre à jour le niveau de zoom affiché
+    function updateZoomLevel() {
+        const zoom = map.getZoom().toFixed(2); // Obtenir le zoom actuel, arrondi à 2 décimales
+        zoomLevelDiv.innerText = `Zoom : ${zoom}`;
+    }
+    // Mettre à jour le niveau de zoom au chargement de la carte
+    map.on('load', updateZoomLevel);
+    // Écouter les changements de zoom
+    map.on('zoom', updateZoomLevel);
+    // Sélection du menu déroulant pour changer de style
+    const styleSelector = document.getElementById('style-selector');
+    // Changement de style quand l'utilisateur sélectionne un autre style
+    styleSelector.addEventListener('change', function () {
+        const selectedStyle = styleSelector.value;
+        map.setStyle(selectedStyle);
+    });
+</script>
+

@@ -1,0 +1,22 @@
+html, body { height: 100%; }
+body { 
+    display: flex;
+    flex-direction: column;
+}
+#content { flex-grow: 1; }
+#map { height: 100%; width: 100%; }
+/* Bloc contenant zoom level et sélecteur de style */
+#control-panel {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 1rem; /* Padding interne de 1 rem */
+    border-radius: 0.5rem; /* Bordures arrondies */
+    box-shadow: 0 0.125rem 0.3125rem rgba(0,0,0,0.2); /* Ombre discrète */
+    z-index: 2;
+    gap: 1rem; /* Espace entre les éléments en flex */
+    font-weight: bold;
+}
