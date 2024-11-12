@@ -14,7 +14,7 @@ const {EleventyI18nPlugin} = require("@11ty/eleventy");
 const i18n = require("@codegouvfr/eleventy-plugin-i18n");
 const pluginCalendar = require("@codegouvfr/eleventy-plugin-calendar");
 
-const customMarkdownContainers = require("./markdown-custom-containers");
+const customMarkdownContainers = require("./utils/markdown-custom-containers");
 
 const {translations} = require("./_data/i18n");
 
