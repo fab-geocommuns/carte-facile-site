@@ -7,8 +7,6 @@ Un dépôt pour démarrer un site statique au [DSFR](https://www.systeme-de-desi
 générateur [Eleventy](https://www.11ty.dev/), déployé pour démonstration sur [GitHub Pages](https://codegouvfr.github.io/eleventy-dsfr/fr/).
 Pour d'autres exemples de réutilisation, cf. [Démonstration et réutilisations](#démonstration-et-réutilisations).
 
-![Screenshot of the website front page.](eleventy-dsfr.png)
-
 ## Fonctionnalités
 
 - **Style** :
