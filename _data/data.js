@@ -5,32 +5,32 @@ module.exports = {
     sidemenu: [
         {
             title: "Concepts fondamentaux",
-            url: "/",
+            url: "/concepts-fondamentaux/",
             children: [
-                { title: "Données géographiques", url: "/docs/donnees-geographiques" },
-                { title: "Flux de données", url: "/docs/flux-de-donnes" },
-                { title: "Styles de cartes", url: "/docs/styles-de-carte" },
+                { title: "Données géographiques", url: "donnees-geographiques" },
+                { title: "Flux de données", url: "flux-de-donnes" },
+                { title: "Styles de cartes", url: "styles-de-carte" },
             ]
         },
         {
             title: "Utiliser les cartes",
-            url: "/utiliser-les-cartes",
+            url: "utiliser-les-cartes"
         },
         {
             title: "API géographiques",
-            url: "/api-geographiques",
+            url: "/api-geographiques/",
             children: [
-                { title: "Adresses", url: "/api-geographiques/adresses" },
-                { title: "Découpage administratif", url: "/api-geographiques/decoupage-administratif" }
+                { title: "Adresses", url: "adresses" },
+                { title: "Découpage administratif", url: "decoupage-administratif" }
             ]
         },
         {
             title: "Pour aller plus loin",
-            url: "/techniques-avancees",
+            url: "/techniques-avancees/",
             children: [
-                { title: "Styliser une carte", url: "/techniques-avancees/stylisation" },
-                { title: "Générer une carte", url: "/techniques-avancees/generation" },
-                { title: "Auto-héberger une carte", url: "/techniques-avancees/auto-hebergement" }
+                { title: "Styliser une carte", url: "stylisation" },
+                { title: "Générer une carte", url: "generation" },
+                { title: "Auto-héberger une carte", url: "auto-hebergement" }
             ]
         },
         {
