@@ -18,10 +18,10 @@
                         {{ link.title }}
                     </a>
                     {% else %}
-                        <button class="fr-sidemenu__btn" aria-expanded="false" aria-controls="menu-{{ loop.index }}">
+                        <button class="fr-sidemenu__btn" aria-expanded="false" aria-controls="sidemenu-{{ loop.index }}">
                             {{ link.title }}
                         </button>
-                        <div class="fr-collapse" id="menu-{{ loop.index }}">
+                        <div class="fr-collapse" id="sidemenu-{{ loop.index }}">
                             <ul class="fr-sidemenu__list">
                             {% for sublink in link.children %}
                                 <li class="fr-sidemenu__item">

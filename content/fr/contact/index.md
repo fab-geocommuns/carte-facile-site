@@ -4,7 +4,7 @@ title: Contact
 eleventyNavigation:
   key: Contact
   parent: À propos
-  order: 2
+  order: 3
   nav: main
 ---
 
