@@ -2,6 +2,11 @@
 title: Données géographiques
 description: Les différents types de données géographiques et leurs avantages et inconvénients.
 layout: layouts/docs.njk
+eleventyNavigation:
+  key: Données géographiques
+  parent: Concepts fondamentaux
+  order: 1
+  nav: docs
 ---
 
 Pour construire des cartes, nous avons besoin de sources de données géographiques. Elles existent sous deux formats principaux pour les cartes en ligne : les cartes **raster** et les cartes **vectorielles**.&#x20;

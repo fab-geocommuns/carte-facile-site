@@ -6,4 +6,5 @@ slugOverride: cartes
 eleventyNavigation:
   key: Cartes
   order: 1
+  nav: main
 ---

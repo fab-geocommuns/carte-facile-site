@@ -72,6 +72,18 @@ module.exports = function (eleventyConfig) {
         });
     });
 
+    eleventyConfig.addCollection("mainNavigation", function (collectionApi) {
+        return collectionApi.getAll().filter((item) => {
+          return item.data.eleventyNavigation && item.data.eleventyNavigation.nav === "main";
+        });
+      });
+    
+      eleventyConfig.addCollection("docsNavigation", function (collectionApi) {
+        return collectionApi.getAll().filter((item) => {
+          return item.data.eleventyNavigation && item.data.eleventyNavigation.nav === "docs";
+        });
+      });
+
     // Filters
     eleventyConfig.addFilter("jsDateObject", function jsDateObject(dateStr, format, zone) {
         return DateTime.fromFormat(dateStr, format || "yyyy-LL-dd", {zone: zone || "utc"}).toJSDate();
