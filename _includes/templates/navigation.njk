@@ -30,3 +30,29 @@
     {% endfor %}
   </ul>
 </nav>
+
+<script>
+(() => {
+    // Récupérer l'URL complète de la page
+    const currentUrl = window.location.href;
+    console.log("Current URL:", currentUrl); // Affiche l'URL actuelle dans la console
+
+    // Sélectionner tous les liens de navigation
+    const allLinks = document.querySelectorAll('.fr-nav__link');
+
+    allLinks.forEach(link => {
+        // Vérifier si l'URL actuelle commence par l'URL du lien
+        if (currentUrl.startsWith(link.href)) {
+            // Marquer le lien comme courant
+            link.ariaCurrent = "page";
+
+            // Ouvrir le menu parent si le lien a des enfants
+            const parentItem = link.closest('.fr-nav__item');
+            const button = parentItem.querySelector('.fr-nav__btn');
+            if (button) {
+                button.ariaExpanded = true; // Ouvrir le collapse
+            }
+        }
+    });
+})();
+</script>
