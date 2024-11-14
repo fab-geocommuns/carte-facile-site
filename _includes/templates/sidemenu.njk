@@ -41,3 +41,45 @@
         </div>
   </div>
 </nav>
+
+<script>
+(() => {
+    // Récupérer l'URL complète de la page
+    const currentUrl = window.location.href;
+    console.log("Current URL:", currentUrl); // Affiche l'URL actuelle dans la console
+
+    // Sélectionner le lien correspondant à l'URL actuelle
+    const link = Array.from(document.querySelectorAll('.fr-sidemenu__link')).find(link => link.href === currentUrl);
+    console.log("Link:", link); // Affiche le lien trouvé
+
+    if (link) {
+        link.ariaCurrent = "page"
+
+        /**
+         * Parcourir les liens du sidemenu, (boucle jusqu'à trouver fr-sidemenu__inner)
+         * - si l'élément à la classe fr-collapse (c'est la div qui enrobe la sous-liste actuelle), ajouter sur sur son element précédent (le button) el.previousElementSibling.ariaExpanded = true pour ouvrir le collapse.
+         * - Et lui ajouter l'attribut aria-current="true"
+         */
+        let el = link.parentElement
+        do {
+            if (el?.classList?.contains("fr-collapse")) {
+                el.previousElementSibling.ariaExpanded = true
+                el.ariaCurrent = "true"
+            }
+
+            el = el.parentElement
+        } while (!el?.classList?.contains("fr-sidemenu__inner")); // on est arrivés an haut du sommaire, on a fini la boucle
+    }
+
+    const allLinks = document.querySelectorAll("a.fr-sidemenu__link")
+
+    const handleClick = (e) => {
+        allLinks.forEach(link => link.ariaCurrent = null)
+        e.currentTarget.ariaCurrent = "page"
+    }
+
+    allLinks.forEach(link => {
+        link.addEventListener("click", handleClick)
+    })
+})();
+</script>

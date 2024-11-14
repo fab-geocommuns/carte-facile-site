@@ -15,15 +15,20 @@ Expliquer pourquoi auto-héberger peut être intréressant : auto-gestion infras
 
 ### 1. Télécharger ou créer une carte en format PMtiles&#x20;
 
-Soit une carte téléchargée dans celle disponible sur le service [cartes-cle-en-main](../../le-service/cartes-cle-en-main/ "mention"), soit en générer une depuis vos propres données géographiques [generer-une-carte.md](generer-une-carte.md "mention")
+Soit une carte téléchargée dans celle disponible sur le service (lien), soit en générer une depuis vos propres données géographiques (lien).
 
 ### 2. Mettre en place la carte sur un serveur
 
 ### 3. Utiliser ou créer un style
 
-Si vous auto-hébergez des cartes proposées par ce site, vous pouvez utiliser les styles proposés ici : [cartes-cle-en-main](../../le-service/cartes-cle-en-main/ "mention")
+Si vous auto-hébergez des cartes proposées par ce site, vous pouvez utiliser les styles proposés ici : 
 
-Vous pouvez également modifier ces styles ou en créer de nouveaux pour vos propres données : [styliser-une-carte.md](styliser-une-carte.md "mention")
+(Lien)
+
+Vous pouvez également modifier ces styles ou en créer de nouveaux pour vos propres données : 
+
+(Lien)
+
 
 ### 4. Placer le style sur le serveur
 
