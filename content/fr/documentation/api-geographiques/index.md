@@ -1,7 +1,7 @@
 ---
 eleventyNavigation:
-  key: Pour aller plus loin
-  order: 5
+  key: API géographiques
+  order: 4
   nav: docs
 permalink: false
 ---

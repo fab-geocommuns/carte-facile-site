@@ -1,7 +1,7 @@
 ---
 eleventyNavigation:
-  key: Pour aller plus loin
-  order: 5
+  key: Utiliser les cartes
+  order: 2
   nav: docs
 permalink: false
 ---

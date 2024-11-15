@@ -1,7 +1,7 @@
 ---
 eleventyNavigation:
   key: Références
-  order: 3
+  order: 6
   nav: docs
 permalink: false
 --- 
