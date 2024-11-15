@@ -8,9 +8,9 @@
             Menu de la documentation
         </button>
         <div class="fr-collapse" id="fr-sidemenu-wrapper">
-            {% set docsLinks = collections.docsNavigation | filterCollectionLang | eleventyNavigation %}
+            {% set navLinks = collections.docsNavigation | filterCollectionLang | eleventyNavigation %}
             <ul class="fr-sidemenu__list">
-                {% for link in docsLinks %}
+                {% for link in navLinks %}
                 {% set linkUrl = link.url | locale_url(lang) %}
                 <li class="fr-sidemenu__item">
                     {% if not link.children | length %}

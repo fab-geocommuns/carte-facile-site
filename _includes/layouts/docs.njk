@@ -20,9 +20,9 @@ layout: layouts/base.njk
             onclick="window.location.href='https://github.com/';">
             {{ "edit_on_github" | i18n }}
           </button>
-        </a>
+        </div> 
       </div>
+      {{ content | safe }}
     </div>
-    {{ content | safe }}
   </div>
 </div>

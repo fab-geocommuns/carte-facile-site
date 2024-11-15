@@ -1,5 +1,5 @@
 ---
-layout: layouts/maps.njk
+layout: layouts/maps-viewer.njk
 title: Cartes
 description: Cartes et données géographiques disponibles
 slugOverride: cartes
