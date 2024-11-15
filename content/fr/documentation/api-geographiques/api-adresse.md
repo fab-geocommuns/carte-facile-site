@@ -68,6 +68,7 @@ Par le biais d'algorithmes, un géocodeur analyse une adresse en la découpant e
 Le géocodage peut aussi être inversé : à partir de coordonnées géographiques, on peut retrouver une adresse en cherchant la donnée de référence la plus proche.
 
 ???
+
 ????
 
 <br/>
@@ -95,58 +96,56 @@ _**Exemple :** le centre-ville d'une commune est très éloigné du centroïde d
 Dans d’autres cas, les coordonnées peuvent avoir été interpolées : les adresses ont été positionnées en fonction du nombre de numéros dans une voie et la longueur de celle-ci.
 
 ???
+
 ??? Plusieurs communes pour un code postal.
 
 Cette problématique se pose par exemple lorsqu’on met le nom de la commune dans une adresse. En effet, 68,9% des codes postaux sont associés à plus d’une commune et jusqu’à 46 communes sont rattachées à un même code postal.
 
 ???
+
 ??? Plusieurs codes postaux pour une commune.
 
 1,5% des communes ont plus d’un seul code postal sur leur territoire. On compte même jusqu’à 9 codes postaux pour une même commune pour le cas extrême !
 
 ???
+
 ??? Des communes ont des noms identiques.
 
 10,6% des communes ont une ou plusieurs communes homonymes.
 
 ???
-????
 
-
-<details>
-
-<summary>Des codes postaux n'ont pas le même code que celui du département.</summary>
+??? Des codes postaux n'ont pas le même code que celui du département.
 
 Ces cas de figure sont très rares (quelques dizaines).
 
-</details>
+???
 
-<details>
-
-<summary>Plusieurs noms de voie avec un nom identique sont situés à différents endroits pour une même commune.</summary>
+??? Plusieurs noms de voie avec un nom identique sont situés à différents endroits pour une même commune.
 
 Cette situation s’explique en particulier avec la création des communes nouvelles qui a encouragé le regroupement de communes. Ce problème peut être réglé en ajoutant le nom de la commune déléguée dans l’adresse postale, en renumérotant les rues ou en les renommant. Or les géocodeurs ne gèrent pas forcément bien (voir pas du tout) l’ajout d’adresse de la commune déléguée.
 
-</details>
+???
 
-<details>
+??? Plusieurs coordonnées pour une même adresse.
 
-<summary>Plusieurs coordonnées pour une même adresse.</summary>
+Il peut exister des différences liées à la vision sur la position du numéro de l’adresse (entrée principale, boîte aux lettres, bâtiment, cage d’escalier, logement, parcelle, position dérivée du segment de la voie de rattachement, point d’accès technique, etc.).
 
-* Il peut exister des différences liées à la vision sur la position du numéro de l’adresse (entrée principale, boîte aux lettres, bâtiment, cage d’escalier, logement, parcelle, position dérivée du segment de la voie de rattachement, point d’accès technique, etc.) ;
-* Des données provenant de référentiels différents selon les acteurs, comme la Poste, l’IGN, le cadastre ou les opérateurs de réseaux (fibre, etc.).\
-  Toutefois, la Base Adresse Nationale (BAN) et les Bases Adresses Locales (BAL) permettent d'harmoniser et d'améliorer ces référentiels.
+En effet les données peuvent avoir des référentiels différents selon les acteurs, comme la Poste, l’IGN, le cadastre ou les opérateurs de réseaux (fibre, etc.). Toutefois, la Base Adresse Nationale (BAN) et les Bases Adresses Locales (BAL) permettent d'harmoniser et d'améliorer ces référentiels.
 
-</details>
+???
+
+????
 
 ***
 
 ## Cas pratiques
 
-### Comment faire de l’**autocomplétion d’adresse ?** <a href="#comment-faire-de-l-autocompletion-d-adresse" id="comment-faire-de-l-autocompletion-d-adresse"></a>
+????accordionsgroup
+
+??? Comment faire de l’autocomplétion d’adresse ?
 
 Il existe plusieurs solutions pour faire de l’autocomplétion dans un outil web. Vous pouvez vous appuyer sur de nombreuses bibliothèques, celles-ci étant généralement liées à des bibliothèques cartographiques :
-
 
 **Solutions indépendantes de bibliothèques cartographiques**
 
@@ -159,8 +158,6 @@ Il existe plusieurs solutions pour faire de l’autocomplétion dans un outil we
 * [Formulaire exemple 1](https://raw.githack.com/webgeodatavore/photon-geocoder-autocomplete/master/demo/index-no-map.html)
 * [Formulaire exemple 2](https://gist.githack.com/ThomasG77/0b99013795f76699c5c9a0d7daf4411e/raw/a6b65c033efa73cecb3ea8473ba83aabc973d373/demo-ban-form-only-alternate.html)
 
-
-
 **Solutions basées sur Leaflet**
 
 * [https://github.com/entrepreneur-interet-general/leaflet-geocoder-ban](https://github.com/entrepreneur-interet-general/leaflet-geocoder-ban)
@@ -172,7 +169,6 @@ Il existe plusieurs solutions pour faire de l’autocomplétion dans un outil we
 * [https://entrepreneur-interet-general.github.io/leaflet-geocoder-ban/demo/demo\_search\_bar.html](https://entrepreneur-interet-general.github.io/leaflet-geocoder-ban/demo/demo\_search\_bar.html)
 * [https://gist.githack.com/ThomasG77/0b99013795f76699c5c9a0d7daf4411e/raw/a6b65c033efa73cecb3ea8473ba83aabc973d373/demo-ban-leaflet-photon.html](https://gist.githack.com/ThomasG77/0b99013795f76699c5c9a0d7daf4411e/raw/a6b65c033efa73cecb3ea8473ba83aabc973d373/demo-ban-leaflet-photon.html)
 
-
 **Solutions basées sur OpenLayers**
 
 * [https://github.com/webgeodatavore/photon-geocoder-autocomplete](https://github.com/webgeodatavore/photon-geocoder-autocomplete)
@@ -182,9 +178,9 @@ Il existe plusieurs solutions pour faire de l’autocomplétion dans un outil we
 
 * [https://raw.githack.com/webgeodatavore/photon-geocoder-autocomplete/master/demo/index-ol.html](https://raw.githack.com/webgeodatavore/photon-geocoder-autocomplete/master/demo/index-ol.html)
 
+???
 
-
-### Comment faire du **géocodage par adresse unitaire ?** <a href="#comment-faire-du-geocodage-par-adresse-unitaire" id="comment-faire-du-geocodage-par-adresse-unitaire"></a>
+??? Comment faire du géocodage par adresse unitaire ?
 
 Avec Python, pour faire des appels unitaires, vous pouvez :
 
@@ -193,12 +189,13 @@ Avec Python, pour faire des appels unitaires, vous pouvez :
 
 En JavaScript, vous pouvez utiliser [ces exemples](https://addok.readthedocs.io/en/latest/examples/#using-javascript-client-side) que ce soit pour un usage côté navigateur ou côté serveur (Node.js/deno).
 
-### Comment réaliser un géocodage massif ? <a href="#geocodage-massif" id="geocodage-massif"></a>
+???
+
+??? Comment réaliser un géocodage massif ?
 
 Lorsqu'on choisit cette option, on privilégie l'appel par le endpoint CSV de l'API.
 
 Il faut préalablement s'assurer que son CSV est bien formaté : il s'avère que le géocodage peut ponctuellement dysfonctionner si le CSV n'est pas bien formaté.
-
 
 Il existe une interface graphique pour envoyer des fichiers CSV sur [https://adresse.data.gouv.fr/csv](https://adresse.data.gouv.fr/csv) dont la taille maximum est de 50Mo.
 
@@ -208,29 +205,32 @@ Pour tester, téléchargeons [le fichier exemple](https://gist.githubusercontent
 
 Pour réaliser un géocodage massif, il faut généralement vérifier le formatage de votre CSV.
 
-
 Géocodage massif avec une solution en ligne de commande utilisant Node.js : [https://github.com/jdesboeufs/addok-geocode-stream](https://github.com/jdesboeufs/addok-geocode-stream)
-
 
 * Solution partant d'appels unitaires plutôt que des appels CSV : [https://github.com/MTES-MCT/bulk-geocoding-python-client](https://github.com/MTES-MCT/bulk-geocoding-python-client)
 * Solution partant d'appels à l'API CSV. Il suffit de récupérer [le zip](https://gist.github.com/ThomasG77/32329a8557135f11cb5656e3bfd4d35c/archive/9bd7883be31d2c9758d4393d72e9dc1ae4c5bed3.zip), de décompresser le fichier. Ensuite, il vous suffit de lancer le script Python avec `python chunk-csv-python.py`. Cela permettra de faire l'appel vers l'API CSV soit en une fois, soit en plusieurs phases. On obtiendra ainsi le fichier `annuaire-des-debits-de-tabac-2018-utf8-20lines.geocoded.csv` qui est la version géocodée par l'API CSV d'un fichier de 20 lignes ainsi que `myresults.csv` qui est une version qui résulte d'une phase de découpage d'un gros fichier en plusieurs morceaux, d'appels à l'API CSV à partir de chacun de ces fichiers, puis du réassemblage des fichiers ainsi retournés. Vous n'avez plus qu'à adapter le code du fichier `chunk-csv-python.py`.
 * [https://github.com/MTES-MCT/bulk-geocoding-python-client](https://github.com/MTES-MCT/bulk-geocoding-python-client) (attention, la solution fait des appels unitaires plutôt que des appels CSV)
 
-### QGIS
+#### QGIS
 * Recherchez des adresses : [https://oslandia.gitlab.io/qgis/french\_locator\_filter/](https://oslandia.gitlab.io/qgis/french\_locator\_filter/)
 * Géocodez des tables depuis une table dans QGIS QBano : [https://www.data.gouv.fr/en/reuses/plugin-experimental-qbano-pour-qgis/](https://www.data.gouv.fr/en/reuses/plugin-experimental-qbano-pour-qgis/). À ce jour, le plug-in est mal maintenu, il vaut mieux récupérer [ce zip](https://labs.webgeodatavore.com/partage/QBano.zip) puis installer le plug-in depuis celui-ci.
 * Avec PyQGIS, vous pouvez aussi géocoder en partant de : [https://gis.stackexchange.com/a/395415/638](https://gis.stackexchange.com/a/395415/638)
 
-### Autres outils
+#### Autres outils
 * Vous faites du R ? [https://cran.r-project.org/web/packages/banR/index.html](https://cran.r-project.org/web/packages/banR/index.html)
 * Vous souhaitez intégrer la recherche dans le CMS SPIP ? [http://plugins.spip.net/gisban.html](http://plugins.spip.net/gisban.html)
 
+???
+
+????
 
 ***
 
 ## Questions fréquentes
 
-### Comment faire si une recherche d’adresse ne fonctionne pas ? <a href="#comment-faire-si-une-recherche-d-adresse-ne-fonctionne-pas" id="comment-faire-si-une-recherche-d-adresse-ne-fonctionne-pas"></a>
+????accordionsgroup
+
+??? Comment faire si une recherche d’adresse ne fonctionne pas ?
 
 Vérifier en utilisant l’[autocomplétion](https://adresse.data.gouv.fr/base-adresse-nationale#4.4/46.9/1.7) :
 
@@ -249,7 +249,9 @@ Vérifier en utilisant l’[autocomplétion](https://adresse.data.gouv.fr/base-a
 
 Vous êtes un particulier ? Vous pouvez récupérer les coordonnées de votre commune pour lui faire part de vos retours en passant par [https://adresse.data.gouv.fr/contribuer](https://adresse.data.gouv.fr/contribuer) puis en cherchant votre commune.
 
-### Que faire lorsqu'on est un gros consommateur de l’API [api-adresse.data.gouv.fr](http://api-adresse.data.gouv.fr/) ? <a href="#gros-consommateurs-de-l-api-api-adresse-data-gouv-fr" id="gros-consommateurs-de-l-api-api-adresse-data-gouv-fr"></a>
+???
+
+??? Que faire lorsqu'on est un gros consommateur de l’API Adresse ?
 
 Si vous êtes un organisme public, vous pouvez faire une demande pour augmenter les quotas par défaut sur l’API publique [api-adresse.data.gouv.fr](http://api-adresse.data.gouv.fr/).
 
@@ -257,7 +259,9 @@ Si ce n’est pas le cas, vous pouvez vous autohéberger. Dans ce cas, le plus s
 
 Il est également possible de regarder du côté de Addok, le logiciel open source derrière l’API Adresse si vous avez des besoins plus spécifiques au niveau de votre installation ou de la personnalisation de la recherche : [https://github.com/addok/addok](https://github.com/addok/addok).
 
-### Quels autres géocodeurs est-il possible d'utiliser ? <a href="#geocodeurs-alternatifs" id="geocodeurs-alternatifs"></a>
+???
+
+??? Quels autres géocodeurs est-il possible d'utiliser ?
 
 Même si nous avons abordé l’usage du géocodeur Addok, utilisé par adresse.data.gouv.fr, il existe d'autres possibilités pour géocoder. Leurs principaux intérêts sont de pouvoir chercher des POIs (un centre commercial, une enseigne, etc.) ainsi que de marcher sur des données internationales, contrairement à [l'instance publique de Addok](https://adresse.data.gouv.fr/api-doc/adresse).
 
@@ -272,3 +276,7 @@ Il est aussi possible de détourner Addok pour lui faire effectuer d’autres ty
 Une instance alternative d'Addok (http://demo.addok.xyz) est mise à disposition et contient des données venant de la BANO, des POIs d'OpenStreetMap ainsi que des intersections de rues/routes.
 
 Vous pouvez aussi vous appuyer sur les services mis à disposition par l’IGN pour le géocodage : [https://geoservices.ign.fr/services-web-experts-calcul](https://geoservices.ign.fr/services-web-experts-calcul) (voir les sections "Services de géocodage" et "Service de recherche Look4"). Vous pouvez aussi regarder [leur nouveau service de géocodage.](https://geoservices.ign.fr/documentation/services/services-beta/nouveau-service-de-geocodage-demonstrateur)
+
+???
+
+????
