@@ -14,7 +14,12 @@ Expliquer le principe des composants, et présenter les composants qui ont déj�
 
 * Proposition d'une version en marque blanche et d'une version en contexte DSFR.
 * Composants clés en main, pour avoir une carte très fonctionnelle sans développement (juste en copiant-collant la ligne de code avec celles pour ajouter une carte).
-* Proposition des comportements et fonctionnalités ci-dessous :&#x20;
+* Proposition des comportements et fonctionnalités ci-dessous :
+
+(Afficher mise en avant pour contribution et partage de composants)
+(Ajouter images pour chaque composant ?)
+
+<br/>
 
 ## Barre de recherche
 
@@ -25,12 +30,16 @@ Expliquer le principe des composants, et présenter les composants qui ont déj�
 * Découpage visuel et mise en avant du territoire, lors d'une recherche d'un découpage administratif (par exemple une ville ou une région)(en option).
 * Utilise les API géographiques et le découpage administratif en carte vectorielle.
 
+<br/>
+
 ## Sélecteur de carte
 
 * Permet de choisir entre les fonds de carte proposés par ce service.
 * Permet d'accéder aux surcouches de carte proposées par ce service.
 * Permet d'accéder aux surcouches de carte et données disponibles sur la Geoplateforme, selon les thématiques voulues.
 * Configuration du sélecteur en amont, pour avoir uniquement les cartes et surcouches et thématiques pertinents pour son projet.
+
+<br/>
 
 ## Impression de carte
 
