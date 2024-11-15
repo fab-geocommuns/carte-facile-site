@@ -9,48 +9,76 @@ eleventyNavigation:
   nav: docs
 ---
 
+En intégrant l’API Adresse à votre site web ou application, vous pouvez ajouter des fonctionnalités basées sur les adresses, les coordonnées géographiques et le géocodage.
 
-En intégrant l'API dans votre système d'information, vous pouvez facilement rechercher une adresse et notamment faire de l'autocomplétion et de la vérification d'adresse, géolocaliser une adresse sur une carte ou encore faire une recherche géographique inversée (trouver la rue la plus proche de coordonnées géographiques).
+(Image bannière pour illustration)
 
-La documentation des entrées possibles pour l'API est disponible ici :&#x20;
+{% from "components/component.njk" import component with context %}
+{{ component("callout", {
+    title: "Documentation officielle",
+    description: "Le site national des adresses présente plus de détails sur les paramètres et points de terminaison de l'API Adresse.",
+    link: {
+        url: "https://adresse.data.gouv.fr/api-doc/adresse",
+        title: "Consulter la documentation"
+    }
+}) }}
 
-"https://adresse.data.gouv.fr/api-doc/adresse"
+## Fonctionnalités principales de l’API
 
-***
+- **Recherche et autocomplétion d’adresse :** propose des suggestions d’adresses en temps réel.
+- **Vérification d’adresse :** valide l’existence et la précision des adresses saisies.
+- **Géolocalisation :** associe une adresse à des coordonnées géographiques.
+- **Recherche inversée :** trouve l’adresse la plus proche à partir de coordonnées.
+
+<br/>
+
+## Origine des données
+
+L’API Adresse s’appuie sur la Base Adresse Nationale (BAN), composée :
+- **De données historiques (IGN, Cadastre, etc.).**
+- **Des inventaires locaux créés par les communes via l'outil [Bases Adresses Locales (BAL)](https://adresse.data.gouv.fr/bases-locales).**
+
+Ces bases d'adresses locales remplacent progressivement les données des acteurs historiques pour une plus grande fiabilité.
+
+(Schéma explicatif de la consolidation des données d'adresse)
+
+---
 
 ## En savoir plus
 
-### D'où viennent les données ? <a href="#comment-les-donnees-d-adresses-sont-elles-constituees" id="comment-les-donnees-d-adresses-sont-elles-constituees"></a>
+### Définitions
 
-L'API Adresse permet d'interroger la Base Adresse Nationale (BAN), qui est constituée de données provenant d’acteurs historiques de l’adresse (IGN, Cadastre, etc.) et de données provenant des inventaires d'adresses créées par les communes via l'outil [Bases Adresses Locales (BAL)](https://adresse.data.gouv.fr/bases-locales).&#x20;
+????accordionsgroup
 
-Petit à petit, ces bases d'adresses locales, créées et certifiées par les communes, remplacent les données des acteurs historiques. Ci-dessous un schéma décrivant la construction des données de cette base :&#x20;
-
-<figure><img src="../../.gitbook/assets/Schema_BAN.svg" alt="Schéma explicatif de la consolidation des données d&#x27;adresses"><figcaption></figcaption></figure>
-
-### Qu'est-ce que le géocodage ? <a href="#quest-ce-que-le-geocodage" id="quest-ce-que-le-geocodage"></a>
+??? Qu'est-ce que le géocodage ?
 
 Le **géocodage** consiste à associer des coordonnées géographiques (longitude et latitude) à une adresse postale. Cela permet par exemple de localiser des adresses sur une carte ou de calculer des itinéraires de voyages.
 
 Pour effectuer un géocodage, il faut :
-
 * des **données de référence** (numéro de rue, nom de rue,  [code INSEE](https://www.data.gouv.fr/en/datasets/code-officiel-geographique-cog/), code postal, commune, etc.);
-* des **coordonnées géographiques** (généralement la longitude(x) et la latitude(y) );
+* des **coordonnées géographiques** (généralement la longitude(x) et la latitude(y)
 * l’**adresse** à géocoder.
 
-### Comment fonctionne un géocodeur ? <a href="#quest-ce-que-le-geocodage" id="quest-ce-que-le-geocodage"></a>
+???
+
+??? Comment fonctionne un géocodeur ?
 
 Par le biais d'algorithmes, un géocodeur analyse une adresse en la découpant en mots ou groupes de mots, puis compare ces éléments à des données de référence. Les résultats sont ensuite triés, souvent selon la proximité des coordonnées ou d’autres critères comme la taille de la population ou le pays. Certains géocodeurs permettent aussi de rechercher des lieux d’intérêt (POIs) et pas seulement des adresses.
 
 Le géocodage peut aussi être inversé : à partir de coordonnées géographiques, on peut retrouver une adresse en cherchant la donnée de référence la plus proche.
 
-### Les limites du géocodage <a href="#les-limites-du-geocodage" id="les-limites-du-geocodage"></a>
+???
+????
+
+<br/>
+
+### Les limites du géocodage
 
 Ici, nous nous focalisons sur les cas liés aux adresses, car le géocodeur d’[adresse.data.gouv.fr](http://adresse.data.gouv.fr/) (utilisé par l'API Adresse) est conçu spécialement pour cela.
 
-<details>
+????accordionsgroup
 
-<summary>Les données textuelles de l’adresse de référence ne sont pas uniformes.</summary>
+??? Les données textuelles de l’adresse de référence ne sont pas uniformes.
 
 Il s’agit en premier lieu d’uniformiser les différentes manières de décrire le type de voie dans la base de donnée des adresses.
 
@@ -66,31 +94,24 @@ _**Exemple :** le centre-ville d'une commune est très éloigné du centroïde d
 
 Dans d’autres cas, les coordonnées peuvent avoir été interpolées : les adresses ont été positionnées en fonction du nombre de numéros dans une voie et la longueur de celle-ci.
 
-</details>
-
-<details>
-
-<summary>Plusieurs communes pour un code postal.</summary>
+???
+??? Plusieurs communes pour un code postal.
 
 Cette problématique se pose par exemple lorsqu’on met le nom de la commune dans une adresse. En effet, 68,9% des codes postaux sont associés à plus d’une commune et jusqu’à 46 communes sont rattachées à un même code postal.
 
-</details>
-
-<details>
-
-<summary>Plusieurs codes postaux pour une commune.</summary>
+???
+??? Plusieurs codes postaux pour une commune.
 
 1,5% des communes ont plus d’un seul code postal sur leur territoire. On compte même jusqu’à 9 codes postaux pour une même commune pour le cas extrême !
 
-</details>
-
-<details>
-
-<summary>Des communes ont des noms identiques.</summary>
+???
+??? Des communes ont des noms identiques.
 
 10,6% des communes ont une ou plusieurs communes homonymes.
 
-</details>
+???
+????
+
 
 <details>
 

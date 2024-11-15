@@ -16,5 +16,3 @@ Pour les usages les plus courants, des composants clé en main seront prochainem
 
 [composants.md](../composants.md)
 
-
-
