@@ -12,6 +12,7 @@ eleventyNavigation:
 ## Description du schéma
 
 (lien à venir)
+(Précision de commment est construit le plan IGN / d'où viennent les données).
 
 ## Utilisation dans les styles de cartes
 
@@ -163,9 +164,9 @@ eleventyNavigation:
     data: [
         [
             "oro_relief",
+            "Polygones du relief du relief à petite échelle.",
             "",
-            "",
-            "",
+            "✅ Plusieurs couches à partir de 1000 mètres d'altitude.",
             "❌",
             ""
         ],
@@ -173,7 +174,7 @@ eleventyNavigation:
             "oro_courbe",
             "",
             "",
-            "",
+            "❌",
             "❌",
             ""
         ],
@@ -181,7 +182,7 @@ eleventyNavigation:
             "oro_lin",
             "",
             "",
-            "",
+            "❌",
             "❌",
             ""
         ],
@@ -189,7 +190,7 @@ eleventyNavigation:
             "toponyme_oro_lin",
             "",
             "",
-            "",
+            "❌",
             "❌",
             ""
         ],
@@ -197,16 +198,16 @@ eleventyNavigation:
             "oro_ponc",
             "",
             "",
-            "",
-            "",
+            "❌",
+            "❌",
             ""
         ],
         [
             "toponyme_oro_ponc",
             "",
             "",
-            "",
-            "",
+            "⚠️ À afficher mais ne fonctionne pas (les tuiles restent bloquées à l'ajout de cette couche).",
+            "⚠️ À afficher mais ne fonctionne pas (les tuiles restent bloquées à l'ajout de cette couche).",
             ""
         ]
     ]
@@ -391,31 +392,31 @@ eleventyNavigation:
     ],
     data: [
         [
-            "bati_surf",
-            "Polygones des bâtiments",
-            "Types de bâtiments et territoires associés.",
-            "",
-            "❌",
-            ""
-        ],
-        [
             "bati_zone_surf",
             "",
             "",
-            "",
-            "❌",
-            ""
-        ],
-        [
-            "bati_ponc",
-            "",
-            "",
-            "",
+            "✅ Tout",
             "❌",
             ""
         ],
         [
             "bati_zai",
+            "",
+            "",
+            "✅ Tout",
+            "❌",
+            ""
+        ],
+        [
+            "bati_surf",
+            "Polygones des bâtiments",
+            "Types de bâtiments",
+            "✅ Différentes couches selon les types de surfaces et échelles (zones d'activités, végétation et bâtiments)",
+            "❌",
+            ""
+        ],
+        [
+            "bati_ponc",
             "",
             "",
             "",

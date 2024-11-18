@@ -9,6 +9,16 @@
       "minzoom": 0,
       "maxzoom": 19,
       "scheme": "xyz"
+    },
+    "Ortho": {
+      "type": "raster",
+      "tiles": [
+        "https://data.geopf.fr/wmts?&REQUEST=GetTile&SERVICE=WMTS&VERSION=1.0.0&TILEMATRIXSET=PM&LAYER=ORTHOIMAGERY.ORTHOPHOTOS&STYLE=normal&FORMAT=image%2Fjpeg&TILECOL={x}&TILEROW={y}&TILEMATRIX={z}"
+      ],
+      "minzoom": 0,
+      "maxzoom": 19,
+      "scheme": "xyz",
+      "tileSize": 512
     }
   },
   "sprite": "",
@@ -21,6 +31,78 @@
       "paint": {"background-color": "rgba(246, 246, 243, 1)"}
     },
     {
+      "id": "oro_relief_hypso_200",
+      "type": "fill",
+      "source": "Plan IGN",
+      "source-layer": "oro_relief",
+      "filter": ["all", ["==", "symbo", "HYPSO_200"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-color": "rgba(240, 240, 235, 1)",
+        "fill-opacity": ["interpolate", ["linear"], ["zoom"], 5, 1, 6, 0]
+      }
+    },
+    {
+      "id": "oro_relief_hypso_1000",
+      "type": "fill",
+      "source": "Plan IGN",
+      "source-layer": "oro_relief",
+      "filter": ["all", ["==", "symbo", "HYPSO_1000"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-color": "rgba(234, 234, 229, 1)",
+        "fill-opacity": ["interpolate", ["linear"], ["zoom"], 5, 1, 6, 0]
+      }
+    },
+    {
+      "id": "oro_relief_hypso_3000-copy",
+      "type": "fill",
+      "source": "Plan IGN",
+      "source-layer": "oro_relief",
+      "filter": ["all", ["==", "symbo", "HYPSO_3000"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-color": "rgba(228, 228, 223, 1)",
+        "fill-opacity": ["interpolate", ["linear"], ["zoom"], 5, 1, 6, 0]
+      }
+    },
+    {
+      "id": "oro_relief_hypso_4000",
+      "type": "fill",
+      "source": "Plan IGN",
+      "source-layer": "oro_relief",
+      "filter": ["all", ["==", "symbo", "HYPSO_4000"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-color": "rgba(222, 222, 215, 1)",
+        "fill-opacity": ["interpolate", ["linear"], ["zoom"], 5, 1, 6, 0]
+      }
+    },
+    {
+      "id": "oro_relief_hypso_5000",
+      "type": "fill",
+      "source": "Plan IGN",
+      "source-layer": "oro_relief",
+      "filter": ["all", ["==", "symbo", "HYPSO_5000"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-color": "rgba(216, 216, 207, 1)",
+        "fill-opacity": ["interpolate", ["linear"], ["zoom"], 5, 1, 6, 0]
+      }
+    },
+    {
+      "id": "oro_relief_glacier",
+      "type": "fill",
+      "source": "Plan IGN",
+      "source-layer": "oro_relief",
+      "filter": ["all", ["==", "symbo", "GLACIER"]],
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "fill-color": "rgba(255, 255, 255, 1)",
+        "fill-opacity": ["interpolate", ["linear"], ["zoom"], 5, 1, 6, 0]
+      }
+    },
+    {
       "id": "bati_zone_surf",
       "type": "fill",
       "source": "Plan IGN",
@@ -29,7 +111,19 @@
       "maxzoom": 15,
       "layout": {"visibility": "visible"},
       "paint": {
-        "fill-opacity": ["interpolate", ["linear"], ["zoom"], 14, 1, 15, 0],
+        "fill-opacity": [
+          "interpolate",
+          ["linear"],
+          ["zoom"],
+          7,
+          0,
+          8,
+          1,
+          14,
+          1,
+          15,
+          0
+        ],
         "fill-color": "rgba(237, 237, 237, 1)"
       }
     },
@@ -45,7 +139,7 @@
       "paint": {"fill-opacity": 1, "fill-color": "rgba(237, 237, 237, 1)"}
     },
     {
-      "id": "bati_surf-poste-elec-copy",
+      "id": "bati_surf_piste",
       "type": "fill",
       "source": "Plan IGN",
       "source-layer": "bati_surf",
@@ -56,7 +150,7 @@
       "paint": {"fill-opacity": 1, "fill-color": "rgba(227, 227, 227, 1)"}
     },
     {
-      "id": "bati_surf-poste-elec",
+      "id": "bati_surf_poste_elec",
       "type": "fill",
       "source": "Plan IGN",
       "source-layer": "bati_surf",
@@ -67,7 +161,7 @@
       "paint": {"fill-opacity": 1, "fill-color": "rgba(237, 237, 237, 1)"}
     },
     {
-      "id": "bati_surf-vegetation",
+      "id": "bati_surf_vegetation",
       "type": "fill",
       "source": "Plan IGN",
       "source-layer": "bati_surf",
@@ -92,7 +186,7 @@
       "minzoom": 7,
       "paint": {
         "fill-color": "rgba(215, 233, 214, 1)",
-        "fill-opacity": ["literal", 1]
+        "fill-opacity": ["interpolate", ["linear"], ["zoom"], 7, 0, 8, 1]
       }
     },
     {
@@ -109,6 +203,20 @@
       "type": "line",
       "source": "Plan IGN",
       "source-layer": "hydro_reseau",
+      "minzoom": 3,
+      "layout": {"visibility": "visible"},
+      "paint": {
+        "line-color": "rgba(193, 218, 225, 1)",
+        "line-width": ["interpolate", ["linear"], ["zoom"], 5, 1, 12, 2, 20, 7],
+        "line-opacity": ["interpolate", ["linear"], ["zoom"], 3, 0, 5, 1],
+        "line-offset": 0
+      }
+    },
+    {
+      "id": "hydro_reseau_sup",
+      "type": "line",
+      "source": "Plan IGN",
+      "source-layer": "hydro_reseau_sup",
       "minzoom": 3,
       "paint": {
         "line-color": "rgba(193, 218, 225, 1)",
@@ -143,6 +251,13 @@
         "fill-color": "rgba(219, 219, 219, 1)",
         "fill-outline-color": "#AEAEAE"
       }
+    },
+    {
+      "id": "photographies_aeriennes",
+      "type": "raster",
+      "source": "Ortho",
+      "layout": {"visibility": "none"},
+      "paint": {"raster-opacity": 0.4}
     }
   ],
   "id": "u8hlt6w",
