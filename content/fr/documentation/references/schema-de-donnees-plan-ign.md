@@ -77,10 +77,10 @@ eleventyNavigation:
         ],
         [
             "toponyme_hydro_lin",
+            "Nom des surfaces et réseau d'eau ( océans, rivières, etc)",
             "",
-            "",
-            "",
-            "",
+            "⚠️ À afficher mais ne fonctionne pas (les tuiles restent bloquées à l'ajout de cette couche).",
+            "⚠️ À afficher mais ne fonctionne pas (les tuiles restent bloquées à l'ajout de cette couche).",
             ""
         ],
         [
@@ -131,19 +131,19 @@ eleventyNavigation:
             ""
         ],
         [
-            "toponyme_ocs_ponc",
+            "toponyme_ocs_lin",
+            "Noms des forêts.",
             "",
-            "",
-            "",
-            "",
+            "⚠️ À afficher mais ne fonctionne pas (les tuiles restent bloquées à l'ajout de cette couche).",
+            "⚠️ À afficher mais ne fonctionne pas (les tuiles restent bloquées à l'ajout de cette couche).",
             ""
         ],
         [
-            "toponyme_ocs_lin",
+            "toponyme_ocs_ponc",
+            "Noms des bois et lieux-dits non habités.",
             "",
-            "",
-            "",
-            "",
+            "⚠️ À afficher mais ne fonctionne pas (les tuiles restent bloquées à l'ajout de cette couche).",
+            "⚠️ À afficher mais ne fonctionne pas (les tuiles restent bloquées à l'ajout de cette couche).",
             ""
         ]
     ]
