@@ -229,33 +229,33 @@ eleventyNavigation:
             "ferre",
             "",
             "",
-            "",
-            "",
-            ""
+            "✅ Tout",
+            "✅ Tout",
+            "✅ Tout"
         ],
         [
             "ferre_sup",
             "",
             "",
-            "",
-            "",
-            ""
+            "✅ Tout",
+            "✅ Tout",
+            "✅ Tout"
         ],
         [
             "ferre_sou",
             "",
             "",
-            "",
-            "",
+            "❌",
+            "❌",
             ""
         ],
         [
             "toponyme_ferre_lin",
             "",
             "",
-            "",
-            "",
-            ""
+            "❌",
+            "❌",
+            "❌"
         ]
     ]
 }) }}
@@ -276,8 +276,24 @@ eleventyNavigation:
             "routier_surf",
             "Polygones des surfaces routières",
             "Types de surfaces (parking, dalles, etc) et noms des territoires.",
-            "",
+            "✅ Tout sauf symbo == DALLE_DE_PROTECTION",
             "Idem que pour la carte épurée (IGN)",
+            ""
+        ],
+        [
+            "routier_route_sou",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "routier_chemin_sou",
+            "",
+            "",
+            "",
+            "",
             ""
         ],
         [
@@ -286,6 +302,22 @@ eleventyNavigation:
             "Types de routes, territoires, sens de circulation et autres types informations.",
             "",
             "Idem que pour la carte épurée (IGN)",
+            ""
+        ],
+        [
+            "routier_chemin",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "routier_route_sup",
+            "",
+            "",
+            "",
+            "",
             ""
         ],
         [
@@ -305,39 +337,7 @@ eleventyNavigation:
             ""
         ],
         [
-            "routier_route_sup",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
-        [
             "routier_liaison",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
-        [
-            "routier_chemin",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
-        [
-            "routier_chemin_sou",
-            "",
-            "",
-            "",
-            "",
-            ""
-        ],
-        [
-            "routier_route_sou",
             "",
             "",
             "",
