@@ -13,9 +13,9 @@ showMaps: true
             </label>
             <select class="fr-select" id="style-selector" name="select">
                 <option value="" selected="selected" disabled="disabled" hidden="hidden">Sélectionner une option</option>
-                <option value="https://betagouv.github.io/fonds-de-cartes/maps/map_simplified_osm-etalab.json">Épurée - OSM Etalab</option>
-                <option value="https://betagouv.github.io/fonds-de-cartes/maps/map_simplified_ign.json">Épurée - Plan IGN</option>
-                <option value="https://betagouv.github.io/fonds-de-cartes/maps/map_aerial_photography_ign.json">Aérienne - Ortho IGN</option>
+                <option value="https://betagouv.github.io/styles-de-cartes/maps/map_simplified_ign.json">Épurée - Plan IGN</option>
+                <option value="https://betagouv.github.io/styles-de-cartes/maps/map_aerial_photography_ign.json">Aérienne - Ortho IGN</option>
+                <option value="https://betagouv.github.io/styles-de-cartes/maps/map_simplified_osm-etalab.json">Épurée - OSM Etalab</option>
             </select>
         </div>
         <p id="zoom-level"></p>
@@ -28,7 +28,7 @@ showMaps: true
     let protocol = new pmtiles.Protocol({metadata: true});
     maplibregl.addProtocol("pmtiles", protocol.tile);
     // Map initialization
-    const map = new maplibregl.Map({container: 'map', style: 'https://betagouv.github.io/fonds-de-cartes/maps/map_simplified_osm-etalab.json'});
+    const map = new maplibregl.Map({container: 'map', style: 'https://betagouv.github.io/styles-de-cartes/maps/map_simplified_ign.json'});
     map.addControl(new maplibregl.NavigationControl());
     // Référence au div pour afficher le niveau de zoom
     const zoomLevelDiv = document.getElementById('zoom-level');
