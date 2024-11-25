@@ -7,19 +7,19 @@
 
   <meta name="description" content="Cartes et données géographiques disponibles">
   <meta name="theme-color" content="#000091">
-  <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png"><!-- 180×180 -->
-  <link rel="icon" href="/favicon/favicon.svg" type="image/svg+xml">
-  <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon"><!-- 32×32 -->
-  <link rel="manifest" href="/favicon/manifest.webmanifest" crossorigin="use-credentials">
-  <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Fonds de cartes">
-  <link rel="alternate" href="/feed/feed.json" type="application/json" title="Fonds de cartes">
+  <link rel="apple-touch-icon" href="/fonds-de-cartes/favicon/apple-touch-icon.png"><!-- 180×180 -->
+  <link rel="icon" href="/fonds-de-cartes/favicon/favicon.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="/fonds-de-cartes/favicon/favicon.ico" type="image/x-icon"><!-- 32×32 -->
+  <link rel="manifest" href="/fonds-de-cartes/favicon/manifest.webmanifest" crossorigin="use-credentials">
+  <link rel="alternate" href="/fonds-de-cartes/feed/feed.xml" type="application/atom+xml" title="Fonds de cartes">
+  <link rel="alternate" href="/fonds-de-cartes/feed/feed.json" type="application/json" title="Fonds de cartes">
 
-  <link rel="stylesheet" href="/css/dsfr.min.css">
-  <link rel="stylesheet" href="/css/utility/utility.min.css">
+  <link rel="stylesheet" href="/fonds-de-cartes/css/dsfr.min.css">
+  <link rel="stylesheet" href="/fonds-de-cartes/css/utility/utility.min.css">
 
     <!-- Include MapLibre GL -->
     <script src="https://unpkg.com/maplibre-gl@4.1.2/dist/maplibre-gl.js"></script>
-    <link href="https://unpkg.com/maplibre-gl@4.1.2/dist/maplibre-gl.css" rel="stylesheet" />
+    <link href="https://unpkg.com/maplibre-gl@4.1.2/dist/maplibre-gl.css" rel="stylesheet">
     <!-- Inclure PMTiles -->
     <script src="https://unpkg.com/pmtiles@3.2.0/dist/pmtiles.js"></script>
 
@@ -381,17 +381,15 @@ pre[class*="language-"] {
       <div class="fr-header__body-row">
         <div class="fr-header__brand fr-enlarge-link">
           <div class="fr-header__brand-top">
-            <div class="fr-header__logo"><p class="fr-logo">République<br/>française</p></div>
+            <div class="fr-header__logo"><p class="fr-logo">République<br>française</p></div>
             <div class="fr-header__navbar">
-              <button class="fr-btn--menu fr-btn" data-fr-opened="false" aria-controls="modal-491" aria-haspopup="menu"
-                      id="button-492" title="Menu">
+              <button class="fr-btn--menu fr-btn" data-fr-opened="false" aria-controls="modal-491" aria-haspopup="menu" id="button-492" title="Menu">
                 Menu
               </button>
             </div>
           </div>
           <div class="fr-header__service">
-            <a href="/fr/"
-               title="Accueil - Fonds de cartes - La Fabrique des géocommuns, IGN">
+            <a href="/fonds-de-cartes/fr/" title="Accueil - Fonds de cartes - La Fabrique des géocommuns, IGN">
               <p class="fr-header__service-title"> 
                 Fonds de cartes
                 <span class="fr-badge--sm fr-badge--success fr-badge--no-icon">Bêta</span>
@@ -411,8 +409,7 @@ pre[class*="language-"] {
                 <label class="fr-label" for="search-784-input">
                   Recherche
                 </label>
-                <input class="fr-input" placeholder="Rechercher" type="search" id="search-784-input"
-                       name="search-784-input">
+                <input class="fr-input" placeholder="Rechercher" type="search" id="search-784-input" name="search-784-input">
                 <button class="fr-btn" title="Rechercher">
                   Rechercher
                 </button>
@@ -432,12 +429,12 @@ pre[class*="language-"] {
 <nav class="fr-nav" id="navigation-494" role="navigation" aria-label="Menu principal">
   <ul class="fr-nav__list">
       <li class="fr-nav__item">
-          <a class="fr-nav__link" href="/fr/cartes/" aria-current="page">
+          <a class="fr-nav__link" href="/fonds-de-cartes/fr/cartes/" aria-current="page">
             Cartes
           </a>
       </li>
       <li class="fr-nav__item">
-          <a class="fr-nav__link" href="/fr/documentation/">
+          <a class="fr-nav__link" href="/fonds-de-cartes/fr/documentation/">
             Documentation
           </a>
       </li>
@@ -448,14 +445,12 @@ pre[class*="language-"] {
           <div class="fr-collapse fr-menu" id="menu-3">
             <ul class="fr-menu__list">
                 <li>
-                  <a class="fr-nav__link"
-                     href="/fr/a-propos/" >
+                  <a class="fr-nav__link" href="/fonds-de-cartes/fr/a-propos/">
                     Présentation
                   </a>
                 </li>
                 <li>
-                  <a class="fr-nav__link"
-                     href="/fr/contact/" >
+                  <a class="fr-nav__link" href="/fonds-de-cartes/fr/contact/">
                     Contact
                   </a>
                 </li>
@@ -463,7 +458,7 @@ pre[class*="language-"] {
           </div>
       </li>
       <li class="fr-nav__item">
-          <a class="fr-nav__link" href="/fr/blog/">
+          <a class="fr-nav__link" href="/fonds-de-cartes/fr/blog/">
             Blog
           </a>
       </li>
@@ -500,8 +495,7 @@ pre[class*="language-"] {
 
 <main id="content">
   
-<div
-    id="map">
+<div id="map">
     <!-- Bloc qui contient le niveau de zoom et le sélecteur de style -->
     <div id="control-panel">
         <div class="fr-select-group">
@@ -572,14 +566,10 @@ pre[class*="language-"] {
                       <input value="light" type="radio" id="fr-radios-theme-light" name="fr-radios-theme">
                       <label class="fr-label" for="fr-radios-theme-light"> Thème clair </label>
                       <div class="fr-radio-rich__img">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="fr-artwork" width="80px"
-                             height="80px" viewBox="0 0 80 80">
-                          <use class="fr-artwork-decorative"
-                               xlink:href="/artwork/light.svg#artwork-decorative"></use>
-                          <use class="fr-artwork-minor"
-                               xlink:href="/artwork/light.svg#artwork-minor"></use>
-                          <use class="fr-artwork-major"
-                               xlink:href="/artwork/light.svg#artwork-major"></use>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="fr-artwork" width="80px" height="80px" viewBox="0 0 80 80">
+                          <use class="fr-artwork-decorative" xlink:href="/fonds-de-cartes/artwork/light.svg#artwork-decorative"></use>
+                          <use class="fr-artwork-minor" xlink:href="/fonds-de-cartes/artwork/light.svg#artwork-minor"></use>
+                          <use class="fr-artwork-major" xlink:href="/fonds-de-cartes/artwork/light.svg#artwork-major"></use>
                         </svg>
                       </div>
                     </div>
@@ -587,14 +577,10 @@ pre[class*="language-"] {
                       <input value="dark" type="radio" id="fr-radios-theme-dark" name="fr-radios-theme">
                       <label class="fr-label" for="fr-radios-theme-dark"> Thème sombre </label>
                       <div class="fr-radio-rich__img">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="fr-artwork" width="80px"
-                             height="80px" viewBox="0 0 80 80">
-                          <use class="fr-artwork-decorative"
-                               xlink:href="/artwork/dark.svg#artwork-decorative"></use>
-                          <use class="fr-artwork-minor"
-                               xlink:href="/artwork/dark.svg#artwork-minor"></use>
-                          <use class="fr-artwork-major"
-                               xlink:href="/artwork/dark.svg#artwork-major"></use>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="fr-artwork" width="80px" height="80px" viewBox="0 0 80 80">
+                          <use class="fr-artwork-decorative" xlink:href="/fonds-de-cartes/artwork/dark.svg#artwork-decorative"></use>
+                          <use class="fr-artwork-minor" xlink:href="/fonds-de-cartes/artwork/dark.svg#artwork-minor"></use>
+                          <use class="fr-artwork-major" xlink:href="/fonds-de-cartes/artwork/dark.svg#artwork-major"></use>
                         </svg>
                       </div>
                     </div>
@@ -605,14 +591,10 @@ pre[class*="language-"] {
                         <span class="fr-hint-text">Utilise les paramètres système.</span>
                       </label>
                       <div class="fr-radio-rich__img">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="fr-artwork" width="80px"
-                             height="80px" viewBox="0 0 80 80">
-                          <use class="fr-artwork-decorative"
-                               xlink:href="/artwork/system.svg#artwork-decorative"></use>
-                          <use class="fr-artwork-minor"
-                               xlink:href="/artwork/system.svg#artwork-minor"></use>
-                          <use class="fr-artwork-major"
-                               xlink:href="/artwork/system.svg#artwork-major"></use>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="fr-artwork" width="80px" height="80px" viewBox="0 0 80 80">
+                          <use class="fr-artwork-decorative" xlink:href="/fonds-de-cartes/artwork/system.svg#artwork-decorative"></use>
+                          <use class="fr-artwork-minor" xlink:href="/fonds-de-cartes/artwork/system.svg#artwork-minor"></use>
+                          <use class="fr-artwork-major" xlink:href="/fonds-de-cartes/artwork/system.svg#artwork-major"></use>
                         </svg>
                       </div>
                     </div>
@@ -627,15 +609,15 @@ pre[class*="language-"] {
   </div>
 </dialog>
 
-<!-- Current page: /fr/cartes/ -->
+<!-- Current page: /fonds-de-cartes/fr/cartes/ -->
 
 <script>
-      const SEARCH_RESULTS_URL = "/fr/search-results/";
+      const SEARCH_RESULTS_URL = "/fonds-de-cartes/fr/search-results/";
   </script>
-  <script type="text/javascript" src="/js/search.js"></script><!-- Script en version es6 module et nomodule pour les navigateurs le ne supportant pas -->
-<script type="module" src="/js/dsfr.module.min.js"></script>
-<script type="text/javascript" nomodule src="/js/dsfr.nomodule.min.js"></script>
+  <script type="text/javascript" src="/fonds-de-cartes/js/search.js"></script><!-- Script en version es6 module et nomodule pour les navigateurs le ne supportant pas -->
+<script type="module" src="/fonds-de-cartes/js/dsfr.module.min.js"></script>
+<script type="text/javascript" nomodule="" src="/fonds-de-cartes/js/dsfr.nomodule.min.js"></script>
 <!-- Script Matomo pour le suivi des visites -->
-<script type="text/javascript" src="/js/matomo.js"></script>
+<script type="text/javascript" src="/fonds-de-cartes/js/matomo.js"></script>
 </body>
 </html>
