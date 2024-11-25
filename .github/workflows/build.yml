@@ -30,7 +30,7 @@ jobs:
         run: "cp _site/fr/index.html _site/index.html"
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v3
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
