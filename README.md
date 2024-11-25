@@ -1,9 +1,10 @@
 # Fonds de cartes
 
 ## À propos
-### Service en question
+Le service Fonds de cartes propose des cartes rapidement intégrables à son site internet ou son application. Le projet est porté par la Fabrique des géocommuns à l'IGN. 
+Ce dépot contient le site du service, qui permet de présenter les cartes disponibles et la documentation associée.
 
-### Technologies utilisées
+## Technologies utilisées
 Un dépôt pour démarrer un site statique au [DSFR](https://www.systeme-de-design.gouv.fr/) avec le
 générateur [Eleventy](https://www.11ty.dev/), déployé pour démonstration sur [GitHub Pages](https://codegouvfr.github.io/eleventy-dsfr/fr/).
     
