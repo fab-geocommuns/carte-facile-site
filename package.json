@@ -3,7 +3,7 @@
   "version": "1.1.0",
   "description": "Un service pour intégrer facilement des cartes dans des applications et sites internet.",
   "scripts": {
-    "build": "npx @11ty/eleventy --pathprefix 'fonds-de-cartes'",
+    "build": "npx @11ty/eleventy",
     "postbuild": "npx pagefind --site _site/ --output-subdir \"_pagefind\"",
     "start": "npx @11ty/eleventy --serve --quiet",
     "debug": "DEBUG=Eleventy* npx @11ty/eleventy",
@@ -21,9 +21,9 @@
   },
   "license": "MIT",
   "engines": {
-    "node": ">=14"
+    "node": ">=20"
   },
-  "homepage": "https://betagouv.github.io/fonds-de-cartes/fr",
+  "homepage": "https://betagouv.github.io/fonds-de-cartes",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-img": "^3.1.8",
