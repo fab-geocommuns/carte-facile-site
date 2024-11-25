@@ -3,7 +3,7 @@
   "version": "1.1.0",
   "description": "Un service pour intégrer facilement des cartes dans des applications et sites internet.",
   "scripts": {
-    "build": "npx @11ty/eleventy",
+    "build": "npx @11ty/eleventy --pathprefix 'fonds-de-cartes'",
     "postbuild": "npx pagefind --site _site/ --output-subdir \"_pagefind\"",
     "start": "npx @11ty/eleventy --serve --quiet",
     "debug": "DEBUG=Eleventy* npx @11ty/eleventy",
