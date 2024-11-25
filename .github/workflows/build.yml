@@ -11,7 +11,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: [14.x]
 
     steps:
       - uses: actions/checkout@v4
@@ -25,12 +25,6 @@ jobs:
         run: |
           npm ci
           npm run build          
-
-      - name: fr fallback homepage
-        run: "cp _site/fr/index.html _site/index.html"
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
