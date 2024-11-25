@@ -21,7 +21,7 @@
   },
   "license": "MIT",
   "engines": {
-    "node": ">=20"
+    "node": ">=18"
   },
   "homepage": "https://betagouv.github.io/fonds-de-cartes",
   "devDependencies": {
