@@ -284,24 +284,24 @@ eleventyNavigation:
             "routier_route_sou",
             "",
             "",
-            "",
-            "",
+            "❌",
+            "❌",
             ""
         ],
         [
             "routier_chemin_sou",
             "",
             "",
-            "",
-            "",
+            "❌",
+            "❌",
             ""
         ],
         [
             "routier_route",
             "Lignes du réseau routier",
             "Types de routes, territoires, sens de circulation et autres types informations.",
-            "",
-            "Idem que pour la carte épurée (IGN)",
+            "✅ Affichages différenciés et progressifs selon les niveaux d'importances des routes.",
+            "✅ Idem que pour la carte épurée (IGN)",
             ""
         ],
         [
@@ -316,8 +316,8 @@ eleventyNavigation:
             "routier_route_sup",
             "",
             "",
-            "",
-            "",
+            "✅ Affichages différenciés et progressifs selon les niveaux d'importances des routes.",
+            "✅ Idem que pour la carte épurée (IGN)",
             ""
         ],
         [
