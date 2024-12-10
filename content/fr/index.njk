@@ -3,18 +3,19 @@ title: Fonds de cartes
 layout: layouts/home.njk
 numberOfLatestPostsToShow: 3
 ---
-<div class="fr-py-6w" style="background: var(--light-options-illustration-color-975-default-green-bourgeon-975, #E6FEDA);">
+<div class="fr-py-6w" style="background: var(--light-options-illustration-color-975-default-green-bourgeon-975, #E6FEDA); height: fr-py-6h; background-image: url('/img/maps_transition2.webp'); background-size: auto 100%; background-repeat: no-repeat; background-position: right;">
   <div class="fr-container">
-    <div class="fr-grid-row fr-grid-row--center">
+    <div class="fr-grid-row fr-grid-row--left">
       <div class="fr-col-10 fr-col-md-6">
         <h1>Des cartes clé en main, rapidement intégrables à votre site</h1>
         <p class="fr-text--lead">
           Compatibles avec les données IGN et OpenStreetMap
+          <span class="fr-grid-row fr-py-1w" style="gap: 0.75rem; height: 3rem">
+            <img src="/icons/logo/logo_ign.webp" alt="Logo de l'IGN" style="max-height: 100%; max-width: 100%">
+            <img src="/icons/logo/logo_osm.webp" alt="Logo d'OpenStreetMap" style="max-height: 100%; max-width: 100%">
+          </span>
         </p>
-        <button class="fr-btn">Utiliser les cartes</button>
-      </div>
-      <div class="fr-hidden fr-unhidden-md fr-col-md-4">
-        <img src="/icons/1F3DB.svg" alt="" width="256">
+        <a class="fr-btn fr-btn--lg" href="{{ "/cartes" | locale_url }}">Découvrir les cartes</a>
       </div>
     </div>
   </div>
