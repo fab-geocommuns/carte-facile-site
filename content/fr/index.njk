@@ -21,33 +21,17 @@ numberOfLatestPostsToShow: 3
   </div>
 </div>
 <div class="fr-container fr-my-6w">
-  {% set postsCount = collections.posts | filterCollectionLang | length %}
-  {% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
-  <h2>{% if latestPostsCount != 1 %}Les {{ latestPostsCount }} derniers articles{% else %}Le dernier article{% endif %}</h2>
-
-  {% set postslist = collections.posts | filterCollectionLang | head(-1 * numberOfLatestPostsToShow) %}
-  {% set postslistCounter = postsCount %}
-  {% include "postslist.njk" %}
-
-  {% set morePosts = postsCount - numberOfLatestPostsToShow %}
-  {% if morePosts > 0 %}
-    <p>{{ morePosts }} {% if morePosts != 1 %}articles supplémentaires peuvent être consultés{% else %}article supplémentaire peut être consulté{% endif %}
-      dans <a href="{{ "/blog" | locale_url }}">la documentation</a>.</p>
-  {% endif %}
-
-  {# List every content page in the project #}
-  {#
-  <ul>
-    {%- for entry in collections.all %}
-    <li><a href="{{ entry.url }}"><code>{{ entry.url }}</code></a></li>
-    {%- endfor %}
-  </ul>
-  #}
-</div>
-<div class="fr-container fr-my-6w">
-  <p><strong>Facilité d'intégration :</strong> Des styles de carte prêts à l'emploi pour un déploiement rapide.</p>
-  <p><strong>Un choix simple :</strong> Trop de choix tue le choix. Les quelques styles proposés sont conçus pour couvrir la majorité des usages courants.</p>
-  <p><strong>Données fiables :</strong> Basé sur les sources de données de confiance IGN et OpenStreetMap.</p>
-  <p><strong>Mises à jour automatiques :</strong> Profitez des dernières améliorations et données géographiques sans effort grâce aux flux de données intégrés.</p>
-  <p><strong>Support multiplateforme :</strong> Compatible avec les principaux frameworks web et mobiles.</p>
+  <h2 class="fr-grid-row fr-grid-row--center fr-my-6w">Les avantages du service</h2>
+  <div class="fr-grid-row fr-grid-row--gutters">
+    <div class="fr-col">
+      <p>🟢 <strong>Un choix simple :</strong> Trop de choix tue le choix. Les quelques styles proposés sont conçus pour couvrir la majorité des usages courants.</p>
+      <p>🟢 <strong>Données fiables :</strong> Basé sur les sources de données de confiance IGN et OpenStreetMap.</p>
+      <p>🟢 <strong>Support multiplateforme (🛠️ en cours):</strong> Compatible avec les principaux frameworks web et mobiles, ainsi qu'avec les logiciels les plus utilisés grâce à des plugins</p>
+    </div>
+    <div class="fr-col">      
+      <p>🟢 <strong>Mises à jour automatiques :</strong> Profitez des dernières améliorations et données géographiques sans effort grâce aux flux de données intégrés.</p>
+      <p>🟢 <strong>Facilité d'intégration :</strong> Des styles de carte prêts à l'emploi pour un déploiement rapide.</p>
+      <p>🟢 <strong>Haute disponibilité (🛠️ en cours):</strong> Compatible avec les principaux frameworks web et mobiles, ainsi qu'avec les logiciels les plus utilisés grâce à des plugins</p>
+    </div>
+  </div>
 </div>
