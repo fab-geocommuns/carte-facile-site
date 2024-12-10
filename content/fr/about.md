@@ -1,7 +1,7 @@
 ---
 eleventyNavigation:
   key: À propos
-  order: 3
+  order: 4
   nav: main
 permalink: false
 ---

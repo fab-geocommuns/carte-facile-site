@@ -1,6 +1,7 @@
 ---js
 {
-  title: "Blog",
+  title: "Composants",
+  description: "Documentation des composants disponibles pour ajouter des contenus spécifiques dans les pages de ce site.",
   pagination: {
     data: "collections.posts",
     size: 6,
@@ -11,11 +12,6 @@
   },
   layout: "layouts/page.njk",
   permalink: "/{{ lang }}/blog/{% if pagination.pageNumber %}{{ pagePrefix }}{{ pagination.pageNumber + 1 }}/{% endif %}",
-  eleventyNavigation: {
-    key: "Blog",
-    order: 3,
-    nav: "main"
-  }
 }
 ---
 <h2 class="fr-h4">{{ "filter_by_tag" | i18n }}</h2>
