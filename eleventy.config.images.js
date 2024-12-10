@@ -70,4 +70,16 @@ module.exports = eleventyConfig => {
     eleventyConfig.addFilter("resolvePath", (imagePath, page) => {
         return imagePath ? path.resolve(page.inputPath, "..", imagePath) : undefined;
     });
+
+    // Add new shortcode for getting image URL
+    eleventyConfig.addAsyncShortcode("imageUrl", async function imageUrlShortcode(src, widths) {
+        let file = relativeToInputPath(this.page.inputPath, src);
+        const options = getOptions(widths);
+        options["outputDir"] = path.join(eleventyConfig.dir.output, "img");
+        let metadata = await eleventyImage(file, options);
+        
+        // Return the URL of the first format's largest size
+        // You might want to adjust this depending on your needs
+        return metadata[Object.keys(metadata)[0]][metadata[Object.keys(metadata)[0]].length - 1].url;
+    });
 };
