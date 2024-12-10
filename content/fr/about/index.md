@@ -9,4 +9,4 @@ eleventyNavigation:
 slugOverride: a propos
 ---
 
-Nous sommes la mission logiciels libres.
+Le service Fonds de cartes propose des cartes rapidement intégrables à son site internet ou son application. Le projet est porté par la Fabrique des géocommuns à l'IGN.

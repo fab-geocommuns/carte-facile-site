@@ -8,4 +8,6 @@ eleventyNavigation:
   nav: main
 ---
 
-<contact@code.gouv.fr>
+Pour contacter l'équipe qui construit ce service, envoyez un courriel à : 
+
+<fonds-de-cartes@beta.gouv.fr>
