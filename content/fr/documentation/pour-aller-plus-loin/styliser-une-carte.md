@@ -9,6 +9,10 @@ eleventyNavigation:
   nav: docs
 ---
 
+:::callout 🛠️ Page en cours de rédaction
+Le contenu n'est pas représentatif du contenu final.
+:::
+
 _Nous vous proposons des styles près à l'emploi, mais vous pouvez également créer le votre. Deux méthodes_
 
 * Dev fichier JSON

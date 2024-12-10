@@ -8,6 +8,10 @@ eleventyNavigation:
   nav: docs
 ---
 
+:::callout 🛠️ Page en cours de rédaction
+Le contenu n'est pas représentatif du contenu final.
+:::
+
 Schéma de synthèse de slien entre données géographiques, flux et serveurs, styles de cartes.
 
 ---

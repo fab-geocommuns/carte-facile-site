@@ -8,7 +8,9 @@ eleventyNavigation:
   nav: docs
 ---
 
-
+:::callout 🛠️ Page en cours de rédaction
+Le contenu n'est pas représentatif du contenu final.
+:::
 
 Expliquer le principe des composants, et présenter les composants qui ont déjà été imaginés. Inviter à proposer une contribution sur le développement de ces composants.
 

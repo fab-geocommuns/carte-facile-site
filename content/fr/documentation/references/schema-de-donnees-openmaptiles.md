@@ -9,6 +9,10 @@ eleventyNavigation:
   nav: docs
 ---
 
+:::callout 🛠️ Page en cours de rédaction
+Le contenu n'est pas représentatif du contenu final.
+:::
+
 ## Description du schéma
 
 https://openmaptiles.org/schema/
