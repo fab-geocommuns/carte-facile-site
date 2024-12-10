@@ -1,13 +1,12 @@
 module.exports = {
     title: "Fonds de cartes",
     url: "https://fondsdecartes.ign.fr",
-    newsletter: [
+    newsletter: 
         {
-            url: "",
-            title: "",
-            description: ""
-        }
-    ],
+            url: "https://e1671ed4.sibforms.com/serve/MUIFAKl24WyvoB2G2yCuFTh18zGaDqJPo8CJPKK6N1dw3314KlDAVZ-_KAMSw_AkSv3ZCf130r6qtYu18cjfukSugHXxFizO7n7SJxv7tKzhRKpDeUHRd-RG2Y7eCLsPgCJpZW8wvzem6wmBHEyjMC-pZhLVCbwBwBSByJXzC3OAVqKQ4wzW7xVBeo0pbiS2gopJXIgoOtdX8yoL",
+            title: "Rejoignez notre lettre d'information !",
+            description: "Pour suivre nos actualités et avancées sur le projet et participer à son évolution si vous le souhaitez."
+        },
     facebook_url: "",
     mastodon_url: "",
     twitter_url: "",
