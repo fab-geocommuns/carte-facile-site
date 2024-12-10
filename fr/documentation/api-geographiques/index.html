@@ -413,10 +413,15 @@ pre[class*="language-"] {
           </a>
       </li>
       <li class="fr-nav__item">
-          <button class="fr-nav__btn" aria-expanded="false" aria-controls="menu-3">
+          <a class="fr-nav__link" href="/fonds-de-cartes/fr/communaute/">
+            Communauté
+          </a>
+      </li>
+      <li class="fr-nav__item">
+          <button class="fr-nav__btn" aria-expanded="false" aria-controls="menu-4">
             À propos
           </button>
-          <div class="fr-collapse fr-menu" id="menu-3">
+          <div class="fr-collapse fr-menu" id="menu-4">
             <ul class="fr-menu__list">
                 <li>
                   <a class="fr-nav__link" href="/fonds-de-cartes/fr/a-propos/">
@@ -430,11 +435,6 @@ pre[class*="language-"] {
                 </li>
             </ul>
           </div>
-      </li>
-      <li class="fr-nav__item">
-          <a class="fr-nav__link" href="/fonds-de-cartes/fr/blog/">
-            Blog
-          </a>
       </li>
   </ul>
 </nav>
@@ -485,9 +485,28 @@ pre[class*="language-"] {
                     </a>
                 </li>
                 <li class="fr-sidemenu__item">
-                    <a class="fr-sidemenu__link" href="false">
-                        Utiliser les cartes
-                    </a>
+                        <button class="fr-sidemenu__btn" aria-expanded="false" aria-controls="sidemenu-2">
+                            Utiliser les cartes
+                        </button>
+                        <div class="fr-collapse" id="sidemenu-2">
+                            <ul class="fr-sidemenu__list">
+                                <li class="fr-sidemenu__item">
+                                <a class="fr-sidemenu__link" href="/fonds-de-cartes/fr/documentation/utiliser-les-cartes/dans-un-site/">
+                                    Dans un site internet
+                                </a>
+                                </li>
+                                <li class="fr-sidemenu__item">
+                                <a class="fr-sidemenu__link" href="/fonds-de-cartes/fr/documentation/utiliser-les-cartes/dans-figma/">
+                                    Dans Figma
+                                </a>
+                                </li>
+                                <li class="fr-sidemenu__item">
+                                <a class="fr-sidemenu__link" href="/fonds-de-cartes/fr/documentation/utiliser-les-cartes/dans-qgis/">
+                                    Dans QGIS
+                                </a>
+                                </li>
+                            </ul>
+                        </div>
                 </li>
                 <li class="fr-sidemenu__item">
                     <a class="fr-sidemenu__link" href="/fonds-de-cartes/fr/documentation/composants/">
@@ -611,9 +630,9 @@ pre[class*="language-"] {
           </hgroup>
         </div>
         <div class="fr-col-12 fr-col-md-3">
-          <button class="fr-btn fr-btn--sm fr-btn--tertiary fr-btn--icon-left fr-icon-external-link-line" onclick="window.location.href='https://github.com/';">
-            Éditer sur Github
-          </button>
+          <a class="fr-btn fr-btn--sm fr-btn--tertiary fr-btn--icon-left fr-icon-edit-line" href="https://github.com/betagouv/fonds-de-cartes/blob/main/./content/fr/documentation/api-geographiques/index.md">
+            Modifier cette page
+          </a>
         </div> 
       </div>
         <p>Deux API sont mises à disposition par la Direction Interministérielle du Numérique (DINUM) et l'Institut national de l’information géographique et forestière (IGN) :</p>
@@ -628,32 +647,27 @@ pre[class*="language-"] {
 
 <div class="fr-follow">
   <div class="fr-container">
-    <div class="fr-grid-row fr-grid-row--top">
-      <div class="fr-col-12 fr-col-md-8">
+    <div class="fr-grid-row">
+      <div class="fr-col-12">
         <div class="fr-follow__newsletter">
           <div>
-            <p class="fr-h5">Abonnez-vous à notre lettre d’information</p>
-            <p class="fr-text--sm"></p>
+            <h2 class="fr-h5">Rejoignez notre lettre d&#39;information !</h2>
+            <p class="fr-text--sm">Pour suivre nos actualités et avancées sur le projet et participer à son évolution si vous le souhaitez.</p>
           </div>
           <div class="fr-btns-group fr-btns-group--inline-md">
-            <a class="fr-btn" title="S&#39;abonner" href="." target="_blank" rel="noopener">
+            <a class="fr-btn" title="S&#39;abonner" href="https://e1671ed4.sibforms.com/serve/MUIFAKl24WyvoB2G2yCuFTh18zGaDqJPo8CJPKK6N1dw3314KlDAVZ-_KAMSw_AkSv3ZCf130r6qtYu18cjfukSugHXxFizO7n7SJxv7tKzhRKpDeUHRd-RG2Y7eCLsPgCJpZW8wvzem6wmBHEyjMC-pZhLVCbwBwBSByJXzC3OAVqKQ4wzW7xVBeo0pbiS2gopJXIgoOtdX8yoL" target="_blank" rel="noopener">
               S&#39;abonner
             </a>
           </div>
         </div>
       </div>
-      <div class="fr-col-12 fr-col-md-4">
-        <div class="fr-follow__social">
-          <p class="fr-h5">Suivez-nous <br> sur nos réseaux </p>
-          <ul class="fr-btns-group">
-          </ul>
-          <ul class="fr-btns-group">
-          </ul>
-        </div>
-      </div>
     </div>
   </div>
-</div><footer class="fr-footer" role="contentinfo" id="footer">
+</div>
+
+
+
+<footer class="fr-footer" role="contentinfo" id="footer">
   <div class="fr-container">
     <div class="fr-footer__body">
       <div class="fr-footer__brand fr-enlarge-link">
@@ -662,7 +676,7 @@ pre[class*="language-"] {
         </a>
       </div>
       <div class="fr-footer__content">
-        <p class="fr-footer__content-desc">Cartes faciles est un service développé par La Fabrique des géocommuns, incubateur de communs à l’IGN. Le code source de ce site web et les ressources proposées par le service sont disponible en licence libre.</p>
+        <p class="fr-footer__content-desc">Fonds de cartes est un service développé par La Fabrique des géocommuns, incubateur de communs à l’IGN. Le code source de ce site web et les ressources proposées par le service sont disponible en licence libre.</p>
         <ul class="fr-footer__content-list">
           <li class="fr-footer__content-item">
             <a class="fr-footer__content-link" target="_blank" rel="noopener external" href="https://legifrance.gouv.fr">legifrance.gouv.fr</a>
@@ -695,7 +709,7 @@ pre[class*="language-"] {
           <a class="fr-footer__bottom-link" href="/fonds-de-cartes/fr/donnees-personnelles/">Données personnelles</a>
         </li>
         <li class="fr-footer__bottom-item">
-          <a class="fr-footer__bottom-link fr-icon-pencil-line fr-link--icon-left" href="https://github.com/codegouvfr/eleventy-dsfr/blob/main/./content/fr/documentation/api-geographiques/index.md">Modifier cette page</a>
+          <a class="fr-footer__bottom-link fr-icon-pencil-line fr-link--icon-left" href="https://github.com/betagouv/fonds-de-cartes/blob/main/./content/fr/documentation/api-geographiques/index.md">Modifier cette page</a>
         </li>
         
         <li class="fr-footer__bottom-item">
