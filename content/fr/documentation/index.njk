@@ -8,4 +8,8 @@ eleventyNavigation:
   nav: main
 ---
 
-Ceci est une documentation.
+{% from "components/component.njk" import component with context %}
+{{ component("callout", {
+    title: "🛠️ Page en cours de rédaction",
+    description: "Le contenu n'est pas représentatif du contenu final."
+}) }}

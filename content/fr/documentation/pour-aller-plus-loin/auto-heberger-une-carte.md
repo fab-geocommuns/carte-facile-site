@@ -9,6 +9,10 @@ eleventyNavigation:
   nav: docs
 ---
 
+:::callout 🛠️ Page en cours de rédaction
+Le contenu n'est pas représentatif du contenu final.
+:::
+
 Tutoriel pour auto-héberger une carte rapidement et à moindres frais.
 
 Expliquer pourquoi auto-héberger peut être intréressant : auto-gestion infrastructure pour services sensibles avec besoins de haute disponibilité ou données privées.

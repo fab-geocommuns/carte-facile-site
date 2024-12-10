@@ -45,5 +45,4 @@ module.exports = {
     tags: "Catégories",
     use_system_params: "Utilise les paramètres système.",
     you_are_here: "Vous êtes ici",
-    edit_on_github: "Éditer sur Github"
 };

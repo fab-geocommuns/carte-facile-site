@@ -3,50 +3,35 @@ title: Fonds de cartes
 layout: layouts/home.njk
 numberOfLatestPostsToShow: 3
 ---
-<div class="fr-py-6w" style="background: var(--light-options-illustration-color-975-default-green-bourgeon-975, #E6FEDA);">
+<div class="fr-py-6w" style="background: var(--light-options-illustration-color-975-default-green-bourgeon-975, #E6FEDA); height: fr-py-6h; background-image: url('/img/maps_transition3.webp'); background-size: auto 100%; background-repeat: no-repeat; background-position: right;">
   <div class="fr-container">
-    <div class="fr-grid-row fr-grid-row--center">
+    <div class="fr-grid-row fr-grid-row--left">
       <div class="fr-col-10 fr-col-md-6">
         <h1>Des cartes clé en main, rapidement intégrables à votre site</h1>
         <p class="fr-text--lead">
           Compatibles avec les données IGN et OpenStreetMap
+          <span class="fr-grid-row fr-py-1w" style="gap: 0.75rem; height: 3rem">
+            <img src="/icons/logo/logo_ign.webp" alt="Logo de l'IGN" style="max-height: 100%; max-width: 100%">
+            <img src="/icons/logo/logo_osm.webp" alt="Logo d'OpenStreetMap" style="max-height: 100%; max-width: 100%">
+          </span>
         </p>
-        <button class="fr-btn">Utiliser les cartes</button>
-      </div>
-      <div class="fr-hidden fr-unhidden-md fr-col-md-4">
-        <img src="/icons/1F3DB.svg" alt="" width="256">
+        <a class="fr-btn fr-btn--lg" href="{{ "/cartes" | locale_url }}">Découvrir les cartes</a>
       </div>
     </div>
   </div>
 </div>
 <div class="fr-container fr-my-6w">
-  {% set postsCount = collections.posts | filterCollectionLang | length %}
-  {% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
-  <h2>{% if latestPostsCount != 1 %}Les {{ latestPostsCount }} derniers articles{% else %}Le dernier article{% endif %}</h2>
-
-  {% set postslist = collections.posts | filterCollectionLang | head(-1 * numberOfLatestPostsToShow) %}
-  {% set postslistCounter = postsCount %}
-  {% include "postslist.njk" %}
-
-  {% set morePosts = postsCount - numberOfLatestPostsToShow %}
-  {% if morePosts > 0 %}
-    <p>{{ morePosts }} {% if morePosts != 1 %}articles supplémentaires peuvent être consultés{% else %}article supplémentaire peut être consulté{% endif %}
-      dans <a href="{{ "/blog" | locale_url }}">la documentation</a>.</p>
-  {% endif %}
-
-  {# List every content page in the project #}
-  {#
-  <ul>
-    {%- for entry in collections.all %}
-    <li><a href="{{ entry.url }}"><code>{{ entry.url }}</code></a></li>
-    {%- endfor %}
-  </ul>
-  #}
-</div>
-<div class="fr-container fr-my-6w">
-  <p><strong>Facilité d'intégration :</strong> Des styles de carte prêts à l'emploi pour un déploiement rapide.</p>
-  <p><strong>Un choix simple :</strong> Trop de choix tue le choix. Les quelques styles proposés sont conçus pour couvrir la majorité des usages courants.</p>
-  <p><strong>Données fiables :</strong> Basé sur les sources de données de confiance IGN et OpenStreetMap.</p>
-  <p><strong>Mises à jour automatiques :</strong> Profitez des dernières améliorations et données géographiques sans effort grâce aux flux de données intégrés.</p>
-  <p><strong>Support multiplateforme :</strong> Compatible avec les principaux frameworks web et mobiles.</p>
+  <h2 class="fr-grid-row fr-grid-row--center fr-my-6w">Les avantages du service</h2>
+  <div class="fr-grid-row ">
+    <div class="fr-col fr-mr-2w">
+      <p>🟢 <strong>Un choix simple :</strong> Trop de choix tue le choix. Les quelques styles proposés sont conçus pour couvrir la majorité des usages courants.</p>
+      <p>🟢 <strong>Données fiables :</strong> Basé sur les sources de données de confiance IGN et OpenStreetMap.</p>
+      <p>🟢 <strong>Support multiplateforme (🛠️ en cours):</strong> Compatible avec les principaux frameworks web et mobiles, ainsi qu'avec les logiciels les plus utilisés grâce à des plugins</p>
+    </div>
+    <div class="fr-col fr-ml-2w">      
+      <p>🟢 <strong>Mises à jour automatiques :</strong> Profitez des dernières améliorations et données géographiques sans effort grâce aux flux de données intégrés.</p>
+      <p>🟢 <strong>Facilité d'intégration :</strong> Des styles de carte prêts à l'emploi pour un déploiement rapide.</p>
+      <p>🟢 <strong>Haute disponibilité (🛠️ en cours):</strong> Compatible avec les principaux frameworks web et mobiles, ainsi qu'avec les logiciels les plus utilisés grâce à des plugins</p>
+    </div>
+  </div>
 </div>
