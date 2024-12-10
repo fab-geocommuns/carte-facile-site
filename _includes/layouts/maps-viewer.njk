@@ -18,7 +18,12 @@ showMaps: true
                 <option value="https://betagouv.github.io/styles-de-cartes/maps/map_simplified_osm-etalab.json">Épurée - OSM Etalab</option>
             </select>
         </div>
-        <p id="zoom-level"></p>
+        <div id="metadata-panel">
+            <p id="zoom-level"></p>
+            <p id="style-name"></p>
+            <p id="style-version"></p>
+            <p id="style-owner"></p>
+        </div>
     </div>
 </div>
 <script>
@@ -43,9 +48,31 @@ showMaps: true
     map.on('zoom', updateZoomLevel);
     // Sélection du menu déroulant pour changer de style
     const styleSelector = document.getElementById('style-selector');
-    // Changement de style quand l'utilisateur sélectionne un autre style
+    // Function to fetch and display style metadata
+    async function displayStyleMetadata(styleUrl) {
+        try {
+            const response = await fetch(styleUrl);
+            const styleJson = await response.json();
+            
+            // Update metadata display
+            document.getElementById('style-name').innerText = `Nom: ${styleJson.metadata.name || 'Non défini'}`;
+            document.getElementById('style-version').innerText = `Version: ${styleJson.metadata.version || 'Non définie'}`;
+            document.getElementById('style-owner').innerText = `Description: ${styleJson.metadata.description || 'Non défini'}`;
+        } catch (error) {
+            console.error('Erreur lors du chargement des métadonnées:', error);
+        }
+    }
+
+    // Display metadata when map loads initially
+    map.on('load', () => {
+        updateZoomLevel();
+        displayStyleMetadata(styleSelector.value);
+    });
+
+    // Update metadata when style changes
     styleSelector.addEventListener('change', function () {
         const selectedStyle = styleSelector.value;
         map.setStyle(selectedStyle);
+        displayStyleMetadata(selectedStyle);
     });
 </script>
