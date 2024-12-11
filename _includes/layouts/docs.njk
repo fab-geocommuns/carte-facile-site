@@ -20,7 +20,10 @@ layout: layouts/base.njk
           </a>
         </div> 
       </div>
-        {{ content | safe }}
+      {{ content | safe }}
+      <div class="fr-grid-row fr-grid-row--right">
+        {% include "components/back_to_top.njk" %}
+      </div>
     </div>
   </div>
 </div>
