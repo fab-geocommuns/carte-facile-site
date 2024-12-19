@@ -1,5 +1,5 @@
 module.exports = {
-    title: "Fonds de cartes",
+    title: "Cartes faciles",
     url: "https://fondsdecartes.ign.fr",
     newsletter: 
         {

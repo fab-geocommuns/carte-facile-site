@@ -24,15 +24,21 @@
           </div>
         </div>
         <div class="fr-header__tools">
-{#           <div class="fr-header__tools-links">
-            <ul class="fr-links-group">
-              <li>
+          <div class="fr-header__tools-links">
+            <ul class="fr-btns-group">
+              {# <li>
                 <a class="fr-link fr-icon-rss-line" href="/feed/feed.json">Flux RSS</a>
+              </li> #}
+              <li>
+                <a class="fr-btn" href="https://cartes.gouv.fr/" target="_blank">Cartes.gouv.fr</a>
+              </li>
+              <li>
+                <a class="fr-btn" href="https://www.geoportail.gouv.fr/carte" target="_blank">Géoportail</a>
               </li>
             </ul>
-            {% include "templates/translate.njk" %}
-          </div> #}
-          <div class="fr-header__search fr-modal" id="modal-474">
+            {# {% include "templates/translate.njk" %} #}
+          </div>
+          {# <div class="fr-header__search fr-modal" id="modal-474">
             <div class="fr-container fr-container-lg--fluid">
               <button class="fr-btn--close fr-btn" aria-controls="modal-474" title="Fermer">
                 Fermer
@@ -48,7 +54,7 @@
                 </button>
               </div>
             </div>
-          </div>
+          </div> #}
         </div>
       </div>
     </div>
