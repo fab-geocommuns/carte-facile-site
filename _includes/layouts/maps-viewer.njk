@@ -7,7 +7,7 @@ showMaps: true
     id="map">
     <!-- Bloc qui contient le niveau de zoom et le sélecteur de style -->
     <div id="control-panel">
-        <div class="fr-select-group">
+{#         <div class="fr-select-group">
             <label class="fr-label" for="select">
                 Fond de carte
             </label>
@@ -17,12 +17,13 @@ showMaps: true
                 <option value="https://betagouv.github.io/styles-de-cartes/maps/map_aerial_photography_ign.json">Aérienne - Ortho IGN</option>
                 <option value="https://betagouv.github.io/styles-de-cartes/maps/map_simplified_osm-etalab.json">Épurée - OSM Etalab</option>
             </select>
-        </div>
+        </div> #}
         <div id="metadata-panel">
-            <p id="zoom-level"></p>
-            <p id="style-name"></p>
+            <p id="style-name"class="fr-text--lead fr-text--bold"></p>
             <p id="style-version"></p>
             <p id="style-owner"></p>
+            <p><a id="style-url" target="_blank" class="fr-link fr-icon-arrow-right-line fr-link--icon-right">Lien vers le fichier de style</a></p>
+            <p id="zoom-level"></p>
         </div>
     </div>
 </div>
@@ -55,9 +56,10 @@ showMaps: true
             const styleJson = await response.json();
             
             // Update metadata display
-            document.getElementById('style-name').innerText = `Nom: ${styleJson.metadata.name || 'Non défini'}`;
+            document.getElementById('style-name').innerText = `${styleJson.metadata.name || 'Non défini'}`;
             document.getElementById('style-version').innerText = `Version: ${styleJson.metadata.version || 'Non définie'}`;
             document.getElementById('style-owner').innerText = `Description: ${styleJson.metadata.description || 'Non défini'}`;
+            document.getElementById('style-url').href = `${styleJson.metadata.url || 'Non défini'}`;
         } catch (error) {
             console.error('Erreur lors du chargement des métadonnées:', error);
         }
@@ -66,7 +68,8 @@ showMaps: true
     // Display metadata when map loads initially
     map.on('load', () => {
         updateZoomLevel();
-        displayStyleMetadata(styleSelector.value);
+        // displayStyleMetadata(styleSelector.value);
+        displayStyleMetadata("https://betagouv.github.io/styles-de-cartes/maps/map_simplified_ign.json");
     });
 
     // Update metadata when style changes
