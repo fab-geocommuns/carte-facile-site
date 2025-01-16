@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:base="fr">
-	<title>Cartes faciles</title>
+	<title>Carte facile</title>
 	<subtitle>Intégrez facilement des cartes à vos applications et sites web</subtitle>
 	<link href="https://fondsdecartes.ign.fr/fonds-de-cartes/feed/feed.xml" rel="self"/>
 	<link href="https://fondsdecartes.ign.fr/fonds-de-cartes/"/>
-	<updated>2025-01-10T18:15:26Z</updated>
+	<updated>2025-01-16T14:28:28Z</updated>
 	<id>https://fondsdecartes.ign.fr</id>
 	<author>
 		<name>Cartes faciles</name>
@@ -13,7 +13,7 @@
 	<entry>
 		<title>Tuile</title>
 		<link href="https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/tuile/"/>
-		<updated>2025-01-10T18:15:26Z</updated>
+		<updated>2025-01-16T14:28:28Z</updated>
 		<id>https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/tuile/</id>
 		<content type="html">&lt;p&gt;Chaque composant peut être inclus dans un fichier Nunjucks &lt;code&gt;.njk&lt;/code&gt; ou Markdown &lt;code&gt;.md&lt;/code&gt;.&lt;/p&gt;
 &lt;h2 id=&quot;exemple-d-utilisation&quot; tabindex=&quot;-1&quot;&gt;Exemple d&#39;utilisation &lt;a class=&quot;header-anchor&quot; href=&quot;https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/tuile/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
@@ -65,7 +65,7 @@
 	<entry>
 		<title>Téléchargement de fichier</title>
 		<link href="https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/telechargement/"/>
-		<updated>2025-01-10T18:15:26Z</updated>
+		<updated>2025-01-16T14:28:28Z</updated>
 		<id>https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/telechargement/</id>
 		<content type="html">&lt;p&gt;Chaque composant peut être inclus dans un fichier Nunjucks &lt;code&gt;.njk&lt;/code&gt; ou Markdown &lt;code&gt;.md&lt;/code&gt;.&lt;/p&gt;
 &lt;h2 id=&quot;exemples-d-utilisation&quot; tabindex=&quot;-1&quot;&gt;Exemples d&#39;utilisation &lt;a class=&quot;header-anchor&quot; href=&quot;https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/telechargement/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
@@ -153,7 +153,7 @@
 	<entry>
 		<title>Tableau</title>
 		<link href="https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/tableau/"/>
-		<updated>2025-01-10T18:15:26Z</updated>
+		<updated>2025-01-16T14:28:28Z</updated>
 		<id>https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/tableau/</id>
 		<content type="html">&lt;p&gt;Chaque composant peut être inclus dans un fichier Nunjucks &lt;code&gt;.njk&lt;/code&gt; ou Markdown &lt;code&gt;.md&lt;/code&gt;.&lt;/p&gt;
 &lt;h2 id=&quot;exemple-d-utilisation&quot; tabindex=&quot;-1&quot;&gt;Exemple d&#39;utilisation &lt;a class=&quot;header-anchor&quot; href=&quot;https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/tableau/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
@@ -228,7 +228,7 @@
 	<entry>
 		<title>Retour en haut de page</title>
 		<link href="https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/retour-en-haut-de-page/"/>
-		<updated>2025-01-10T18:15:26Z</updated>
+		<updated>2025-01-16T14:28:28Z</updated>
 		<id>https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/retour-en-haut-de-page/</id>
 		<content type="html">&lt;p&gt;Chaque composant peut être inclus dans un fichier Nunjucks &lt;code&gt;.njk&lt;/code&gt; ou Markdown &lt;code&gt;.md&lt;/code&gt;.&lt;/p&gt;
 &lt;h2 id=&quot;exemple-d-utilisation&quot; tabindex=&quot;-1&quot;&gt;Exemple d&#39;utilisation &lt;a class=&quot;header-anchor&quot; href=&quot;https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/retour-en-haut-de-page/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
@@ -246,7 +246,7 @@
 	<entry>
 		<title>Pagination</title>
 		<link href="https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/pagination/"/>
-		<updated>2025-01-10T18:15:26Z</updated>
+		<updated>2025-01-16T14:28:28Z</updated>
 		<id>https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/pagination/</id>
 		<content type="html">&lt;p&gt;&lt;code&gt;eleventy-dsfr&lt;/code&gt; utilise le &lt;a href=&quot;https://www.11ty.dev/docs/pagination/&quot;&gt;système de pagination d&#39;Eleventy&lt;/a&gt;, par exemple pour les articles de blog.&lt;/p&gt;
 &lt;h2 id=&quot;pagination-de-niveau-2-pour-les-tags&quot; tabindex=&quot;-1&quot;&gt;Pagination de niveau 2 pour les tags &lt;a class=&quot;header-anchor&quot; href=&quot;https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/pagination/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
@@ -269,7 +269,7 @@ Par exemple, dans le fichier &lt;a href=&quot;https://github.com/codegouvfr/elev
 	<entry>
 		<title>Navigation</title>
 		<link href="https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/navigation/"/>
-		<updated>2025-01-10T18:15:26Z</updated>
+		<updated>2025-01-16T14:28:28Z</updated>
 		<id>https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/navigation/</id>
 		<content type="html">&lt;p&gt;&lt;code&gt;eleventy-dsfr&lt;/code&gt; utilise le &lt;a href=&quot;https://www.11ty.dev/docs/plugins/navigation/&quot;&gt;système de navigation d&#39;Eleventy&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&quot;navigation-de-niveau-2&quot; tabindex=&quot;-1&quot;&gt;Navigation de niveau 2 &lt;a class=&quot;header-anchor&quot; href=&quot;https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/navigation/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
@@ -294,7 +294,7 @@ Par exemple, dans le fichier &lt;a href=&quot;https://github.com/codegouvfr/elev
 	<entry>
 		<title>Mise en avant</title>
 		<link href="https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/mise-en-avant/"/>
-		<updated>2025-01-10T18:15:26Z</updated>
+		<updated>2025-01-16T14:28:28Z</updated>
 		<id>https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/mise-en-avant/</id>
 		<content type="html">&lt;p&gt;Chaque composant peut être inclus dans un fichier Nunjucks &lt;code&gt;.njk&lt;/code&gt; ou Markdown &lt;code&gt;.md&lt;/code&gt;.&lt;/p&gt;
 &lt;h2 id=&quot;utilisation&quot; tabindex=&quot;-1&quot;&gt;Utilisation &lt;a class=&quot;header-anchor&quot; href=&quot;https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/mise-en-avant/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
@@ -330,7 +330,7 @@ Contenu &lt;span class=&quot;token bold&quot;&gt;&lt;span class=&quot;token punc
 	<entry>
 		<title>Syntaxe Markdown</title>
 		<link href="https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/md-cheatsheet/"/>
-		<updated>2025-01-10T18:15:26Z</updated>
+		<updated>2025-01-16T14:28:28Z</updated>
 		<id>https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/md-cheatsheet/</id>
 		<content type="html">&lt;p&gt;La syntaxe utilisée dans les fichiers Markdown &lt;code&gt;.md&lt;/code&gt; du site suit la spécification &lt;a href=&quot;https://commonmark.org/&quot;&gt;CommonMark&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://commonmark.org/help/&quot; class=&quot;fr-link fr-fi-arrow-right-line fr-link--icon-right&quot;&gt;Voir un rappel des principaux éléments&lt;/a&gt;&lt;/p&gt;
@@ -369,7 +369,7 @@ Il peut contenir des données pré-définies par Eleventy ou personnalisées pou
 	<entry>
 		<title>Internationalisation</title>
 		<link href="https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/i18n/"/>
-		<updated>2025-01-10T18:15:26Z</updated>
+		<updated>2025-01-16T14:28:28Z</updated>
 		<id>https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/i18n/</id>
 		<content type="html">&lt;p&gt;&lt;code&gt;eleventy-dsfr&lt;/code&gt; suit les &lt;a href=&quot;https://www.11ty.dev/docs/i18n/&quot;&gt;recommandations officielles&lt;/a&gt; d&#39;11ty pour l&#39;internationalisation et utilise le &lt;a href=&quot;https://www.11ty.dev/docs/plugins/i18n/&quot;&gt;plugin officiel&lt;/a&gt; pour localiser les liens internes.&lt;/p&gt;
 &lt;p&gt;Pour localiser les des chaînes de caractères, &lt;code&gt;eleventy-dsfr&lt;/code&gt; utilise notre &lt;a href=&quot;https://github.com/codegouvfr/eleventy-plugin-i18n&quot;&gt;fork du plugin recommandé &lt;code&gt;eleventy-plugin-i18n&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
@@ -393,7 +393,7 @@ Pour ajouter une traduction, ajouter le dossier correspondant à la langue et so
 	<entry>
 		<title>Fil d&#39;Ariane</title>
 		<link href="https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/fil-d-ariane/"/>
-		<updated>2025-01-10T18:15:26Z</updated>
+		<updated>2025-01-16T14:28:28Z</updated>
 		<id>https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/fil-d-ariane/</id>
 		<content type="html">&lt;p&gt;Chaque composant peut être inclus dans un fichier Nunjucks &lt;code&gt;.njk&lt;/code&gt; ou Markdown &lt;code&gt;.md&lt;/code&gt;.&lt;/p&gt;
 &lt;h2 id=&quot;utilisation&quot; tabindex=&quot;-1&quot;&gt;Utilisation &lt;a class=&quot;header-anchor&quot; href=&quot;https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/fil-d-ariane/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
