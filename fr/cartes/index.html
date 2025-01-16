@@ -500,7 +500,17 @@ pre[class*="language-"] {
 <div id="map">
     <!-- Bloc qui contient le niveau de zoom et le sélecteur de style -->
     <div id="control-panel">
-
+        <div class="fr-select-group">
+            <label class="fr-label" for="select">
+                Fond de carte
+            </label>
+            <select class="fr-select" id="style-selector" name="select">
+                <option value="https://betagouv.github.io/styles-de-cartes/maps/map_simplified_colored_ign.json" selected="selected">Épurée couleurs - Plan IGN</option>
+                <option value="https://betagouv.github.io/styles-de-cartes/maps/map_simplified_grey_ign.json">Épurée - Plan IGN</option>
+                
+                
+            </select>
+        </div>
         <div id="metadata-panel">
             <p id="style-name" class="fr-text--lead fr-text--bold"></p>
             <p id="style-version"></p>
@@ -517,7 +527,7 @@ pre[class*="language-"] {
     let protocol = new pmtiles.Protocol({metadata: true});
     maplibregl.addProtocol("pmtiles", protocol.tile);
     // Map initialization
-    const map = new maplibregl.Map({container: 'map', style: 'https://betagouv.github.io/styles-de-cartes/maps/map_simplified_ign.json'});
+    const map = new maplibregl.Map({container: 'map', style: 'https://betagouv.github.io/styles-de-cartes/maps/map_simplified_colored_ign.json'});
     map.addControl(new maplibregl.NavigationControl());
     // Référence au div pour afficher le niveau de zoom
     const zoomLevelDiv = document.getElementById('zoom-level');
