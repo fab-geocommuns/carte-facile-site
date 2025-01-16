@@ -2,9 +2,13 @@
   <div class="fr-container">
     <div class="fr-footer__body">
       <div class="fr-footer__brand fr-enlarge-link">
-        <a href="{{ "/" | locale_url }}" title="{{ "home" | i18n }} - {{ metadata.service }}">
-          <p class="fr-logo">République<br/>française</p>
-        </a>
+          <p class="fr-logo">
+              République
+              <br>Française
+          </p>
+          <a class="fr-footer__brand-link" href="/" title="Retour à l'accueil du site - [À MODIFIER - texte alternatif de l'image : nom de l'opérateur ou du site serviciel] - République Française">
+              <img class="fr-footer__logo" style="width:7rem;" src="/icons/logo/IGN_logo_Q.svg" alt="Logo IGN" />
+          </a>
       </div>
       <div class="fr-footer__content">
         <p class="fr-footer__content-desc">{{ data.footer_content_description | safe }}</p>
