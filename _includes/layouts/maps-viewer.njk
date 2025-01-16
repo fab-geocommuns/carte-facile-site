@@ -7,17 +7,17 @@ showMaps: true
     id="map">
     <!-- Bloc qui contient le niveau de zoom et le sélecteur de style -->
     <div id="control-panel">
-{#         <div class="fr-select-group">
+        <div class="fr-select-group">
             <label class="fr-label" for="select">
                 Fond de carte
             </label>
             <select class="fr-select" id="style-selector" name="select">
-                <option value="" selected="selected" disabled="disabled" hidden="hidden">Sélectionner une option</option>
-                <option value="https://betagouv.github.io/styles-de-cartes/maps/map_simplified_ign.json">Épurée - Plan IGN</option>
-                <option value="https://betagouv.github.io/styles-de-cartes/maps/map_aerial_photography_ign.json">Aérienne - Ortho IGN</option>
-                <option value="https://betagouv.github.io/styles-de-cartes/maps/map_simplified_osm-etalab.json">Épurée - OSM Etalab</option>
+                <option value="https://betagouv.github.io/styles-de-cartes/maps/map_simplified_colored_ign.json" selected="selected">Épurée couleurs - Plan IGN</option>
+                <option value="https://betagouv.github.io/styles-de-cartes/maps/map_simplified_grey_ign.json">Épurée - Plan IGN</option>
+                {# <option value="https://betagouv.github.io/styles-de-cartes/maps/map_aerial_photography_ign.json">Aérienne - Ortho IGN</option> #}
+                {# <option value="https://betagouv.github.io/styles-de-cartes/maps/map_simplified_osm-etalab.json">Épurée - OSM Etalab</option> #}
             </select>
-        </div> #}
+        </div>
         <div id="metadata-panel">
             <p id="style-name"class="fr-text--lead fr-text--bold"></p>
             <p id="style-version"></p>
@@ -34,7 +34,7 @@ showMaps: true
     let protocol = new pmtiles.Protocol({metadata: true});
     maplibregl.addProtocol("pmtiles", protocol.tile);
     // Map initialization
-    const map = new maplibregl.Map({container: 'map', style: 'https://betagouv.github.io/styles-de-cartes/maps/map_simplified_ign.json'});
+    const map = new maplibregl.Map({container: 'map', style: 'https://betagouv.github.io/styles-de-cartes/maps/map_simplified_colored_ign.json'});
     map.addControl(new maplibregl.NavigationControl());
     // Référence au div pour afficher le niveau de zoom
     const zoomLevelDiv = document.getElementById('zoom-level');
