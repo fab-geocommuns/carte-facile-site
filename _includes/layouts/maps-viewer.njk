@@ -34,7 +34,12 @@ showMaps: true
     let protocol = new pmtiles.Protocol({metadata: true});
     maplibregl.addProtocol("pmtiles", protocol.tile);
     // Map initialization
-    const map = new maplibregl.Map({container: 'map', style: 'https://betagouv.github.io/styles-de-cartes/maps/map_simplified_colored_ign.json'});
+    const map = new maplibregl.Map({
+        container: 'map', 
+        style: 'https://betagouv.github.io/styles-de-cartes/maps/map_simplified_colored_ign.json',
+        maxZoom: 22,
+    });
+
     map.addControl(new maplibregl.NavigationControl());
     // Référence au div pour afficher le niveau de zoom
     const zoomLevelDiv = document.getElementById('zoom-level');
