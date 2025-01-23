@@ -1,4 +1,4 @@
----
+<!-- ---
 title: Composants pratiques
 layout: layouts/docs.njk
 description: Composants prêts à l'emploi pour améliorer l'usage de vos cartes.
@@ -7,7 +7,7 @@ eleventyNavigation:
   order: 3
   nav: docs
 ---
-
+ -->
 :::callout 🛠️ Page en cours de rédaction
 Le contenu n'est pas représentatif du contenu final.
 :::

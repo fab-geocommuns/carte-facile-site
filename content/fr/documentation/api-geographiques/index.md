@@ -6,6 +6,7 @@ eleventyNavigation:
   key: API géographiques
   order: 4
   nav: docs
+permalink: false
 ---
 
 Deux API sont mises à disposition par la Direction Interministérielle du Numérique (DINUM) et l'Institut national de l’information géographique et forestière (IGN) :
