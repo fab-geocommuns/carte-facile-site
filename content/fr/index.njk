@@ -3,10 +3,10 @@ title: Fonds de cartes
 layout: layouts/home.njk
 numberOfLatestPostsToShow: 3
 ---
-<div style="background: var(--light-options-illustration-color-975-default-green-bourgeon-975, #E6FEDA); height: fr-py-6h; overflow: hidden;">
+<div style="background: var(--green-bourgeon-975-75); overflow: hidden;">
   <div class="fr-container">
     <div class="fr-grid-row">
-      <div class="fr-col-12 fr-col-md-6 fr-py-9w">
+      <div class="fr-col-12 fr-col-md-6 fr-py-5w fr-py-md-9w">
         <h1>Des cartes clé en main, rapidement intégrables à votre site</h1>
         <p class="fr-text--lead">
           Compatibles avec les données IGN et OpenStreetMap
@@ -20,6 +20,25 @@ numberOfLatestPostsToShow: 3
       <div class="fr-col" style="position: relative">
         <img src="/img/maps_transition3.webp" alt="Illustration des fonds de cartes" style="position: absolute; top: 0; bottom: 0; height: 100%">
       </div>
+    </div>
+  </div>
+</div>
+<div class="fr-container fr-py-5w fr-py-md-9w">
+  <div class="fr-grid-row fr-grid-row--middle">
+    <div class="fr-col-11 fr-col-sm-8 fr-col-md-5" style="position: relative;">
+        <div style="border-radius: 1rem; overflow: hidden; filter: drop-shadow(var(--raised-shadow))" >
+          <img src="/img/code_preview.webp" class="fr-responsive-img" alt="Illustration des lignes de code pour intégrer une carte."/>
+        </div>
+        <span class="fr-p-3v" style="position: absolute; right: -1.5rem; top: -1.5rem; border-radius: 50%; color: var(--green-bourgeon-main-640); background: var(--green-bourgeon-975-75); filter: drop-shadow(var(--raised-shadow));">
+          <img src="/icons/timer-flash-line.svg" alt="" style=""/>
+        </span>
+    </div>
+    <div class="fr-col-12 fr-col-md-6 fr-col-offset-md-1 fr-mt-3w fr-mt-md-0">
+      <h2>Ajoutez-les en 2 minutes, en copiant quelques lignes</h1>
+      <p class="fr-text--lead">
+        Pour un rendu fonctionnelle et esthétique !
+      </p>
+      <a class="fr-btn fr-btn--secondary fr-btn--lg" href="{{ "/documentation/utiliser-les-cartes" | locale_url }}">Le tutoriel pas à pas</a>
     </div>
   </div>
 </div>
