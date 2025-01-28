@@ -4,34 +4,61 @@ showMaps: true
 ---
 <!-- Bloc containing the map -->
 <div id="map">
-    <div id="control-panel" class="map-panel map-main-panel">
-        <div class="map-panel_header">
-            <button class="fr-btn--close fr-btn">
-                Fermer
-            </button>
+    <aside id="map-selection" 
+           class="map-panel" 
+           aria-labelledby="panel-title">
+        <button id="open-panel-btn" 
+                class="fr-btn fr-btn--icon-left fr-icon-eye-line map-panel-toggle" 
+                aria-label="Ouvrir le panneau de sélection des cartes"
+                aria-controls="control-panel"
+                aria-expanded="true">
+            Afficher les cartes
+        </button>
+        <div class="map-panel--extended">
+            <div class="map-panel__header">
+                <button class="fr-btn--close fr-btn" 
+                        aria-label="Fermer le panneau de sélection des cartes"
+                        aria-controls="control-panel">
+                    Fermer
+                </button>
+            </div>
+            <div class="map-panel__content">
+                <h2 id="panel-title" class="fr-h5">Cartes</h2>
+                <div class="map-card">
+                    <div class="map-card__header">
+                        <div class="map-card__img">   
+                            <img src="/img/image.jpg" class="fr-responsive-img" alt="" />
+                        </div>
+                        <ul class="fr-badges-group">
+                            <li>
+                                <p class="fr-badge fr-badge--sm fr-badge--success">Affiché actuellement</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="map-card__content">
+                        <h3 class="map-card__title">Carte standard</h3>
+                        <p class="map-card__desc">Une carte couleur de contextualisation géographique, adaptée à la plupart des usages.</h3>
+                    </div>
+            </div>
+            <div class="map-card">
+                    <div class="map-card__header">
+                        <div class="map-card__img">   
+                            <img src="/img/image.jpg" class="fr-responsive-img" alt="" />
+                        </div>
+                        <ul class="fr-badges-group">
+                            <li>
+                                <p class="fr-badge fr-badge--sm fr-badge--green-emeraude">label badge</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="map-card__content">
+                        <h3 class="map-card__title">Carte standard</h3>
+                        <p class="map-card__desc">Une carte couleur de contextualisation géographique, adaptée à la plupart des usages.</h3>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="map-panel_content">
-            <h2 class="fr-h5">Cartes</h2>
-            {# <div class="fr-select-group">
-                <label class="fr-label" for="select">
-                    Fond de carte
-                </label>
-                <select class="fr-select" id="style-selector" name="select">
-                    <option value="https://betagouv.github.io/styles-de-cartes/maps/map_simplified_colored_ign.json" selected="selected">Épurée couleurs - Plan IGN</option>
-                    <option value="https://betagouv.github.io/styles-de-cartes/maps/map_simplified_grey_ign.json">Épurée - Plan IGN</option> #}
-                    {# <option value="https://betagouv.github.io/styles-de-cartes/maps/map_aerial_photography_ign.json">Aérienne - Ortho IGN</option> #}
-                    {# <option value="https://betagouv.github.io/styles-de-cartes/maps/map_simplified_osm-etalab.json">Épurée - OSM Etalab</option> #}
-                {# </select>
-            </div> #}
-            {# <div id="metadata-panel">
-                <p id="style-name"class="fr-text--lead fr-text--bold"></p>
-                <p id="style-version"></p>
-                <p id="style-owner"></p>
-                <p><a id="style-url" target="_blank" class="fr-link fr-icon-arrow-right-line fr-link--icon-right">Lien vers le fichier de style</a></p>
-                <p id="zoom-level"></p>
-            </div> #}
-        </div>
-    </div>
+    </aside>
     {# <div class="map-panel">
         <p id="zoom-level"></p>
     </div> #}
@@ -51,20 +78,20 @@ showMaps: true
 
     map.addControl(new maplibregl.NavigationControl());
     // Référence au div pour afficher le niveau de zoom
-    const zoomLevelDiv = document.getElementById('zoom-level');
+    //const zoomLevelDiv = document.getElementById('zoom-level');
     // Fonction pour mettre à jour le niveau de zoom affiché
     {# function updateZoomLevel() {
         const zoom = map.getZoom().toFixed(2); // Obtenir le zoom actuel, arrondi à 2 décimales
         zoomLevelDiv.innerText = `Zoom : ${zoom}`;
     } #}
     // Mettre à jour le niveau de zoom au chargement de la carte
-    map.on('load', updateZoomLevel);
+    // map.on('load', updateZoomLevel);
     // Écouter les changements de zoom
-    map.on('zoom', updateZoomLevel);
+    // map.on('zoom', updateZoomLevel);
     // Sélection du menu déroulant pour changer de style
-    const styleSelector = document.getElementById('style-selector');
+    //const styleSelector = document.getElementById('style-selector');
     // Function to fetch and display style metadata
-    async function displayStyleMetadata(styleUrl) {
+    {# async function displayStyleMetadata(styleUrl) {
         try {
             const response = await fetch(styleUrl);
             const styleJson = await response.json();
@@ -77,19 +104,32 @@ showMaps: true
         } catch (error) {
             console.error('Erreur lors du chargement des métadonnées:', error);
         }
-    }
+    } #}
 
     // Display metadata when map loads initially
-    map.on('load', () => {
+    {# map.on('load', () => {
         updateZoomLevel();
         // displayStyleMetadata(styleSelector.value);
         displayStyleMetadata("https://betagouv.github.io/styles-de-cartes/maps/map_simplified_ign.json");
-    });
+    }); #}
 
     // Update metadata when style changes
-    styleSelector.addEventListener('change', function () {
+    {# styleSelector.addEventListener('change', function () {
         const selectedStyle = styleSelector.value;
         map.setStyle(selectedStyle);
         displayStyleMetadata(selectedStyle);
-    });
+    }); #}
+
+    // Logic for open and close the side panel
+    const controlPanel = document.getElementById('map-selection');
+    const closeButton = controlPanel.querySelector('.fr-btn--close');
+    const openButton = document.getElementById('open-panel-btn');
+
+    function togglePanel(isOpen) {
+        controlPanel.setAttribute('aria-expanded', isOpen);
+        openButton.setAttribute('aria-expanded', !isOpen);
+    }
+
+    closeButton.addEventListener('click', () => togglePanel(false));
+    openButton.addEventListener('click', () => togglePanel(true));
 </script>
