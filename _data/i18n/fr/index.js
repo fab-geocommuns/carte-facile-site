@@ -44,5 +44,5 @@ module.exports = {
     system: "Système",
     tags: "Catégories",
     use_system_params: "Utilise les paramètres système.",
-    you_are_here: "Vous êtes ici",
+    you_are_here: "Vous êtes ici"
 };
