@@ -153,6 +153,11 @@ module.exports = function (eleventyConfig) {
         return collection.find(post => post.fileSlug === slug);
     });
 
+    eleventyConfig.addFilter("find", function(array, key, value) {
+        if (!array || !Array.isArray(array)) return null;
+        return array.find((item) => item[key] === value);
+    });
+
     // Customize Markdown library settings:
     eleventyConfig.amendLibrary("md", mdLib => {
         mdLib.use(markdownItAnchor, {

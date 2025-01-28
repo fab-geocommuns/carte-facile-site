@@ -2,6 +2,7 @@
 layout: layouts/base.njk
 showMaps: true
 ---
+
 <!-- Bloc containing the map -->
 <div id="map">
     <aside id="map-selection" 
@@ -24,38 +25,30 @@ showMaps: true
             </div>
             <div class="map-panel__content">
                 <h2 id="panel-title" class="fr-h5">Cartes</h2>
-                <div class="map-card">
-                    <div class="map-card__header">
-                        <div class="map-card__img">   
-                            <img src="/img/image.jpg" class="fr-responsive-img" alt="" />
+                {% if mapStyles and mapStyles.styles %}
+                    {% for style in mapStyles.styles %}
+                    <div class="map-card" data-style-url="{{ style.url }}">
+                        <div class="map-card__header">
+                            <div class="map-card__img">   
+                                <img src="{{ style.thumbnail }}" class="fr-responsive-img" alt="Aperçu de {{ style.title }}" />
+                            </div>
+                            <ul class="fr-badges-group">
+                                <li>
+                                    {% if style.isDefault %}
+                                    <p class="fr-badge fr-badge--sm fr-badge--success">Affiché actuellement</p>
+                                    {% endif %}
+                                </li>
+                            </ul>
                         </div>
-                        <ul class="fr-badges-group">
-                            <li>
-                                <p class="fr-badge fr-badge--sm fr-badge--success">Affiché actuellement</p>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="map-card__content">
-                        <h3 class="map-card__title">Carte standard</h3>
-                        <p class="map-card__desc">Une carte couleur de contextualisation géographique, adaptée à la plupart des usages.</h3>
-                    </div>
-            </div>
-            <div class="map-card">
-                    <div class="map-card__header">
-                        <div class="map-card__img">   
-                            <img src="/img/image.jpg" class="fr-responsive-img" alt="" />
+                        <div class="map-card__content">
+                            <h3 class="map-card__title">{{ style.title }}</h3>
+                            <p class="map-card__desc">{{ style.description }}</p>
                         </div>
-                        <ul class="fr-badges-group">
-                            <li>
-                                <p class="fr-badge fr-badge--sm fr-badge--green-emeraude">label badge</p>
-                            </li>
-                        </ul>
                     </div>
-                    <div class="map-card__content">
-                        <h3 class="map-card__title">Carte standard</h3>
-                        <p class="map-card__desc">Une carte couleur de contextualisation géographique, adaptée à la plupart des usages.</h3>
-                    </div>
-                </div>
+                    {% endfor %}
+                {% else %}
+                    <p>No map styles available</p>
+                {% endif %}
             </div>
         </div>
     </aside>
@@ -69,10 +62,14 @@ showMaps: true
     // loading the map.
     let protocol = new pmtiles.Protocol({metadata: true});
     maplibregl.addProtocol("pmtiles", protocol.tile);
-    // Map initialization
+    // Map initialization with default style
+    const defaultStyle = 'https://betagouv.github.io/styles-de-cartes/maps/map_simplified_colored_ign.json';
     const map = new maplibregl.Map({
         container: 'map', 
-        style: 'https://betagouv.github.io/styles-de-cartes/maps/map_simplified_colored_ign.json',
+        style: {% if mapStyles and mapStyles.styles %}
+            {% set defaultStyle = mapStyles.styles | find("isDefault", true) %}
+            {% if defaultStyle %}'{{ defaultStyle.url }}'{% else %}defaultStyle{% endif %}
+        {% else %}defaultStyle{% endif %},
         maxZoom: 18.9,
     });
 
@@ -132,4 +129,20 @@ showMaps: true
 
     closeButton.addEventListener('click', () => togglePanel(false));
     openButton.addEventListener('click', () => togglePanel(true));
+
+    // Add click handlers for style switching
+    document.querySelectorAll('.map-card').forEach(card => {
+        card.addEventListener('click', () => {
+            const styleUrl = card.dataset.styleUrl;
+            map.setStyle(styleUrl);
+            
+            // Update badges
+            document.querySelectorAll('.fr-badge--success').forEach(badge => badge.remove());
+            const badgeGroup = card.querySelector('.fr-badges-group');
+            const newBadge = document.createElement('p');
+            newBadge.className = 'fr-badge fr-badge--sm fr-badge--success';
+            newBadge.textContent = 'Affiché actuellement';
+            badgeGroup.querySelector('li').appendChild(newBadge);
+        });
+    });
 </script>
