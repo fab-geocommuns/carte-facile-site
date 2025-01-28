@@ -4,19 +4,39 @@ body {
     flex-direction: column;
 }
 #content { flex-grow: 1; }
-#map { height: 100%; width: 100%; }
-/* Bloc contenant zoom level et sélecteur de style */
-#control-panel {
+#map, .map-content { 
+    height: 100%; 
+    width: 100%; 
+}
+
+.map-panel {
+    background-color: var(--background-default-grey);
     position: absolute;
-    top: 0.5rem;
-    left: 0.5rem;
-    width: 20rem;
+    z-index: 3;
+    font-family: Marianne,arial,sans-serif;
+    filter: drop-shadow(var(--raised-shadow));
+}
+
+.map-panel_header {
+    padding: 1rem;
+    display: flex;
+
+}
+
+.map-panel_content {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-bottom: 4rem;
+}
+
+.map-main-panel {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 24rem;
+    max-width: 100%;
+    /* 
     display: flex;
     flex-direction: column;
-    background-color: white;
-    padding: 1rem; /* Padding interne de 1 rem */
-    border-radius: 0.5rem; /* Bordures arrondies */
-    box-shadow: 0 0.125rem 0.3125rem rgba(0,0,0,0.2); /* Ombre discrète */
-    z-index: 2;
-    gap: 1rem; /* Espace entre les éléments en flex */
+    gap: 1rem; */
 }

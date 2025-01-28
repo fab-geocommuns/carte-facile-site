@@ -2,30 +2,39 @@
 layout: layouts/base.njk
 showMaps: true
 ---
-
-<div
-    id="map">
-    <!-- Bloc qui contient le niveau de zoom et le sélecteur de style -->
-    <div id="control-panel">
-        <div class="fr-select-group">
-            <label class="fr-label" for="select">
-                Fond de carte
-            </label>
-            <select class="fr-select" id="style-selector" name="select">
-                <option value="https://betagouv.github.io/styles-de-cartes/maps/map_simplified_colored_ign.json" selected="selected">Épurée couleurs - Plan IGN</option>
-                <option value="https://betagouv.github.io/styles-de-cartes/maps/map_simplified_grey_ign.json">Épurée - Plan IGN</option>
-                {# <option value="https://betagouv.github.io/styles-de-cartes/maps/map_aerial_photography_ign.json">Aérienne - Ortho IGN</option> #}
-                {# <option value="https://betagouv.github.io/styles-de-cartes/maps/map_simplified_osm-etalab.json">Épurée - OSM Etalab</option> #}
-            </select>
+<!-- Bloc containing the map -->
+<div id="map">
+    <div id="control-panel" class="map-panel map-main-panel">
+        <div class="map-panel_header">
+            <button class="fr-btn--close fr-btn">
+                Fermer
+            </button>
         </div>
-        <div id="metadata-panel">
-            <p id="style-name"class="fr-text--lead fr-text--bold"></p>
-            <p id="style-version"></p>
-            <p id="style-owner"></p>
-            <p><a id="style-url" target="_blank" class="fr-link fr-icon-arrow-right-line fr-link--icon-right">Lien vers le fichier de style</a></p>
-            <p id="zoom-level"></p>
+        <div class="map-panel_content">
+            <h2 class="fr-h5">Cartes</h2>
+            {# <div class="fr-select-group">
+                <label class="fr-label" for="select">
+                    Fond de carte
+                </label>
+                <select class="fr-select" id="style-selector" name="select">
+                    <option value="https://betagouv.github.io/styles-de-cartes/maps/map_simplified_colored_ign.json" selected="selected">Épurée couleurs - Plan IGN</option>
+                    <option value="https://betagouv.github.io/styles-de-cartes/maps/map_simplified_grey_ign.json">Épurée - Plan IGN</option> #}
+                    {# <option value="https://betagouv.github.io/styles-de-cartes/maps/map_aerial_photography_ign.json">Aérienne - Ortho IGN</option> #}
+                    {# <option value="https://betagouv.github.io/styles-de-cartes/maps/map_simplified_osm-etalab.json">Épurée - OSM Etalab</option> #}
+                {# </select>
+            </div> #}
+            {# <div id="metadata-panel">
+                <p id="style-name"class="fr-text--lead fr-text--bold"></p>
+                <p id="style-version"></p>
+                <p id="style-owner"></p>
+                <p><a id="style-url" target="_blank" class="fr-link fr-icon-arrow-right-line fr-link--icon-right">Lien vers le fichier de style</a></p>
+                <p id="zoom-level"></p>
+            </div> #}
         </div>
     </div>
+    {# <div class="map-panel">
+        <p id="zoom-level"></p>
+    </div> #}
 </div>
 <script>
     // add the PMTiles plugin to the maplibregl global. setting metadata = true fills out the "attribution" field of the
@@ -44,10 +53,10 @@ showMaps: true
     // Référence au div pour afficher le niveau de zoom
     const zoomLevelDiv = document.getElementById('zoom-level');
     // Fonction pour mettre à jour le niveau de zoom affiché
-    function updateZoomLevel() {
+    {# function updateZoomLevel() {
         const zoom = map.getZoom().toFixed(2); // Obtenir le zoom actuel, arrondi à 2 décimales
         zoomLevelDiv.innerText = `Zoom : ${zoom}`;
-    }
+    } #}
     // Mettre à jour le niveau de zoom au chargement de la carte
     map.on('load', updateZoomLevel);
     // Écouter les changements de zoom
