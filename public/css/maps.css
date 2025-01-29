@@ -63,10 +63,15 @@ body {
     margin-bottom: 0;
 }
 
+.map-card {
+    transition: opacity 0.2s ease-in-out;
+    cursor: pointer;
+}
+
 .map-card__header {
     position: relative;
     margin-bottom: 0.5rem;
-  }
+}
 
 .map-card__header .fr-badges-group {
     left: 0;
@@ -79,12 +84,17 @@ body {
     flex: 0 0 auto;
 }
 
+.map-card:hover .map-card__img {
+    opacity: 0.75;
+}
+
 .map-card__img img {
     aspect-ratio: 1.7777777778;
     -o-object-fit: cover;
     object-fit: cover;
     -o-object-position: 50% 50%;
     object-position: 50% 50%;
+    border-radius: 0.25rem;
 }
 
 .map-card__title {
