@@ -24,27 +24,52 @@ showMaps: true
                 </button>
             </div>
             <div class="map-panel__content">
-                <h2 id="panel-title" class="fr-h5">Cartes</h2>
-                {% if mapStyles and mapStyles.styles %}
-                    {% for style in mapStyles.styles %}
-                    <div class="map-card" 
-                         data-style-url="{{ style.url }}"
-                         {% if style.isDefault %}aria-current="true"{% endif %}
-                         role="option">
-                        <div class="map-card__header">
-                            <span class="fr-icon-success-fill" aria-hidden="true"></span>
-                            <div class="map-card__img">   
-                                <img src="{{ style.thumbnail }}" class="fr-responsive-img" alt="Aperçu de {{ style.title }}" />
-                            </div>
+                <div class="map-panel__styles-list">
+                    <h2 id="panel-title" class="fr-h5">Cartes</h2>
+                    {% if mapStyles and mapStyles.styles %}
+                        <div class="map-card-grid">
+                            {% for style in mapStyles.styles %}
+                                <div class="map-card fr-card--shadow" 
+                                    data-style-url="{{ style.url }}"
+                                    data-style-title="{{ style.title }}"
+                                    data-style-description="{{ style.description }}"
+                                    data-style-attribution="{{ style.attribution }}"
+                                    data-style-version="{{ style.version }}"
+                                    {% if style.isDefault %}aria-current="true"{% endif %}
+                                    role="option">
+                                    <div class="map-card__header">
+                                        <span class="fr-icon-success-fill" aria-hidden="true"></span>
+                                        <div class="map-card__img">   
+                                            <img src="{{ style.thumbnail }}" class="fr-responsive-img" alt="Aperçu de {{ style.title }}" />
+                                        </div>
+                                    </div>
+                                    <div class="map-card__content">
+                                        <h3 class="map-card__title">{{ style.title }}</h3>
+                                    </div>
+                                </div>
+                            {% endfor %}
                         </div>
-                        <div class="map-card__content">
-                            <h3 class="map-card__title">{{ style.title }}</h3>
+                    {% else %}
+                        <p>No map styles available</p>
+                    {% endif %}
+                </div>
+                <div class="map-panel__style-details" style="display: none;">
+                    <button class="fr-btn fr-btn--secondary fr-btn--icon-left fr-icon-arrow-left-line" id="back-to-list">
+                        Retour à la liste
+                    </button>
+                    <div class="fr-mt-2w">
+                        <h2 class="fr-h5" id="style-title"></h2>
+                        <div class="map-card__img" alt="">   
+                            <img id="style-thumbnail" class="fr-responsive-img" alt="Aperçu de {{ style.title }}" />
                         </div>
+                        <p id="style-description" class="fr-text--sm fr-mb-2w"></p>
+                        <p class="fr-text--xs fr-mb-1w">Version : <span id="style-version"></span></p>
+                        <p id="style-attribution" class="fr-text--xs fr-mb-2w"></p>
+                        <button class="fr-btn" id="apply-style">
+                            Appliquer ce style
+                        </button>
                     </div>
-                    {% endfor %}
-                {% else %}
-                    <p>No map styles available</p>
-                {% endif %}
+                </div>
             </div>
         </div>
     </aside>

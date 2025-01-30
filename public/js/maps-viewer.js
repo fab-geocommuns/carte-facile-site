@@ -26,25 +26,68 @@
     closeButton.addEventListener('click', () => togglePanel(false));
     openButton.addEventListener('click', () => togglePanel(true));
 
-    // Add click handlers for style switching
+    const stylesList = controlPanel.querySelector('.map-panel__styles-list');
+    const styleDetails = controlPanel.querySelector('.map-panel__style-details');
+    const backButton = document.getElementById('back-to-list');
+    const applyStyleButton = document.getElementById('apply-style');
+    let selectedStyleUrl = null;
+
+    function showStyleDetails(card) {
+        const styleUrl = card.dataset.styleUrl;
+        const styleTitle = card.dataset.styleTitle;
+        const styleDescription = card.dataset.styleDescription;
+        const styleAttribution = card.dataset.styleAttribution;
+        const styleVersion = card.dataset.styleVersion;
+        const styleThumbnail = card.querySelector('img').src;
+
+        selectedStyleUrl = styleUrl;
+        document.getElementById('style-title').textContent = styleTitle;
+        document.getElementById('style-description').textContent = styleDescription;
+        document.getElementById('style-attribution').textContent = styleAttribution;
+        document.getElementById('style-version').textContent = styleVersion || 'Non spécifiée';
+        document.getElementById('style-thumbnail').src = styleThumbnail;
+        document.getElementById('style-thumbnail').alt = `Aperçu de ${styleTitle}`;
+
+        stylesList.style.display = 'none';
+        styleDetails.style.display = 'flex';
+    }
+
+    function showStylesList() {
+        stylesList.style.display = 'flex';
+        styleDetails.style.display = 'none';
+        selectedStyleUrl = null;
+    }
+
+    // Modify click handlers for style cards
     document.querySelectorAll('.map-card').forEach(card => {
         card.addEventListener('click', () => {
-            const styleUrl = card.dataset.styleUrl;
-            map.setStyle(styleUrl);
-            
-            // Update ARIA states
-            document.querySelectorAll('.map-card').forEach(c => {
-                c.setAttribute('aria-current', 'false');
-            });
-            card.setAttribute('aria-current', 'true');
+            showStyleDetails(card);
         });
 
-        // Ajout de la navigation au clavier
+        // Keep keyboard navigation
         card.addEventListener('keydown', (e) => {
             if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
                 card.click();
             }
         });
+    });
+
+    // Add back button handler
+    backButton.addEventListener('click', showStylesList);
+
+    // Add apply style button handler
+    applyStyleButton.addEventListener('click', () => {
+        if (selectedStyleUrl) {
+            map.setStyle(selectedStyleUrl);
+            
+            // Update ARIA states
+            document.querySelectorAll('.map-card').forEach(card => {
+                const isCurrent = card.dataset.styleUrl === selectedStyleUrl;
+                card.setAttribute('aria-current', isCurrent);
+            });
+
+            showStylesList();
+        }
     });
 })();
