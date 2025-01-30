@@ -9,6 +9,10 @@ body {
     width: 100%; 
 }
 
+#open-panel-btn {
+    border-radius: 0.25rem;
+}
+
 .map-panel {
     font-family: Marianne,arial,sans-serif;
 }
