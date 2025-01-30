@@ -42,9 +42,9 @@
 
         selectedStyleUrl = styleUrl;
         document.getElementById('style-title').textContent = styleTitle;
-        document.getElementById('style-description').textContent = styleDescription;
-        document.getElementById('style-attribution').textContent = styleAttribution;
         document.getElementById('style-version').textContent = styleVersion || 'Non spécifiée';
+        document.getElementById('style-description').textContent = styleDescription;
+        /* document.getElementById('style-attribution').textContent = styleAttribution; */
         document.getElementById('style-thumbnail').src = styleThumbnail;
         document.getElementById('style-thumbnail').alt = `Aperçu de ${styleTitle}`;
 

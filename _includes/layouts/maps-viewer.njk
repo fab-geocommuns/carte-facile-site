@@ -16,14 +16,14 @@ showMaps: true
             Afficher les cartes
         </button>
         <div class="map-panel--extended">
-            <div class="map-panel__header">
+            <div class="map-panel__header fr-mx-2w fr-mt-2w">
                 <button class="fr-btn--close fr-btn" 
                         aria-label="Fermer le panneau de sélection des cartes"
                         aria-controls="control-panel">
                     Fermer
                 </button>
             </div>
-            <div class="map-panel__content">
+            <div class="map-panel__content fr-px-2w fr-pb-4w">
                 <div class="map-panel__styles-list">
                     <h2 id="panel-title" class="fr-h5">Cartes</h2>
                     {% if mapStyles and mapStyles.styles %}
@@ -43,8 +43,8 @@ showMaps: true
                                             <img src="{{ style.thumbnail }}" class="fr-responsive-img" alt="Aperçu de {{ style.title }}" />
                                         </div>
                                     </div>
-                                    <div class="map-card__content">
-                                        <h3 class="map-card__title">{{ style.title }}</h3>
+                                    <div class="map-card__content fr-py-1w fr-px-3v">
+                                        <h3 class="map-card__title fr-mb-0">{{ style.title }}</h3>
                                     </div>
                                 </div>
                             {% endfor %}
@@ -54,21 +54,19 @@ showMaps: true
                     {% endif %}
                 </div>
                 <div class="map-panel__style-details" style="display: none;">
-                    <button class="fr-btn fr-btn--secondary fr-btn--icon-left fr-icon-arrow-left-line" id="back-to-list">
+                    <button class="fr-btn fr-btn--sm fr-btn--tertiary-no-outline fr-btn--icon-left fr-icon-arrow-left-line fr-mb-2w" id="back-to-list">
                         Retour à la liste
                     </button>
-                    <div class="fr-mt-2w">
-                        <h2 class="fr-h5" id="style-title"></h2>
-                        <div class="map-card__img" alt="">   
-                            <img id="style-thumbnail" class="fr-responsive-img" alt="Aperçu de {{ style.title }}" />
-                        </div>
-                        <p id="style-description" class="fr-text--sm fr-mb-2w"></p>
-                        <p class="fr-text--xs fr-mb-1w">Version : <span id="style-version"></span></p>
-                        <p id="style-attribution" class="fr-text--xs fr-mb-2w"></p>
-                        <button class="fr-btn" id="apply-style">
-                            Appliquer ce style
-                        </button>
+                    <h2 class="fr-h5 fr-mb-2w" id="style-title"></h2>
+                    <div class="map-card__img" alt="">   
+                        <img id="style-thumbnail" class="fr-responsive-img" alt="Aperçu de {{ style.title }}" />
                     </div>
+                    <p id="style-description" class="fr-text--sm"></p>
+                    {# <p id="style-attribution" class="fr-text--xs fr-mb-0"></p> #}
+                    <button class="fr-btn" id="apply-style">
+                        Appliquer ce style
+                    </button>
+                    <p class="fr-text--xs">Version : <span id="style-version"></span></p>
                 </div>
             </div>
         </div>
