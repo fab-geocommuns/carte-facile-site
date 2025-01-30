@@ -32,13 +32,19 @@
             const styleUrl = card.dataset.styleUrl;
             map.setStyle(styleUrl);
             
-            // Update badges
-            document.querySelectorAll('.fr-badge--success').forEach(badge => badge.remove());
-            const badgeGroup = card.querySelector('.fr-badges-group');
-            const newBadge = document.createElement('p');
-            newBadge.className = 'fr-badge fr-badge--sm fr-badge--success';
-            newBadge.textContent = 'Affichée actuellement';
-            badgeGroup.querySelector('li').appendChild(newBadge);
+            // Update ARIA states
+            document.querySelectorAll('.map-card').forEach(c => {
+                c.setAttribute('aria-current', 'false');
+            });
+            card.setAttribute('aria-current', 'true');
+        });
+
+        // Ajout de la navigation au clavier
+        card.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                card.click();
+            }
         });
     });
 })();

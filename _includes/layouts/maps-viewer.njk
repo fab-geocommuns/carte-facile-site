@@ -27,22 +27,18 @@ showMaps: true
                 <h2 id="panel-title" class="fr-h5">Cartes</h2>
                 {% if mapStyles and mapStyles.styles %}
                     {% for style in mapStyles.styles %}
-                    <div class="map-card" data-style-url="{{ style.url }}">
+                    <div class="map-card" 
+                         data-style-url="{{ style.url }}"
+                         {% if style.isDefault %}aria-current="true"{% endif %}
+                         role="option">
                         <div class="map-card__header">
+                            <span class="fr-icon-success-fill" aria-hidden="true"></span>
                             <div class="map-card__img">   
                                 <img src="{{ style.thumbnail }}" class="fr-responsive-img" alt="Aperçu de {{ style.title }}" />
                             </div>
-                            <ul class="fr-badges-group">
-                                <li>
-                                    {% if style.isDefault %}
-                                    <p class="fr-badge fr-badge--sm fr-badge--success">Affichée actuellement</p>
-                                    {% endif %}
-                                </li>
-                            </ul>
                         </div>
                         <div class="map-card__content">
                             <h3 class="map-card__title">{{ style.title }}</h3>
-                            <p class="map-card__desc">{{ style.description }}</p>
                         </div>
                     </div>
                     {% endfor %}
