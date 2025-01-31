@@ -21,11 +21,11 @@
 
   {% if showMaps %}
     <!-- Include MapLibre GL -->
-    <script src="https://unpkg.com/maplibre-gl@4.1.2/dist/maplibre-gl.js"></script>
+    <script src="https://unpkg.com/maplibre-gl/dist/maplibre-gl.js"></script>
     <link href="https://unpkg.com/maplibre-gl@4.1.2/dist/maplibre-gl.css" rel="stylesheet" />
     <!-- Inclure PMTiles -->
     <script src="https://unpkg.com/pmtiles@3.2.0/dist/pmtiles.js"></script>
-    {%- css %}{% include "public/css/maps.css" %}{% endcss %}
+    {%- css %}{% include "public/css/maps-viewer.css" %}{% endcss %}
   {% endif%}
 
   {%- css %}{% include "public/css/index.css" %}{% endcss %}

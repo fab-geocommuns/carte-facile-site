@@ -3,13 +3,13 @@ title: Fonds de cartes
 layout: layouts/home.njk
 numberOfLatestPostsToShow: 3
 ---
-<div style="background: var(--light-options-illustration-color-975-default-green-bourgeon-975, #E6FEDA); height: fr-py-6h; overflow: hidden;">
+<div style="background: var(--green-bourgeon-975-75); overflow: hidden;">
   <div class="fr-container">
     <div class="fr-grid-row">
-      <div class="fr-col fr-py-6w">
+      <div class="fr-col-12 fr-col-sm-8 fr-col-lg-6 fr-py-5w fr-py-md-9w">
         <h1>Des cartes clé en main, rapidement intégrables à votre site</h1>
-        <p class="fr-text--lead">
-          Compatibles avec les données IGN et OpenStreetMap
+        <p class="fr-text--sm">
+          Compatibles avec les données IGN et OpenStreetMap (prochainement)
           <span class="fr-grid-row fr-py-1w" style="gap: 0.75rem; height: 3rem">
             <img src="/icons/logo/logo_ign.webp" alt="Logo de l'IGN" style="max-height: 100%; max-width: 100%">
             <img src="/icons/logo/logo_osm.webp" alt="Logo d'OpenStreetMap" style="max-height: 100%; max-width: 100%">
@@ -23,18 +23,43 @@ numberOfLatestPostsToShow: 3
     </div>
   </div>
 </div>
-<div class="fr-container fr-my-6w">
-  <h2 class="fr-grid-row fr-grid-row--center fr-my-6w">Les avantages du service</h2>
-  <div class="fr-grid-row ">
-    <div class="fr-col fr-mr-2w">
-      <p>🟢 <strong>Un choix simple :</strong> Trop de choix tue le choix. Les quelques styles proposés sont conçus pour couvrir la majorité des usages courants.</p>
-      <p>🟢 <strong>Données fiables :</strong> Basé sur les sources de données de confiance IGN et OpenStreetMap.</p>
-      <p>🟢 <strong>Support multiplateforme (🛠️ en cours):</strong> Compatible avec les principaux frameworks web et mobiles, ainsi qu'avec les logiciels les plus utilisés grâce à des plugins</p>
+<div class="fr-container fr-py-5w fr-py-md-9w">
+  <div class="fr-grid-row fr-grid-row--middle">
+    <div class="fr-col-11 fr-col-sm-8 fr-col-md-5" style="position: relative;">
+        <div style="border-radius: 1rem; overflow: hidden; filter: drop-shadow(var(--raised-shadow))" >
+          <img src="/img/code_preview.webp" class="fr-responsive-img" alt="Illustration des lignes de code pour intégrer une carte."/>
+        </div>
+        <span class="fr-p-3v" style="position: absolute; right: -1.5rem; top: -1.5rem; border-radius: 50%; color: var(--green-bourgeon-main-640); background: var(--green-bourgeon-975-75); filter: drop-shadow(var(--raised-shadow));">
+          <img src="/icons/timer-flash-line.svg" alt="" style="width: 3rem; height: 3rem;"/>
+        </span>
     </div>
-    <div class="fr-col fr-ml-2w">      
-      <p>🟢 <strong>Mises à jour automatiques :</strong> Profitez des dernières améliorations et données géographiques sans effort grâce aux flux de données intégrés.</p>
-      <p>🟢 <strong>Facilité d'intégration :</strong> Des styles de carte prêts à l'emploi pour un déploiement rapide.</p>
-      <p>🟢 <strong>Haute disponibilité (🛠️ en cours):</strong> Compatible avec les principaux frameworks web et mobiles, ainsi qu'avec les logiciels les plus utilisés grâce à des plugins</p>
+    <div class="fr-col-12 fr-col-md-6 fr-col-offset-md-1 fr-mt-3w fr-mt-md-0">
+      <h2>Ajoutez-les en 2 minutes, en copiant quelques lignes</h1>
+      <p class="fr-text--lead">
+        Pour un rendu fonctionnelle et esthétique !
+      </p>
+      <a class="fr-btn fr-btn--secondary fr-btn--lg" href="{{ "/documentation/utiliser-les-cartes" | locale_url }}">Le tutoriel pas à pas</a>
+    </div>
+  </div>
+</div>
+<div style="background: var(--background-alt-grey);">
+  <div class="fr-container fr-py-6w">
+    <h2 class="fr-grid-row fr-grid-row--center">{{  data.benefits_title | safe }}</h2>
+    <div class="fr-grid-row fr-grid-row--gutters fr-my-4w">
+      {% for benefit in data.benefits %}
+        {% if not benefit.title.includes('🛠️') %}
+          <div class="fr-col-12 fr-col-sm-6 fr-col-md-4">
+            <div class="fr-col fr-card fr-card--sm fr-card--horizontal fr-card--shadow fr-card--no-border">
+              <div class="fr-card__body">
+                <div class="fr-card__content">
+                  <h3 class="fr-card__title">{{ benefit.title }}</h3>
+                  <p class="fr-card__desc">{{ benefit.description }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
     </div>
   </div>
 </div>

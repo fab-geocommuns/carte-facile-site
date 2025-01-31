@@ -3,79 +3,104 @@ layout: layouts/base.njk
 showMaps: true
 ---
 
-<div
-    id="map">
-    <!-- Bloc qui contient le niveau de zoom et le sélecteur de style -->
-    <div id="control-panel">
-        <div class="fr-select-group">
-            <label class="fr-label" for="select">
-                Fond de carte
-            </label>
-            <select class="fr-select" id="style-selector" name="select">
-                <option value="https://betagouv.github.io/styles-de-cartes/maps/map_simplified_colored_ign.json" selected="selected">Épurée couleurs - Plan IGN</option>
-                <option value="https://betagouv.github.io/styles-de-cartes/maps/map_simplified_grey_ign.json">Épurée - Plan IGN</option>
-                {# <option value="https://betagouv.github.io/styles-de-cartes/maps/map_aerial_photography_ign.json">Aérienne - Ortho IGN</option> #}
-                {# <option value="https://betagouv.github.io/styles-de-cartes/maps/map_simplified_osm-etalab.json">Épurée - OSM Etalab</option> #}
-            </select>
+<!-- Bloc containing the map -->
+<div id="map">
+    <aside id="map-selection" 
+           class="map-panel" 
+           aria-labelledby="panel-title">
+        <button id="open-panel-btn" 
+                class="fr-btn fr-btn--icon-left fr-icon-eye-line map-panel-toggle" 
+                aria-label="Ouvrir le panneau de sélection des cartes"
+                aria-controls="control-panel"
+                aria-expanded="true">
+            Afficher les cartes
+        </button>
+        <div class="map-panel--extended">
+            <div class="map-panel__header fr-mx-2w fr-mt-2w">
+                <button class="fr-btn--close fr-btn" 
+                        aria-label="Fermer le panneau de sélection des cartes"
+                        aria-controls="control-panel">
+                    Fermer
+                </button>
+            </div>
+            <div class="map-panel__content fr-px-2w fr-pb-4w">
+                <div class="map-panel__styles-list">
+                    <h2 id="panel-title" class="fr-h5">Cartes</h2>
+                    {% if mapStyles and mapStyles.styles %}
+                        <div class="map-card-grid">
+                            {% for style in mapStyles.styles %}
+                                <div class="map-card fr-card--shadow" 
+                                    data-style-url="{{ style.url }}"
+                                    data-style-title="{{ style.title }}"
+                                    data-style-description="{{ style.description }}"
+                                    data-style-attribution="{{ style.attribution }}"
+                                    data-style-version="{{ style.version }}"
+                                    data-style-use="{{ style.use }}"
+                                    data-style-accessibility="{{ style.accessibility }}"
+                                    data-style-source="{{ style.source }}"
+                                    {% if style.isDefault %}aria-current="true"{% endif %}
+                                    role="option">
+                                    <div class="map-card__header">
+                                        <span class="map-active-icon fr-icon-success-fill" aria-hidden="true"></span>
+                                        <div class="map-card__img">   
+                                            <img src="{{ style.thumbnail }}" class="fr-responsive-img" alt="Aperçu de {{ style.title }}" />
+                                        </div>
+                                    </div>
+                                    <div class="map-card__content fr-py-1w fr-px-3v">
+                                        <h3 class="map-card__title fr-mb-0">{{ style.title }}</h3>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        <p>No map styles available</p>
+                    {% endif %}
+                </div>
+                <div class="map-panel__style-details" style="display: none;">
+                    <button class="fr-btn fr-btn--sm fr-btn--tertiary-no-outline fr-btn--icon-left fr-icon-arrow-left-line fr-mb-2w" id="back-to-list">
+                        Retour à la liste
+                    </button>
+                    <div class="map-card__img fr-mb-2w" style="position: relative;">   
+                        <span class="map-active-icon fr-icon-success-fill" aria-hidden="true"></span>
+                        <img id="style-thumbnail" class="fr-responsive-img" alt="" />
+                    </div>
+                    <h2 class="fr-h5 fr-mb-3v" id="style-title"></h2>
+                    <p id="style-description" class="fr-text"></p>
+                    <ul class="fr-btns-group">
+                        <li>
+                            <button class="fr-btn" id="apply-style">
+                                Afficher la carte
+                            </button>
+                        </li>
+                        <li>
+                            <a href="" 
+                               target="_blank" 
+                               rel="noopener" 
+                               class="fr-btn fr-btn--secondary"
+                               id="style-url-link">
+                                URL du fichier de style
+                            </a>
+                        </li>
+                    </ul>
+                    <a class="fr-link fr-link--sm fr-icon-arrow-right-line fr-link--icon-right fr-mb-4w" href="{{ "/documentation/utiliser-les-cartes" | locale_url }}">Tutoriel d'utilisation</a>
+                    <h3 class="fr-h6 fr-mb-1w">Usage</h3>
+                    <p id="style-use" class="fr-text--sm"></p>
+                    <h3 class="fr-h6 fr-mb-1w">Accessibilité</h3>
+                    <p id="style-accessibility" class="fr-text--sm"></p>
+                    <p class="fr-text--sm fr-mb-0">Version : <span id="style-version"></span></p>
+                    <p class="fr-text--sm">Source : <span id="style-source"></span></p>
+                </div>
+            </div>
         </div>
-        <div id="metadata-panel">
-            <p id="style-name"class="fr-text--lead fr-text--bold"></p>
-            <p id="style-version"></p>
-            <p id="style-owner"></p>
-            <p><a id="style-url" target="_blank" class="fr-link fr-icon-arrow-right-line fr-link--icon-right">Lien vers le fichier de style</a></p>
-            <p id="zoom-level"></p>
-        </div>
-    </div>
+    </aside>
+    {# <div class="map-panel">
+        <p id="zoom-level"></p>
+    </div> #}
 </div>
 <script>
-    // add the PMTiles plugin to the maplibregl global. setting metadata = true fills out the "attribution" field of the
-    // source, and is required for some inspector applications, but requires an additional blocking HTTP request before
-    // loading the map.
-    let protocol = new pmtiles.Protocol({metadata: true});
-    maplibregl.addProtocol("pmtiles", protocol.tile);
-    // Map initialization
-    const map = new maplibregl.Map({container: 'map', style: 'https://betagouv.github.io/styles-de-cartes/maps/map_simplified_colored_ign.json'});
-    map.addControl(new maplibregl.NavigationControl());
-    // Référence au div pour afficher le niveau de zoom
-    const zoomLevelDiv = document.getElementById('zoom-level');
-    // Fonction pour mettre à jour le niveau de zoom affiché
-    function updateZoomLevel() {
-        const zoom = map.getZoom().toFixed(2); // Obtenir le zoom actuel, arrondi à 2 décimales
-        zoomLevelDiv.innerText = `Zoom : ${zoom}`;
-    }
-    // Mettre à jour le niveau de zoom au chargement de la carte
-    map.on('load', updateZoomLevel);
-    // Écouter les changements de zoom
-    map.on('zoom', updateZoomLevel);
-    // Sélection du menu déroulant pour changer de style
-    const styleSelector = document.getElementById('style-selector');
-    // Function to fetch and display style metadata
-    async function displayStyleMetadata(styleUrl) {
-        try {
-            const response = await fetch(styleUrl);
-            const styleJson = await response.json();
-            
-            // Update metadata display
-            document.getElementById('style-name').innerText = `${styleJson.metadata.name || 'Non défini'}`;
-            document.getElementById('style-version').innerText = `Version: ${styleJson.metadata.version || 'Non définie'}`;
-            document.getElementById('style-owner').innerText = `Description: ${styleJson.metadata.description || 'Non défini'}`;
-            document.getElementById('style-url').href = `${styleJson.metadata.url || 'Non défini'}`;
-        } catch (error) {
-            console.error('Erreur lors du chargement des métadonnées:', error);
-        }
-    }
-
-    // Display metadata when map loads initially
-    map.on('load', () => {
-        updateZoomLevel();
-        // displayStyleMetadata(styleSelector.value);
-        displayStyleMetadata("https://betagouv.github.io/styles-de-cartes/maps/map_simplified_ign.json");
-    });
-
-    // Update metadata when style changes
-    styleSelector.addEventListener('change', function () {
-        const selectedStyle = styleSelector.value;
-        map.setStyle(selectedStyle);
-        displayStyleMetadata(selectedStyle);
-    });
+    window.defaultMapStyle = {% if mapStyles and mapStyles.styles %}
+        {% set defaultStyle = mapStyles.styles | find("isDefault", true) %}
+        {% if defaultStyle %}'{{ defaultStyle.url }}'{% else %}null{% endif %}
+    {% else %}null{% endif %};
 </script>
+<script type="text/javascript" src="/js/maps-viewer.js"></script>
