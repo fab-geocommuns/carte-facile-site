@@ -1,0 +1,42 @@
+{#
+  Usage example:
+  {% set tabItems = [
+    { id: 'tab1', label: 'First Tab', content: 'Content for first tab' },
+    { id: 'tab2', label: 'Second Tab', content: 'Content for second tab' }
+  ] %}
+  
+  {% include "components/tab.njk" with {
+    tabId: "uniqueTabId",
+    items: tabItems
+  } %}
+#}
+
+{% macro tabs(params) %}
+  <div class="fr-tabs">
+    <ul class="fr-tabs__list" role="tablist" aria-label="{{ params.ariaLabel | default('Onglets') }}">
+      {% for item in params.items %}
+        <li role="presentation">
+          <button 
+            id="tabpanel-{{ item.id }}"
+            class="fr-tabs__tab" 
+            tabindex="{{ loop.index0 }}"
+            role="tab"
+            aria-selected="{% if loop.first %}true{% else %}false{% endif %}"
+            aria-controls="tabpanel-{{ item.id }}-panel">
+            {{ item.label }}
+          </button>
+        </li>
+      {% endfor %}
+    </ul>
+    {% for item in params.items %}
+      <div 
+        class="fr-tabs__panel fr-tabs__panel{% if loop.first %}--selected{% endif %}"
+        id="tabpanel-{{ item.id }}-panel"
+        role="tabpanel"
+        aria-labelledby="tabpanel-{{ item.id }}"
+        tabindex="0">
+        {{ item.content | safe }}
+      </div>
+    {% endfor %}
+  </div>
+{% endmacro %}
