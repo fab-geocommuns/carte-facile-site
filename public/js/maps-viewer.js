@@ -53,6 +53,9 @@
         document.getElementById('style-accessibility').textContent = styleAccessibility || 'Non spécifié';
         document.getElementById('style-source').textContent = styleSource || 'Non spécifiée';
 
+        // Mise à jour du lien vers le fichier de style
+        document.getElementById('style-url-link').href = styleUrl;
+
         stylesList.style.display = 'none';
         styleDetails.style.display = 'flex';
     }
