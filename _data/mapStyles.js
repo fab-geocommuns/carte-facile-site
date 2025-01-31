@@ -2,12 +2,12 @@ module.exports = async function() {
     const styles = [
         {
             id: "standard_ign",
-            url: "https://betagouv.github.io/styles-de-cartes/maps/map_standard_ign.json",
+            url: "https://betagouv.github.io/styles-de-cartes/maps/standard_ign.json",
             isDefault: true
         },
         {
             id: "light_ign",
-            url: "https://betagouv.github.io/styles-de-cartes/maps/map_light_ign.json"
+            url: "https://betagouv.github.io/styles-de-cartes/maps/light_ign.json"
         }
     ];
 
