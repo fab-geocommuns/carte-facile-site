@@ -98,7 +98,7 @@ body {
     --active: var(--background-raised-grey-active);
   }
 
-.map-card__header span {
+.map-active-icon  {
     display: none;
     position: absolute;
     top: 0.5rem;
@@ -107,7 +107,7 @@ body {
     z-index: 1;
 }
 
-.map-card[aria-current="true"] .map-card__header span {
+.map-card[aria-current="true"] .map-active-icon {
     display: block;
 }
 
@@ -131,4 +131,9 @@ body {
     font-size: .875rem;
     line-height: 1.5rem;
     font-weight: normal;
+}
+
+.map-panel__style-details .map-card__img {
+    border-radius: 0.25rem;
+    overflow: hidden;
 }

@@ -52,10 +52,12 @@
         document.getElementById('style-use').textContent = styleUse || 'Non spécifié';
         document.getElementById('style-accessibility').textContent = styleAccessibility || 'Non spécifié';
         document.getElementById('style-source').textContent = styleSource || 'Non spécifiée';
-
-        // Mise à jour du lien vers le fichier de style
         document.getElementById('style-url-link').href = styleUrl;
 
+        // Update success icon in details
+        const isCurrentStyle = card.getAttribute('aria-current') === 'true';
+        styleDetails.querySelector('.map-active-icon').style.display = isCurrentStyle ? 'block' : 'none';
+        
         stylesList.style.display = 'none';
         styleDetails.style.display = 'flex';
     }
@@ -89,10 +91,16 @@
         if (selectedStyleUrl) {
             map.setStyle(selectedStyleUrl);
             
-            // Update ARIA states
-            document.querySelectorAll('.map-card').forEach(card => {
-                const isCurrent = card.dataset.styleUrl === selectedStyleUrl;
-                card.setAttribute('aria-current', isCurrent);
+            // Update ARIA states and checkmarks
+            document.querySelectorAll('.map-card, .map-panel__style-details .map-active-icon').forEach(element => {
+                const isCurrent = element.closest('.map-card')?.dataset.styleUrl === selectedStyleUrl;
+                if (element.classList.contains('map-card')) {
+                    element.setAttribute('aria-current', isCurrent);
+                }
+                // Pour l'icône dans les détails
+                if (element.classList.contains('map-active-icon')) {
+                    element.style.display = isCurrent ? 'block' : 'none';
+                }
             });
 
             showStylesList();
