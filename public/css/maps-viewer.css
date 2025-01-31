@@ -61,6 +61,7 @@ body {
 .map-panel__styles-list, .map-panel__style-details {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
 }
 
 .map-panel__styles-list .map-card-grid {

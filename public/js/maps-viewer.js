@@ -39,14 +39,19 @@
         const styleAttribution = card.dataset.styleAttribution;
         const styleVersion = card.dataset.styleVersion;
         const styleThumbnail = card.querySelector('img').src;
+        const styleUse = card.dataset.styleUse;
+        const styleAccessibility = card.dataset.styleAccessibility;
+        const styleSource = card.dataset.styleSource;
 
         selectedStyleUrl = styleUrl;
         document.getElementById('style-title').textContent = styleTitle;
         document.getElementById('style-version').textContent = styleVersion || 'Non spécifiée';
         document.getElementById('style-description').textContent = styleDescription;
-        /* document.getElementById('style-attribution').textContent = styleAttribution; */
         document.getElementById('style-thumbnail').src = styleThumbnail;
         document.getElementById('style-thumbnail').alt = `Aperçu de ${styleTitle}`;
+        document.getElementById('style-use').textContent = styleUse || 'Non spécifié';
+        document.getElementById('style-accessibility').textContent = styleAccessibility || 'Non spécifié';
+        document.getElementById('style-source').textContent = styleSource || 'Non spécifiée';
 
         stylesList.style.display = 'none';
         styleDetails.style.display = 'flex';

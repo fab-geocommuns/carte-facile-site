@@ -27,7 +27,7 @@ async function fetchStyleMetadata(style) {
     try {
         // Add timeout to prevent hanging
         const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
+        const timeoutId = setTimeout(() => controller.abort(), 5000);
 
         const response = await fetch(style.url, { 
             signal: controller.signal,
@@ -53,6 +53,9 @@ async function fetchStyleMetadata(style) {
             ...style,
             title: styleJson.metadata.fr?.name || style.id,
             description: styleJson.metadata.fr?.description || '',
+            use: styleJson.metadata.fr?.use || '',
+            accessibility: styleJson.metadata.fr?.accessibility || '',
+            source: styleJson.metadata?.source || '',
             thumbnail: styleJson.metadata?.thumbnail || `/img/thumbnails/map-${style.id}.jpg`,
             version: styleJson.metadata?.version,
             attribution: styleJson.metadata?.attribution || '',
@@ -76,6 +79,9 @@ async function fetchStyleMetadata(style) {
             ...style,
             title: style.id,
             description: errorMessage,
+            use: '',
+            accessibility: '',
+            source: '',
             thumbnail: `/img/thumbnails/map-${style.id}.jpg`,
             isFromSource: false,
             error: error.message

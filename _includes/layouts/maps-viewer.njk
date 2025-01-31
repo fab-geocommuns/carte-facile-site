@@ -35,6 +35,9 @@ showMaps: true
                                     data-style-description="{{ style.description }}"
                                     data-style-attribution="{{ style.attribution }}"
                                     data-style-version="{{ style.version }}"
+                                    data-style-use="{{ style.use }}"
+                                    data-style-accessibility="{{ style.accessibility }}"
+                                    data-style-source="{{ style.source }}"
                                     {% if style.isDefault %}aria-current="true"{% endif %}
                                     role="option">
                                     <div class="map-card__header">
@@ -57,16 +60,30 @@ showMaps: true
                     <button class="fr-btn fr-btn--sm fr-btn--tertiary-no-outline fr-btn--icon-left fr-icon-arrow-left-line fr-mb-2w" id="back-to-list">
                         Retour à la liste
                     </button>
-                    <h2 class="fr-h5 fr-mb-2w" id="style-title"></h2>
-                    <div class="map-card__img" alt="">   
+                    <div class="map-card__img fr-mb-2w" alt="">   
                         <img id="style-thumbnail" class="fr-responsive-img" alt="Aperçu de {{ style.title }}" />
                     </div>
-                    <p id="style-description" class="fr-text--sm"></p>
-                    {# <p id="style-attribution" class="fr-text--xs fr-mb-0"></p> #}
-                    <button class="fr-btn" id="apply-style">
-                        Appliquer ce style
-                    </button>
-                    <p class="fr-text--xs">Version : <span id="style-version"></span></p>
+                    <h2 class="fr-h5 fr-mb-3v" id="style-title"></h2>
+                    <p id="style-description" class="fr-text"></p>
+                    <ul class="fr-btns-group">
+                        <li>
+                            <button class="fr-btn" id="apply-style">
+                                Afficher la carte
+                            </button>
+                        </li>
+                        <li>
+                            <a type="button" href="[url - à modifier]" target="_blank" rel="noopener" class="fr-btn fr-btn--secondary">
+                                URL du fichier de style
+                            </a>
+                        </li>
+                    </ul>
+                    <a class="fr-link fr-link--sm fr-icon-arrow-right-line fr-link--icon-right fr-mb-4w" href="{{ "/documentation/utiliser-les-cartes" | locale_url }}">Tutoriel d'utilisation</a>
+                    <h3 class="fr-h6 fr-mb-1w">Usage</h3>
+                    <p id="style-use" class="fr-text--sm"></p>
+                    <h3 class="fr-h6 fr-mb-1w">Accessibilité</h3>
+                    <p id="style-accessibility" class="fr-text--sm"></p>
+                    <p class="fr-text--xs fr-mb-0">Version : <span id="style-version"></span></p>
+                    <p class="fr-text--xs">Source : <span id="style-source"></span></p>
                 </div>
             </div>
         </div>
