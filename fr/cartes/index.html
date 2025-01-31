@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="/fonds-de-cartes/css/utility/utility.min.css">
 
     <!-- Include MapLibre GL -->
-    <script src="https://unpkg.com/maplibre-gl@4.1.2/dist/maplibre-gl.js"></script>
+    <script src="https://unpkg.com/maplibre-gl/dist/maplibre-gl.js"></script>
     <link href="https://unpkg.com/maplibre-gl@4.1.2/dist/maplibre-gl.css" rel="stylesheet">
     <!-- Inclure PMTiles -->
     <script src="https://unpkg.com/pmtiles@3.2.0/dist/pmtiles.js"></script>
@@ -29,21 +29,138 @@ body {
     flex-direction: column;
 }
 #content { flex-grow: 1; }
-#map { height: 100%; width: 100%; }
-/* Bloc contenant zoom level et sélecteur de style */
-#control-panel {
+#map { 
+    height: 100%; 
+    width: 100%; 
+}
+
+#open-panel-btn {
+    border-radius: 0.25rem;
+}
+
+.map-panel {
+    font-family: Marianne,arial,sans-serif;
+}
+
+.map-panel-toggle {
+    z-index: 5;
+    display: none;
     position: absolute;
     top: 0.5rem;
     left: 0.5rem;
-    width: 20rem;
+}
+
+.map-panel[aria-expanded="false"] .map-panel--extended {
+    display: none;
+}
+
+.map-panel[aria-expanded="false"] .map-panel-toggle {
+    display: inline-flex;
+}
+
+.map-panel--extended {
+    position: absolute;
+    width: 24rem;
+    max-width: 100%;
     display: flex;
     flex-direction: column;
-    background-color: white;
-    padding: 1rem; /* Padding interne de 1 rem */
-    border-radius: 0.5rem; /* Bordures arrondies */
-    box-shadow: 0 0.125rem 0.3125rem rgba(0,0,0,0.2); /* Ombre discrète */
-    z-index: 2;
-    gap: 1rem; /* Espace entre les éléments en flex */
+    background-color: var(--background-default-grey);
+    z-index: 3;
+    filter: drop-shadow(var(--raised-shadow));
+    top: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.map-panel__header {
+    display: flex;
+}
+
+.map-panel__content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+}
+
+.map-panel__styles-list, .map-panel__style-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.map-panel__styles-list .map-card-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.map-card {
+    transition: opacity 0.2s ease-in-out;
+    cursor: pointer;
+    background-color: var(--background-default-grey);
+    position: relative;
+    border-radius: 0.25rem;
+    overflow: hidden;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+@media (min-width: 20rem) {
+    .map-card {
+        flex: 0 0 calc(50% - 0.5rem);
+        max-width: calc(50% - 0.5rem);
+    }
+}
+
+.map-card:hover {
+    background-color: var(--background-default-grey-hover);
+}
+
+.map-card--shadow {
+    --idle: transparent;
+    --hover: var(--background-raised-grey-hover);
+    --active: var(--background-raised-grey-active);
+  }
+
+.map-active-icon  {
+    display: none;
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    color: var(--text-active-blue-france);
+    z-index: 1;
+}
+
+.map-card[aria-current="true"] .map-active-icon {
+    display: block;
+}
+
+.map-card__header {
+    position: relative;
+}
+
+.map-card__img {
+    flex: 0 0 auto;
+}
+
+.map-card__img img {
+    aspect-ratio: 1.7777777778;
+    object-fit: cover;
+    object-position: 50% 50%;
+    width: 100%;
+    display: block;
+}
+
+.map-card__title {  
+    font-size: .875rem;
+    line-height: 1.5rem;
+    font-weight: normal;
+}
+
+.map-panel__style-details .map-card__img {
+    border-radius: 0.25rem;
+    overflow: hidden;
 }
 /* Defaults */
 :root {
@@ -127,6 +244,10 @@ a[href].header-anchor:focus,
 
 h2 + .header-anchor {
     font-size: 1.5em;
+}
+
+img {
+    display: block;
 }
 
 /* Custom DSFR */
@@ -497,81 +618,85 @@ pre[class*="language-"] {
 
 <main id="content">
   
+<!-- Bloc containing the map -->
 <div id="map">
-    <!-- Bloc qui contient le niveau de zoom et le sélecteur de style -->
-    <div id="control-panel">
-        <div class="fr-select-group">
-            <label class="fr-label" for="select">
-                Fond de carte
-            </label>
-            <select class="fr-select" id="style-selector" name="select">
-                <option value="https://betagouv.github.io/styles-de-cartes/maps/map_simplified_colored_ign.json" selected="selected">Épurée couleurs - Plan IGN</option>
-                <option value="https://betagouv.github.io/styles-de-cartes/maps/map_simplified_grey_ign.json">Épurée - Plan IGN</option>
-                
-                
-            </select>
+    <aside id="map-selection" class="map-panel" aria-labelledby="panel-title">
+        <button id="open-panel-btn" class="fr-btn fr-btn--icon-left fr-icon-eye-line map-panel-toggle" aria-label="Ouvrir le panneau de sélection des cartes" aria-controls="control-panel" aria-expanded="true">
+            Afficher les cartes
+        </button>
+        <div class="map-panel--extended">
+            <div class="map-panel__header fr-mx-2w fr-mt-2w">
+                <button class="fr-btn--close fr-btn" aria-label="Fermer le panneau de sélection des cartes" aria-controls="control-panel">
+                    Fermer
+                </button>
+            </div>
+            <div class="map-panel__content fr-px-2w fr-pb-4w">
+                <div class="map-panel__styles-list">
+                    <h2 id="panel-title" class="fr-h5">Cartes</h2>
+                        <div class="map-card-grid">
+                                <div class="map-card fr-card--shadow" data-style-url="https://betagouv.github.io/styles-de-cartes/maps/standard_ign.json" data-style-title="Standard" data-style-description="Une carte couleur de contextualisation géographique, adaptée à la plupart des usages." data-style-attribution="" data-style-version="0.9.0" data-style-use="Recommandé pour les applications cartographiques générales. Ses couleurs légères permettent une superposition d&#39;éléments, comme des marqueurs et différents types de données." data-style-accessibility="Les contrastes entre les toponymes et les différents aplats des zones géographiques sont travaillés ain d&#39;être bien perceptibles selon une diversité de perceptions visuelles." data-style-source="IGN" aria-current="true" role="option">
+                                    <div class="map-card__header">
+                                        <span class="map-active-icon fr-icon-success-fill" aria-hidden="true"></span>
+                                        <div class="map-card__img">   
+                                            <img src="https://betagouv.github.io/styles-de-cartes/thumbnails/thumbnail_map_standard_ign.webp" class="fr-responsive-img" alt="Aperçu de Standard">
+                                        </div>
+                                    </div>
+                                    <div class="map-card__content fr-py-1w fr-px-3v">
+                                        <h3 class="map-card__title fr-mb-0">Standard</h3>
+                                    </div>
+                                </div>
+                                <div class="map-card fr-card--shadow" data-style-url="https://betagouv.github.io/styles-de-cartes/maps/light_ign.json" data-style-title="Désaturée" data-style-description="" data-style-attribution="" data-style-version="0.9.0" data-style-use="" data-style-accessibility="" data-style-source="IGN" role="option">
+                                    <div class="map-card__header">
+                                        <span class="map-active-icon fr-icon-success-fill" aria-hidden="true"></span>
+                                        <div class="map-card__img">   
+                                            <img src="https://betagouv.github.io/styles-de-cartes/thumbnails/thumbnail_map_light_ign.webp" class="fr-responsive-img" alt="Aperçu de Désaturée">
+                                        </div>
+                                    </div>
+                                    <div class="map-card__content fr-py-1w fr-px-3v">
+                                        <h3 class="map-card__title fr-mb-0">Désaturée</h3>
+                                    </div>
+                                </div>
+                        </div>
+                </div>
+                <div class="map-panel__style-details" style="display: none;">
+                    <button class="fr-btn fr-btn--sm fr-btn--tertiary-no-outline fr-btn--icon-left fr-icon-arrow-left-line fr-mb-2w" id="back-to-list">
+                        Retour à la liste
+                    </button>
+                    <div class="map-card__img fr-mb-2w" style="position: relative;">   
+                        <span class="map-active-icon fr-icon-success-fill" aria-hidden="true"></span>
+                        <img id="style-thumbnail" class="fr-responsive-img" alt="">
+                    </div>
+                    <h2 class="fr-h5 fr-mb-3v" id="style-title"></h2>
+                    <p id="style-description" class="fr-text"></p>
+                    <ul class="fr-btns-group">
+                        <li>
+                            <button class="fr-btn" id="apply-style">
+                                Afficher la carte
+                            </button>
+                        </li>
+                        <li>
+                            <a href="." target="_blank" rel="noopener" class="fr-btn fr-btn--secondary" id="style-url-link">
+                                URL du fichier de style
+                            </a>
+                        </li>
+                    </ul>
+                    <a class="fr-link fr-link--sm fr-icon-arrow-right-line fr-link--icon-right fr-mb-4w" href="/fonds-de-cartes/fr/documentation/utiliser-les-cartes">Tutoriel d'utilisation</a>
+                    <h3 class="fr-h6 fr-mb-1w">Usage</h3>
+                    <p id="style-use" class="fr-text--sm"></p>
+                    <h3 class="fr-h6 fr-mb-1w">Accessibilité</h3>
+                    <p id="style-accessibility" class="fr-text--sm"></p>
+                    <p class="fr-text--sm fr-mb-0">Version : <span id="style-version"></span></p>
+                    <p class="fr-text--sm">Source : <span id="style-source"></span></p>
+                </div>
+            </div>
         </div>
-        <div id="metadata-panel">
-            <p id="style-name" class="fr-text--lead fr-text--bold"></p>
-            <p id="style-version"></p>
-            <p id="style-owner"></p>
-            <p><a id="style-url" target="_blank" class="fr-link fr-icon-arrow-right-line fr-link--icon-right">Lien vers le fichier de style</a></p>
-            <p id="zoom-level"></p>
-        </div>
-    </div>
+    </aside>
+    
 </div>
 <script>
-    // add the PMTiles plugin to the maplibregl global. setting metadata = true fills out the "attribution" field of the
-    // source, and is required for some inspector applications, but requires an additional blocking HTTP request before
-    // loading the map.
-    let protocol = new pmtiles.Protocol({metadata: true});
-    maplibregl.addProtocol("pmtiles", protocol.tile);
-    // Map initialization
-    const map = new maplibregl.Map({container: 'map', style: 'https://betagouv.github.io/styles-de-cartes/maps/map_simplified_colored_ign.json'});
-    map.addControl(new maplibregl.NavigationControl());
-    // Référence au div pour afficher le niveau de zoom
-    const zoomLevelDiv = document.getElementById('zoom-level');
-    // Fonction pour mettre à jour le niveau de zoom affiché
-    function updateZoomLevel() {
-        const zoom = map.getZoom().toFixed(2); // Obtenir le zoom actuel, arrondi à 2 décimales
-        zoomLevelDiv.innerText = `Zoom : ${zoom}`;
-    }
-    // Mettre à jour le niveau de zoom au chargement de la carte
-    map.on('load', updateZoomLevel);
-    // Écouter les changements de zoom
-    map.on('zoom', updateZoomLevel);
-    // Sélection du menu déroulant pour changer de style
-    const styleSelector = document.getElementById('style-selector');
-    // Function to fetch and display style metadata
-    async function displayStyleMetadata(styleUrl) {
-        try {
-            const response = await fetch(styleUrl);
-            const styleJson = await response.json();
-            
-            // Update metadata display
-            document.getElementById('style-name').innerText = `${styleJson.metadata.name || 'Non défini'}`;
-            document.getElementById('style-version').innerText = `Version: ${styleJson.metadata.version || 'Non définie'}`;
-            document.getElementById('style-owner').innerText = `Description: ${styleJson.metadata.description || 'Non défini'}`;
-            document.getElementById('style-url').href = `${styleJson.metadata.url || 'Non défini'}`;
-        } catch (error) {
-            console.error('Erreur lors du chargement des métadonnées:', error);
-        }
-    }
-
-    // Display metadata when map loads initially
-    map.on('load', () => {
-        updateZoomLevel();
-        // displayStyleMetadata(styleSelector.value);
-        displayStyleMetadata("https://betagouv.github.io/styles-de-cartes/maps/map_simplified_ign.json");
-    });
-
-    // Update metadata when style changes
-    styleSelector.addEventListener('change', function () {
-        const selectedStyle = styleSelector.value;
-        map.setStyle(selectedStyle);
-        displayStyleMetadata(selectedStyle);
-    });
+    window.defaultMapStyle = 'https://betagouv.github.io/styles-de-cartes/maps/standard_ign.json';
 </script>
+<script type="text/javascript" src="/fonds-de-cartes/js/maps-viewer.js"></script>
 </main>
 
 

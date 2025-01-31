@@ -1,0 +1,139 @@
+html, body { height: 100%; }
+body { 
+    display: flex;
+    flex-direction: column;
+}
+#content { flex-grow: 1; }
+#map { 
+    height: 100%; 
+    width: 100%; 
+}
+
+#open-panel-btn {
+    border-radius: 0.25rem;
+}
+
+.map-panel {
+    font-family: Marianne,arial,sans-serif;
+}
+
+.map-panel-toggle {
+    z-index: 5;
+    display: none;
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+}
+
+.map-panel[aria-expanded="false"] .map-panel--extended {
+    display: none;
+}
+
+.map-panel[aria-expanded="false"] .map-panel-toggle {
+    display: inline-flex;
+}
+
+.map-panel--extended {
+    position: absolute;
+    width: 24rem;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-default-grey);
+    z-index: 3;
+    filter: drop-shadow(var(--raised-shadow));
+    top: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.map-panel__header {
+    display: flex;
+}
+
+.map-panel__content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+}
+
+.map-panel__styles-list, .map-panel__style-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.map-panel__styles-list .map-card-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.map-card {
+    transition: opacity 0.2s ease-in-out;
+    cursor: pointer;
+    background-color: var(--background-default-grey);
+    position: relative;
+    border-radius: 0.25rem;
+    overflow: hidden;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+@media (min-width: 20rem) {
+    .map-card {
+        flex: 0 0 calc(50% - 0.5rem);
+        max-width: calc(50% - 0.5rem);
+    }
+}
+
+.map-card:hover {
+    background-color: var(--background-default-grey-hover);
+}
+
+.map-card--shadow {
+    --idle: transparent;
+    --hover: var(--background-raised-grey-hover);
+    --active: var(--background-raised-grey-active);
+  }
+
+.map-active-icon  {
+    display: none;
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    color: var(--text-active-blue-france);
+    z-index: 1;
+}
+
+.map-card[aria-current="true"] .map-active-icon {
+    display: block;
+}
+
+.map-card__header {
+    position: relative;
+}
+
+.map-card__img {
+    flex: 0 0 auto;
+}
+
+.map-card__img img {
+    aspect-ratio: 1.7777777778;
+    object-fit: cover;
+    object-position: 50% 50%;
+    width: 100%;
+    display: block;
+}
+
+.map-card__title {  
+    font-size: .875rem;
+    line-height: 1.5rem;
+    font-weight: normal;
+}
+
+.map-panel__style-details .map-card__img {
+    border-radius: 0.25rem;
+    overflow: hidden;
+}

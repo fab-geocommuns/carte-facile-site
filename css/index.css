@@ -82,6 +82,10 @@ h2 + .header-anchor {
     font-size: 1.5em;
 }
 
+img {
+    display: block;
+}
+
 /* Custom DSFR */
 .fr-pagination__list {
     justify-content: flex-end !important;

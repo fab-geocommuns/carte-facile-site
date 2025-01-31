@@ -5,7 +5,7 @@
   <meta name="format-detection" content="telephone=no,date=no,address=no,email=no,url=no">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <meta name="description" content="Les API géographiques permettent d&#39;intégrer des fonctionnalités liées à la géographie dans vos sites internet et applications, par exemple la recherche d&#39;adresses ou l&#39;utilisation de coordonnés GPS.">
+  <meta name="description" content="Description à compléter.">
   <meta name="theme-color" content="#000091">
   <link rel="apple-touch-icon" href="/fonds-de-cartes/favicon/apple-touch-icon.png"><!-- 180×180 -->
   <link rel="icon" href="/fonds-de-cartes/favicon/favicon.svg" type="image/svg+xml">
@@ -101,6 +101,10 @@ a[href].header-anchor:focus,
 
 h2 + .header-anchor {
     font-size: 1.5em;
+}
+
+img {
+    display: block;
 }
 
 /* Custom DSFR */
@@ -336,7 +340,7 @@ pre[class*="language-"] {
 
   <meta name="generator" content="Eleventy v2.0.1">
 
-  <title>API géographiques</title>
+  <title>Utiliser les cartes sur son site</title>
 </head>
 <body id="top">
 <script>
@@ -487,39 +491,15 @@ pre[class*="language-"] {
                     </a>
                 </li>
                 <li class="fr-sidemenu__item">
-                        <button class="fr-sidemenu__btn" aria-expanded="false" aria-controls="sidemenu-2">
-                            Utiliser les cartes
-                        </button>
-                        <div class="fr-collapse" id="sidemenu-2">
-                            <ul class="fr-sidemenu__list">
-                                <li class="fr-sidemenu__item">
-                                <a class="fr-sidemenu__link" href="/fonds-de-cartes/fr/documentation/utiliser-les-cartes/dans-un-site/">
-                                    Dans un site internet
-                                </a>
-                                </li>
-                                <li class="fr-sidemenu__item">
-                                <a class="fr-sidemenu__link" href="/fonds-de-cartes/fr/documentation/utiliser-les-cartes/dans-figma/">
-                                    Dans Figma
-                                </a>
-                                </li>
-                                <li class="fr-sidemenu__item">
-                                <a class="fr-sidemenu__link" href="/fonds-de-cartes/fr/documentation/utiliser-les-cartes/dans-qgis/">
-                                    Dans QGIS
-                                </a>
-                                </li>
-                            </ul>
-                        </div>
-                </li>
-                <li class="fr-sidemenu__item">
-                    <a class="fr-sidemenu__link" href="/fonds-de-cartes/fr/documentation/composants/">
-                        Composants pratiques
+                    <a class="fr-sidemenu__link" href="/fonds-de-cartes/fr/documentation/utiliser-les-cartes/" aria-current="page">
+                        Utiliser les cartes
                     </a>
                 </li>
                 <li class="fr-sidemenu__item">
-                        <button class="fr-sidemenu__btn" aria-expanded="false" aria-controls="sidemenu-4">
+                        <button class="fr-sidemenu__btn" aria-expanded="false" aria-controls="sidemenu-3">
                             API géographiques
                         </button>
-                        <div class="fr-collapse" id="sidemenu-4">
+                        <div class="fr-collapse" id="sidemenu-3">
                             <ul class="fr-sidemenu__list">
                                 <li class="fr-sidemenu__item">
                                 <a class="fr-sidemenu__link" href="/fonds-de-cartes/fr/documentation/api-geographiques/api-adresse/">
@@ -535,34 +515,10 @@ pre[class*="language-"] {
                         </div>
                 </li>
                 <li class="fr-sidemenu__item">
-                        <button class="fr-sidemenu__btn" aria-expanded="false" aria-controls="sidemenu-5">
-                            Pour aller plus loin
-                        </button>
-                        <div class="fr-collapse" id="sidemenu-5">
-                            <ul class="fr-sidemenu__list">
-                                <li class="fr-sidemenu__item">
-                                <a class="fr-sidemenu__link" href="/fonds-de-cartes/fr/documentation/pour-aller-plus-loin/generer-une-carte/">
-                                    Générer une carte
-                                </a>
-                                </li>
-                                <li class="fr-sidemenu__item">
-                                <a class="fr-sidemenu__link" href="/fonds-de-cartes/fr/documentation/pour-aller-plus-loin/auto-heberger-une-carte/">
-                                    Auto-héberger une carte
-                                </a>
-                                </li>
-                                <li class="fr-sidemenu__item">
-                                <a class="fr-sidemenu__link" href="/fonds-de-cartes/fr/documentation/pour-aller-plus-loin/styliser-une-carte/">
-                                    Styliser une carte
-                                </a>
-                                </li>
-                            </ul>
-                        </div>
-                </li>
-                <li class="fr-sidemenu__item">
-                        <button class="fr-sidemenu__btn" aria-expanded="false" aria-controls="sidemenu-6">
+                        <button class="fr-sidemenu__btn" aria-expanded="false" aria-controls="sidemenu-4">
                             Références
                         </button>
-                        <div class="fr-collapse" id="sidemenu-6">
+                        <div class="fr-collapse" id="sidemenu-4">
                             <ul class="fr-sidemenu__list">
                                 <li class="fr-sidemenu__item">
                                 <a class="fr-sidemenu__link" href="/fonds-de-cartes/fr/documentation/references/schema-de-donnees-plan-ign/">
@@ -628,20 +584,16 @@ pre[class*="language-"] {
       <div class="fr-grid-row">
         <div class="fr-col-12 fr-col-md-9">
           <hgroup>
-            <h1>API géographiques</h1>
+            <h1>Utiliser les cartes sur son site</h1>
           </hgroup>
         </div>
         <div class="fr-col-12 fr-col-md-3">
-          <a class="fr-btn fr-btn--sm fr-btn--tertiary fr-btn--icon-left fr-icon-edit-line" href="https://github.com/betagouv/fonds-de-cartes/blob/main/./content/fr/documentation/api-geographiques/index.md">
+          <a class="fr-btn fr-btn--sm fr-btn--tertiary fr-btn--icon-left fr-icon-edit-line" href="https://github.com/betagouv/fonds-de-cartes/blob/main/./content/fr/documentation/utiliser-les-cartes/index.md">
             Modifier cette page
           </a>
         </div> 
       </div>
-      <p>Deux API sont mises à disposition par la Direction Interministérielle du Numérique (DINUM) et l'Institut national de l’information géographique et forestière (IGN) :</p>
-<table data-card-size="large" data-view="cards"><thead><tr><th></th><th></th><th data-hidden="" data-card-cover="" data-type="files"></th><th data-hidden="" data-card-target="" data-type="content-ref"></th></tr></thead><tbody><tr><td><h3>API Adresse</h3></td><td>Pour effectuer rapidement une recherche d’adresse sur la Base Adresse Nationale (BAN), mais aussi de pouvoir associer des coordonnées à une adresse ("géocoder") selon plusieurs critères.</td><td><a href="../../.gitbook/assets/Marqueur_carte.png">Marqueur_carte.png</a></td><td><a href="api-adresse.md">api-adresse.md</a></td></tr><tr><td><h3>API Découpage administratif</h3></td><td>Pour rechercher et localiser les communes, communes associées et déléguées, EPCI, départements et régions, et obtenir des informations les concernant.</td><td><a href="../../.gitbook/assets/Territoire_carte.png">Territoire_carte.png</a></td><td><a href="api-decoupage-administratif.md">api-decoupage-administratif.md</a></td></tr></tbody></table>
-<p>Pour les usages les plus courants, des composants clé en main seront prochainement disponibles et vous éviteront de créer ces fonctionnalités de toutes pièces : </p>
-<p><a href="../composants.md">composants.md</a></p>
-
+      
       <div class="fr-grid-row fr-grid-row--right">
 <a class="fr-grid-row fr-grid-row--right fr-link fr-icon-arrow-up-fill fr-link--icon-left" href="#top">
   Haut de page
@@ -719,7 +671,7 @@ pre[class*="language-"] {
           <a class="fr-footer__bottom-link" href="/fonds-de-cartes/fr/donnees-personnelles/">Données personnelles</a>
         </li>
         <li class="fr-footer__bottom-item">
-          <a class="fr-footer__bottom-link fr-icon-pencil-line fr-link--icon-left" href="https://github.com/betagouv/fonds-de-cartes/blob/main/./content/fr/documentation/api-geographiques/index.md">Modifier cette page</a>
+          <a class="fr-footer__bottom-link fr-icon-pencil-line fr-link--icon-left" href="https://github.com/betagouv/fonds-de-cartes/blob/main/./content/fr/documentation/utiliser-les-cartes/index.md">Modifier cette page</a>
         </li>
         
         <li class="fr-footer__bottom-item">
@@ -803,7 +755,7 @@ pre[class*="language-"] {
   </div>
 </dialog>
 
-<!-- Current page: /fonds-de-cartes/fr/documentation/api-geographiques/ -->
+<!-- Current page: /fonds-de-cartes/fr/documentation/utiliser-les-cartes/ -->
 
 <script>
       const SEARCH_RESULTS_URL = "/fonds-de-cartes/fr/search-results/";
