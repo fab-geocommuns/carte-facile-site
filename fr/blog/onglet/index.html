@@ -5,7 +5,7 @@
   <meta name="format-detection" content="telephone=no,date=no,address=no,email=no,url=no">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <meta name="description" content="Comment internationaliser son instance d&#39;eleventy-dsfr ?">
+  <meta name="description" content="Comment intégrer un système d&#39;onglets dans une page du site ?">
   <meta name="theme-color" content="#000091">
   <link rel="apple-touch-icon" href="/fonds-de-cartes/favicon/apple-touch-icon.png"><!-- 180×180 -->
   <link rel="icon" href="/fonds-de-cartes/favicon/favicon.svg" type="image/svg+xml">
@@ -340,7 +340,7 @@ pre[class*="language-"] {
 
   <meta name="generator" content="Eleventy v2.0.1">
 
-  <title>Internationalisation</title>
+  <title>Onglet</title>
 </head>
 <body id="top">
 <script>
@@ -479,12 +479,15 @@ pre[class*="language-"] {
     <div class="fr-col-12 fr-col-md-8">
 <ul class="fr-tags-group" data-pagefind-ignore="">
     <li>
-      <a href="/fonds-de-cartes/fr/blog/tags/fonctionnalite/" class="fr-tag">fonctionnalité</a>
+      <a href="/fonds-de-cartes/fr/blog/tags/dsfr/" class="fr-tag">DSFR</a>
+    </li>
+    <li>
+      <a href="/fonds-de-cartes/fr/blog/tags/composant/" class="fr-tag">composant</a>
     </li>
 </ul>      <div class="fr-grid-row">
         <div class="fr-col-12 fr-col-md-9">
           <hgroup>
-            <h1>Internationalisation</h1>
+            <h1>Onglet</h1>
             <p class="fr-text--xs">
               Publié le
               <time datetime="2025-02-12">12 février 2025</time>
@@ -495,7 +498,7 @@ pre[class*="language-"] {
 <div class="fr-share">
   <ul class="fr-share__group">
     <li>
-      <a class="fr-share__link fr-share__link--mail" href="mailto:?subject=Partage d&#39;un lien sur https://fondsdecartes.ign.fr&body=Internationalisation /fonds-de-cartes/fr/blog/i18n/" title="Partager par email" target="_blank" rel="noopener">
+      <a class="fr-share__link fr-share__link--mail" href="mailto:?subject=Partage d&#39;un lien sur https://fondsdecartes.ign.fr&body=Onglet /fonds-de-cartes/fr/blog/onglet/" title="Partager par email" target="_blank" rel="noopener">
         Partager par email
       </a>
     </li>
@@ -509,23 +512,48 @@ pre[class*="language-"] {
       </div>
 
 
-      <p><code>eleventy-dsfr</code> suit les <a href="https://www.11ty.dev/docs/i18n/">recommandations officielles</a> d'11ty pour l'internationalisation et utilise le <a href="https://www.11ty.dev/docs/plugins/i18n/">plugin officiel</a> pour localiser les liens internes.</p>
-<p>Pour localiser les des chaînes de caractères, <code>eleventy-dsfr</code> utilise notre <a href="https://github.com/codegouvfr/eleventy-plugin-i18n">fork du plugin recommandé <code>eleventy-plugin-i18n</code></a>.</p>
-<h2 id="localisation-des-liens-internes-et-des-urls" tabindex="-1">Localisation des liens internes et des URLs <a class="header-anchor" href="#localisation-des-liens-internes-et-des-urls">#</a></h2>
-<p><code>eleventy-dsfr</code> utilise le <a href="https://www.11ty.dev/docs/i18n/#distinct-urls">style URLs distinctes</a> proposé par 11ty pour localiser les liens internes.</p>
-<p>Pour localiser une URL : nommer la page de la même manière (par exemple, en anglais) dans toutes les langues, et positionner la variable <code>slugOverride</code> du cartouche si besoin.</p>
-<pre class="language-yaml" tabindex="0"><code class="language-yaml"><span class="token punctuation">---</span>
-<span class="token key atrule">slugOverride</span><span class="token punctuation">:</span> a propos
-<span class="token punctuation">---</span></code></pre>
-<p>Par exemple, pour la page <a href="/fonds-de-cartes/fr/a-propos">À propos</a>, le fichier en français est <a href="https://github.com/codegouvfr/eleventy-dsfr/tree/main/content/fr/about/index.md"><code>content/fr/about/index.md</code></a>, le fichier en anglais est <a href="https://github.com/codegouvfr/eleventy-dsfr/tree/main/content/en/about/index.md"><code>content/en/about/index.md</code></a>.
-L'url en français est <a href="/fonds-de-cartes/fr/a-propos">/fr/a-propos</a>, l'url en anglais est <a href="/fonds-de-cartes/en/about">/en/about</a>.</p>
-<h2 id="localisation-des-chaines-de-caracteres" tabindex="-1">Localisation des chaînes de caractères <a class="header-anchor" href="#localisation-des-chaines-de-caracteres">#</a></h2>
-<p><a href="https://github.com/codegouvfr/eleventy-plugin-i18n" class="fr-link fr-fi-arrow-right-line fr-link--icon-right">Voir la documentation du plugin</a></p>
-<p>Pour traduire une chaîne de caractères localisée dans une page, utiliser le filtre <code>i18n</code> :</p>
-<pre class="language-njk" tabindex="0"><code class="language-njk"><span class="token delimiter punctuation">{{</span> <span class="token string">"filter_by_tag"</span> <span class="token operator">|</span> <span class="token variable">i18n</span> <span class="token punctuation">}</span><span class="token punctuation">}</span>
+      <p>Chaque composant peut être inclus dans un fichier Nunjucks <code>.njk</code> ou Markdown <code>.md</code>.</p>
+<h2 id="exemple-d-utilisation" tabindex="-1">Exemple d'utilisation <a class="header-anchor" href="#exemple-d-utilisation">#</a></h2>
+<pre class="language-njk" tabindex="0"><code class="language-njk"><span class="token delimiter punctuation">{%</span> <span class="token tag keyword">from</span> <span class="token string">"components/tab.njk"</span> <span class="token keyword">import</span> <span class="token variable">tabs</span> <span class="token operator">%</span><span class="token punctuation">}</span>
+<span class="token punctuation">{</span><span class="token punctuation">{</span> <span class="token function">tabs</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token variable">ariaLabel</span><span class="token punctuation">:</span> <span class="token string">"Titre du système d'onglets"</span><span class="token punctuation">,</span>
+    <span class="token variable">items</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token variable">id</span><span class="token punctuation">:</span> <span class="token string">'tab1'</span><span class="token punctuation">,</span>
+            <span class="token variable">label</span><span class="token punctuation">:</span> <span class="token string">'Label'</span><span class="token punctuation">,</span>
+            <span class="token variable">content</span><span class="token punctuation">:</span> <span class="token string">'&lt;p>Contenu 1&lt;/p>'</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+            <span class="token variable">id</span><span class="token punctuation">:</span> <span class="token string">'tab2'</span><span class="token punctuation">,</span>
+            <span class="token variable">label</span><span class="token punctuation">:</span> <span class="token string">'Label'</span><span class="token punctuation">,</span>
+            <span class="token variable">content</span><span class="token punctuation">:</span> <span class="token string">'&lt;p>Contenu 2&lt;/p>'</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">}</span>
 </code></pre>
-<p>Les traductions sont situées dans le dossier de langue correspondant dans <a href="https://github.com/codegouvfr/eleventy-dsfr/tree/main/_data/i18n"><code>_data/i18n</code></a>.
-Pour ajouter une traduction, ajouter le dossier correspondant à la langue et son fichier de traduction.</p>
+<h2 id="rendu" tabindex="-1">Rendu <a class="header-anchor" href="#rendu">#</a></h2>
+  <div class="fr-tabs">
+    <ul class="fr-tabs__list" role="tablist" aria-label="Titre du système d&#39;onglets">
+        <li role="presentation">
+          <button id="tabpanel-tab1" class="fr-tabs__tab" tabindex="0" role="tab" aria-selected="true" aria-controls="tabpanel-tab1-panel">
+            Label
+          </button>
+        </li>
+        <li role="presentation">
+          <button id="tabpanel-tab2" class="fr-tabs__tab" tabindex="1" role="tab" aria-selected="false" aria-controls="tabpanel-tab2-panel">
+            Label
+          </button>
+        </li>
+    </ul>
+      <div class="fr-tabs__panel fr-tabs__panel--selected" id="tabpanel-tab1-panel" role="tabpanel" aria-labelledby="tabpanel-tab1" tabindex="0">
+        <p>Contenu 1</p>
+      </div>
+      <div class="fr-tabs__panel fr-tabs__panel" id="tabpanel-tab2-panel" role="tabpanel" aria-labelledby="tabpanel-tab2" tabindex="0">
+        <p>Contenu 2</p>
+      </div>
+  </div>
+<br>
+<p><a href="https://www.systeme-de-design.gouv.fr/composants-et-modeles/composants/onglet" class="fr-link fr-fi-arrow-right-line fr-link--icon-right">Voir aussi la page du composant sur le site du DSFR</a></p>
 
     </div>
   </div>
@@ -538,8 +566,8 @@ Pour ajouter une traduction, ajouter le dossier correspondant à la langue et so
   <div class="fr-card__body">
     <div class="fr-card__content">
       <h3 class="fr-card__title">
-          <a href="/fonds-de-cartes/fr/blog/fil-d-ariane/">
-            Fil d&#39;Ariane
+          <a href="/fonds-de-cartes/fr/blog/navigation/">
+            Navigation
           </a>
       </h3>
       <p class="fr-card__desc"></p>
@@ -561,8 +589,8 @@ Pour ajouter une traduction, ajouter le dossier correspondant à la langue et so
   <div class="fr-card__body">
     <div class="fr-card__content">
       <h3 class="fr-card__title">
-          <a href="/fonds-de-cartes/fr/blog/md-cheatsheet/">
-            Syntaxe Markdown
+          <a href="/fonds-de-cartes/fr/blog/pagination/">
+            Pagination
           </a>
       </h3>
       <p class="fr-card__desc"></p>
@@ -652,7 +680,7 @@ Pour ajouter une traduction, ajouter le dossier correspondant à la langue et so
           <a class="fr-footer__bottom-link" href="/fonds-de-cartes/fr/donnees-personnelles/">Données personnelles</a>
         </li>
         <li class="fr-footer__bottom-item">
-          <a class="fr-footer__bottom-link fr-icon-pencil-line fr-link--icon-left" href="https://github.com/betagouv/fonds-de-cartes/blob/main/./content/fr/blog/posts/i18n.md">Modifier cette page</a>
+          <a class="fr-footer__bottom-link fr-icon-pencil-line fr-link--icon-left" href="https://github.com/betagouv/fonds-de-cartes/blob/main/./content/fr/blog/posts/onglet.md">Modifier cette page</a>
         </li>
         
         <li class="fr-footer__bottom-item">
@@ -736,7 +764,7 @@ Pour ajouter une traduction, ajouter le dossier correspondant à la langue et so
   </div>
 </dialog>
 
-<!-- Current page: /fonds-de-cartes/fr/blog/i18n/ -->
+<!-- Current page: /fonds-de-cartes/fr/blog/onglet/ -->
 
 <script>
       const SEARCH_RESULTS_URL = "/fonds-de-cartes/fr/search-results/";

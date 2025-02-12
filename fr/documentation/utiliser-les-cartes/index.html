@@ -593,7 +593,67 @@ pre[class*="language-"] {
           </a>
         </div> 
       </div>
-      
+      <p>Ce tutoriel explique comment ajouter une carte sur son site web, avec l'aide de la librairie javascript <a href="https://maplibre.org">MapLibre GL JS</a>.</p>
+<div class="fr-accordions-group">
+<section class="fr-accordion">
+    <h3 class="fr-accordion__title">
+        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-4">
+            Précisions si vous partez de zéro
+        </button>
+    </h3>
+    <div class="fr-collapse" id="accordion-4">
+<p>Il est supposé dans ce tutoriel que vous avez déjà un site préparé, sur lequel vous souhaitez ajouter une carte.</p>
+<p>Si vous ne savez pas comment créer un site, voici un fichier html minimal qui vous permettra de commencer. Les commentaires sont présents pour vous aider à comprendre le code.</p>
+<pre class="language-html" tabindex="0"><code class="language-html">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Contenu 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Contenu 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Contenu 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span></code></pre>
+<p>Créez sur votre ordinateur un fichier nommé <strong>index.html</strong> et coller ce code dans le fichier à l'aide d'un éditeur de texte, ou de code comme <a href="https://code.visualstudio.com/">Visual Studio Code</a> ou autre. Enresgistrez le fichier puis ouvrez le avec votre navugateur pour afficher le résultat. Pour chaque modification que vous réaliser dans le fichier, sauvegarder-pe uis recharger la page dans le navigateur pour voir le résultat.
+<em>Le fichier avec le code entier et commenté est disponibleà la fin de ce tutoriel.</em></p>
+</div></section>
+</div>
+<br>
+<p><strong>Commencez par ajouter les bibliothèques nécessaires au bon fonctionnement de Maplibre.</strong></p>
+<p>Soit en utilisant les fichiers MapLibre via un CDN. C'est la méthode la plus simple.</p>
+<pre class="language-html" tabindex="0"><code class="language-html">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Contenu 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Contenu 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Contenu 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span></code></pre>
+<p>(avec ajout PMtiles par sécurité) / Possibilité de l'ajouter avec CDN ou NPM https://maplibre.org/maplibre-gl-js/docs/
+Il existe deux façons d'ajouter les bibliothèques :</p>
+<ul>
+<li>Ajouter les fichiers MapLibre via un CDN. C'est la méthode</li>
+<li>Ajouter les fichiers MapLibre via NPM, soi vous  utilisez ce gestionnaire de paquets.</li>
+</ul>
+<p>Ajouter le conteneur de la carte et style minimal</p>
+<p>Initialiser la carte
+Ajoutez le code JavaScript suivant juste avant la fermeture de la balise <code>&lt;/body&gt;</code> :</p>
+<ul>
+<li>Liste des différents styles disponibles</li>
+</ul>
+<p>Code complet</p>
+<hr>
+<p>Explications de la structure HTML :</p>
+<ul>
+<li>La balise <code>meta viewport</code> assure une bonne adaptation sur mobile</li>
+<li>Les fichiers MapLibre sont chargés depuis un CDN (unpkg)</li>
+<li>Le conteneur de la carte (<code>#map</code>) est stylisé pour occuper tout l'espace disponible</li>
+<li>Les marges du body sont supprimées pour un affichage plein écran</li>
+</ul>
+<h2 id="pour-aller-plus-loin" tabindex="-1">Pour aller plus loin <a class="header-anchor" href="#pour-aller-plus-loin">#</a></h2>
+<h3 id="bonnes-pratiques-et-optimisation" tabindex="-1">Bonnes pratiques et optimisation <a class="header-anchor" href="#bonnes-pratiques-et-optimisation">#</a></h3>
+<h3 id="performance" tabindex="-1">Performance <a class="header-anchor" href="#performance">#</a></h3>
+<ul>
+<li>Chargez MapLibre de manière asynchrone pour ne pas bloquer le rendu de la page</li>
+<li>Utilisez la version minifiée de MapLibre en production</li>
+<li>Définissez des limites de zoom appropriées pour votre usage</li>
+</ul>
+<h2 id="ressources-supplementaires" tabindex="-1">Ressources supplémentaires <a class="header-anchor" href="#ressources-supplementaires">#</a></h2>
+<ul>
+<li><a href="https://maplibre.org/maplibre-gl-js-docs/api/">Documentation officielle de MapLibre GL JS</a></li>
+<li><a href="https://openmaptiles.geo.data.gouv.fr/">Styles disponibles sur openmaptiles.geo.data.gouv.fr</a></li>
+<li><a href="https://maplibre.org/maplibre-gl-js-docs/example/">Exemples d'utilisation</a></li>
+<li><a href="https://maplibre.org/maplibre-gl-js-docs/api/performance/">Guide des performances MapLibre</a></li>
+</ul>
+
       <div class="fr-grid-row fr-grid-row--right">
 <a class="fr-grid-row fr-grid-row--right fr-link fr-icon-arrow-up-fill fr-link--icon-left" href="#top">
   Haut de page
