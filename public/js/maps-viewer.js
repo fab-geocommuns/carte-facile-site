@@ -10,13 +10,19 @@
  */    const map = new maplibregl.Map({
         container: 'map',
         style: window.defaultMapStyle || defaultStyle,
-        
+        hash: true,
 
 /*         style: window.defaultMapStyle || defaultStyle.url,
  */        maxZoom: 18.9,
     });
 
     map.addControl(new maplibregl.NavigationControl());
+
+    // Set an interval to update the url hash in a map overlay
+    const urlHash = document.getElementById('urlHash');
+    setInterval(() => {
+        urlHash.textContent = `URL hash: ${window.location.hash}`;
+    }, 100);
 
     // Logic for open and close the side panel
     const controlPanel = document.getElementById('map-selection');
