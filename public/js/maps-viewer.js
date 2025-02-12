@@ -6,14 +6,11 @@
     // Map initialization with default style
     const defaultStyle = 'https://betagouv.github.io/styles-de-cartes/maps/map_simplified_colored_ign.json';
 
-/*     const defaultStyle = window.mapStyles.styles.find(style => style.isDefault) || window.mapStyles.styles[0];
- */    const map = new maplibregl.Map({
+    const map = new maplibregl.Map({
         container: 'map',
         style: window.defaultMapStyle || defaultStyle,
         hash: true,
-
-/*         style: window.defaultMapStyle || defaultStyle.url,
- */        maxZoom: 18.9,
+        maxZoom: 18.9,
     });
 
     map.addControl(new maplibregl.NavigationControl());
