@@ -128,24 +128,21 @@ module.exports = {
         }
     },
     tabs: md => {
-        const re = /^tabs\s*(.*)$/;
-        let tabGroupCounter = 0;  // On garde le compteur simple qui fonctionne
+        let tabGroupCounter = 0;
 
         return {
-            validate: (params) => {
-                return params.trim().match(re);
+            validate: function(params) {
+                return params.trim().match(/^tabs\s*(.*)$/);
             },
 
-            render: (tokens, idx) => {
-                const params = tokens[idx].info.trim().match(re);
-
+            render: function(tokens, idx, options, env) {
                 if (tokens[idx].nesting === 1) {
                     tabGroupCounter++;
                     const tabGroupId = `tabs-group-${tabGroupCounter}`;
                     
-                    // Extraction et nettoyage du contenu
                     let content = '';
                     let i = idx + 1;
+                    
                     while (i < tokens.length && tokens[i].type !== 'container_tabs_close') {
                         if (tokens[i].type === 'inline') {
                             content += tokens[i].content + '\n';
@@ -155,7 +152,9 @@ module.exports = {
                         i++;
                     }
 
-                    // Traitement des onglets
+                    const m = tokens[idx].info.trim().match(/^tabs\s*(.*)$/);
+                    const title = m?.[1] || 'Onglets';
+                    
                     const tabs = content
                         .split('\n|')
                         .filter(part => part.trim())
@@ -168,9 +167,8 @@ module.exports = {
                             };
                         });
 
-                    // Génération du HTML
                     return `<div class="fr-tabs" id="${tabGroupId}">
-    <ul class="fr-tabs__list" role="tablist" aria-label="${md.utils.escapeHtml(params?.[1]) || 'Onglets'}">
+    <ul class="fr-tabs__list" role="tablist" aria-label="${title}">
         ${tabs.map((tab, index) => `
         <li role="presentation">
             <button id="tabpanel-${tab.id}"
@@ -192,8 +190,9 @@ module.exports = {
         ${tab.content}
     </div>`).join('')}
 </div>`;
+                } else {
+                    return '';
                 }
-                return '';
             }
         };
     }

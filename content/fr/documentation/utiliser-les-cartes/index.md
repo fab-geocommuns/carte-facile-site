@@ -16,6 +16,15 @@ La première étape est d'ajouter les bibliothèques nécessaires au bon fonctio
 
 <br>
 
+:::tabs Titre du système d'ongletskj
+|Avec les liens du CDN
+Contenu du premier onglet
+
+|Avec NPM
+Contenu du deuxième onglet
+:::
+
+
 **En utilisant les liens du CDN**
 
 Ajoutez les liens suivants dans la section `<head>` de votre fichier HTML, pour ajouter les dernières versions des bibliothèques MapLibre :
@@ -96,18 +105,3 @@ Enregistrez le fichier puis ouvrez le avec votre navigateur pour afficher le ré
 ???
 
 ????  
-
-
-
-Test : 
-
-:::tabs Titre du système d'onglets
-|Premier onglet
-Contenu du premier onglet
-
-|Deuxième onglet
-Contenu du deuxième onglet
-
-|Troisième onglet
-Contenu du troisième onglet
-:::
