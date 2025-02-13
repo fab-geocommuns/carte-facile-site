@@ -34,14 +34,14 @@ Pour afficher la carte, ajouter ce code dans les balises `<body>` de votre page 
 <script>
     var map = new maplibregl.Map({
         container: 'map', // id du conteneur de la carte
-        style: 'https://betagouv.github.io/styles-de-cartes/maps/standard_ign.json', // URL du style
+        style: 'https://betagouv.github.io/styles-de-cartes/maps/standard_ign.json', // URL du style de carte
         maxZoom: 18.9 // niveau de zoom maximum, adapté aux style utilisant les données IGN
     });
 </script>
 ```
 La balise `<div>` avec l'attribut `id="map"` est le conteneur de la carte, tandis que le script contenu dans les balises `<script>` initialise la carte en allant chercher les styles et les données nécessaires à son fonctionnement.
 
-L'URL de la carte est a modifier selon le style que vous souhaitez utiliser. Pour obtenir l'URL d'un stylede carte parmi ceux présenté sur le site, il suffit de cliquer sur le bouton "Copier l'URL du style" sur la page du style, dans l'onglet des cartes. Copier ensuite l'URL obtenue et l'utiliser dans le code ci-dessus.
+L'URL de style de carte est a modifier selon le style que vous souhaitez utiliser. Pour obtenir l'URL d'un stylede carte parmi ceux présenté sur le site, il suffit de cliquer sur le bouton "Copier l'URL du style" sur la page du style, dans l'onglet des [Cartes](/fr/cartes). Copier ensuite l'URL obtenue et l'utiliser dans le code ci-dessus.
 
 :::callout Avertissement sur les URLs des cartes
 Le service est encore en construction et les URLs des styles ne sont pas complètement stables. 
@@ -88,7 +88,7 @@ Vous pouvez simplement enregistrer ce code dans un fichier nommé **index.html**
     <script>
         var map = new maplibregl.Map({
             container: 'map', // id du conteneur de la carte
-            style: 'https://betagouv.github.io/styles-de-cartes/maps/standard_ign.json', // URL du style
+            style: 'https://betagouv.github.io/styles-de-cartes/maps/standard_ign.json', // URL du style de carte
             maxZoom: 18.9 // niveau de zoom maximum, adapté aux style utilisant les données IGN
         });
     </script>
@@ -121,12 +121,14 @@ import 'maplibre-gl/dist/maplibre-gl.css';
 
 const map = new maplibregl.Map({
     container: 'map', // id du conteneur de la carte
-    style: 'https://demotiles.maplibre.org/style.json', // URL du style
+    style: 'https://betagouv.github.io/styles-de-cartes/maps/standard_ign.json', // URL du style de carte
     maxZoom: 18.9 // niveau de zoom maximum, adapté aux style utilisant les données IGN
 });
 ```
 
 C'est tout ! Vous avez maintenant une carte affichée sur votre site web.
+
+L'URL de style de carte est a modifier selon le style que vous souhaitez utiliser. Découvrez les styles disponibles sur la page [Cartes](/fr/cartes).
 
 ---
 
