@@ -16,14 +16,16 @@ La première étape est d'ajouter les bibliothèques nécessaires au bon fonctio
 
 <br>
 
-:::tabs Titre du système d'ongletskj
+:::tabs Titre du système d'onglets
 |Avec les liens du CDN
 Contenu du premier onglet
 
-|Avec NPM
+|Deuxième onglet
 Contenu du deuxième onglet
-:::
 
+|Troisième onglet
+Contenu du troisième ongletdsfsdf
+:::
 
 **En utilisant les liens du CDN**
 

@@ -179,22 +179,23 @@ module.exports = function (eleventyConfig) {
     });
 
     eleventyConfig.amendLibrary("md", mdLib => {
-        // Configuration de base
-        mdLib.set({ html: true });
-        
-        // Plugins
         mdLib.use(markdownItAttrs);
-        
-        // Conteneurs personnalisés
-        [
-            ['callout', customMarkdownContainers.callout],
-            ['quote', customMarkdownContainers.quote],
-            ['alert', customMarkdownContainers.alert],
-            ['accordion', customMarkdownContainers.accordion],
-            ['tabs', customMarkdownContainers.tabs]
-        ].forEach(([name, container]) => {
-            mdLib.use(markdownItContainer, name, container(mdLib));
-        });
+    });
+
+    eleventyConfig.amendLibrary("md", mdLib => {
+        mdLib.use(markdownItContainer, 'callout', customMarkdownContainers.callout(mdLib));
+    });
+
+    eleventyConfig.amendLibrary("md", mdLib => {
+        mdLib.use(markdownItContainer, 'quote', customMarkdownContainers.quote(mdLib));
+    });
+
+    eleventyConfig.amendLibrary("md", mdLib => {
+        mdLib.use(markdownItContainer, 'alert', customMarkdownContainers.alert(mdLib));
+    });
+
+    eleventyConfig.amendLibrary("md", mdLib => {
+        mdLib.use(markdownItContainer, 'accordion', customMarkdownContainers.accordion(mdLib));
     });
 
     // Automatically strip all leading or trailing whitespace
