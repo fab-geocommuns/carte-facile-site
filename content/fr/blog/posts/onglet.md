@@ -17,14 +17,14 @@ Chaque composant peut être inclus dans un fichier Nunjucks `.njk` ou Markdown `
     ariaLabel: "Titre du système d'onglets",
     items: [
         {
-            id: 'tab1',
-            label: 'Label',
-            content: '<p>Contenu 1</p>'
+            id: "tab1",
+            label: "Label",
+            content: "<p>Contenu 1</p>"
         },
         {
-            id: 'tab2',
-            label: 'Label',
-            content: '<p>Contenu 2</p>'
+            id: "tab2",
+            label: "Label",
+            content: "<p>Contenu 2</p>"
         }
     ]
 }) }}
@@ -37,14 +37,14 @@ Chaque composant peut être inclus dans un fichier Nunjucks `.njk` ou Markdown `
     ariaLabel: "Titre du système d'onglets",
     items: [
         {
-            id: 'tab1',
-            label: 'Label',
-            content: '<p>Contenu 1</p>'
+            id: "tab1",
+            label: "Label",
+            content: "<p>Contenu 1</p>"
         },
         {
-            id: 'tab2',
-            label: 'Label',
-            content: '<p>Contenu 2</p>'
+            id: "tab2",
+            label: "Label",
+            content: "<p>Contenu 2</p>"
         }
     ]
 }) }}

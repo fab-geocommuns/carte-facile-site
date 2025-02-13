@@ -13,7 +13,7 @@
 
 {% macro tabs(params) %}
   <div class="fr-tabs">
-    <ul class="fr-tabs__list" role="tablist" aria-label="{{ params.ariaLabel | default('Onglets') }}">
+    <ul class="fr-tabs__list" role="tablist" aria-label="{{ params.ariaLabel | default("Onglets") }}">
       {% for item in params.items %}
         <li role="presentation">
           <button 

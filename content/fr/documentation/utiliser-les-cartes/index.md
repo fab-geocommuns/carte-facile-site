@@ -10,37 +10,26 @@ eleventyNavigation:
 
 Ce tutoriel explique comment ajouter une carte sur son site web, avec l'aide de la librairie javascript [MapLibre GL JS](https://maplibre.org). 
 
-????accordionsgroup
+## Installer les bibliothèques
 
-??? Précisions si vous partez de zéro
-
-Il est supposé dans ce tutoriel que vous avez déjà un site préparé, sur lequel vous souhaitez ajouter une carte. 
-
-Si vous ne savez pas comment créer un site, voici un fichier html minimal qui vous permettra de commencer. Les commentaires sont présents pour vous aider à comprendre le code. 
-
-```html
-  <p>Contenu 1</p>
-  <p>Contenu 1</p>
-  <p>Contenu 1</p>
-```
-
-Créez sur votre ordinateur un fichier nommé **index.html** et coller ce code dans le fichier à l'aide d'un éditeur de texte, ou de code comme [Visual Studio Code](https://code.visualstudio.com/) ou autre. Enresgistrez le fichier puis ouvrez le avec votre navugateur pour afficher le résultat. Pour chaque modification que vous réaliser dans le fichier, sauvegarder-pe uis recharger la page dans le navigateur pour voir le résultat.
-*Le fichier avec le code entier et commenté est disponibleà la fin de ce tutoriel.*
-
-???
-
-????  
+La première étape est d'ajouter les bibliothèques nécessaires au bon fonctionnement de Maplibre. Deux possibilités sont disponibles : via les liens du CDN (le plus simple si vous débutez), ou bien avec le gestionnaire de paquets NPM.
 
 <br>
 
-**Commencez par ajouter les bibliothèques nécessaires au bon fonctionnement de Maplibre.** 
+**En utilisant les liens du CDN**
 
-Soit en utilisant les fichiers MapLibre via un CDN. C'est la méthode la plus simple.
+Ajoutez les liens suivants dans la section `<head>` de votre fichier HTML, pour ajouter les dernières versions des bibliothèques MapLibre :
 ```html
-  <p>Contenu 1</p>
-  <p>Contenu 1</p>
-  <p>Contenu 1</p>
+<script src="https://unpkg.com/maplibre-gl@^5.1.0/dist/maplibre-gl.js"></script>
+<link href="https://unpkg.com/maplibre-gl@^5.1.0/dist/maplibre-gl.css" rel="stylesheet" />
 ```
+Au besoin, vous pouvez sélectionner une version spécifique des bibliothèque, en modifiant le numéro de version dans les URLs.
+
+<br>
+
+**En utilisant le gestionnaire de paquets NPM**
+
+
 
 (avec ajout PMtiles par sécurité) / Possibilité de l'ajouter avec CDN ou NPM https://maplibre.org/maplibre-gl-js/docs/ 
 Il existe deux façons d'ajouter les bibliothèques :
@@ -84,3 +73,26 @@ Explications de la structure HTML :
 - [Styles disponibles sur openmaptiles.geo.data.gouv.fr](https://openmaptiles.geo.data.gouv.fr/)
 - [Exemples d'utilisation](https://maplibre.org/maplibre-gl-js-docs/example/)
 - [Guide des performances MapLibre](https://maplibre.org/maplibre-gl-js-docs/api/performance/)
+
+????accordionsgroup
+
+??? Précisions si vous partez de zéro
+
+Il est supposé dans ce tutoriel que vous avez déjà un site préparé, sur lequel vous souhaitez ajouter une carte. 
+
+Si vous ne savez pas comment créer un site, voici un fichier html minimal qui vous permettra de commencer. Les commentaires sont présents pour vous aider à comprendre le code. 
+
+```html
+  <p>Contenu 1</p>
+  <p>Contenu 1</p>
+  <p>Contenu 1</p>
+```
+
+Créez sur votre ordinateur un fichier nommé **index.html** et coller ce code dans le fichier à l'aide d'un éditeur de texte, ou de code comme [Visual Studio Code](https://code.visualstudio.com/) ou autre. 
+
+Enregistrez le fichier puis ouvrez le avec votre navigateur pour afficher le résultat. Pour chaque modification que vous réalisez dans le fichier, sauvegarder puis recharger la page dans le navigateur pour voir le résultat.
+*Le fichier avec le code entier et commenté est disponible à la fin de ce tutoriel.*
+
+???
+
+????  
