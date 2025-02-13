@@ -96,3 +96,18 @@ Enregistrez le fichier puis ouvrez le avec votre navigateur pour afficher le ré
 ???
 
 ????  
+
+
+
+Test : 
+
+:::tabs Titre du système d'onglets
+|Premier onglet
+Contenu du premier onglet
+
+|Deuxième onglet
+Contenu du deuxième onglet
+
+|Troisième onglet
+Contenu du troisième onglet
+:::

@@ -8,7 +8,22 @@ tags:
 ---
 Chaque composant peut être inclus dans un fichier Nunjucks `.njk` ou Markdown `.md`.
 
-## Exemple d'utilisation
+### Exemple d'utilisation dans un fichier Markdown `.md`
+
+```md
+:::tabs Titre du système d'onglets
+|Premier onglet
+Contenu du premier onglet
+
+|Deuxième onglet
+Contenu du deuxième onglet
+
+|Troisième onglet
+Contenu du troisième onglet
+:::
+```
+
+### Exemple d'utilisation dans un fichier Nunjucks `.njk`
 
 ```njk
 {% raw %}
@@ -32,22 +47,17 @@ Chaque composant peut être inclus dans un fichier Nunjucks `.njk` ou Markdown `
 ```
 
 ## Rendu
-{% from "components/tab.njk" import tabs %}
-{{ tabs({
-    ariaLabel: "Titre du système d'onglets",
-    items: [
-        {
-            id: "tab1",
-            label: "Label",
-            content: "<p>Contenu 1</p>"
-        },
-        {
-            id: "tab2",
-            label: "Label",
-            content: "<p>Contenu 2</p>"
-        }
-    ]
-}) }}
+
+:::tabs Titre du système d'onglets
+|Premier onglet
+Contenu du premier onglet
+
+|Deuxième onglet
+Contenu du deuxième onglet
+
+|Troisième onglet
+Contenu du troisième onglet
+:::
 
 <br>
 

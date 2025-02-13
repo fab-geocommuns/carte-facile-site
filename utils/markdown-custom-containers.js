@@ -126,6 +126,75 @@ module.exports = {
 
             marker: "?"
         }
-    }
+    },
+    tabs: md => {
+        const re = /^tabs\s*(.*)$/;
+        let tabGroupCounter = 0;  // On garde le compteur simple qui fonctionne
 
+        return {
+            validate: (params) => {
+                return params.trim().match(re);
+            },
+
+            render: (tokens, idx) => {
+                const params = tokens[idx].info.trim().match(re);
+
+                if (tokens[idx].nesting === 1) {
+                    tabGroupCounter++;
+                    const tabGroupId = `tabs-group-${tabGroupCounter}`;
+                    
+                    // Extraction et nettoyage du contenu
+                    let content = '';
+                    let i = idx + 1;
+                    while (i < tokens.length && tokens[i].type !== 'container_tabs_close') {
+                        if (tokens[i].type === 'inline') {
+                            content += tokens[i].content + '\n';
+                            tokens[i].content = '';
+                            tokens[i].children = [];
+                        }
+                        i++;
+                    }
+
+                    // Traitement des onglets
+                    const tabs = content
+                        .split('\n|')
+                        .filter(part => part.trim())
+                        .map((part, index) => {
+                            const [label, ...contentLines] = part.trim().split('\n');
+                            return {
+                                id: `${tabGroupId}-tab-${index}`,
+                                label: label.replace('|', '').trim(),
+                                content: md.render(contentLines.join('\n').trim())
+                            };
+                        });
+
+                    // Génération du HTML
+                    return `<div class="fr-tabs" id="${tabGroupId}">
+    <ul class="fr-tabs__list" role="tablist" aria-label="${md.utils.escapeHtml(params?.[1]) || 'Onglets'}">
+        ${tabs.map((tab, index) => `
+        <li role="presentation">
+            <button id="tabpanel-${tab.id}"
+                class="fr-tabs__tab"
+                tabindex="${index}"
+                role="tab"
+                aria-selected="${index === 0 ? 'true' : 'false'}"
+                aria-controls="tabpanel-${tab.id}-panel">
+                ${tab.label}
+            </button>
+        </li>`).join('')}
+    </ul>
+    ${tabs.map((tab, index) => `
+    <div id="tabpanel-${tab.id}-panel"
+        class="fr-tabs__panel${index === 0 ? ' fr-tabs__panel--selected' : ''}"
+        role="tabpanel"
+        aria-labelledby="tabpanel-${tab.id}"
+        tabindex="0">
+        ${tab.content}
+    </div>`).join('')}
+</div>`;
+                }
+                return '';
+            }
+        };
+    }
 }
