@@ -10,100 +10,126 @@ eleventyNavigation:
 
 Ce tutoriel explique comment ajouter une carte sur son site web, avec l'aide de la librairie javascript [MapLibre GL JS](https://maplibre.org). 
 
-## Installer les bibliothèques
+La première étape est d'ajouter les bibliothèques nécessaires au bon fonctionnement de Maplibre. Deux possibilités sont disponibles pour utiliser la librairie : en utilisant les liens (le plus simple si vous débutez), ou bien avec le gestionnaire de paquets NPM.
 
-La première étape est d'ajouter les bibliothèques nécessaires au bon fonctionnement de Maplibre. Deux possibilités sont disponibles : via les liens du CDN (le plus simple si vous débutez), ou bien avec le gestionnaire de paquets NPM.
+---
 
-<br>
+## En utilisant les liens
 
-:::tabs Titre du système d'onglets
-|Avec les liens du CDN
-Contenu du premier onglet
+### Installer les bibliothèques
 
-|Deuxième onglet
-Contenu du deuxième onglet
-
-|Troisième onglet
-Contenu du troisième ongletdsfsdf
-:::
-
-**En utilisant les liens du CDN**
-
-Ajoutez les liens suivants dans la section `<head>` de votre fichier HTML, pour ajouter les dernières versions des bibliothèques MapLibre :
+Ajoutez les liens suivants dans la section `<head>` de votre fichier HTML, pour ajouter les dernières versions des bibliothèques MapLibre depuis un CDN :
 ```html
 <script src="https://unpkg.com/maplibre-gl@^5.1.0/dist/maplibre-gl.js"></script>
 <link href="https://unpkg.com/maplibre-gl@^5.1.0/dist/maplibre-gl.css" rel="stylesheet" />
 ```
 Au besoin, vous pouvez sélectionner une version spécifique des bibliothèque, en modifiant le numéro de version dans les URLs.
 
-<br>
+### Ajouter la carte
 
-**En utilisant le gestionnaire de paquets NPM**
+Pour afficher la carte, ajouter ce code dans les balises `<body>` de votre page hml :
+
+```html
+<div id="map"></div>
+<script>
+    var map = new maplibregl.Map({
+        container: 'map', // id du conteneur de la carte
+        style: 'https://betagouv.github.io/styles-de-cartes/maps/standard_ign.json', // URL du style
+        maxZoom: 18.9 // niveau de zoom maximum, adapté aux style utilisant les données IGN
+    });
+</script>
+```
+La balise `<div>` avec l'attribut `id="map"` est le conteneur de la carte, tandis que le script contenu dans les balises `<script>` initialise la carte en allant chercher les styles et les données nécessaires à son fonctionnement.
+
+L'URL de la carte est a modifier selon le style que vous souhaitez utiliser. Pour obtenir l'URL d'un stylede carte parmi ceux présenté sur le site, il suffit de cliquer sur le bouton "Copier l'URL du style" sur la page du style, dans l'onglet des cartes. Copier ensuite l'URL obtenue et l'utiliser dans le code ci-dessus.
+
+:::callout Avertissement sur les URLs des cartes
+Le service est encore en construction et les URLs des styles ne sont pas complètement stables. 
+:::
+
+N'oubliez pas d'ajuster les styles de votre page et de la balise `<div>` avec l'attribut `id="map"`, afin que la carte soit affichée correctement. Par exemple, si vous souhaitez afficher la carte en plein écran, vous pouvez ajouter le code suivant dans la section `<head>` de votre fichier HTML :
+
+```html
+<style>
+    html,body, #map { height:100%; width: 100%; margin:0;}
+</style>
+```
+
+**Félicitation, vous avez maintenant une carte affichée sur votre site !**
 
 
+### Exemple de code complet
 
-(avec ajout PMtiles par sécurité) / Possibilité de l'ajouter avec CDN ou NPM https://maplibre.org/maplibre-gl-js/docs/ 
-Il existe deux façons d'ajouter les bibliothèques :
-- Ajouter les fichiers MapLibre via un CDN. C'est la méthode
-- Ajouter les fichiers MapLibre via NPM, soi vous  utilisez ce gestionnaire de paquets.
-  
+L'exemple de code ci-dessous est un exemple complet de code pour afficher une carte sur une page web, qui reprent les étapes précédentes. 
+Vous pouvez simplement enregistrer ce code dans un fichier nommé **index.html** et l'ouvrir avec votre navigateur internet pour voir le résultat.
 
-Ajouter le conteneur de la carte et style minimal
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma carte</title>
+    
+    <!-- Importation des bibliothèques MapLibre -->
+    <script src="https://unpkg.com/maplibre-gl@^5.1.0/dist/maplibre-gl.js"></script>
+    <link href="https://unpkg.com/maplibre-gl@^5.1.0/dist/maplibre-gl.css" rel="stylesheet" />
+    
+    <!-- Style pour afficher la carte en plein écran -->
+    <style>
+        html,body, #map { height:100%; width: 100%; margin:0;}
+    </style>
+</head>
+<body>
+    <!-- Le conteneur de la carte -->
+    <div id="map"></div>
 
-
-Initialiser la carte
-Ajoutez le code JavaScript suivant juste avant la fermeture de la balise `</body>` :
-- Liste des différents styles disponibles
-
-
-Code complet
+    <!-- Le script qui initialise la carte -->
+    <script>
+        var map = new maplibregl.Map({
+            container: 'map', // id du conteneur de la carte
+            style: 'https://betagouv.github.io/styles-de-cartes/maps/standard_ign.json', // URL du style
+            maxZoom: 18.9 // niveau de zoom maximum, adapté aux style utilisant les données IGN
+        });
+    </script>
+</body>
+</html>
+```
 
 ---
 
-Explications de la structure HTML :
-- La balise `meta viewport` assure une bonne adaptation sur mobile
-- Les fichiers MapLibre sont chargés depuis un CDN (unpkg)
-- Le conteneur de la carte (`#map`) est stylisé pour occuper tout l'espace disponible
-- Les marges du body sont supprimées pour un affichage plein écran
+## En utilisant le gestionnaire de paquets NPM
 
+### Installer les bibliothèques
 
+Installer les bibliotohèque en utilisant la commande suivante dans votre terminal :
+```bash
+npm install maplibre-gl
+```
 
-## Pour aller plus loin
+### Ajouter la carte
 
-### Bonnes pratiques et optimisation
+Ajoutez la balise pour la carte dans votre fichier HTML :
+```html
+<div id="map"></div>
+```
 
-### Performance
-- Chargez MapLibre de manière asynchrone pour ne pas bloquer le rendu de la page
-- Utilisez la version minifiée de MapLibre en production
-- Définissez des limites de zoom appropriées pour votre usage
+Puis importez le module MapLibre et initialisez la carte dans votre fichier JavaScript :
+```javascript
+import maplibregl from 'maplibre-gl';
+import 'maplibre-gl/dist/maplibre-gl.css';
 
+const map = new maplibregl.Map({
+    container: 'map', // id du conteneur de la carte
+    style: 'https://demotiles.maplibre.org/style.json', // URL du style
+    maxZoom: 18.9 // niveau de zoom maximum, adapté aux style utilisant les données IGN
+});
+```
+
+C'est tout ! Vous avez maintenant une carte affichée sur votre site web.
+
+---
 
 ## Ressources supplémentaires
 
-- [Documentation officielle de MapLibre GL JS](https://maplibre.org/maplibre-gl-js-docs/api/)
-- [Styles disponibles sur openmaptiles.geo.data.gouv.fr](https://openmaptiles.geo.data.gouv.fr/)
-- [Exemples d'utilisation](https://maplibre.org/maplibre-gl-js-docs/example/)
-- [Guide des performances MapLibre](https://maplibre.org/maplibre-gl-js-docs/api/performance/)
-
-????accordionsgroup
-
-??? Précisions si vous partez de zéro
-
-Il est supposé dans ce tutoriel que vous avez déjà un site préparé, sur lequel vous souhaitez ajouter une carte. 
-
-Si vous ne savez pas comment créer un site, voici un fichier html minimal qui vous permettra de commencer. Les commentaires sont présents pour vous aider à comprendre le code. 
-
-```html
-  <p>Contenu 1</p>
-  <p>Contenu 1</p>
-  <p>Contenu 1</p>
-```
-
-Créez sur votre ordinateur un fichier nommé **index.html** et coller ce code dans le fichier à l'aide d'un éditeur de texte, ou de code comme [Visual Studio Code](https://code.visualstudio.com/) ou autre. 
-
-Enregistrez le fichier puis ouvrez le avec votre navigateur pour afficher le résultat. Pour chaque modification que vous réalisez dans le fichier, sauvegarder puis recharger la page dans le navigateur pour voir le résultat.
-*Le fichier avec le code entier et commenté est disponible à la fin de ce tutoriel.*
-
-???
-
-????  
+- [Documentation officielle de MapLibre GL JS](https://maplibre.org/maplibre-gl-js/docs/)
