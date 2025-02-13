@@ -128,21 +128,23 @@ module.exports = {
         }
     },
     tabs: md => {
+        const re = /^tabs\s*(.*)$/;
         let tabGroupCounter = 0;
 
         return {
             validate: function(params) {
-                return params.trim().match(/^tabs\s*(.*)$/);
+                return params.trim().match(re);
             },
 
             render: function(tokens, idx, options, env) {
                 if (tokens[idx].nesting === 1) {
+                    // Incrémenter le compteur pour l'ID unique
                     tabGroupCounter++;
                     const tabGroupId = `tabs-group-${tabGroupCounter}`;
                     
+                    // Récupérer le contenu des onglets
                     let content = '';
                     let i = idx + 1;
-                    
                     while (i < tokens.length && tokens[i].type !== 'container_tabs_close') {
                         if (tokens[i].type === 'inline') {
                             content += tokens[i].content + '\n';
@@ -152,9 +154,11 @@ module.exports = {
                         i++;
                     }
 
-                    const m = tokens[idx].info.trim().match(/^tabs\s*(.*)$/);
-                    const title = m?.[1] || 'Onglets';
+                    // Extraire le titre des onglets
+                    const m = tokens[idx].info.trim().match(re);
+                    const title = md.utils.escapeHtml(m?.[1] || 'Onglets');
                     
+                    // Parser le contenu des onglets
                     const tabs = content
                         .split('\n|')
                         .filter(part => part.trim())
@@ -167,6 +171,7 @@ module.exports = {
                             };
                         });
 
+                    // Générer le HTML des onglets
                     return `<div class="fr-tabs" id="${tabGroupId}">
     <ul class="fr-tabs__list" role="tablist" aria-label="${title}">
         ${tabs.map((tab, index) => `
