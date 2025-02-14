@@ -12,9 +12,7 @@ Pour construire des cartes sur un site web, nous avons besoin de **données géo
 
 Le schéma ci-dessous illustre le processus :
 
-![Schéma de synthèse des liens entre données géographiques, flux de données géographiques et styles de cartes.](./images/schema-flux-style.png)
-
-Détaillons chacun de ces éléments.
+![Schéma de synthèse des liens entre données géographiques, flux de données géographiques et styles de cartes.](/img/documentation/schema_concepts-fondamentaux.svg)
 
 <br>
 

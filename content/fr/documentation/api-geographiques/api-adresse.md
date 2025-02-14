@@ -38,7 +38,7 @@ L’API Adresse s’appuie sur la Base Adresse Nationale (BAN), composée :
 
 Ces bases d'adresses locales remplacent progressivement les données des acteurs historiques pour une plus grande fiabilité. Ci-dessous un schéma décrivant la construction des données de cette base : 
 
-![Schéma de la construction des données de la BAN](/img/documentation/schema_ban.svg "Schéma de la construction des données de la BAN")
+![Schéma de la construction des données de la BAN](/img/documentation/schema_ban.svg)
 
 ---
 
