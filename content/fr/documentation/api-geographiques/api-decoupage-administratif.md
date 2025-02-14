@@ -13,4 +13,4 @@ eleventyNavigation:
 Le contenu n'est pas représentatif du contenu final.
 :::
 
-En intégrant l'API dans votre système d'information, vous pouvez notamment rechercher une commune par nom, code postal ou coordonnées géographiques, rechercher des communes associées et déléguées, des EPCI, des départements et des régions.
+En intégrant l'API dans votre système d'information, vous pouvez notamment rechercher une commune par nom, code postal ou coordonnées géographiques, ou bien rechercher des communes associées et déléguées, des EPCI, des départements et des régions.
