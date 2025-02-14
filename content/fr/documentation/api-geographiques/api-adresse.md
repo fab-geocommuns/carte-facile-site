@@ -11,8 +11,6 @@ eleventyNavigation:
 
 En intégrant l’API Adresse à votre site web ou application, vous pouvez ajouter des fonctionnalités basées sur les adresses, les coordonnées géographiques et le géocodage.
 
-(Image bannière pour illustration)
-
 {% from "components/component.njk" import component with context %}
 {{ component("callout", {
     title: "Documentation officielle",
@@ -38,9 +36,9 @@ L’API Adresse s’appuie sur la Base Adresse Nationale (BAN), composée :
 - **De données historiques (IGN, Cadastre, etc.).**
 - **Des inventaires locaux créés par les communes via l'outil [Bases Adresses Locales (BAL)](https://adresse.data.gouv.fr/bases-locales).**
 
-Ces bases d'adresses locales remplacent progressivement les données des acteurs historiques pour une plus grande fiabilité.
+Ces bases d'adresses locales remplacent progressivement les données des acteurs historiques pour une plus grande fiabilité. Ci-dessous un schéma décrivant la construction des données de cette base : 
 
-(Schéma explicatif de la consolidation des données d'adresse)
+![Schéma de la construction des données de la BAN](/img/documentation/schema_ban.svg)
 
 ---
 
