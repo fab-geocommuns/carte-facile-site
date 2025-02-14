@@ -8,8 +8,33 @@ eleventyNavigation:
   nav: main
 ---
 
-{% from "components/component.njk" import component with context %}
-{{ component("callout", {
-    title: "🛠️ Page en cours de rédaction",
-    description: "Le contenu n'est pas représentatif du contenu final."
-}) }}
+<div class="fr-container--fluid">
+  <div class="fr-grid-row fr-my-2w">
+    <div class="fr-col">
+      {% from "components/component.njk" import component with context %}
+      {{ component("card", {
+          url: "/documentation/concepts-fondamentaux/",
+          title: "Concepts fondamentaux",
+          description: "Un aperçu des concepts fondamentaux dans l'utilisation des cartes dans un site web."
+      }) }}
+    </div>
+  </div>
+  <div class="fr-grid-row fr-my-2w">
+    <div class="fr-col">
+      {{ component("card", {
+          url: "/documentation/utiliser-les-cartes/",
+          title: "Utiliser les cartes",
+          description: "Un tutoriel pour ajouter rapidement une carte dans un site web."
+      }) }}
+    </div>
+  </div>
+  <div class="fr-grid-row fr-my-2w">
+    <div class="fr-col">
+      {{ component("card", {
+          url: "/documentation/api-geographiques/api-adresse",
+          title: "API géographiques",
+          description: "Quelques bases explicatives pour l'utilisation des API géographiques, par exemple pour la recherche d'adresse et de communes."
+      }) }}
+    </div>
+  </div>
+</div>
