@@ -10,11 +10,11 @@ eleventyNavigation:
 
 Ce tutoriel explique comment ajouter une carte sur son site web, avec l'aide de la librairie javascript [MapLibre GL JS](https://maplibre.org). 
 
-La première étape est d'ajouter les bibliothèques nécessaires au bon fonctionnement de Maplibre. Deux possibilités sont disponibles pour utiliser la librairie : en utilisant les liens (le plus simple si vous débutez), ou bien avec le gestionnaire de paquets NPM.
+La première étape est d'ajouter les bibliothèques nécessaires au bon fonctionnement de Maplibre. Deux possibilités sont disponibles pour utiliser la librairie : en utilisant les liens CDN, ou bien avec le gestionnaire de paquets NPM.
 
 ---
 
-## En utilisant les liens
+## En utilisant les liens CDN
 
 ### Installer les bibliothèques
 
@@ -44,7 +44,7 @@ La balise `<div>` avec l'attribut `id="map"` est le conteneur de la carte, tandi
 L'URL de style de carte est a modifier selon le style que vous souhaitez utiliser. Pour obtenir l'URL d'un stylede carte parmi ceux présenté sur le site, il suffit de cliquer sur le bouton "Copier l'URL du style" sur la page du style, dans l'onglet des [Cartes](/fr/cartes). Copier ensuite l'URL obtenue et l'utiliser dans le code ci-dessus.
 
 :::callout Avertissement sur les URLs des cartes
-Le service est encore en construction et les URLs des styles ne sont pas complètement stables. 
+Le service est encore en construction et les URLs des styles ne sont pas complètement stables. Pour vous assurer une continuité de service, il est recommandé de copier le fichier JSON du style de carte pour le stocker localement sur votre serveur.
 :::
 
 N'oubliez pas d'ajuster les styles de votre page et de la balise `<div>` avec l'attribut `id="map"`, afin que la carte soit affichée correctement. Par exemple, si vous souhaitez afficher la carte en plein écran, vous pouvez ajouter le code suivant dans la section `<head>` de votre fichier HTML :
@@ -55,7 +55,7 @@ N'oubliez pas d'ajuster les styles de votre page et de la balise `<div>` avec l'
 </style>
 ```
 
-**Félicitation, vous avez maintenant une carte affichée sur votre site !**
+**Vvous avez maintenant une carte affichée sur votre site !**
 
 
 ### Exemple de code complet

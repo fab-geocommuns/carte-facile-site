@@ -11,8 +11,6 @@ eleventyNavigation:
 
 En intégrant l’API Adresse à votre site web ou application, vous pouvez ajouter des fonctionnalités basées sur les adresses, les coordonnées géographiques et le géocodage.
 
-(Image bannière pour illustration)
-
 {% from "components/component.njk" import component with context %}
 {{ component("callout", {
     title: "Documentation officielle",
