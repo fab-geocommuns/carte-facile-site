@@ -105,7 +105,10 @@ h2 + .header-anchor {
 
 img {
     display: block;
-    width: 100%;
+}
+
+p > img {
+    max-width: 100%;
 }
 
 /* Custom DSFR */
@@ -484,7 +487,7 @@ pre[class*="language-"] {
         <p class="fr-text--sm">
           Compatibles avec les données IGN et OpenStreetMap (prochainement)
           <span class="fr-grid-row fr-py-1w" style="gap: 0.75rem; height: 3rem">
-            <img src="/fonds-de-cartes/icons/logo/logo_ign.webp" alt="Logo de l'IGN" style="max-height: 100%; max-width: 100%">
+            <img src="/fonds-de-cartes/icons/logo/logo_ign.webp" alt="Logo de l'IGN" style="max-height: 100%;">
             <img src="/fonds-de-cartes/icons/logo/logo_osm.webp" alt="Logo d'OpenStreetMap" style="max-height: 100%; max-width: 100%">
           </span>
         </p>
@@ -520,7 +523,7 @@ pre[class*="language-"] {
     <h2 class="fr-grid-row fr-grid-row--center">Les avantages du service</h2>
     <div class="fr-grid-row fr-grid-row--gutters fr-my-4w">
           <div class="fr-col-12 fr-col-sm-6 fr-col-md-4">
-            <div class="fr-col fr-card fr-card--sm fr-card--horizontal fr-card--shadow fr-card--no-border">
+            <div class="fr-col fr-card fr-card--sm fr-card--horizontal fr-card--shadow fr-card--no-border" style="border-radius: 0.25rem;">
               <div class="fr-card__body">
                 <div class="fr-card__content">
                   <h3 class="fr-card__title">Mises à jour automatiques</h3>
@@ -530,7 +533,7 @@ pre[class*="language-"] {
             </div>
           </div>
           <div class="fr-col-12 fr-col-sm-6 fr-col-md-4">
-            <div class="fr-col fr-card fr-card--sm fr-card--horizontal fr-card--shadow fr-card--no-border">
+            <div class="fr-col fr-card fr-card--sm fr-card--horizontal fr-card--shadow fr-card--no-border" style="border-radius: 0.25rem;">
               <div class="fr-card__body">
                 <div class="fr-card__content">
                   <h3 class="fr-card__title">Facilité d&#39;intégration</h3>
@@ -540,7 +543,7 @@ pre[class*="language-"] {
             </div>
           </div>
           <div class="fr-col-12 fr-col-sm-6 fr-col-md-4">
-            <div class="fr-col fr-card fr-card--sm fr-card--horizontal fr-card--shadow fr-card--no-border">
+            <div class="fr-col fr-card fr-card--sm fr-card--horizontal fr-card--shadow fr-card--no-border" style="border-radius: 0.25rem;">
               <div class="fr-card__body">
                 <div class="fr-card__content">
                   <h3 class="fr-card__title">Un choix simple</h3>
