@@ -84,6 +84,7 @@ h2 + .header-anchor {
 
 img {
     display: block;
+    width: 100%;
 }
 
 /* Custom DSFR */
