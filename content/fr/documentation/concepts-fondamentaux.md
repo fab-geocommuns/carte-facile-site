@@ -6,6 +6,7 @@ eleventyNavigation:
   key: Concepts fondamentaux
   order: 1
   nav: docs
+
 ---
 
 Pour construire des cartes sur un site web, nous avons besoin de **données géographiques**, provenant d'une source (un serveur distant sur lesquelles elles soont stockées), qui sont servies via ce qu'on appelle un **flux de données géographiques**. On applique ensuite un **style** à ces données pour les rendre lisibles et utilisables par les usagers du site.
