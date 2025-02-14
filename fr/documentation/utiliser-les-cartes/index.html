@@ -105,6 +105,7 @@ h2 + .header-anchor {
 
 img {
     display: block;
+    width: 100%;
 }
 
 /* Custom DSFR */
@@ -514,25 +515,6 @@ pre[class*="language-"] {
                             </ul>
                         </div>
                 </li>
-                <li class="fr-sidemenu__item">
-                        <button class="fr-sidemenu__btn" aria-expanded="false" aria-controls="sidemenu-4">
-                            Références
-                        </button>
-                        <div class="fr-collapse" id="sidemenu-4">
-                            <ul class="fr-sidemenu__list">
-                                <li class="fr-sidemenu__item">
-                                <a class="fr-sidemenu__link" href="/fonds-de-cartes/fr/documentation/references/schema-de-donnees-plan-ign/">
-                                    Schéma de données Plan IGN
-                                </a>
-                                </li>
-                                <li class="fr-sidemenu__item">
-                                <a class="fr-sidemenu__link" href="/fonds-de-cartes/fr/documentation/references/schema-de-donnees-openmaptiles/">
-                                    Schéma de données OpenMapTiles
-                                </a>
-                                </li>
-                            </ul>
-                        </div>
-                </li>
             </ul>
         </div>
   </div>
@@ -594,64 +576,93 @@ pre[class*="language-"] {
         </div> 
       </div>
       <p>Ce tutoriel explique comment ajouter une carte sur son site web, avec l'aide de la librairie javascript <a href="https://maplibre.org">MapLibre GL JS</a>.</p>
-<div class="fr-accordions-group">
-<section class="fr-accordion">
-    <h3 class="fr-accordion__title">
-        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-4">
-            Précisions si vous partez de zéro
-        </button>
-    </h3>
-    <div class="fr-collapse" id="accordion-4">
-<p>Il est supposé dans ce tutoriel que vous avez déjà un site préparé, sur lequel vous souhaitez ajouter une carte.</p>
-<p>Si vous ne savez pas comment créer un site, voici un fichier html minimal qui vous permettra de commencer. Les commentaires sont présents pour vous aider à comprendre le code.</p>
-<pre class="language-html" tabindex="0"><code class="language-html">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Contenu 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Contenu 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Contenu 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span></code></pre>
-<p>Créez sur votre ordinateur un fichier nommé <strong>index.html</strong> et coller ce code dans le fichier à l'aide d'un éditeur de texte, ou de code comme <a href="https://code.visualstudio.com/">Visual Studio Code</a> ou autre. Enresgistrez le fichier puis ouvrez le avec votre navugateur pour afficher le résultat. Pour chaque modification que vous réaliser dans le fichier, sauvegarder-pe uis recharger la page dans le navigateur pour voir le résultat.
-<em>Le fichier avec le code entier et commenté est disponibleà la fin de ce tutoriel.</em></p>
-</div></section>
-</div>
-<br>
-<p><strong>Commencez par ajouter les bibliothèques nécessaires au bon fonctionnement de Maplibre.</strong></p>
-<p>Soit en utilisant les fichiers MapLibre via un CDN. C'est la méthode la plus simple.</p>
-<pre class="language-html" tabindex="0"><code class="language-html">  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Contenu 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Contenu 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Contenu 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span></code></pre>
-<p>(avec ajout PMtiles par sécurité) / Possibilité de l'ajouter avec CDN ou NPM https://maplibre.org/maplibre-gl-js/docs/
-Il existe deux façons d'ajouter les bibliothèques :</p>
-<ul>
-<li>Ajouter les fichiers MapLibre via un CDN. C'est la méthode</li>
-<li>Ajouter les fichiers MapLibre via NPM, soi vous  utilisez ce gestionnaire de paquets.</li>
-</ul>
-<p>Ajouter le conteneur de la carte et style minimal</p>
-<p>Initialiser la carte
-Ajoutez le code JavaScript suivant juste avant la fermeture de la balise <code>&lt;/body&gt;</code> :</p>
-<ul>
-<li>Liste des différents styles disponibles</li>
-</ul>
-<p>Code complet</p>
+<p>La première étape est d'ajouter les bibliothèques nécessaires au bon fonctionnement de Maplibre. Deux possibilités sont disponibles pour utiliser la librairie : en utilisant les liens CDN, ou bien avec le gestionnaire de paquets NPM.</p>
 <hr>
-<p>Explications de la structure HTML :</p>
-<ul>
-<li>La balise <code>meta viewport</code> assure une bonne adaptation sur mobile</li>
-<li>Les fichiers MapLibre sont chargés depuis un CDN (unpkg)</li>
-<li>Le conteneur de la carte (<code>#map</code>) est stylisé pour occuper tout l'espace disponible</li>
-<li>Les marges du body sont supprimées pour un affichage plein écran</li>
-</ul>
-<h2 id="pour-aller-plus-loin" tabindex="-1">Pour aller plus loin <a class="header-anchor" href="#pour-aller-plus-loin">#</a></h2>
-<h3 id="bonnes-pratiques-et-optimisation" tabindex="-1">Bonnes pratiques et optimisation <a class="header-anchor" href="#bonnes-pratiques-et-optimisation">#</a></h3>
-<h3 id="performance" tabindex="-1">Performance <a class="header-anchor" href="#performance">#</a></h3>
-<ul>
-<li>Chargez MapLibre de manière asynchrone pour ne pas bloquer le rendu de la page</li>
-<li>Utilisez la version minifiée de MapLibre en production</li>
-<li>Définissez des limites de zoom appropriées pour votre usage</li>
-</ul>
+<h2 id="en-utilisant-les-liens-cdn" tabindex="-1">En utilisant les liens CDN <a class="header-anchor" href="#en-utilisant-les-liens-cdn">#</a></h2>
+<h3 id="installer-les-bibliotheques" tabindex="-1">Installer les bibliothèques <a class="header-anchor" href="#installer-les-bibliotheques">#</a></h3>
+<p>Ajoutez les liens suivants dans la section <code>&lt;head&gt;</code> de votre fichier HTML, pour ajouter les dernières versions des bibliothèques MapLibre depuis un CDN :</p>
+<pre class="language-html" tabindex="0"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://unpkg.com/maplibre-gl@^5.1.0/dist/maplibre-gl.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://unpkg.com/maplibre-gl@^5.1.0/dist/maplibre-gl.css<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span></code></pre>
+<p>Au besoin, vous pouvez sélectionner une version spécifique des bibliothèque, en modifiant le numéro de version dans les URLs.</p>
+<h3 id="ajouter-la-carte" tabindex="-1">Ajouter la carte <a class="header-anchor" href="#ajouter-la-carte">#</a></h3>
+<p>Pour afficher la carte, ajouter ce code dans les balises <code>&lt;body&gt;</code> de votre page hml :</p>
+<pre class="language-html" tabindex="0"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>map<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+    <span class="token keyword">var</span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">maplibregl<span class="token punctuation">.</span>Map</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        <span class="token literal-property property">container</span><span class="token operator">:</span> <span class="token string">'map'</span><span class="token punctuation">,</span> <span class="token comment">// id du conteneur de la carte</span>
+        <span class="token literal-property property">style</span><span class="token operator">:</span> <span class="token string">'https://betagouv.github.io/styles-de-cartes/maps/standard_ign.json'</span><span class="token punctuation">,</span> <span class="token comment">// URL du style de carte</span>
+        <span class="token literal-property property">maxZoom</span><span class="token operator">:</span> <span class="token number">18.9</span> <span class="token comment">// niveau de zoom maximum, adapté aux style utilisant les données IGN</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
+<p>La balise <code>&lt;div&gt;</code> avec l'attribut <code>id=&quot;map&quot;</code> est le conteneur de la carte, tandis que le script contenu dans les balises <code>&lt;script&gt;</code> initialise la carte en allant chercher les styles et les données nécessaires à son fonctionnement.</p>
+<p>L'URL de style de carte est a modifier selon le style que vous souhaitez utiliser. Pour obtenir l'URL d'un stylede carte parmi ceux présenté sur le site, il suffit de cliquer sur le bouton &quot;Copier l'URL du style&quot; sur la page du style, dans l'onglet des <a href="/fonds-de-cartes/fr/cartes">Cartes</a>. Copier ensuite l'URL obtenue et l'utiliser dans le code ci-dessus.</p>
+
+<div class="fr-callout">
+    <h3 class="fr-callout__title"> Avertissement sur les URLs des cartes</h3>
+    <div class="fr-callout__text">
+<p>Le service est encore en construction et les URLs des styles ne sont pas complètement stables. Pour vous assurer une continuité de service, il est recommandé de copier le fichier JSON du style de carte pour le stocker localement sur votre serveur.</p>
+</div></div>
+<p>N'oubliez pas d'ajuster les styles de votre page et de la balise <code>&lt;div&gt;</code> avec l'attribut <code>id=&quot;map&quot;</code>, afin que la carte soit affichée correctement. Par exemple, si vous souhaitez afficher la carte en plein écran, vous pouvez ajouter le code suivant dans la section <code>&lt;head&gt;</code> de votre fichier HTML :</p>
+<pre class="language-html" tabindex="0"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+    <span class="token selector">html,body, #map</span> <span class="token punctuation">{</span> <span class="token property">height</span><span class="token punctuation">:</span>100%<span class="token punctuation">;</span> <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span> <span class="token property">margin</span><span class="token punctuation">:</span>0<span class="token punctuation">;</span><span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></code></pre>
+<p><strong>Vvous avez maintenant une carte affichée sur votre site !</strong></p>
+<h3 id="exemple-de-code-complet" tabindex="-1">Exemple de code complet <a class="header-anchor" href="#exemple-de-code-complet">#</a></h3>
+<p>L'exemple de code ci-dessous est un exemple complet de code pour afficher une carte sur une page web, qui reprent les étapes précédentes.
+Vous pouvez simplement enregistrer ce code dans un fichier nommé <strong>index.html</strong> et l'ouvrir avec votre navigateur internet pour voir le résultat.</p>
+<pre class="language-html" tabindex="0"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>width=device-width, initial-scale=1.0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Ma carte<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+    
+    <span class="token comment">&lt;!-- Importation des bibliothèques MapLibre --></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://unpkg.com/maplibre-gl@^5.1.0/dist/maplibre-gl.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://unpkg.com/maplibre-gl@^5.1.0/dist/maplibre-gl.css<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+    
+    <span class="token comment">&lt;!-- Style pour afficher la carte en plein écran --></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+        <span class="token selector">html,body, #map</span> <span class="token punctuation">{</span> <span class="token property">height</span><span class="token punctuation">:</span>100%<span class="token punctuation">;</span> <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span> <span class="token property">margin</span><span class="token punctuation">:</span>0<span class="token punctuation">;</span><span class="token punctuation">}</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token comment">&lt;!-- Le conteneur de la carte --></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>map<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+    <span class="token comment">&lt;!-- Le script qui initialise la carte --></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+        <span class="token keyword">var</span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">maplibregl<span class="token punctuation">.</span>Map</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            <span class="token literal-property property">container</span><span class="token operator">:</span> <span class="token string">'map'</span><span class="token punctuation">,</span> <span class="token comment">// id du conteneur de la carte</span>
+            <span class="token literal-property property">style</span><span class="token operator">:</span> <span class="token string">'https://betagouv.github.io/styles-de-cartes/maps/standard_ign.json'</span><span class="token punctuation">,</span> <span class="token comment">// URL du style de carte</span>
+            <span class="token literal-property property">maxZoom</span><span class="token operator">:</span> <span class="token number">18.9</span> <span class="token comment">// niveau de zoom maximum, adapté aux style utilisant les données IGN</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
+<hr>
+<h2 id="en-utilisant-le-gestionnaire-de-paquets-npm" tabindex="-1">En utilisant le gestionnaire de paquets NPM <a class="header-anchor" href="#en-utilisant-le-gestionnaire-de-paquets-npm">#</a></h2>
+<h3 id="installer-les-bibliotheques-1" tabindex="-1">Installer les bibliothèques <a class="header-anchor" href="#installer-les-bibliotheques-1">#</a></h3>
+<p>Installer les bibliotohèque en utilisant la commande suivante dans votre terminal :</p>
+<pre class="language-bash" tabindex="0"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> maplibre-gl</code></pre>
+<h3 id="ajouter-la-carte-1" tabindex="-1">Ajouter la carte <a class="header-anchor" href="#ajouter-la-carte-1">#</a></h3>
+<p>Ajoutez la balise pour la carte dans votre fichier HTML :</p>
+<pre class="language-html" tabindex="0"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>map<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>Puis importez le module MapLibre et initialisez la carte dans votre fichier JavaScript :</p>
+<pre class="language-javascript" tabindex="0"><code class="language-javascript"><span class="token keyword">import</span> maplibregl <span class="token keyword">from</span> <span class="token string">'maplibre-gl'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'maplibre-gl/dist/maplibre-gl.css'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">maplibregl<span class="token punctuation">.</span>Map</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token literal-property property">container</span><span class="token operator">:</span> <span class="token string">'map'</span><span class="token punctuation">,</span> <span class="token comment">// id du conteneur de la carte</span>
+    <span class="token literal-property property">style</span><span class="token operator">:</span> <span class="token string">'https://betagouv.github.io/styles-de-cartes/maps/standard_ign.json'</span><span class="token punctuation">,</span> <span class="token comment">// URL du style de carte</span>
+    <span class="token literal-property property">maxZoom</span><span class="token operator">:</span> <span class="token number">18.9</span> <span class="token comment">// niveau de zoom maximum, adapté aux style utilisant les données IGN</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>C'est tout ! Vous avez maintenant une carte affichée sur votre site web.</p>
+<p>L'URL de style de carte est a modifier selon le style que vous souhaitez utiliser. Découvrez les styles disponibles sur la page <a href="/fonds-de-cartes/fr/cartes">Cartes</a>.</p>
+<hr>
 <h2 id="ressources-supplementaires" tabindex="-1">Ressources supplémentaires <a class="header-anchor" href="#ressources-supplementaires">#</a></h2>
 <ul>
-<li><a href="https://maplibre.org/maplibre-gl-js-docs/api/">Documentation officielle de MapLibre GL JS</a></li>
-<li><a href="https://openmaptiles.geo.data.gouv.fr/">Styles disponibles sur openmaptiles.geo.data.gouv.fr</a></li>
-<li><a href="https://maplibre.org/maplibre-gl-js-docs/example/">Exemples d'utilisation</a></li>
-<li><a href="https://maplibre.org/maplibre-gl-js-docs/api/performance/">Guide des performances MapLibre</a></li>
+<li><a href="https://maplibre.org/maplibre-gl-js/docs/">Documentation officielle de MapLibre GL JS</a></li>
 </ul>
 
       <div class="fr-grid-row fr-grid-row--right">

@@ -105,6 +105,7 @@ h2 + .header-anchor {
 
 img {
     display: block;
+    width: 100%;
 }
 
 /* Custom DSFR */
@@ -514,25 +515,6 @@ pre[class*="language-"] {
                             </ul>
                         </div>
                 </li>
-                <li class="fr-sidemenu__item">
-                        <button class="fr-sidemenu__btn" aria-expanded="false" aria-controls="sidemenu-4">
-                            Références
-                        </button>
-                        <div class="fr-collapse" id="sidemenu-4">
-                            <ul class="fr-sidemenu__list">
-                                <li class="fr-sidemenu__item">
-                                <a class="fr-sidemenu__link" href="/fonds-de-cartes/fr/documentation/references/schema-de-donnees-plan-ign/">
-                                    Schéma de données Plan IGN
-                                </a>
-                                </li>
-                                <li class="fr-sidemenu__item">
-                                <a class="fr-sidemenu__link" href="/fonds-de-cartes/fr/documentation/references/schema-de-donnees-openmaptiles/">
-                                    Schéma de données OpenMapTiles
-                                </a>
-                                </li>
-                            </ul>
-                        </div>
-                </li>
             </ul>
         </div>
   </div>
@@ -593,64 +575,20 @@ pre[class*="language-"] {
           </a>
         </div> 
       </div>
-      
-<div class="fr-callout">
-    <h3 class="fr-callout__title"> 🛠️ Page en cours de rédaction</h3>
-    <div class="fr-callout__text">
-<p>Le contenu n'est pas représentatif du contenu final.</p>
-</div></div>
-<p>Schéma de synthèse de slien entre données géographiques, flux et serveurs, styles de cartes.</p>
+      <p>Pour construire des cartes sur un site web, nous avons besoin de <strong>données géographiques</strong>, provenant d'une source (un serveur distant sur lesquelles elles soont stockées), qui sont servies via ce qu'on appelle un <strong>flux de données géographiques</strong>. On applique ensuite un <strong>style</strong> à ces données pour les rendre lisibles et utilisables par les usagers du site.</p>
+<p>Le schéma ci-dessous illustre le processus :</p>
+<p><img src="/fonds-de-cartes/img/documentation/schema_concepts-fondamentaux.svg" alt="Schéma de synthèse des liens entre données géographiques, flux de données géographiques et styles de cartes."></p>
+<br>
 <hr>
-<p>Pour construire des cartes, nous avons besoin de sources de données géographiques. Elles existent sous deux formats principaux pour les cartes en ligne : les cartes <strong>raster</strong> et les cartes <strong>vectorielles</strong>. </p>
-<h2 id="sources-de-donnees" tabindex="-1">Sources de données <a class="header-anchor" href="#sources-de-donnees">#</a></h2>
-<p>Notre service s'appuie sur deux grandes sources de données géographiques :</p>
+<h2 id="donnees-geographiques" tabindex="-1">Données géographiques <a class="header-anchor" href="#donnees-geographiques">#</a></h2>
+<p><strong>Les données géographiques sont par exemple des points (lieux, fontaines, etc), des lignes (routes, rivières, etc), des surfaces (zones, bâtiments, parcelles,etc), des images (photos aériennes), qui peuvent être représentés sur une carte grâce à un système de coordonnées géographiques.</strong></p>
+<p>On peut distinguer deux formats principaux dans lesquels sont stockées et mis à disposition les données géographiques :</p>
 <ul>
-<li><strong>OpenStreetMap (OSM) :</strong> Une base de données mondiale, ouverte et collaborative, couvrant une vaste gamme d'informations géographiques telles que les routes, bâtiments, parcs, et plus encore.</li>
-<li><strong>Institut National de l'Information Géographique et Forestière (IGN) :</strong> Fournit des données précises et détaillées sur le territoire français, y compris des cartes topographiques, des orthophotos, et d'autres données géospatiales.</li>
+<li>Les <strong>données vectorielles</strong> : sont stockées sous forme de vecteurs (des points, des lignes et des polygones). Ces vecteurs sont décrits mathématiquement plutôut que par des pixels, ce qui permet un rendu flexible et interactif. En simplifiant, si on zoom fortement dans la carte, on ne verra jamais de pixelisation.</li>
+<li>Les <strong>données raster</strong> : sont stockées sous forme de matrices d'images (pixels). Chaque image (ou &quot;tuile&quot;) est une petite portion de la carte à une résolution donnée. En simplifiant, si on zoom fortement dans la carte, on verra apparaitre des pixels.</li>
 </ul>
-<hr>
-<h2 id="formats-de-donnees" tabindex="-1">Formats de données <a class="header-anchor" href="#formats-de-donnees">#</a></h2>
-<h3 id="raster" tabindex="-1">Raster <a class="header-anchor" href="#raster">#</a></h3>
-<h4 id="principe" tabindex="-1">Principe <a class="header-anchor" href="#principe">#</a></h4>
-<p>Les cartes raster sont composées d'images matricielles (pixels). Chaque image (ou &quot;tuile&quot;) est une petite portion de la carte à une résolution donnée.</p>
-<h4 id="exemples-d-utilisation" tabindex="-1">Exemples d'utilisation : <a class="header-anchor" href="#exemples-d-utilisation">#</a></h4>
-<p>Les images aériennes et vues satellites, les cartes topographiques.</p>
-<h4 id="avantages" tabindex="-1">Avantages : <a class="header-anchor" href="#avantages">#</a></h4>
-<ul>
-<li><strong>Simplicité d'utilisation :</strong> Les images raster sont largement supportées par les navigateurs web.</li>
-<li><strong>Compatibilité :</strong> Fonctionne bien sur la majorité des appareils, sans besoin de technologies avancées.</li>
-<li><strong>Détails complexes :</strong> Idéal pour afficher des images complexes comme des photos satellites.</li>
-</ul>
-<p><strong>Inconvénients :</strong></p>
-<ul>
-<li><strong>Taille des fichiers :</strong> Les images raster peuvent être volumineuses, surtout à haute résolution, ce qui ralentit le chargement des pages.</li>
-<li><strong>Perte de qualité au zoom :</strong> En zoomant, l’image devient floue (pixelisée).</li>
-<li><strong>Pas d’interaction dynamique :</strong> Les informations sont statiques, il est difficile de modifier ou d’ajouter des données dynamiques.</li>
-</ul>
-<h4 id="exemple-de-carte-raster" tabindex="-1">Exemple de carte raster : <a class="header-anchor" href="#exemple-de-carte-raster">#</a></h4>
-<p><em>Lien vers une carte raster</em></p>
-<h3 id="vectorielles" tabindex="-1">Vectorielles <a class="header-anchor" href="#vectorielles">#</a></h3>
-<p><strong>Principe :</strong><br>
-Les cartes vectorielles représentent les données géographiques par des vecteurs (points, lignes, polygones) plutôt que par des pixels. Ces vecteurs sont décrits mathématiquement, ce qui permet un rendu flexible et interactif.</p>
-<p><strong>Exemples d'utilisation :</strong><br>
-Les cartes de navigation, les applications interactives modernes.</p>
-<p><strong>Avantages :</strong></p>
-<ul>
-<li><strong>Qualité au zoom :</strong> Les cartes vectorielles restent nettes peu importe le niveau de zoom.</li>
-<li><strong>Interactivité :</strong> Les objets sur la carte peuvent être cliqués, modifiés et animés.</li>
-<li><strong>Personnalisation :</strong> Les styles peuvent être facilement modifiés (couleurs, épaisseurs de ligne, etc.).</li>
-<li><strong>Taille plus petite :</strong> Les données vectorielles sont souvent plus légères que les images raster.</li>
-</ul>
-<p><strong>Inconvénients :</strong></p>
-<ul>
-<li><strong>Complexité technique :</strong> Nécessite plus de ressources pour le rendu, surtout pour des cartes très détaillées.</li>
-<li><strong>Compatibilité :</strong> Certains vieux navigateurs ou appareils peuvent ne pas bien supporter les cartes vectorielles.</li>
-<li><strong>Performance :</strong> Peut être plus lent sur des appareils avec des ressources limitées.</li>
-</ul>
-<p><strong>Exemple de carte vectorielle :</strong> </p>
-<p>https://openmaptiles.geo.data.gouv.fr/styles/osm-bright/?vector=#1/0/0
-Lien vers une carte vectorielle</p>
-<h3 id="comparaison-des-deux-formats" tabindex="-1">Comparaison des deux formats <a class="header-anchor" href="#comparaison-des-deux-formats">#</a></h3>
+<p>Certaines données ne peuvent être mises à disposition que sous forme de données raster, par exemple les images aériennes. Mais de nombreuses données peuvent mises à disposition à la fois en raster ou en vectoriel.</p>
+<p>Voici un tableau qui permet de comparer les avantages et inconvénients des deux formats :</p>
 <table class="fr-table"><thead>
 <tr>
 <th>Critère</th>
@@ -671,7 +609,7 @@ Lien vers une carte vectorielle</p>
 </tr>
 <tr>
 <td><strong>Interactivité</strong></td>
-<td>Limitée, statique</td>
+<td>Limitée, images statiques</td>
 <td>Hautement interactive : modifications possibles en temps réel.</td>
 </tr>
 <tr>
@@ -682,141 +620,39 @@ Lien vers une carte vectorielle</p>
 <tr>
 <td><strong>Compatibilité</strong></td>
 <td>Excellente sur tous les appareils</td>
-<td>Peut être limitée sur certains appareils</td>
+<td>Peut être limitée sur certains appareils anciens et peu performants</td>
 </tr>
 </tbody>
 </table>
+<p>Les formats raster et vectoriel peuvent être associés et ainsi offrir une grande flexibilité pour la création de cartes interactives, notament grâce aux styles de cartes.</p>
+<br>
 <hr>
-<p>Les formats raster et vectoriel peuvent être associés et ainsi offrir une grande flexibilité pour la création de cartes interactives : <a href="styles-de-carte.md" title="mention">styles-de-carte.md</a></p>
+<h2 id="sources-de-donnees-geographiques" tabindex="-1">Sources de données géographiques <a class="header-anchor" href="#sources-de-donnees-geographiques">#</a></h2>
+<p><strong>Ces données géographiques sont produites et mises à disposition par des groupes de personnes et organismes.</strong> Notre service s'appuie principalement sur deux grandes sources de données :</p>
+<ul>
+<li><strong><a href="https://www.ign.fr/">Institut National de l'Information Géographique et Forestière (IGN)</a> :</strong> Fournit des données précises et détaillées sur le territoire français, y compris des cartes topographiques, des orthophotos, et d'autres données géospatiales.</li>
+<li><strong><a href="https://www.openstreetmap.org/">OpenStreetMap (OSM)</a> :</strong> Une base de données mondiale, ouverte et collaborative, couvrant une vaste gamme d'informations géographiques.</li>
+</ul>
+<br>
 <hr>
-<p>Pour construire des cartes interactives, les données géographiques peuvent être fournies de différentes manières, notamment via des flux de données géographiques.</p>
-<p>Ces flux permettent de fournir des cartes dynamiques et interactives qui se mettent à jour en temps réel. Ce service utilise principalement les protocoles WMS (Web Map Service) et WMTS (Web Map Tile Service) pour servir les cartes.</p>
-<p><strong>Fonctionnement des Flux :</strong></p>
+<h2 id="flux-de-donnees-geographiques" tabindex="-1">Flux de données géographiques <a class="header-anchor" href="#flux-de-donnees-geographiques">#</a></h2>
+<p><strong>Ces données produites par les sources sont placées sur des serveurs et mise à disposition via des flux de données géographiques.</strong></p>
+<p>Les flux fonctionnent selon le modèle client-serveur, où le client (votre application ou site internet) envoie une requête au serveur pour obtenir une partie de la carte ou une information géographique spécifique. Le serveur répond en fournissant les données demandées, qui peuvent être sous forme de tuiles raster ou vectorielles.</p>
+<p>Voici différents types de flux géographiques :</p>
 <ul>
-<li><strong>WMS :</strong> Sert des images géoréférencées. Chaque requête renvoie une image correspondant à une portion spécifique de la carte.</li>
-<li><strong>WMTS :</strong> Optimisé pour les applications web, il fournit des tuiles de carte prédéfinies, ce qui permet un rendu plus rapide des cartes à différents niveaux de zoom.</li>
+<li><strong>WMS :</strong> Chaque requête génère et renvoie une image correspondant à une portion spécifique de la carte.</li>
+<li><strong>WMTS :</strong> Optimisé pour les applications web, les images sont disponibles sous forme de tuiles pré-générées. Cela permet un rendu plus rapide des cartes à différents niveaux de zoom.</li>
+<li><strong>WFS :</strong> Fournit des données vectorielles géographiques. Contrairement aux services raster, les données sont envoyées sous forme de vecteurs qui peuvent être stylisés et manipulés dynamiquement par le client.</li>
+<li><strong>XYZ :</strong> Les cartes sont disponibles sous forme de tuiles pré-générées, de la même manière que pour le format WMTS, avec dans l'URL les coordonnées de la tuile demandée (par exemple <code>http://server/tiles/{z}/{x}/{y}.png</code>).</li>
 </ul>
-<p><strong>Avantages des Flux :</strong></p>
-<ul>
-<li><strong>Données Actualisées :</strong> Les cartes sont automatiquement mises à jour avec les dernières informations disponibles.</li>
-<li><strong>Réduction des Coûts :</strong> Pas besoin de stocker localement des données volumineuses. Accédez uniquement aux informations nécessaires.</li>
-<li><strong>Flexibilité :</strong> Combinez des flux raster et vectoriels pour créer des cartes complexes et informatives.</li>
-</ul>
+<p>Une fois les données géographiques reçues dans son application ou site internet via ces flux, il est possible de les styliser grâce à des styles de cartes.</p>
+<br>
 <hr>
-<h4 id="1-qu-est-ce-qu-un-flux-de-donnees-geographiques" tabindex="-1">1. Qu'est-ce qu'un Flux de Données Géographiques ? <a class="header-anchor" href="#1-qu-est-ce-qu-un-flux-de-donnees-geographiques">#</a></h4>
-<p><strong>Définition :</strong><br>
-Un flux de données géographiques est un service qui permet de récupérer des informations cartographiques ou géographiques de manière continue et dynamique via Internet. Ces flux sont utilisés pour afficher des cartes, des images satellites, des couches d'information spécifiques, ou des données géospatiales.</p>
-<p><strong>Principe :</strong><br>
-Les flux fonctionnent selon le modèle client-serveur, où le client (votre application) envoie une requête au serveur pour obtenir une partie de la carte ou une information géographique spécifique. Le serveur répond en fournissant les données demandées, qui peuvent être sous forme de tuiles raster, de vecteurs, ou d'autres formats.</p>
-<p><strong>Types de Flux :</strong></p>
-<ul>
-<li><strong>Flux Raster (WMS, WMTS) :</strong> Envoient des images pré-rendues sous forme de tuiles.</li>
-<li><strong>Flux Vectoriels (WFS, TMS, vecteurs bruts) :</strong> Envoient des données géographiques en format vectoriel (points, lignes, polygones).</li>
-<li><strong>Flux de Tuiles (TMS, XYZ) :</strong> Fournissent des tuiles de carte spécifique pour différents niveaux de zoom.</li>
-</ul>
-<hr>
-<h4 id="2-les-flux-de-cartes-de-l-ign" tabindex="-1">2. Les Flux de Cartes de l'IGN <a class="header-anchor" href="#2-les-flux-de-cartes-de-l-ign">#</a></h4>
-<p>L'IGN (Institut national de l'information géographique et forestière) est une source majeure de données géographiques en France. L'IGN propose différents flux pour accéder à ses données.</p>
-<p><strong>Types de Flux Fournis par l'IGN :</strong></p>
-<ol>
-<li><strong>Flux WMS (Web Map Service) :</strong>
-<ul>
-<li>
-<p><strong>Principe :</strong> Permet de récupérer des images géoréférencées de cartes sous forme de tuiles raster. Chaque tuile correspond à une portion spécifique de la carte à un certain niveau de zoom.</p>
-</li>
-<li>
-<p><strong>Utilisation :</strong> Idéal pour afficher des cartes topographiques, des orthophotos, ou d'autres images géographiques.</p>
-</li>
-<li>
-<p><strong>Exemple de Requête :</strong></p>
-<pre class="language-url" tabindex="0"><code class="language-url"><span class="token scheme">https<span class="token scheme-delimiter">:</span></span><span class="token authority"><span class="token authority-delimiter">//</span><span class="token host">wxs.ign.fr</span></span><span class="token path"><span class="token path-separator">/</span>cleapi<span class="token path-separator">/</span>geoportail<span class="token path-separator">/</span>wms</span><span class="token query"><span class="token query-delimiter">?</span><span class="token pair"><span class="token key">SERVICE</span>=<span class="token value">WMS</span></span><span class="token pair-delimiter">&amp;</span><span class="token pair"><span class="token key">VERSION</span>=<span class="token value">1.3.0</span></span><span class="token pair-delimiter">&amp;</span><span class="token pair"><span class="token key">REQUEST</span>=<span class="token value">GetMap</span></span><span class="token pair-delimiter">&amp;</span><span class="token pair"><span class="token key">BBOX</span>=<span class="token value">-5.0,41.0,9.7,51.2</span></span><span class="token pair-delimiter">&amp;</span><span class="token pair"><span class="token key">CRS</span>=<span class="token value">EPSG:4326</span></span><span class="token pair-delimiter">&amp;</span><span class="token pair"><span class="token key">WIDTH</span>=<span class="token value">800</span></span><span class="token pair-delimiter">&amp;</span><span class="token pair"><span class="token key">HEIGHT</span>=<span class="token value">600</span></span><span class="token pair-delimiter">&amp;</span><span class="token pair"><span class="token key">LAYERS</span>=<span class="token value">GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN-EXPRESS.STANDARD</span></span><span class="token pair-delimiter">&amp;</span><span class="token pair"><span class="token key">STYLES</span>=</span><span class="token pair-delimiter">&amp;</span><span class="token pair"><span class="token key">FORMAT</span>=<span class="token value">image/png</span></span><span class="token pair-delimiter">&amp;</span><span class="token pair"><span class="token key">DPI</span>=<span class="token value">96</span></span><span class="token pair-delimiter">&amp;</span><span class="token pair"><span class="token key">MAP_RESOLUTION</span>=<span class="token value">96</span></span><span class="token pair-delimiter">&amp;</span><span class="token pair"><span class="token key">FORMAT_OPTIONS</span>=<span class="token value">dpi:96</span></span></span></code></pre>
-</li>
-</ul>
-</li>
-<li><strong>Flux WMTS (Web Map Tile Service) :</strong>
-<ul>
-<li>
-<p><strong>Principe :</strong> Similaire au WMS, mais optimise la gestion des tuiles en les servant selon une grille de tuiles prédéfinie. C'est plus efficace pour les applications nécessitant de nombreuses requêtes, comme les applications web interactives.</p>
-</li>
-<li>
-<p><strong>Utilisation :</strong> Recommandé pour les cartes à haute disponibilité avec un besoin de performance élevé.</p>
-</li>
-<li>
-<p><strong>Exemple de Requête :</strong></p>
-<pre class="language-url" tabindex="0"><code class="language-url"><span class="token scheme">https<span class="token scheme-delimiter">:</span></span><span class="token authority"><span class="token authority-delimiter">//</span><span class="token host">wxs.ign.fr</span></span><span class="token path"><span class="token path-separator">/</span>cleapi<span class="token path-separator">/</span>geoportail<span class="token path-separator">/</span>wmts</span><span class="token query"><span class="token query-delimiter">?</span><span class="token pair"><span class="token key">SERVICE</span>=<span class="token value">WMTS</span></span><span class="token pair-delimiter">&amp;</span><span class="token pair"><span class="token key">VERSION</span>=<span class="token value">1.0.0</span></span><span class="token pair-delimiter">&amp;</span><span class="token pair"><span class="token key">REQUEST</span>=<span class="token value">GetTile</span></span><span class="token pair-delimiter">&amp;</span><span class="token pair"><span class="token key">LAYER</span>=<span class="token value">GEOGRAPHICALGRIDSYSTEMS.MAPS.SCAN-EXPRESS.STANDARD</span></span><span class="token pair-delimiter">&amp;</span><span class="token pair"><span class="token key">STYLE</span>=<span class="token value">normal</span></span><span class="token pair-delimiter">&amp;</span><span class="token pair"><span class="token key">TILEMATRIXSET</span>=<span class="token value">PM</span></span><span class="token pair-delimiter">&amp;</span><span class="token pair"><span class="token key">TILEMATRIX</span>=<span class="token value">10</span></span><span class="token pair-delimiter">&amp;</span><span class="token pair"><span class="token key">TILEROW</span>=<span class="token value">383</span></span><span class="token pair-delimiter">&amp;</span><span class="token pair"><span class="token key">TILECOL</span>=<span class="token value">535</span></span><span class="token pair-delimiter">&amp;</span><span class="token pair"><span class="token key">FORMAT</span>=<span class="token value">image/png</span></span></span></code></pre>
-</li>
-</ul>
-</li>
-<li><strong>Flux WFS (Web Feature Service) :</strong>
-<ul>
-<li>
-<p><strong>Principe :</strong> Fournit des données vectorielles géographiques. Contrairement aux services raster, les données sont envoyées sous forme de vecteurs qui peuvent être stylisés et manipulés dynamiquement par le client.</p>
-</li>
-<li>
-<p><strong>Utilisation :</strong> Utile pour obtenir des données géographiques brutes (comme des parcelles cadastrales, des routes, etc.) qui peuvent être personnalisées dans votre application.</p>
-</li>
-<li>
-<p><strong>Exemple de Requête :</strong></p>
-<pre class="language-url" tabindex="0"><code class="language-url"><span class="token scheme">https<span class="token scheme-delimiter">:</span></span><span class="token authority"><span class="token authority-delimiter">//</span><span class="token host">wxs.ign.fr</span></span><span class="token path"><span class="token path-separator">/</span>cleapi<span class="token path-separator">/</span>geoportail<span class="token path-separator">/</span>wfs</span><span class="token query"><span class="token query-delimiter">?</span><span class="token pair"><span class="token key">SERVICE</span>=<span class="token value">WFS</span></span><span class="token pair-delimiter">&amp;</span><span class="token pair"><span class="token key">VERSION</span>=<span class="token value">2.0.0</span></span><span class="token pair-delimiter">&amp;</span><span class="token pair"><span class="token key">REQUEST</span>=<span class="token value">GetFeature</span></span><span class="token pair-delimiter">&amp;</span><span class="token pair"><span class="token key">TYPENAME</span>=<span class="token value">BDTOPO_BDD_CARTO_L</span></span><span class="token pair-delimiter">&amp;</span><span class="token pair"><span class="token key">OUTPUTFORMAT</span>=<span class="token value">application/json</span></span></span></code></pre>
-</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h4 id="3-les-flux-de-donnees-d-openstreetmap-osm" tabindex="-1">3. Les Flux de Données d'OpenStreetMap (OSM) <a class="header-anchor" href="#3-les-flux-de-donnees-d-openstreetmap-osm">#</a></h4>
-<p>OpenStreetMap est une carte collaborative et ouverte, dont les données sont disponibles gratuitement. Les flux de données OSM sont utilisés pour accéder à ces informations en temps réel.</p>
-<p><strong>Types de Flux Fournis par OSM :</strong></p>
-<ol>
-<li><strong>Flux de Tuiles Raster (TMS, XYZ) :</strong>
-<ul>
-<li>
-<p><strong>Principe :</strong> OSM propose des tuiles de cartes raster en utilisant le format TMS (Tile Map Service) ou XYZ. Ces tuiles sont précalculées et stockées sur des serveurs pour un accès rapide.</p>
-</li>
-<li>
-<p><strong>Utilisation :</strong> Parfait pour afficher des cartes OSM classiques sur votre site ou application.</p>
-</li>
-<li>
-<p><strong>Exemple d’URL de Tuiles :</strong></p>
-<pre class="language-url" tabindex="0"><code class="language-url"><span class="token scheme">https<span class="token scheme-delimiter">:</span></span><span class="token authority"><span class="token authority-delimiter">//</span></span>{s}.tile.openstreetmap.org/{z}/{x}/{y}.png</code></pre>
-<p>Où <code>{s}</code> représente le sous-domaine, <code>{z}</code> le niveau de zoom, <code>{x}</code> et <code>{y}</code> les coordonnées des tuiles.</p>
-</li>
-</ul>
-</li>
-<li><strong>Flux de Données Brutes (API OSM Overpass) :</strong>
-<ul>
-<li>
-<p><strong>Principe :</strong> Accède aux données brutes d'OSM via l'API Overpass. Permet de récupérer des éléments spécifiques (points d'intérêt, routes, bâtiments, etc.) sous forme de données vectorielles.</p>
-</li>
-<li>
-<p><strong>Utilisation :</strong> Utile pour les applications nécessitant des données OSM spécifiques et manipulables, comme la création de cartes thématiques ou d'applications de navigation personnalisées.</p>
-</li>
-<li>
-<p><strong>Exemple de Requête Overpass :</strong></p>
-<pre class="language-url" tabindex="0"><code class="language-url"><span class="token scheme">https<span class="token scheme-delimiter">:</span></span><span class="token authority"><span class="token authority-delimiter">//</span><span class="token host">overpass-api.de</span></span><span class="token path"><span class="token path-separator">/</span>api<span class="token path-separator">/</span>interpreter</span><span class="token query"><span class="token query-delimiter">?</span><span class="token pair"><span class="token key">data</span>=</span></span>[out:json];node["amenity"="restaurant"](around:1000,48.8566,2.3522);out;</code></pre>
-</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h4 id="4-avantages-de-l-utilisation-des-flux-de-donnees-geographiques" tabindex="-1">4. Avantages de l'Utilisation des Flux de Données Géographiques <a class="header-anchor" href="#4-avantages-de-l-utilisation-des-flux-de-donnees-geographiques">#</a></h4>
-<p><strong>1. Mise à Jour en Temps Réel :</strong><br>
-Les flux permettent d'obtenir des données actualisées en permanence, ce qui est essentiel pour les applications de navigation ou de gestion en temps réel.</p>
-<p><strong>2. Flexibilité et Personnalisation :</strong><br>
-L'utilisation de différents formats et types de flux (raster, vectoriels) permet de personnaliser les cartes selon les besoins spécifiques de l'application. Par exemple, superposer des tuiles raster de l'IGN avec des données vectorielles d'OSM pour afficher des routes sur un fond topographique.</p>
-<p><strong>3. Économie de Ressources :</strong><br>
-En utilisant des flux, vous n'avez pas besoin de stocker localement d'énormes volumes de données géographiques. Vous accédez uniquement aux informations nécessaires au moment où elles sont requises.</p>
-<p><strong>4. Intégration Facile :</strong><br>
-Les flux sont faciles à intégrer dans des applications web grâce à des standards ouverts comme WMS, WMTS, et les tuiles XYZ, ce qui permet de créer rapidement des cartes interactives.</p>
-<hr>
-<h4 id="conclusion" tabindex="-1">Conclusion <a class="header-anchor" href="#conclusion">#</a></h4>
-<p>Les flux de données géographiques, comme ceux fournis par l'IGN et OpenStreetMap, sont des outils puissants pour intégrer des cartes et des informations géographiques dans des applications web ou mobiles. En comprenant les différents formats et types de flux, vous pouvez choisir les meilleures options pour vos besoins spécifiques, qu'il s'agisse d'afficher des cartes simples ou de créer des solutions géospatiales complexes et dynamiques. Utiliser ces flux vous permet d'accéder à des données de haute qualité et de les personnaliser pour une large gamme d'applications.</p>
-<hr>
-<p><strong>Un style de carte est un ensemble de règles qui déterminent l'apparence des éléments cartographiques.</strong> </p>
-<p>Ces règles sont généralement rassemblées dans des fichiers de style en format JSON. Les règles de styles permettent de combiner différentes sources de données — à la fois vectorielles (lignes, polygones, points) et raster (images, tuiles pré-rendues) — pour créer des cartes multicouches. Cette flexibilité est utile pour créer des cartes simples ou riches en informations, et adaptées à divers besoins.</p>
-<p>Nos cartes prêtes à l'emploi vous permettent de ne pas avoir à gérer le détail des données sous-jacentes.</p>
-<p>(Lien)</p>
-<p>Vous pouvez également modifier ces styles ou en créer un nouveau en partant d'une page blanche. Pour en savoir plus, consultez la page :</p>
-<p>(Lien)</p>
+<h2 id="styles-de-cartes" tabindex="-1">Styles de cartes <a class="header-anchor" href="#styles-de-cartes">#</a></h2>
+<p><strong>Un style de carte est un ensemble de règles qui déterminent l'apparence des éléments cartographiques.</strong></p>
+<p>Ces règles peuvent être rassemblées dans des fichiers de style en format JSON. Les règles de styles permettent de combiner différentes sources de données, à la fois vectorielles et raster, pour créer des cartes multicouches et ainsi s'adapter à divers besoins.</p>
+<p>Nos services vous propose des styles de cartes prêtes à l'emploi, vous permettent de ne pas avoir à gérer le détail des données sous-jacentes. <a href="/fonds-de-cartes/fr/cartes">Voir les cartes disponibles</a>.</p>
+<p>Ainsi vous aurez uniquement besoin de charger le style de carte de votre choix dans votre page web pour afficher la carte, en suivant ce tutoriel : <a href="/fonds-de-cartes/fr/documentation/utiliser-les-cartes">Utiliser les cartes</a>.</p>
 
       <div class="fr-grid-row fr-grid-row--right">
 <a class="fr-grid-row fr-grid-row--right fr-link fr-icon-arrow-up-fill fr-link--icon-left" href="#top">

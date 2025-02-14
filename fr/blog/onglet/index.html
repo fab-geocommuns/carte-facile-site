@@ -105,6 +105,7 @@ h2 + .header-anchor {
 
 img {
     display: block;
+    width: 100%;
 }
 
 /* Custom DSFR */
@@ -490,7 +491,7 @@ pre[class*="language-"] {
             <h1>Onglet</h1>
             <p class="fr-text--xs">
               Publié le
-              <time datetime="2025-02-12">12 février 2025</time>
+              <time datetime="2025-02-14">14 février 2025</time>
             </p>
           </hgroup>
         </div>
@@ -513,20 +514,20 @@ pre[class*="language-"] {
 
 
       <p>Chaque composant peut être inclus dans un fichier Nunjucks <code>.njk</code> ou Markdown <code>.md</code>.</p>
-<h2 id="exemple-d-utilisation" tabindex="-1">Exemple d'utilisation <a class="header-anchor" href="#exemple-d-utilisation">#</a></h2>
+<h3 id="exemple-d-utilisation" tabindex="-1">Exemple d'utilisation <a class="header-anchor" href="#exemple-d-utilisation">#</a></h3>
 <pre class="language-njk" tabindex="0"><code class="language-njk"><span class="token delimiter punctuation">{%</span> <span class="token tag keyword">from</span> <span class="token string">"components/tab.njk"</span> <span class="token keyword">import</span> <span class="token variable">tabs</span> <span class="token operator">%</span><span class="token punctuation">}</span>
 <span class="token punctuation">{</span><span class="token punctuation">{</span> <span class="token function">tabs</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
     <span class="token variable">ariaLabel</span><span class="token punctuation">:</span> <span class="token string">"Titre du système d'onglets"</span><span class="token punctuation">,</span>
     <span class="token variable">items</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
         <span class="token punctuation">{</span>
-            <span class="token variable">id</span><span class="token punctuation">:</span> <span class="token string">'tab1'</span><span class="token punctuation">,</span>
-            <span class="token variable">label</span><span class="token punctuation">:</span> <span class="token string">'Label'</span><span class="token punctuation">,</span>
-            <span class="token variable">content</span><span class="token punctuation">:</span> <span class="token string">'&lt;p>Contenu 1&lt;/p>'</span>
+            <span class="token variable">id</span><span class="token punctuation">:</span> <span class="token string">"tab1"</span><span class="token punctuation">,</span>
+            <span class="token variable">label</span><span class="token punctuation">:</span> <span class="token string">"Label"</span><span class="token punctuation">,</span>
+            <span class="token variable">content</span><span class="token punctuation">:</span> <span class="token string">"&lt;p>Contenu 1&lt;/p>"</span>
         <span class="token punctuation">}</span><span class="token punctuation">,</span>
         <span class="token punctuation">{</span>
-            <span class="token variable">id</span><span class="token punctuation">:</span> <span class="token string">'tab2'</span><span class="token punctuation">,</span>
-            <span class="token variable">label</span><span class="token punctuation">:</span> <span class="token string">'Label'</span><span class="token punctuation">,</span>
-            <span class="token variable">content</span><span class="token punctuation">:</span> <span class="token string">'&lt;p>Contenu 2&lt;/p>'</span>
+            <span class="token variable">id</span><span class="token punctuation">:</span> <span class="token string">"tab2"</span><span class="token punctuation">,</span>
+            <span class="token variable">label</span><span class="token punctuation">:</span> <span class="token string">"Label"</span><span class="token punctuation">,</span>
+            <span class="token variable">content</span><span class="token punctuation">:</span> <span class="token string">"&lt;p>Contenu 2&lt;/p>"</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">]</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">}</span>
@@ -573,8 +574,8 @@ pre[class*="language-"] {
       <p class="fr-card__desc"></p>
       <div class="fr-card__start">
           <p class="fr-card__detail fr-icon-time-fill">
-            <time class="postlist-date" datetime="2025-02-12">
-              12 février 2025
+            <time class="postlist-date" datetime="2025-02-14">
+              14 février 2025
             </time>
           </p>
       </div>
@@ -596,8 +597,8 @@ pre[class*="language-"] {
       <p class="fr-card__desc"></p>
       <div class="fr-card__start">
           <p class="fr-card__detail fr-icon-time-fill">
-            <time class="postlist-date" datetime="2025-02-12">
-              12 février 2025
+            <time class="postlist-date" datetime="2025-02-14">
+              14 février 2025
             </time>
           </p>
       </div>
