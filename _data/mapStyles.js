@@ -7,7 +7,7 @@ module.exports = async function() {
         },
         {
             id: "light_ign",
-            url: "https://betagouv.github.io/styles-de-cartes/maps/light_ign.json"
+            url: "https://betagouv.github.io/styles-de-cartes/maps/desaturated_ign.json"
         }
     ];
 
