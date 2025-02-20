@@ -137,7 +137,7 @@ En effet les données peuvent avoir des référentiels différents selon les act
 
 ***
 
-## Cas pratiques
+### Cas pratiques
 
 ????accordionsgroup
 
@@ -224,7 +224,7 @@ Géocodage massif avec une solution en ligne de commande utilisant Node.js : [ht
 
 ***
 
-## Questions fréquentes
+### Questions fréquentes
 
 ????accordionsgroup
 
