@@ -6,7 +6,11 @@ module.exports = async function() {
             isDefault: true
         },
         {
-            id: "light_ign",
+            id: "desaturated_ign",
+            url: "https://betagouv.github.io/styles-de-cartes/maps/desaturated_ign.json"
+        },
+        {
+            id: "aerial-photography_ign",
             url: "https://betagouv.github.io/styles-de-cartes/maps/desaturated_ign.json"
         }
     ];
