@@ -105,6 +105,8 @@ body {
     left: 0.5rem;
     color: var(--text-active-blue-france);
     z-index: 1;
+    background-color: var(--background-default-grey);
+    border-radius: 12px;
 }
 
 .map-card[aria-current="true"] .map-active-icon {
