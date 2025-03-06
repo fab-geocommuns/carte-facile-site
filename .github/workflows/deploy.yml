@@ -9,6 +9,7 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-20.04
+    environment: ${{ github.ref == 'refs/heads/main' && 'production' || 'staging' }}
 
     strategy:
       matrix:
@@ -32,7 +33,6 @@ jobs:
 
       - name: Deploy to Staging
         if: github.ref == 'refs/heads/staging'
-        environment: staging
         uses: peaceiris/actions-gh-pages@v4
         with:
           publish_dir: ./_site
@@ -41,7 +41,6 @@ jobs:
 
       - name: Deploy to Production
         if: github.ref == 'refs/heads/main'
-        environment: production
         uses: peaceiris/actions-gh-pages@v4
         with:
           publish_dir: ./_site
