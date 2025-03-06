@@ -16,7 +16,7 @@ Dans un terminal, dans le dossier où vous voulez installer le projet :
 **Cloner le dépôt** :
 
 ```bash
-git clone https://github.com/betagouv/fonds-de-cartes.git
+git clone https://github.com/fab-geocommuns/carte-facile-site.git
 ```
 
 **Naviguer dans le dossier** :
