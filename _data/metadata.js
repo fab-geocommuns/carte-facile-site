@@ -14,7 +14,7 @@ module.exports = {
     linkedin_url: "",
     youtube_url: "",
     peertube_url: "",
-    github_url: "",
+    github_url: "https://github.com/fab-geocommuns/carte-facile",
     sourcehut_url: "",
     repository_url: "https://github.com/fab-geocommuns/carte-facile-site",
     language: "fr",
