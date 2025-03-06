@@ -2,21 +2,21 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:base="fr">
 	<title>Carte facile</title>
 	<subtitle>Intégrez facilement des cartes à vos applications et sites web</subtitle>
-	<link href="https://fondsdecartes.ign.fr/fonds-de-cartes/feed/feed.xml" rel="self"/>
-	<link href="https://fondsdecartes.ign.fr/fonds-de-cartes/"/>
-	<updated>2025-03-06T20:17:49Z</updated>
-	<id>https://fondsdecartes.ign.fr</id>
+	<link href="https://fab-geocommuns.github.io/fonds-de-cartes/feed/feed.xml" rel="self"/>
+	<link href="https://fab-geocommuns.github.io/fonds-de-cartes/carte-facile-site/"/>
+	<updated>2025-03-06T20:22:21Z</updated>
+	<id>https://fab-geocommuns.github.io/carte-facile-site/</id>
 	<author>
 		<name>Cartes faciles</name>
 		<email>fonds-de-cartes@beta.gouv.fr</email>
 	</author>
 	<entry>
 		<title>Tuile</title>
-		<link href="https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/tuile/"/>
-		<updated>2025-03-06T20:17:49Z</updated>
-		<id>https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/tuile/</id>
+		<link href="https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/tuile/"/>
+		<updated>2025-03-06T20:22:21Z</updated>
+		<id>https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/tuile/</id>
 		<content type="html">&lt;p&gt;Chaque composant peut être inclus dans un fichier Nunjucks &lt;code&gt;.njk&lt;/code&gt; ou Markdown &lt;code&gt;.md&lt;/code&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;exemple-d-utilisation&quot; tabindex=&quot;-1&quot;&gt;Exemple d&#39;utilisation &lt;a class=&quot;header-anchor&quot; href=&quot;https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/tuile/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;exemple-d-utilisation&quot; tabindex=&quot;-1&quot;&gt;Exemple d&#39;utilisation &lt;a class=&quot;header-anchor&quot; href=&quot;https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/tuile/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;pre class=&quot;language-njk&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-njk&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;token tag keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;components/component.njk&quot;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;component&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;context&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;tile&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;token variable&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;/&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
@@ -34,13 +34,13 @@
   &lt;span class=&quot;token property&quot;&gt;&quot;pictogram&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;string&quot;&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Si &lt;code&gt;tile.externalUrl&lt;/code&gt; est utilisé, &lt;code&gt;tile.url&lt;/code&gt; doit être &lt;code&gt;false&lt;/code&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;rendu&quot; tabindex=&quot;-1&quot;&gt;Rendu &lt;a class=&quot;header-anchor&quot; href=&quot;https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/tuile/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;rendu&quot; tabindex=&quot;-1&quot;&gt;Rendu &lt;a class=&quot;header-anchor&quot; href=&quot;https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/tuile/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;div&gt;
 &lt;div class=&quot;fr-tile fr-enlarge-link&quot;&gt;
   &lt;div class=&quot;fr-tile__body&quot;&gt;
     &lt;div class=&quot;fr-tile__content&quot;&gt;
       &lt;h4 class=&quot;fr-tile__title&quot;&gt;
-        &lt;a class=&quot;fr-tile__link&quot; href=&quot;https://fondsdecartes.ign.fr/fonds-de-cartes/fr/&quot; title=&quot;Intitulé de la tuile&quot;&gt;
+        &lt;a class=&quot;fr-tile__link&quot; href=&quot;https://fab-geocommuns.github.io/fonds-de-cartes/fr/&quot; title=&quot;Intitulé de la tuile&quot;&gt;
           Intitulé de la tuile
         &lt;/a&gt;
       &lt;/h4&gt;
@@ -64,12 +64,12 @@
 	</entry>
 	<entry>
 		<title>Téléchargement de fichier</title>
-		<link href="https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/telechargement/"/>
-		<updated>2025-03-06T20:17:49Z</updated>
-		<id>https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/telechargement/</id>
+		<link href="https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/telechargement/"/>
+		<updated>2025-03-06T20:22:21Z</updated>
+		<id>https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/telechargement/</id>
 		<content type="html">&lt;p&gt;Chaque composant peut être inclus dans un fichier Nunjucks &lt;code&gt;.njk&lt;/code&gt; ou Markdown &lt;code&gt;.md&lt;/code&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;exemples-d-utilisation&quot; tabindex=&quot;-1&quot;&gt;Exemples d&#39;utilisation &lt;a class=&quot;header-anchor&quot; href=&quot;https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/telechargement/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;h3 id=&quot;lien&quot; tabindex=&quot;-1&quot;&gt;Lien &lt;a class=&quot;header-anchor&quot; href=&quot;https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/telechargement/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;h2 id=&quot;exemples-d-utilisation&quot; tabindex=&quot;-1&quot;&gt;Exemples d&#39;utilisation &lt;a class=&quot;header-anchor&quot; href=&quot;https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/telechargement/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&quot;lien&quot; tabindex=&quot;-1&quot;&gt;Lien &lt;a class=&quot;header-anchor&quot; href=&quot;https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/telechargement/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;pre class=&quot;language-njk&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-njk&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;token tag keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;components/component.njk&quot;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;component&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;context&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;download&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;token variable&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Nom du fichier&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
@@ -77,7 +77,7 @@
     &lt;span class=&quot;token variable&quot;&gt;detail&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Format ou extension - 850Ko&quot;&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&quot;carte&quot; tabindex=&quot;-1&quot;&gt;Carte &lt;a class=&quot;header-anchor&quot; href=&quot;https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/telechargement/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;carte&quot; tabindex=&quot;-1&quot;&gt;Carte &lt;a class=&quot;header-anchor&quot; href=&quot;https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/telechargement/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;pre class=&quot;language-njk&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-njk&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;token tag keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;components/component.njk&quot;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;component&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;context&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;download&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;token variable&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;card&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
@@ -87,7 +87,7 @@
     &lt;span class=&quot;token variable&quot;&gt;detail&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Format ou extension - 850Ko&quot;&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&quot;tuile&quot; tabindex=&quot;-1&quot;&gt;Tuile &lt;a class=&quot;header-anchor&quot; href=&quot;https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/telechargement/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;tuile&quot; tabindex=&quot;-1&quot;&gt;Tuile &lt;a class=&quot;header-anchor&quot; href=&quot;https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/telechargement/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;pre class=&quot;language-njk&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-njk&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;token tag keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;components/component.njk&quot;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;component&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;context&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;download&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;token variable&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;tile&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
@@ -97,20 +97,20 @@
     &lt;span class=&quot;token variable&quot;&gt;pictogram&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;buildings/city-hall.svg&quot;&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&quot;rendu&quot; tabindex=&quot;-1&quot;&gt;Rendu &lt;a class=&quot;header-anchor&quot; href=&quot;https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/telechargement/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;h3 id=&quot;lien-1&quot; tabindex=&quot;-1&quot;&gt;Lien &lt;a class=&quot;header-anchor&quot; href=&quot;https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/telechargement/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;h2 id=&quot;rendu&quot; tabindex=&quot;-1&quot;&gt;Rendu &lt;a class=&quot;header-anchor&quot; href=&quot;https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/telechargement/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&quot;lien-1&quot; tabindex=&quot;-1&quot;&gt;Lien &lt;a class=&quot;header-anchor&quot; href=&quot;https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/telechargement/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;
-    &lt;a class=&quot;fr-link fr-link--download&quot; download=&quot;&quot; href=&quot;https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/telechargement/&quot;&gt;
+    &lt;a class=&quot;fr-link fr-link--download&quot; download=&quot;&quot; href=&quot;https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/telechargement/&quot;&gt;
         monde.gpkg &lt;span class=&quot;fr-link__detail&quot;&gt;Geopackage - 11,4Mo&lt;/span&gt;
     &lt;/a&gt;
 &lt;/p&gt;
-&lt;h3 id=&quot;carte-1&quot; tabindex=&quot;-1&quot;&gt;Carte &lt;a class=&quot;header-anchor&quot; href=&quot;https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/telechargement/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;carte-1&quot; tabindex=&quot;-1&quot;&gt;Carte &lt;a class=&quot;header-anchor&quot; href=&quot;https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/telechargement/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;div&gt;
 &lt;div class=&quot;fr-card fr-enlarge-link fr-card--download&quot;&gt;
     &lt;div class=&quot;fr-card__body&quot;&gt;
         &lt;div class=&quot;fr-card__content&quot;&gt;
             &lt;h3 class=&quot;fr-card__title&quot;&gt;
-                &lt;a download=&quot;&quot; href=&quot;https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/telechargement/&quot;&gt;
+                &lt;a download=&quot;&quot; href=&quot;https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/telechargement/&quot;&gt;
                     monde.gpkg
                 &lt;/a&gt;
             &lt;/h3&gt;
@@ -123,13 +123,13 @@
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;br&gt;
-&lt;h3 id=&quot;tuile-1&quot; tabindex=&quot;-1&quot;&gt;Tuile &lt;a class=&quot;header-anchor&quot; href=&quot;https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/telechargement/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;tuile-1&quot; tabindex=&quot;-1&quot;&gt;Tuile &lt;a class=&quot;header-anchor&quot; href=&quot;https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/telechargement/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;div&gt;
 &lt;div class=&quot;fr-tile fr-tile--download fr-enlarge-link&quot; id=&quot;tile-6735&quot;&gt;
     &lt;div class=&quot;fr-tile__body&quot;&gt;
         &lt;div class=&quot;fr-tile__content&quot;&gt;
             &lt;h4 class=&quot;fr-tile__title&quot;&gt;
-                &lt;a href=&quot;https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/telechargement/&quot; download=&quot;&quot;&gt;monde.gpkg&lt;/a&gt;
+                &lt;a href=&quot;https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/telechargement/&quot; download=&quot;&quot;&gt;monde.gpkg&lt;/a&gt;
             &lt;/h4&gt;
             &lt;p class=&quot;fr-tile__desc&quot;&gt;Pays et régions écologiques mondiales&lt;/p&gt;
             &lt;p class=&quot;fr-tile__detail&quot;&gt;Geopackage - 11,4Mo&lt;/p&gt;
@@ -152,11 +152,11 @@
 	</entry>
 	<entry>
 		<title>Tableau</title>
-		<link href="https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/tableau/"/>
-		<updated>2025-03-06T20:17:49Z</updated>
-		<id>https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/tableau/</id>
+		<link href="https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/tableau/"/>
+		<updated>2025-03-06T20:22:21Z</updated>
+		<id>https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/tableau/</id>
 		<content type="html">&lt;p&gt;Chaque composant peut être inclus dans un fichier Nunjucks &lt;code&gt;.njk&lt;/code&gt; ou Markdown &lt;code&gt;.md&lt;/code&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;exemple-d-utilisation&quot; tabindex=&quot;-1&quot;&gt;Exemple d&#39;utilisation &lt;a class=&quot;header-anchor&quot; href=&quot;https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/tableau/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;exemple-d-utilisation&quot; tabindex=&quot;-1&quot;&gt;Exemple d&#39;utilisation &lt;a class=&quot;header-anchor&quot; href=&quot;https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/tableau/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;pre class=&quot;language-njk&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-njk&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;token tag keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;components/component.njk&quot;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;component&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;context&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;table&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;token variable&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Titre du tableau&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
@@ -170,7 +170,7 @@
     &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&quot;rendu&quot; tabindex=&quot;-1&quot;&gt;Rendu &lt;a class=&quot;header-anchor&quot; href=&quot;https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/tableau/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;rendu&quot; tabindex=&quot;-1&quot;&gt;Rendu &lt;a class=&quot;header-anchor&quot; href=&quot;https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/tableau/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;div class=&quot;fr-table fr-table--layout-fixed&quot;&gt;
   &lt;table&gt;
     &lt;caption&gt;Titre du tableau&lt;/caption&gt;
@@ -227,16 +227,16 @@
 	</entry>
 	<entry>
 		<title>Retour en haut de page</title>
-		<link href="https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/retour-en-haut-de-page/"/>
-		<updated>2025-03-06T20:17:49Z</updated>
-		<id>https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/retour-en-haut-de-page/</id>
+		<link href="https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/retour-en-haut-de-page/"/>
+		<updated>2025-03-06T20:22:21Z</updated>
+		<id>https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/retour-en-haut-de-page/</id>
 		<content type="html">&lt;p&gt;Chaque composant peut être inclus dans un fichier Nunjucks &lt;code&gt;.njk&lt;/code&gt; ou Markdown &lt;code&gt;.md&lt;/code&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;exemple-d-utilisation&quot; tabindex=&quot;-1&quot;&gt;Exemple d&#39;utilisation &lt;a class=&quot;header-anchor&quot; href=&quot;https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/retour-en-haut-de-page/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;exemple-d-utilisation&quot; tabindex=&quot;-1&quot;&gt;Exemple d&#39;utilisation &lt;a class=&quot;header-anchor&quot; href=&quot;https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/retour-en-haut-de-page/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;pre class=&quot;language-njk&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-njk&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;token tag keyword&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;components/back_to_top.njk&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&quot;rendu&quot; tabindex=&quot;-1&quot;&gt;Rendu &lt;a class=&quot;header-anchor&quot; href=&quot;https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/retour-en-haut-de-page/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;rendu&quot; tabindex=&quot;-1&quot;&gt;Rendu &lt;a class=&quot;header-anchor&quot; href=&quot;https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/retour-en-haut-de-page/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;div&gt;
-&lt;a class=&quot;fr-grid-row fr-grid-row--right fr-link fr-icon-arrow-up-fill fr-link--icon-left&quot; href=&quot;https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/retour-en-haut-de-page/&quot;&gt;
+&lt;a class=&quot;fr-grid-row fr-grid-row--right fr-link fr-icon-arrow-up-fill fr-link--icon-left&quot; href=&quot;https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/retour-en-haut-de-page/&quot;&gt;
   Haut de page
 &lt;/a&gt;&lt;/div&gt;
 &lt;br&gt;
@@ -245,11 +245,11 @@
 	</entry>
 	<entry>
 		<title>Pagination</title>
-		<link href="https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/pagination/"/>
-		<updated>2025-03-06T20:17:49Z</updated>
-		<id>https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/pagination/</id>
+		<link href="https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/pagination/"/>
+		<updated>2025-03-06T20:22:21Z</updated>
+		<id>https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/pagination/</id>
 		<content type="html">&lt;p&gt;&lt;code&gt;eleventy-dsfr&lt;/code&gt; utilise le &lt;a href=&quot;https://www.11ty.dev/docs/pagination/&quot;&gt;système de pagination d&#39;Eleventy&lt;/a&gt;, par exemple pour les articles de blog.&lt;/p&gt;
-&lt;h2 id=&quot;pagination-de-niveau-2-pour-les-tags&quot; tabindex=&quot;-1&quot;&gt;Pagination de niveau 2 pour les tags &lt;a class=&quot;header-anchor&quot; href=&quot;https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/pagination/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;pagination-de-niveau-2-pour-les-tags&quot; tabindex=&quot;-1&quot;&gt;Pagination de niveau 2 pour les tags &lt;a class=&quot;header-anchor&quot; href=&quot;https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/pagination/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Pour mettre en place la pagination des articles de blog pour chaque tag, utiliser le filtre &lt;code&gt;paginateCollectionTags&lt;/code&gt; dans une &lt;a href=&quot;https://www.11ty.dev/docs/pagination/#the-before-callback&quot;&gt;fonction de callback &lt;code&gt;before&lt;/code&gt;&lt;/a&gt; dans un cartouche Javascript.
 Par exemple, dans le fichier &lt;a href=&quot;https://github.com/codegouvfr/eleventy-dsfr/tree/main/content/fr/blog/tags.njk&quot;&gt;&lt;code&gt;content/fr/blog/tags.njk&lt;/code&gt;&lt;/a&gt; :&lt;/p&gt;
 &lt;pre class=&quot;language-javascript&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token operator&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;js
@@ -268,11 +268,11 @@ Par exemple, dans le fichier &lt;a href=&quot;https://github.com/codegouvfr/elev
 	</entry>
 	<entry>
 		<title>Onglet</title>
-		<link href="https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/onglet/"/>
-		<updated>2025-03-06T20:17:49Z</updated>
-		<id>https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/onglet/</id>
+		<link href="https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/onglet/"/>
+		<updated>2025-03-06T20:22:21Z</updated>
+		<id>https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/onglet/</id>
 		<content type="html">&lt;p&gt;Chaque composant peut être inclus dans un fichier Nunjucks &lt;code&gt;.njk&lt;/code&gt; ou Markdown &lt;code&gt;.md&lt;/code&gt;.&lt;/p&gt;
-&lt;h3 id=&quot;exemple-d-utilisation&quot; tabindex=&quot;-1&quot;&gt;Exemple d&#39;utilisation &lt;a class=&quot;header-anchor&quot; href=&quot;https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/onglet/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;exemple-d-utilisation&quot; tabindex=&quot;-1&quot;&gt;Exemple d&#39;utilisation &lt;a class=&quot;header-anchor&quot; href=&quot;https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/onglet/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;pre class=&quot;language-njk&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-njk&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;token tag keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;components/tab.njk&quot;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;tabs&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;tabs&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;token variable&quot;&gt;ariaLabel&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Titre du système d&#39;onglets&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
@@ -290,7 +290,7 @@ Par exemple, dans le fichier &lt;a href=&quot;https://github.com/codegouvfr/elev
     &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&quot;rendu&quot; tabindex=&quot;-1&quot;&gt;Rendu &lt;a class=&quot;header-anchor&quot; href=&quot;https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/onglet/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;rendu&quot; tabindex=&quot;-1&quot;&gt;Rendu &lt;a class=&quot;header-anchor&quot; href=&quot;https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/onglet/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
   &lt;div class=&quot;fr-tabs&quot;&gt;
     &lt;ul class=&quot;fr-tabs__list&quot; role=&quot;tablist&quot; aria-label=&quot;Titre du système d&amp;#39;onglets&quot;&gt;
         &lt;li role=&quot;presentation&quot;&gt;
@@ -317,11 +317,11 @@ Par exemple, dans le fichier &lt;a href=&quot;https://github.com/codegouvfr/elev
 	</entry>
 	<entry>
 		<title>Navigation</title>
-		<link href="https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/navigation/"/>
-		<updated>2025-03-06T20:17:49Z</updated>
-		<id>https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/navigation/</id>
+		<link href="https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/navigation/"/>
+		<updated>2025-03-06T20:22:21Z</updated>
+		<id>https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/navigation/</id>
 		<content type="html">&lt;p&gt;&lt;code&gt;eleventy-dsfr&lt;/code&gt; utilise le &lt;a href=&quot;https://www.11ty.dev/docs/plugins/navigation/&quot;&gt;système de navigation d&#39;Eleventy&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;navigation-de-niveau-2&quot; tabindex=&quot;-1&quot;&gt;Navigation de niveau 2 &lt;a class=&quot;header-anchor&quot; href=&quot;https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/navigation/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;navigation-de-niveau-2&quot; tabindex=&quot;-1&quot;&gt;Navigation de niveau 2 &lt;a class=&quot;header-anchor&quot; href=&quot;https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/navigation/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Pour mettre en place une navigation de niveau 2, positionner la variable &lt;code&gt;parent&lt;/code&gt; avec la valeur de la &lt;code&gt;key&lt;/code&gt; du parent.
 Par exemple, dans le fichier &lt;a href=&quot;https://github.com/codegouvfr/eleventy-dsfr/tree/main/content/fr/about/index.md&quot;&gt;&lt;code&gt;content/fr/about/index.md&lt;/code&gt;&lt;/a&gt; :&lt;/p&gt;
 &lt;pre class=&quot;language-yaml&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;---&lt;/span&gt;
@@ -342,17 +342,17 @@ Par exemple, dans le fichier &lt;a href=&quot;https://github.com/codegouvfr/elev
 	</entry>
 	<entry>
 		<title>Mise en avant</title>
-		<link href="https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/mise-en-avant/"/>
-		<updated>2025-03-06T20:17:49Z</updated>
-		<id>https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/mise-en-avant/</id>
+		<link href="https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/mise-en-avant/"/>
+		<updated>2025-03-06T20:22:21Z</updated>
+		<id>https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/mise-en-avant/</id>
 		<content type="html">&lt;p&gt;Chaque composant peut être inclus dans un fichier Nunjucks &lt;code&gt;.njk&lt;/code&gt; ou Markdown &lt;code&gt;.md&lt;/code&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;utilisation&quot; tabindex=&quot;-1&quot;&gt;Utilisation &lt;a class=&quot;header-anchor&quot; href=&quot;https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/mise-en-avant/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
-&lt;h3 id=&quot;exemple-d-utilisation-dans-un-fichier-markdown-md&quot; tabindex=&quot;-1&quot;&gt;Exemple d&#39;utilisation dans un fichier Markdown &lt;code&gt;.md&lt;/code&gt; &lt;a class=&quot;header-anchor&quot; href=&quot;https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/mise-en-avant/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;h2 id=&quot;utilisation&quot; tabindex=&quot;-1&quot;&gt;Utilisation &lt;a class=&quot;header-anchor&quot; href=&quot;https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/mise-en-avant/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&quot;exemple-d-utilisation-dans-un-fichier-markdown-md&quot; tabindex=&quot;-1&quot;&gt;Exemple d&#39;utilisation dans un fichier Markdown &lt;code&gt;.md&lt;/code&gt; &lt;a class=&quot;header-anchor&quot; href=&quot;https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/mise-en-avant/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;Seuls le titre et la description sont disponibles.&lt;/p&gt;
 &lt;pre class=&quot;language-md&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-md&quot;&gt;:::callout Titre mise en avant
 Contenu &lt;span class=&quot;token bold&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;token content&quot;&gt;Mardown&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;**&lt;/span&gt;&lt;/span&gt;
 :::&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&quot;exemple-d-utilisation-dans-un-fichier-nunjucks-njk&quot; tabindex=&quot;-1&quot;&gt;Exemple d&#39;utilisation dans un fichier Nunjucks &lt;code&gt;.njk&lt;/code&gt; &lt;a class=&quot;header-anchor&quot; href=&quot;https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/mise-en-avant/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;exemple-d-utilisation-dans-un-fichier-nunjucks-njk&quot; tabindex=&quot;-1&quot;&gt;Exemple d&#39;utilisation dans un fichier Nunjucks &lt;code&gt;.njk&lt;/code&gt; &lt;a class=&quot;header-anchor&quot; href=&quot;https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/mise-en-avant/&quot;&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;pre class=&quot;language-njk&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-njk&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;{%&lt;/span&gt; &lt;span class=&quot;token tag keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;components/component.njk&quot;&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;component&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;context&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;component&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;callout&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;token variable&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Titre mise en avant&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
@@ -363,13 +363,13 @@ Contenu &lt;span class=&quot;token bold&quot;&gt;&lt;span class=&quot;token punc
   &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&quot;rendu&quot; tabindex=&quot;-1&quot;&gt;Rendu &lt;a class=&quot;header-anchor&quot; href=&quot;https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/mise-en-avant/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;rendu&quot; tabindex=&quot;-1&quot;&gt;Rendu &lt;a class=&quot;header-anchor&quot; href=&quot;https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/mise-en-avant/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;div class=&quot;fr-callout&quot;&gt;
   &lt;h3 class=&quot;fr-callout__title&quot;&gt;Titre mise en avant&lt;/h3&gt;
   &lt;p class=&quot;fr-callout__text&quot;&gt;
     Contenu &amp;lt;strong&amp;gt;HTML&amp;lt;/strong&amp;gt;
   &lt;/p&gt;
-    &lt;a class=&quot;fr-btn&quot; href=&quot;https://fondsdecartes.ign.fr/fonds-de-cartes/&quot;&gt;
+    &lt;a class=&quot;fr-btn&quot; href=&quot;https://fab-geocommuns.github.io/fonds-de-cartes/&quot;&gt;
       Label bouton MD
     &lt;/a&gt;
 &lt;/div&gt;
@@ -378,13 +378,13 @@ Contenu &lt;span class=&quot;token bold&quot;&gt;&lt;span class=&quot;token punc
 	</entry>
 	<entry>
 		<title>Syntaxe Markdown</title>
-		<link href="https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/md-cheatsheet/"/>
-		<updated>2025-03-06T20:17:49Z</updated>
-		<id>https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/md-cheatsheet/</id>
+		<link href="https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/md-cheatsheet/"/>
+		<updated>2025-03-06T20:22:21Z</updated>
+		<id>https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/md-cheatsheet/</id>
 		<content type="html">&lt;p&gt;La syntaxe utilisée dans les fichiers Markdown &lt;code&gt;.md&lt;/code&gt; du site suit la spécification &lt;a href=&quot;https://commonmark.org/&quot;&gt;CommonMark&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://commonmark.org/help/&quot; class=&quot;fr-link fr-fi-arrow-right-line fr-link--icon-right&quot;&gt;Voir un rappel des principaux éléments&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;De nouveaux éléments&lt;/strong&gt; ont été ajoutés à cette syntaxe et sont disponibles dans eleventy-dsfr.&lt;/p&gt;
-&lt;h2 id=&quot;l-accordeon&quot; tabindex=&quot;-1&quot;&gt;L&#39;accordéon &lt;a class=&quot;header-anchor&quot; href=&quot;https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/md-cheatsheet/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;l-accordeon&quot; tabindex=&quot;-1&quot;&gt;L&#39;accordéon &lt;a class=&quot;header-anchor&quot; href=&quot;https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/md-cheatsheet/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;pre class=&quot;language-md&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-md&quot;&gt;????accordionsgroup
 
 ??? Intitulé accordéon
@@ -394,22 +394,22 @@ Contenu &lt;span class=&quot;token bold&quot;&gt;&lt;span class=&quot;token punc
 ???
 
 ????&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;a href=&quot;https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/accordeon/#exemple-d-utilisation-dans-un-fichier-markdown-md&quot; class=&quot;fr-link fr-fi-arrow-right-line fr-link--icon-right&quot;&gt;Voir aussi&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;l-alerte&quot; tabindex=&quot;-1&quot;&gt;L&#39;alerte &lt;a class=&quot;header-anchor&quot; href=&quot;https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/md-cheatsheet/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/accordeon/#exemple-d-utilisation-dans-un-fichier-markdown-md&quot; class=&quot;fr-link fr-fi-arrow-right-line fr-link--icon-right&quot;&gt;Voir aussi&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;l-alerte&quot; tabindex=&quot;-1&quot;&gt;L&#39;alerte &lt;a class=&quot;header-anchor&quot; href=&quot;https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/md-cheatsheet/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;pre class=&quot;language-md&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-md&quot;&gt;:::info Test d&#39;alerte
 Contenu &lt;span class=&quot;token bold&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;token content&quot;&gt;Mardown&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;**&lt;/span&gt;&lt;/span&gt;
 :::&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;a href=&quot;https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/alerte/#exemple-d-utilisation-dans-un-fichier-markdown-md&quot; class=&quot;fr-link fr-fi-arrow-right-line fr-link--icon-right&quot;&gt;Voir aussi&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;la-citation&quot; tabindex=&quot;-1&quot;&gt;La citation &lt;a class=&quot;header-anchor&quot; href=&quot;https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/md-cheatsheet/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/alerte/#exemple-d-utilisation-dans-un-fichier-markdown-md&quot; class=&quot;fr-link fr-fi-arrow-right-line fr-link--icon-right&quot;&gt;Voir aussi&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;la-citation&quot; tabindex=&quot;-1&quot;&gt;La citation &lt;a class=&quot;header-anchor&quot; href=&quot;https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/md-cheatsheet/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;pre class=&quot;language-md&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-md&quot;&gt;:::quote
 « Lorem [...] elit ut. »
 :::&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;a href=&quot;https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/citation/#exemple-d-utilisation-dans-un-fichier-markdown-md&quot; class=&quot;fr-link fr-fi-arrow-right-line fr-link--icon-right&quot;&gt;Voir aussi&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;la-mise-en-avant&quot; tabindex=&quot;-1&quot;&gt;La mise en avant &lt;a class=&quot;header-anchor&quot; href=&quot;https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/md-cheatsheet/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/citation/#exemple-d-utilisation-dans-un-fichier-markdown-md&quot; class=&quot;fr-link fr-fi-arrow-right-line fr-link--icon-right&quot;&gt;Voir aussi&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;la-mise-en-avant&quot; tabindex=&quot;-1&quot;&gt;La mise en avant &lt;a class=&quot;header-anchor&quot; href=&quot;https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/md-cheatsheet/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;pre class=&quot;language-md&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-md&quot;&gt;:::callout Titre mise en avant
 Les parents d’enfants de 11 à 14 ans n’ont aucune démarche à accomplir : les CAF versent &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;strong&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;automatiquement&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;strong&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt; l’ARS aux familles déjà allocataires qui remplissent les conditions.
 :::&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;a href=&quot;https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/mise-en-avant/#exemple-d-utilisation-dans-un-fichier-markdown-md&quot; class=&quot;fr-link fr-fi-arrow-right-line fr-link--icon-right&quot;&gt;Voir aussi&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/mise-en-avant/#exemple-d-utilisation-dans-un-fichier-markdown-md&quot; class=&quot;fr-link fr-fi-arrow-right-line fr-link--icon-right&quot;&gt;Voir aussi&lt;/a&gt;&lt;/p&gt;
 &lt;br&gt;
 &lt;p&gt;La syntaxe utilisée pour le &lt;a href=&quot;https://www.11ty.dev/docs/data-frontmatter/&quot;&gt;cartouche&lt;/a&gt; en début de fichier est communément le &lt;a href=&quot;https://learnxinyminutes.com/docs/yaml/&quot;&gt;YAML&lt;/a&gt;.
 Il peut contenir des données pré-définies par Eleventy ou personnalisées pour la page en cours.&lt;/p&gt;
@@ -417,20 +417,20 @@ Il peut contenir des données pré-définies par Eleventy ou personnalisées pou
 	</entry>
 	<entry>
 		<title>Internationalisation</title>
-		<link href="https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/i18n/"/>
-		<updated>2025-03-06T20:17:49Z</updated>
-		<id>https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/i18n/</id>
+		<link href="https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/i18n/"/>
+		<updated>2025-03-06T20:22:21Z</updated>
+		<id>https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/i18n/</id>
 		<content type="html">&lt;p&gt;&lt;code&gt;eleventy-dsfr&lt;/code&gt; suit les &lt;a href=&quot;https://www.11ty.dev/docs/i18n/&quot;&gt;recommandations officielles&lt;/a&gt; d&#39;11ty pour l&#39;internationalisation et utilise le &lt;a href=&quot;https://www.11ty.dev/docs/plugins/i18n/&quot;&gt;plugin officiel&lt;/a&gt; pour localiser les liens internes.&lt;/p&gt;
 &lt;p&gt;Pour localiser les des chaînes de caractères, &lt;code&gt;eleventy-dsfr&lt;/code&gt; utilise notre &lt;a href=&quot;https://github.com/codegouvfr/eleventy-plugin-i18n&quot;&gt;fork du plugin recommandé &lt;code&gt;eleventy-plugin-i18n&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;localisation-des-liens-internes-et-des-urls&quot; tabindex=&quot;-1&quot;&gt;Localisation des liens internes et des URLs &lt;a class=&quot;header-anchor&quot; href=&quot;https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/i18n/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&quot;localisation-des-liens-internes-et-des-urls&quot; tabindex=&quot;-1&quot;&gt;Localisation des liens internes et des URLs &lt;a class=&quot;header-anchor&quot; href=&quot;https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/i18n/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;eleventy-dsfr&lt;/code&gt; utilise le &lt;a href=&quot;https://www.11ty.dev/docs/i18n/#distinct-urls&quot;&gt;style URLs distinctes&lt;/a&gt; proposé par 11ty pour localiser les liens internes.&lt;/p&gt;
 &lt;p&gt;Pour localiser une URL : nommer la page de la même manière (par exemple, en anglais) dans toutes les langues, et positionner la variable &lt;code&gt;slugOverride&lt;/code&gt; du cartouche si besoin.&lt;/p&gt;
 &lt;pre class=&quot;language-yaml&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;---&lt;/span&gt;
 &lt;span class=&quot;token key atrule&quot;&gt;slugOverride&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; a propos
 &lt;span class=&quot;token punctuation&quot;&gt;---&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Par exemple, pour la page &lt;a href=&quot;https://fondsdecartes.ign.fr/fonds-de-cartes/fr/a-propos&quot;&gt;À propos&lt;/a&gt;, le fichier en français est &lt;a href=&quot;https://github.com/codegouvfr/eleventy-dsfr/tree/main/content/fr/about/index.md&quot;&gt;&lt;code&gt;content/fr/about/index.md&lt;/code&gt;&lt;/a&gt;, le fichier en anglais est &lt;a href=&quot;https://github.com/codegouvfr/eleventy-dsfr/tree/main/content/en/about/index.md&quot;&gt;&lt;code&gt;content/en/about/index.md&lt;/code&gt;&lt;/a&gt;.
-L&#39;url en français est &lt;a href=&quot;https://fondsdecartes.ign.fr/fonds-de-cartes/fr/a-propos&quot;&gt;/fr/a-propos&lt;/a&gt;, l&#39;url en anglais est &lt;a href=&quot;https://fondsdecartes.ign.fr/fonds-de-cartes/en/about&quot;&gt;/en/about&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;localisation-des-chaines-de-caracteres&quot; tabindex=&quot;-1&quot;&gt;Localisation des chaînes de caractères &lt;a class=&quot;header-anchor&quot; href=&quot;https://fondsdecartes.ign.fr/fonds-de-cartes/fr/blog/i18n/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Par exemple, pour la page &lt;a href=&quot;https://fab-geocommuns.github.io/fonds-de-cartes/fr/a-propos&quot;&gt;À propos&lt;/a&gt;, le fichier en français est &lt;a href=&quot;https://github.com/codegouvfr/eleventy-dsfr/tree/main/content/fr/about/index.md&quot;&gt;&lt;code&gt;content/fr/about/index.md&lt;/code&gt;&lt;/a&gt;, le fichier en anglais est &lt;a href=&quot;https://github.com/codegouvfr/eleventy-dsfr/tree/main/content/en/about/index.md&quot;&gt;&lt;code&gt;content/en/about/index.md&lt;/code&gt;&lt;/a&gt;.
+L&#39;url en français est &lt;a href=&quot;https://fab-geocommuns.github.io/fonds-de-cartes/fr/a-propos&quot;&gt;/fr/a-propos&lt;/a&gt;, l&#39;url en anglais est &lt;a href=&quot;https://fab-geocommuns.github.io/fonds-de-cartes/en/about&quot;&gt;/en/about&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;localisation-des-chaines-de-caracteres&quot; tabindex=&quot;-1&quot;&gt;Localisation des chaînes de caractères &lt;a class=&quot;header-anchor&quot; href=&quot;https://fab-geocommuns.github.io/fonds-de-cartes/fr/blog/i18n/&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/codegouvfr/eleventy-plugin-i18n&quot; class=&quot;fr-link fr-fi-arrow-right-line fr-link--icon-right&quot;&gt;Voir la documentation du plugin&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Pour traduire une chaîne de caractères localisée dans une page, utiliser le filtre &lt;code&gt;i18n&lt;/code&gt; :&lt;/p&gt;
 &lt;pre class=&quot;language-njk&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-njk&quot;&gt;&lt;span class=&quot;token delimiter punctuation&quot;&gt;{{&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;filter_by_tag&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;i18n&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
