@@ -1,0 +1,896 @@
+<!doctype html>
+<html lang="fr" data-fr-scheme="system" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="format-detection" content="telephone=no,date=no,address=no,email=no,url=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <meta name="description" content="Documentation des composants disponibles pour ajouter des contenus spécifiques dans les pages de ce site.">
+  <meta name="theme-color" content="#000091">
+  <link rel="apple-touch-icon" href="/fonds-de-cartes/favicon/apple-touch-icon.png"><!-- 180×180 -->
+  <link rel="icon" href="/fonds-de-cartes/favicon/favicon.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="/fonds-de-cartes/favicon/favicon.ico" type="image/x-icon"><!-- 32×32 -->
+  <link rel="manifest" href="/fonds-de-cartes/favicon/manifest.webmanifest" crossorigin="use-credentials">
+  <link rel="alternate" href="/fonds-de-cartes/feed/feed.xml" type="application/atom+xml" title="Carte facile">
+  <link rel="alternate" href="/fonds-de-cartes/feed/feed.json" type="application/json" title="Carte facile">
+
+  <link rel="stylesheet" href="/fonds-de-cartes/css/dsfr.min.css">
+  <link rel="stylesheet" href="/fonds-de-cartes/css/utility/utility.min.css">
+
+
+
+  <style>/* Defaults */
+:root {
+    --font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+    --syntax-tab-size: 2;
+}
+
+/* Global stylesheet */
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+table {
+    margin: 1em 0;
+}
+
+table td,
+table th {
+    padding-right: 1em;
+}
+
+pre,
+code {
+    font-family: var(--font-family-monospace);
+}
+
+pre[class*="language-"] {
+    margin-bottom: 1.5em !important;
+}
+
+pre:not([class*="language-"]) {
+    margin: .5em 0;
+    line-height: 1.375; /* 22px /16 */
+    -moz-tab-size: var(--syntax-tab-size);
+    -o-tab-size: var(--syntax-tab-size);
+    tab-size: var(--syntax-tab-size);
+    -webkit-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+    direction: ltr;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+}
+
+code {
+    word-break: break-all;
+}
+
+/* Direct Links / Markdown Headers */
+.header-anchor {
+    background-image: none;
+    text-decoration: none;
+    font-style: normal;
+    font-size: 1em;
+    margin-left: .1em;
+}
+
+a[href].header-anchor,
+a[href].header-anchor:visited {
+    color: transparent;
+}
+
+a[href].header-anchor:focus,
+a[href].header-anchor:hover {
+    text-decoration: underline;
+}
+
+a[href].header-anchor:focus,
+:hover > a[href].header-anchor {
+    color: #aaa;
+}
+
+h2 + .header-anchor {
+    font-size: 1.5em;
+}
+
+img {
+    display: block;
+}
+
+p > img {
+    max-width: 100%;
+}
+
+/* Custom DSFR */
+.fr-pagination__list {
+    justify-content: flex-end !important;
+}
+
+@media (min-width: 48em) {
+    .fr-share__group {
+        justify-content: flex-end !important;
+    }
+}
+
+.fr-responsive-img.fr-ratio-auto {
+    object-fit: contain;
+}
+
+.fr-quote__image img {
+    object-fit: cover;
+}
+
+/** Properly render text in Markdown callout containers **/
+div.fr-callout__text p {
+    font-size: inherit;
+    line-height: inherit;
+}
+
+/** Missing icons **/
+.fr-follow .fr-btn--peertube:before,
+.fr-follow .fr-btn--github:before,
+.fr-follow .fr-btn--sourcehut:before {
+    margin-left: 0;
+    margin-right: 0.5rem;
+    flex: 0 0 auto;
+    display: inline-block;
+    vertical-align: calc((0.75em - var(--icon-size)) * 0.5);
+    background-color: currentColor;
+    width: var(--icon-size);
+    height: var(--icon-size);
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    --icon-size: 2rem;
+    content: "";
+}
+
+.fr-follow .fr-btn--peertube:before {
+    -webkit-mask-image: url(/icons/logo/peertube.svg) !important;
+    mask-image: url(/icons/logo/peertube.svg) !important;
+}
+
+.fr-follow .fr-btn--github:before {
+    -webkit-mask-image: url(/icons/logo/github-fill.svg) !important;
+    mask-image: url(/icons/logo/github-fill.svg) !important;
+}
+
+.fr-follow .fr-btn--sourcehut:before {
+    -webkit-mask-image: url(/icons/logo/sourcehut.svg) !important;
+    mask-image: url(/icons/logo/sourcehut.svg) !important;
+}
+
+/* Custom */
+.text-center {
+    text-align: center;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
+/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}</style>
+
+  <meta name="generator" content="Eleventy v2.0.1">
+
+  <title>Composants</title>
+</head>
+<body id="top">
+<script>
+      // Fix FOUC in dark mode
+      setDarkBeforeRender = () => {
+          const localScheme = localStorage.getItem('scheme')
+          if (localScheme === 'dark' || (localScheme === 'system' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+              document.documentElement.setAttribute('data-fr-theme', 'dark');
+          }
+      }
+      setDarkBeforeRender();
+  </script>
+<header role="banner" class="fr-header">
+  <div class="fr-header__body">
+    <div class="fr-container">
+      <div class="fr-header__body-row">
+        <div class="fr-header__brand fr-enlarge-link">
+          <div class="fr-header__brand-top">
+            <div class="fr-header__logo">
+              <p class="fr-logo">République<br>française</p>
+            </div>
+            <div class="fr-header__operator">
+                <img style="width: 5rem" class="fr-responsive-img" src="/fonds-de-cartes/icons/logo/IGN_logo_Q.svg" alt="Logo IGN">
+                <!-- L’alternative de l’image (attribut alt) doit impérativement être renseignée et reprendre le texte visible dans l’image -->
+            </div>
+            <div class="fr-header__navbar">
+              <button class="fr-btn--menu fr-btn" data-fr-opened="false" aria-controls="modal-491" aria-haspopup="menu" id="button-492" title="Menu">
+                Menu
+              </button>
+            </div>
+          </div>
+          <div class="fr-header__service">
+            <a href="/fonds-de-cartes/fr/" title="Accueil - Carte facile - La Fabrique des géocommuns, IGN">
+              <p class="fr-header__service-title"> 
+                Carte facile
+                <span class="fr-badge--sm fr-badge--success fr-badge--no-icon">Bêta</span>
+              </p>
+            </a>
+            <p class="fr-header__service-tagline">Intégrez facilement des cartes à vos applications et sites web</p>
+          </div>
+        </div>
+        <div class="fr-header__tools">
+          <div class="fr-header__tools-links">
+            <ul class="fr-btns-group">
+              
+              <li>
+                <a class="fr-btn" href="https://cartes.gouv.fr/" target="_blank">Cartes.gouv.fr</a>
+              </li>
+              <li>
+                <a class="fr-btn" href="https://www.geoportail.gouv.fr/carte" target="_blank">Géoportail</a>
+              </li>
+            </ul>
+            
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="fr-header__menu fr-modal" id="modal-491" aria-labelledby="button-492">
+    <div class="fr-container">
+      <button class="fr-btn--close fr-btn" aria-controls="modal-491" title="Fermer">
+        Fermer
+      </button>
+      <div class="fr-header__menu-links"></div>
+<nav class="fr-nav" id="navigation-494" role="navigation" aria-label="Menu principal">
+  <ul class="fr-nav__list">
+      <li class="fr-nav__item">
+          <a class="fr-nav__link" href="/fonds-de-cartes/fr/cartes/">
+            Cartes
+          </a>
+      </li>
+      <li class="fr-nav__item">
+          <a class="fr-nav__link" href="/fonds-de-cartes/fr/documentation/">
+            Documentation
+          </a>
+      </li>
+      <li class="fr-nav__item">
+          <a class="fr-nav__link" href="/fonds-de-cartes/fr/communaute/">
+            Communauté
+          </a>
+      </li>
+      <li class="fr-nav__item">
+          <button class="fr-nav__btn" aria-expanded="false" aria-controls="menu-4">
+            À propos
+          </button>
+          <div class="fr-collapse fr-menu" id="menu-4">
+            <ul class="fr-menu__list">
+                <li>
+                  <a class="fr-nav__link" href="/fonds-de-cartes/fr/a-propos/">
+                    Présentation
+                  </a>
+                </li>
+                <li>
+                  <a class="fr-nav__link" href="/fonds-de-cartes/fr/contact/">
+                    Contact
+                  </a>
+                </li>
+            </ul>
+          </div>
+      </li>
+  </ul>
+</nav>
+
+<script>
+(() => {
+    // Récupérer l'URL complète de la page
+    const currentUrl = window.location.href;
+    console.log("Current URL:", currentUrl); // Affiche l'URL actuelle dans la console
+
+    // Sélectionner tous les liens de navigation
+    const allLinks = document.querySelectorAll('.fr-nav__link');
+
+    allLinks.forEach(link => {
+        // Vérifier si l'URL actuelle commence par l'URL du lien
+        if (currentUrl.startsWith(link.href)) {
+            // Marquer le lien comme courant
+            link.ariaCurrent = "page";
+
+            // Ouvrir le menu parent si le lien a des enfants
+            const parentItem = link.closest('.fr-nav__item');
+            const button = parentItem.querySelector('.fr-nav__btn');
+            if (button) {
+                button.ariaExpanded = true; // Ouvrir le collapse
+            }
+        }
+    });
+})();
+</script>    </div>
+  </div>
+</header>
+
+<main id="content">
+  <div class="fr-mb-6w">
+  <div class="fr-py-6w fr-background-alt--blue-cumulus">
+    <div class="fr-container">
+      <div class="fr-grid-row">
+        <div class="fr-col-10">
+          <h1 class="fr-mt-6v">Composants</h1>
+            <p class="fr-text--lead">
+              Documentation des composants disponibles pour ajouter des contenus spécifiques dans les pages de ce site.
+            </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="fr-container fr-mt-6w" data-pagefind-body="">
+    <div class="fr-grid-row">
+      <div class="fr-col-12">
+        <h2>Filtré par
+  <a class="fr-tag fr-fi-close-line fr-tag--icon-left" href="/fonds-de-cartes/fr/blog/">
+    DSFR
+  </a>
+</h2>
+<div class="fr-mt-6v fr-mb-6w">
+<ul class="fr-tags-group" data-pagefind-ignore="">
+    <li>
+      <a href="/fonds-de-cartes/fr/blog/tags/composant/" class="fr-tag">composant</a>
+    </li>
+    <li>
+      <a href="/fonds-de-cartes/fr/blog/tags/layout/" class="fr-tag">layout</a>
+    </li>
+    <li>
+      <a href="/fonds-de-cartes/fr/blog/tags/contenu/" class="fr-tag">contenu</a>
+    </li>
+    <li>
+      <a href="/fonds-de-cartes/fr/blog/tags/fonctionnalite/" class="fr-tag">fonctionnalité</a>
+    </li>
+    <li>
+      <a href="/fonds-de-cartes/fr/blog/tags/markdown/" class="fr-tag">Markdown</a>
+    </li>
+</ul></div>
+<div class="fr-grid-row fr-grid-row--gutters fr-mb-6v" data-pagefind-ignore="">
+  <div class="fr-col-12 fr-col-md-4">
+    <div class="fr-card fr-enlarge-link ">
+  <div class="fr-card__body">
+    <div class="fr-card__content">
+      <h3 class="fr-card__title">
+          <a href="/fonds-de-cartes/fr/blog/accordeon/">
+            Accordéon
+          </a>
+      </h3>
+      <p class="fr-card__desc">Comment intégrer un accordéon dans une page du site ?</p>
+      <div class="fr-card__start">
+<ul class="fr-tags-group" data-pagefind-ignore="">
+    <li><p class="fr-tag">DSFR</p></li>
+    <li><p class="fr-tag">composant</p></li>
+</ul>          <p class="fr-card__detail fr-icon-time-fill">
+            <time class="postlist-date" datetime="2025-03-06">
+              06 mars 2025
+            </time>
+          </p>
+      </div>
+    </div>
+    <div class="fr-card__footer">
+    </div>
+  </div>
+    <div class="fr-card__header">
+    </div>
+</div>
+  </div>
+  <div class="fr-col-12 fr-col-md-4">
+    <div class="fr-card fr-enlarge-link ">
+  <div class="fr-card__body">
+    <div class="fr-card__content">
+      <h3 class="fr-card__title">
+          <a href="/fonds-de-cartes/fr/blog/alerte/">
+            Alerte
+          </a>
+      </h3>
+      <p class="fr-card__desc">Comment intégrer une alerte dans une page du site ?</p>
+      <div class="fr-card__start">
+<ul class="fr-tags-group" data-pagefind-ignore="">
+    <li><p class="fr-tag">DSFR</p></li>
+    <li><p class="fr-tag">composant</p></li>
+</ul>          <p class="fr-card__detail fr-icon-time-fill">
+            <time class="postlist-date" datetime="2025-03-06">
+              06 mars 2025
+            </time>
+          </p>
+      </div>
+    </div>
+    <div class="fr-card__footer">
+    </div>
+  </div>
+    <div class="fr-card__header">
+    </div>
+</div>
+  </div>
+  <div class="fr-col-12 fr-col-md-4">
+    <div class="fr-card fr-enlarge-link ">
+  <div class="fr-card__body">
+    <div class="fr-card__content">
+      <h3 class="fr-card__title">
+          <a href="/fonds-de-cartes/fr/blog/carte/">
+            Carte
+          </a>
+      </h3>
+      <p class="fr-card__desc">Comment intégrer une carte dans une page du site ?</p>
+      <div class="fr-card__start">
+<ul class="fr-tags-group" data-pagefind-ignore="">
+    <li><p class="fr-tag">DSFR</p></li>
+    <li><p class="fr-tag">composant</p></li>
+</ul>          <p class="fr-card__detail fr-icon-time-fill">
+            <time class="postlist-date" datetime="2025-03-06">
+              06 mars 2025
+            </time>
+          </p>
+      </div>
+    </div>
+    <div class="fr-card__footer">
+    </div>
+  </div>
+    <div class="fr-card__header">
+    </div>
+</div>
+  </div>
+  <div class="fr-col-12 fr-col-md-4">
+    <div class="fr-card fr-enlarge-link ">
+  <div class="fr-card__body">
+    <div class="fr-card__content">
+      <h3 class="fr-card__title">
+          <a href="/fonds-de-cartes/fr/blog/citation/">
+            Citation
+          </a>
+      </h3>
+      <p class="fr-card__desc">Comment intégrer une citation dans une page du site ?</p>
+      <div class="fr-card__start">
+<ul class="fr-tags-group" data-pagefind-ignore="">
+    <li><p class="fr-tag">DSFR</p></li>
+    <li><p class="fr-tag">composant</p></li>
+</ul>          <p class="fr-card__detail fr-icon-time-fill">
+            <time class="postlist-date" datetime="2025-03-06">
+              06 mars 2025
+            </time>
+          </p>
+      </div>
+    </div>
+    <div class="fr-card__footer">
+    </div>
+  </div>
+    <div class="fr-card__header">
+    </div>
+</div>
+  </div>
+  <div class="fr-col-12 fr-col-md-4">
+    <div class="fr-card fr-enlarge-link ">
+  <div class="fr-card__body">
+    <div class="fr-card__content">
+      <h3 class="fr-card__title">
+          <a href="/fonds-de-cartes/fr/blog/fil-d-ariane/">
+            Fil d&#39;Ariane
+          </a>
+      </h3>
+      <p class="fr-card__desc">Comment intégrer un fil d'Ariane dans une page du site ?</p>
+      <div class="fr-card__start">
+<ul class="fr-tags-group" data-pagefind-ignore="">
+    <li><p class="fr-tag">DSFR</p></li>
+    <li><p class="fr-tag">composant</p></li>
+</ul>          <p class="fr-card__detail fr-icon-time-fill">
+            <time class="postlist-date" datetime="2025-03-06">
+              06 mars 2025
+            </time>
+          </p>
+      </div>
+    </div>
+    <div class="fr-card__footer">
+    </div>
+  </div>
+    <div class="fr-card__header">
+    </div>
+</div>
+  </div>
+  <div class="fr-col-12 fr-col-md-4">
+    <div class="fr-card fr-enlarge-link ">
+  <div class="fr-card__body">
+    <div class="fr-card__content">
+      <h3 class="fr-card__title">
+          <a href="/fonds-de-cartes/fr/blog/mise-en-avant/">
+            Mise en avant
+          </a>
+      </h3>
+      <p class="fr-card__desc">Comment intégrer une mise en avant dans une page du site ?</p>
+      <div class="fr-card__start">
+<ul class="fr-tags-group" data-pagefind-ignore="">
+    <li><p class="fr-tag">DSFR</p></li>
+    <li><p class="fr-tag">composant</p></li>
+</ul>          <p class="fr-card__detail fr-icon-time-fill">
+            <time class="postlist-date" datetime="2025-03-06">
+              06 mars 2025
+            </time>
+          </p>
+      </div>
+    </div>
+    <div class="fr-card__footer">
+    </div>
+  </div>
+    <div class="fr-card__header">
+    </div>
+</div>
+  </div>
+</div>
+<nav role="navigation" class="fr-pagination" aria-label="Pagination">
+  <ul class="fr-pagination__list">
+    <li>
+      <a class="fr-pagination__link fr-pagination__link--first" aria-disabled="true" role="link" href="/fonds-de-cartes/fr/blog/tags/dsfr/">
+        Première page
+      </a>
+    </li>
+    <li>
+      <a class="fr-pagination__link fr-pagination__link--prev fr-pagination__link--lg-label" aria-disabled="true" role="link">
+        Page précédente
+      </a>
+    </li>
+    <li>
+      <a class="fr-pagination__link" aria-current="page" href="/fonds-de-cartes/fr/blog/tags/dsfr/" title="Page 1"> 1 </a>
+    </li>
+      <li>
+        <a class="fr-pagination__link fr-displayed-lg"> … </a>
+      </li>
+      <li>
+        <a class="fr-pagination__link" href="/fonds-de-cartes/fr/blog/tags/dsfr/page-2/" title="Page 2">
+          2
+        </a>
+      </li>
+    <li>
+      <a class="fr-pagination__link fr-pagination__link--next fr-pagination__link--lg-label" href="/fonds-de-cartes/fr/blog/tags/dsfr/page-2/">
+        Page suivante
+      </a>
+    </li>
+    <li>
+      <a class="fr-pagination__link fr-pagination__link--last" href="/fonds-de-cartes/fr/blog/tags/dsfr/page-2/">
+        Dernière page
+      </a>
+    </li>
+  </ul>
+</nav>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<div class="fr-follow">
+  <div class="fr-container">
+    <div class="fr-grid-row">
+      <div class="fr-col-12">
+        <div class="fr-follow__newsletter">
+          <div>
+            <h2 class="fr-h5">Rejoignez notre lettre d&#39;information !</h2>
+            <p class="fr-text--sm">Pour suivre nos actualités et avancées sur le projet et participer à son évolution si vous le souhaitez.</p>
+          </div>
+          <div class="fr-btns-group fr-btns-group--inline-md">
+            <a class="fr-btn" title="S&#39;abonner" href="https://e1671ed4.sibforms.com/serve/MUIFAKl24WyvoB2G2yCuFTh18zGaDqJPo8CJPKK6N1dw3314KlDAVZ-_KAMSw_AkSv3ZCf130r6qtYu18cjfukSugHXxFizO7n7SJxv7tKzhRKpDeUHRd-RG2Y7eCLsPgCJpZW8wvzem6wmBHEyjMC-pZhLVCbwBwBSByJXzC3OAVqKQ4wzW7xVBeo0pbiS2gopJXIgoOtdX8yoL" target="_blank" rel="noopener">
+              S&#39;abonner
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<footer class="fr-footer" role="contentinfo" id="footer">
+  <div class="fr-container">
+    <div class="fr-footer__body">
+      <div class="fr-footer__brand fr-enlarge-link">
+          <p class="fr-logo">
+              République
+              <br>Française
+          </p>
+          <a class="fr-footer__brand-link" href="/fonds-de-cartes/" title="Retour à l'accueil du site - [À MODIFIER - texte alternatif de l'image : nom de l'opérateur ou du site serviciel] - République Française">
+              <img class="fr-footer__logo" style="width:7rem;" src="/fonds-de-cartes/icons/logo/IGN_logo_Q.svg" alt="Logo IGN">
+          </a>
+      </div>
+      <div class="fr-footer__content">
+        <p class="fr-footer__content-desc">Fonds de cartes est un service développé par La Fabrique des géocommuns, incubateur de communs à l’IGN. Le code source de ce site web et les ressources proposées par le service sont disponible en licence libre.</p>
+        <ul class="fr-footer__content-list">
+          <li class="fr-footer__content-item">
+            <a class="fr-footer__content-link" target="_blank" rel="noopener external" href="https://legifrance.gouv.fr">legifrance.gouv.fr</a>
+          </li>
+          <li class="fr-footer__content-item">
+            <a class="fr-footer__content-link" target="_blank" rel="noopener external" href="https://gouvernement.fr">gouvernement.fr</a>
+          </li>
+          <li class="fr-footer__content-item">
+            <a class="fr-footer__content-link" target="_blank" rel="noopener external" href="https://service-public.fr">service-public.fr</a>
+          </li>
+          <li class="fr-footer__content-item">
+            <a class="fr-footer__content-link" target="_blank" rel="noopener external" href="https://data.gouv.fr">data.gouv.fr</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fr-footer__bottom">
+      <ul class="fr-footer__bottom-list">
+        <li class="fr-footer__bottom-item">
+          <a class="fr-footer__bottom-link" href="/fonds-de-cartes/sitemap/">Plan du site</a>
+        </li>
+        <li class="fr-footer__bottom-item">
+          <a class="fr-footer__bottom-link" href="/fonds-de-cartes/fr/accessibilite/">
+            Accessibilité : Non conforme
+          </a>
+        </li>
+        <li class="fr-footer__bottom-item">
+          <a class="fr-footer__bottom-link" href="/fonds-de-cartes/fr/mentions-legales/">Mentions légales</a>
+        </li>
+        <li class="fr-footer__bottom-item">
+          <a class="fr-footer__bottom-link" href="/fonds-de-cartes/fr/donnees-personnelles/">Données personnelles</a>
+        </li>
+        <li class="fr-footer__bottom-item">
+          <a class="fr-footer__bottom-link fr-icon-pencil-line fr-link--icon-left" href="https://github.com/betagouv/fonds-de-cartes/blob/main/./content/fr/blog/tags.njk">Modifier cette page</a>
+        </li>
+        
+        <li class="fr-footer__bottom-item">
+          <button class="fr-footer__bottom-link fr-fi-theme-fill fr-link--icon-left" aria-controls="fr-theme-modal" data-fr-opened="false">
+            Paramètres d&#39;affichage
+          </button>
+        </li>
+      </ul>
+      <div class="fr-footer__bottom-copy">
+        <p>
+          Sauf mention contraire, tous les contenus de ce site sont sous <a href="https://github.com/etalab/licence-ouverte/blob/master/LO.md" target="_blank" rel="noopener">licence etalab-2.0</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<dialog id="fr-theme-modal" class="fr-modal" role="dialog" aria-labelledby="fr-theme-modal-title">
+  <div class="fr-container fr-container--fluid fr-container-md">
+    <div class="fr-grid-row fr-grid-row--center">
+      <div class="fr-col-12 fr-col-md-6 fr-col-lg-4">
+        <div class="fr-modal__body">
+          <div class="fr-modal__header">
+            <button class="fr-btn--close fr-btn" aria-controls="fr-theme-modal" title="Fermer">
+              Fermer
+            </button>
+          </div>
+          <div class="fr-modal__content">
+            <h1 id="fr-theme-modal-title" class="fr-modal__title"> Paramètres d&#39;affichage </h1>
+            <div id="fr-display" class="fr-display">
+              <div class="fr-form-group">
+                <fieldset class="fr-fieldset">
+                  <legend class="fr-fieldset__legend fr-text--regular" id="-legend">
+                    Choisissez un thème pour personnaliser l’apparence du site.
+                  </legend>
+                  <div class="fr-fieldset__content">
+                    <div class="fr-radio-group fr-radio-rich">
+                      <input value="light" type="radio" id="fr-radios-theme-light" name="fr-radios-theme">
+                      <label class="fr-label" for="fr-radios-theme-light"> Thème clair </label>
+                      <div class="fr-radio-rich__img">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="fr-artwork" width="80px" height="80px" viewBox="0 0 80 80">
+                          <use class="fr-artwork-decorative" xlink:href="/fonds-de-cartes/artwork/light.svg#artwork-decorative"></use>
+                          <use class="fr-artwork-minor" xlink:href="/fonds-de-cartes/artwork/light.svg#artwork-minor"></use>
+                          <use class="fr-artwork-major" xlink:href="/fonds-de-cartes/artwork/light.svg#artwork-major"></use>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="fr-radio-group fr-radio-rich">
+                      <input value="dark" type="radio" id="fr-radios-theme-dark" name="fr-radios-theme">
+                      <label class="fr-label" for="fr-radios-theme-dark"> Thème sombre </label>
+                      <div class="fr-radio-rich__img">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="fr-artwork" width="80px" height="80px" viewBox="0 0 80 80">
+                          <use class="fr-artwork-decorative" xlink:href="/fonds-de-cartes/artwork/dark.svg#artwork-decorative"></use>
+                          <use class="fr-artwork-minor" xlink:href="/fonds-de-cartes/artwork/dark.svg#artwork-minor"></use>
+                          <use class="fr-artwork-major" xlink:href="/fonds-de-cartes/artwork/dark.svg#artwork-major"></use>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="fr-radio-group fr-radio-rich">
+                      <input value="system" type="radio" id="fr-radios-theme-system" name="fr-radios-theme">
+                      <label class="fr-label" for="fr-radios-theme-system">
+                        Système
+                        <span class="fr-hint-text">Utilise les paramètres système.</span>
+                      </label>
+                      <div class="fr-radio-rich__img">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="fr-artwork" width="80px" height="80px" viewBox="0 0 80 80">
+                          <use class="fr-artwork-decorative" xlink:href="/fonds-de-cartes/artwork/system.svg#artwork-decorative"></use>
+                          <use class="fr-artwork-minor" xlink:href="/fonds-de-cartes/artwork/system.svg#artwork-minor"></use>
+                          <use class="fr-artwork-major" xlink:href="/fonds-de-cartes/artwork/system.svg#artwork-major"></use>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<!-- Current page: /fonds-de-cartes/fr/blog/tags/dsfr/ -->
+
+<script>
+      const SEARCH_RESULTS_URL = "/fonds-de-cartes/fr/search-results/";
+  </script>
+  <script type="text/javascript" src="/fonds-de-cartes/js/search.js"></script><!-- Script en version es6 module et nomodule pour les navigateurs le ne supportant pas -->
+<script type="module" src="/fonds-de-cartes/js/dsfr.module.min.js"></script>
+<script type="text/javascript" nomodule="" src="/fonds-de-cartes/js/dsfr.nomodule.min.js"></script>
+<!-- Script Matomo pour le suivi des visites -->
+<script type="text/javascript" src="/fonds-de-cartes/js/matomo.js"></script>
+</body>
+</html>

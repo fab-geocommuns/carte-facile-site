@@ -1,0 +1,797 @@
+<!doctype html>
+<html lang="fr" data-fr-scheme="system" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="format-detection" content="telephone=no,date=no,address=no,email=no,url=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <meta name="description" content="Cartes et données géographiques disponibles">
+  <meta name="theme-color" content="#000091">
+  <link rel="apple-touch-icon" href="/fonds-de-cartes/favicon/apple-touch-icon.png"><!-- 180×180 -->
+  <link rel="icon" href="/fonds-de-cartes/favicon/favicon.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="/fonds-de-cartes/favicon/favicon.ico" type="image/x-icon"><!-- 32×32 -->
+  <link rel="manifest" href="/fonds-de-cartes/favicon/manifest.webmanifest" crossorigin="use-credentials">
+  <link rel="alternate" href="/fonds-de-cartes/feed/feed.xml" type="application/atom+xml" title="Carte facile">
+  <link rel="alternate" href="/fonds-de-cartes/feed/feed.json" type="application/json" title="Carte facile">
+
+  <link rel="stylesheet" href="/fonds-de-cartes/css/dsfr.min.css">
+  <link rel="stylesheet" href="/fonds-de-cartes/css/utility/utility.min.css">
+
+    <!-- Include MapLibre GL -->
+    <script src="https://unpkg.com/maplibre-gl/dist/maplibre-gl.js"></script>
+    <link href="https://unpkg.com/maplibre-gl@4.1.2/dist/maplibre-gl.css" rel="stylesheet">
+    <!-- Inclure PMTiles -->
+    <script src="https://unpkg.com/pmtiles@3.2.0/dist/pmtiles.js"></script>
+
+  <style>html, body { height: 100%; }
+body { 
+    display: flex;
+    flex-direction: column;
+}
+#content { flex-grow: 1; }
+#map { 
+    height: 100%; 
+    width: 100%; 
+}
+
+#open-panel-btn {
+    border-radius: 0.25rem;
+}
+
+.map-panel {
+    font-family: Marianne,arial,sans-serif;
+}
+
+.map-panel-toggle {
+    z-index: 5;
+    display: none;
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+}
+
+.map-panel[aria-expanded="false"] .map-panel--extended {
+    display: none;
+}
+
+.map-panel[aria-expanded="false"] .map-panel-toggle {
+    display: inline-flex;
+}
+
+.map-panel--extended {
+    position: absolute;
+    width: 24rem;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-default-grey);
+    z-index: 3;
+    filter: drop-shadow(var(--raised-shadow));
+    top: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.map-panel__header {
+    display: flex;
+}
+
+.map-panel__content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+}
+
+.map-panel__styles-list, .map-panel__style-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.map-panel__styles-list .map-card-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.map-card {
+    transition: opacity 0.2s ease-in-out;
+    cursor: pointer;
+    background-color: var(--background-default-grey);
+    position: relative;
+    border-radius: 0.25rem;
+    overflow: hidden;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+@media (min-width: 20rem) {
+    .map-card {
+        flex: 0 0 calc(50% - 0.5rem);
+        max-width: calc(50% - 0.5rem);
+    }
+}
+
+.map-card:hover {
+    background-color: var(--background-default-grey-hover);
+}
+
+.map-card--shadow {
+    --idle: transparent;
+    --hover: var(--background-raised-grey-hover);
+    --active: var(--background-raised-grey-active);
+  }
+
+.map-active-icon  {
+    display: none;
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    color: var(--text-active-blue-france);
+    z-index: 1;
+    background-color: var(--background-default-grey);
+    border-radius: 12px;
+}
+
+.map-card[aria-current="true"] .map-active-icon {
+    display: block;
+}
+
+.map-card__header {
+    position: relative;
+}
+
+.map-card__img {
+    flex: 0 0 auto;
+}
+
+.map-card__img img {
+    aspect-ratio: 1.7777777778;
+    object-fit: cover;
+    object-position: 50% 50%;
+    width: 100%;
+    display: block;
+}
+
+.map-card__title {  
+    font-size: .875rem;
+    line-height: 1.5rem;
+    font-weight: normal;
+}
+
+.map-panel__style-details .map-card__img {
+    border-radius: 0.25rem;
+    overflow: hidden;
+}
+/* Defaults */
+:root {
+    --font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+    --syntax-tab-size: 2;
+}
+
+/* Global stylesheet */
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+table {
+    margin: 1em 0;
+}
+
+table td,
+table th {
+    padding-right: 1em;
+}
+
+pre,
+code {
+    font-family: var(--font-family-monospace);
+}
+
+pre[class*="language-"] {
+    margin-bottom: 1.5em !important;
+}
+
+pre:not([class*="language-"]) {
+    margin: .5em 0;
+    line-height: 1.375; /* 22px /16 */
+    -moz-tab-size: var(--syntax-tab-size);
+    -o-tab-size: var(--syntax-tab-size);
+    tab-size: var(--syntax-tab-size);
+    -webkit-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+    direction: ltr;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+}
+
+code {
+    word-break: break-all;
+}
+
+/* Direct Links / Markdown Headers */
+.header-anchor {
+    background-image: none;
+    text-decoration: none;
+    font-style: normal;
+    font-size: 1em;
+    margin-left: .1em;
+}
+
+a[href].header-anchor,
+a[href].header-anchor:visited {
+    color: transparent;
+}
+
+a[href].header-anchor:focus,
+a[href].header-anchor:hover {
+    text-decoration: underline;
+}
+
+a[href].header-anchor:focus,
+:hover > a[href].header-anchor {
+    color: #aaa;
+}
+
+h2 + .header-anchor {
+    font-size: 1.5em;
+}
+
+img {
+    display: block;
+}
+
+p > img {
+    max-width: 100%;
+}
+
+/* Custom DSFR */
+.fr-pagination__list {
+    justify-content: flex-end !important;
+}
+
+@media (min-width: 48em) {
+    .fr-share__group {
+        justify-content: flex-end !important;
+    }
+}
+
+.fr-responsive-img.fr-ratio-auto {
+    object-fit: contain;
+}
+
+.fr-quote__image img {
+    object-fit: cover;
+}
+
+/** Properly render text in Markdown callout containers **/
+div.fr-callout__text p {
+    font-size: inherit;
+    line-height: inherit;
+}
+
+/** Missing icons **/
+.fr-follow .fr-btn--peertube:before,
+.fr-follow .fr-btn--github:before,
+.fr-follow .fr-btn--sourcehut:before {
+    margin-left: 0;
+    margin-right: 0.5rem;
+    flex: 0 0 auto;
+    display: inline-block;
+    vertical-align: calc((0.75em - var(--icon-size)) * 0.5);
+    background-color: currentColor;
+    width: var(--icon-size);
+    height: var(--icon-size);
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    --icon-size: 2rem;
+    content: "";
+}
+
+.fr-follow .fr-btn--peertube:before {
+    -webkit-mask-image: url(/icons/logo/peertube.svg) !important;
+    mask-image: url(/icons/logo/peertube.svg) !important;
+}
+
+.fr-follow .fr-btn--github:before {
+    -webkit-mask-image: url(/icons/logo/github-fill.svg) !important;
+    mask-image: url(/icons/logo/github-fill.svg) !important;
+}
+
+.fr-follow .fr-btn--sourcehut:before {
+    -webkit-mask-image: url(/icons/logo/sourcehut.svg) !important;
+    mask-image: url(/icons/logo/sourcehut.svg) !important;
+}
+
+/* Custom */
+.text-center {
+    text-align: center;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
+/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}</style>
+
+  <meta name="generator" content="Eleventy v2.0.1">
+
+  <title>Cartes</title>
+</head>
+<body id="top">
+<script>
+      // Fix FOUC in dark mode
+      setDarkBeforeRender = () => {
+          const localScheme = localStorage.getItem('scheme')
+          if (localScheme === 'dark' || (localScheme === 'system' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+              document.documentElement.setAttribute('data-fr-theme', 'dark');
+          }
+      }
+      setDarkBeforeRender();
+  </script>
+<header role="banner" class="fr-header">
+  <div class="fr-header__body">
+    <div class="fr-container">
+      <div class="fr-header__body-row">
+        <div class="fr-header__brand fr-enlarge-link">
+          <div class="fr-header__brand-top">
+            <div class="fr-header__logo">
+              <p class="fr-logo">République<br>française</p>
+            </div>
+            <div class="fr-header__operator">
+                <img style="width: 5rem" class="fr-responsive-img" src="/fonds-de-cartes/icons/logo/IGN_logo_Q.svg" alt="Logo IGN">
+                <!-- L’alternative de l’image (attribut alt) doit impérativement être renseignée et reprendre le texte visible dans l’image -->
+            </div>
+            <div class="fr-header__navbar">
+              <button class="fr-btn--menu fr-btn" data-fr-opened="false" aria-controls="modal-491" aria-haspopup="menu" id="button-492" title="Menu">
+                Menu
+              </button>
+            </div>
+          </div>
+          <div class="fr-header__service">
+            <a href="/fonds-de-cartes/fr/" title="Accueil - Carte facile - La Fabrique des géocommuns, IGN">
+              <p class="fr-header__service-title"> 
+                Carte facile
+                <span class="fr-badge--sm fr-badge--success fr-badge--no-icon">Bêta</span>
+              </p>
+            </a>
+            <p class="fr-header__service-tagline">Intégrez facilement des cartes à vos applications et sites web</p>
+          </div>
+        </div>
+        <div class="fr-header__tools">
+          <div class="fr-header__tools-links">
+            <ul class="fr-btns-group">
+              
+              <li>
+                <a class="fr-btn" href="https://cartes.gouv.fr/" target="_blank">Cartes.gouv.fr</a>
+              </li>
+              <li>
+                <a class="fr-btn" href="https://www.geoportail.gouv.fr/carte" target="_blank">Géoportail</a>
+              </li>
+            </ul>
+            
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="fr-header__menu fr-modal" id="modal-491" aria-labelledby="button-492">
+    <div class="fr-container">
+      <button class="fr-btn--close fr-btn" aria-controls="modal-491" title="Fermer">
+        Fermer
+      </button>
+      <div class="fr-header__menu-links"></div>
+<nav class="fr-nav" id="navigation-494" role="navigation" aria-label="Menu principal">
+  <ul class="fr-nav__list">
+      <li class="fr-nav__item">
+          <a class="fr-nav__link" href="/fonds-de-cartes/fr/cartes/" aria-current="page">
+            Cartes
+          </a>
+      </li>
+      <li class="fr-nav__item">
+          <a class="fr-nav__link" href="/fonds-de-cartes/fr/documentation/">
+            Documentation
+          </a>
+      </li>
+      <li class="fr-nav__item">
+          <a class="fr-nav__link" href="/fonds-de-cartes/fr/communaute/">
+            Communauté
+          </a>
+      </li>
+      <li class="fr-nav__item">
+          <button class="fr-nav__btn" aria-expanded="false" aria-controls="menu-4">
+            À propos
+          </button>
+          <div class="fr-collapse fr-menu" id="menu-4">
+            <ul class="fr-menu__list">
+                <li>
+                  <a class="fr-nav__link" href="/fonds-de-cartes/fr/a-propos/">
+                    Présentation
+                  </a>
+                </li>
+                <li>
+                  <a class="fr-nav__link" href="/fonds-de-cartes/fr/contact/">
+                    Contact
+                  </a>
+                </li>
+            </ul>
+          </div>
+      </li>
+  </ul>
+</nav>
+
+<script>
+(() => {
+    // Récupérer l'URL complète de la page
+    const currentUrl = window.location.href;
+    console.log("Current URL:", currentUrl); // Affiche l'URL actuelle dans la console
+
+    // Sélectionner tous les liens de navigation
+    const allLinks = document.querySelectorAll('.fr-nav__link');
+
+    allLinks.forEach(link => {
+        // Vérifier si l'URL actuelle commence par l'URL du lien
+        if (currentUrl.startsWith(link.href)) {
+            // Marquer le lien comme courant
+            link.ariaCurrent = "page";
+
+            // Ouvrir le menu parent si le lien a des enfants
+            const parentItem = link.closest('.fr-nav__item');
+            const button = parentItem.querySelector('.fr-nav__btn');
+            if (button) {
+                button.ariaExpanded = true; // Ouvrir le collapse
+            }
+        }
+    });
+})();
+</script>    </div>
+  </div>
+</header>
+
+<main id="content">
+  
+<!-- Bloc containing the map -->
+<div id="map">
+    <aside id="map-selection" class="map-panel" aria-labelledby="panel-title">
+        <button id="open-panel-btn" class="fr-btn fr-btn--icon-left fr-icon-eye-line map-panel-toggle" aria-label="Ouvrir le panneau de sélection des cartes" aria-controls="control-panel" aria-expanded="true">
+            Afficher les cartes
+        </button>
+        <div class="map-panel--extended">
+            <div class="map-panel__header fr-mx-2w fr-mt-2w">
+                <button class="fr-btn--close fr-btn" aria-label="Fermer le panneau de sélection des cartes" aria-controls="control-panel">
+                    Fermer
+                </button>
+            </div>
+            <div class="map-panel__content fr-px-2w fr-pb-4w">
+                <div class="map-panel__styles-list">
+                    <h2 id="panel-title" class="fr-h5">Cartes</h2>
+                        <div class="map-card-grid">
+                                <div class="map-card fr-card--shadow" data-style-url="https://betagouv.github.io/styles-de-cartes/maps/standard_ign.json" data-style-title="Standard" data-style-description="Une carte couleur de contextualisation géographique, adaptée à la plupart des usages." data-style-attribution="" data-style-version="0.9.0" data-style-use="Recommandé pour les applications cartographiques générales. Ses couleurs légères permettent une superposition d&#39;éléments, comme des marqueurs et différents types de données." data-style-accessibility="Les contrastes entre les toponymes et les différents aplats des zones géographiques sont travaillés ain d&#39;être bien perceptibles selon une diversité de perceptions visuelles." data-style-source="IGN" aria-current="true" role="option">
+                                    <div class="map-card__header">
+                                        <span class="map-active-icon fr-icon-success-fill" aria-hidden="true"></span>
+                                        <div class="map-card__img">   
+                                            <img src="https://betagouv.github.io/styles-de-cartes/thumbnails/thumbnail_standard_ign.webp" class="fr-responsive-img" alt="Aperçu de Standard">
+                                        </div>
+                                    </div>
+                                    <div class="map-card__content fr-py-1w fr-px-3v">
+                                        <h3 class="map-card__title fr-mb-0">Standard</h3>
+                                    </div>
+                                </div>
+                                <div class="map-card fr-card--shadow" data-style-url="https://betagouv.github.io/styles-de-cartes/maps/desaturated_ign.json" data-style-title="Désaturée" data-style-description="Une carte en niveaux de gris avec des contrastes doux, pour un fond cartographique discret." data-style-attribution="" data-style-version="0.9.0" data-style-use="Recommandé pour des applications de datavisualisation et la superposition de données thématiques, notamment des aplats de couleurs. La discrétion de la carte permet de mettre en valeur vos données sans interférences visuelles." data-style-accessibility="Les contrastes adoucis permettent une bonne visibilité de vos données superposées. La lisibilité des toponymes est préservée." data-style-source="IGN" role="option">
+                                    <div class="map-card__header">
+                                        <span class="map-active-icon fr-icon-success-fill" aria-hidden="true"></span>
+                                        <div class="map-card__img">   
+                                            <img src="https://betagouv.github.io/styles-de-cartes/thumbnails/thumbnail_desaturated_ign.webp" class="fr-responsive-img" alt="Aperçu de Désaturée">
+                                        </div>
+                                    </div>
+                                    <div class="map-card__content fr-py-1w fr-px-3v">
+                                        <h3 class="map-card__title fr-mb-0">Désaturée</h3>
+                                    </div>
+                                </div>
+                                <div class="map-card fr-card--shadow" data-style-url="https://betagouv.github.io/styles-de-cartes/maps/aerial-photography_ign.json" data-style-title="Photographies aériennes" data-style-description="Une carte basée sur des photographies aériennes haute résolution, enrichie de surcouches vectorielles pour une meilleure lisibilité." data-style-attribution="" data-style-version="0.9.0" data-style-use="Recommandé pour visualiser le territoire tel qu&#39;il apparaît vu du ciel, avec des repères cartographiques facilitant l&#39;orientation. Idéal pour l&#39;observation détaillée du terrain, de l&#39;occupation des sols et du bâti." data-style-accessibility="Les toponymes sont affichés avec des contrastes renforcés sur le fond photographique pour garantir leur lisibilité." data-style-source="IGN" role="option">
+                                    <div class="map-card__header">
+                                        <span class="map-active-icon fr-icon-success-fill" aria-hidden="true"></span>
+                                        <div class="map-card__img">   
+                                            <img src="https://betagouv.github.io/styles-de-cartes/thumbnails/thumbnail_aerial-photography_ign.webp" class="fr-responsive-img" alt="Aperçu de Photographies aériennes">
+                                        </div>
+                                    </div>
+                                    <div class="map-card__content fr-py-1w fr-px-3v">
+                                        <h3 class="map-card__title fr-mb-0">Photographies aériennes</h3>
+                                    </div>
+                                </div>
+                        </div>
+                </div>
+                <div class="map-panel__style-details" style="display: none;">
+                    <button class="fr-btn fr-btn--sm fr-btn--tertiary-no-outline fr-btn--icon-left fr-icon-arrow-left-line fr-mb-2w" id="back-to-list">
+                        Retour à la liste
+                    </button>
+                    <div class="map-card__img fr-mb-2w" style="position: relative;">   
+                        <span class="map-active-icon fr-icon-success-fill" aria-hidden="true"></span>
+                        <img id="style-thumbnail" class="fr-responsive-img" alt="">
+                    </div>
+                    <h2 class="fr-h5 fr-mb-3v" id="style-title"></h2>
+                    <p id="style-description" class="fr-text"></p>
+                    <ul class="fr-btns-group">
+                        <li>
+                            <button class="fr-btn" id="apply-style">
+                                Afficher la carte
+                            </button>
+                        </li>
+                        <li>
+                            <a href="." target="_blank" rel="noopener" class="fr-btn fr-btn--secondary" id="style-url-link">
+                                URL du fichier de style
+                            </a>
+                        </li>
+                    </ul>
+                    <a class="fr-link fr-link--sm fr-icon-arrow-right-line fr-link--icon-right fr-mb-4w" href="/fonds-de-cartes/fr/documentation/utiliser-les-cartes">Tutoriel d'utilisation</a>
+                    <h3 class="fr-h6 fr-mb-1w">Usage</h3>
+                    <p id="style-use" class="fr-text--sm"></p>
+                    <h3 class="fr-h6 fr-mb-1w">Accessibilité</h3>
+                    <p id="style-accessibility" class="fr-text--sm"></p>
+                    <p class="fr-text--sm fr-mb-0">Version : <span id="style-version"></span></p>
+                    <p class="fr-text--sm">Source : <span id="style-source"></span></p>
+                </div>
+            </div>
+        </div>
+    </aside>
+    
+</div>
+<script>
+    window.defaultMapStyle = 'https://betagouv.github.io/styles-de-cartes/maps/standard_ign.json';
+</script>
+<script type="text/javascript" src="/fonds-de-cartes/js/maps-viewer.js"></script>
+</main>
+
+
+<dialog id="fr-theme-modal" class="fr-modal" role="dialog" aria-labelledby="fr-theme-modal-title">
+  <div class="fr-container fr-container--fluid fr-container-md">
+    <div class="fr-grid-row fr-grid-row--center">
+      <div class="fr-col-12 fr-col-md-6 fr-col-lg-4">
+        <div class="fr-modal__body">
+          <div class="fr-modal__header">
+            <button class="fr-btn--close fr-btn" aria-controls="fr-theme-modal" title="Fermer">
+              Fermer
+            </button>
+          </div>
+          <div class="fr-modal__content">
+            <h1 id="fr-theme-modal-title" class="fr-modal__title"> Paramètres d&#39;affichage </h1>
+            <div id="fr-display" class="fr-display">
+              <div class="fr-form-group">
+                <fieldset class="fr-fieldset">
+                  <legend class="fr-fieldset__legend fr-text--regular" id="-legend">
+                    Choisissez un thème pour personnaliser l’apparence du site.
+                  </legend>
+                  <div class="fr-fieldset__content">
+                    <div class="fr-radio-group fr-radio-rich">
+                      <input value="light" type="radio" id="fr-radios-theme-light" name="fr-radios-theme">
+                      <label class="fr-label" for="fr-radios-theme-light"> Thème clair </label>
+                      <div class="fr-radio-rich__img">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="fr-artwork" width="80px" height="80px" viewBox="0 0 80 80">
+                          <use class="fr-artwork-decorative" xlink:href="/fonds-de-cartes/artwork/light.svg#artwork-decorative"></use>
+                          <use class="fr-artwork-minor" xlink:href="/fonds-de-cartes/artwork/light.svg#artwork-minor"></use>
+                          <use class="fr-artwork-major" xlink:href="/fonds-de-cartes/artwork/light.svg#artwork-major"></use>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="fr-radio-group fr-radio-rich">
+                      <input value="dark" type="radio" id="fr-radios-theme-dark" name="fr-radios-theme">
+                      <label class="fr-label" for="fr-radios-theme-dark"> Thème sombre </label>
+                      <div class="fr-radio-rich__img">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="fr-artwork" width="80px" height="80px" viewBox="0 0 80 80">
+                          <use class="fr-artwork-decorative" xlink:href="/fonds-de-cartes/artwork/dark.svg#artwork-decorative"></use>
+                          <use class="fr-artwork-minor" xlink:href="/fonds-de-cartes/artwork/dark.svg#artwork-minor"></use>
+                          <use class="fr-artwork-major" xlink:href="/fonds-de-cartes/artwork/dark.svg#artwork-major"></use>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="fr-radio-group fr-radio-rich">
+                      <input value="system" type="radio" id="fr-radios-theme-system" name="fr-radios-theme">
+                      <label class="fr-label" for="fr-radios-theme-system">
+                        Système
+                        <span class="fr-hint-text">Utilise les paramètres système.</span>
+                      </label>
+                      <div class="fr-radio-rich__img">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="fr-artwork" width="80px" height="80px" viewBox="0 0 80 80">
+                          <use class="fr-artwork-decorative" xlink:href="/fonds-de-cartes/artwork/system.svg#artwork-decorative"></use>
+                          <use class="fr-artwork-minor" xlink:href="/fonds-de-cartes/artwork/system.svg#artwork-minor"></use>
+                          <use class="fr-artwork-major" xlink:href="/fonds-de-cartes/artwork/system.svg#artwork-major"></use>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<!-- Current page: /fonds-de-cartes/fr/cartes/ -->
+
+<script>
+      const SEARCH_RESULTS_URL = "/fonds-de-cartes/fr/search-results/";
+  </script>
+  <script type="text/javascript" src="/fonds-de-cartes/js/search.js"></script><!-- Script en version es6 module et nomodule pour les navigateurs le ne supportant pas -->
+<script type="module" src="/fonds-de-cartes/js/dsfr.module.min.js"></script>
+<script type="text/javascript" nomodule="" src="/fonds-de-cartes/js/dsfr.nomodule.min.js"></script>
+<!-- Script Matomo pour le suivi des visites -->
+<script type="text/javascript" src="/fonds-de-cartes/js/matomo.js"></script>
+</body>
+</html>
