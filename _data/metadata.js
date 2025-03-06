@@ -1,6 +1,6 @@
 module.exports = {
     title: "Carte facile",
-    url: "https://fab-geocommuns.github.io/carte-facile-site/",
+    url: "https://fab-geocommuns.github.io/carte-facile-site",
     newsletter: 
         {
             url: "https://e1671ed4.sibforms.com/serve/MUIFAKl24WyvoB2G2yCuFTh18zGaDqJPo8CJPKK6N1dw3314KlDAVZ-_KAMSw_AkSv3ZCf130r6qtYu18cjfukSugHXxFizO7n7SJxv7tKzhRKpDeUHRd-RG2Y7eCLsPgCJpZW8wvzem6wmBHEyjMC-pZhLVCbwBwBSByJXzC3OAVqKQ4wzW7xVBeo0pbiS2gopJXIgoOtdX8yoL",
@@ -22,7 +22,7 @@ module.exports = {
     author: {
         name: "Cartes faciles",
         email: "fonds-de-cartes@beta.gouv.fr",
-        url: "https://fab-geocommuns.github.io/carte-facile-site/"
+        url: "https://fab-geocommuns.github.io/carte-facile-site"
     },
     service: "La Fabrique des géocommuns, IGN"
 }
