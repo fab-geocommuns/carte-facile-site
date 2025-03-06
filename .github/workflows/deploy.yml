@@ -1,12 +1,13 @@
-name: Build Eleventy
+name: Deploy
 
 on:
   push:
     branches:
+      - staging
       - main
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-20.04
 
     strategy:
@@ -26,12 +27,23 @@ jobs:
           npm ci
           npm run build
 
-
       - name: fr fallback homepage
         run: "cp _site/fr/index.html _site/index.html"
 
-      - name: Deploy
+      - name: Deploy to Staging
+        if: github.ref == 'refs/heads/staging'
+        environment: staging
         uses: peaceiris/actions-gh-pages@v4
         with:
           publish_dir: ./_site
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          destination_dir: staging
+
+      - name: Deploy to Production
+        if: github.ref == 'refs/heads/main'
+        environment: production
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          publish_dir: ./_site
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          destination_dir: .
