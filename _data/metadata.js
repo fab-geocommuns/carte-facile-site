@@ -1,6 +1,6 @@
 module.exports = {
     title: "Carte facile",
-    url: "https://fondsdecartes.ign.fr",
+    url: "https://fab-geocommuns.github.io/carte-facile-site/",
     newsletter: 
         {
             url: "https://e1671ed4.sibforms.com/serve/MUIFAKl24WyvoB2G2yCuFTh18zGaDqJPo8CJPKK6N1dw3314KlDAVZ-_KAMSw_AkSv3ZCf130r6qtYu18cjfukSugHXxFizO7n7SJxv7tKzhRKpDeUHRd-RG2Y7eCLsPgCJpZW8wvzem6wmBHEyjMC-pZhLVCbwBwBSByJXzC3OAVqKQ4wzW7xVBeo0pbiS2gopJXIgoOtdX8yoL",
@@ -16,13 +16,13 @@ module.exports = {
     peertube_url: "",
     github_url: "",
     sourcehut_url: "",
-    repository_url: "https://github.com/betagouv/fonds-de-cartes",
+    repository_url: "https://github.com/fab-geocommuns/carte-facile-site",
     language: "fr",
     description: "Intégrez facilement des cartes à vos applications et sites web",
     author: {
         name: "Cartes faciles",
         email: "fonds-de-cartes@beta.gouv.fr",
-        url: "https://betagouv.github.io/fonds-de-cartes/"
+        url: "https://fab-geocommuns.github.io/carte-facile-site/"
     },
     service: "La Fabrique des géocommuns, IGN"
 }
