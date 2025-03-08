@@ -40,5 +40,9 @@
     "markdown-it-attrs": "^4.1.6",
     "markdown-it-container": "^4.0.0",
     "pagefind": "^1.0.4"
+  },
+  "dependencies": {
+    "carte-facile": "^0.1.0",
+    "maplibre-gl": "^5.2.0"
   }
 }
