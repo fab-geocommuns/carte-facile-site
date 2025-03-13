@@ -82,6 +82,14 @@
         });
     });
 
+    // Mettre à jour les titres des cartes avec les métadonnées
+    document.querySelectorAll('.map-card__title').forEach(title => {
+        const style = title.dataset.style;
+        const provider = title.dataset.provider;
+        const mapStyle = getMap(style, provider);
+        title.textContent = mapStyle.metadata.fr?.name || `${style}_${provider}`;
+    });
+
     // Add back button handler
     backButton.addEventListener('click', showStylesList);
 
