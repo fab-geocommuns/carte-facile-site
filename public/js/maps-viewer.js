@@ -1,10 +1,11 @@
 (() => {
     // Map initialization with default style
-    const defaultStyle = 'https://betagouv.github.io/styles-de-cartes/maps/map_simplified_colored_ign.json';
+    const defaultStyle = getMap('standard', 'ign');
 
+    // Créer la carte
     const map = new maplibregl.Map({
         container: 'map',
-        style: window.defaultMapStyle || defaultStyle,
+        style: defaultStyle,
         hash: true,
         maxZoom: 18.9,
     });
@@ -34,29 +35,23 @@
     const styleDetails = controlPanel.querySelector('.map-panel__style-details');
     const backButton = document.getElementById('back-to-list');
     const applyStyleButton = document.getElementById('apply-style');
-    let selectedStyleUrl = null;
+    let selectedStyle = null;
 
     function showStyleDetails(card) {
-        const styleUrl = card.dataset.styleUrl;
-        const styleTitle = card.dataset.styleTitle;
-        const styleDescription = card.dataset.styleDescription;
-        const styleAttribution = card.dataset.styleAttribution;
-        const styleVersion = card.dataset.styleVersion;
-        const styleThumbnail = card.querySelector('img').src;
-        const styleUse = card.dataset.styleUse;
-        const styleAccessibility = card.dataset.styleAccessibility;
-        const styleSource = card.dataset.styleSource;
-
-        selectedStyleUrl = styleUrl;
-        document.getElementById('style-title').textContent = styleTitle;
-        document.getElementById('style-version').textContent = styleVersion || 'Non spécifiée';
-        document.getElementById('style-description').textContent = styleDescription;
-        document.getElementById('style-thumbnail').src = styleThumbnail;
-        document.getElementById('style-thumbnail').alt = `Aperçu de ${styleTitle}`;
-        document.getElementById('style-use').textContent = styleUse || 'Non spécifié';
-        document.getElementById('style-accessibility').textContent = styleAccessibility || 'Non spécifié';
-        document.getElementById('style-source').textContent = styleSource || 'Non spécifiée';
-        document.getElementById('style-url-link').href = styleUrl;
+        const [style, provider] = card.dataset.styleUrl.split('|');
+        const mapStyle = getMap(style, provider);
+        const metadata = mapStyle.metadata;
+        
+        selectedStyle = { style, provider };
+        document.getElementById('style-title').textContent = metadata.fr?.name || `${style}_${provider}`;
+        document.getElementById('style-version').textContent = metadata?.version || 'Non spécifiée';
+        document.getElementById('style-description').textContent = metadata.fr?.description || '';
+        document.getElementById('style-thumbnail').src = `/img/thumbnails/${style}_${provider}.jpg`;
+        document.getElementById('style-thumbnail').alt = `Aperçu de ${metadata.fr?.name || `${style}_${provider}`}`;
+        document.getElementById('style-use').textContent = metadata.fr?.use || 'Non spécifié';
+        document.getElementById('style-accessibility').textContent = metadata.fr?.accessibility || 'Non spécifié';
+        document.getElementById('style-source').textContent = metadata?.source || 'Non spécifiée';
+        document.getElementById('style-url-link').href = metadata?.url || '#';
 
         // Update success icon in details
         const isCurrentStyle = card.getAttribute('aria-current') === 'true';
@@ -69,7 +64,7 @@
     function showStylesList() {
         stylesList.style.display = 'flex';
         styleDetails.style.display = 'none';
-        selectedStyleUrl = null;
+        selectedStyle = null;
     }
 
     // Modify click handlers for style cards
@@ -92,12 +87,13 @@
 
     // Add apply style button handler
     applyStyleButton.addEventListener('click', () => {
-        if (selectedStyleUrl) {
-            map.setStyle(selectedStyleUrl);
+        if (selectedStyle) {
+            const newStyle = getMap(selectedStyle.style, selectedStyle.provider);
+            map.setStyle(newStyle);
             
             // Update ARIA states and checkmarks
             document.querySelectorAll('.map-card, .map-panel__style-details .map-active-icon').forEach(element => {
-                const isCurrent = element.closest('.map-card')?.dataset.styleUrl === selectedStyleUrl;
+                const isCurrent = element.closest('.map-card')?.dataset.styleUrl === `${selectedStyle.style}|${selectedStyle.provider}`;
                 if (element.classList.contains('map-card')) {
                     element.setAttribute('aria-current', isCurrent);
                 }

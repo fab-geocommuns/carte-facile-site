@@ -30,24 +30,19 @@ showMaps: true
                         <div class="map-card-grid">
                             {% for style in mapStyles.styles %}
                                 <div class="map-card fr-card--shadow" 
-                                    data-style-url="{{ style.url }}"
-                                    data-style-title="{{ style.title }}"
-                                    data-style-description="{{ style.description }}"
-                                    data-style-attribution="{{ style.attribution }}"
-                                    data-style-version="{{ style.version }}"
-                                    data-style-use="{{ style.use }}"
-                                    data-style-accessibility="{{ style.accessibility }}"
-                                    data-style-source="{{ style.source }}"
+                                    data-style-url="{{ style.style }}|{{ style.provider }}"
                                     {% if style.isDefault %}aria-current="true"{% endif %}
                                     role="option">
                                     <div class="map-card__header">
                                         <span class="map-active-icon fr-icon-success-fill" aria-hidden="true"></span>
                                         <div class="map-card__img">   
-                                            <img src="{{ style.thumbnail }}" class="fr-responsive-img" alt="Aperçu de {{ style.title }}" />
+                                            <img src="/img/thumbnails/{{ style.style }}_{{ style.provider }}.jpg" 
+                                                 class="fr-responsive-img" 
+                                                 alt="Aperçu de la carte" />
                                         </div>
                                     </div>
                                     <div class="map-card__content fr-py-1w fr-px-3v">
-                                        <h3 class="map-card__title fr-mb-0">{{ style.title }}</h3>
+                                        <h3 class="map-card__title fr-mb-0" data-style="{{ style.style }}" data-provider="{{ style.provider }}">{{ style.style }}_{{ style.provider }}</h3>
                                     </div>
                                 </div>
                             {% endfor %}
@@ -101,9 +96,12 @@ showMaps: true
 <script src="/js/maplibre-gl.js"></script>
 <script src="/js/carte-facile.js"></script>
 <script>
-    window.defaultMapStyle = {% if mapStyles and mapStyles.styles %}
-        {% set defaultStyle = mapStyles.styles | find("isDefault", true) %}
-        {% if defaultStyle %}'{{ defaultStyle.url }}'{% else %}null{% endif %}
-    {% else %}null{% endif %};
+    // Mettre à jour les titres des cartes avec les métadonnées
+    document.querySelectorAll('.map-card__title').forEach(title => {
+        const style = title.dataset.style;
+        const provider = title.dataset.provider;
+        const mapStyle = getMap(style, provider);
+        title.textContent = mapStyle.metadata.fr?.name || `${style}_${provider}`;
+    });
 </script>
 <script src="/js/maps-viewer.js"></script>
