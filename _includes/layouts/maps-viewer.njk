@@ -97,10 +97,13 @@ showMaps: true
         <p id="zoom-level"></p>
     </div> #}
 </div>
+<link href="/css/maplibre-gl.css" rel="stylesheet" />
+<script src="/js/maplibre-gl.js"></script>
+<script src="/js/carte-facile.js"></script>
 <script>
     window.defaultMapStyle = {% if mapStyles and mapStyles.styles %}
         {% set defaultStyle = mapStyles.styles | find("isDefault", true) %}
         {% if defaultStyle %}'{{ defaultStyle.url }}'{% else %}null{% endif %}
     {% else %}null{% endif %};
 </script>
-<script type="text/javascript" src="/js/maps-viewer.js"></script>
+<script src="/js/maps-viewer.js"></script>

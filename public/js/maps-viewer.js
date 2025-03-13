@@ -1,8 +1,4 @@
 (() => {
-    // add the PMTiles plugin to the maplibregl global
-    let protocol = new pmtiles.Protocol({metadata: true});
-    maplibregl.addProtocol("pmtiles", protocol.tile);
-
     // Map initialization with default style
     const defaultStyle = 'https://betagouv.github.io/styles-de-cartes/maps/map_simplified_colored_ign.json';
 

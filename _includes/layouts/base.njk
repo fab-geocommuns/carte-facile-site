@@ -20,11 +20,9 @@
   <link rel="stylesheet" href="/css/utility/utility.min.css">
 
   {% if showMaps %}
-    <!-- Include MapLibre GL -->
-    <script src="https://unpkg.com/maplibre-gl/dist/maplibre-gl.js"></script>
-    <link href="https://unpkg.com/maplibre-gl@4.1.2/dist/maplibre-gl.css" rel="stylesheet" />
-    <!-- Inclure PMTiles -->
-    <script src="https://unpkg.com/pmtiles@3.2.0/dist/pmtiles.js"></script>
+    <link href="/css/maplibre-gl.css" rel="stylesheet" />
+    <script src="/js/maplibre-gl.js"></script>
+    <script src="/js/carte-facile.js"></script>
     {%- css %}{% include "public/css/maps-viewer.css" %}{% endcss %}
   {% endif%}
 
