@@ -38,7 +38,7 @@ Vous pouvez simplement enregistrer ce code dans un fichier nommé **index.html**
 
         <!-- Le script qui initialise la carte -->
         <script>
-            // Créer la carte
+            // Création la carte
             var map = new Map({
                 container: 'map', // id du conteneur de la carte
                 style: getMap('standard', 'ign'), // URL du style de carte
