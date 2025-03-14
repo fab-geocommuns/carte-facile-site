@@ -4,10 +4,12 @@ layout: layouts/docs.njk
 description: Description à compléter.
 eleventyNavigation:
   key: Concepts fondamentaux
-  order: 1
+  order: 2
   nav: docs
 
 ---
+
+Cette page présente des concepts clé pour comprendre les mécanismes généraux de l'utilisation des cartes sur le web, qui ne sont pas spécifiques à Carte facile.
 
 Pour construire des cartes sur un site web, nous avons besoin de **données géographiques**, provenant d'une source (un serveur distant sur lesquelles elles soont stockées), qui sont servies via ce qu'on appelle un **flux de données géographiques**. On applique ensuite un **style** à ces données pour les rendre lisibles et utilisables par les usagers du site.
 
@@ -85,4 +87,4 @@ Ces règles peuvent être rassemblées dans des fichiers de style en format JSON
 
 Nos services vous propose des styles de cartes prêtes à l'emploi, vous permettent de ne pas avoir à gérer le détail des données sous-jacentes. [Voir les cartes disponibles](/fr/cartes).
 
-Ainsi vous aurez uniquement besoin de charger le style de carte de votre choix dans votre page web pour afficher la carte, en suivant ce tutoriel : [Utiliser les cartes](/fr/documentation/utiliser-les-cartes).
+Ainsi vous aurez uniquement besoin de charger le style de carte de votre choix dans votre page web pour afficher la carte, en suivant ce tutoriel : [Utiliser les cartes](/fr/documentation/prise-en-main).
