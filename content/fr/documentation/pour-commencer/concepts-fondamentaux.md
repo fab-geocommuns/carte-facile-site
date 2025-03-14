@@ -1,9 +1,10 @@
 ---
 title: Concepts fondamentaux
 layout: layouts/docs.njk
-description: Description à compléter.
+description: Cette page présente des concepts clé pour comprendre les mécanismes généraux de l'utilisation des cartes sur le web, qui ne sont pas spécifiques à Carte facile.
 eleventyNavigation:
   key: Concepts fondamentaux
+  parent: Pour commencer
   order: 2
   nav: docs
 

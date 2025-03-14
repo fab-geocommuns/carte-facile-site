@@ -1,9 +1,10 @@
 ---
-title: Prise en main
+title: Guide de démarrage
 layout: layouts/docs.njk
-description: Apprenez à utiliser la librairie Carte facile, pour ajouter une carte sur votre site.
+description: Apprenez à installer et utiliser la librairie Carte facile, pour ajouter une carte sur votre site.
 eleventyNavigation:
-  key: Prise en main
+  key: Guide de démarrage
+  parent: Pour commencer
   order: 1
   nav: docs
 ---

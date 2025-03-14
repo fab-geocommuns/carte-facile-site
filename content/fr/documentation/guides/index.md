@@ -1,7 +1,7 @@
 ---
 eleventyNavigation:
-  key: Exemples
-  order: 4
+  key: Guides
+  order: 2
   nav: docs
   permalink: false
 ---
