@@ -41,13 +41,15 @@ const map = new maplibregl.Map({
 
 ```typescript
 // Ajout d'un contrôle de navigation
-map.addControl(new maplibregl.NavigationControl());
+let nav = new maplibregl.NavigationControl();
+map.addControl(nav, 'top-left');
 
 // Ajout d'une échelle
-map.addControl(new maplibregl.ScaleControl({
-  maxWidth: 100,
-  unit: 'metric'
-}));
+let scale = new maplibregl.ScaleControl({
+    maxWidth: 80,
+    unit: 'imperial'
+});
+map.addControl(scale);
 ```
 
 ### Événements de la carte
