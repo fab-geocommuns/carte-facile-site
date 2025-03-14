@@ -11,6 +11,8 @@ eleventyNavigation:
 
 Carte Facile est une bibliothèque JavaScript/TypeScript qui simplifie l'intégration de cartes interactives dans vos applications web. Elle fournit une interface unifiée pour accéder à différents fournisseurs de services cartographiques (IGN, OpenStreetMap) tout en offrant des styles prédéfinis et des composants dédiés.
 
-## Principal
+## Fonctions principales
 
-- **[getMap](/documentation/api/getmap)**   |   *Obtenir un style de carte.*
+### [getMap()](/documentation/api/getmap)
+
+Fonction principale pour obtenir un style de carte.
