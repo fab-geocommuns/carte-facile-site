@@ -23,8 +23,9 @@ Vous pouvez simplement enregistrer ce code dans un fichier nommé **index.html**
         
         <!-- Importation des bibliothèques MapLibre -->
         <script src="https://unpkg.com/maplibre-gl@^5.1.0/dist/maplibre-gl.js"></script>
-        <script src="https://unpkg.com/carte-facile@0.2.2/dist/index.js"></script>
         <link href="https://unpkg.com/maplibre-gl@^5.1.0/dist/maplibre-gl.css" rel="stylesheet" />
+        <!-- Importation de la bibliothèque Carte facile -->
+        <script src="https://unpkg.com/carte-facile@0.2.2/dist/index.js"></script>
         
         <!-- Style pour afficher la carte en plein écran -->
         <style>
