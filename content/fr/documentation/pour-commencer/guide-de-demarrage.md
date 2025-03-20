@@ -128,7 +128,8 @@ Pour visualiser les cartes :
 
 ## Prochaines étapes
 
-- Consultez la [documentation complète de l'API]("/cartes") pour découvrir toutes les possibilités de Carte facile.
+- Consultez le [guide MapLibre]("/documentation/guides/maplibre") pour ajouter des fonctionnalités à votre carte.
+- Consultez la [documentation complète de l'API]("/documentation/api/index") pour découvrir toutes les possibilités de Carte facile.
 - Consultez les possibilités de la librairie Maplibre GL sur la [documentation officielle](https://maplibre.org/maplibre-gl-js/docs/).
 - Explorez les [exemples de code]("/documentation/exemples").
 

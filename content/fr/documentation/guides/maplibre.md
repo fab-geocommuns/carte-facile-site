@@ -37,6 +37,19 @@ const map = new maplibregl.Map({
 });
 ```
 
+
+
+### Afficher ou masquer une surcouche
+
+```typescript
+const layers = map.getStyle().layers
+  .filter(layer => layer.metadata?.overlay === 'cadastre');
+layers.forEach(layer => {
+  map.setLayoutProperty(layer.id, 'visibility', 'visible');
+});
+```
+
+
 ### Contrôles personnalisés
 
 ```typescript
