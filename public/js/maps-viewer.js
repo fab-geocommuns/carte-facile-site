@@ -1,62 +1,70 @@
 (() => {
-    // Map initialization with default style
-    const defaultStyle = mapStyle.ign.simple;
+    // URL Hash Management
+    function updateHashDisplay() {
+        const urlHash = document.getElementById('urlHash');
+        if (urlHash) {
+            urlHash.textContent = `URL hash: ${window.location.hash}`;
+        }
+    }
 
-    // Créer la carte
-    const map = new maplibregl.Map({
-        container: 'map',
-        style: defaultStyle,
-        hash: true,
-        maxZoom: 18.9,
-    });
+    // Update hash display periodically
+    setInterval(updateHashDisplay, 100);
 
-    map.addControl(new maplibregl.NavigationControl());
-
-    // Set an interval to update the url hash in a map overlay
-    const urlHash = document.getElementById('urlHash');
-    setInterval(() => {
-        urlHash.textContent = `URL hash: ${window.location.hash}`;
-    }, 100);
-
-    // Logic for open and close the side panel
     const controlPanel = document.getElementById('map-selection');
+    const stylesList = controlPanel.querySelector('.map-panel__styles-list');
+    const styleDetails = controlPanel.querySelector('.map-panel__style-details');
+
+    // UI Controls
     const closeButton = controlPanel.querySelector('.fr-btn--close');
     const openButton = document.getElementById('open-panel-btn');
+    const backButton = document.getElementById('back-to-list');
+    const applyStyleButton = document.getElementById('apply-style');
 
+    // State
+    let selectedStyle = null;
+
+    // UI Functions
     function togglePanel(isOpen) {
         controlPanel.setAttribute('aria-expanded', isOpen);
         openButton.setAttribute('aria-expanded', !isOpen);
     }
 
-    closeButton.addEventListener('click', () => togglePanel(false));
-    openButton.addEventListener('click', () => togglePanel(true));
+    function updateStyleDetails(style, provider) {
+        const styleData = mapStyle[provider][style];
+        const metadata = styleData.metadata;
+        
+        // Update all detail elements
+        const elements = {
+            'style-title': metadata.fr.name || `${style}_${provider}`,
+            'style-description': metadata.fr.description || '',
+            'style-use': metadata.fr.use || 'Non spécifié',
+            'style-accessibility': metadata.fr.accessibility || 'Non spécifié',
+        };
 
-    const stylesList = controlPanel.querySelector('.map-panel__styles-list');
-    const styleDetails = controlPanel.querySelector('.map-panel__style-details');
-    const backButton = document.getElementById('back-to-list');
-    const applyStyleButton = document.getElementById('apply-style');
-    let selectedStyle = null;
+        Object.entries(elements).forEach(([id, value]) => {
+            document.getElementById(id).textContent = value;
+        });
+
+        // Update thumbnail
+        const thumbnail = document.getElementById('style-thumbnail');
+        thumbnail.src = `/img/thumbnails/${style}_${provider}.jpg`;
+        thumbnail.alt = `Aperçu de ${metadata.fr?.name || `${style}_${provider}`}`;
+
+        // Update URL link
+        document.getElementById('style-url-link').href = metadata?.url || '#';
+    }
 
     function showStyleDetails(card) {
         const [style, provider] = card.dataset.styleUrl.split('|');
-        const mapStyle = getMap(style, provider);
-        const metadata = mapStyle.metadata;
         
         selectedStyle = { style, provider };
-        document.getElementById('style-title').textContent = metadata.fr?.name || `${style}_${provider}`;
-        document.getElementById('style-version').textContent = metadata?.version || 'Non spécifiée';
-        document.getElementById('style-description').textContent = metadata.fr?.description || '';
-        document.getElementById('style-thumbnail').src = `/img/thumbnails/${style}_${provider}.jpg`;
-        document.getElementById('style-thumbnail').alt = `Aperçu de ${metadata.fr?.name || `${style}_${provider}`}`;
-        document.getElementById('style-use').textContent = metadata.fr?.use || 'Non spécifié';
-        document.getElementById('style-accessibility').textContent = metadata.fr?.accessibility || 'Non spécifié';
-        document.getElementById('style-source').textContent = metadata?.source || 'Non spécifiée';
-        document.getElementById('style-url-link').href = metadata?.url || '#';
+        updateStyleDetails(style, provider);
 
-        // Update success icon in details
+        // Update active state
         const isCurrentStyle = card.getAttribute('aria-current') === 'true';
         styleDetails.querySelector('.map-active-icon').style.display = isCurrentStyle ? 'block' : 'none';
         
+        // Show details panel
         stylesList.style.display = 'none';
         styleDetails.style.display = 'flex';
     }
@@ -67,13 +75,37 @@
         selectedStyle = null;
     }
 
-    // Modify click handlers for style cards
-    document.querySelectorAll('.map-card').forEach(card => {
-        card.addEventListener('click', () => {
-            showStyleDetails(card);
+    function updateCardTitles() {
+        document.querySelectorAll('.map-card__title').forEach(title => {
+            const [style, provider] = title.closest('.map-card').dataset.styleUrl.split('|');
+            const styleData = mapStyle[provider][style];
+            title.textContent = styleData.metadata.fr?.name || `${style}_${provider}`;
         });
+    }
 
-        // Keep keyboard navigation
+    function updateActiveStates() {
+        document.querySelectorAll('.map-card, .map-panel__style-details .map-active-icon').forEach(element => {
+            const card = element.closest('.map-card');
+            if (card) {
+                const [cardStyle, cardProvider] = card.dataset.styleUrl.split('|');
+                const isCurrent = cardStyle === selectedStyle.style && 
+                                cardProvider === selectedStyle.provider;
+                element.setAttribute('aria-current', isCurrent);
+            }
+            if (element.classList.contains('map-active-icon')) {
+                const [cardStyle] = element.closest('.map-card')?.dataset.styleUrl.split('|') || [];
+                element.style.display = cardStyle === selectedStyle.style ? 'block' : 'none';
+            }
+        });
+    }
+
+    // Event Listeners
+    closeButton.addEventListener('click', () => togglePanel(false));
+    openButton.addEventListener('click', () => togglePanel(true));
+    backButton.addEventListener('click', showStylesList);
+
+    document.querySelectorAll('.map-card').forEach(card => {
+        card.addEventListener('click', () => showStyleDetails(card));
         card.addEventListener('keydown', (e) => {
             if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
@@ -82,36 +114,23 @@
         });
     });
 
-    // Mettre à jour les titres des cartes avec les métadonnées
-    document.querySelectorAll('.map-card__title').forEach(title => {
-        const style = title.dataset.style;
-        const provider = title.dataset.provider;
-        const mapStyle = getMap(style, provider);
-        title.textContent = mapStyle.metadata.fr?.name || `${style}_${provider}`;
-    });
-
-    // Add back button handler
-    backButton.addEventListener('click', showStylesList);
-
-    // Add apply style button handler
     applyStyleButton.addEventListener('click', () => {
         if (selectedStyle) {
-            const newStyle = getMap(selectedStyle.style, selectedStyle.provider);
+            const newStyle = mapStyle[selectedStyle.provider][selectedStyle.style];
             map.setStyle(newStyle);
-            
-            // Update ARIA states and checkmarks
-            document.querySelectorAll('.map-card, .map-panel__style-details .map-active-icon').forEach(element => {
-                const isCurrent = element.closest('.map-card')?.dataset.styleUrl === `${selectedStyle.style}|${selectedStyle.provider}`;
-                if (element.classList.contains('map-card')) {
-                    element.setAttribute('aria-current', isCurrent);
-                }
-                // Pour l'icône dans les détails
-                if (element.classList.contains('map-active-icon')) {
-                    element.style.display = isCurrent ? 'block' : 'none';
-                }
-            });
-
+            updateActiveStates();
             showStylesList();
         }
     });
+
+    // Initialize
+    const map = new maplibregl.Map({
+        container: 'map',
+        style: mapStyle.ign.simple,
+        hash: true,
+        maxZoom: 18.9,
+    });
+    map.addControl(new maplibregl.NavigationControl());
+    updateCardTitles();
+    updateHashDisplay(); // Initial hash display
 })();

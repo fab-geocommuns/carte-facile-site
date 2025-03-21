@@ -2,7 +2,7 @@ module.exports = function() {
     return {
         styles: [
             {
-                style: "standard",
+                style: "simple",
                 provider: "ign",
                 isDefault: true
             },
