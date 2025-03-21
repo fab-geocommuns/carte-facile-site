@@ -1,6 +1,6 @@
 (() => {
     // Map initialization with default style
-    const defaultStyle = getMap('standard', 'ign');
+    const defaultStyle = mapStyle.ign.simple;
 
     // Créer la carte
     const map = new maplibregl.Map({
