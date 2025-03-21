@@ -43,7 +43,7 @@ const map = new maplibregl.Map({
 
 ```typescript
 const layers = map.getStyle().layers
-  .filter(layer => layer.metadata?.overlay === 'cadastre');
+  .filter(layer => layer.metadata?.group === 'cadastre');
 layers.forEach(layer => {
   map.setLayoutProperty(layer.id, 'visibility', 'visible');
 });
