@@ -33,7 +33,9 @@ import maplibregl from 'maplibre-gl';
 
 const map = new maplibregl.Map({
   container: 'map',
-  style: getMap('standard', 'ign'),
+  //style: getMap('standard', 'ign'),
+  //style: standard,
+  style: mapStyle.ign.standard //-> permet d'avoir la liste direct en typescript
 });
 ```
 
@@ -43,7 +45,7 @@ const map = new maplibregl.Map({
 
 ```typescript
 const layers = map.getStyle().layers
-  .filter(layer => layer.metadata?.group === 'cadastre');
+  .filter(layer => layer.metadata?.group === 'cadastre'); // faire un export d'enum : 
 layers.forEach(layer => {
   map.setLayoutProperty(layer.id, 'visibility', 'visible');
 });
