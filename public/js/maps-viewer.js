@@ -1,120 +1,132 @@
 (() => {
-    // URL Hash Management
-    function updateHashDisplay() {
-        const urlHash = document.getElementById('urlHash');
-        if (urlHash) {
-            urlHash.textContent = `URL hash: ${window.location.hash}`;
-        }
-    }
-
-    // Update hash display periodically
-    setInterval(updateHashDisplay, 100);
-
-    const controlPanel = document.getElementById('map-selection');
-    const stylesList = controlPanel.querySelector('.map-panel__styles-list');
-    const styleDetails = controlPanel.querySelector('.map-panel__style-details');
-
-    // UI Controls
-    const closeButton = controlPanel.querySelector('.fr-btn--close');
-    const openButton = document.getElementById('open-panel-btn');
-    const backButton = document.getElementById('back-to-list');
-    const applyStyleButton = document.getElementById('apply-style');
+    // DOM Elements
+    const elements = {
+        controlPanel: document.getElementById('map-selection'),
+        stylesList: document.getElementById('map-selection').querySelector('.map-panel__styles-list'),
+        styleDetails: document.getElementById('map-selection').querySelector('.map-panel__style-details'),
+        mapStylesList: document.getElementById('map-styles-list'),
+        closeButton: document.getElementById('map-selection').querySelector('.fr-btn--close'),
+        openButton: document.getElementById('open-panel-btn'),
+        backButton: document.getElementById('back-to-list'),
+        applyStyleButton: document.getElementById('apply-style'),
+        urlHash: document.getElementById('urlHash')
+    };
 
     // State
     let selectedStyle = null;
+    let map = null;
+
+    // Initialize map
+    map = new maplibregl.Map({
+        container: 'map',
+        style: mapStyle.ign.simple,
+        hash: true,
+        maxZoom: 18.9,
+    });
+    map.addControl(new maplibregl.NavigationControl());
+
+    // Generate map cards
+    function generateMapCards() {
+        const template = document.getElementById('map-card-template');
+        
+        console.log('mapThumbnails:', mapThumbnails);
+        
+        Object.entries(mapStyle).forEach(([provider, styles]) => {
+            Object.entries(styles).forEach(([style, data], index) => {
+                const card = template.content.cloneNode(true).firstElementChild;
+                card.dataset.styleUrl = `${style}-${provider}`;
+                if (index === 0) card.setAttribute('aria-current', 'true');
+
+                const metadata = data.metadata?.fr || {};
+                const name = metadata.name || style;
+                const img = card.querySelector('img');
+                img.src = mapThumbnails[style].src;
+                img.alt = `Aperçu de carte ${name}`;
+
+                const title = card.querySelector('.map-card__title');
+                title.textContent = name;
+                title.dataset.style = style;
+                title.dataset.provider = provider;
+
+                card.addEventListener('click', () => showStyleDetails(card));
+                card.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        showStyleDetails(card);
+                    }
+                });
+
+                elements.mapStylesList.appendChild(card);
+            });
+        });
+    }
 
     // UI Functions
-    function togglePanel(isOpen) {
-        controlPanel.setAttribute('aria-expanded', isOpen);
-        openButton.setAttribute('aria-expanded', !isOpen);
-    }
-
-    function updateStyleDetails(style, provider) {
-        const styleData = mapStyle[provider][style];
-        const metadata = styleData.metadata;
-        
-        // Update all detail elements
-        const elements = {
-            'style-title': metadata.fr.name || `${style}_${provider}`,
-            'style-description': metadata.fr.description || '',
-            'style-use': metadata.fr.use || 'Non spécifié',
-            'style-accessibility': metadata.fr.accessibility || 'Non spécifié',
-        };
-
-        Object.entries(elements).forEach(([id, value]) => {
-            document.getElementById(id).textContent = value;
-        });
-
-        // Update thumbnail
-        const thumbnail = document.getElementById('style-thumbnail');
-        thumbnail.src = `/img/thumbnails/${style}_${provider}.jpg`;
-        thumbnail.alt = `Aperçu de ${metadata.fr?.name || `${style}_${provider}`}`;
-
-        // Update URL link
-        document.getElementById('style-url-link').href = metadata?.url || '#';
-    }
-
     function showStyleDetails(card) {
-        const [style, provider] = card.dataset.styleUrl.split('|');
-        
+        const [style, provider] = card.dataset.styleUrl.split('-');
         selectedStyle = { style, provider };
-        updateStyleDetails(style, provider);
-
-        // Update active state
-        const isCurrentStyle = card.getAttribute('aria-current') === 'true';
-        styleDetails.querySelector('.map-active-icon').style.display = isCurrentStyle ? 'block' : 'none';
         
-        // Show details panel
-        stylesList.style.display = 'none';
-        styleDetails.style.display = 'flex';
+        const isCurrentStyle = card.getAttribute('aria-current') === 'true';
+        elements.styleDetails.querySelector('.map-active-icon').style.display = 
+            isCurrentStyle ? 'block' : 'none';
+        
+        // Update style details with metadata
+        const styleData = mapStyle[provider][style];
+        const metadata = styleData.metadata?.fr || {};
+        
+        // Update thumbnail
+        const thumbnail = elements.styleDetails.querySelector('#style-thumbnail');
+        thumbnail.src = mapThumbnails[style].src;
+        thumbnail.alt = `Aperçu de ${metadata.name || style}`;
+        
+        // Update title and description
+        document.getElementById('style-title').textContent = metadata.name || style;
+        document.getElementById('style-description').textContent = metadata.description || '';
+        
+        // Update usage and accessibility
+        document.getElementById('style-use').textContent = metadata.use || '';
+        document.getElementById('style-accessibility').textContent = metadata.accessibility || '';
+        
+        // Update style URL link
+        const styleUrlLink = document.getElementById('style-url-link');
+        styleUrlLink.href = metadata.url || '#';
+        
+        elements.stylesList.style.display = 'none';
+        elements.styleDetails.style.display = 'flex';
     }
 
     function showStylesList() {
-        stylesList.style.display = 'flex';
-        styleDetails.style.display = 'none';
+        elements.stylesList.style.display = 'flex';
+        elements.styleDetails.style.display = 'none';
         selectedStyle = null;
-    }
-
-    function updateCardTitles() {
-        document.querySelectorAll('.map-card__title').forEach(title => {
-            const [style, provider] = title.closest('.map-card').dataset.styleUrl.split('|');
-            const styleData = mapStyle[provider][style];
-            title.textContent = styleData.metadata.fr?.name || `${style}_${provider}`;
-        });
     }
 
     function updateActiveStates() {
         document.querySelectorAll('.map-card, .map-panel__style-details .map-active-icon').forEach(element => {
             const card = element.closest('.map-card');
             if (card) {
-                const [cardStyle, cardProvider] = card.dataset.styleUrl.split('|');
+                const [cardStyle, cardProvider] = card.dataset.styleUrl.split('-');
                 const isCurrent = cardStyle === selectedStyle.style && 
                                 cardProvider === selectedStyle.provider;
                 element.setAttribute('aria-current', isCurrent);
             }
             if (element.classList.contains('map-active-icon')) {
-                const [cardStyle] = element.closest('.map-card')?.dataset.styleUrl.split('|') || [];
+                const [cardStyle] = element.closest('.map-card')?.dataset.styleUrl.split('-') || [];
                 element.style.display = cardStyle === selectedStyle.style ? 'block' : 'none';
             }
         });
     }
 
+    function togglePanel(isOpen) {
+        elements.controlPanel.setAttribute('aria-expanded', isOpen);
+        elements.openButton.setAttribute('aria-expanded', !isOpen);
+    }
+
     // Event Listeners
-    closeButton.addEventListener('click', () => togglePanel(false));
-    openButton.addEventListener('click', () => togglePanel(true));
-    backButton.addEventListener('click', showStylesList);
-
-    document.querySelectorAll('.map-card').forEach(card => {
-        card.addEventListener('click', () => showStyleDetails(card));
-        card.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                card.click();
-            }
-        });
-    });
-
-    applyStyleButton.addEventListener('click', () => {
+    elements.closeButton.addEventListener('click', () => togglePanel(false));
+    elements.openButton.addEventListener('click', () => togglePanel(true));
+    elements.backButton.addEventListener('click', showStylesList);
+    elements.applyStyleButton.addEventListener('click', () => {
         if (selectedStyle) {
             const newStyle = mapStyle[selectedStyle.provider][selectedStyle.style];
             map.setStyle(newStyle);
@@ -123,14 +135,15 @@
         }
     });
 
+    // URL Hash Display
+    function updateHashDisplay() {
+        if (elements.urlHash) {
+            elements.urlHash.textContent = `URL hash: ${window.location.hash}`;
+        }
+    }
+    updateHashDisplay();
+    setInterval(updateHashDisplay, 100);
+
     // Initialize
-    const map = new maplibregl.Map({
-        container: 'map',
-        style: mapStyle.ign.simple,
-        hash: true,
-        maxZoom: 18.9,
-    });
-    map.addControl(new maplibregl.NavigationControl());
-    updateCardTitles();
-    updateHashDisplay(); // Initial hash display
+    generateMapCards();
 })();

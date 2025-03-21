@@ -26,30 +26,22 @@ showMaps: true
             <div class="map-panel__content fr-px-2w fr-pb-4w">
                 <div class="map-panel__styles-list">
                     <h2 id="panel-title" class="fr-h5">Cartes</h2>
-                    {% if mapStyles and mapStyles.styles %}
-                        <div class="map-card-grid">
-                            {% for style in mapStyles.styles %}
-                                <div class="map-card fr-card--shadow" 
-                                    data-style-url="{{ style.style }}|{{ style.provider }}"
-                                    {% if style.isDefault %}aria-current="true"{% endif %}
-                                    role="option">
-                                    <div class="map-card__header">
-                                        <span class="map-active-icon fr-icon-success-fill" aria-hidden="true"></span>
-                                        <div class="map-card__img">   
-                                            <img src="/img/thumbnails/{{ style.style }}_{{ style.provider }}.jpg" 
-                                                 class="fr-responsive-img" 
-                                                 alt="Aperçu de la carte" />
-                                        </div>
-                                    </div>
-                                    <div class="map-card__content fr-py-1w fr-px-3v">
-                                        <h3 class="map-card__title fr-mb-0" data-style="{{ style.style }}" data-provider="{{ style.provider }}">{{ style.style }}_{{ style.provider }}</h3>
+                    <div class="map-card-grid" id="map-styles-list">
+                        <!-- Template pour la carte -->
+                        <template id="map-card-template">
+                            <div class="map-card fr-card--shadow" role="option">
+                                <div class="map-card__header">
+                                    <span class="map-active-icon fr-icon-success-fill" aria-hidden="true"></span>
+                                    <div class="map-card__img">   
+                                        <img class="fr-responsive-img" alt="" />
                                     </div>
                                 </div>
-                            {% endfor %}
-                        </div>
-                    {% else %}
-                        <p>No map styles available</p>
-                    {% endif %}
+                                <div class="map-card__content fr-py-1w fr-px-3v">
+                                    <h3 class="map-card__title fr-mb-0"></h3>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
                 </div>
                 <div class="map-panel__style-details" style="display: none;">
                     <button class="fr-btn fr-btn--sm fr-btn--tertiary-no-outline fr-btn--icon-left fr-icon-arrow-left-line fr-mb-2w" id="back-to-list">
