@@ -71,12 +71,12 @@
             isCurrentStyle ? 'block' : 'none';
         
         // Update style details with metadata
-        const styleData = mapStyle[provider][style];
+        const styleData = CarteFacile.mapStyle[provider][style];
         const metadata = styleData.metadata?.fr || {};
         
         // Update thumbnail
         const thumbnail = elements.styleDetails.querySelector('#style-thumbnail');
-        thumbnail.src = mapThumbnails[style].src;
+        thumbnail.src = CarteFacile.mapThumbnails[style].src;
         thumbnail.alt = `Aperçu de ${metadata.name || style}`;
         
         // Update title and description
