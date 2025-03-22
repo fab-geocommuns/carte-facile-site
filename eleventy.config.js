@@ -33,7 +33,7 @@ module.exports = function (eleventyConfig) {
         "./node_modules/@gouvfr/dsfr/dist/artwork": "/artwork",
         "./node_modules/maplibre-gl/dist/maplibre-gl.js": "/js/maplibre-gl.js",
         "./node_modules/maplibre-gl/dist/maplibre-gl.css": "/css/maplibre-gl.css",
-        "./node_modules/carte-facile/dist/index.js": "/js/carte-facile.js",
+        "./node_modules/carte-facile/dist/index.umd.js": "/js/carte-facile.js",
         "./node_modules/carte-facile/dist/img": "/img"
     });
 

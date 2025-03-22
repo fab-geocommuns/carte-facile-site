@@ -19,7 +19,7 @@
     // Initialize map
     map = new maplibregl.Map({
         container: 'map',
-        style: mapStyle.ign.simple,
+        style: CarteFacile.mapStyle.ign.simple,
         hash: true,
         maxZoom: 18.9,
     });
@@ -29,9 +29,7 @@
     function generateMapCards() {
         const template = document.getElementById('map-card-template');
         
-        console.log('mapThumbnails:', mapThumbnails);
-        
-        Object.entries(mapStyle).forEach(([provider, styles]) => {
+        Object.entries(CarteFacile.mapStyle).forEach(([provider, styles]) => {
             Object.entries(styles).forEach(([style, data], index) => {
                 const card = template.content.cloneNode(true).firstElementChild;
                 card.dataset.styleUrl = `${style}-${provider}`;
@@ -40,7 +38,7 @@
                 const metadata = data.metadata?.fr || {};
                 const name = metadata.name || style;
                 const img = card.querySelector('img');
-                img.src = mapThumbnails[style].src;
+                img.src = CarteFacile.mapThumbnails[style].src;
                 img.alt = `Aperçu de carte ${name}`;
 
                 const title = card.querySelector('.map-card__title');
