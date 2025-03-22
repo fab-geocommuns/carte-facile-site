@@ -126,7 +126,7 @@
     elements.backButton.addEventListener('click', showStylesList);
     elements.applyStyleButton.addEventListener('click', () => {
         if (selectedStyle) {
-            const newStyle = mapStyle[selectedStyle.provider][selectedStyle.style];
+            const newStyle = CarteFacile.mapStyle[selectedStyle.provider][selectedStyle.style];
             map.setStyle(newStyle);
             updateActiveStates();
             showStylesList();
