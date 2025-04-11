@@ -85,10 +85,6 @@
         document.getElementById('style-use').textContent = metadata.use || '';
         document.getElementById('style-accessibility').textContent = metadata.accessibility || '';
         
-        // Update style URL link
-        const styleUrlLink = document.getElementById('style-url-link');
-        styleUrlLink.href = metadata.url || '#';
-        
         elements.stylesList.style.display = 'none';
         elements.styleDetails.style.display = 'flex';
     }

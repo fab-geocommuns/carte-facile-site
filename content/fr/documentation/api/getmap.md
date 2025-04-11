@@ -1,51 +1,40 @@
 ---
-title: getMap()
-description: La fonction principale pour obtenir un style de carte.
+title: mapStyle
+description: L'objet principal pour accéder aux styles de carte.
 layout: layouts/docs.njk
 eleventyNavigation:
-  key: getMap()
+  key: mapStyle
   parent: API
   order: 2
   nav: docs
 ---
 
-La fonction principale pour obtenir un style de carte, en choisissant le type et le fournisseur.
+L'objet `mapStyle` est l'interface principale pour accéder aux styles de carte prédéfinis.
+
+## Styles disponibles
 
 ```typescript
-getMap(type, provider)
+import { mapStyle } from 'carte-facile';
+
+// Styles IGN
+mapStyle.ign.standard    // Style par défaut
+mapStyle.ign.desaturated // Style désaturé
+mapStyle.ign.aerial      // Photographies aériennes
+
+// Styles OSM (à venir)
+mapStyle.osm.standard
+mapStyle.osm.desaturated
+mapStyle.osm.aerial
 ```
 
-## Paramètres
+## Utilisation
 
-- **`type`** (string) : Le type de carte à utiliser
-  - **`'standard'`** : Style par défaut
-  - **`'desaturated'`** : Style désaturé
-  - **`'aerial'`** : Vue en photographies aériennes
-- **`provider`** (string) : Le fournisseur des   données
-  - **`'ign'`** : Institut national de l’information géographique et forestière (France).
-  - **`'osm'`** : OpenStreetMap (disponibilité à venir)
+Pour commencer à utiliser carte-facile, consultez les guides suivants :
 
-## Retour
+- [Guide MapLibre](/documentation/guides/maplibre) - Pour utiliser carte-facile avec MapLibre GL
+- [Guide Leaflet](/documentation/guides/leaflet) - Pour utiliser carte-facile avec Leaflet (à venir)
+- [Guide OpenLayers](/documentation/guides/openlayers) - Pour utiliser carte-facile avec OpenLayers (à venir)
 
-La fonction retourne le contenu du fichier JSON de spécification des styles et des sources de données de la carte demandée.
+## Notes
 
-## Exemples d'utilisation
-
-### Avec MapLibre GL
-
-Pour créer une carte :
-
-```typescript
-import { Map } from 'maplibre-gl';    // Importation spécifique à MapLibre
-import { getMap } from 'carte-facile';
-
-const map = new maplibregl.Map({
-  style: getMap('standard', 'ign'),
-  // ...
-});
-```
-
-Pour changer le type de la carte précédemment créée :
-```typescript
-map.setStyle(getMap('aerial', 'ign')); // setStyle est une méthode de MapLibre GL
-```
+- Les styles OSM ne sont pas encore disponibles

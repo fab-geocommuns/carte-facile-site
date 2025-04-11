@@ -1,7 +1,7 @@
 ---
 title: Guide MapLibre GL JS
 layout: layouts/docs.njk
-description: Ce guide détaille l'utilisation de Carte Facile avec MapLibre GL JS.
+description: Guide complet pour l'utilisation de CarteFacile avec MapLibre GL JS.
 eleventyNavigation:
   key: MapLibre GL JS
   parent: Guides
@@ -9,79 +9,114 @@ eleventyNavigation:
   nav: docs
 ---
 
-Ce guide détaille l'utilisation de Carte Facile avec MapLibre GL JS.
+# Guide d'intégration MapLibre GL JS
 
-## Installation
+CarteFacile simplifie l'utilisation de MapLibre GL JS en fournissant des styles et composants prêts à l'emploi. Ce guide vous accompagne de l'installation à l'utilisation avancée.
+
+## 🚀 Installation
+
+### Prérequis
+- Node.js (version 14 ou supérieure)
+- npm (ou yarn)
+
+### Méthode 1 : Installation via npm (recommandé)
 
 ```bash
 npm install carte-facile maplibre-gl
 ```
 
-N'oubliez pas d'inclure les styles CSS de MapLibre :
+### Méthode 2 : Installation via CDN
 
-```typescript
-import 'maplibre-gl/dist/maplibre-gl.css';
+Pour les projets simples ou les prototypes rapides, vous pouvez utiliser les liens CDN :
+
+```html
+<script src="https://unpkg.com/maplibre-gl@^5.1.0/dist/maplibre-gl.js"></script>
+<script src="https://unpkg.com/carte-facile@0.2.2/dist/index.js"></script>
+<link href="https://unpkg.com/maplibre-gl@^5.1.0/dist/maplibre-gl.css" rel="stylesheet" />
 ```
 
-## Utilisation basique
+## 🗺️ Premiers pas
 
-### Initialisation de la carte
+### 1. Configuration de base
+
+Ajoutez un conteneur pour votre carte :
+
+```html
+<div id="map"></div>
+<style>
+    html, body, #map { height: 100%; width: 100%; margin: 0; }
+</style>
+```
+
+### 2. Initialisation de la carte
 
 ```typescript
-import { getMap } from 'carte-facile';
+import { mapStyle } from 'carte-facile';
 import maplibregl from 'maplibre-gl';
+import 'maplibre-gl/dist/maplibre-gl.css';
 
 const map = new maplibregl.Map({
   container: 'map',
-  //style: getMap('standard', 'ign'),
-  //style: standard,
-  style: mapStyle.ign.standard //-> permet d'avoir la liste direct en typescript
+  style: mapStyle.ign.standard,
+  maxZoom: 18.9
 });
 ```
 
+**Félicitations ! Vous avez maintenant une carte fonctionnelle !**
 
+## 🎨 Personnalisation
 
-### Afficher ou masquer une surcouche
+### Styles de carte disponibles
+
+CarteFacile propose plusieurs styles prédéfinis :
+
+{% from "components/component.njk" import component with context %}
+{{ component("table", {
+    headers: ["Style", "Description"],
+    data: [
+        ["`mapStyle.ign.standard`", "Style par défaut, adapté à la plupart des usages"],
+        ["`mapStyle.ign.desaturated`", "Version désaturée, idéale pour la datavisualisation"],
+        ["`mapStyle.ign.aerial`", "Vue photographies aériennes et satellite"]
+    ]
+}) }}
+
+### Fournisseurs de données
+
+{% from "components/component.njk" import component with context %}
+{{ component("table", {
+    headers: ["Fournisseur", "Description", "Disponibilité"],
+    data: [
+        ["`mapStyle.ign`", "Données géographiques de l'IGN (France)", "✅ Disponible"],
+        ["`mapStyle.osm`", "Données OpenStreetMap", "🛠️ À venir"]
+    ]
+}) }}
+
+### Changer de style
+
+Pour changer le style d'une carte existante :
 
 ```typescript
-const layers = map.getStyle().layers
-  .filter(layer => layer.metadata?.group === 'cadastre'); // faire un export d'enum : 
-layers.forEach(layer => {
-  map.setLayoutProperty(layer.id, 'visibility', 'visible');
-});
+map.setStyle(mapStyle.ign.aerial);
 ```
 
+## ⚙️ Fonctionnalités avancées
 
-### Contrôles personnalisés
+### Contrôles de la carte
 
 ```typescript
-// Ajout d'un contrôle de navigation
-let nav = new maplibregl.NavigationControl();
+// Navigation
+const nav = new maplibregl.NavigationControl();
 map.addControl(nav, 'top-left');
 
-// Ajout d'une échelle
-let scale = new maplibregl.ScaleControl({
+// Échelle
+const scale = new maplibregl.ScaleControl({
     maxWidth: 80,
-    unit: 'imperial'
+    unit: 'metric'
 });
 map.addControl(scale);
 ```
 
-### Événements de la carte
-
-```typescript
-map.on('load', () => {
-  console.log('Carte chargée');
-});
-
-map.on('click', (e) => {
-  console.log('Click sur la carte :', e.lngLat);
-});
-```
-
-## Fonctionnalités avancées
-
-### Ajout de marqueurs
+### Marqueurs et popups
 
 ```typescript
 // Marqueur simple
@@ -89,27 +124,14 @@ const marker = new maplibregl.Marker()
   .setLngLat([2.3522, 48.8566])
   .addTo(map);
 
-// Marqueur personnalisé
-const element = document.createElement('div');
-element.className = 'custom-marker';
-const customMarker = new maplibregl.Marker({
-  element: element,
-  anchor: 'bottom'
-})
-  .setLngLat([2.3522, 48.8566])
-  .addTo(map);
-```
-
-### Ajout de popups
-
-```typescript
+// Popup
 const popup = new maplibregl.Popup()
   .setLngLat([2.3522, 48.8566])
   .setHTML('<h3>Paris</h3><p>La ville lumière</p>')
   .addTo(map);
 ```
 
-### Gestion des sources de données
+### Gestion des données
 
 ```typescript
 map.on('load', () => {
@@ -133,7 +155,7 @@ map.on('load', () => {
     }
   });
 
-  // Ajout d'une couche utilisant cette source
+  // Ajout d'une couche
   map.addLayer({
     id: 'points',
     type: 'circle',
@@ -146,16 +168,14 @@ map.on('load', () => {
 });
 ```
 
-## Bonnes pratiques
+## 🏆 Bonnes pratiques
 
 ### Performance
 
 ```typescript
-// Désactiver le rendu pendant les modifications
+// Optimisation des performances
 map.dragRotate.disable();
 map.touchZoomRotate.disableRotation();
-
-// Limiter le framerate
 map.setMaxFPS(30);
 ```
 
@@ -172,13 +192,13 @@ function cleanup() {
 ### Responsive Design
 
 ```typescript
-// Gérer le redimensionnement
+// Gestion du redimensionnement
 window.addEventListener('resize', () => {
   map.resize();
 });
 ```
 
-## Dépannage
+## 🛠️ Dépannage
 
 ### Problèmes courants
 
@@ -192,4 +212,10 @@ window.addEventListener('resize', () => {
 
 3. **Performances faibles**
    - Réduisez le nombre de marqueurs et de sources
-   - Utilisez la clusterisation pour les grands ensembles de données 
+   - Utilisez la clusterisation pour les grands ensembles de données
+
+## 📚 Ressources supplémentaires
+
+- [Documentation officielle MapLibre](https://maplibre.org/maplibre-gl-js/docs/)
+- [Exemples de code]("/documentation/exemples")
+- [Documentation API]("/documentation/api/index") 
