@@ -8,7 +8,6 @@
         closeButton: document.getElementById('map-selection').querySelector('.fr-btn--close'),
         openButton: document.getElementById('open-panel-btn'),
         backButton: document.getElementById('back-to-list'),
-        applyStyleButton: document.getElementById('apply-style'),
         urlHash: document.getElementById('urlHash')
     };
 
@@ -81,6 +80,10 @@
         document.getElementById('style-use').textContent = metadata.use || '';
         document.getElementById('style-accessibility').textContent = metadata.accessibility || '';
         
+        // Apply the style immediately
+        map.setStyle(styleData);
+        updateActiveStates();
+        
         elements.stylesList.style.display = 'none';
         elements.styleDetails.style.display = 'flex';
     }
@@ -115,14 +118,6 @@
     elements.closeButton.addEventListener('click', () => togglePanel(false));
     elements.openButton.addEventListener('click', () => togglePanel(true));
     elements.backButton.addEventListener('click', showStylesList);
-    elements.applyStyleButton.addEventListener('click', () => {
-        if (selectedStyle) {
-            const newStyle = CarteFacile.mapStyle[selectedStyle];
-            map.setStyle(newStyle);
-            updateActiveStates();
-            showStylesList();
-        }
-    });
 
     // URL Hash Display
     function updateHashDisplay() {
