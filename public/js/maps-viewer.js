@@ -19,8 +19,7 @@
     // Initialize map
     map = new maplibregl.Map({
         container: 'map',
-        style: CarteFacile.mapStyle.ign.simple,
-        hash: true,
+        style: CarteFacile.mapStyle.simple,
         maxZoom: 18.9,
     });
     map.addControl(new maplibregl.NavigationControl());
@@ -29,47 +28,44 @@
     function generateMapCards() {
         const template = document.getElementById('map-card-template');
         
-        Object.entries(CarteFacile.mapStyle).forEach(([provider, styles]) => {
-            Object.entries(styles).forEach(([style, data], index) => {
-                const card = template.content.cloneNode(true).firstElementChild;
-                card.dataset.styleUrl = `${style}-${provider}`;
-                if (index === 0) card.setAttribute('aria-current', 'true');
+        Object.entries(CarteFacile.mapStyle).forEach(([style, data], index) => {
+            const card = template.content.cloneNode(true).firstElementChild;
+            card.dataset.styleUrl = style;
+            if (index === 0) card.setAttribute('aria-current', 'true');
 
-                const metadata = data.metadata?.fr || {};
-                const name = metadata.name || style;
-                const img = card.querySelector('img');
-                img.src = CarteFacile.mapThumbnails[style].src;
-                img.alt = `Aperçu de carte ${name}`;
+            const metadata = data.metadata?.fr || {};
+            const name = metadata.name || style;
+            const img = card.querySelector('img');
+            img.src = CarteFacile.mapThumbnails[style].src;
+            img.alt = `Aperçu de carte ${name}`;
 
-                const title = card.querySelector('.map-card__title');
-                title.textContent = name;
-                title.dataset.style = style;
-                title.dataset.provider = provider;
+            const title = card.querySelector('.map-card__title');
+            title.textContent = name;
+            title.dataset.style = style;
 
-                card.addEventListener('click', () => showStyleDetails(card));
-                card.addEventListener('keydown', (e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        showStyleDetails(card);
-                    }
-                });
-
-                elements.mapStylesList.appendChild(card);
+            card.addEventListener('click', () => showStyleDetails(card));
+            card.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    showStyleDetails(card);
+                }
             });
+
+            elements.mapStylesList.appendChild(card);
         });
     }
 
     // UI Functions
     function showStyleDetails(card) {
-        const [style, provider] = card.dataset.styleUrl.split('-');
-        selectedStyle = { style, provider };
+        const style = card.dataset.styleUrl;
+        selectedStyle = style;
         
         const isCurrentStyle = card.getAttribute('aria-current') === 'true';
         elements.styleDetails.querySelector('.map-active-icon').style.display = 
             isCurrentStyle ? 'block' : 'none';
         
         // Update style details with metadata
-        const styleData = CarteFacile.mapStyle[provider][style];
+        const styleData = CarteFacile.mapStyle[style];
         const metadata = styleData.metadata?.fr || {};
         
         // Update thumbnail
@@ -99,14 +95,13 @@
         document.querySelectorAll('.map-card, .map-panel__style-details .map-active-icon').forEach(element => {
             const card = element.closest('.map-card');
             if (card) {
-                const [cardStyle, cardProvider] = card.dataset.styleUrl.split('-');
-                const isCurrent = cardStyle === selectedStyle.style && 
-                                cardProvider === selectedStyle.provider;
+                const cardStyle = card.dataset.styleUrl;
+                const isCurrent = cardStyle === selectedStyle;
                 element.setAttribute('aria-current', isCurrent);
             }
             if (element.classList.contains('map-active-icon')) {
-                const [cardStyle] = element.closest('.map-card')?.dataset.styleUrl.split('-') || [];
-                element.style.display = cardStyle === selectedStyle.style ? 'block' : 'none';
+                const cardStyle = element.closest('.map-card')?.dataset.styleUrl;
+                element.style.display = cardStyle === selectedStyle ? 'block' : 'none';
             }
         });
     }
@@ -122,7 +117,7 @@
     elements.backButton.addEventListener('click', showStylesList);
     elements.applyStyleButton.addEventListener('click', () => {
         if (selectedStyle) {
-            const newStyle = CarteFacile.mapStyle[selectedStyle.provider][selectedStyle.style];
+            const newStyle = CarteFacile.mapStyle[selectedStyle];
             map.setStyle(newStyle);
             updateActiveStates();
             showStylesList();
@@ -141,3 +136,4 @@
     // Initialize
     generateMapCards();
 })();
+

@@ -1,7 +1,7 @@
 ---
 eleventyNavigation:
-  key: Références
-  order: 4
+  key: Premiers pas
+  order: 1
   nav: docs
   permalink: false
---- 
+---

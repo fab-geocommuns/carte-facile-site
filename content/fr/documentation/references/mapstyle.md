@@ -5,7 +5,7 @@ layout: layouts/docs.njk
 eleventyNavigation:
   key: mapStyle
   parent: API
-  order: 2
+  order: 1
   nav: docs
 ---
 

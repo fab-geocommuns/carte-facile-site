@@ -4,6 +4,7 @@ layout: layouts/docs.njk
 description: Cette page présente des concepts clé pour comprendre les mécanismes généraux de l'utilisation des cartes sur le web, qui ne sont pas spécifiques à Carte facile.
 eleventyNavigation:
   key: Concepts fondamentaux
+  parent: Aller plus loin
   order: 1
   nav: docs
 
@@ -34,15 +35,18 @@ Certaines données ne peuvent être mises à disposition que sous forme de donn�
 
 Voici un tableau qui permet de comparer les avantages et inconvénients des deux formats :
 
-| Critère                 | Cartes Raster                                                 | Cartes Vectorielles                                            |
-| ----------------------- | ------------------------------------------------------------- | -------------------------------------------------------------- |
-| **Qualité au zoom**     | Perd en qualité (pixellisation), changement de zoom "saccadé" | Qualité constante, changement de zoom lisse                    |
-| **Taille des fichiers** | Lourde à haute résolution                                     | Généralement plus légère                                       |
-| **Interactivité**       | Limitée, images statiques                                     | Hautement interactive : modifications possibles en temps réel. |
-| **Personnalisation**    | Difficile (images fixes)                                      | Facile (styles modifiables)                                    |
-| **Compatibilité**       | Excellente sur tous les appareils                             | Peut être limitée sur certains appareils anciens et peu performants                   |
-
-Les formats raster et vectoriel peuvent être associés et ainsi offrir une grande flexibilité pour la création de cartes interactives, notament grâce aux styles de cartes.
+{% from "components/component.njk" import component with context %}
+{{ component("table", {
+    title: "Titre du tableau",
+    headers: ["Critère", "Cartes Raster", "Cartes Vectorielles"],
+    data: [
+        ["Qualité au zoom", "Perd en qualité (pixellisation), changement de zoom saccadé.", "Qualité constante, changement de zoom lisse."],
+        ["Taille des fichier", "Lourde à haute résolution.", "Généralement plus légère."],
+        ["Interactivité", "Limitée, images statiques.", "Hautement interactive : modifications possibles en temps réel."],
+        ["Personnalisation", "Difficile (images fixes).", "Facile (styles modifiables)."],
+        ["Compatibilité", "Excellente sur tous les appareils.", "Peut être limitée sur certains appareils anciens et peu performants."]
+    ]
+}) }}
 
 <br>
 

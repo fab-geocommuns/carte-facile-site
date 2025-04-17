@@ -1,15 +1,13 @@
 ---
-title: Guide MapLibre GL JS
+title: Guide pour MapLibre GL JS
 layout: layouts/docs.njk
 description: Guide complet pour l'utilisation de CarteFacile avec MapLibre GL JS.
 eleventyNavigation:
   key: MapLibre GL JS
-  parent: Guides
+  parent: Alternatives
   order: 1
   nav: docs
 ---
-
-# Guide d'intégration MapLibre GL JS
 
 CarteFacile simplifie l'utilisation de MapLibre GL JS en fournissant des styles et composants prêts à l'emploi. Ce guide vous accompagne de l'installation à l'utilisation avancée.
 
@@ -30,9 +28,11 @@ npm install carte-facile maplibre-gl
 Pour les projets simples ou les prototypes rapides, vous pouvez utiliser les liens CDN :
 
 ```html
+<!-- Importation des bibliothèques MapLibre -->
 <script src="https://unpkg.com/maplibre-gl@^5.1.0/dist/maplibre-gl.js"></script>
-<script src="https://unpkg.com/carte-facile@0.2.2/dist/index.js"></script>
 <link href="https://unpkg.com/maplibre-gl@^5.1.0/dist/maplibre-gl.css" rel="stylesheet" />
+<!-- Importation de la bibliothèque Carte facile -->
+<script src="https://unpkg.com/carte-facile@0.3.3/dist/index.js"></script>
 ```
 
 ## 🗺️ Premiers pas
@@ -74,7 +74,7 @@ CarteFacile propose plusieurs styles prédéfinis :
 {{ component("table", {
     headers: ["Style", "Description"],
     data: [
-        ["`mapStyle.ign.standard`", "Style par défaut, adapté à la plupart des usages"],
+        ["`mapStyle.ign.simple`", "Style par défaut, adapté à la plupart des usages"],
         ["`mapStyle.ign.desaturated`", "Version désaturée, idéale pour la datavisualisation"],
         ["`mapStyle.ign.aerial`", "Vue photographies aériennes et satellite"]
     ]
