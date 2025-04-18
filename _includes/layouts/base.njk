@@ -20,15 +20,20 @@
   <link rel="stylesheet" href="/css/utility/utility.min.css">
 
   {% if showMaps %}
-    <link href="/css/maplibre-gl.css" rel="stylesheet" />
-    {%- css %}{% include "public/css/maps-viewer.css" %}{% endcss %}
+    {% css "maps" %}
+      {% include "node_modules/maplibre-gl/dist/maplibre-gl.css" %}
+      {% include "public/css/maps-viewer.css" %}
+      {% include "public/css/map-picker.css" %}
+    {% endcss %}
+    <link rel="stylesheet" href="{% getBundleFileUrl 'css', 'maps' %}">
   {% endif%}
 
-  {%- css %}{% include "public/css/index.css" %}{% endcss %}
-  {%- css %}{% include "public/css/prism-diff.css" %}{% endcss %}
-  {%- css %}{% include "node_modules/prismjs/themes/prism-okaidia.css" %}{% endcss %}
-  {%- css %}{% include "node_modules/prismjs/themes/prism-okaidia.css" %}{% endcss %}
-
+  {% css %}
+    {% include "public/css/index.css" %}
+    {% include "public/css/prism-diff.css" %}
+    {% include "node_modules/prismjs/themes/prism-okaidia.css" %}
+  {% endcss %}
+  <link rel="stylesheet" href="{% getBundleFileUrl 'css' %}">
 
   <style>{% getBundle "css" %}</style>
 
@@ -78,5 +83,15 @@
 <script type="text/javascript" nomodule src="/js/dsfr.nomodule.min.js"></script>
 <!-- Script Matomo pour le suivi des visites -->
 <script type="text/javascript" src="/js/matomo.js"></script>
+
+{% if showMaps %}
+  {% js "maps" %}
+    {% include "node_modules/maplibre-gl/dist/maplibre-gl.js" %}
+    {% include "node_modules/carte-facile/dist/index.umd.js" %}
+    {% include "public/js/maps-viewer.js" %}
+    {% include "public/js/map-picker.js" %}
+  {% endjs %}
+  <script src="{% getBundleFileUrl 'js', 'maps' %}"></script>
+{% endif %}
 </body>
 </html>
