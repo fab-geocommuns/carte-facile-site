@@ -24,8 +24,9 @@ Vous pouvez simplement enregistrer ce code dans un fichier nommé **index.html**
         <!-- Importation des bibliothèques MapLibre -->
         <script src="https://unpkg.com/maplibre-gl@^5.1.0/dist/maplibre-gl.js"></script>
         <link href="https://unpkg.com/maplibre-gl@^5.1.0/dist/maplibre-gl.css" rel="stylesheet" />
+        
         <!-- Importation de la bibliothèque Carte facile -->
-        <script src="https://unpkg.com/carte-facile@0.4.3/dist/index.js"></script>
+        <script src="https://unpkg.com/carte-facile@0.4.3/dist/index.umd.js"></script>
         
         <!-- Style pour afficher la carte en plein écran -->
         <style>
@@ -39,27 +40,24 @@ Vous pouvez simplement enregistrer ce code dans un fichier nommé **index.html**
         <!-- Le script qui initialise la carte -->
         <script>
             // Création la carte
-            var map = new Map({
+            var map = new maplibregl.Map({
                 container: 'map', // id du conteneur de la carte
-                style: carteFacile.mapStyle.standard, // Style de carte
+                style: CarteFacile.mapStyle.simple, // Style de carte
                 maxZoom: 18.9 // niveau de zoom maximum, adapté aux cartes utilisant les données IGN
             });
 
             // Ajout d'un contrôle de navigation
-            let nav = new NavigationControl();
+            let nav = new maplibregl.NavigationControl();
             map.addControl(nav, 'top-left');
 
             // Ajout d'une échelle
-            let scale = new ScaleControl({
+            let scale = new maplibregl.ScaleControl({
                 maxWidth: 80,
                 unit: 'imperial'
             });
             map.addControl(scale);
 
-            // Exemple de changement de style
-            function changeToAerial() {
-                map.setStyle(carteFacile.mapStyle.ign.aerial);
-            }
         </script>
     </body>
 </html>
+```
