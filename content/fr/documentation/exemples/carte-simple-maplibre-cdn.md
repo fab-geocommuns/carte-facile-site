@@ -41,7 +41,7 @@ Vous pouvez simplement enregistrer ce code dans un fichier nommé **index.html**
             // Création la carte
             var map = new Map({
                 container: 'map', // id du conteneur de la carte
-                style: carteFacile.mapStyle.ign.standard, // Style de carte
+                style: carteFacile.mapStyle.standard, // Style de carte
                 maxZoom: 18.9 // niveau de zoom maximum, adapté aux cartes utilisant les données IGN
             });
 
