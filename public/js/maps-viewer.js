@@ -80,6 +80,10 @@
         document.getElementById('style-use').textContent = metadata.use || '';
         document.getElementById('style-accessibility').textContent = metadata.accessibility || '';
         
+        // Update source link
+        const sourceLink = document.getElementById('style-source-link');
+        sourceLink.href = `https://github.com/fab-geocommuns/carte-facile/blob/main/src/map/${styleData.id}.json`;
+        
         // Apply the style immediately
         map.setStyle(styleData);
         updateActiveStates();
