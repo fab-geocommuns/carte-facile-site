@@ -6,26 +6,26 @@
 
     // DOM Elements
     const elements = {
-        controlPanel: document.getElementById('map-selection'),
-        stylesList: document.getElementById('map-selection').querySelector('.map-panel__styles-list'),
-        styleDetails: document.getElementById('map-selection').querySelector('.map-panel__style-details'),
-        mapStylesList: document.getElementById('map-styles-list'),
-        closeButton: document.getElementById('map-selection').querySelector('.fr-btn--close'),
-        openButton: document.getElementById('open-panel-btn'),
-        backButton: document.getElementById('back-to-list'),
-        styleTitle: document.getElementById('style-title'),
-        styleDescription: document.getElementById('style-description'),
-        styleUse: document.getElementById('style-use'),
-        styleAccessibility: document.getElementById('style-accessibility'),
-        styleThumbnail: document.getElementById('style-thumbnail'),
-        styleSourceLink: document.getElementById('style-source-link')
+        controlPanel: document.getElementById('map-picker'),
+        stylesList: document.getElementById('map-picker').querySelector('.map-picker__styles-list'),
+        styleDetails: document.getElementById('map-picker').querySelector('.map-picker__style-details'),
+        mapStylesList: document.getElementById('map-picker-grid'),
+        closeButton: document.getElementById('map-picker').querySelector('.fr-btn--close'),
+        openButton: document.getElementById('map-picker-toggle'),
+        backButton: document.getElementById('map-picker-back'),
+        styleTitle: document.getElementById('map-picker-style-title'),
+        styleDescription: document.getElementById('map-picker-style-description'),
+        styleUse: document.getElementById('map-picker-style-use'),
+        styleAccessibility: document.getElementById('map-picker-style-accessibility'),
+        styleThumbnail: document.getElementById('map-picker-style-thumbnail'),
+        styleSourceLink: document.getElementById('map-picker-style-source')
     };
 
     // UI Functions
     function updateActiveIcon(style) {
-        document.querySelectorAll('.map-card').forEach(card => {
+        document.querySelectorAll('.map-picker-card').forEach(card => {
             const cardStyle = card.dataset.styleUrl;
-            const icon = card.querySelector('.map-active-icon');
+            const icon = card.querySelector('.map-picker-card__active-icon');
             icon.style.display = cardStyle === style ? 'block' : 'none';
         });
     }
@@ -74,7 +74,7 @@
 
     // Card generation
     function createMapCard(style, data, index) {
-        const template = document.getElementById('map-card-template');
+        const template = document.getElementById('map-picker-card-template');
         const card = template.content.cloneNode(true).firstElementChild;
         
         card.dataset.styleUrl = style;
@@ -87,7 +87,7 @@
         img.src = CarteFacile.mapThumbnails[style].src;
         img.alt = `Aperçu de carte ${name}`;
 
-        const title = card.querySelector('.map-card__title');
+        const title = card.querySelector('.map-picker-card__title');
         title.textContent = name;
         title.dataset.style = style;
 

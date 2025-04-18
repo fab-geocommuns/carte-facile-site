@@ -1,8 +1,8 @@
-.map-panel {
+.map-picker {
     font-family: Marianne,arial,sans-serif;
 }
 
-.map-panel-toggle {
+.map-picker-toggle {
     z-index: 5;
     display: none;
     position: absolute;
@@ -10,15 +10,15 @@
     left: 0.5rem;
 }
 
-.map-panel[aria-expanded="false"] .map-panel--extended {
+.map-picker[aria-expanded="false"] .map-picker--extended {
     display: none;
 }
 
-.map-panel[aria-expanded="false"] .map-panel-toggle {
+.map-picker[aria-expanded="false"] .map-picker-toggle {
     display: inline-flex;
 }
 
-.map-panel--extended {
+.map-picker--extended {
     position: absolute;
     width: 24rem;
     max-width: 100%;
@@ -32,30 +32,30 @@
     left: 0;
 }
 
-.map-panel__header {
+.map-picker__header {
     display: flex;
 }
 
-.map-panel__content {
+.map-picker__content {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     overflow: scroll;
 }
 
-.map-panel__styles-list, .map-panel__style-details {
+.map-picker__styles-list, .map-picker__style-details {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
-.map-panel__styles-list .map-card-grid {
+.map-picker-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
 }
 
-.map-card {
+.map-picker-card {
     transition: opacity 0.2s ease-in-out;
     cursor: pointer;
     background-color: var(--background-default-grey);
@@ -67,23 +67,23 @@
 }
 
 @media (min-width: 20rem) {
-    .map-card {
+    .map-picker-card {
         flex: 0 0 calc(50% - 0.5rem);
         max-width: calc(50% - 0.5rem);
     }
 }
 
-.map-card:hover {
+.map-picker-card:hover {
     background-color: var(--background-default-grey-hover);
 }
 
-.map-card--shadow {
+.map-picker-card--shadow {
     --idle: transparent;
     --hover: var(--background-raised-grey-hover);
     --active: var(--background-raised-grey-active);
 }
 
-.map-active-icon {
+.map-picker-card__active-icon {
     display: none;
     position: absolute;
     top: 0.5rem;
@@ -94,19 +94,19 @@
     border-radius: 12px;
 }
 
-.map-card[aria-current="true"] .map-active-icon {
+.map-picker-card[aria-current="true"] .map-picker-card__active-icon {
     display: block;
 }
 
-.map-card__header {
+.map-picker-card__header {
     position: relative;
 }
 
-.map-card__img {
+.map-picker-card__img {
     flex: 0 0 auto;
 }
 
-.map-card__img img {
+.map-picker-card__img img {
     aspect-ratio: 1.7777777778;
     object-fit: cover;
     object-position: 50% 50%;
@@ -114,13 +114,17 @@
     display: block;
 }
 
-.map-card__title {  
+.map-picker-card__title {  
     font-size: .875rem;
     line-height: 1.5rem;
     font-weight: normal;
 }
 
-.map-panel__style-details .map-card__img {
+.map-picker__style-details .map-picker-card__img {
     border-radius: 0.25rem;
     overflow: hidden;
+}
+
+.map-picker {
+    /* Add any specific styles for the map-picker class */
 } 
