@@ -7,7 +7,7 @@
     });
     map.addControl(new maplibregl.NavigationControl());
 
-    // Listen for map style changes from the picker
+    // Listen for map style changes
     document.addEventListener('mapStyleChange', (event) => {
         const { styleData } = event.detail;
         map.setStyle(styleData);
