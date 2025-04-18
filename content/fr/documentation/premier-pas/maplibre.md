@@ -4,8 +4,8 @@ layout: layouts/docs.njk
 description: Guide complet pour l'utilisation de CarteFacile avec MapLibre GL JS.
 eleventyNavigation:
   key: MapLibre GL JS
-  parent: Alternatives
-  order: 1
+  parent: Premiers pas
+  order: 3
   nav: docs
 ---
 

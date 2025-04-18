@@ -46,11 +46,9 @@
     (() => {
         // Récupérer l'URL complète de la page
         const currentUrl = window.location.href;
-        console.log("Current URL:", currentUrl); // Affiche l'URL actuelle dans la console
 
         // Sélectionner le lien correspondant à l'URL actuelle
         const link = Array.from(document.querySelectorAll('.fr-sidemenu__link')).find(link => link.href === currentUrl);
-        console.log("Link:", link); // Affiche le lien trouvé
 
         if (link) {
             link.ariaCurrent = "page"

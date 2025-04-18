@@ -4,8 +4,8 @@ description: L'API Adresse permet d'interroger la Base Adresse Nationale (BAN), 
 layout: layouts/docs.njk
 eleventyNavigation:
   key: API Adresse
-  parent: API externes
-  order: 1
+  parent: Aller plus loin
+  order: 2
   nav: docs
 ---
 
