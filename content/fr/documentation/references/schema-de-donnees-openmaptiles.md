@@ -2,11 +2,6 @@
 title: Schéma de données OpenMapTiles
 description: Description à compléter.
 layout: layouts/docs.njk
-eleventyNavigation:
-  key: Schéma de données OpenMapTiles
-  parent: Références
-  order: 2
-  nav: docs
 ---
 
 :::callout 🛠️ Page en cours de rédaction

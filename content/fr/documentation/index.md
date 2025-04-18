@@ -18,7 +18,7 @@ eleventyNavigation:
 ### Premiers pas
 
 <!-- - [Guide MapLibre](/documentation/guides/maplibre) - Guide complet pour commencer avec MapLibre GL -->
-- [Concepts fondamentaux](/documentation/concepts-fondamentaux) - Comprendre les bases de la cartographie web
+- [Concepts fondamentaux](/documentation/aller-plus-loin/concepts-fondamentaux) - Comprendre les bases de la cartographie web
 
 <br>
 
