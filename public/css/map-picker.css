@@ -3,10 +3,13 @@
 }
 
 .map-picker-toggle {
-    z-index: 5;
+    z-index: 3;
     display: none;
     position: absolute;
-    top: 0.5rem;
+    background-color: var(--background-default-grey);
+    border-radius: 0.25rem;
+    filter: drop-shadow(var(--raised-shadow));
+    bottom: 0.5rem;
     left: 0.5rem;
 }
 
@@ -23,13 +26,14 @@
     width: 24rem;
     max-width: 100%;
     display: flex;
+    border-radius: 0.25rem;
     flex-direction: column;
     background-color: var(--background-default-grey);
     z-index: 3;
     filter: drop-shadow(var(--raised-shadow));
-    top: 0;
-    bottom: 0;
-    left: 0;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    left: 0.5rem;
 }
 
 .map-picker__header {
