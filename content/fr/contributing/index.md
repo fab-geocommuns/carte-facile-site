@@ -41,7 +41,7 @@ Un bouton pour éditer chaque page de ce site directement sur Github est égalem
 
 La description des composants disponibles pour créer du contenu dans les pages est disponible ici : 
 
-<a class="fr-btn fr-btn--tertiary fr-btn--icon-right fr-icon-arrow-right-line" href="{{ '/blog' | locale_url }}"> Composants disponibles </a>
+<a class="fr-btn fr-btn--tertiary fr-btn--icon-right fr-icon-arrow-right-line" href="{{ "/blog" | locale_url }}"> Composants disponibles </a>
 
 
 ***

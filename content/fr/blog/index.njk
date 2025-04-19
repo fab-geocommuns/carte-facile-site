@@ -11,7 +11,7 @@
     }
   },
   layout: "layouts/page.njk",
-  permalink: "/{{ lang }}/blog/{% if pagination.pageNumber %}{{ pagePrefix }}{{ pagination.pageNumber + 1 }}/{% endif %}",
+  permalink: "/{{ locale_url}}/blog/{% if pagination.pageNumber %}{{ pagePrefix }}{{ pagination.pageNumber + 1 }}/{% endif %}",
 }
 ---
 <h2 class="fr-h4">{{ "filter_by_tag" | i18n }}</h2>

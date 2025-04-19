@@ -1,7 +1,7 @@
 ---
 title: Documentation
 layout: layouts/docs.njk
-description: Documentation de CarteFacile - Simplifiez l'intégration de cartes dans vos applications web.
+description: Documentation de Carte Facile - Simplifiez l'intégration de cartes dans vos applications web.
 eleventyNavigation:
   key: Documentation
   order: 2
