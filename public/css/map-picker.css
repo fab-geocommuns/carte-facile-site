@@ -9,8 +9,8 @@
     background-color: var(--background-default-grey);
     border-radius: 0.25rem;
     filter: drop-shadow(var(--raised-shadow));
-    bottom: 0.5rem;
-    left: 0.5rem;
+    bottom: 0.625rem;
+    left: 0.625rem;
 }
 
 .map-picker[aria-expanded="false"] .map-picker--extended {
@@ -31,9 +31,9 @@
     background-color: var(--background-default-grey);
     z-index: 3;
     filter: drop-shadow(var(--raised-shadow));
-    top: 0.5rem;
-    bottom: 0.5rem;
-    left: 0.5rem;
+    top: 0.625rem;
+    bottom: 0.625rem;
+    left: 0.625rem;
 }
 
 .map-picker__header {
