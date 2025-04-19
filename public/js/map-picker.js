@@ -42,6 +42,12 @@
         elements.styleUse.textContent = metadata.use || '';
         elements.styleAccessibility.textContent = metadata.accessibility || '';
         elements.styleSourceLink.href = `https://github.com/fab-geocommuns/carte-facile/blob/main/src/map/${styleData.id}.json`;
+
+        // Update toggle button thumbnail
+        const toggleThumbnail = elements.openButton.querySelector('.map-picker-toggle__thumbnail');
+        const isAerial = style.includes('aerial');
+        const thumbnailStyle = isAerial ? 'simple' : 'aerial';
+        toggleThumbnail.style.backgroundImage = `url(${CarteFacile.mapThumbnails[thumbnailStyle].src})`;
     }
 
     function showStyleDetails(card) {
@@ -120,6 +126,9 @@
     function init() {
         generateMapCards();
         initializeEventListeners();
+        // Set initial style
+        const firstStyle = Object.keys(CarteFacile.mapStyle)[0];
+        updateStyleDetails(firstStyle);
     }
 
     init();

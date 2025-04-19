@@ -2,11 +2,12 @@
         class="map-picker" 
         aria-labelledby="map-picker-title">
     <button id="map-picker-toggle" 
-            class="map-picker-toggle fr-p-1w" 
+            class="map-picker-toggle" 
             aria-label="Ouvrir le sélecteur de cartes"
             aria-controls="map-picker-content"
             aria-expanded="true">
-        Afficher les cartes
+        <span class="map-picker-toggle__thumbnail"></span>
+        <span class="map-picker-toggle__text">Calques</span>
     </button>
     <div class="map-picker--extended">
         <div class="map-picker__header fr-mx-2w fr-mt-2w">
@@ -26,7 +27,7 @@
                             <div class="map-picker-card__header">
                                 <span class="map-picker-card__active-icon fr-icon-success-fill" aria-hidden="true"></span>
                                 <div class="map-picker-card__img">   
-                                    <img class="fr-responsive-img" alt="" />
+                                    <img class="fr-responsive-img" alt="">
                                 </div>
                             </div>
                             <div class="map-picker-card__content fr-py-1w fr-px-3v">
@@ -42,7 +43,7 @@
                 </button>
                 <div class="map-picker-card__img fr-mb-2w" style="position: relative;">   
                     <span class="map-picker-card__active-icon fr-icon-success-fill" aria-hidden="true"></span>
-                    <img id="map-picker-style-thumbnail" class="fr-responsive-img" alt="" />
+                    <img id="map-picker-style-thumbnail" class="fr-responsive-img" alt="">
                 </div>
                 <h2 class="fr-h5 fr-mb-3v" id="map-picker-style-title"></h2>
                 <p id="map-picker-style-description" class="fr-text"></p>

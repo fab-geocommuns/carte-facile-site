@@ -5,7 +5,7 @@
         style: CarteFacile.mapStyle.simple,
         maxZoom: 18.9,
     });
-    map.addControl(new maplibregl.NavigationControl());
+    map.addControl(new maplibregl.NavigationControl(), 'bottom-right');
 
     // Listen for map style changes
     document.addEventListener('mapStyleChange', (event) => {

@@ -41,7 +41,7 @@ module.exports = async function(eleventyConfig) {
         "./node_modules/carte-facile/dist/img": "/img",
         
         // Static assets (images, etc.)
-        "./public/**/*": "/"
+        "./public": "/"
     });
 
     // Run Eleventy when these files change:
