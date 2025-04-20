@@ -1,0 +1,5 @@
+/* Icônes personnalisées */
+.fr-icon-stack-line::before {
+    -webkit-mask-image: url(../icons/stack-line.svg);
+    mask-image: url(../icons/stack-line.svg);
+} 

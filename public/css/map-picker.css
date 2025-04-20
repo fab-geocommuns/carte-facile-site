@@ -25,9 +25,6 @@
     min-height: 2rem;
     padding:.25rem .75rem;
     width: fit-content;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
 }
 
 .map-picker-toggle__thumbnail {
@@ -37,7 +34,7 @@
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 0.25rem 0.25rem 0 0;
-    margin: 0.25rem 0.25rem 0 0.25rem;
+    margin: 0.125rem 0.125rem 0 0.125rem;
 }
 
 .map-picker[aria-expanded="false"] .map-picker--extended {
