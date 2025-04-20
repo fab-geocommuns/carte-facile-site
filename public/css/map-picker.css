@@ -30,17 +30,6 @@
     gap: 0.5rem;
 }
 
-.map-picker-toggle__text::before {
-    content: "";
-    display: inline-block;
-    width: 1.5rem;
-    height: 1.5rem;
-    background-image: url("/icons/stack-line.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
 .map-picker-toggle__thumbnail {
     width: auto;
     flex-grow: 1;
