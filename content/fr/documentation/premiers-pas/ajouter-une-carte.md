@@ -12,7 +12,9 @@ eleventyNavigation:
 Dans votre html, ajoutez un conteneur pour votre carte :
 
 ```html
+<!-- Conteneur HTML qui accueillera la carte -->
 <div id="map"></div>
+<!-- Style CSS pour que la carte occupe tout l'espace disponible -->
 <style>
     html, body, #map { height: 100%; width: 100%; margin: 0; }
 </style>
@@ -25,14 +27,16 @@ Dans votre html, ajoutez un conteneur pour votre carte :
 Dans votre fichier javascript, initialisez la carte avec :
 
 ```typescript
+// Importations nécessaires pour la carte
 import { mapStyle } from 'carte-facile';
 import maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 
+// Création la carte
 let map = new maplibregl.Map({
   container: 'map', // id du conteneur de la carte
-  style: mapStyle.simple, // Style de carte
-  maxZoom: 18.9 // niveau de zoom maximum, adapté aux cartes utilisant les données IGN
+  style: mapStyle.simple, // style de carte
+  maxZoom: 18.9 // zoom maximum pour les données IGN
 });
 ```
 
@@ -47,8 +51,8 @@ Ajoutez dans votre html :
     // Création la carte
     let map = new maplibregl.Map({
         container: 'map', // id du conteneur de la carte
-        style: CarteFacile.mapStyle.simple, // Style de carte
-        maxZoom: 18.9 // niveau de zoom maximum, adapté aux cartes utilisant les données IGN
+        style: CarteFacile.mapStyle.simple, // style de carte
+        maxZoom: 18.9 // zoom maximum pour les données IGN
     });
 </script>
 ```
