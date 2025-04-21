@@ -1,4 +1,4 @@
----
+<!-- ---
 title: Guide pour MapLibre GL JS
 layout: layouts/docs.njk
 description: Guide complet pour l'utilisation de CarteFacile avec MapLibre GL JS.
@@ -8,7 +8,7 @@ eleventyNavigation:
   order: 3
   nav: docs
 ---
-
+ -->
 CarteFacile simplifie l'utilisation de MapLibre GL JS en fournissant des styles et composants prêts à l'emploi. Ce guide vous accompagne de l'installation à l'utilisation avancée.
 
 ## 🚀 Installation

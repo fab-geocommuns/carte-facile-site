@@ -1,9 +1,9 @@
 ---
 title: Carte simple avec MapLibre et liens CDN
 layout: layouts/docs.njk
-description: Exemple d'un afichage d'une carte en utilisant MapLibre GL JS et Carte facile, avec les liens CDN.
+description: Exemple d'affichage d'une carte simple en utilisant Carte Facile et MapLibre GL JS, avec les liens CDN.
 eleventyNavigation:
-  key: Carte avec MapLibre et CDN
+  key: Carte simple avec MapLibre et CDN
   parent: Exemples
   order: 1
   nav: docs
@@ -56,7 +56,6 @@ Vous pouvez simplement enregistrer ce code dans un fichier nommé **index.html**
                 unit: 'imperial'
             });
             map.addControl(scale);
-
         </script>
     </body>
 </html>

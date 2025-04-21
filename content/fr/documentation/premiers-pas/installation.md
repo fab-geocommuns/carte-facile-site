@@ -9,22 +9,7 @@ eleventyNavigation:
   nav: docs 
 ---
 
-Carte facile est une bibliothèque JavaScript qui simplifie l'intégration de cartes dans vos applications web. Elle propose :
-
-- Des styles de carte prêts à l'emploi, compatibles avec plusieurs bibliothèques cartographiques
-- Des composants clé en main pour enrichir vos cartes
-- Une documentation complète pour faciliter la prise en main
-
-<br>
-
-## Compatibilité
-
-Carte facile est conçue pour être flexible :
-
-- **Styles de carte** : Compatibles avec MapLibre GL JS, Leaflet et OpenLayers
-- **Composants et fonctionnalités avancées** : Optimisés pour MapLibre GL JS
-
-Ce guide d'installation se concentre sur l'utilisation avec MapLibre GL JS, qui est la bibliothèque recommandée pour tirer pleinement parti des fonctionnalités de Carte facile.
+Ce guide d'installation se concentre sur l'utilisation de Carte Facile avec MapLibre GL JS, qui est la bibliothèque recommandée pour tirer pleinement parti des fonctionnalités de Carte facile.
 
 <br>
 
@@ -57,9 +42,7 @@ Pour les projets simples ou les prototypes rapides, vous pouvez utiliser les lie
 
 ## Prochaine étape
 
-Une fois l'installation terminée, la prochaine étape est d'ajouter une carte :
-
 <a class="fr-btn fr-btn--secondary fr-btn--icon-right fr-icon-arrow-right-line"
-  href="/documentation/premiers-pas/ajouter-une-carte">
+  href={{ "/documentation/premiers-pas/ajouter-une-carte" | locale_url }}>
   Ajouter une carte
 </a>
