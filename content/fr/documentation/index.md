@@ -10,7 +10,7 @@ eleventyNavigation:
 
 **Carte Facile** est une bibliothèque JavaScript qui simplifie l'intégration de cartes dans vos applications web, grâce à :
 - Des styles de carte prêts à l'emploi, bientôt compatibles avec plusieurs bibliothèques cartographiques (⚠️ compatible uniquement avec MapLibre GL JS pour le moment).
-- Une disponibilité via un package npm, ou via un lien CDN por les projets les plus simples.
+- Une disponibilité via un package npm, ou via un lien CDN pour les projets les plus simples.
 - Des fonctionnalités et des composants clé en main pour enrichir vos cartes (🛠️ à venir).
 - Une documentation pour faciliter la prise en main.
 
@@ -27,9 +27,8 @@ eleventyNavigation:
 ### Aller plus loin
 
 - [**Concepts fondamentaux**]({{ "/documentation/aller-plus-loin/concepts-fondamentaux" | locale_url }}) - Comprendre les bases de la cartographie web.
-- [**API Adresse**]({{ "/documentation/aller-plus-loin/api-adresse" | locale_url }}) - 
-- [**API Découpage administratif**]({{ "/documentation/aller-plus-loin/api-decoupage-administratif" | locale_url }}) -
-
+- [**API Adresse**]({{ "/documentation/aller-plus-loin/api-adresse" | locale_url }}) - Intégrer la recherche d'adresses et l'autocomplétion dans vos cartes.
+- [**API Découpage administratif**]({{ "/documentation/aller-plus-loin/api-decoupage-administratif" | locale_url }}) - Afficher et interagir avec les limites administratives (communes, départements, régions).
 
 <!-- ### Référence
 - [Styles de carte](/documentation/api/mapstyle) - Documentation des styles disponibles
@@ -44,4 +43,4 @@ eleventyNavigation:
 
 ## 📚 Ressources supplémentaires
 
-- [**Documentation officielle de MapLibre**](https://maplibre.org/maplibre-gl-js/docs/) - 
+- [**Documentation officielle de MapLibre**](https://maplibre.org/maplibre-gl-js/docs/) - Documentation complète de MapLibre GL JS, la bibliothèque cartographique utilisée par Carte Facile.
