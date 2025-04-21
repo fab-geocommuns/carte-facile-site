@@ -24,7 +24,11 @@ npm install carte-facile maplibre-gl
 
 Puis passez à l'étape suivante.
 
-<br>
+:::info
+Si vous n'utilisez pas de bundler (outil qui gère les imports entre fichiers JavaScript), utilisez plutôt la méthode d'installation via CDN.
+:::
+
+<br><br>
 
 ## Méthode 2 : Installation via CDN
 

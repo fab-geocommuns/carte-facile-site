@@ -40,18 +40,18 @@ Vous pouvez simplement enregistrer ce code dans un fichier nommé **index.html**
         <!-- Le script qui initialise la carte -->
         <script>
             // Création la carte
-            var map = new maplibregl.Map({
+            let map = new maplibregl.Map({
                 container: 'map', // id du conteneur de la carte
                 style: CarteFacile.mapStyle.simple, // Style de carte
                 maxZoom: 18.9 // niveau de zoom maximum, adapté aux cartes utilisant les données IGN
             });
 
             // Ajout d'un contrôle de navigation
-            let nav = new maplibregl.NavigationControl();
-            map.addControl(nav, 'top-left');
+            const nav = new maplibregl.NavigationControl();
+            map.addControl(nav, 'top-right');
 
             // Ajout d'une échelle
-            let scale = new maplibregl.ScaleControl({
+            const scale = new maplibregl.ScaleControl({
                 maxWidth: 80,
                 unit: 'imperial'
             });

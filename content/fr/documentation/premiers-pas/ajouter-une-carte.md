@@ -20,7 +20,7 @@ Dans votre html, ajoutez un conteneur pour votre carte :
 
 <br>
 
-## Cas 1 : Pour une installation via npm
+## Cas 1 : avec une installation via npm
 
 Dans votre fichier javascript, initialisez la carte avec :
 
@@ -29,27 +29,23 @@ import { mapStyle } from 'carte-facile';
 import maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 
-const map = new maplibregl.Map({
-  container: 'map',
-  style: mapStyle.simple,
-  maxZoom: 18.9
+let map = new maplibregl.Map({
+  container: 'map', // id du conteneur de la carte
+  style: mapStyle.simple, // Style de carte
+  maxZoom: 18.9 // niveau de zoom maximum, adapté aux cartes utilisant les données IGN
 });
 ```
 
-:::info
-Si vous n'utilisez pas de bundler (outil qui gère les imports entre fichiers JavaScript), utilisez plutôt la méthode d'installation via CDN.
-:::
+<br>
 
-<br><br>
-
-## Cas 2 : Pour une installation via liens CDN
+## Cas 2 : avec une installation via liens CDN
 
 Ajoutez dans votre html :
 
 ```html
 <script>
     // Création la carte
-    var map = new maplibregl.Map({
+    let map = new maplibregl.Map({
         container: 'map', // id du conteneur de la carte
         style: CarteFacile.mapStyle.simple, // Style de carte
         maxZoom: 18.9 // niveau de zoom maximum, adapté aux cartes utilisant les données IGN
@@ -90,14 +86,14 @@ CarteFacile propose plusieurs styles prédéfinis :
 Pour ajouter des contrôles de navigation :
 
 ```typescript
-  let nav = new maplibregl.NavigationControl();
+  const nav = new maplibregl.NavigationControl();
   map.addControl(nav, 'top-right');
 ```
 
 Pour ajouter une échelle :
 
 ```typescript
-  let scale = new maplibregl.ScaleControl({
+  const scale = new maplibregl.ScaleControl({
       maxWidth: 80,
       unit: 'imperial'
   });
