@@ -15,19 +15,22 @@ Ce guide d'installation se concentre sur l'utilisation de Carte Facile avec MapL
 
 ## Méthode 1 : Installation via npm (recommandé)
 
-### Prérequis
-- Node.js (version 14 ou supérieure)
-- npm (ou yarn)
+**Prérequis** : avoir [Node.js](https://nodejs.org/fr) installé sur votre ordinateur (npm est inclus avec Node.js).
 
+Cette méthode est recommandée pour les projets professionnels ou les applications complexes. Lancez cette commande dans le terminal de votre projet pour installer les librairies Carte Facile et MapLibre :
 ```bash
 npm install carte-facile maplibre-gl
 ```
+
+Puis passez à l'étape suivante.
 
 <br>
 
 ## Méthode 2 : Installation via CDN
 
-Pour les projets simples ou les prototypes rapides, vous pouvez utiliser les liens CDN :
+Cette méthode est adaptée pour les projets simples, les prototypes ou les tests rapides. Elle ne nécessite pas Node.js.
+
+Pour utiliser cette méthode, ajoutez simplement ces lignes dans le `<head>` de votre page HTML :
 
 ```html
 <!-- Importation des bibliothèques MapLibre -->
@@ -35,7 +38,7 @@ Pour les projets simples ou les prototypes rapides, vous pouvez utiliser les lie
 <link href="https://unpkg.com/maplibre-gl@^5.1.0/dist/maplibre-gl.css" rel="stylesheet" />
 
 <!-- Importation de la bibliothèque Carte facile -->
-<script src="https://unpkg.com/carte-facile@0.4.3/dist/index.umd.js"></script>
+<script src="https://unpkg.com/carte-facile@0.4.8/dist/index.js"></script>
 ```
 
 <br>

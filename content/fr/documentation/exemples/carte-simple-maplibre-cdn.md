@@ -26,7 +26,7 @@ Vous pouvez simplement enregistrer ce code dans un fichier nommé **index.html**
         <link href="https://unpkg.com/maplibre-gl@^5.1.0/dist/maplibre-gl.css" rel="stylesheet" />
         
         <!-- Importation de la bibliothèque Carte facile -->
-        <script src="https://unpkg.com/carte-facile@0.4.3/dist/index.umd.js"></script>
+        <script src="https://unpkg.com/carte-facile@0.4.8/dist/index.js"></script>
         
         <!-- Style pour afficher la carte en plein écran -->
         <style>
