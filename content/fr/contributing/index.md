@@ -22,8 +22,8 @@ Il existe plusieurs façons de contribuer à Carte Facile :
 
 ## Espaces de discussions
 
-- **La section dédié à Carte facile sur le Forum des géocummuns** : <a class="fr-link fr-icon-external-link-line fr-link--icon-right" href="https://forum.geocommuns.fr/c/fond-de-plans-styles-vectoriels/19">🗺️ Forum des géocommuns</a>
-- **Le fil de discussion sur le Mattermost beta.gouv** (accès uniquement aux personnes de Beta.gouv) : <a class="fr-link fr-icon-external-link-line fr-link--icon-right" href="https://mattermost.incubateur.net/betagouv/channels/startup---fonds-de-carte">startup - 🗺️ Fonds de cartes</a>
+- **La section dédié à Carte Facile sur le Forum des géocummuns** : <a class="fr-link fr-icon-external-link-line fr-link--icon-right" href="https://forum.geocommuns.fr/c/fond-de-plans-styles-vectoriels/19">🗺️ Forum des géocommuns</a>
+- **Le fil de discussion sur le Mattermost beta.gouv** (accès uniquement aux personnes de Beta.gouv) : <a class="fr-link fr-icon-external-link-line fr-link--icon-right" href="https://mattermost.incubateur.net/betagouv/channels/startup---fonds-de-carte">startup - 🗺️ Carte Facile</a>
 - **L'adresse de contact de l'équipe** : ✉️ <fonds-de-cartes@beta.gouv.fr>
 
 <br>
