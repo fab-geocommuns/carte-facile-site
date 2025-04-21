@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="/carte-facile-site/css/utility/utility.min.css">
 
 
+  <link rel="stylesheet" href="/carte-facile-site/bundle/z-lDvxpAJ-.css">
 
   <style>/* Defaults */
 :root {
@@ -155,18 +156,18 @@ div.fr-callout__text p {
 }
 
 .fr-follow .fr-btn--peertube:before {
-    -webkit-mask-image: url(/icons/logo/peertube.svg) !important;
-    mask-image: url(/icons/logo/peertube.svg) !important;
+    -webkit-mask-image: url(../icons/logo/peertube.svg) !important;
+    mask-image: url(../icons/logo/peertube.svg) !important;
 }
 
 .fr-follow .fr-btn--github:before {
-    -webkit-mask-image: url(/icons/logo/github-fill.svg) !important;
-    mask-image: url(/icons/logo/github-fill.svg) !important;
+    -webkit-mask-image: url(../icons/logo/github-fill.svg) !important;
+    mask-image: url(../icons/logo/github-fill.svg) !important;
 }
 
 .fr-follow .fr-btn--sourcehut:before {
-    -webkit-mask-image: url(/icons/logo/sourcehut.svg) !important;
-    mask-image: url(/icons/logo/sourcehut.svg) !important;
+    -webkit-mask-image: url(../icons/logo/sourcehut.svg) !important;
+    mask-image: url(../icons/logo/sourcehut.svg) !important;
 }
 
 /* Custom */
@@ -342,7 +343,7 @@ pre[class*="language-"] {
 	cursor: help;
 }</style>
 
-  <meta name="generator" content="Eleventy v2.0.1">
+  <meta name="generator" content="Eleventy v3.0.0">
 
   <title>Schéma de données OpenMapTiles</title>
 </head>
@@ -423,8 +424,8 @@ pre[class*="language-"] {
           </a>
       </li>
       <li class="fr-nav__item">
-          <a class="fr-nav__link" href="/carte-facile-site/fr/communaute/">
-            Communauté
+          <a class="fr-nav__link" href="/carte-facile-site/fr/contribuer/">
+            Contribuer
           </a>
       </li>
       <li class="fr-nav__item">
@@ -490,29 +491,57 @@ pre[class*="language-"] {
         <div class="fr-collapse" id="fr-sidemenu-wrapper">
             <ul class="fr-sidemenu__list">
                 <li class="fr-sidemenu__item">
-                    <a class="fr-sidemenu__link" href="/carte-facile-site/fr/documentation/concepts-fondamentaux/">
-                        Concepts fondamentaux
-                    </a>
-                </li>
-                <li class="fr-sidemenu__item">
-                    <a class="fr-sidemenu__link" href="/carte-facile-site/fr/documentation/utiliser-les-cartes/">
-                        Utiliser les cartes
-                    </a>
-                </li>
-                <li class="fr-sidemenu__item">
-                        <button class="fr-sidemenu__btn" aria-expanded="false" aria-controls="sidemenu-3">
-                            API géographiques
+                        <button class="fr-sidemenu__btn" aria-expanded="false" aria-controls="sidemenu-1">
+                            Premiers pas
                         </button>
-                        <div class="fr-collapse" id="sidemenu-3">
+                        <div class="fr-collapse" id="sidemenu-1">
                             <ul class="fr-sidemenu__list">
                                 <li class="fr-sidemenu__item">
-                                <a class="fr-sidemenu__link" href="/carte-facile-site/fr/documentation/api-geographiques/api-adresse/">
+                                <a class="fr-sidemenu__link" href="/carte-facile-site/fr/documentation/premiers-pas/installation/">
+                                    Installation
+                                </a>
+                                </li>
+                                <li class="fr-sidemenu__item">
+                                <a class="fr-sidemenu__link" href="/carte-facile-site/fr/documentation/premiers-pas/ajouter-une-carte/">
+                                    Ajouter une carte
+                                </a>
+                                </li>
+                            </ul>
+                        </div>
+                </li>
+                <li class="fr-sidemenu__item">
+                        <button class="fr-sidemenu__btn" aria-expanded="false" aria-controls="sidemenu-2">
+                            Aller plus loin
+                        </button>
+                        <div class="fr-collapse" id="sidemenu-2">
+                            <ul class="fr-sidemenu__list">
+                                <li class="fr-sidemenu__item">
+                                <a class="fr-sidemenu__link" href="/carte-facile-site/fr/documentation/aller-plus-loin/concepts-fondamentaux/">
+                                    Concepts fondamentaux
+                                </a>
+                                </li>
+                                <li class="fr-sidemenu__item">
+                                <a class="fr-sidemenu__link" href="/carte-facile-site/fr/documentation/aller-plus-loin/api-adresse/">
                                     API Adresse
                                 </a>
                                 </li>
                                 <li class="fr-sidemenu__item">
-                                <a class="fr-sidemenu__link" href="/carte-facile-site/fr/documentation/api-geographiques/api-decoupage-administratif/">
+                                <a class="fr-sidemenu__link" href="/carte-facile-site/fr/documentation/aller-plus-loin/api-decoupage-administratif/">
                                     API Découpage administratif
+                                </a>
+                                </li>
+                            </ul>
+                        </div>
+                </li>
+                <li class="fr-sidemenu__item">
+                        <button class="fr-sidemenu__btn" aria-expanded="false" aria-controls="sidemenu-3">
+                            Exemples
+                        </button>
+                        <div class="fr-collapse" id="sidemenu-3">
+                            <ul class="fr-sidemenu__list">
+                                <li class="fr-sidemenu__item">
+                                <a class="fr-sidemenu__link" href="/carte-facile-site/fr/documentation/exemples/carte-simple-maplibre-cdn/">
+                                    Carte simple avec MapLibre et CDN
                                 </a>
                                 </li>
                             </ul>
@@ -527,11 +556,9 @@ pre[class*="language-"] {
     (() => {
         // Récupérer l'URL complète de la page
         const currentUrl = window.location.href;
-        console.log("Current URL:", currentUrl); // Affiche l'URL actuelle dans la console
 
         // Sélectionner le lien correspondant à l'URL actuelle
         const link = Array.from(document.querySelectorAll('.fr-sidemenu__link')).find(link => link.href === currentUrl);
-        console.log("Link:", link); // Affiche le lien trouvé
 
         if (link) {
             link.ariaCurrent = "page"
@@ -726,7 +753,6 @@ pre[class*="language-"] {
     </tbody>
   </table>
 </div>
-
       <div class="fr-grid-row fr-grid-row--right">
 <a class="fr-grid-row fr-grid-row--right fr-link fr-icon-arrow-up-fill fr-link--icon-left" href="#top">
   Haut de page
@@ -771,7 +797,7 @@ pre[class*="language-"] {
           </a>
       </div>
       <div class="fr-footer__content">
-        <p class="fr-footer__content-desc">Fonds de cartes est un service développé par La Fabrique des géocommuns, incubateur de communs à l’IGN. Le code source de ce site web et les ressources proposées par le service sont disponible en licence libre.</p>
+        <p class="fr-footer__content-desc">Carte facile est un service développé par La Fabrique des géocommuns, incubateur de communs à l’IGN. Le code source de ce site web et les ressources proposées par le service sont disponible en licence libre.</p>
         <ul class="fr-footer__content-list">
           <li class="fr-footer__content-item">
             <a class="fr-footer__content-link" target="_blank" rel="noopener external" href="https://legifrance.gouv.fr">legifrance.gouv.fr</a>
@@ -898,5 +924,6 @@ pre[class*="language-"] {
 <script type="text/javascript" nomodule="" src="/carte-facile-site/js/dsfr.nomodule.min.js"></script>
 <!-- Script Matomo pour le suivi des visites -->
 <script type="text/javascript" src="/carte-facile-site/js/matomo.js"></script>
+
 </body>
 </html>

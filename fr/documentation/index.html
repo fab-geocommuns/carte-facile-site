@@ -5,7 +5,7 @@
   <meta name="format-detection" content="telephone=no,date=no,address=no,email=no,url=no">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <meta name="description" content="Documentation et tutoriels pour l&#39;utilisation des cartes.">
+  <meta name="description" content="Documentation de Carte Facile - Simplifiez l&#39;intégration de cartes dans vos applications web.">
   <meta name="theme-color" content="#000091">
   <link rel="apple-touch-icon" href="/carte-facile-site/favicon/apple-touch-icon.png"><!-- 180×180 -->
   <link rel="icon" href="/carte-facile-site/favicon/favicon.svg" type="image/svg+xml">
@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="/carte-facile-site/css/utility/utility.min.css">
 
 
+  <link rel="stylesheet" href="/carte-facile-site/bundle/z-lDvxpAJ-.css">
 
   <style>/* Defaults */
 :root {
@@ -155,18 +156,18 @@ div.fr-callout__text p {
 }
 
 .fr-follow .fr-btn--peertube:before {
-    -webkit-mask-image: url(/icons/logo/peertube.svg) !important;
-    mask-image: url(/icons/logo/peertube.svg) !important;
+    -webkit-mask-image: url(../icons/logo/peertube.svg) !important;
+    mask-image: url(../icons/logo/peertube.svg) !important;
 }
 
 .fr-follow .fr-btn--github:before {
-    -webkit-mask-image: url(/icons/logo/github-fill.svg) !important;
-    mask-image: url(/icons/logo/github-fill.svg) !important;
+    -webkit-mask-image: url(../icons/logo/github-fill.svg) !important;
+    mask-image: url(../icons/logo/github-fill.svg) !important;
 }
 
 .fr-follow .fr-btn--sourcehut:before {
-    -webkit-mask-image: url(/icons/logo/sourcehut.svg) !important;
-    mask-image: url(/icons/logo/sourcehut.svg) !important;
+    -webkit-mask-image: url(../icons/logo/sourcehut.svg) !important;
+    mask-image: url(../icons/logo/sourcehut.svg) !important;
 }
 
 /* Custom */
@@ -342,7 +343,7 @@ pre[class*="language-"] {
 	cursor: help;
 }</style>
 
-  <meta name="generator" content="Eleventy v2.0.1">
+  <meta name="generator" content="Eleventy v3.0.0">
 
   <title>Documentation</title>
 </head>
@@ -423,8 +424,8 @@ pre[class*="language-"] {
           </a>
       </li>
       <li class="fr-nav__item">
-          <a class="fr-nav__link" href="/carte-facile-site/fr/communaute/">
-            Communauté
+          <a class="fr-nav__link" href="/carte-facile-site/fr/contribuer/">
+            Contribuer
           </a>
       </li>
       <li class="fr-nav__item">
@@ -490,29 +491,57 @@ pre[class*="language-"] {
         <div class="fr-collapse" id="fr-sidemenu-wrapper">
             <ul class="fr-sidemenu__list">
                 <li class="fr-sidemenu__item">
-                    <a class="fr-sidemenu__link" href="/carte-facile-site/fr/documentation/concepts-fondamentaux/">
-                        Concepts fondamentaux
-                    </a>
-                </li>
-                <li class="fr-sidemenu__item">
-                    <a class="fr-sidemenu__link" href="/carte-facile-site/fr/documentation/utiliser-les-cartes/">
-                        Utiliser les cartes
-                    </a>
-                </li>
-                <li class="fr-sidemenu__item">
-                        <button class="fr-sidemenu__btn" aria-expanded="false" aria-controls="sidemenu-3">
-                            API géographiques
+                        <button class="fr-sidemenu__btn" aria-expanded="false" aria-controls="sidemenu-1">
+                            Premiers pas
                         </button>
-                        <div class="fr-collapse" id="sidemenu-3">
+                        <div class="fr-collapse" id="sidemenu-1">
                             <ul class="fr-sidemenu__list">
                                 <li class="fr-sidemenu__item">
-                                <a class="fr-sidemenu__link" href="/carte-facile-site/fr/documentation/api-geographiques/api-adresse/">
+                                <a class="fr-sidemenu__link" href="/carte-facile-site/fr/documentation/premiers-pas/installation/">
+                                    Installation
+                                </a>
+                                </li>
+                                <li class="fr-sidemenu__item">
+                                <a class="fr-sidemenu__link" href="/carte-facile-site/fr/documentation/premiers-pas/ajouter-une-carte/">
+                                    Ajouter une carte
+                                </a>
+                                </li>
+                            </ul>
+                        </div>
+                </li>
+                <li class="fr-sidemenu__item">
+                        <button class="fr-sidemenu__btn" aria-expanded="false" aria-controls="sidemenu-2">
+                            Aller plus loin
+                        </button>
+                        <div class="fr-collapse" id="sidemenu-2">
+                            <ul class="fr-sidemenu__list">
+                                <li class="fr-sidemenu__item">
+                                <a class="fr-sidemenu__link" href="/carte-facile-site/fr/documentation/aller-plus-loin/concepts-fondamentaux/">
+                                    Concepts fondamentaux
+                                </a>
+                                </li>
+                                <li class="fr-sidemenu__item">
+                                <a class="fr-sidemenu__link" href="/carte-facile-site/fr/documentation/aller-plus-loin/api-adresse/">
                                     API Adresse
                                 </a>
                                 </li>
                                 <li class="fr-sidemenu__item">
-                                <a class="fr-sidemenu__link" href="/carte-facile-site/fr/documentation/api-geographiques/api-decoupage-administratif/">
+                                <a class="fr-sidemenu__link" href="/carte-facile-site/fr/documentation/aller-plus-loin/api-decoupage-administratif/">
                                     API Découpage administratif
+                                </a>
+                                </li>
+                            </ul>
+                        </div>
+                </li>
+                <li class="fr-sidemenu__item">
+                        <button class="fr-sidemenu__btn" aria-expanded="false" aria-controls="sidemenu-3">
+                            Exemples
+                        </button>
+                        <div class="fr-collapse" id="sidemenu-3">
+                            <ul class="fr-sidemenu__list">
+                                <li class="fr-sidemenu__item">
+                                <a class="fr-sidemenu__link" href="/carte-facile-site/fr/documentation/exemples/carte-simple-maplibre-cdn/">
+                                    Carte simple avec MapLibre et CDN
                                 </a>
                                 </li>
                             </ul>
@@ -527,11 +556,9 @@ pre[class*="language-"] {
     (() => {
         // Récupérer l'URL complète de la page
         const currentUrl = window.location.href;
-        console.log("Current URL:", currentUrl); // Affiche l'URL actuelle dans la console
 
         // Sélectionner le lien correspondant à l'URL actuelle
         const link = Array.from(document.querySelectorAll('.fr-sidemenu__link')).find(link => link.href === currentUrl);
-        console.log("Link:", link); // Affiche le lien trouvé
 
         if (link) {
             link.ariaCurrent = "page"
@@ -573,74 +600,47 @@ pre[class*="language-"] {
           </hgroup>
         </div>
         <div class="fr-col-12 fr-col-md-3">
-          <a class="fr-btn fr-btn--sm fr-btn--tertiary fr-btn--icon-left fr-icon-edit-line" href="https://github.com/fab-geocommuns/carte-facile-site/blob/main/./content/fr/documentation/index.njk">
+          <a class="fr-btn fr-btn--sm fr-btn--tertiary fr-btn--icon-left fr-icon-edit-line" href="https://github.com/fab-geocommuns/carte-facile-site/blob/main/./content/fr/documentation/index.md">
             Modifier cette page
           </a>
         </div> 
       </div>
-      
-<div class="fr-container--fluid">
-  <div class="fr-grid-row fr-my-2w">
-    <div class="fr-col">
-      <div class="fr-card fr-enlarge-link ">
-  <div class="fr-card__body">
-    <div class="fr-card__content">
-      <h3 class="fr-card__title">
-          <a href="/carte-facile-site/fr/documentation/concepts-fondamentaux/">
-            Concepts fondamentaux
-          </a>
-      </h3>
-      <p class="fr-card__desc">Un aperçu des concepts fondamentaux dans l&#39;utilisation des cartes dans un site web.</p>
-      <div class="fr-card__start">
-      </div>
-    </div>
-    <div class="fr-card__footer">
-    </div>
-  </div>
-</div>
-    </div>
-  </div>
-  <div class="fr-grid-row fr-my-2w">
-    <div class="fr-col">
-      <div class="fr-card fr-enlarge-link ">
-  <div class="fr-card__body">
-    <div class="fr-card__content">
-      <h3 class="fr-card__title">
-          <a href="/carte-facile-site/fr/documentation/utiliser-les-cartes/">
-            Utiliser les cartes
-          </a>
-      </h3>
-      <p class="fr-card__desc">Un tutoriel pour ajouter rapidement une carte dans un site web.</p>
-      <div class="fr-card__start">
-      </div>
-    </div>
-    <div class="fr-card__footer">
-    </div>
-  </div>
-</div>
-    </div>
-  </div>
-  <div class="fr-grid-row fr-my-2w">
-    <div class="fr-col">
-      <div class="fr-card fr-enlarge-link ">
-  <div class="fr-card__body">
-    <div class="fr-card__content">
-      <h3 class="fr-card__title">
-          <a href="/carte-facile-site/fr/documentation/api-geographiques/api-adresse">
-            API géographiques
-          </a>
-      </h3>
-      <p class="fr-card__desc">Quelques bases explicatives pour l&#39;utilisation des API géographiques, par exemple pour la recherche d&#39;adresse et de communes.</p>
-      <div class="fr-card__start">
-      </div>
-    </div>
-    <div class="fr-card__footer">
-    </div>
-  </div>
-</div>
-    </div>
-  </div>
-</div>
+      <p><strong>Carte Facile</strong> est une bibliothèque JavaScript qui simplifie l'intégration de cartes dans vos applications web, grâce à :</p>
+<ul>
+<li>Des styles de carte prêts à l'emploi, bientôt compatibles avec plusieurs bibliothèques cartographiques (⚠️ compatible uniquement avec MapLibre GL JS pour le moment).</li>
+<li>Une disponibilité via un package npm, ou via un lien CDN pour les projets les plus simples.</li>
+<li>Des fonctionnalités et des composants clé en main pour enrichir vos cartes (🛠️ à venir).</li>
+<li>Une documentation pour faciliter la prise en main.</li>
+</ul>
+<br>
+<h3 id="premiers-pas" tabindex="-1">Premiers pas <a class="header-anchor" href="#premiers-pas">#</a></h3>
+<ul>
+<li><a href="/carte-facile-site/fr/documentation/premiers-pas/installation"><strong>Installation</strong></a> - Installer la librairie Carte Facile.</li>
+<li><a href="/carte-facile-site/fr/documentation/premiers-pas/ajouter-une-carte"><strong>Ajouter une carte</strong></a> - Ajouter une carte à son site avec Carte Facile.</li>
+</ul>
+<!-- - [Alternatives](/fr/documentation/premiers-pas/alternatives) - Utiliser Carte Facile avec Leaflet ou OpenLayers, plutôt que MapLibre. -->
+<br>
+<h3 id="aller-plus-loin" tabindex="-1">Aller plus loin <a class="header-anchor" href="#aller-plus-loin">#</a></h3>
+<ul>
+<li><a href="/carte-facile-site/fr/documentation/aller-plus-loin/concepts-fondamentaux"><strong>Concepts fondamentaux</strong></a> - Comprendre les bases de la cartographie web.</li>
+<li><a href="/carte-facile-site/fr/documentation/aller-plus-loin/api-adresse"><strong>API Adresse</strong></a> - Intégrer la recherche d'adresses et l'autocomplétion dans vos cartes.</li>
+<li><a href="/carte-facile-site/fr/documentation/aller-plus-loin/api-decoupage-administratif"><strong>API Découpage administratif</strong></a> - Afficher et interagir avec les limites administratives (communes, départements, régions).</li>
+</ul>
+<!-- ### Référence
+- [Styles de carte](/documentation/api/mapstyle) - Documentation des styles disponibles
+- [Composants](/documentation/api/composants) - Documentation des composants prêts à l'emploi
+ -->
+<br>
+<h3 id="exemples" tabindex="-1">Exemples <a class="header-anchor" href="#exemples">#</a></h3>
+<ul>
+<li><a href="/carte-facile-site/documentation/exemples/carte-simple-maplibre"><strong>Carte simple</strong></a> - Exemple de base pour commencer, qui affiche une carte en utilisant Carte Facile et MapLibre via les liens CDN.</li>
+</ul>
+<br>
+<h2 id="ressources-supplementaires" tabindex="-1">📚 Ressources supplémentaires <a class="header-anchor" href="#ressources-supplementaires">#</a></h2>
+<ul>
+<li><a href="https://maplibre.org/maplibre-gl-js/docs/"><strong>Documentation officielle de MapLibre</strong></a> - Documentation complète de MapLibre GL JS, la bibliothèque cartographique utilisée par Carte Facile.</li>
+</ul>
+
       <div class="fr-grid-row fr-grid-row--right">
 <a class="fr-grid-row fr-grid-row--right fr-link fr-icon-arrow-up-fill fr-link--icon-left" href="#top">
   Haut de page
@@ -685,7 +685,7 @@ pre[class*="language-"] {
           </a>
       </div>
       <div class="fr-footer__content">
-        <p class="fr-footer__content-desc">Fonds de cartes est un service développé par La Fabrique des géocommuns, incubateur de communs à l’IGN. Le code source de ce site web et les ressources proposées par le service sont disponible en licence libre.</p>
+        <p class="fr-footer__content-desc">Carte facile est un service développé par La Fabrique des géocommuns, incubateur de communs à l’IGN. Le code source de ce site web et les ressources proposées par le service sont disponible en licence libre.</p>
         <ul class="fr-footer__content-list">
           <li class="fr-footer__content-item">
             <a class="fr-footer__content-link" target="_blank" rel="noopener external" href="https://legifrance.gouv.fr">legifrance.gouv.fr</a>
@@ -718,7 +718,7 @@ pre[class*="language-"] {
           <a class="fr-footer__bottom-link" href="/carte-facile-site/fr/donnees-personnelles/">Données personnelles</a>
         </li>
         <li class="fr-footer__bottom-item">
-          <a class="fr-footer__bottom-link fr-icon-pencil-line fr-link--icon-left" href="https://github.com/fab-geocommuns/carte-facile-site/blob/main/./content/fr/documentation/index.njk">Modifier cette page</a>
+          <a class="fr-footer__bottom-link fr-icon-pencil-line fr-link--icon-left" href="https://github.com/fab-geocommuns/carte-facile-site/blob/main/./content/fr/documentation/index.md">Modifier cette page</a>
         </li>
         
         <li class="fr-footer__bottom-item">
@@ -812,5 +812,6 @@ pre[class*="language-"] {
 <script type="text/javascript" nomodule="" src="/carte-facile-site/js/dsfr.nomodule.min.js"></script>
 <!-- Script Matomo pour le suivi des visites -->
 <script type="text/javascript" src="/carte-facile-site/js/matomo.js"></script>
+
 </body>
 </html>

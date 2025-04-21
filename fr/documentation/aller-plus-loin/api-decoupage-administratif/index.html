@@ -1,0 +1,1025 @@
+<!doctype html>
+<html lang="fr" data-fr-scheme="system" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="format-detection" content="telephone=no,date=no,address=no,email=no,url=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <meta name="description" content="L&#39;API Découpage Administratif permet d&#39;interroger les référentiels géographiques.">
+  <meta name="theme-color" content="#000091">
+  <link rel="apple-touch-icon" href="/carte-facile-site/favicon/apple-touch-icon.png"><!-- 180×180 -->
+  <link rel="icon" href="/carte-facile-site/favicon/favicon.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="/carte-facile-site/favicon/favicon.ico" type="image/x-icon"><!-- 32×32 -->
+  <link rel="manifest" href="/carte-facile-site/favicon/manifest.webmanifest" crossorigin="use-credentials">
+  <link rel="alternate" href="/carte-facile-site/feed/feed.xml" type="application/atom+xml" title="Carte facile">
+  <link rel="alternate" href="/carte-facile-site/feed/feed.json" type="application/json" title="Carte facile">
+
+  <link rel="stylesheet" href="/carte-facile-site/css/dsfr.min.css">
+  <link rel="stylesheet" href="/carte-facile-site/css/utility/utility.min.css">
+
+
+  <link rel="stylesheet" href="/carte-facile-site/bundle/z-lDvxpAJ-.css">
+
+  <style>/* Defaults */
+:root {
+    --font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+    --syntax-tab-size: 2;
+}
+
+/* Global stylesheet */
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+table {
+    margin: 1em 0;
+}
+
+table td,
+table th {
+    padding-right: 1em;
+}
+
+pre,
+code {
+    font-family: var(--font-family-monospace);
+}
+
+pre[class*="language-"] {
+    margin-bottom: 1.5em !important;
+}
+
+pre:not([class*="language-"]) {
+    margin: .5em 0;
+    line-height: 1.375; /* 22px /16 */
+    -moz-tab-size: var(--syntax-tab-size);
+    -o-tab-size: var(--syntax-tab-size);
+    tab-size: var(--syntax-tab-size);
+    -webkit-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+    direction: ltr;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+}
+
+code {
+    word-break: break-all;
+}
+
+/* Direct Links / Markdown Headers */
+.header-anchor {
+    background-image: none;
+    text-decoration: none;
+    font-style: normal;
+    font-size: 1em;
+    margin-left: .1em;
+}
+
+a[href].header-anchor,
+a[href].header-anchor:visited {
+    color: transparent;
+}
+
+a[href].header-anchor:focus,
+a[href].header-anchor:hover {
+    text-decoration: underline;
+}
+
+a[href].header-anchor:focus,
+:hover > a[href].header-anchor {
+    color: #aaa;
+}
+
+h2 + .header-anchor {
+    font-size: 1.5em;
+}
+
+img {
+    display: block;
+}
+
+p > img {
+    max-width: 100%;
+}
+
+/* Custom DSFR */
+.fr-pagination__list {
+    justify-content: flex-end !important;
+}
+
+@media (min-width: 48em) {
+    .fr-share__group {
+        justify-content: flex-end !important;
+    }
+}
+
+.fr-responsive-img.fr-ratio-auto {
+    object-fit: contain;
+}
+
+.fr-quote__image img {
+    object-fit: cover;
+}
+
+/** Properly render text in Markdown callout containers **/
+div.fr-callout__text p {
+    font-size: inherit;
+    line-height: inherit;
+}
+
+/** Missing icons **/
+.fr-follow .fr-btn--peertube:before,
+.fr-follow .fr-btn--github:before,
+.fr-follow .fr-btn--sourcehut:before {
+    margin-left: 0;
+    margin-right: 0.5rem;
+    flex: 0 0 auto;
+    display: inline-block;
+    vertical-align: calc((0.75em - var(--icon-size)) * 0.5);
+    background-color: currentColor;
+    width: var(--icon-size);
+    height: var(--icon-size);
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    --icon-size: 2rem;
+    content: "";
+}
+
+.fr-follow .fr-btn--peertube:before {
+    -webkit-mask-image: url(../icons/logo/peertube.svg) !important;
+    mask-image: url(../icons/logo/peertube.svg) !important;
+}
+
+.fr-follow .fr-btn--github:before {
+    -webkit-mask-image: url(../icons/logo/github-fill.svg) !important;
+    mask-image: url(../icons/logo/github-fill.svg) !important;
+}
+
+.fr-follow .fr-btn--sourcehut:before {
+    -webkit-mask-image: url(../icons/logo/sourcehut.svg) !important;
+    mask-image: url(../icons/logo/sourcehut.svg) !important;
+}
+
+/* Custom */
+.text-center {
+    text-align: center;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}
+/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}</style>
+
+  <meta name="generator" content="Eleventy v3.0.0">
+
+  <title>API Découpage administratif</title>
+</head>
+<body id="top">
+<script>
+      // Fix FOUC in dark mode
+      setDarkBeforeRender = () => {
+          const localScheme = localStorage.getItem('scheme')
+          if (localScheme === 'dark' || (localScheme === 'system' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+              document.documentElement.setAttribute('data-fr-theme', 'dark');
+          }
+      }
+      setDarkBeforeRender();
+  </script>
+<header role="banner" class="fr-header">
+  <div class="fr-header__body">
+    <div class="fr-container">
+      <div class="fr-header__body-row">
+        <div class="fr-header__brand fr-enlarge-link">
+          <div class="fr-header__brand-top">
+            <div class="fr-header__logo">
+              <p class="fr-logo">République<br>française</p>
+            </div>
+            <div class="fr-header__operator">
+                <img style="width: 5rem" class="fr-responsive-img" src="/carte-facile-site/icons/logo/IGN_logo_Q.svg" alt="Logo IGN">
+                <!-- L’alternative de l’image (attribut alt) doit impérativement être renseignée et reprendre le texte visible dans l’image -->
+            </div>
+            <div class="fr-header__navbar">
+              <button class="fr-btn--menu fr-btn" data-fr-opened="false" aria-controls="modal-491" aria-haspopup="menu" id="button-492" title="Menu">
+                Menu
+              </button>
+            </div>
+          </div>
+          <div class="fr-header__service">
+            <a href="/carte-facile-site/fr/" title="Accueil - Carte facile - La Fabrique des géocommuns, IGN">
+              <p class="fr-header__service-title"> 
+                Carte facile
+                <span class="fr-badge--sm fr-badge--success fr-badge--no-icon">Bêta</span>
+              </p>
+            </a>
+            <p class="fr-header__service-tagline">Intégrez facilement des cartes à vos applications et sites web</p>
+          </div>
+        </div>
+        <div class="fr-header__tools">
+          <div class="fr-header__tools-links">
+            <ul class="fr-btns-group">
+              
+              <li>
+                <a class="fr-btn" href="https://cartes.gouv.fr/" target="_blank">Cartes.gouv.fr</a>
+              </li>
+              <li>
+                <a class="fr-btn" href="https://www.geoportail.gouv.fr/carte" target="_blank">Géoportail</a>
+              </li>
+            </ul>
+            
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="fr-header__menu fr-modal" id="modal-491" aria-labelledby="button-492">
+    <div class="fr-container">
+      <button class="fr-btn--close fr-btn" aria-controls="modal-491" title="Fermer">
+        Fermer
+      </button>
+      <div class="fr-header__menu-links"></div>
+<nav class="fr-nav" id="navigation-494" role="navigation" aria-label="Menu principal">
+  <ul class="fr-nav__list">
+      <li class="fr-nav__item">
+          <a class="fr-nav__link" href="/carte-facile-site/fr/cartes/">
+            Cartes
+          </a>
+      </li>
+      <li class="fr-nav__item">
+          <a class="fr-nav__link" href="/carte-facile-site/fr/documentation/">
+            Documentation
+          </a>
+      </li>
+      <li class="fr-nav__item">
+          <a class="fr-nav__link" href="/carte-facile-site/fr/contribuer/">
+            Contribuer
+          </a>
+      </li>
+      <li class="fr-nav__item">
+          <button class="fr-nav__btn" aria-expanded="false" aria-controls="menu-4">
+            À propos
+          </button>
+          <div class="fr-collapse fr-menu" id="menu-4">
+            <ul class="fr-menu__list">
+                <li>
+                  <a class="fr-nav__link" href="/carte-facile-site/fr/a-propos/">
+                    Présentation
+                  </a>
+                </li>
+                <li>
+                  <a class="fr-nav__link" href="/carte-facile-site/fr/contact/">
+                    Contact
+                  </a>
+                </li>
+            </ul>
+          </div>
+      </li>
+  </ul>
+</nav>
+
+<script>
+(() => {
+    // Récupérer l'URL complète de la page
+    const currentUrl = window.location.href;
+    console.log("Current URL:", currentUrl); // Affiche l'URL actuelle dans la console
+
+    // Sélectionner tous les liens de navigation
+    const allLinks = document.querySelectorAll('.fr-nav__link');
+
+    allLinks.forEach(link => {
+        // Vérifier si l'URL actuelle commence par l'URL du lien
+        if (currentUrl.startsWith(link.href)) {
+            // Marquer le lien comme courant
+            link.ariaCurrent = "page";
+
+            // Ouvrir le menu parent si le lien a des enfants
+            const parentItem = link.closest('.fr-nav__item');
+            const button = parentItem.querySelector('.fr-nav__btn');
+            if (button) {
+                button.ariaExpanded = true; // Ouvrir le collapse
+            }
+        }
+    });
+})();
+</script>    </div>
+  </div>
+</header>
+
+<main id="content">
+  
+<div class="fr-container">
+  <div class="fr-grid-row">
+    <div class="fr-col-12 fr-col-md-4">
+<nav class="fr-sidemenu fr-sidemenu--sticky-full-height fr-mb-0-5v" role="navigation" aria-labelledby="fr-sidemenu-title">
+    <div class="fr-sidemenu__inner fr-pt-12v">
+        <button class="fr-sidemenu__btn" aria-controls="fr-sidemenu-wrapper" aria-expanded="false">
+            Menu de la documentation
+        </button>
+        <div class="fr-collapse" id="fr-sidemenu-wrapper">
+            <ul class="fr-sidemenu__list">
+                <li class="fr-sidemenu__item">
+                        <button class="fr-sidemenu__btn" aria-expanded="false" aria-controls="sidemenu-1">
+                            Premiers pas
+                        </button>
+                        <div class="fr-collapse" id="sidemenu-1">
+                            <ul class="fr-sidemenu__list">
+                                <li class="fr-sidemenu__item">
+                                <a class="fr-sidemenu__link" href="/carte-facile-site/fr/documentation/premiers-pas/installation/">
+                                    Installation
+                                </a>
+                                </li>
+                                <li class="fr-sidemenu__item">
+                                <a class="fr-sidemenu__link" href="/carte-facile-site/fr/documentation/premiers-pas/ajouter-une-carte/">
+                                    Ajouter une carte
+                                </a>
+                                </li>
+                            </ul>
+                        </div>
+                </li>
+                <li class="fr-sidemenu__item">
+                        <button class="fr-sidemenu__btn" aria-expanded="false" aria-controls="sidemenu-2">
+                            Aller plus loin
+                        </button>
+                        <div class="fr-collapse" id="sidemenu-2">
+                            <ul class="fr-sidemenu__list">
+                                <li class="fr-sidemenu__item">
+                                <a class="fr-sidemenu__link" href="/carte-facile-site/fr/documentation/aller-plus-loin/concepts-fondamentaux/">
+                                    Concepts fondamentaux
+                                </a>
+                                </li>
+                                <li class="fr-sidemenu__item">
+                                <a class="fr-sidemenu__link" href="/carte-facile-site/fr/documentation/aller-plus-loin/api-adresse/">
+                                    API Adresse
+                                </a>
+                                </li>
+                                <li class="fr-sidemenu__item">
+                                <a class="fr-sidemenu__link" href="/carte-facile-site/fr/documentation/aller-plus-loin/api-decoupage-administratif/" aria-current="page">
+                                    API Découpage administratif
+                                </a>
+                                </li>
+                            </ul>
+                        </div>
+                </li>
+                <li class="fr-sidemenu__item">
+                        <button class="fr-sidemenu__btn" aria-expanded="false" aria-controls="sidemenu-3">
+                            Exemples
+                        </button>
+                        <div class="fr-collapse" id="sidemenu-3">
+                            <ul class="fr-sidemenu__list">
+                                <li class="fr-sidemenu__item">
+                                <a class="fr-sidemenu__link" href="/carte-facile-site/fr/documentation/exemples/carte-simple-maplibre-cdn/">
+                                    Carte simple avec MapLibre et CDN
+                                </a>
+                                </li>
+                            </ul>
+                        </div>
+                </li>
+            </ul>
+        </div>
+  </div>
+</nav>
+
+<script>
+    (() => {
+        // Récupérer l'URL complète de la page
+        const currentUrl = window.location.href;
+
+        // Sélectionner le lien correspondant à l'URL actuelle
+        const link = Array.from(document.querySelectorAll('.fr-sidemenu__link')).find(link => link.href === currentUrl);
+
+        if (link) {
+            link.ariaCurrent = "page"
+
+            /**
+            * Parcourir les liens du sidemenu, (boucle jusqu'à trouver fr-sidemenu__inner)
+            * - si l'élément à la classe fr-collapse (c'est la div qui enrobe la sous-liste actuelle), ajouter sur sur son element précédent (le button) el.previousElementSibling.ariaExpanded = true pour ouvrir le collapse.
+            * - Et lui ajouter l'attribut aria-current="true"
+            */
+            let el = link.parentElement
+            do {
+                if (el?.classList?.contains("fr-collapse")) {
+                    el.previousElementSibling.ariaExpanded = true
+                    el.ariaCurrent = "true"
+                }
+
+                el = el.parentElement
+            } while (!el?.classList?.contains("fr-sidemenu__inner")); // on est arrivés an haut du sommaire, on a fini la boucle
+        }
+
+        const allLinks = document.querySelectorAll("a.fr-sidemenu__link")
+
+        const handleClick = (e) => {
+            allLinks.forEach(link => link.ariaCurrent = null)
+            e.currentTarget.ariaCurrent = "page"
+        }
+
+        allLinks.forEach(link => {
+            link.addEventListener("click", handleClick)
+        })
+    })();
+</script>
+    </div>
+    <div id="contenu" class="fr-col-12 fr-col-md-8 fr-py-12v">
+      <div class="fr-grid-row">
+        <div class="fr-col-12 fr-col-md-9">
+          <hgroup>
+            <h1>API Découpage administratif</h1>
+          </hgroup>
+        </div>
+        <div class="fr-col-12 fr-col-md-3">
+          <a class="fr-btn fr-btn--sm fr-btn--tertiary fr-btn--icon-left fr-icon-edit-line" href="https://github.com/fab-geocommuns/carte-facile-site/blob/main/./content/fr/documentation/aller-plus-loin/api-decoupage-administratif.md">
+            Modifier cette page
+          </a>
+        </div> 
+      </div>
+      <p>L'API Découpage adminnistratif vous permet d'obtenir des données administratives françaises à différentes échelles et selon différentes années (millésimes).
+Vous pouvez par exemple rechercher une commune par nom ou code postal dans un formulaire, ou encore rechercher des EPCI, des départements et des régions.</p>
+<p><em>Concernant les régions et départements, leur nombre étant limité et leurs noms étant relativement stables, il est également possible de gérer ces informations côté client.</em></p>
+<div class="fr-callout">
+  <h3 class="fr-callout__title">Documentation officielle</h3>
+  <p class="fr-callout__text">
+    Le site de l&#39;API présente plus de détails sur les paramètres et points de terminaison de l&#39;API Découpage administratif. 
+    Des démos sont disponibles afin de tester et explorer son fonctionnement.
+  </p>
+    <a class="fr-btn" href="https://geo.api.gouv.fr/decoupage-administratif">
+      Consulter la documentation
+    </a>
+</div>
+<h2 id="fonctionnalites-principales-de-l-api" tabindex="-1">Fonctionnalités principales de l’API <a class="header-anchor" href="#fonctionnalites-principales-de-l-api">#</a></h2>
+<ul>
+<li><strong>Recherche :</strong>  par nom, code postal ou Insee, pour des communes, communes associées et déléguées, EPCI, départements et régions.</li>
+<li><strong>Obtenir des informations générales et géométries :</strong> comme le SIREN d'une EPCI, les contours d'une communes, l'emplacement de la mairie sur la commune, etc.</li>
+</ul>
+<br>
+<h2 id="cas-d-usages" tabindex="-1">Cas d'usages <a class="header-anchor" href="#cas-d-usages">#</a></h2>
+<p>Dans un site web, l’API est très utile pour permettre de faire l'auto-complétion, qu’il s’agisse d’un formulaire ou pour permettre de zoomer sur une commune trouvée dans un contexte web.</p>
+<p>En voici un exemple : https://gist.githack.com/ThomasG77/0b99013795f76699c5c9a0d7daf4411e/raw/a6b65c033efa73cecb3ea8473ba83aabc973d373/index.html</p>
+<p><em>Ici, la partie importante se base sur un simple <a href="https://developer.mozilla.org/fr/docs/Web/API/Fetch_API">Fetch</a>.</em></p>
+<p>Un autre exemple d'utilisation est le remplissage de coordonnées dansun tableaur. Voici un exemple sur Libre Office : <a href="https://medium.com/@ThomasG77/api-et-g%C3%A9ocodage-dans-libre-office-calc-488ab78dc360">API et géocodage dans Libre Office Calc</a></p>
+<br>
+<hr>
+<h2 id="en-savoir-plus" tabindex="-1">En savoir plus <a class="header-anchor" href="#en-savoir-plus">#</a></h2>
+<h3 id="exemples-d-appels-api" tabindex="-1">Exemples d'appels API <a class="header-anchor" href="#exemples-d-appels-api">#</a></h3>
+<div class="fr-accordions-group">
+<section class="fr-accordion">
+    <h3 class="fr-accordion__title">
+        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-47">
+            Pour récupérer des communes
+        </button>
+    </h3>
+    <div class="fr-collapse" id="accordion-47">
+<ul>
+<li><strong>Rechercher par code postal :</strong> <a href="https://geo.api.gouv.fr/communes?codePostal=78000">https://geo.api.gouv.fr/communes?codePostal=78000</a></li>
+<li><strong>Rechercher par code INSEE :</strong> <a href="https://geo.api.gouv.fr/communes?code=44109">https://geo.api.gouv.fr/communes?code=44109</a></li>
+<li><strong>Rechercher par nom :</strong> <a href="https://geo.api.gouv.fr/communes?nom=Nantes&amp;boost=population&amp;limit=5">https://geo.api.gouv.fr/communes?nom=Nantes&amp;boost=population&amp;limit=5</a> (on ajoute un boost par population pour que la plus grande commune soit privilégiée)</li>
+<li><strong>Rechercher par coordonnées :</strong> <a href="https://geo.api.gouv.fr/communes?lat=47.0482944&amp;lon=-1.1501568">https://geo.api.gouv.fr/communes?lat=47.0482944&amp;lon=-1.1501568</a></li>
+<li><strong>Filtrer par département</strong> pour éviter les problèmes liés à l'homonymie de commune, par exemple la commune de Saint-Aubin existe dans les départements 10, 21, 36, 39, 40, 47, 59, 62, 91 et 02 : <a href="https://geo.api.gouv.fr/communes?nom=Saint-Aubin&amp;codeDepartement=21">https://geo.api.gouv.fr/communes?nom=Saint-Aubin&amp;codeDepartement=21</a></li>
+<li><strong>Obtenir toutes les communes d'un département :</strong> <a href="https://geo.api.gouv.fr/departements/44/communes">https://geo.api.gouv.fr/departements/44/communes</a></li>
+<li><strong>Obtenir toutes les communes d'une région :</strong> <a href="https://geo.api.gouv.fr/communes?codeRegion=84">https://geo.api.gouv.fr/communes?codeRegion=84</a></li>
+</ul>
+<p>Ces exemples ne filtrent pas les champs, ne permettent pas d'obtenir les géométries pour les communes. La meilleure manière de comprendre comment cela fonctionne est d'utiliser la démo <a href="https://geo.api.gouv.fr/decoupage-administratif/communes#advanced">recherche avancée de la documentation officielle</a>. Elle permet, en cochant, de voir comment l'URL d'appel change en particulier l'option fields pour ne retourner que les colonnes/champs nécessaires.</p>
+</div></section>
+
+<section class="fr-accordion">
+    <h3 class="fr-accordion__title">
+        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-89">
+            Pour récupérer des régions et départements
+        </button>
+    </h3>
+    <div class="fr-collapse" id="accordion-89">
+<p>Le principal intérêt est la correspondance entre un nom et un code. Par exemple si on veut obtenir le code :</p>
+<ul>
+<li><strong>pour la région :</strong> <a href="https://geo.api.gouv.fr/regions?nom=Auvergne">https://geo.api.gouv.fr/regions?nom=Auvergne</a></li>
+<li><strong>pour le département :</strong> <a href="https://geo.api.gouv.fr/departements?nom=Ain">https://geo.api.gouv.fr/departements?nom=Ain</a></li>
+</ul>
+<p>Comme les départements et régions changent très rarement, il est envisageable d'avoir les fichiers globaux JSON plutôt que passer par des appels API. On a ainsi sous forme JSON (sans géométrie) :</p>
+<ul>
+<li><strong><a href="https://unpkg.com/@etalab/decoupage-administratif@4.1.0/data/departements.json">Les départements</a></strong></li>
+<li><strong><a href="https://unpkg.com/@etalab/decoupage-administratif@4.1.0/data/regions.json">Les régions</a></strong></li>
+</ul>
+</div></section>
+</div>
+<br>
+<h3 id="informations-pratiques" tabindex="-1">Informations pratiques <a class="header-anchor" href="#informations-pratiques">#</a></h3>
+<div class="fr-accordions-group">
+<section class="fr-accordion">
+    <h3 class="fr-accordion__title">
+        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-127">
+            Concernant les informations des communes
+        </button>
+    </h3>
+    <div class="fr-collapse" id="accordion-127">
+<ul>
+<li>La longueur des noms de commune peut être problématique.</li>
+<li>Il existe une normalisation des noms de communes.</li>
+<li>Il existe des communes homonymes, le nom n'est donc pas un identifiant fiable.</li>
+<li>Le code postal ne correspond pas à toujours à une seule commune.</li>
+<li>Certaines communes ont plusieurs codes postaux.</li>
+<li>Le code postal peut contenir le code d'un autre département que son département réel.</li>
+</ul>
+</div></section>
+
+<section class="fr-accordion">
+    <h3 class="fr-accordion__title">
+        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-161">
+            Concernant les géométries des communes
+        </button>
+    </h3>
+    <div class="fr-collapse" id="accordion-161">
+<ul>
+<li>Si vous souhaitez les GeoJSON avec <strong>le centre de la commune :</strong> rajoutez aux URLs de la première partie <code>&amp;format=geojson&amp;geometry=centre</code> si votre URL contient déjà un <code>?</code> sinon il faut ajouter plutôt <code>?format=geojson&amp;geometry=centre</code></li>
+<li>Si vous souhaitez les GeoJSON avec <strong>le contour de la commune :</strong> rajoutez aux URLs de la première partie <code>&amp;format=geojson&amp;geometry=contour</code> si votre URL contient déjà un <code>?</code> sinon il faut ajouter plutôt <code>?format=geojson&amp;geometry=contour</code></li>
+</ul>
+<br>
+<p><strong>Un exemple pour illustrer :</strong></p>
+<p>L'appel initial est : <a href="https://geo.api.gouv.fr/communes?lat=47.0482944&amp;lon=-1.1501568">https://geo.api.gouv.fr/communes?lat=47.0482944&amp;lon=-1.1501568</a></p>
+<br>
+<p>Il devient :</p>
+<ul>
+<li>Si l’on souhaite le centre de la commune : <a href="https://geo.api.gouv.fr/communes?lat=47.0482944&amp;lon=-1.1501568&amp;format=geojson&amp;geometry=centre">https://geo.api.gouv.fr/communes?lat=47.0482944&amp;lon=-1.1501568&amp;format=geojson&amp;geometry=centre</a></li>
+<li>Si l’on souhaite le contour de la commune : <a href="https://geo.api.gouv.fr/communes?lat=47.0482944&amp;lon=-1.1501568&amp;format=geojson&amp;geometry=contour">https://geo.api.gouv.fr/communes?lat=47.0482944&amp;lon=-1.1501568&amp;format=geojson&amp;geometry=contour</a></li>
+</ul>
+<br>
+<p>Il faut également penser à mettre en cache quand on a des appels lourds qui ne changent pas ou qu'on retourne des contours. Ainsi :</p>
+<ul>
+<li>Sans contour, la réponse fait 480Ko <a href="https://geo.api.gouv.fr/communes?codeRegion=84">https://geo.api.gouv.fr/communes?codeRegion=84</a></li>
+<li>Avec contour, la réponse fait 34Mo <a href="https://geo.api.gouv.fr/communes?codeRegion=84&amp;format=geojson&amp;geometry=contour">https://geo.api.gouv.fr/communes?codeRegion=84&amp;format=geojson&amp;geometry=contour</a></li>
+</ul>
+<br>
+<p>Vous pouvez très bien sauvegarder dans un fichier le résultat des URLs ci-dessus : le résultat ne va pas changer en permanence car ce n'est pas de l'autocomplétion.</p>
+</div></section>
+
+<section class="fr-accordion">
+    <h3 class="fr-accordion__title">
+        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-218">
+            Bonnes pratiques à adopter
+        </button>
+    </h3>
+    <div class="fr-collapse" id="accordion-218">
+<p>Partout où vous le pouvez, utilisez le code INSEE du COG (<a href="https://www.data.gouv.fr/fr/datasets/code-officiel-geographique-cog/">Code Officiel Géographique</a>) plutôt qu'un code postal ou un nom. Celui-ci est le plus fiable dans le temps même si des cas particuliers emergent parfois suite aux évolutions des communes (fusions ou séparation).</p>
+<p>Avec l'API Découpage Administratif, cette complexité du COG est cachée. Si vous avez des besoins avancés, vous pouvez utiliser soit <a href="https://www.insee.fr/fr/information/2560452">les fichiers du COG</a> soit pour une recherche ponctuel, passer par <a href="https://www.insee.fr/fr/recherche/recherche-geographique?debut=0">l'interface de recherche de commune</a>.</p>
+</div></section>
+</div>
+<br>
+<h3 id="sources-alternatives-pour-les-communes" tabindex="-1">Sources alternatives pour les communes <a class="header-anchor" href="#sources-alternatives-pour-les-communes">#</a></h3>
+<div class="fr-accordions-group">
+<section class="fr-accordion">
+    <h3 class="fr-accordion__title">
+        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-232">
+            Utiliser le WFS de l'IGN
+        </button>
+    </h3>
+    <div class="fr-collapse" id="accordion-232">
+<p>Un <a href="https://fr.wikipedia.org/wiki/Web_Feature_Service">WFS</a> (Web Feature Service) est un service web d’inspiration SOAP. Il est basé sur une approche en <a href="https://fr.wikipedia.org/wiki/Extensible_Markup_Language">XML</a>.</p>
+<p>Le WFS de l’IGN existe en version 1.0.0, 1.1.0 et 2.0.0. Cette dernière rajoute des facilités en particulier pour paginer les appels. Généralement, sauf si le serveur est très ancien, c'est la version 2.0.0 qu'il faut privilégier.</p>
+<p>Même s'il est possible de retrouver comment fonctionne le WFS en regardant le <a href="https://www.ogc.org/standards/wfs">standard WFS</a>, nous vous recommandons plutôt d'aller sur <a href="https://georezo.net/wiki/main/standards/wfs">la page WFS du site GeoRezo.net</a>. Ce n'est pas un prérequis ici mais pourra vous aider à approfondir le sujet si vous devez utiliser ce standard plus régulièrement.</p>
+<p>Si vous avez besoin de récupérer toutes les communes, il est plutôt recommandé de récupérer les données brutes depuis <a href="https://geoservices.ign.fr/adminexpress">Admin Express</a>, documenté aussi sur cette page. Nous vous recommandons d'avoir installé <a href="https://gdal.org/en/stable/">GDAL</a>, un utilitaire en ligne de commande.</p>
+<p>Son principal intérêt est de pallier à certains scénarios que n'adresse pas l'API Découpage administratif. Il nécessite de comprendre quelques préalables.</p>
+<h4 id="lister-les-couches-d-un-endpoint-wfs" tabindex="-1">Lister les couches d'un endpoint WFS <a class="header-anchor" href="#lister-les-couches-d-un-endpoint-wfs">#</a></h4>
+<p>On doit pouvoir lister les couches du service fournissant les communes.</p>
+<p><em>Dans le navigateur c'est peu lisible, car c'est un XML avec un &quot;GetCapabilities&quot;.</em></p>
+<p>Avec GDAL :</p>
+<pre class="language-bash" tabindex="0"><code class="language-bash">ogrinfo <span class="token parameter variable">-so</span> WFS:https://wxs.ign.fr/administratif/geoportail/wfs</code></pre>
+<p>Astuce : recommencez avec l'option <code>--DEBUG ON</code> comme ci-dessous :</p>
+<pre class="language-bash" tabindex="0"><code class="language-bash">ogrinfo <span class="token parameter variable">--DEBUG</span> ON <span class="token parameter variable">-so</span> WFS:https://wxs.ign.fr/administratif/geoportail/wfs</code></pre>
+<p>L'intérêt de la manoeuvre est de pouvoir comprendre les appels HTTP utilisés lors de l'usage du WFS plutôt que devoir apprendre la spécification WFS.</p>
+<h4 id="trouver-la-structure-du-wfs" tabindex="-1">Trouver la structure du WFS <a class="header-anchor" href="#trouver-la-structure-du-wfs">#</a></h4>
+<p>Trouver la structure du WFS est important, car pour pouvoir filtrer vous pouvez utiliser des filtres qui jouent soit sur les attributs, soit sur des propriétés spatiales. Il s’agit donc de connaître le nom des champs, et potentiellement le nom de la colonne contenant la géométrie pour pouvoir effectuer les requêtes spatiales.</p>
+<p>On part dans cet exemple de la couche <code>ADMINEXPRESS-COG.LATEST:commune</code></p>
+<p>Avec GDAL, en ligne de commande :</p>
+<pre class="language-bash" tabindex="0"><code class="language-bash">ogrinfo <span class="token parameter variable">-so</span> <span class="token parameter variable">-noextent</span> WFS:https://wxs.ign.fr/administratif/geoportail/wfs <span class="token string">"ADMINEXPRESS-COG.LATEST:commune"</span></code></pre>
+<p>Dans les deux cas, on sait quelles sont les colonnes disponibles. On pourra réutiliser leur nom pour faire des filtres ou choisir les colonnes qui seront retournées.</p>
+<h4 id="usages-du-wfs" tabindex="-1">Usages du WFS <a class="header-anchor" href="#usages-du-wfs">#</a></h4>
+<p>Nous avons appris quelles couches contiennent un WFS et quelle est la structure d'une couche comme ses noms de champs. Maintenant nous allons pouvoir consommer la couche pour la filtrer.</p>
+<p>Il est possible de le faire via un appel à une URL ou en passant pas des utilitaires associés à GDAL, utiles pour notre besoin :</p>
+<ul>
+<li>le premier <code>ogrinfo</code> permet d'inspecter le contenu d'une source de données, dans ce cas particulier, un WFS.</li>
+<li>le second <code>ogr2ogr</code> permet de consommer le WFS en utilisant si nécessaire la pagination et surtout de transformer le GML dans d'autres formats géographiques comme le SHP (Shapefile), le GPKG (Geopackage), le GeoJSON, le CSV parmi les formats géospatiaux les plus courants.</li>
+</ul>
+<p>Parmi les cas régulièrement demandés, il nous est demandé de répondre à des besoins de multi-filtrage. Par exemple, si on veut les communes de plusieurs régions ou départements :</p>
+<pre class="language-bash" tabindex="0"><code class="language-bash"><span class="token comment"># Filtrer les communes pour plusieurs départements en retournant un GeoJSON</span>
+ogr2ogr <span class="token parameter variable">-f</span> GeoJSON communes-44-35.geojson <span class="token punctuation">\</span>
+        <span class="token parameter variable">--config</span> OGR_WFS_PAGING_ALLOWED ON <span class="token punctuation">\</span>
+        <span class="token parameter variable">--config</span> OGR_WFS_PAGE_SIZE <span class="token number">250</span> <span class="token punctuation">\</span>
+        WFS:https://wxs.ign.fr/administratif/geoportail/wfs <span class="token punctuation">\</span>
+        <span class="token parameter variable">-sql</span> <span class="token string">"SELECT * FROM <span class="token entity" title="\&quot;">\"</span>ADMINEXPRESS-COG.LATEST:commune<span class="token entity" title="\&quot;">\"</span> WHERE insee_dep IN ('44', '35')"</span> <span class="token punctuation">\</span>
+        <span class="token parameter variable">-lco</span> <span class="token assign-left variable">RFC7946</span><span class="token operator">=</span>YES</code></pre>
+<p>Nous vous proposons des recettes ci-dessous. La majorité n'utilise que les communes mais nous employons ponctuellement les EPCI, ayant parfois des demandes pour adresser comment les récupérer ou récupérer leurs communes.</p>
+<p>On peut dans un premier temps récupérer la commune qui a un code INSEE car elle contient aussi le SIRET de l'EPCI :</p>
+<pre class="language-bash" tabindex="0"><code class="language-bash"><span class="token comment"># Obtenir la commune par code commune INSEE sous forme CSV</span>
+ogr2ogr <span class="token parameter variable">-f</span> CSV commune-44109.csv WFS:https://wxs.ign.fr/administratif/geoportail/wfs <span class="token parameter variable">-sql</span> <span class="token string">"SELECT * FROM <span class="token entity" title="\&quot;">\"</span>ADMINEXPRESS-COG.LATEST:commune<span class="token entity" title="\&quot;">\"</span> WHERE insee_com = '44109'"</span></code></pre>
+<p>En inspectant le fichier <code>epci-with-44109-from-geom.csv</code>, on voit que le code SIREN est <code>244400404</code>. On peut ainsi retourner les communes qui sont membres de l'EPCI :</p>
+<pre class="language-bash" tabindex="0"><code class="language-bash"><span class="token comment"># Obtenir les communes de l'EPCI grâce au code Siren de l'EPCI</span>
+ogr2ogr <span class="token parameter variable">-f</span> GeoJSON communes-epci-with-44109.geojson WFS:https://wxs.ign.fr/administratif/geoportail/wfs <span class="token parameter variable">-sql</span> <span class="token string">"SELECT * FROM <span class="token entity" title="\&quot;">\"</span>ADMINEXPRESS-COG.LATEST:commune<span class="token entity" title="\&quot;">\"</span> WHERE siren_epci = '244400404'"</span></code></pre>
+<p>On pourrait aussi obtenir la commune qui contient le point de longitude -1.54241 et latitude 47.21791 sous forme CSV puis depuis le code SIREN, faire la même opération que ci-dessus :</p>
+<pre class="language-bash" tabindex="0"><code class="language-bash">ogr2ogr <span class="token parameter variable">-f</span> CSV commune-44109-from-geom.csv WFS:https://wxs.ign.fr/administratif/geoportail/wfs <span class="token parameter variable">-sql</span> <span class="token string">"SELECT * FROM <span class="token entity" title="\&quot;">\"</span>ADMINEXPRESS-COG.LATEST:commune<span class="token entity" title="\&quot;">\"</span> WHERE ST_Contains(ST_GeomFromText('POINT(-1.54241 47.21791)', 'EPSG:4326'), the_geom)"</span> <span class="token parameter variable">-lco</span> <span class="token assign-left variable">RFC7946</span><span class="token operator">=</span>YES</code></pre>
+<p>Il est possible aussi d'obtenir l'EPCI lui-même :</p>
+<ul>
+<li>depuis un code SIREN :</li>
+</ul>
+<pre class="language-bash" tabindex="0"><code class="language-bash">ogr2ogr <span class="token parameter variable">-f</span> GeoJSON epci-with-44109-from-siren.geojson WFS:https://wxs.ign.fr/administratif/geoportail/wfs <span class="token parameter variable">-sql</span> <span class="token string">"SELECT * FROM <span class="token entity" title="\&quot;">\"</span>ADMINEXPRESS-COG.LATEST:epci<span class="token entity" title="\&quot;">\"</span> WHERE code_siren = '244400404'"</span></code></pre>
+<ul>
+<li>depuis un point qui est est contenu dans l'EPCI :</li>
+</ul>
+<pre class="language-bash" tabindex="0"><code class="language-bash">ogr2ogr <span class="token parameter variable">-f</span> GeoJSON epci-with-44109-from-geom.geojson WFS:https://wxs.ign.fr/administratif/geoportail/wfs <span class="token parameter variable">-sql</span> <span class="token string">"SELECT * FROM <span class="token entity" title="\&quot;">\"</span>ADMINEXPRESS-COG.LATEST:epci<span class="token entity" title="\&quot;">\"</span> WHERE ST_Contains(ST_GeomFromText('POINT(-1.54241 47.21791)', 'EPSG:4326'), the_geom)"</span></code></pre>
+<h4 id="pourquoi-ne-pas-passer-par-le-wfs-pour-de-l-autocompletion" tabindex="-1">Pourquoi ne pas passer par le WFS pour de l'autocomplétion ? <a class="header-anchor" href="#pourquoi-ne-pas-passer-par-le-wfs-pour-de-l-autocompletion">#</a></h4>
+<p>Cela demeure nettement plus lent qu'une API dédiée car il n'y a pas d'index spécifiques pour cet usage.</p>
+</div></section>
+
+<section class="fr-accordion">
+    <h3 class="fr-accordion__title">
+        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-350">
+            Passer par le fichier Admin Express
+        </button>
+    </h3>
+    <div class="fr-collapse" id="accordion-350">
+<p>Il s'agit de la solution à privilégier lorsque l'on a besoin de travailler avec les données France entière et qu'on dispose d'un back-end.</p>
+<h4 id="contexte" tabindex="-1">Contexte <a class="header-anchor" href="#contexte">#</a></h4>
+<p>Historiquement, il existait un produit nommé Geofla pour avoir les communes, qui depuis a été remplacé par un nouveau jeu de données dit <strong>Admin Express</strong> qui contient les données suivantes :</p>
+<ul>
+<li>DEPARTEMENT (Polygon)</li>
+<li>COMMUNE_ASSOCIEE_OU_DELEGUEE (Polygon)</li>
+<li>COMMUNE (Polygon)</li>
+<li>COLLECTIVITE_TERRITORIALE (Polygon)</li>
+<li>ARRONDISSEMENT_MUNICIPAL (Polygon)</li>
+<li>EPCI (Polygon)</li>
+<li>REGION (Polygon)</li>
+<li>CANTON (Polygon)</li>
+<li>CHFLIEU_COMMUNE_ASSOCIEE_OU_DELEGUEE (Point)</li>
+<li>CHFLIEU_COMMUNE (Point)</li>
+<li>CHFLIEU_ARRONDISSEMENT_MUNICIPAL (Point)</li>
+<li>ARRONDISSEMENT (Polygon)</li>
+</ul>
+<p>Le jeu de données et la documentation officielle sont disponibles <a href="https://geoservices.ign.fr/adminexpress">la page officielle Admin Express</a>.</p>
+<h4 id="choisir-entre-les-differents-produits-admin-express" tabindex="-1">Choisir entre les différents produits Admin Express <a class="header-anchor" href="#choisir-entre-les-differents-produits-admin-express">#</a></h4>
+<p>Il existe des <strong>différences entre les produits Admin Express</strong> et nous vous invitons à consulter <a href="https://geoservices.ign.fr/admin-express-passe-la-grande-echelle">cet article qui résume ces différences</a>.</p>
+<p>Ce qu'il faut retenir pour choisir les produits :</p>
+<ul>
+<li>Si vous avez besoin de suivre l'évolution des communes par mois --&gt; prenez &quot;Admin Express&quot; simple.</li>
+<li>Si vous voulez faire des cartes thématiques qui utilisent les données INSEE --&gt; prenez les données &quot;Admin Express COG Carto&quot; qui sont généralisées c'est-à-dire avec moins de points pour les contours.</li>
+<li>Si vous avez besoin de compter par exemple les commerces qui sont dans une commune mais aussi de faire des cartes thématiques --&gt; prenez &quot;Admin Express COG&quot; car les coordonnées sont plus précises.</li>
+</ul>
+<br>
+<h4 id="eviter-le-piege-des-projections" tabindex="-1">Eviter le &quot;piège&quot; des projections <a class="header-anchor" href="#eviter-le-piege-des-projections">#</a></h4>
+<p>L'autre difficulté lors de la récupération de ces données est de prendre les données dans les &quot;bonnes projections&quot; : il existe des jeux de données dont la description mentionne &quot;par territoire&quot; et &quot;France entière&quot;.</p>
+<p>Pour comprendre (en empruntant des raccourcis), il faut savoir que la France utilise &quot;des systèmes de projection officiels&quot; qui définissent comment &quot;bien placer les coordonnées mesurées&quot;.</p>
+<p>Ces systèmes sont choisis pour pouvoir garder une grande précision de mesure qui permettent ensuite d'être sûr de l'emplacement de votre maison au centimètre près. L'inconvénient est qu'ils fonctionnent sur des étendues faibles : ils sont différents sur la métropole et sur les DOM.</p>
+<ul>
+<li>Si vous prenez les données &quot;par territoire&quot;, vous récupérerez les données pour chaque territoire séparément avec chacun sa projection officielle.</li>
+<li>Si vous prenez France entière, vous aurez les données assemblées dans une projection mondiale indépendamment des territoires.</li>
+</ul>
+<p>Ainsi :</p>
+<ul>
+<li>Si vous devez travailler sur France métropolitaine et DOM --&gt; vous pouvez prendre les données &quot;France entière&quot;.</li>
+<li>Si vous travaillez uniquement sur un DOM ou uniquement la métropole --&gt; vous pourrez travailler tant avec les données &quot;par territoire&quot; que &quot;France entière&quot;.</li>
+</ul>
+</div></section>
+</div>
+
+      <div class="fr-grid-row fr-grid-row--right">
+<a class="fr-grid-row fr-grid-row--right fr-link fr-icon-arrow-up-fill fr-link--icon-left" href="#top">
+  Haut de page
+</a>      </div>
+    </div>
+  </div>
+</div>
+</main>
+
+<div class="fr-follow">
+  <div class="fr-container">
+    <div class="fr-grid-row">
+      <div class="fr-col-12">
+        <div class="fr-follow__newsletter">
+          <div>
+            <h2 class="fr-h5">Rejoignez notre lettre d&#39;information !</h2>
+            <p class="fr-text--sm">Pour suivre nos actualités et avancées sur le projet et participer à son évolution si vous le souhaitez.</p>
+          </div>
+          <div class="fr-btns-group fr-btns-group--inline-md">
+            <a class="fr-btn" title="S&#39;abonner" href="https://e1671ed4.sibforms.com/serve/MUIFAKl24WyvoB2G2yCuFTh18zGaDqJPo8CJPKK6N1dw3314KlDAVZ-_KAMSw_AkSv3ZCf130r6qtYu18cjfukSugHXxFizO7n7SJxv7tKzhRKpDeUHRd-RG2Y7eCLsPgCJpZW8wvzem6wmBHEyjMC-pZhLVCbwBwBSByJXzC3OAVqKQ4wzW7xVBeo0pbiS2gopJXIgoOtdX8yoL" target="_blank" rel="noopener">
+              S&#39;abonner
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<footer class="fr-footer" role="contentinfo" id="footer">
+  <div class="fr-container">
+    <div class="fr-footer__body">
+      <div class="fr-footer__brand fr-enlarge-link">
+          <p class="fr-logo">
+              République
+              <br>Française
+          </p>
+          <a class="fr-footer__brand-link" href="/carte-facile-site/" title="Retour à l'accueil du site - [À MODIFIER - texte alternatif de l'image : nom de l'opérateur ou du site serviciel] - République Française">
+              <img class="fr-footer__logo" style="width:7rem;" src="/carte-facile-site/icons/logo/IGN_logo_Q.svg" alt="Logo IGN">
+          </a>
+      </div>
+      <div class="fr-footer__content">
+        <p class="fr-footer__content-desc">Carte facile est un service développé par La Fabrique des géocommuns, incubateur de communs à l’IGN. Le code source de ce site web et les ressources proposées par le service sont disponible en licence libre.</p>
+        <ul class="fr-footer__content-list">
+          <li class="fr-footer__content-item">
+            <a class="fr-footer__content-link" target="_blank" rel="noopener external" href="https://legifrance.gouv.fr">legifrance.gouv.fr</a>
+          </li>
+          <li class="fr-footer__content-item">
+            <a class="fr-footer__content-link" target="_blank" rel="noopener external" href="https://gouvernement.fr">gouvernement.fr</a>
+          </li>
+          <li class="fr-footer__content-item">
+            <a class="fr-footer__content-link" target="_blank" rel="noopener external" href="https://service-public.fr">service-public.fr</a>
+          </li>
+          <li class="fr-footer__content-item">
+            <a class="fr-footer__content-link" target="_blank" rel="noopener external" href="https://data.gouv.fr">data.gouv.fr</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fr-footer__bottom">
+      <ul class="fr-footer__bottom-list">
+        <li class="fr-footer__bottom-item">
+          <a class="fr-footer__bottom-link" href="/carte-facile-site/sitemap/">Plan du site</a>
+        </li>
+        <li class="fr-footer__bottom-item">
+          <a class="fr-footer__bottom-link" href="/carte-facile-site/fr/accessibilite/">
+            Accessibilité : Non conforme
+          </a>
+        </li>
+        <li class="fr-footer__bottom-item">
+          <a class="fr-footer__bottom-link" href="/carte-facile-site/fr/mentions-legales/">Mentions légales</a>
+        </li>
+        <li class="fr-footer__bottom-item">
+          <a class="fr-footer__bottom-link" href="/carte-facile-site/fr/donnees-personnelles/">Données personnelles</a>
+        </li>
+        <li class="fr-footer__bottom-item">
+          <a class="fr-footer__bottom-link fr-icon-pencil-line fr-link--icon-left" href="https://github.com/fab-geocommuns/carte-facile-site/blob/main/./content/fr/documentation/aller-plus-loin/api-decoupage-administratif.md">Modifier cette page</a>
+        </li>
+        
+        <li class="fr-footer__bottom-item">
+          <button class="fr-footer__bottom-link fr-fi-theme-fill fr-link--icon-left" aria-controls="fr-theme-modal" data-fr-opened="false">
+            Paramètres d&#39;affichage
+          </button>
+        </li>
+      </ul>
+      <div class="fr-footer__bottom-copy">
+        <p>
+          Sauf mention contraire, tous les contenus de ce site sont sous <a href="https://github.com/etalab/licence-ouverte/blob/master/LO.md" target="_blank" rel="noopener">licence etalab-2.0</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<dialog id="fr-theme-modal" class="fr-modal" role="dialog" aria-labelledby="fr-theme-modal-title">
+  <div class="fr-container fr-container--fluid fr-container-md">
+    <div class="fr-grid-row fr-grid-row--center">
+      <div class="fr-col-12 fr-col-md-6 fr-col-lg-4">
+        <div class="fr-modal__body">
+          <div class="fr-modal__header">
+            <button class="fr-btn--close fr-btn" aria-controls="fr-theme-modal" title="Fermer">
+              Fermer
+            </button>
+          </div>
+          <div class="fr-modal__content">
+            <h1 id="fr-theme-modal-title" class="fr-modal__title"> Paramètres d&#39;affichage </h1>
+            <div id="fr-display" class="fr-display">
+              <div class="fr-form-group">
+                <fieldset class="fr-fieldset">
+                  <legend class="fr-fieldset__legend fr-text--regular" id="-legend">
+                    Choisissez un thème pour personnaliser l’apparence du site.
+                  </legend>
+                  <div class="fr-fieldset__content">
+                    <div class="fr-radio-group fr-radio-rich">
+                      <input value="light" type="radio" id="fr-radios-theme-light" name="fr-radios-theme">
+                      <label class="fr-label" for="fr-radios-theme-light"> Thème clair </label>
+                      <div class="fr-radio-rich__img">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="fr-artwork" width="80px" height="80px" viewBox="0 0 80 80">
+                          <use class="fr-artwork-decorative" xlink:href="/carte-facile-site/artwork/light.svg#artwork-decorative"></use>
+                          <use class="fr-artwork-minor" xlink:href="/carte-facile-site/artwork/light.svg#artwork-minor"></use>
+                          <use class="fr-artwork-major" xlink:href="/carte-facile-site/artwork/light.svg#artwork-major"></use>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="fr-radio-group fr-radio-rich">
+                      <input value="dark" type="radio" id="fr-radios-theme-dark" name="fr-radios-theme">
+                      <label class="fr-label" for="fr-radios-theme-dark"> Thème sombre </label>
+                      <div class="fr-radio-rich__img">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="fr-artwork" width="80px" height="80px" viewBox="0 0 80 80">
+                          <use class="fr-artwork-decorative" xlink:href="/carte-facile-site/artwork/dark.svg#artwork-decorative"></use>
+                          <use class="fr-artwork-minor" xlink:href="/carte-facile-site/artwork/dark.svg#artwork-minor"></use>
+                          <use class="fr-artwork-major" xlink:href="/carte-facile-site/artwork/dark.svg#artwork-major"></use>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="fr-radio-group fr-radio-rich">
+                      <input value="system" type="radio" id="fr-radios-theme-system" name="fr-radios-theme">
+                      <label class="fr-label" for="fr-radios-theme-system">
+                        Système
+                        <span class="fr-hint-text">Utilise les paramètres système.</span>
+                      </label>
+                      <div class="fr-radio-rich__img">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="fr-artwork" width="80px" height="80px" viewBox="0 0 80 80">
+                          <use class="fr-artwork-decorative" xlink:href="/carte-facile-site/artwork/system.svg#artwork-decorative"></use>
+                          <use class="fr-artwork-minor" xlink:href="/carte-facile-site/artwork/system.svg#artwork-minor"></use>
+                          <use class="fr-artwork-major" xlink:href="/carte-facile-site/artwork/system.svg#artwork-major"></use>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<!-- Current page: /carte-facile-site/fr/documentation/aller-plus-loin/api-decoupage-administratif/ -->
+
+<script>
+      const SEARCH_RESULTS_URL = "/carte-facile-site/fr/search-results/";
+  </script>
+  <script type="text/javascript" src="/carte-facile-site/js/search.js"></script><!-- Script en version es6 module et nomodule pour les navigateurs le ne supportant pas -->
+<script type="module" src="/carte-facile-site/js/dsfr.module.min.js"></script>
+<script type="text/javascript" nomodule="" src="/carte-facile-site/js/dsfr.nomodule.min.js"></script>
+<!-- Script Matomo pour le suivi des visites -->
+<script type="text/javascript" src="/carte-facile-site/js/matomo.js"></script>
+
+</body>
+</html>

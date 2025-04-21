@@ -4,6 +4,8 @@ const SEARCH_PARAM = "term";
     const SEARCH_SELECTOR = "#header-search";
 
     const searchBox = document.querySelector(SEARCH_SELECTOR);
+    if (!searchBox) return; // Exit if search box doesn't exist
+
     const searchInput = searchBox.querySelector("input");
     const searchBtn = searchBox.querySelector("button");
 
