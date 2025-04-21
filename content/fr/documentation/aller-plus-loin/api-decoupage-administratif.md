@@ -4,8 +4,8 @@ description: L'API Découpage Administratif permet d'interroger les référentie
 layout: layouts/docs.njk
 eleventyNavigation:
   key: API Découpage administratif
-  parent: API géographiques
-  order: 2
+  parent: Aller plus loin
+  order: 3
   nav: docs
 ---
 

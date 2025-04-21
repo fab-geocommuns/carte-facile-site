@@ -5,24 +5,24 @@ const markdownItAnchor = require("markdown-it-anchor");
 const markdownItAttrs = require("markdown-it-attrs");
 const markdownItContainer = require("markdown-it-container");
 
-const pluginRss = require("@11ty/eleventy-plugin-rss");
-const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const pluginBundle = require("@11ty/eleventy-plugin-bundle");
-const pluginNavigation = require("@11ty/eleventy-navigation");
-const {EleventyHtmlBasePlugin} = require("@11ty/eleventy");
-const {EleventyI18nPlugin} = require("@11ty/eleventy");
-const i18n = require("@codegouvfr/eleventy-plugin-i18n");
-const pluginCalendar = require("@codegouvfr/eleventy-plugin-calendar");
-
 const customMarkdownContainers = require("./utils/markdown-custom-containers");
 
 const {translations} = require("./_data/i18n");
 
-module.exports = function (eleventyConfig) {
+module.exports = async function(eleventyConfig) {
+    // Import plugins dynamically
+    const {EleventyHtmlBasePlugin, EleventyI18nPlugin} = await import("@11ty/eleventy");
+    const pluginRss = (await import("@11ty/eleventy-plugin-rss")).default;
+    const pluginSyntaxHighlight = (await import("@11ty/eleventy-plugin-syntaxhighlight")).default;
+    const pluginBundle = (await import("@11ty/eleventy-plugin-bundle")).default;
+    const pluginNavigation = (await import("@11ty/eleventy-navigation")).default;
+    const i18n = (await import("@codegouvfr/eleventy-plugin-i18n")).default;
+    const pluginCalendar = (await import("@codegouvfr/eleventy-plugin-calendar")).default;
+
     // Copy the contents of the `public` folder to the output folder
     // For example, `./public/css/` ends up in `_site/css/`
     eleventyConfig.addPassthroughCopy({
-        "./public/": "/",
+        // DSFR resources
         "./node_modules/@gouvfr/dsfr/dist/favicon": "/favicon",
         "./node_modules/@gouvfr/dsfr/dist/fonts": "/css/fonts",
         "./node_modules/@gouvfr/dsfr/dist/icons": "/css/icons",
@@ -30,7 +30,18 @@ module.exports = function (eleventyConfig) {
         "./node_modules/@gouvfr/dsfr/dist/utility/utility.min.css": "/css/utility/utility.min.css",
         "./node_modules/@gouvfr/dsfr/dist/dsfr.module.min.js": "/js/dsfr.module.min.js",
         "./node_modules/@gouvfr/dsfr/dist/dsfr.nomodule.min.js": "/js/dsfr.nomodule.min.js",
-        "./node_modules/@gouvfr/dsfr/dist/artwork": "/artwork"
+        "./node_modules/@gouvfr/dsfr/dist/artwork": "/artwork",
+        
+        // MapLibre resources
+        "./node_modules/maplibre-gl/dist/maplibre-gl.js": "/js/maplibre-gl.js",
+        "./node_modules/maplibre-gl/dist/maplibre-gl.css": "/css/maplibre-gl.css",
+        
+        // Carte Facile resources
+        "./node_modules/carte-facile/dist/index.umd.js": "/js/carte-facile.js",
+        "./node_modules/carte-facile/dist/img": "/img",
+        
+        // Static assets (images, etc.)
+        "./public": "/"
     });
 
     // Run Eleventy when these files change:
@@ -52,6 +63,15 @@ module.exports = function (eleventyConfig) {
     });
     eleventyConfig.addPlugin(pluginNavigation);
     eleventyConfig.addPlugin(pluginBundle);
+    
+    // Add bundles for CSS and JS
+    eleventyConfig.addBundle("css", {
+      toFileDirectory: "bundle"
+    });
+    eleventyConfig.addBundle("js", {
+      toFileDirectory: "bundle"
+    });
+    
     eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
     eleventyConfig.addPlugin(EleventyI18nPlugin, {
         defaultLanguage: "fr",
@@ -208,14 +228,6 @@ module.exports = function (eleventyConfig) {
     });
 
     eleventyConfig.addNunjucksGlobal("nanoid", () => nanoid());
-
-    // Features to make your build faster (when you need them)
-
-    // If your passthrough copy gets heavy and cumbersome, add this line
-    // to emulate the file copy on the dev server. Learn more:
-    // https://www.11ty.dev/docs/copy/#emulate-passthrough-copy-during-serve
-
-    // eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
 
     return {
         // Control which files Eleventy will process

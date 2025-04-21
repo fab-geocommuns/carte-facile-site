@@ -1,0 +1,62 @@
+<div id="map-picker" 
+        class="map-picker" 
+        aria-labelledby="map-picker-title">
+    <button id="map-picker-toggle" 
+            class="map-picker-toggle" 
+            aria-label="Ouvrir le sélecteur de cartes"
+            aria-controls="map-picker-content"
+            aria-expanded="true">
+        <span class="map-picker-toggle__thumbnail"></span>
+        <span class="map-picker-toggle__text fr-btn--icon-left fr-icon-stack-line">Calques</span>
+    </button>
+    <div class="map-picker--extended">
+        <div class="map-picker__header fr-mx-2w fr-mt-2w">
+            <button class="fr-btn--close fr-btn" 
+                    aria-label="Fermer le sélecteur de cartes"
+                    aria-controls="map-picker-content">
+                Fermer
+            </button>
+        </div>
+        <div class="map-picker__content fr-px-2w fr-pb-4w">
+            <div class="map-picker__styles-list">
+                <h2 id="map-picker-title" class="fr-h5">Cartes</h2>
+                <div class="map-picker-grid" id="map-picker-grid">
+                    <!-- Template pour la carte -->
+                    <template id="map-picker-card-template">
+                        <div class="map-picker-card fr-card--shadow" role="option">
+                            <div class="map-picker-card__header">
+                                <span class="map-picker-card__active-icon fr-icon-success-fill" aria-hidden="true"></span>
+                                <div class="map-picker-card__img">   
+                                    <img class="fr-responsive-img" alt="">
+                                </div>
+                            </div>
+                            <div class="map-picker-card__content fr-py-1w fr-px-3v">
+                                <h3 class="map-picker-card__title fr-mb-0"></h3>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+            <div class="map-picker__style-details" style="display: none;">
+                <button class="fr-btn fr-btn--sm fr-btn--tertiary-no-outline fr-btn--icon-left fr-icon-arrow-left-line fr-mb-2w" id="map-picker-back">
+                    Retour à la liste
+                </button>
+                <div class="map-picker-card__img fr-mb-2w" style="position: relative;">   
+                    <span class="map-picker-card__active-icon fr-icon-success-fill" aria-hidden="true"></span>
+                    <img id="map-picker-style-thumbnail" class="fr-responsive-img" alt="">
+                </div>
+                <h2 class="fr-h5 fr-mb-3v" id="map-picker-style-title"></h2>
+                <p id="map-picker-style-description" class="fr-text"></p>
+                <a href="{{ "/documentation/" | locale_url }}"
+                    class="fr-btn fr-btn--icon-left fr-icon-book-2-line fr-mb-3w">
+                    Guide d'installation
+                </a>
+                <h3 class="fr-h6 fr-mb-1w">Usage</h3>
+                <p id="map-picker-style-use" class="fr-text--sm"></p>
+                <h3 class="fr-h6 fr-mb-1w">Accessibilité</h3>
+                <p id="map-picker-style-accessibility" class="fr-text--sm"></p>
+                <a id="map-picker-style-source" class="fr-btn fr-btn--sm fr-btn--tertiary fr-btn--icon-left fr-icon-github-line" href="#">Code source</a>
+            </div>
+        </div>
+    </div>
+</div>

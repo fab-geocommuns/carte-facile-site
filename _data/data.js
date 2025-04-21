@@ -1,5 +1,5 @@
 module.exports = {
-    footer_content_description: `Fonds de cartes est un service développé par La Fabrique des géocommuns, incubateur de communs à l’IGN. Le code source de ce site web et les ressources proposées par le service sont disponible en licence libre.`,
+    footer_content_description: `Carte facile est un service développé par La Fabrique des géocommuns, incubateur de communs à l’IGN. Le code source de ce site web et les ressources proposées par le service sont disponible en licence libre.`,
     benefits_title: "Les avantages du service",
     benefits: [
         {

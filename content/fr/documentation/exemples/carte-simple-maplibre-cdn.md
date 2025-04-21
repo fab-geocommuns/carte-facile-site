@@ -1,0 +1,62 @@
+---
+title: Carte simple avec MapLibre et liens CDN
+layout: layouts/docs.njk
+description: Exemple d'affichage d'une carte simple en utilisant Carte Facile et MapLibre GL JS, avec les liens CDN.
+eleventyNavigation:
+  key: Carte simple avec MapLibre et CDN
+  parent: Exemples
+  order: 1
+  nav: docs
+---
+
+L'exemple de code ci-dessous est un exemple complet de code pour afficher une carte sur une page web, en utilisant les liens CDN.
+
+Vous pouvez simplement enregistrer ce code dans un fichier nommé **index.html** et l'ouvrir avec votre navigateur internet pour voir le résultat.
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ma carte</title>
+        
+        <!-- Importation des bibliothèques MapLibre -->
+        <script src="https://unpkg.com/maplibre-gl@^5.1.0/dist/maplibre-gl.js"></script>
+        <link href="https://unpkg.com/maplibre-gl@^5.1.0/dist/maplibre-gl.css" rel="stylesheet" />
+        
+        <!-- Importation de la bibliothèque Carte facile -->
+        <script src="https://unpkg.com/carte-facile@0.4.10/dist/carte-facile.js"></script>
+        
+        <!-- Style pour afficher la carte en plein écran -->
+        <style>
+            html,body, #map { height:100%; width: 100%; margin:0;}
+        </style>
+    </head>
+    <body>
+        <!-- Le conteneur de la carte -->
+        <div id="map"></div>
+
+        <!-- Le script qui initialise la carte -->
+        <script>
+            // Création la carte
+            let map = new maplibregl.Map({
+                container: 'map', // id du conteneur de la carte
+                style: CarteFacile.mapStyle.simple, // Style de carte
+                maxZoom: 18.9 // niveau de zoom maximum, adapté aux cartes utilisant les données IGN
+            });
+
+            // Ajout d'un contrôle de navigation
+            const nav = new maplibregl.NavigationControl();
+            map.addControl(nav, 'top-right');
+
+            // Ajout d'une échelle
+            const scale = new maplibregl.ScaleControl({
+                maxWidth: 80,
+                unit: 'imperial'
+            });
+            map.addControl(scale);
+        </script>
+    </body>
+</html>
+```

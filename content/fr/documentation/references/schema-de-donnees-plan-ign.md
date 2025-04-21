@@ -2,11 +2,6 @@
 title: Schéma de données Plan IGN
 description: Description à compléter.
 layout: layouts/docs.njk
-eleventyNavigation:
-  key: Schéma de données Plan IGN
-  parent: Références
-  order: 1
-  nav: docs
 ---
 
 :::callout 🛠️ Page en cours de rédaction
