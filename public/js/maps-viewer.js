@@ -13,4 +13,3 @@
         map.setStyle(styleData);
     });
 })();
-
