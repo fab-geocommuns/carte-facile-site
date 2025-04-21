@@ -32,7 +32,7 @@ Pour les projets simples ou les prototypes rapides, vous pouvez utiliser les lie
 <script src="https://unpkg.com/maplibre-gl@^5.1.0/dist/maplibre-gl.js"></script>
 <link href="https://unpkg.com/maplibre-gl@^5.1.0/dist/maplibre-gl.css" rel="stylesheet" />
 <!-- Importation de la bibliothèque Carte facile -->
-<script src="https://unpkg.com/carte-facile@0.3.3/dist/index.js"></script>
+<script src="https://unpkg.com/carte-facile@0.4.10/dist/carte-facile.js"></script>
 ```
 
 ## 🗺️ Premiers pas
