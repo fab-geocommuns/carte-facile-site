@@ -6,7 +6,7 @@ showMaps: true
 <!-- Bloc containing the map -->
 <div id="map">
     {% include "components/map_picker.njk" %}
-    {# <div class="map-panel">
-        <p id="zoom-level"></p>
-    </div> #}
+    <div class="map-zoom-level">
+        Zoom : <span id="map-zoom-level-value"></span>
+    </div>
 </div>
