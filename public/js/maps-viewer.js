@@ -1,10 +1,12 @@
 (() => {
     // Initialize map
-    const map = new maplibregl.Map({
+    let map = new maplibregl.Map({
         container: 'map',
         style: CarteFacile.mapStyle.simple,
         maxZoom: 18.9,
     });
+    
+    // Add navigation control
     map.addControl(new maplibregl.NavigationControl(), 'bottom-right');
 
     // Update zoom display
@@ -33,4 +35,5 @@
         const { styleData } = event.detail;
         map.setStyle(styleData);
     });
+
 })();
