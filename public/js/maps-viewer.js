@@ -7,18 +7,30 @@
     });
     map.addControl(new maplibregl.NavigationControl(), 'bottom-right');
 
+    // Update zoom display
+    const updateZoom = () => {
+        document.getElementById('map-zoom-level-value').textContent = map.getZoom().toFixed(1);
+    };
+    // Update URL
+    const updateUrl = () => {
+        const zoom = map.getZoom().toFixed(1);
+        const center = map.getCenter();
+        window.location.hash = `#map=${zoom}/${center.lat.toFixed(6)}/${center.lng.toFixed(6)}`;
+    };
+
+    // Update zoom during zoom (throttled by MapLibre GL)
+    map.on('zoom', updateZoom);
+    // Update URL when movement is complete
+    map.on('moveend', updateUrl);
+    // Initial update
+    map.once('load', () => {
+        updateZoom();
+        updateUrl();
+    });
+
     // Listen for map style changes
     document.addEventListener('mapStyleChange', (event) => {
         const { styleData } = event.detail;
         map.setStyle(styleData);
     });
-
-    // Update the URL hash based on map state
-    setInterval(() => {
-        const currentHash = window.location.hash;
-        const newHash = `#map=${map.getZoom().toFixed(1)}/${map.getCenter().lat.toFixed(6)}/${map.getCenter().lng.toFixed(6)}`;
-        if (currentHash !== newHash) {
-            window.location.hash = newHash;
-        }
-    }, 100);
 })();

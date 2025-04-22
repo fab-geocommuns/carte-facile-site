@@ -16,3 +16,22 @@ body {
   width: 100%;
   position: relative;
 }
+
+.map-zoom-level {
+  font-family: Marianne,arial,sans-serif;
+  z-index: 3;
+  position: absolute;
+  background-color: var(--background-default-grey);
+  color: var(--text-default-grey);
+  border-radius: 0.25rem;
+  filter: drop-shadow(var(--raised-shadow));
+  top: 0.625rem;
+  right: 0.625rem;
+  padding: 0.5rem 0.75rem;
+  width: 6.5rem;
+  font-size: 0.875rem;
+}
+
+.map-zoom-level span {
+  font-weight: 600;
+}
