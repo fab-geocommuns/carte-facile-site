@@ -37,7 +37,7 @@ eleventyNavigation:
 <br>
 
 ### Exemples
-- [**Carte simple**](/documentation/exemples/carte-simple-maplibre) - Exemple de base pour commencer, qui affiche une carte en utilisant Carte Facile et MapLibre via les liens CDN.
+- [**Carte simple**]({{ "/documentation/exemples/carte-simple-maplibre-cdn" | locale_url }}) - Exemple de base pour commencer, qui affiche une carte en utilisant Carte Facile et MapLibre via les liens CDN.
 
 <br>
 
