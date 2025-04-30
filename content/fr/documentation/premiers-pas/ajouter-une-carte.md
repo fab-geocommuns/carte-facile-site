@@ -57,7 +57,7 @@ Ajoutez dans votre html :
 </script>
 ```
 
-Un exemple de code prêt à l'emploi est disponible ici : [**Carte simple**](/documentation/exemples/carte-simple-maplibre)
+Un exemple de code prêt à l'emploi est disponible ici : [**Carte simple**]({{ "/documentation/exemples/carte-simple-maplibre-cdn" | locale_url }})
 
 **🗺️ Félicitations, vous avez maintenant une carte fonctionnelle ! 🗺️**
 
