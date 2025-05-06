@@ -1,5 +1,5 @@
 module.exports = {
-    title: "Carte facile",
+    title: "Carte Facile",
     url: "https://fab-geocommuns.github.io/carte-facile-site",
     newsletter: 
         {
