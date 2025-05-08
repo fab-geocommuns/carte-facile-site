@@ -31,6 +31,7 @@ Dans votre fichier javascript, initialisez la carte avec :
 import { mapStyle } from 'carte-facile';
 import maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
+import 'carte-facile/dist/carte-facile.css';
 
 // Création la carte
 let map = new maplibregl.Map({
@@ -75,7 +76,8 @@ CarteFacile propose plusieurs styles prédéfinis :
     data: [
         ["`mapStyle.simple`", "Style par défaut, adapté à la plupart des usages"],
         ["`mapStyle.desaturated`", "Version désaturée, idéale pour la datavisualisation"],
-        ["`mapStyle.aerial`", "Vue photographies aériennes et satellite"]
+        ["`mapStyle.aerial`", "Vue photographies aériennes et satellite"],
+        ["`mapStyle.simpleOsm`", "Style par défaut, utilisant les données OSM plutôt qu'IGN"]
     ]
 }) }}
 

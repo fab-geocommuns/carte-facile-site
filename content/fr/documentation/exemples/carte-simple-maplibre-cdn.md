@@ -21,12 +21,13 @@ Vous pouvez simplement enregistrer ce code dans un fichier nommé **index.html**
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Ma carte</title>
         
-        <!-- Importation des bibliothèques MapLibre -->
-        <script src="https://unpkg.com/maplibre-gl@^5.1.0/dist/maplibre-gl.js"></script>
-        <link href="https://unpkg.com/maplibre-gl@^5.1.0/dist/maplibre-gl.css" rel="stylesheet" />
-        
-        <!-- Importation de la bibliothèque Carte facile -->
-        <script src="https://unpkg.com/carte-facile@0.4.10/dist/carte-facile.js"></script>
+        <!-- Importation des bibliothèques MapLibre GL JS -->
+        <link href="https://unpkg.com/maplibre-gl@{{ pkg.dependencies['maplibre-gl'] }}/dist/maplibre-gl.css" rel="stylesheet" />
+        <script src="https://unpkg.com/maplibre-gl@{{ pkg.dependencies['maplibre-gl'] }}/dist/maplibre-gl.js"></script>
+
+        <!-- Importation des bibliothèques Carte Facile -->
+        <link href="https://unpkg.com/carte-facile@{{ pkg.dependencies['carte-facile'] }}/dist/carte-facile.css" rel="stylesheet" />
+        <script src="https://unpkg.com/carte-facile@{{ pkg.dependencies['carte-facile'] }}/dist/carte-facile.js"></script> 
         
         <!-- Style pour afficher la carte en plein écran -->
         <style>

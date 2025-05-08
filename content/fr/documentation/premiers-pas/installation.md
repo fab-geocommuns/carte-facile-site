@@ -37,12 +37,13 @@ Cette méthode est adaptée pour les projets simples, les prototypes ou les test
 Pour utiliser cette méthode, ajoutez simplement ces lignes dans le `<head>` de votre page HTML :
 
 ```html
-<!-- Importation des bibliothèques MapLibre -->
-<script src="https://unpkg.com/maplibre-gl@^5.1.0/dist/maplibre-gl.js"></script>
-<link href="https://unpkg.com/maplibre-gl@^5.1.0/dist/maplibre-gl.css" rel="stylesheet" />
+  <!-- Importation des bibliothèques MapLibre GL JS -->
+  <link href="https://unpkg.com/maplibre-gl@{{ pkg.dependencies['maplibre-gl'] }}/dist/maplibre-gl.css" rel="stylesheet" />
+  <script src="https://unpkg.com/maplibre-gl@{{ pkg.dependencies['maplibre-gl'] }}/dist/maplibre-gl.js"></script>
 
-<!-- Importation de la bibliothèque Carte facile -->
-<script src="https://unpkg.com/carte-facile@0.4.10/dist/carte-facile.js"></script>
+  <!-- Importation des bibliothèques Carte Facile -->
+  <link href="https://unpkg.com/carte-facile@{{ pkg.dependencies['carte-facile'] }}/dist/carte-facile.css" rel="stylesheet" />
+  <script src="https://unpkg.com/carte-facile@{{ pkg.dependencies['carte-facile'] }}/dist/carte-facile.js"></script> 
 ```
 
 <br>
