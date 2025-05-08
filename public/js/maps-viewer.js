@@ -7,7 +7,7 @@
     });
     
     // Add zoom level control
-    map.addControl(new ZoomLevelControl(), 'top-right');
+    map.addControl(new CarteFacile.ZoomLevelControl(), 'top-right');
     // Add navigation control
     map.addControl(new maplibregl.NavigationControl(), 'top-right');
 
