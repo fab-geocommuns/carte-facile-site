@@ -28,7 +28,7 @@ Dans votre fichier javascript, initialisez la carte avec :
 
 ```typescript
 // Importations nécessaires pour la carte
-import { mapStyle } from 'carte-facile';
+import { mapStyles } from 'carte-facile';
 import maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import 'carte-facile/dist/carte-facile.css';
@@ -36,7 +36,7 @@ import 'carte-facile/dist/carte-facile.css';
 // Création la carte
 let map = new maplibregl.Map({
   container: 'map', // id du conteneur de la carte
-  style: mapStyle.simple, // style de carte
+  style: mapStyles.simple, // style de carte
   maxZoom: 18.9 // zoom maximum pour les données IGN
 });
 ```
@@ -52,7 +52,7 @@ Ajoutez dans votre html :
     // Création la carte
     let map = new maplibregl.Map({
         container: 'map', // id du conteneur de la carte
-        style: CarteFacile.mapStyle.simple, // style de carte
+        style: CarteFacile.mapStyles.simple, // style de carte
         maxZoom: 18.9 // zoom maximum pour les données IGN
     });
 </script>
@@ -74,10 +74,10 @@ CarteFacile propose plusieurs styles prédéfinis :
 {{ component("table", {
     headers: ["Style", "Description"],
     data: [
-        ["`mapStyle.simple`", "Style par défaut, adapté à la plupart des usages"],
-        ["`mapStyle.desaturated`", "Version désaturée, idéale pour la datavisualisation"],
-        ["`mapStyle.aerial`", "Vue photographies aériennes et satellite"],
-        ["`mapStyle.simpleOsm`", "Style par défaut, utilisant les données OSM plutôt qu'IGN"]
+        ["`mapStyles.simple`", "Style par défaut, adapté à la plupart des usages"],
+        ["`mapStyles.desaturated`", "Version désaturée, idéale pour la datavisualisation"],
+        ["`mapStyles.aerial`", "Vue photographies aériennes et satellite"],
+        ["`mapStyles.simpleOsm`", "Style par défaut, utilisant les données OSM plutôt qu'IGN"]
     ]
 }) }}
 
@@ -109,5 +109,5 @@ Pour ajouter une échelle :
 Pour changer le style d'une carte existante :
 
 ```typescript
-map.setStyle(mapStyle.aerial);
+map.setStyle(mapStyles.aerial);
 ```
