@@ -616,14 +616,15 @@ pre[class*="language-"] {
 <h2 id="cas-1-avec-une-installation-via-npm" tabindex="-1">Cas 1 : avec une installation via npm <a class="header-anchor" href="#cas-1-avec-une-installation-via-npm">#</a></h2>
 <p>Dans votre fichier javascript, initialisez la carte avec :</p>
 <pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token comment">// Importations nécessaires pour la carte</span>
-<span class="token keyword">import</span> <span class="token punctuation">{</span> mapStyle <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'carte-facile'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> mapStyles<span class="token punctuation">,</span> addOverlay<span class="token punctuation">,</span> removeOverlay <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'carte-facile'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> maplibregl <span class="token keyword">from</span> <span class="token string">'maplibre-gl'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> <span class="token string">'maplibre-gl/dist/maplibre-gl.css'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'carte-facile/dist/carte-facile.css'</span><span class="token punctuation">;</span>
 
 <span class="token comment">// Création la carte</span>
 <span class="token keyword">let</span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">maplibregl</span><span class="token punctuation">.</span><span class="token function">Map</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
   container<span class="token operator">:</span> <span class="token string">'map'</span><span class="token punctuation">,</span> <span class="token comment">// id du conteneur de la carte</span>
-  style<span class="token operator">:</span> mapStyle<span class="token punctuation">.</span>simple<span class="token punctuation">,</span> <span class="token comment">// style de carte</span>
+  style<span class="token operator">:</span> mapStyles<span class="token punctuation">.</span>simple<span class="token punctuation">,</span> <span class="token comment">// style de carte</span>
   maxZoom<span class="token operator">:</span> <span class="token number">18.9</span> <span class="token comment">// zoom maximum pour les données IGN</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <br>
@@ -633,7 +634,7 @@ pre[class*="language-"] {
     <span class="token comment">// Création la carte</span>
     <span class="token keyword">let</span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">maplibregl<span class="token punctuation">.</span>Map</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
         <span class="token literal-property property">container</span><span class="token operator">:</span> <span class="token string">'map'</span><span class="token punctuation">,</span> <span class="token comment">// id du conteneur de la carte</span>
-        <span class="token literal-property property">style</span><span class="token operator">:</span> CarteFacile<span class="token punctuation">.</span>mapStyle<span class="token punctuation">.</span>simple<span class="token punctuation">,</span> <span class="token comment">// style de carte</span>
+        <span class="token literal-property property">style</span><span class="token operator">:</span> CarteFacile<span class="token punctuation">.</span>mapStyles<span class="token punctuation">.</span>simple<span class="token punctuation">,</span> <span class="token comment">// style de carte</span>
         <span class="token literal-property property">maxZoom</span><span class="token operator">:</span> <span class="token number">18.9</span> <span class="token comment">// zoom maximum pour les données IGN</span>
     <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
@@ -654,15 +655,19 @@ pre[class*="language-"] {
     </thead>
     <tbody>
       <tr>
-          <td>`mapStyle.simple`</td>
+          <td>mapStyles.simple</td>
           <td>Style par défaut, adapté à la plupart des usages</td>
       </tr>
       <tr>
-          <td>`mapStyle.desaturated`</td>
+          <td>mapStyles.simpleOsm</td>
+          <td>Style par défaut, utilisant les données OSM plutôt qu&#39;IGN</td>
+      </tr>
+      <tr>
+          <td>mapStyles.desaturated</td>
           <td>Version désaturée, idéale pour la datavisualisation</td>
       </tr>
       <tr>
-          <td>`mapStyle.aerial`</td>
+          <td>mapStyles.aerial</td>
           <td>Vue photographies aériennes et satellite</td>
       </tr>
     </tbody>
@@ -682,7 +687,44 @@ pre[class*="language-"] {
   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   map<span class="token punctuation">.</span><span class="token function">addControl</span><span class="token punctuation">(</span>scale<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <p>Pour changer le style d'une carte existante :</p>
-<pre class="language-typescript" tabindex="0"><code class="language-typescript">map<span class="token punctuation">.</span><span class="token function">setStyle</span><span class="token punctuation">(</span>mapStyle<span class="token punctuation">.</span>aerial<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<pre class="language-typescript" tabindex="0"><code class="language-typescript">map<span class="token punctuation">.</span><span class="token function">setStyle</span><span class="token punctuation">(</span>mapStyles<span class="token punctuation">.</span>aerial<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<br>
+<hr>
+<br>
+<h2 id="ajouter-des-surcouches-de-carte" tabindex="-1">Ajouter des surcouches de carte <a class="header-anchor" href="#ajouter-des-surcouches-de-carte">#</a></h2>
+<p>Carte Facile permet d'ajouter des surcouches de carte pour enrichir votre visualisation. Le styles des surcouches ajoutées s'adapteront automatiquement à la carte sélectionnée initialement, pour avoir une bonne lisibilité.</p>
+<div class="fr-table fr-table--layout-fixed">
+  <table>
+    <caption></caption>
+    <thead>
+    <tr>
+        <th scope="col">Surcouche</th>
+        <th scope="col">Description</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr>
+          <td>cadastre</td>
+          <td>Affiche les feuilles et les parcelles cadastrales.</td>
+      </tr>
+      <tr>
+          <td>administrative-boundaries</td>
+          <td>Affiche les limites administratives des régions, départements, EPCI et communes.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>Pour ajouter une surcouche à votre carte, utilisez la fonction <code>addOverlay</code> :</p>
+<pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token comment">// Ajout de la surcouche cadastrale</span>
+<span class="token function">addOverlay</span><span class="token punctuation">(</span>map<span class="token punctuation">,</span> <span class="token string">'cadastre'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Ajout de la surcouche des limites administratives</span>
+<span class="token function">addOverlay</span><span class="token punctuation">(</span>map<span class="token punctuation">,</span> <span class="token string">'administrative-boundaries'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Vous pouvez également retirer une surcouche à tout moment :</p>
+<pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token comment">// Retrait de la surcouche cadastrale</span>
+<span class="token function">removeOverlay</span><span class="token punctuation">(</span>map<span class="token punctuation">,</span> <span class="token string">'cadastre'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>⚠️ Si vous utilisez les liens CDN, ajouter <code>CarteFacile</code> avant les fonctions <code>addOverlay</code> et <code>removeOverlay</code> :</p>
+<pre class="language-typescript" tabindex="0"><code class="language-typescript">CarteFacile<span class="token punctuation">.</span><span class="token function">addOverlay</span><span class="token punctuation">(</span>map<span class="token punctuation">,</span> <span class="token string">'administrative-boundaries'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 
       <div class="fr-grid-row fr-grid-row--right">
 <a class="fr-grid-row fr-grid-row--right fr-link fr-icon-arrow-up-fill fr-link--icon-left" href="#top">
