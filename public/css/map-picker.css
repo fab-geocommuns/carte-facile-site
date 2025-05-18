@@ -147,8 +147,3 @@
     line-height: 1.5rem;
     font-weight: normal;
 }
-
-.map-picker__style-details .map-picker-card__img {
-    border-radius: 0.25rem;
-    overflow: hidden;
-}
