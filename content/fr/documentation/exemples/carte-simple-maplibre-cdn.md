@@ -57,6 +57,10 @@ Vous pouvez simplement enregistrer ce code dans un fichier nommé **index.html**
                 unit: 'imperial'
             });
             map.addControl(scale);
+
+            // Ajouter des surcouches (dé-commenter les lignes en dessous pour ajouter ces surcouches)
+            //CarteFacile.addOverlay(map, 'administrative-boundaries');
+            //CarteFacile.addOverlay(map, 'cadastre');
         </script>
     </body>
 </html>

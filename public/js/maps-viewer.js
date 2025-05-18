@@ -31,4 +31,14 @@
         map.setStyle(styleData);
     });
 
+    // Listen for overlay changes
+    document.addEventListener('overlayChange', (event) => {
+        const { type, action } = event.detail;
+        if (action === 'add') {
+            CarteFacile.addOverlay(map, type);
+        } else if (action === 'remove') {
+            CarteFacile.removeOverlay(map, type);
+        }
+    });
+
 })();

@@ -28,7 +28,7 @@ Dans votre fichier javascript, initialisez la carte avec :
 
 ```typescript
 // Importations nécessaires pour la carte
-import { mapStyles } from 'carte-facile';
+import { mapStyles, addOverlay, removeOverlay } from 'carte-facile';
 import maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import 'carte-facile/dist/carte-facile.css';
@@ -74,10 +74,10 @@ CarteFacile propose plusieurs styles prédéfinis :
 {{ component("table", {
     headers: ["Style", "Description"],
     data: [
-        ["`mapStyles.simple`", "Style par défaut, adapté à la plupart des usages"],
-        ["`mapStyles.desaturated`", "Version désaturée, idéale pour la datavisualisation"],
-        ["`mapStyles.aerial`", "Vue photographies aériennes et satellite"],
-        ["`mapStyles.simpleOsm`", "Style par défaut, utilisant les données OSM plutôt qu'IGN"]
+        ["mapStyles.simple", "Style par défaut, adapté à la plupart des usages"],
+        ["mapStyles.simpleOsm", "Style par défaut, utilisant les données OSM plutôt qu'IGN"],
+        ["mapStyles.desaturated", "Version désaturée, idéale pour la datavisualisation"],
+        ["mapStyles.aerial", "Vue photographies aériennes et satellite"]
     ]
 }) }}
 
@@ -110,4 +110,45 @@ Pour changer le style d'une carte existante :
 
 ```typescript
 map.setStyle(mapStyles.aerial);
+```
+
+<br>
+
+---
+
+<br>
+
+## Ajouter des surcouches de carte
+
+Carte Facile permet d'ajouter des surcouches de carte pour enrichir votre visualisation. Le styles des surcouches ajoutées s'adapteront automatiquement à la carte sélectionnée initialement, pour avoir une bonne lisibilité.
+
+{% from "components/component.njk" import component with context %}
+{{ component("table", {
+    headers: ["Surcouche", "Description"],
+    data: [
+        ["cadastre", "Affiche les feuilles et les parcelles cadastrales."],
+        ["administrative-boundaries", "Affiche les limites administratives des régions, départements, EPCI et communes."]
+    ]
+}) }}
+
+Pour ajouter une surcouche à votre carte, utilisez la fonction `addOverlay` :
+
+```typescript
+// Ajout de la surcouche cadastrale
+addOverlay(map, 'cadastre');
+
+// Ajout de la surcouche des limites administratives
+addOverlay(map, 'administrative-boundaries');
+```
+
+Vous pouvez également retirer une surcouche à tout moment :
+
+```typescript
+// Retrait de la surcouche cadastrale
+removeOverlay(map, 'cadastre');
+```
+
+⚠️ Si vous utilisez les liens CDN, ajouter `CarteFacile` avant les fonctions `addOverlay` et `removeOverlay` :
+```typescript
+CarteFacile.addOverlay(map, 'administrative-boundaries');
 ```
