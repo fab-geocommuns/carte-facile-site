@@ -144,7 +144,14 @@
         const name = overlay.metadata?.fr?.name || overlayId;
 
         const img = card.querySelector('img');
-        img.src = CarteFacile.mapThumbnails[overlayId].src; // Utiliser une image par défaut
+        // Utiliser les métadonnées de la surcouche pour obtenir l'ID du thumbnail
+        const thumbnailId = overlay.metadata?.fr?.thumbnailId || overlayId;
+        if (CarteFacile.mapThumbnails[thumbnailId]) {
+            img.src = CarteFacile.mapThumbnails[thumbnailId].src;
+        } else {
+            console.warn(`Thumbnail non trouvé pour la surcouche ${overlayId}, utilisation d'une image par défaut`);
+            img.src = '/img/placeholder.1x1.png';
+        }
         img.alt = `Aperçu de surcouche ${name}`;
 
         const title = card.querySelector('.map-picker-card__title');
