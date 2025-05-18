@@ -144,7 +144,7 @@
         const name = overlay.metadata?.fr?.name || overlayId;
 
         const img = card.querySelector('img');
-        img.src = CarteFacile.mapThumbnails.simple.src; // Utiliser une image par défaut
+        img.src = CarteFacile.mapThumbnails[overlayId].src; // Utiliser une image par défaut
         img.alt = `Aperçu de surcouche ${name}`;
 
         const title = card.querySelector('.map-picker-card__title');
