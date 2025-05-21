@@ -45,7 +45,7 @@
         const metadata = styleData.metadata?.fr || {};
 
         // Update UI elements
-        elements.styleThumbnail.src = CarteFacile.mapThumbnails[style].src;
+        elements.styleThumbnail.src = CarteFacile.mapThumbnails[style];
         elements.styleThumbnail.alt = `Aperçu de ${metadata.name || style}`;
         elements.styleTitle.textContent = metadata.name || style;
         elements.styleDescription.textContent = metadata.description || '';
@@ -57,7 +57,7 @@
         const toggleThumbnail = elements.openButton.querySelector('.map-picker-toggle__thumbnail');
         const isAerial = style.includes('aerial');
         const thumbnailStyle = isAerial ? 'simple' : 'aerial';
-        toggleThumbnail.style.backgroundImage = `url(${CarteFacile.mapThumbnails[thumbnailStyle].src})`;
+        toggleThumbnail.style.backgroundImage = `url(${CarteFacile.mapThumbnails[thumbnailStyle]})`;
     }
 
     function showStyleDetails(card) {
@@ -115,7 +115,7 @@
         const name = metadata.name || style;
 
         const img = card.querySelector('img');
-        img.src = CarteFacile.mapThumbnails[style].src;
+        img.src = CarteFacile.mapThumbnails[style];
         img.alt = `Aperçu de carte ${name}`;
 
         const title = card.querySelector('.map-picker-card__title');
@@ -147,7 +147,7 @@
         // Utiliser les métadonnées de la surcouche pour obtenir l'ID du thumbnail
         const thumbnailId = overlay.metadata?.fr?.thumbnailId || overlayId;
         if (CarteFacile.mapThumbnails[thumbnailId]) {
-            img.src = CarteFacile.mapThumbnails[thumbnailId].src;
+            img.src = CarteFacile.mapThumbnails[thumbnailId];
         } else {
             console.warn(`Thumbnail non trouvé pour la surcouche ${overlayId}, utilisation d'une image par défaut`);
             img.src = '/img/placeholder.1x1.png';
