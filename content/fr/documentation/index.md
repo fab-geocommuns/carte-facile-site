@@ -9,7 +9,7 @@ eleventyNavigation:
 ---
 
 **Carte Facile** est une bibliothèque JavaScript qui simplifie l'intégration de cartes dans vos applications web, grâce à :
-- Des styles de carte prêts à l'emploi, bientôt compatibles avec plusieurs bibliothèques cartographiques (⚠️ compatible uniquement avec MapLibre GL JS pour le moment).
+- Des styles de carte prêts à l'emploi.
 - Une disponibilité via un package npm, ou via un lien CDN pour les projets les plus simples.
 - Des fonctionnalités et des composants clé en main pour enrichir vos cartes (🛠️ à venir).
 - Une documentation pour faciliter la prise en main.
