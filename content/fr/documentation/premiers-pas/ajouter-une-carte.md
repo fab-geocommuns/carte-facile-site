@@ -127,7 +127,7 @@ Carte Facile permet d'ajouter des surcouches de carte pour enrichir votre visual
     headers: ["Surcouche", "Description"],
     data: [
         ["cadastre", "Affiche les feuilles et les parcelles cadastrales."],
-        ["administrative-boundaries", "Affiche les limites administratives des régions, départements, EPCI et communes."]
+        ["administrativeBoundaries", "Affiche les limites administratives des régions, départements, EPCI et communes."]
     ]
 }) }}
 
@@ -138,7 +138,7 @@ Pour ajouter une surcouche à votre carte, utilisez la fonction `addOverlay` :
 addOverlay(map, 'cadastre');
 
 // Ajout de la surcouche des limites administratives
-addOverlay(map, 'administrative-boundaries');
+addOverlay(map, 'administrativeBoundaries');
 ```
 
 Vous pouvez également retirer une surcouche à tout moment :
@@ -150,5 +150,5 @@ removeOverlay(map, 'cadastre');
 
 ⚠️ Si vous utilisez les liens CDN, ajouter `CarteFacile` avant les fonctions `addOverlay` et `removeOverlay` :
 ```typescript
-CarteFacile.addOverlay(map, 'administrative-boundaries');
+CarteFacile.addOverlay(map, 'administrativeBoundaries');
 ```
