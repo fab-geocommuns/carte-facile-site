@@ -20,7 +20,6 @@ eleventyNavigation:
 
 - [**Installation**]({{ "/documentation/premiers-pas/installation" | locale_url }}) - Installer la librairie Carte Facile.
 - [**Ajouter une carte**]({{ "/documentation/premiers-pas/ajouter-une-carte" | locale_url }}) - Ajouter une carte à son site avec Carte Facile.
-<!-- - [Alternatives]({{ "/documentation/premiers-pas/alternatives" | locale_url }}) - Utiliser Carte Facile avec Leaflet ou OpenLayers, plutôt que MapLibre. -->
 
 <br>
 
