@@ -708,7 +708,7 @@ pre[class*="language-"] {
           <td>Affiche les feuilles et les parcelles cadastrales.</td>
       </tr>
       <tr>
-          <td>administrative-boundaries</td>
+          <td>administrativeBoundaries</td>
           <td>Affiche les limites administratives des régions, départements, EPCI et communes.</td>
       </tr>
     </tbody>
@@ -719,12 +719,12 @@ pre[class*="language-"] {
 <span class="token function">addOverlay</span><span class="token punctuation">(</span>map<span class="token punctuation">,</span> <span class="token string">'cadastre'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span class="token comment">// Ajout de la surcouche des limites administratives</span>
-<span class="token function">addOverlay</span><span class="token punctuation">(</span>map<span class="token punctuation">,</span> <span class="token string">'administrative-boundaries'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<span class="token function">addOverlay</span><span class="token punctuation">(</span>map<span class="token punctuation">,</span> <span class="token string">'administrativeBoundaries'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <p>Vous pouvez également retirer une surcouche à tout moment :</p>
 <pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token comment">// Retrait de la surcouche cadastrale</span>
 <span class="token function">removeOverlay</span><span class="token punctuation">(</span>map<span class="token punctuation">,</span> <span class="token string">'cadastre'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <p>⚠️ Si vous utilisez les liens CDN, ajouter <code>CarteFacile</code> avant les fonctions <code>addOverlay</code> et <code>removeOverlay</code> :</p>
-<pre class="language-typescript" tabindex="0"><code class="language-typescript">CarteFacile<span class="token punctuation">.</span><span class="token function">addOverlay</span><span class="token punctuation">(</span>map<span class="token punctuation">,</span> <span class="token string">'administrative-boundaries'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<pre class="language-typescript" tabindex="0"><code class="language-typescript">CarteFacile<span class="token punctuation">.</span><span class="token function">addOverlay</span><span class="token punctuation">(</span>map<span class="token punctuation">,</span> <span class="token string">'administrativeBoundaries'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 
       <div class="fr-grid-row fr-grid-row--right">
 <a class="fr-grid-row fr-grid-row--right fr-link fr-icon-arrow-up-fill fr-link--icon-left" href="#top">
