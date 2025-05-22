@@ -64,6 +64,9 @@ return maplibregl$1;
 })(this, (function (exports) { 'use strict';
 
   var version$3 = 8;
+  var projection$3 = {
+  	type: "globe"
+  };
   var name$5 = "desaturated";
   var metadata$5 = {
   	fr: {
@@ -11271,6 +11274,7 @@ return maplibregl$1;
   var owner$3 = "Carte Facile (IGN)";
   var desaturatedIgn = {
   	version: version$3,
+  	projection: projection$3,
   	name: name$5,
   	metadata: metadata$5,
   	center: center$3,
@@ -11284,6 +11288,9 @@ return maplibregl$1;
   };
 
   var version$2 = 8;
+  var projection$2 = {
+  	type: "globe"
+  };
   var name$4 = "simple";
   var metadata$4 = {
   	fr: {
@@ -23064,6 +23071,7 @@ return maplibregl$1;
   var owner$2 = "Carte Facile (IGN)";
   var simpleIgn = {
   	version: version$2,
+  	projection: projection$2,
   	name: name$4,
   	metadata: metadata$4,
   	center: center$2,
@@ -23077,6 +23085,9 @@ return maplibregl$1;
   };
 
   var version$1 = 8;
+  var projection$1 = {
+  	type: "globe"
+  };
   var name$3 = "aerial";
   var metadata$3 = {
   	fr: {
@@ -31818,6 +31829,7 @@ return maplibregl$1;
   var owner$1 = "Carte Facile (IGN)";
   var aerialIgn = {
   	version: version$1,
+  	projection: projection$1,
   	name: name$3,
   	metadata: metadata$3,
   	center: center$1,
@@ -31830,6 +31842,9 @@ return maplibregl$1;
   };
 
   var version = 8;
+  var projection = {
+  	type: "globe"
+  };
   var name$2 = "simple-osm";
   var metadata$2 = {
   	fr: {
@@ -33716,6 +33731,7 @@ return maplibregl$1;
   var owner = "Carte Facile (IGN)";
   var simpleOsm = {
   	version: version,
+  	projection: projection,
   	name: name$2,
   	metadata: metadata$2,
   	center: center,
