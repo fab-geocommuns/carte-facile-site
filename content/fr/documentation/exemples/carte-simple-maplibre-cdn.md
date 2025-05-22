@@ -59,7 +59,7 @@ Vous pouvez simplement enregistrer ce code dans un fichier nommé **index.html**
             map.addControl(scale);
 
             // Ajouter des surcouches (dé-commenter les lignes en dessous pour ajouter ces surcouches)
-            //CarteFacile.addOverlay(map, 'administrative-boundaries');
+            //CarteFacile.addOverlay(map, 'administrativeBoundaries');
             //CarteFacile.addOverlay(map, 'cadastre');
         </script>
     </body>
