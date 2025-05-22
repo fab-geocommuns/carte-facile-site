@@ -28,10 +28,10 @@ Dans votre fichier javascript, initialisez la carte avec :
 
 ```typescript
 // Importations nécessaires pour la carte
-import { mapStyles, addOverlay, removeOverlay } from 'carte-facile';
+import { mapStyles } from 'carte-facile';
 import maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
-import 'carte-facile/dist/carte-facile.css';
+import 'carte-facile/carte-facile.css';
 
 // Création la carte
 let map = new maplibregl.Map({
@@ -134,6 +134,8 @@ Carte Facile permet d'ajouter des surcouches de carte pour enrichir votre visual
 Pour ajouter une surcouche à votre carte, utilisez la fonction `addOverlay` :
 
 ```typescript
+import { addOverlay } from 'carte-facile';
+
 // Ajout de la surcouche cadastrale
 addOverlay(map, 'cadastre');
 
@@ -144,6 +146,8 @@ addOverlay(map, 'administrativeBoundaries');
 Vous pouvez également retirer une surcouche à tout moment :
 
 ```typescript
+import { removeOverlay } from 'carte-facile';
+
 // Retrait de la surcouche cadastrale
 removeOverlay(map, 'cadastre');
 ```
