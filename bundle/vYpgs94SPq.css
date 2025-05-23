@@ -19,7 +19,8 @@ body {
   height: 100%;
   width: 100%;
   position: relative;
-  background-color: #00071A;
+  background: #ffffff;
+  background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(75, 134, 159, 1) 37%, rgba(6, 30, 46, 1) 86%);
 }.map-picker {
     font-family: Marianne,arial,sans-serif;
 }
