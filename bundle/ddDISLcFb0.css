@@ -19,8 +19,10 @@ body {
   height: 100%;
   width: 100%;
   position: relative;
-  background: #ffffff;
-  background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(75, 134, 159, 1) 37%, rgba(6, 30, 46, 1) 86%);
+  /* background: #ffffff; */
+  /* background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(75, 134, 159, 1) 37%, rgba(6, 30, 46, 1) 86%); */
+  background: #65a0ba;
+  background: radial-gradient(circle, rgba(101, 160, 186, 1) 30%, rgba(11, 47, 71, 1) 80%);
 }.map-picker {
     font-family: Marianne,arial,sans-serif;
 }

@@ -3,7 +3,10 @@
     let map = new maplibregl.Map({
         container: 'map',
         style: CarteFacile.mapStyle.simple,
+        minZoom: 1.8,
         maxZoom: 18.9,
+        zoom: 5,
+        center: [2.5, 47],
     });
     
     // Add zoom level control
