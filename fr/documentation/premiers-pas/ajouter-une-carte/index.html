@@ -5,7 +5,7 @@
   <meta name="format-detection" content="telephone=no,date=no,address=no,email=no,url=no">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <meta name="description" content="Ajouter une carte à votre site internet ou application avec Carte facile.">
+  <meta name="description" content="Ajouter une carte à votre site internet ou application avec Carte Facile.">
   <meta name="theme-color" content="#000091">
   <link rel="apple-touch-icon" href="/carte-facile-site/favicon/apple-touch-icon.png"><!-- 180×180 -->
   <link rel="icon" href="/carte-facile-site/favicon/favicon.svg" type="image/svg+xml">
@@ -506,6 +506,16 @@ pre[class*="language-"] {
                                     Ajouter une carte
                                 </a>
                                 </li>
+                                <li class="fr-sidemenu__item">
+                                <a class="fr-sidemenu__link" href="/carte-facile-site/fr/documentation/premiers-pas/ajouter-des-surcouches/">
+                                    Ajouter des surcouches
+                                </a>
+                                </li>
+                                <li class="fr-sidemenu__item">
+                                <a class="fr-sidemenu__link" href="/carte-facile-site/fr/documentation/premiers-pas/masquer-des-couches/">
+                                    Masquer des couches
+                                </a>
+                                </li>
                             </ul>
                         </div>
                 </li>
@@ -648,7 +658,6 @@ pre[class*="language-"] {
 <p>Un exemple de code prêt à l'emploi est disponible ici : <a href="/carte-facile-site/fr/documentation/exemples/carte-simple-maplibre-cdn"><strong>Carte simple</strong></a></p>
 <p><strong>🗺️ Félicitations, vous avez maintenant une carte fonctionnelle ! 🗺️</strong></p>
 <br>
-<hr>
 <h2 id="styles-de-carte-disponibles" tabindex="-1">Styles de carte disponibles <a class="header-anchor" href="#styles-de-carte-disponibles">#</a></h2>
 <p>CarteFacile propose plusieurs styles prédéfinis :</p>
 <div class="fr-table fr-table--layout-fixed">
@@ -696,46 +705,10 @@ pre[class*="language-"] {
 <p>Pour changer le style d'une carte existante :</p>
 <pre class="language-typescript" tabindex="0"><code class="language-typescript">map<span class="token punctuation">.</span><span class="token function">setStyle</span><span class="token punctuation">(</span>mapStyles<span class="token punctuation">.</span>aerial<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <br>
-<hr>
-<br>
-<h2 id="ajouter-des-surcouches-de-carte" tabindex="-1">Ajouter des surcouches de carte <a class="header-anchor" href="#ajouter-des-surcouches-de-carte">#</a></h2>
-<p>Carte Facile permet d'ajouter des surcouches de carte pour enrichir votre visualisation. Le styles des surcouches ajoutées s'adapteront automatiquement à la carte sélectionnée initialement, pour avoir une bonne lisibilité.</p>
-<div class="fr-table fr-table--layout-fixed">
-  <table>
-    <caption></caption>
-    <thead>
-    <tr>
-        <th scope="col">Surcouche</th>
-        <th scope="col">Description</th>
-    </tr>
-    </thead>
-    <tbody>
-      <tr>
-          <td>cadastre</td>
-          <td>Affiche les feuilles et les parcelles cadastrales.</td>
-      </tr>
-      <tr>
-          <td>administrativeBoundaries</td>
-          <td>Affiche les limites administratives des régions, départements, EPCI et communes.</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-<p>Pour ajouter une surcouche à votre carte, utilisez la fonction <code>addOverlay</code> :</p>
-<pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> addOverlay <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'carte-facile'</span><span class="token punctuation">;</span>
-
-<span class="token comment">// Ajout de la surcouche cadastrale</span>
-<span class="token function">addOverlay</span><span class="token punctuation">(</span>map<span class="token punctuation">,</span> <span class="token string">'cadastre'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token comment">// Ajout de la surcouche des limites administratives</span>
-<span class="token function">addOverlay</span><span class="token punctuation">(</span>map<span class="token punctuation">,</span> <span class="token string">'administrativeBoundaries'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<p>Vous pouvez également retirer une surcouche à tout moment :</p>
-<pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> removeOverlay <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'carte-facile'</span><span class="token punctuation">;</span>
-
-<span class="token comment">// Retrait de la surcouche cadastrale</span>
-<span class="token function">removeOverlay</span><span class="token punctuation">(</span>map<span class="token punctuation">,</span> <span class="token string">'cadastre'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<p>⚠️ Si vous utilisez les liens CDN, ajouter <code>CarteFacile</code> avant les fonctions <code>addOverlay</code> et <code>removeOverlay</code> :</p>
-<pre class="language-typescript" tabindex="0"><code class="language-typescript">CarteFacile<span class="token punctuation">.</span><span class="token function">addOverlay</span><span class="token punctuation">(</span>map<span class="token punctuation">,</span> <span class="token string">'administrativeBoundaries'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h2 id="prochaine-etape" tabindex="-1">Prochaine étape <a class="header-anchor" href="#prochaine-etape">#</a></h2>
+<p><a class="fr-btn fr-btn--secondary fr-btn--icon-right fr-icon-arrow-right-line" href="/carte-facile-site/fr/documentation/premiers-pas/ajouter-des-surcouches">
+Ajouter des surcouches
+</a></p>
 
       <div class="fr-grid-row fr-grid-row--right">
 <a class="fr-grid-row fr-grid-row--right fr-link fr-icon-arrow-up-fill fr-link--icon-left" href="#top">

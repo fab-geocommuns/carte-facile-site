@@ -695,6 +695,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 0,
   		maxzoom: 18,
   		filter: [
@@ -754,6 +757,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 0,
   		maxzoom: 18,
   		filter: [
@@ -812,6 +818,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 0,
   		maxzoom: 18,
   		filter: [
@@ -865,6 +874,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 0,
   		maxzoom: 18,
   		filter: [
@@ -917,6 +929,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 0,
   		maxzoom: 18,
   		filter: [
@@ -971,6 +986,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		maxzoom: 18,
   		filter: [
   			"in",
@@ -1022,6 +1040,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		maxzoom: 18,
   		filter: [
   			"in",
@@ -1074,6 +1095,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 13,
   		filter: [
   			"in",
@@ -1120,6 +1144,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 14,
   		filter: [
   			"==",
@@ -1161,6 +1188,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 14,
   		filter: [
   			"==",
@@ -1206,6 +1236,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 14,
   		filter: [
   			"==",
@@ -1251,6 +1284,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 13,
   		filter: [
   			"==",
@@ -1296,6 +1332,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 12,
   		filter: [
   			"==",
@@ -1337,6 +1376,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		maxzoom: 18,
   		filter: [
@@ -1383,6 +1425,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"==",
@@ -1428,6 +1473,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 12,
   		filter: [
   			"in",
@@ -1474,6 +1522,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"==",
@@ -1515,6 +1566,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"in",
@@ -1557,6 +1611,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"in",
@@ -1602,6 +1659,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 11,
   		filter: [
   			"==",
@@ -1643,6 +1703,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"in",
@@ -1688,6 +1751,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"==",
@@ -1729,6 +1795,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 7,
   		filter: [
   			"in",
@@ -1774,6 +1843,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"==",
@@ -1815,6 +1887,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 7,
   		filter: [
   			"in",
@@ -1857,6 +1932,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"==",
@@ -1898,6 +1976,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		maxzoom: 18,
   		filter: [
@@ -1940,6 +2021,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"==",
@@ -1981,6 +2065,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 12,
   		filter: [
   			"in",
@@ -2031,6 +2118,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"==",
@@ -2072,6 +2162,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"in",
@@ -2114,6 +2207,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"in",
@@ -2163,6 +2259,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 11,
   		filter: [
   			"==",
@@ -2212,6 +2311,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"in",
@@ -2265,6 +2367,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"==",
@@ -2322,6 +2427,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"in",
@@ -2379,6 +2487,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"==",
@@ -2436,6 +2547,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"in",
@@ -2490,6 +2604,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 13,
   		filter: [
   			"in",
@@ -2536,6 +2653,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"==",
@@ -2592,6 +2712,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 13,
   		filter: [
   			"==",
@@ -2973,6 +3096,9 @@ return maplibregl$1;
   		type: "fill",
   		source: "plan_ign",
   		"source-layer": "bati_surf",
+  		metadata: {
+  			"cartefacile:group": "buildings"
+  		},
   		minzoom: 14,
   		filter: [
   			"all",
@@ -3151,6 +3277,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 13,
   		filter: [
   			"in",
@@ -3200,6 +3329,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 14,
   		filter: [
   			"==",
@@ -3240,6 +3372,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 14,
   		filter: [
   			"==",
@@ -3284,6 +3419,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 14,
   		filter: [
   			"==",
@@ -3332,6 +3470,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 13,
   		filter: [
   			"==",
@@ -3380,6 +3521,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 12,
   		filter: [
   			"==",
@@ -3424,6 +3568,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		maxzoom: 18,
   		filter: [
@@ -3469,6 +3616,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"==",
@@ -3513,6 +3663,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 12,
   		filter: [
   			"in",
@@ -3558,6 +3711,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"==",
@@ -3598,6 +3754,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"in",
@@ -3639,6 +3798,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 7,
   		filter: [
   			"in",
@@ -3683,6 +3845,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 11,
   		filter: [
   			"==",
@@ -3723,6 +3888,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 8,
   		filter: [
   			"in",
@@ -3767,6 +3935,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"==",
@@ -3807,6 +3978,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 8,
   		filter: [
   			"in",
@@ -3851,6 +4025,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"==",
@@ -3891,6 +4068,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 8,
   		filter: [
   			"in",
@@ -3932,6 +4112,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 8,
   		filter: [
   			"==",
@@ -3972,6 +4155,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 0,
   		filter: [
   			"==",
@@ -4012,6 +4198,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"==",
@@ -4052,6 +4241,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 12,
   		filter: [
   			"in",
@@ -4101,6 +4293,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"==",
@@ -4141,6 +4336,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"in",
@@ -4182,6 +4380,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"in",
@@ -4230,6 +4431,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 11,
   		filter: [
   			"==",
@@ -4278,6 +4482,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 6,
   		filter: [
   			"in",
@@ -4330,6 +4537,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"==",
@@ -4382,6 +4592,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"in",
@@ -4434,6 +4647,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"==",
@@ -4486,6 +4702,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"in",
@@ -4535,6 +4754,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 13,
   		filter: [
   			"in",
@@ -4580,6 +4802,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 8,
   		filter: [
   			"==",
@@ -4632,6 +4857,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 13,
   		filter: [
   			"==",
@@ -4676,6 +4904,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"in",
@@ -4716,6 +4947,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"in",
@@ -4759,6 +4993,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"in",
@@ -4794,6 +5031,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"in",
@@ -4832,6 +5072,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 14,
   		filter: [
   			"in",
@@ -4872,6 +5115,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		maxzoom: 18,
   		filter: [
@@ -4910,6 +5156,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		maxzoom: 18,
   		filter: [
@@ -4947,6 +5196,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		filter: [
   			"in",
   			"symbo",
@@ -4980,6 +5232,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		filter: [
   			"in",
   			"symbo",
@@ -5018,6 +5273,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_liaison",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 8,
   		maxzoom: 18,
   		filter: [
@@ -5058,6 +5316,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_liaison",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		filter: [
   			"==",
   			"symbo",
@@ -5112,6 +5373,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_liaison",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		maxzoom: 18,
   		filter: [
   			"==",
@@ -5163,6 +5427,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_liaison",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		filter: [
   			"in",
   			"symbo",
@@ -5200,6 +5467,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_liaison",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		maxzoom: 24,
   		filter: [
   			"in",
@@ -5475,6 +5745,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 13,
   		filter: [
   			"in",
@@ -5524,6 +5797,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 14,
   		filter: [
   			"==",
@@ -5564,6 +5840,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 14,
   		filter: [
   			"==",
@@ -5608,6 +5887,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 14,
   		filter: [
   			"==",
@@ -5656,6 +5938,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 13,
   		filter: [
   			"==",
@@ -5704,6 +5989,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 12,
   		filter: [
   			"==",
@@ -5748,6 +6036,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		maxzoom: 18,
   		filter: [
@@ -5793,6 +6084,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"==",
@@ -5837,6 +6131,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 12,
   		filter: [
   			"in",
@@ -5882,6 +6179,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"==",
@@ -5922,6 +6222,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"in",
@@ -5963,6 +6266,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"in",
@@ -6007,6 +6313,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 11,
   		filter: [
   			"==",
@@ -6047,6 +6356,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 8,
   		filter: [
   			"in",
@@ -6091,6 +6403,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"==",
@@ -6131,6 +6446,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 8,
   		filter: [
   			"in",
@@ -6175,6 +6493,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"==",
@@ -6215,6 +6536,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 8,
   		filter: [
   			"in",
@@ -6256,6 +6580,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"==",
@@ -6296,6 +6623,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"==",
@@ -6336,6 +6666,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"==",
@@ -6376,6 +6709,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 12,
   		filter: [
   			"in",
@@ -6425,6 +6761,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"==",
@@ -6465,6 +6804,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"in",
@@ -6506,6 +6848,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"in",
@@ -6554,6 +6899,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 11,
   		filter: [
   			"==",
@@ -6602,6 +6950,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"in",
@@ -6654,6 +7005,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"==",
@@ -6706,6 +7060,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"in",
@@ -6762,6 +7119,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"==",
@@ -6814,6 +7174,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"in",
@@ -6867,6 +7230,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 13,
   		filter: [
   			"in",
@@ -6912,6 +7278,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"==",
@@ -6968,6 +7337,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 13,
   		filter: [
   			"==",
@@ -7012,6 +7384,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"in",
@@ -7052,6 +7427,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"in",
@@ -7095,6 +7473,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"in",
@@ -7168,6 +7549,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 14,
   		filter: [
   			"in",
@@ -7208,6 +7592,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		maxzoom: 18,
   		filter: [
@@ -7246,6 +7633,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		maxzoom: 18,
   		filter: [
@@ -7283,6 +7673,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		filter: [
   			"in",
   			"symbo",
@@ -7316,6 +7709,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		filter: [
   			"in",
   			"symbo",
@@ -7523,6 +7919,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "limite_lin",
+  		metadata: {
+  			"cartefacile:group": "boundaries"
+  		},
   		minzoom: 0,
   		maxzoom: 24,
   		filter: [
@@ -9439,6 +9838,9 @@ return maplibregl$1;
   		type: "symbol",
   		source: "plan_ign",
   		"source-layer": "toponyme_routier_odonyme_lin",
+  		metadata: {
+  			"cartefacile:group": "street_labels"
+  		},
   		minzoom: 15,
   		maxzoom: 17,
   		layout: {
@@ -9463,6 +9865,9 @@ return maplibregl$1;
   		type: "symbol",
   		source: "plan_ign",
   		"source-layer": "toponyme_routier_odonyme_lin",
+  		metadata: {
+  			"cartefacile:group": "street_labels"
+  		},
   		minzoom: 15,
   		layout: {
   			"symbol-placement": "line",
@@ -12204,6 +12609,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 0,
   		maxzoom: 18,
   		filter: [
@@ -12263,6 +12671,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 0,
   		maxzoom: 18,
   		filter: [
@@ -12321,6 +12732,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 0,
   		maxzoom: 18,
   		filter: [
@@ -12426,6 +12840,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 0,
   		maxzoom: 18,
   		filter: [
@@ -12480,6 +12897,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		maxzoom: 18,
   		filter: [
   			"in",
@@ -12531,6 +12951,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		maxzoom: 18,
   		filter: [
   			"in",
@@ -12583,6 +13006,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 13,
   		filter: [
   			"in",
@@ -12629,6 +13055,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 14,
   		filter: [
   			"==",
@@ -12670,6 +13099,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 14,
   		filter: [
   			"==",
@@ -12715,6 +13147,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 14,
   		filter: [
   			"==",
@@ -12760,6 +13195,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 13,
   		filter: [
   			"==",
@@ -12805,6 +13243,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 12,
   		filter: [
   			"==",
@@ -12846,6 +13287,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		maxzoom: 18,
   		filter: [
@@ -12892,6 +13336,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"==",
@@ -12937,6 +13384,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 12,
   		filter: [
   			"in",
@@ -12987,6 +13437,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"==",
@@ -13028,6 +13481,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"in",
@@ -13070,6 +13526,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"in",
@@ -13119,6 +13578,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 11,
   		filter: [
   			"==",
@@ -13164,6 +13626,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"in",
@@ -13217,6 +13682,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"==",
@@ -13266,6 +13734,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 7,
   		filter: [
   			"in",
@@ -13319,6 +13790,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"==",
@@ -13368,6 +13842,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 7,
   		filter: [
   			"in",
@@ -13418,6 +13895,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"==",
@@ -13467,6 +13947,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		maxzoom: 18,
   		filter: [
@@ -13509,6 +13992,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"==",
@@ -13550,6 +14036,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 12,
   		filter: [
   			"in",
@@ -13600,6 +14089,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"==",
@@ -13641,6 +14133,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"in",
@@ -13683,6 +14178,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"in",
@@ -13732,6 +14230,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 11,
   		filter: [
   			"==",
@@ -13781,6 +14282,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"in",
@@ -13834,6 +14338,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"==",
@@ -13891,6 +14398,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"in",
@@ -13948,6 +14458,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"==",
@@ -14005,6 +14518,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"in",
@@ -14059,6 +14575,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 13,
   		filter: [
   			"in",
@@ -14109,6 +14628,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"==",
@@ -14166,6 +14688,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 13,
   		filter: [
   			"==",
@@ -14530,6 +15055,9 @@ return maplibregl$1;
   		id: "bati surfacique",
   		type: "fill",
   		source: "plan_ign",
+  		metadata: {
+  			"cartefacile:group": "buildings"
+  		},
   		"source-layer": "bati_surf",
   		minzoom: 14,
   		filter: [
@@ -14709,6 +15237,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 13,
   		filter: [
   			"in",
@@ -14758,6 +15289,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 14,
   		filter: [
   			"==",
@@ -14798,6 +15332,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 14,
   		filter: [
   			"==",
@@ -14842,6 +15379,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 14,
   		filter: [
   			"==",
@@ -14890,6 +15430,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 13,
   		filter: [
   			"==",
@@ -14938,6 +15481,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 12,
   		filter: [
   			"==",
@@ -14982,6 +15528,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		maxzoom: 18,
   		filter: [
@@ -15027,6 +15576,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"==",
@@ -15071,6 +15623,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 12,
   		filter: [
   			"in",
@@ -15120,6 +15675,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"==",
@@ -15160,6 +15718,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"in",
@@ -15201,6 +15762,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 7,
   		filter: [
   			"in",
@@ -15249,6 +15813,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 11,
   		filter: [
   			"==",
@@ -15293,6 +15860,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 8,
   		filter: [
   			"in",
@@ -15345,6 +15915,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"==",
@@ -15393,6 +15966,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 8,
   		filter: [
   			"in",
@@ -15445,6 +16021,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"==",
@@ -15493,6 +16072,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 8,
   		filter: [
   			"in",
@@ -15542,6 +16124,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 8,
   		filter: [
   			"==",
@@ -15590,6 +16175,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"==",
@@ -15630,6 +16218,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"==",
@@ -15670,6 +16261,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 12,
   		filter: [
   			"in",
@@ -15719,6 +16313,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"==",
@@ -15759,6 +16356,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"in",
@@ -15800,6 +16400,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"in",
@@ -15848,6 +16451,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 11,
   		filter: [
   			"==",
@@ -15896,6 +16502,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 6,
   		filter: [
   			"in",
@@ -15948,6 +16557,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"==",
@@ -16000,6 +16612,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"in",
@@ -16052,6 +16667,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"==",
@@ -16104,6 +16722,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"in",
@@ -16153,6 +16774,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 13,
   		filter: [
   			"in",
@@ -16202,6 +16826,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 8,
   		filter: [
   			"==",
@@ -16254,6 +16881,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 13,
   		filter: [
   			"==",
@@ -16302,6 +16932,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"in",
@@ -16342,6 +16975,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"in",
@@ -16385,6 +17021,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"in",
@@ -16420,6 +17059,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"in",
@@ -16458,6 +17100,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 14,
   		filter: [
   			"in",
@@ -16498,6 +17143,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		maxzoom: 18,
   		filter: [
@@ -16536,6 +17184,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		maxzoom: 18,
   		filter: [
@@ -16573,6 +17224,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		filter: [
   			"in",
   			"symbo",
@@ -16606,6 +17260,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		filter: [
   			"in",
   			"symbo",
@@ -16644,6 +17301,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_liaison",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 8,
   		maxzoom: 18,
   		filter: [
@@ -16684,6 +17344,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_liaison",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		filter: [
   			"==",
   			"symbo",
@@ -16738,6 +17401,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_liaison",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		maxzoom: 18,
   		filter: [
   			"==",
@@ -16789,6 +17455,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_liaison",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		filter: [
   			"in",
   			"symbo",
@@ -16826,6 +17495,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_liaison",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		maxzoom: 24,
   		filter: [
   			"in",
@@ -17101,6 +17773,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 13,
   		filter: [
   			"in",
@@ -17150,6 +17825,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 14,
   		filter: [
   			"==",
@@ -17190,6 +17868,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 14,
   		filter: [
   			"==",
@@ -17234,6 +17915,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 14,
   		filter: [
   			"==",
@@ -17282,6 +17966,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 13,
   		filter: [
   			"==",
@@ -17330,6 +18017,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 12,
   		filter: [
   			"==",
@@ -17374,6 +18064,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		maxzoom: 18,
   		filter: [
@@ -17419,6 +18112,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"==",
@@ -17463,6 +18159,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 12,
   		filter: [
   			"in",
@@ -17512,6 +18211,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"==",
@@ -17552,6 +18254,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"in",
@@ -17593,6 +18298,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"in",
@@ -17641,6 +18349,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 11,
   		filter: [
   			"==",
@@ -17685,6 +18396,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 8,
   		filter: [
   			"in",
@@ -17737,6 +18451,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"==",
@@ -17785,6 +18502,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 8,
   		filter: [
   			"in",
@@ -17837,6 +18557,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"==",
@@ -17885,6 +18608,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 8,
   		filter: [
   			"in",
@@ -17934,6 +18660,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"==",
@@ -17982,6 +18711,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"==",
@@ -18022,6 +18754,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"==",
@@ -18062,6 +18797,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 12,
   		filter: [
   			"in",
@@ -18111,6 +18849,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"==",
@@ -18151,6 +18892,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"in",
@@ -18192,6 +18936,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"in",
@@ -18240,6 +18987,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 11,
   		filter: [
   			"==",
@@ -18288,6 +19038,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"in",
@@ -18340,6 +19093,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"==",
@@ -18448,6 +19204,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"==",
@@ -18500,6 +19259,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"in",
@@ -18553,6 +19315,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 13,
   		filter: [
   			"in",
@@ -18602,6 +19367,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"==",
@@ -18658,6 +19426,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 13,
   		filter: [
   			"==",
@@ -18706,6 +19477,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"in",
@@ -18746,6 +19520,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"in",
@@ -18789,6 +19566,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"in",
@@ -18824,6 +19604,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"in",
@@ -18862,6 +19645,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 14,
   		filter: [
   			"in",
@@ -18902,6 +19688,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		maxzoom: 18,
   		filter: [
@@ -18940,6 +19729,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		maxzoom: 18,
   		filter: [
@@ -18977,6 +19769,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		filter: [
   			"in",
   			"symbo",
@@ -19010,6 +19805,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		filter: [
   			"in",
   			"symbo",
@@ -19217,6 +20015,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "limite_lin",
+  		metadata: {
+  			"cartefacile:group": "boundaries"
+  		},
   		minzoom: 0,
   		maxzoom: 24,
   		filter: [
@@ -21133,6 +21934,9 @@ return maplibregl$1;
   		type: "symbol",
   		source: "plan_ign",
   		"source-layer": "toponyme_routier_numero_lin",
+  		metadata: {
+  			"cartefacile:group": "street_labels"
+  		},
   		minzoom: 11,
   		maxzoom: 16,
   		filter: [
@@ -21164,6 +21968,9 @@ return maplibregl$1;
   		type: "symbol",
   		source: "plan_ign",
   		"source-layer": "toponyme_routier_numero_lin",
+  		metadata: {
+  			"cartefacile:group": "street_labels"
+  		},
   		minzoom: 8,
   		maxzoom: 16,
   		filter: [
@@ -21199,6 +22006,9 @@ return maplibregl$1;
   		type: "symbol",
   		source: "plan_ign",
   		"source-layer": "toponyme_routier_numero_lin",
+  		metadata: {
+  			"cartefacile:group": "street_labels"
+  		},
   		minzoom: 7,
   		maxzoom: 16,
   		filter: [
@@ -21235,6 +22045,9 @@ return maplibregl$1;
   		type: "symbol",
   		source: "plan_ign",
   		"source-layer": "toponyme_routier_odonyme_lin",
+  		metadata: {
+  			"cartefacile:group": "street_labels"
+  		},
   		minzoom: 15,
   		maxzoom: 17,
   		layout: {
@@ -21259,6 +22072,9 @@ return maplibregl$1;
   		type: "symbol",
   		source: "plan_ign",
   		"source-layer": "toponyme_routier_odonyme_lin",
+  		metadata: {
+  			"cartefacile:group": "street_labels"
+  		},
   		minzoom: 15,
   		layout: {
   			"symbol-placement": "line",
@@ -23144,6 +23960,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 0,
   		maxzoom: 18,
   		filter: [
@@ -23203,6 +24022,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 0,
   		maxzoom: 18,
   		filter: [
@@ -23261,6 +24083,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 0,
   		maxzoom: 18,
   		filter: [
@@ -23314,6 +24139,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 0,
   		maxzoom: 18,
   		filter: [
@@ -23366,6 +24194,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 0,
   		maxzoom: 18,
   		filter: [
@@ -23420,6 +24251,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		maxzoom: 18,
   		filter: [
   			"in",
@@ -23471,6 +24305,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		maxzoom: 18,
   		filter: [
   			"in",
@@ -23523,6 +24360,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 13,
   		filter: [
   			"in",
@@ -23585,6 +24425,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 14,
   		filter: [
   			"==",
@@ -23642,6 +24485,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 14,
   		filter: [
   			"==",
@@ -23703,6 +24549,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 14,
   		filter: [
   			"==",
@@ -23764,6 +24613,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 13,
   		filter: [
   			"==",
@@ -23825,6 +24677,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 12,
   		filter: [
   			"==",
@@ -23882,6 +24737,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		maxzoom: 18,
   		filter: [
@@ -23940,6 +24798,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"==",
@@ -23997,6 +24858,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 12,
   		filter: [
   			"in",
@@ -24063,6 +24927,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"==",
@@ -24120,6 +24987,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"in",
@@ -24178,6 +25048,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"in",
@@ -24243,6 +25116,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 11,
   		filter: [
   			"==",
@@ -24308,6 +25184,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"in",
@@ -24377,6 +25256,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"==",
@@ -24450,6 +25332,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"in",
@@ -24523,6 +25408,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"==",
@@ -24596,6 +25484,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"in",
@@ -24666,6 +25557,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sou",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"==",
@@ -24739,6 +25633,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 13,
   		filter: [
   			"in",
@@ -24805,6 +25702,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 14,
   		filter: [
   			"==",
@@ -24862,6 +25762,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 14,
   		filter: [
   			"==",
@@ -24923,6 +25826,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 14,
   		filter: [
   			"==",
@@ -24988,6 +25894,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 13,
   		filter: [
   			"==",
@@ -25053,6 +25962,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 12,
   		filter: [
   			"==",
@@ -25114,6 +26026,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 0,
   		filter: [
   			"==",
@@ -25171,6 +26086,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"==",
@@ -25228,6 +26146,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 12,
   		filter: [
   			"in",
@@ -25294,6 +26215,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"==",
@@ -25351,6 +26275,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"in",
@@ -25409,6 +26336,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"in",
@@ -25474,6 +26404,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 11,
   		filter: [
   			"==",
@@ -25539,6 +26472,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 6,
   		filter: [
   			"in",
@@ -25608,6 +26544,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"==",
@@ -25677,6 +26616,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"in",
@@ -25746,6 +26688,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"==",
@@ -25815,6 +26760,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"in",
@@ -25881,6 +26829,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 8,
   		filter: [
   			"==",
@@ -25950,6 +26901,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"in",
@@ -26007,6 +26961,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"in",
@@ -26067,6 +27024,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"in",
@@ -26119,6 +27079,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"in",
@@ -26174,6 +27137,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 14,
   		filter: [
   			"in",
@@ -26231,6 +27197,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		maxzoom: 18,
   		filter: [
@@ -26286,6 +27255,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		maxzoom: 18,
   		filter: [
@@ -26340,6 +27312,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		filter: [
   			"in",
   			"symbo",
@@ -26390,6 +27365,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		filter: [
   			"in",
   			"symbo",
@@ -26445,6 +27423,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 13,
   		filter: [
   			"in",
@@ -26511,6 +27492,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 14,
   		filter: [
   			"==",
@@ -26568,6 +27552,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 14,
   		filter: [
   			"==",
@@ -26629,6 +27616,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 14,
   		filter: [
   			"==",
@@ -26694,6 +27684,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 13,
   		filter: [
   			"==",
@@ -26759,6 +27752,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_chemin_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 12,
   		filter: [
   			"==",
@@ -26820,6 +27816,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"==",
@@ -26877,6 +27876,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"==",
@@ -26934,6 +27936,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 12,
   		filter: [
   			"in",
@@ -27000,6 +28005,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"==",
@@ -27057,6 +28065,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"in",
@@ -27115,6 +28126,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"in",
@@ -27180,6 +28194,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 11,
   		filter: [
   			"==",
@@ -27245,6 +28262,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"in",
@@ -27314,6 +28334,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"==",
@@ -27383,6 +28406,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"in",
@@ -27456,6 +28482,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"==",
@@ -27525,6 +28554,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 5,
   		filter: [
   			"in",
@@ -27595,6 +28627,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "routier_route_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"==",
@@ -27668,6 +28703,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"in",
@@ -27725,6 +28763,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"in",
@@ -27785,6 +28826,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"in",
@@ -27837,6 +28881,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		filter: [
   			"in",
@@ -27892,6 +28939,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 14,
   		filter: [
   			"in",
@@ -27949,6 +28999,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		maxzoom: 18,
   		filter: [
@@ -28004,6 +29057,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		minzoom: 10,
   		maxzoom: 18,
   		filter: [
@@ -28058,6 +29114,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		filter: [
   			"in",
   			"symbo",
@@ -28108,6 +29167,9 @@ return maplibregl$1;
   		type: "line",
   		source: "plan_ign",
   		"source-layer": "ferre_sup",
+  		metadata: {
+  			"cartefacile:group": "streets"
+  		},
   		filter: [
   			"in",
   			"symbo",
@@ -30050,6 +31112,9 @@ return maplibregl$1;
   		type: "symbol",
   		source: "plan_ign",
   		"source-layer": "toponyme_routier_odonyme_lin",
+  		metadata: {
+  			"cartefacile:group": "street_labels"
+  		},
   		minzoom: 15,
   		maxzoom: 17,
   		layout: {
@@ -30074,6 +31139,9 @@ return maplibregl$1;
   		type: "symbol",
   		source: "plan_ign",
   		"source-layer": "toponyme_routier_odonyme_lin",
+  		metadata: {
+  			"cartefacile:group": "street_labels"
+  		},
   		minzoom: 15,
   		layout: {
   			"symbol-placement": "line",
@@ -31990,7 +33058,7 @@ return maplibregl$1;
   			]
   		],
   		layout: {
-  			visibility: "visible"
+  			visibility: "none"
   		},
   		paint: {
   			"fill-color": "rgba(214, 234, 209, 1)",
@@ -33151,6 +34219,9 @@ return maplibregl$1;
   		source: "openmaptiles",
   		"source-layer": "building",
   		minzoom: 14,
+  		metadata: {
+  			"cartefacile:group": "buildings"
+  		},
   		paint: {
   			"fill-color": "rgba(213, 213, 208, 1)",
   			"fill-outline-color": "rgba(151, 150, 137, 1)",
@@ -33174,6 +34245,9 @@ return maplibregl$1;
   		type: "line",
   		source: "openmaptiles",
   		"source-layer": "boundary",
+  		metadata: {
+  			"cartefacile:group": "boundaries"
+  		},
   		maxzoom: 24,
   		filter: [
   			"all",
@@ -33264,6 +34338,9 @@ return maplibregl$1;
   		type: "symbol",
   		source: "openmaptiles",
   		"source-layer": "transportation_name",
+  		metadata: {
+  			"cartefacile:group": "street_labels"
+  		},
   		minzoom: 13,
   		maxzoom: 16,
   		filter: [
@@ -33309,6 +34386,9 @@ return maplibregl$1;
   		type: "symbol",
   		source: "openmaptiles",
   		"source-layer": "transportation_name",
+  		metadata: {
+  			"cartefacile:group": "street_labels"
+  		},
   		minzoom: 12,
   		maxzoom: 16,
   		filter: [
@@ -33349,6 +34429,9 @@ return maplibregl$1;
   		type: "symbol",
   		source: "openmaptiles",
   		"source-layer": "transportation_name",
+  		metadata: {
+  			"cartefacile:group": "street_labels"
+  		},
   		minzoom: 9,
   		filter: [
   			"any",
@@ -33386,6 +34469,9 @@ return maplibregl$1;
   		type: "symbol",
   		source: "openmaptiles",
   		"source-layer": "transportation_name",
+  		metadata: {
+  			"cartefacile:group": "street_labels"
+  		},
   		minzoom: 16,
   		filter: [
   			"any",
@@ -33418,6 +34504,9 @@ return maplibregl$1;
   		type: "symbol",
   		source: "openmaptiles",
   		"source-layer": "transportation_name",
+  		metadata: {
+  			"cartefacile:group": "street_labels"
+  		},
   		minzoom: 15,
   		filter: [
   			"any",
@@ -33455,6 +34544,9 @@ return maplibregl$1;
   		type: "symbol",
   		source: "openmaptiles",
   		"source-layer": "transportation_name",
+  		metadata: {
+  			"cartefacile:group": "street_labels"
+  		},
   		minzoom: 14,
   		filter: [
   			"any",
@@ -33785,6 +34877,9 @@ return maplibregl$1;
   		type: "line",
   		source: "cadastre",
   		"source-layer": "sections",
+  		metadata: {
+  			"cartefacile:group": "cadastral_sections"
+  		},
   		minzoom: 14,
   		layout: {
   			visibility: "visible"
@@ -33811,6 +34906,9 @@ return maplibregl$1;
   		type: "line",
   		source: "cadastre",
   		"source-layer": "sections",
+  		metadata: {
+  			"cartefacile:group": "cadastral_sections"
+  		},
   		minzoom: 14,
   		layout: {
   			visibility: "visible"
@@ -33837,6 +34935,9 @@ return maplibregl$1;
   		type: "line",
   		source: "cadastre",
   		"source-layer": "parcelles",
+  		metadata: {
+  			"cartefacile:group": "cadastral_parcels"
+  		},
   		minzoom: 16.5,
   		layout: {
   			visibility: "visible"
@@ -33862,6 +34963,9 @@ return maplibregl$1;
   		type: "line",
   		source: "cadastre",
   		"source-layer": "parcelles",
+  		metadata: {
+  			"cartefacile:group": "cadastral_parcels"
+  		},
   		minzoom: 16.5,
   		layout: {
   			visibility: "visible"
@@ -33887,6 +34991,9 @@ return maplibregl$1;
   		type: "symbol",
   		source: "cadastre",
   		"source-layer": "parcelles",
+  		metadata: {
+  			"cartefacile:group": "cadastral_parcels"
+  		},
   		minzoom: 16.5,
   		layout: {
   			"text-field": "{numero}",
@@ -33919,6 +35026,9 @@ return maplibregl$1;
   		type: "symbol",
   		source: "cadastre",
   		"source-layer": "sections",
+  		metadata: {
+  			"cartefacile:group": "cadastral_sections"
+  		},
   		minzoom: 14,
   		layout: {
   			"text-field": "{code}",
@@ -33942,6 +35052,9 @@ return maplibregl$1;
   		type: "line",
   		source: "cadastre",
   		"source-layer": "sections",
+  		metadata: {
+  			"cartefacile:group": "cadastral_sections"
+  		},
   		minzoom: 14,
   		layout: {
   			visibility: "visible"
@@ -33968,6 +35081,9 @@ return maplibregl$1;
   		type: "line",
   		source: "cadastre",
   		"source-layer": "sections",
+  		metadata: {
+  			"cartefacile:group": "cadastral_sections"
+  		},
   		minzoom: 14,
   		layout: {
   			visibility: "visible"
@@ -33994,6 +35110,9 @@ return maplibregl$1;
   		type: "line",
   		source: "cadastre",
   		"source-layer": "parcelles",
+  		metadata: {
+  			"cartefacile:group": "cadastral_parcels"
+  		},
   		minzoom: 16.5,
   		layout: {
   			visibility: "visible"
@@ -34019,6 +35138,9 @@ return maplibregl$1;
   		type: "line",
   		source: "cadastre",
   		"source-layer": "parcelles",
+  		metadata: {
+  			"cartefacile:group": "cadastral_parcels"
+  		},
   		minzoom: 16.5,
   		layout: {
   			visibility: "visible"
@@ -34044,6 +35166,9 @@ return maplibregl$1;
   		type: "symbol",
   		source: "cadastre",
   		"source-layer": "parcelles",
+  		metadata: {
+  			"cartefacile:group": "cadastral_parcels"
+  		},
   		minzoom: 16.5,
   		layout: {
   			"text-field": "{numero}",
@@ -34076,6 +35201,9 @@ return maplibregl$1;
   		type: "symbol",
   		source: "cadastre",
   		"source-layer": "sections",
+  		metadata: {
+  			"cartefacile:group": "cadastral_sections"
+  		},
   		minzoom: 14,
   		layout: {
   			"text-field": "{code}",
@@ -34123,7 +35251,10 @@ return maplibregl$1;
   		type: "line",
   		source: "decoupage-administratif",
   		"source-layer": "communes",
-  		minzoom: 12,
+  		metadata: {
+  			"cartefacile:group": "boundaries_communes"
+  		},
+  		minzoom: 10,
   		layout: {
   			"line-cap": "round"
   		},
@@ -34137,12 +35268,23 @@ return maplibregl$1;
   				[
   					"zoom"
   				],
-  				12,
+  				10,
   				0,
-  				12.3,
+  				10.3,
   				1
   			],
-  			"line-width": 4
+  			"line-width": {
+  				stops: [
+  					[
+  						11,
+  						2
+  					],
+  					[
+  						12,
+  						4
+  					]
+  				]
+  			}
   		}
   	},
   	{
@@ -34150,7 +35292,10 @@ return maplibregl$1;
   		type: "line",
   		source: "decoupage-administratif",
   		"source-layer": "communes",
-  		minzoom: 12,
+  		metadata: {
+  			"cartefacile:group": "boundaries_communes"
+  		},
+  		minzoom: 10,
   		layout: {
   			"line-cap": "round"
   		},
@@ -34164,12 +35309,23 @@ return maplibregl$1;
   				[
   					"zoom"
   				],
-  				12,
+  				10,
   				0,
-  				12.3,
+  				10.3,
   				1
   			],
-  			"line-width": 2
+  			"line-width": {
+  				stops: [
+  					[
+  						11,
+  						1
+  					],
+  					[
+  						12,
+  						2
+  					]
+  				]
+  			}
   		}
   	},
   	{
@@ -34177,10 +35333,14 @@ return maplibregl$1;
   		type: "line",
   		source: "decoupage-administratif",
   		"source-layer": "epcis",
+  		metadata: {
+  			"cartefacile:group": "boundaries_epcis"
+  		},
   		minzoom: 10,
-  		maxzoom: 12.5,
+  		maxzoom: 24,
   		layout: {
-  			"line-cap": "round"
+  			"line-cap": "round",
+  			visibility: "visible"
   		},
   		paint: {
   			"line-color": "rgba(255, 255, 255, 1)",
@@ -34197,19 +35357,7 @@ return maplibregl$1;
   				10.3,
   				1
   			],
-  			"line-width": [
-  				"interpolate",
-  				[
-  					"linear"
-  				],
-  				[
-  					"zoom"
-  				],
-  				6,
-  				2,
-  				12,
-  				4
-  			]
+  			"line-width": 4
   		}
   	},
   	{
@@ -34217,10 +35365,14 @@ return maplibregl$1;
   		type: "line",
   		source: "decoupage-administratif",
   		"source-layer": "epcis",
+  		metadata: {
+  			"cartefacile:group": "boundaries_epcis"
+  		},
   		minzoom: 10,
-  		maxzoom: 12.5,
+  		maxzoom: 24,
   		layout: {
-  			"line-cap": "round"
+  			"line-cap": "round",
+  			visibility: "visible"
   		},
   		paint: {
   			"line-color": "rgba(88, 88, 88, 1)",
@@ -34237,19 +35389,7 @@ return maplibregl$1;
   				10.3,
   				1
   			],
-  			"line-width": [
-  				"interpolate",
-  				[
-  					"linear"
-  				],
-  				[
-  					"zoom"
-  				],
-  				6,
-  				1,
-  				12,
-  				2
-  			]
+  			"line-width": 2
   		}
   	},
   	{
@@ -34257,8 +35397,11 @@ return maplibregl$1;
   		type: "line",
   		source: "decoupage-administratif",
   		"source-layer": "departements",
-  		minzoom: 7.5,
-  		maxzoom: 10.5,
+  		metadata: {
+  			"cartefacile:group": "boundaries_departements"
+  		},
+  		minzoom: 6.4,
+  		maxzoom: 24,
   		layout: {
   			"line-cap": "round"
   		},
@@ -34272,24 +35415,23 @@ return maplibregl$1;
   				[
   					"zoom"
   				],
-  				7.5,
+  				6.4,
   				0,
-  				7.8,
+  				6.7,
   				1
   			],
-  			"line-width": [
-  				"interpolate",
-  				[
-  					"linear"
-  				],
-  				[
-  					"zoom"
-  				],
-  				6,
-  				2,
-  				12,
-  				4
-  			]
+  			"line-width": {
+  				stops: [
+  					[
+  						8,
+  						2
+  					],
+  					[
+  						9,
+  						4
+  					]
+  				]
+  			}
   		}
   	},
   	{
@@ -34297,8 +35439,11 @@ return maplibregl$1;
   		type: "line",
   		source: "decoupage-administratif",
   		"source-layer": "departements",
-  		minzoom: 7.5,
-  		maxzoom: 10.5,
+  		metadata: {
+  			"cartefacile:group": "boundaries_departements"
+  		},
+  		minzoom: 6.4,
+  		maxzoom: 24,
   		layout: {
   			"line-cap": "round"
   		},
@@ -34312,24 +35457,23 @@ return maplibregl$1;
   				[
   					"zoom"
   				],
-  				7.5,
+  				6.4,
   				0,
-  				7.8,
+  				6.7,
   				1
   			],
-  			"line-width": [
-  				"interpolate",
-  				[
-  					"linear"
-  				],
-  				[
-  					"zoom"
-  				],
-  				6,
-  				1,
-  				12,
-  				2
-  			]
+  			"line-width": {
+  				stops: [
+  					[
+  						8,
+  						1
+  					],
+  					[
+  						9,
+  						2
+  					]
+  				]
+  			}
   		}
   	},
   	{
@@ -34337,8 +35481,11 @@ return maplibregl$1;
   		type: "line",
   		source: "decoupage-administratif",
   		"source-layer": "regions",
-  		minzoom: 6,
-  		maxzoom: 8,
+  		metadata: {
+  			"cartefacile:group": "boundaries_regions"
+  		},
+  		minzoom: 5,
+  		maxzoom: 24,
   		layout: {
   			"line-cap": "round"
   		},
@@ -34352,9 +35499,9 @@ return maplibregl$1;
   				[
   					"zoom"
   				],
-  				6,
+  				5,
   				0,
-  				6.3,
+  				5.3,
   				1
   			],
   			"line-width": [
@@ -34365,9 +35512,9 @@ return maplibregl$1;
   				[
   					"zoom"
   				],
-  				6,
+  				5,
   				2,
-  				12,
+  				8,
   				4
   			]
   		}
@@ -34377,8 +35524,11 @@ return maplibregl$1;
   		type: "line",
   		source: "decoupage-administratif",
   		"source-layer": "regions",
-  		minzoom: 6,
-  		maxzoom: 8,
+  		metadata: {
+  			"cartefacile:group": "boundaries_regions"
+  		},
+  		minzoom: 5,
+  		maxzoom: 24,
   		layout: {
   			"line-cap": "round"
   		},
@@ -34392,9 +35542,9 @@ return maplibregl$1;
   				[
   					"zoom"
   				],
-  				6,
+  				5,
   				0,
-  				6.3,
+  				5.3,
   				1
   			],
   			"line-width": [
@@ -34405,9 +35555,9 @@ return maplibregl$1;
   				[
   					"zoom"
   				],
-  				6,
+  				5,
   				1,
-  				12,
+  				8,
   				2
   			]
   		}
@@ -34420,7 +35570,10 @@ return maplibregl$1;
   		type: "line",
   		source: "decoupage-administratif",
   		"source-layer": "communes",
-  		minzoom: 12,
+  		metadata: {
+  			"cartefacile:group": "boundaries_communes"
+  		},
+  		minzoom: 10,
   		layout: {
   			"line-cap": "round"
   		},
@@ -34434,12 +35587,23 @@ return maplibregl$1;
   				[
   					"zoom"
   				],
-  				12,
+  				10,
   				0,
-  				12.3,
+  				10.3,
   				1
   			],
-  			"line-width": 4
+  			"line-width": {
+  				stops: [
+  					[
+  						11,
+  						2
+  					],
+  					[
+  						12,
+  						4
+  					]
+  				]
+  			}
   		}
   	},
   	{
@@ -34447,7 +35611,10 @@ return maplibregl$1;
   		type: "line",
   		source: "decoupage-administratif",
   		"source-layer": "communes",
-  		minzoom: 12,
+  		metadata: {
+  			"cartefacile:group": "boundaries_communes"
+  		},
+  		minzoom: 10,
   		layout: {
   			"line-cap": "round"
   		},
@@ -34461,23 +35628,38 @@ return maplibregl$1;
   				[
   					"zoom"
   				],
-  				12,
+  				10,
   				0,
-  				12.3,
+  				10.3,
   				1
   			],
-  			"line-width": 2
+  			"line-width": {
+  				stops: [
+  					[
+  						11,
+  						1
+  					],
+  					[
+  						12,
+  						2
+  					]
+  				]
+  			}
   		}
   	},
   	{
   		id: "Limites - EPCI - Bordures",
   		type: "line",
   		source: "decoupage-administratif",
+  		metadata: {
+  			"cartefacile:group": "boundaries_epcis"
+  		},
   		"source-layer": "epcis",
   		minzoom: 10,
-  		maxzoom: 12.5,
+  		maxzoom: 24,
   		layout: {
-  			"line-cap": "round"
+  			"line-cap": "round",
+  			visibility: "visible"
   		},
   		paint: {
   			"line-color": "rgba(40, 40, 40, 1)",
@@ -34494,19 +35676,7 @@ return maplibregl$1;
   				10.3,
   				1
   			],
-  			"line-width": [
-  				"interpolate",
-  				[
-  					"linear"
-  				],
-  				[
-  					"zoom"
-  				],
-  				6,
-  				2,
-  				12,
-  				4
-  			]
+  			"line-width": 4
   		}
   	},
   	{
@@ -34514,10 +35684,14 @@ return maplibregl$1;
   		type: "line",
   		source: "decoupage-administratif",
   		"source-layer": "epcis",
+  		metadata: {
+  			"cartefacile:group": "boundaries_epcis"
+  		},
   		minzoom: 10,
-  		maxzoom: 12.5,
+  		maxzoom: 24,
   		layout: {
-  			"line-cap": "round"
+  			"line-cap": "round",
+  			visibility: "visible"
   		},
   		paint: {
   			"line-color": "rgb(255,202,0)",
@@ -34534,19 +35708,7 @@ return maplibregl$1;
   				10.3,
   				1
   			],
-  			"line-width": [
-  				"interpolate",
-  				[
-  					"linear"
-  				],
-  				[
-  					"zoom"
-  				],
-  				6,
-  				1,
-  				12,
-  				2
-  			]
+  			"line-width": 2
   		}
   	},
   	{
@@ -34554,8 +35716,11 @@ return maplibregl$1;
   		type: "line",
   		source: "decoupage-administratif",
   		"source-layer": "departements",
-  		minzoom: 7.5,
-  		maxzoom: 10.5,
+  		metadata: {
+  			"cartefacile:group": "boundaries_departments"
+  		},
+  		minzoom: 6.4,
+  		maxzoom: 24,
   		layout: {
   			"line-cap": "round"
   		},
@@ -34569,24 +35734,23 @@ return maplibregl$1;
   				[
   					"zoom"
   				],
-  				7.5,
+  				6.4,
   				0,
-  				7.8,
+  				6.7,
   				1
   			],
-  			"line-width": [
-  				"interpolate",
-  				[
-  					"linear"
-  				],
-  				[
-  					"zoom"
-  				],
-  				6,
-  				2,
-  				12,
-  				4
-  			]
+  			"line-width": {
+  				stops: [
+  					[
+  						8,
+  						2
+  					],
+  					[
+  						9,
+  						4
+  					]
+  				]
+  			}
   		}
   	},
   	{
@@ -34594,8 +35758,11 @@ return maplibregl$1;
   		type: "line",
   		source: "decoupage-administratif",
   		"source-layer": "departements",
-  		minzoom: 7.5,
-  		maxzoom: 10.5,
+  		metadata: {
+  			"cartefacile:group": "boundaries_departments"
+  		},
+  		minzoom: 6.4,
+  		maxzoom: 24,
   		layout: {
   			"line-cap": "round"
   		},
@@ -34609,24 +35776,23 @@ return maplibregl$1;
   				[
   					"zoom"
   				],
-  				7.5,
+  				6.4,
   				0,
-  				7.8,
+  				6.7,
   				1
   			],
-  			"line-width": [
-  				"interpolate",
-  				[
-  					"linear"
-  				],
-  				[
-  					"zoom"
-  				],
-  				6,
-  				1,
-  				12,
-  				2
-  			]
+  			"line-width": {
+  				stops: [
+  					[
+  						8,
+  						1
+  					],
+  					[
+  						9,
+  						2
+  					]
+  				]
+  			}
   		}
   	},
   	{
@@ -34634,8 +35800,11 @@ return maplibregl$1;
   		type: "line",
   		source: "decoupage-administratif",
   		"source-layer": "regions",
-  		minzoom: 6,
-  		maxzoom: 8,
+  		metadata: {
+  			"cartefacile:group": "boundaries_regions"
+  		},
+  		minzoom: 5,
+  		maxzoom: 24,
   		layout: {
   			"line-cap": "round"
   		},
@@ -34649,9 +35818,9 @@ return maplibregl$1;
   				[
   					"zoom"
   				],
-  				6,
+  				5,
   				0,
-  				6.3,
+  				5.3,
   				1
   			],
   			"line-width": [
@@ -34662,9 +35831,9 @@ return maplibregl$1;
   				[
   					"zoom"
   				],
-  				6,
+  				5,
   				2,
-  				12,
+  				8,
   				4
   			]
   		}
@@ -34674,8 +35843,11 @@ return maplibregl$1;
   		type: "line",
   		source: "decoupage-administratif",
   		"source-layer": "regions",
-  		minzoom: 6,
-  		maxzoom: 8,
+  		metadata: {
+  			"cartefacile:group": "boundaries_regions"
+  		},
+  		minzoom: 5,
+  		maxzoom: 24,
   		layout: {
   			"line-cap": "round"
   		},
@@ -34689,9 +35861,9 @@ return maplibregl$1;
   				[
   					"zoom"
   				],
-  				6,
+  				5,
   				0,
-  				6.3,
+  				5.3,
   				1
   			],
   			"line-width": [
@@ -34702,9 +35874,9 @@ return maplibregl$1;
   				[
   					"zoom"
   				],
-  				6,
+  				5,
   				1,
-  				12,
+  				8,
   				2
   			]
   		}
@@ -35141,7 +36313,7 @@ return maplibregl$1;
           update();
       else
           map.once('load', update);
-      map.on('style.load', update);
+      map.on('styledata', update);
   }
   /**
    * Removes an overlay from the map
@@ -35164,7 +36336,62 @@ return maplibregl$1;
           update();
       else
           map.once('load', update);
-      map.off('style.load', update);
+      map.off('styledata', update);
+  }
+  /**
+   * List of layer groups available
+   * Used for layer visibility management
+   */
+  exports.LayerGroup = void 0;
+  (function (LayerGroup) {
+      LayerGroup["cadastral_sections"] = "cadastral_sections";
+      LayerGroup["cadastral_parcels"] = "cadastral_parcels";
+      LayerGroup["boundaries_communes"] = "boundaries_communes";
+      LayerGroup["boundaries_epcis"] = "boundaries_epcis";
+      LayerGroup["boundaries_departments"] = "boundaries_departments";
+      LayerGroup["boundaries_regions"] = "boundaries_regions";
+      LayerGroup["boundaries"] = "boundaries";
+      LayerGroup["buildings"] = "buildings";
+      LayerGroup["streets"] = "streets";
+      LayerGroup["street_labels"] = "street_labels";
+  })(exports.LayerGroup || (exports.LayerGroup = {}));
+  /**
+   * Show the specified layer groups
+   * @param map - The MapLibre map instance
+   * @param groups - List of layer groups to show
+   */
+  function showLayers(map, groups) {
+      var _a;
+      if (!map.loaded()) {
+          map.once('load', () => showLayers(map, groups));
+          return;
+      }
+      (_a = map.getStyle().layers) === null || _a === void 0 ? void 0 : _a.forEach(layer => {
+          var _a;
+          const group = (_a = layer.metadata) === null || _a === void 0 ? void 0 : _a['cartefacile:group'];
+          if (group && groups.includes(group)) {
+              map.setLayoutProperty(layer.id, 'visibility', 'visible');
+          }
+      });
+  }
+  /**
+   * Hide the specified layer groups
+   * @param map - The MapLibre map instance
+   * @param groups - List of layer groups to hide
+   */
+  function hideLayers(map, groups) {
+      var _a;
+      if (!map.loaded()) {
+          map.once('load', () => hideLayers(map, groups));
+          return;
+      }
+      (_a = map.getStyle().layers) === null || _a === void 0 ? void 0 : _a.forEach(layer => {
+          var _a;
+          const group = (_a = layer.metadata) === null || _a === void 0 ? void 0 : _a['cartefacile:group'];
+          if (group && groups.includes(group)) {
+              map.setLayoutProperty(layer.id, 'visibility', 'none');
+          }
+      });
   }
 
   class ZoomLevelControl {
@@ -35189,11 +36416,13 @@ return maplibregl$1;
 
   exports.ZoomLevelControl = ZoomLevelControl;
   exports.addOverlay = addOverlay;
+  exports.hideLayers = hideLayers;
   exports.mapOverlays = mapOverlays;
   exports.mapStyle = mapStyle;
   exports.mapStyles = mapStyles;
   exports.mapThumbnails = mapThumbnails;
   exports.removeOverlay = removeOverlay;
+  exports.showLayers = showLayers;
 
 }));
 //# sourceMappingURL=carte-facile.js.map
