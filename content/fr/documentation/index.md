@@ -20,6 +20,8 @@ eleventyNavigation:
 
 - [**Installation**]({{ "/documentation/premiers-pas/installation" | locale_url }}) - Installer la librairie Carte Facile.
 - [**Ajouter une carte**]({{ "/documentation/premiers-pas/ajouter-une-carte" | locale_url }}) - Ajouter une carte à son site avec Carte Facile.
+- [**Ajouter des surcouches**]({{ "/documentation/premiers-pas/ajouter-des-surcouches" | locale_url }}) - Ajouter des surcouches à votre carte avec Carte Facile.
+- [**Masquer des couches**]({{ "/documentation/premiers-pas/masquer-des-couches" | locale_url }}) - Masquer et afficher des couches de votre carte avec Carte Facile.
 
 <br>
 

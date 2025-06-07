@@ -1,6 +1,6 @@
 ---
 title: Ajouter une carte
-description: Ajouter une carte à votre site internet ou application avec Carte facile.
+description: Ajouter une carte à votre site internet ou application avec Carte Facile.
 layout: layouts/docs.njk
 eleventyNavigation:
   key: Ajouter une carte
@@ -71,8 +71,6 @@ Un exemple de code prêt à l'emploi est disponible ici : [**Carte simple**]({{ 
 
 <br>
 
----
-
 ## Styles de carte disponibles
 
 CarteFacile propose plusieurs styles prédéfinis :
@@ -121,45 +119,9 @@ map.setStyle(mapStyles.aerial);
 
 <br>
 
----
+## Prochaine étape
 
-<br>
-
-## Ajouter des surcouches de carte
-
-Carte Facile permet d'ajouter des surcouches de carte pour enrichir votre visualisation. Le styles des surcouches ajoutées s'adapteront automatiquement à la carte sélectionnée initialement, pour avoir une bonne lisibilité.
-
-{% from "components/component.njk" import component with context %}
-{{ component("table", {
-    headers: ["Surcouche", "Description"],
-    data: [
-        ["cadastre", "Affiche les feuilles et les parcelles cadastrales."],
-        ["administrativeBoundaries", "Affiche les limites administratives des régions, départements, EPCI et communes."]
-    ]
-}) }}
-
-Pour ajouter une surcouche à votre carte, utilisez la fonction `addOverlay` :
-
-```typescript
-import { addOverlay } from 'carte-facile';
-
-// Ajout de la surcouche cadastrale
-addOverlay(map, 'cadastre');
-
-// Ajout de la surcouche des limites administratives
-addOverlay(map, 'administrativeBoundaries');
-```
-
-Vous pouvez également retirer une surcouche à tout moment :
-
-```typescript
-import { removeOverlay } from 'carte-facile';
-
-// Retrait de la surcouche cadastrale
-removeOverlay(map, 'cadastre');
-```
-
-⚠️ Si vous utilisez les liens CDN, ajouter `CarteFacile` avant les fonctions `addOverlay` et `removeOverlay` :
-```typescript
-CarteFacile.addOverlay(map, 'administrativeBoundaries');
-```
+<a class="fr-btn fr-btn--secondary fr-btn--icon-right fr-icon-arrow-right-line"
+  href={{ "/documentation/premiers-pas/ajouter-des-surcouches" | locale_url }}>
+  Ajouter des surcouches
+</a>
