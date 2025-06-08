@@ -43,6 +43,6 @@
   },
   "dependencies": {
     "carte-facile": "^0.6.0",
-    "maplibre-gl": "^5.2.0"
+    "maplibre-gl": "^5.5.0"
   }
 }
