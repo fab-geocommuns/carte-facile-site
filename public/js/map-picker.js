@@ -1,8 +1,7 @@
 (() => {
     // State
     const state = {
-        selectedStyle: null,
-        activeOverlays: new Set()
+        selectedStyle: null
     };
 
     // DOM Elements
@@ -32,14 +31,6 @@
         });
     }
 
-    function updateOverlayActiveIcon(overlayId) {
-        const card = document.querySelector(`[data-overlay-id="${overlayId}"]`);
-        if (card) {
-            const icon = card.querySelector('.map-picker-card__active-icon');
-            icon.style.display = state.activeOverlays.has(overlayId) ? 'block' : 'none';
-        }
-    }
-
     function updateStyleDetails(style) {
         const styleData = CarteFacile.mapStyle[style];
         const metadata = styleData.metadata?.fr || {};
@@ -67,29 +58,25 @@
         updateActiveIcon(style);
         updateStyleDetails(style);
 
-        // Dispatch event for map style change
-        const event = new CustomEvent('mapStyleChange', { 
-            detail: { styleData: CarteFacile.mapStyle[style] } 
-        });
-        document.dispatchEvent(event);
+        // Update map style directly
+        CarteFacile.map.setStyle(CarteFacile.mapStyle[style]);
 
         elements.stylesList.style.display = 'none';
         elements.styleDetails.style.display = 'flex';
     }
 
-    function toggleOverlay(overlayId) {
-        if (state.activeOverlays.has(overlayId)) {
-            state.activeOverlays.delete(overlayId);
-            document.dispatchEvent(new CustomEvent('overlayChange', {
-                detail: { type: overlayId, action: 'remove' }
-            }));
+    function toggleOverlay(card) {
+        const overlayId = card.dataset.overlayId;
+        const icon = card.querySelector('.map-picker-card__active-icon');
+        const isActive = icon.style.display === 'block';
+
+        if (isActive) {
+            icon.style.display = 'none';
+            CarteFacile.removeOverlay(CarteFacile.map, overlayId);
         } else {
-            state.activeOverlays.add(overlayId);
-            document.dispatchEvent(new CustomEvent('overlayChange', {
-                detail: { type: overlayId, action: 'add' }
-            }));
+            icon.style.display = 'block';
+            CarteFacile.addOverlay(CarteFacile.map, overlayId);
         }
-        updateOverlayActiveIcon(overlayId);
     }
 
     function showStylesList() {
@@ -139,12 +126,10 @@
         
         card.dataset.overlayId = overlayId;
         
-        // Utiliser les métadonnées de la surcouche
         const overlay = CarteFacile.mapOverlays[overlayId].neutral;
         const name = overlay.metadata?.fr?.name || overlayId;
 
         const img = card.querySelector('img');
-        // Utiliser les métadonnées de la surcouche pour obtenir l'ID du thumbnail
         const thumbnailId = overlay.metadata?.fr?.thumbnailId || overlayId;
         if (CarteFacile.mapThumbnails[thumbnailId]) {
             img.src = CarteFacile.mapThumbnails[thumbnailId];
@@ -157,11 +142,11 @@
         const title = card.querySelector('.map-picker-card__title');
         title.textContent = name;
 
-        card.addEventListener('click', () => toggleOverlay(overlayId));
+        card.addEventListener('click', () => toggleOverlay(card));
         card.addEventListener('keydown', (e) => {
             if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
-                toggleOverlay(overlayId);
+                toggleOverlay(card);
             }
         });
 
