@@ -32,7 +32,7 @@ Vous pouvez simplement enregistrer ce code dans un fichier nommé **index.html**
         <!-- Style pour afficher la carte en plein écran -->
         <style>
             html,body, #map { height:100%; width: 100%; margin:0 }
-            #map { background: #65a0ba; background: radial-gradient(circle, rgba(101, 160, 186, 1) 30%, rgba(11, 47, 71, 1) 80%) }
+            #map { background: #000120; }
         </style>
     </head>
     <body>

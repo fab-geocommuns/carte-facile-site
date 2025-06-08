@@ -17,7 +17,7 @@ Dans votre html, ajoutez un conteneur pour votre carte :
 <!-- Style CSS pour que la carte occupe tout l'espace disponible et avoir une couleur de fond. -->
 <style>
     html,body, #map { height:100%; width: 100%; margin:0 }
-    #map { background: #65a0ba; background: radial-gradient(circle, rgba(101, 160, 186, 1) 30%, rgba(11, 47, 71, 1) 80%) }
+    #map { background: #000120; }
 </style>
 ```
 
