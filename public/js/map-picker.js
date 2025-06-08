@@ -68,14 +68,13 @@
     function toggleOverlay(card) {
         const overlayId = card.dataset.overlayId;
         const icon = card.querySelector('.map-picker-card__active-icon');
-        const isActive = icon.style.display === 'block';
 
-        if (isActive) {
-            icon.style.display = 'none';
+        if (icon.style.display === 'block') {
             CarteFacile.removeOverlay(CarteFacile.map, overlayId);
+            icon.style.display = 'none';
         } else {
-            icon.style.display = 'block';
             CarteFacile.addOverlay(CarteFacile.map, overlayId);
+            icon.style.display = 'block';
         }
     }
 
