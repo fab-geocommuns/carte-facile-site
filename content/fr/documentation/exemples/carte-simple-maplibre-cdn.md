@@ -16,56 +16,70 @@ Vous pouvez simplement enregistrer ce code dans un fichier nommé **index.html**
 ```html
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Ma carte</title>
-        
-        <!-- Importation des bibliothèques MapLibre GL JS -->
-        <link href="https://unpkg.com/maplibre-gl@{{ pkg.dependencies['maplibre-gl'] }}/dist/maplibre-gl.css" rel="stylesheet" />
-        <script src="https://unpkg.com/maplibre-gl@{{ pkg.dependencies['maplibre-gl'] }}/dist/maplibre-gl.js"></script>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ma carte</title>
 
-        <!-- Importation des bibliothèques Carte Facile -->
-        <link href="https://unpkg.com/carte-facile@{{ pkg.dependencies['carte-facile'] }}/dist/carte-facile.css" rel="stylesheet" />
-        <script src="https://unpkg.com/carte-facile@{{ pkg.dependencies['carte-facile'] }}/dist/carte-facile.js"></script> 
-        
-        <!-- Style pour afficher la carte en plein écran -->
-        <style>
-            html,body, #map { height:100%; width: 100%; margin:0 }
-            #map { background: #000120; }
-        </style>
-    </head>
-    <body>
-        <!-- Le conteneur de la carte -->
-        <div id="map"></div>
+    <!-- Importation des bibliothèques MapLibre GL JS -->
+    <link
+      href="https://unpkg.com/maplibre-gl@^{{ data.versions.maplibre }}/dist/maplibre-gl.css"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/maplibre-gl@^{{ data.versions.maplibre }}/dist/maplibre-gl.js"></script>
 
-        <!-- Le script qui initialise la carte -->
-        <script>
-            // Création la carte
-            let map = new maplibregl.Map({
-                container: 'map', // id du conteneur de la carte
-                style: CarteFacile.mapStyles.simple, // Style de carte
-                maxZoom: 18.9, // niveau de zoom maximum, adapté aux cartes utilisant les données IGN
-            });
+    <!-- Importation des bibliothèques Carte Facile -->
+    <link
+      href="https://unpkg.com/carte-facile@^{{ data.versions.carteFacile }}/dist/carte-facile.css"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/carte-facile@^{{ data.versions.carteFacile }}/dist/carte-facile.js"></script>
 
-            // Ajout d'un contrôle de navigation
-            const nav = new maplibregl.NavigationControl();
-            map.addControl(nav, 'top-right');
+    <!-- Style pour afficher la carte en plein écran -->
+    <style>
+      html,
+      body,
+      #map {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+      }
+      #map {
+        background: #000120;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Le conteneur de la carte -->
+    <div id="map"></div>
 
-            // Ajout d'une échelle
-            const scale = new maplibregl.ScaleControl({
-                maxWidth: 80,
-                unit: 'imperial'
-            });
-            map.addControl(scale);
+    <!-- Le script qui initialise la carte -->
+    <script>
+      // Création la carte
+      let map = new maplibregl.Map({
+        container: "map", // id du conteneur de la carte
+        style: CarteFacile.mapStyles.simple, // Style de carte
+        maxZoom: 18.9, // niveau de zoom maximum, adapté aux cartes utilisant les données IGN
+      });
 
-            // Ajouter des surcouches (dé-commenter les lignes en dessous pour ajouter ces surcouches)
-            //CarteFacile.addOverlay(map, 'administrativeBoundaries');
-            //CarteFacile.addOverlay(map, 'cadastre');
+      // Ajout d'un contrôle de navigation
+      const nav = new maplibregl.NavigationControl();
+      map.addControl(nav, "top-right");
 
-            // Masquer des couches (dé-commenter les lignes en dessous pour masquer ces surcouches)
-            //CarteFacile.hideLayers(map, [CarteFacile.LayerGroup.buildings, CarteFacile.LayerGroup.boundaries_epcis]);
-        </script>
-    </body>
+      // Ajout d'une échelle
+      const scale = new maplibregl.ScaleControl({
+        maxWidth: 80,
+        unit: "imperial",
+      });
+      map.addControl(scale);
+
+      // Ajouter des surcouches (dé-commenter les lignes en dessous pour ajouter ces surcouches)
+      //CarteFacile.addOverlay(map, 'administrativeBoundaries');
+      //CarteFacile.addOverlay(map, 'cadastre');
+
+      // Masquer des couches (dé-commenter les lignes en dessous pour masquer ces surcouches)
+      //CarteFacile.hideLayers(map, [CarteFacile.LayerGroup.buildings, CarteFacile.LayerGroup.boundaries_epcis]);
+    </script>
+  </body>
 </html>
 ```
