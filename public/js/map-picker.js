@@ -58,10 +58,8 @@
         updateActiveIcon(style);
         updateStyleDetails(style);
 
-        // Dispatch event for map style change
-        document.dispatchEvent(new CustomEvent('mapStyleChange', { 
-            detail: { styleData: CarteFacile.mapStyle[style] } 
-        }));
+        // Appliquer directement le style à la carte
+        window.map.setStyle(CarteFacile.mapStyle[style]);
 
         elements.stylesList.style.display = 'none';
         elements.styleDetails.style.display = 'flex';
@@ -70,16 +68,15 @@
     function toggleOverlay(card) {
         const overlayId = card.dataset.overlayId;
         const icon = card.querySelector('.map-picker-card__active-icon');
+        const isActive = icon.style.display === 'block';
 
-        if (icon.style.display === 'block') {
-            document.dispatchEvent(new CustomEvent('overlayChange', {
-                detail: { type: overlayId, action: 'remove' }
-            }));
+        if (isActive) {
+            // Désactiver l'overlay
+            CarteFacile.removeOverlay(map, overlayId);
             icon.style.display = 'none';
         } else {
-            document.dispatchEvent(new CustomEvent('overlayChange', {
-                detail: { type: overlayId, action: 'add' }
-            }));
+            // Activer l'overlay
+            CarteFacile.addOverlay(map, overlayId);
             icon.style.display = 'block';
         }
     }

@@ -28,20 +28,6 @@
         updateUrl();
     });
 
-    // Listen for map style changes
-    document.addEventListener('mapStyleChange', (event) => {
-        const { styleData } = event.detail;
-        map.setStyle(styleData);
-    });
-
-    // Listen for overlay changes
-    document.addEventListener('overlayChange', (event) => {
-        const { type, action } = event.detail;
-        if (action === 'add') {
-            CarteFacile.addOverlay(map, type);
-        } else if (action === 'remove') {
-            CarteFacile.removeOverlay(map, type);
-        }
-    });
-
+    // Rendre la carte accessible globalement
+    window.map = map;
 })();
