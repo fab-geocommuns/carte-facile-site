@@ -20,9 +20,9 @@
   <link rel="stylesheet" href="/css/utility/utility.min.css">
 
   {% if showMaps %}
+    <link href="https://unpkg.com/maplibre-gl@5.5.0/dist/maplibre-gl.css" rel="stylesheet"/>
+    <link href="https://unpkg.com/carte-facile@0.6.2/dist/carte-facile.css" rel="stylesheet"/>
     {% css "maps" %}
-      {% include "node_modules/maplibre-gl/dist/maplibre-gl.css" %}
-      {% include "node_modules/carte-facile/dist/carte-facile.css" %}
       {% include "public/css/maps-viewer.css" %}
       {% include "public/css/map-picker.css" %}
       {% include "public/css/icons.css" %}
