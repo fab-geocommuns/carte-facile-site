@@ -55,11 +55,26 @@
         const style = card.dataset.styleUrl;
         state.selectedStyle = style;
 
-        updateActiveIcon(style);
+        // Mettre à jour l'icône du style sélectionné
+        document.querySelectorAll('.map-picker-card[data-style-url]').forEach(card => {
+            const icon = card.querySelector('.map-picker-card__active-icon');
+            icon.style.display = card.dataset.styleUrl === style ? 'block' : 'none';
+        });
+
         updateStyleDetails(style);
 
         // Appliquer directement le style à la carte
-        window.map.setStyle(CarteFacile.mapStyle[style]);
+        map.setStyle(CarteFacile.mapStyle[style]);
+
+        // Réappliquer les surcouches actives après le changement de style
+        map.once('style.load', () => {
+            document.querySelectorAll('.map-picker-card[data-overlay-id]').forEach(card => {
+                const icon = card.querySelector('.map-picker-card__active-icon');
+                if (icon.style.display === 'block') {
+                    CarteFacile.addOverlay(map, card.dataset.overlayId);
+                }
+            });
+        });
 
         elements.stylesList.style.display = 'none';
         elements.styleDetails.style.display = 'flex';
@@ -71,11 +86,9 @@
         const isActive = icon.style.display === 'block';
 
         if (isActive) {
-            // Désactiver l'overlay
             CarteFacile.removeOverlay(map, overlayId);
             icon.style.display = 'none';
         } else {
-            // Activer l'overlay
             CarteFacile.addOverlay(map, overlayId);
             icon.style.display = 'block';
         }
