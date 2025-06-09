@@ -45,10 +45,7 @@ Vous pouvez simplement enregistrer ce code dans un fichier nommé **index.html**
             let map = new maplibregl.Map({
                 container: 'map', // id du conteneur de la carte
                 style: CarteFacile.mapStyles.simple, // Style de carte
-                minZoom: 1.8, // niveau de zoom minimum (optionnel)
                 maxZoom: 18.9, // niveau de zoom maximum, adapté aux cartes utilisant les données IGN
-                zoom: 5, // niveau de zoom inital (optionnel)
-                center: [2.5, 47], // placement initial de la carte (optionnel)
             });
 
             // Ajout d'un contrôle de navigation
