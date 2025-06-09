@@ -38,12 +38,12 @@ Pour utiliser cette méthode, ajoutez simplement ces lignes dans le `<head>` de 
 
 ```html
   <!-- Importation des bibliothèques MapLibre GL JS -->
-  <link href="https://unpkg.com/maplibre-gl@{{ pkg.dependencies['maplibre-gl'] }}/dist/maplibre-gl.css" rel="stylesheet" />
-  <script src="https://unpkg.com/maplibre-gl@{{ pkg.dependencies['maplibre-gl'] }}/dist/maplibre-gl.js"></script>
+  <link href="https://unpkg.com/maplibre-gl@^{{ data.versions.maplibre }}/dist/maplibre-gl.css" rel="stylesheet" />
+  <script src="https://unpkg.com/maplibre-gl@^{{ data.versions.maplibre }}/dist/maplibre-gl.js"></script>
 
   <!-- Importation des bibliothèques Carte Facile -->
-  <link href="https://unpkg.com/carte-facile@{{ pkg.dependencies['carte-facile'] }}/dist/carte-facile.css" rel="stylesheet" />
-  <script src="https://unpkg.com/carte-facile@{{ pkg.dependencies['carte-facile'] }}/dist/carte-facile.js"></script> 
+  <link href="https://unpkg.com/carte-facile@^{{ data.versions.carteFacile }}/dist/carte-facile.css" rel="stylesheet" />
+  <script src="https://unpkg.com/carte-facile@^{{ data.versions.carteFacile }}/dist/carte-facile.js"></script> 
 ```
 
 <br>
