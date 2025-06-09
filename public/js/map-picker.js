@@ -55,7 +55,7 @@
         const style = card.dataset.styleUrl;
         state.selectedStyle = style;
 
-        // Mettre à jour l'icône du style sélectionné
+        // Update style selection icon
         document.querySelectorAll('.map-picker-card[data-style-url]').forEach(card => {
             const icon = card.querySelector('.map-picker-card__active-icon');
             icon.style.display = card.dataset.styleUrl === style ? 'block' : 'none';
@@ -63,10 +63,10 @@
 
         updateStyleDetails(style);
 
-        // Appliquer directement le style à la carte
+        // Apply style to map
         map.setStyle(CarteFacile.mapStyle[style]);
 
-        // Réappliquer les surcouches actives après le changement de style
+        // Apply active overlays after style change
         map.once('style.load', () => {
             document.querySelectorAll('.map-picker-card[data-overlay-id]').forEach(card => {
                 const icon = card.querySelector('.map-picker-card__active-icon');
@@ -106,7 +106,7 @@
     }
 
     // Card generation
-    function createMapCard(style, data, index) {
+    function createStyleCard(style, data, index) {
         const template = document.getElementById('map-picker-card-template');
         const card = template.content.cloneNode(true).firstElementChild;
         
@@ -168,14 +168,14 @@
         return card;
     }
 
-    function generateMapCards() {
+    function initializeStyleCards() {
         Object.entries(CarteFacile.mapStyle).forEach(([style, data], index) => {
-            const card = createMapCard(style, data, index);
+            const card = createStyleCard(style, data, index);
             elements.mapStylesList.appendChild(card);
         });
     }
 
-    function generateOverlayCards() {
+    function initializeOverlayCards() {
         if (!CarteFacile.mapOverlays) {
             console.warn('Les surcouches ne sont pas disponibles dans cette version de Carte Facile');
             return;
@@ -195,8 +195,8 @@
 
     // Initialize
     function init() {
-        generateMapCards();
-        generateOverlayCards();
+        initializeStyleCards();
+        initializeOverlayCards();
         initializeEventListeners();
         // Set initial style
         const firstStyle = Object.keys(CarteFacile.mapStyle)[0];
