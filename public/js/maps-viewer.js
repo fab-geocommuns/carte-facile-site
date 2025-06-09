@@ -3,10 +3,8 @@
     let map = new maplibregl.Map({
         container: 'map',
         style: CarteFacile.mapStyle.simple,
-        minZoom: 1.8,
+        //minZoom: 1.8 // Attention : depuis la version 5 de MapLibre et la visualisation en globe, ajouter un minZoom ici empêche le centrage initial de la carte prévu par défaut dans les styles (cf. https://github.com/maplibre/maplibre-gl-js/issues/5932).
         maxZoom: 18.9,
-        zoom: 5,
-        center: [2.5, 47],
     });
     
     // Add zoom level control
@@ -28,20 +26,6 @@
         updateUrl();
     });
 
-    // Listen for map style changes
-    document.addEventListener('mapStyleChange', (event) => {
-        const { styleData } = event.detail;
-        map.setStyle(styleData);
-    });
-
-    // Listen for overlay changes
-    document.addEventListener('overlayChange', (event) => {
-        const { type, action } = event.detail;
-        if (action === 'add') {
-            CarteFacile.addOverlay(map, type);
-        } else if (action === 'remove') {
-            CarteFacile.removeOverlay(map, type);
-        }
-    });
-
+    // Rendre la carte accessible globalement
+    window.map = map;
 })();

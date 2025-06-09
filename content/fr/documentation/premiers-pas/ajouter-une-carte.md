@@ -17,7 +17,7 @@ Dans votre html, ajoutez un conteneur pour votre carte :
 <!-- Style CSS pour que la carte occupe tout l'espace disponible et avoir une couleur de fond. -->
 <style>
     html,body, #map { height:100%; width: 100%; margin:0 }
-    #map { background: #65a0ba; background: radial-gradient(circle, rgba(101, 160, 186, 1) 30%, rgba(11, 47, 71, 1) 80%) }
+    #map { background: #000120; }
 </style>
 ```
 
@@ -38,10 +38,7 @@ import 'carte-facile/carte-facile.css';
 let map = new maplibregl.Map({
   container: 'map', // id du conteneur de la carte
   style: mapStyles.simple, // style de carte
-  minZoom: 1.8, // niveau de zoom minimum (optionnel)
   maxZoom: 18.9, // niveau de zoom maximum, adapté aux cartes utilisant les données IGN
-  zoom: 5, // niveau de zoom inital (optionnel)
-  center: [2.5, 47], // placement initial de la carte (optionnel)
 });
 ```
 
@@ -57,10 +54,7 @@ Ajoutez dans votre html :
     let map = new maplibregl.Map({
         container: 'map', // id du conteneur de la carte
         style: CarteFacile.mapStyles.simple, // style de carte
-        minZoom: 1.8, // niveau de zoom minimum (optionnel)
         maxZoom: 18.9, // niveau de zoom maximum, adapté aux cartes utilisant les données IGN
-        zoom: 5, // niveau de zoom inital (optionnel)
-        center: [2.5, 47], // placement initial de la carte (optionnel)
     });
 </script>
 ```
