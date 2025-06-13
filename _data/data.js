@@ -29,6 +29,6 @@ module.exports = {
     ],
     versions: {
         maplibre: "5.5.0",
-        carteFacile: "0.6.2"
+        carteFacile: "0.7.0"
     }
 };  
