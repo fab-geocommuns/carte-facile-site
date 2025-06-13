@@ -12,7 +12,8 @@
         styleTitle: document.getElementById('map-picker-style-title'),
         styleDescription: document.getElementById('map-picker-style-description'),
         styleThumbnail: document.getElementById('map-picker-style-thumbnail'),
-        styleSourceLink: document.getElementById('map-picker-style-source')
+        styleSourceLink: document.getElementById('map-picker-style-source'),
+        mapPickerToggleThumbnail: document.getElementById('map-picker-toggle').querySelector('.map-picker-toggle__thumbnail'),
     };
 
     // Génération des cartes de styles
@@ -44,6 +45,16 @@
                 const i = c.querySelector('.map-picker-card__active-icon');
                 i.style.display = c.dataset.styleUrl === styleKey ? 'block' : 'none';
             });
+            // Met à jour la miniature du bouton avec le style alternatif
+            let altThumbnail;
+            if (styleKey === 'simple' || styleKey === 'simpleOsm') {
+                altThumbnail = CarteFacile.mapThumbnails['aerial'];
+            } else if (styleKey === 'desaturated') {
+                altThumbnail = CarteFacile.mapThumbnails['simple'];
+            } else {
+                altThumbnail = CarteFacile.mapThumbnails['simple']; // fallback
+            }
+            elements.mapPickerToggleThumbnail.style.backgroundImage = `url(${altThumbnail})`;
         });
         elements.mapStylesList.appendChild(card);
     });
@@ -91,6 +102,9 @@
     // Affichage initial
     elements.stylesList.style.display = 'flex';
     elements.styleDetails.style.display = 'none';
+
+    // Affiche la miniature du style alternatif dans le bouton au chargement (carte initiale = simple)
+    elements.mapPickerToggleThumbnail.style.backgroundImage = `url(${CarteFacile.mapThumbnails['aerial']})`;
 
     console.log(CarteFacile.mapOverlays);
 })(); 
