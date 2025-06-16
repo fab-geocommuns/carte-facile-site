@@ -1,26 +1,21 @@
 <!doctype html>
 <html lang="fr" data-fr-scheme="system" dir="ltr">
-<head>
-  <meta charset="utf-8">
-  <meta name="format-detection" content="telephone=no,date=no,address=no,email=no,url=no">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <meta name="description" content="Ajouter des surcouches à votre carte avec Carte Facile.">
-  <meta name="theme-color" content="#000091">
-  <link rel="apple-touch-icon" href="/carte-facile-site/favicon/apple-touch-icon.png"><!-- 180×180 -->
-  <link rel="icon" href="/carte-facile-site/favicon/favicon.svg" type="image/svg+xml">
-  <link rel="shortcut icon" href="/carte-facile-site/favicon/favicon.ico" type="image/x-icon"><!-- 32×32 -->
-  <link rel="manifest" href="/carte-facile-site/favicon/manifest.webmanifest" crossorigin="use-credentials">
-  <link rel="alternate" href="/carte-facile-site/feed/feed.xml" type="application/atom+xml" title="Carte Facile">
-  <link rel="alternate" href="/carte-facile-site/feed/feed.json" type="application/json" title="Carte Facile">
-
-  <link rel="stylesheet" href="/carte-facile-site/css/dsfr.min.css">
-  <link rel="stylesheet" href="/carte-facile-site/css/utility/utility.min.css">
-
-
-  <link rel="stylesheet" href="/carte-facile-site/bundle/z-lDvxpAJ-.css">
-
-  <style>/* Defaults */
+  <head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no,date=no,address=no,email=no,url=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Ajouter des surcouches à votre carte avec Carte Facile.">
+    <meta name="theme-color" content="#000091">
+    <link rel="apple-touch-icon" href="/carte-facile-site/favicon/apple-touch-icon.png"> <!-- 180×180 -->
+    <link rel="icon" href="/carte-facile-site/favicon/favicon.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="/carte-facile-site/favicon/favicon.ico" type="image/x-icon"> <!-- 32×32 -->
+    <link rel="manifest" href="/carte-facile-site/favicon/manifest.webmanifest" crossorigin="use-credentials">
+    <link rel="alternate" href="/carte-facile-site/feed/feed.xml" type="application/atom+xml" title="Carte Facile">
+    <link rel="alternate" href="/carte-facile-site/feed/feed.json" type="application/json" title="Carte Facile">
+    <link rel="stylesheet" href="/carte-facile-site/css/dsfr.min.css">
+    <link rel="stylesheet" href="/carte-facile-site/css/utility/utility.min.css">
+ <link rel="stylesheet" href="/carte-facile-site/bundle/z-lDvxpAJ-.css">
+    <style>/* Defaults */
 :root {
     --font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
     --syntax-tab-size: 2;
@@ -342,23 +337,23 @@ pre[class*="language-"] {
 .token.entity {
 	cursor: help;
 }</style>
-
-  <meta name="generator" content="Eleventy v3.0.0">
-
-  <title>Ajouter des surcouches</title>
-</head>
-<body id="top">
+    <meta name="generator" content="Eleventy v3.0.0">
+    <title>Ajouter des surcouches</title>
+  </head>
+  <body id="top">
 <script>
       // Fix FOUC in dark mode
       setDarkBeforeRender = () => {
-          const localScheme = localStorage.getItem('scheme')
-          if (localScheme === 'dark' || (localScheme === 'system' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-              document.documentElement.setAttribute('data-fr-theme', 'dark');
-          }
+        const localScheme = localStorage.getItem('scheme')
+        if (
+          localScheme === 'dark' ||
+          (localScheme === 'system' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)
+        ) {
+          document.documentElement.setAttribute('data-fr-theme', 'dark');
+        }
       }
       setDarkBeforeRender();
-  </script>
-<header role="banner" class="fr-header">
+    </script><header role="banner" class="fr-header">
   <div class="fr-header__body">
     <div class="fr-container">
       <div class="fr-header__body-row">
@@ -477,9 +472,8 @@ pre[class*="language-"] {
 </script>    </div>
   </div>
 </header>
-
-<main id="content">
-  
+    <main id="content">
+      
 <div class="fr-container">
   <div class="fr-grid-row">
     <div class="fr-col-12 fr-col-md-4">
@@ -616,24 +610,30 @@ pre[class*="language-"] {
         </div> 
       </div>
       <p>Carte Facile permet d'ajouter des surcouches de carte pour enrichir votre visualisation. Le styles des surcouches ajoutées s'adapteront automatiquement à la carte sélectionnée initialement, pour avoir une bonne lisibilité.</p>
-<p>Pour ajouter une surcouche à votre carte, utilisez la fonction <code>addOverlay</code> :</p>
-<pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> addOverlay <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'carte-facile'</span><span class="token punctuation">;</span>
+<p>Vous pouvez ajouter une ou plusieurs surcouches (par exemple le cadastre ou les limites administratives) à votre carte en utilisant la fonction <code>addOverlay</code> :</p>
+<pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> addOverlay<span class="token punctuation">,</span> Overlay <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'carte-facile'</span><span class="token punctuation">;</span>
 
-<span class="token comment">// Ajout de la surcouche cadastrale</span>
-<span class="token function">addOverlay</span><span class="token punctuation">(</span>map<span class="token punctuation">,</span> <span class="token string">'cadastre'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Ajouter une seule surcouche</span>
+<span class="token function">addOverlay</span><span class="token punctuation">(</span>map<span class="token punctuation">,</span> Overlay<span class="token punctuation">.</span>administrativeBoundaries<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token comment">// Ajout de la surcouche des limites administratives</span>
-<span class="token function">addOverlay</span><span class="token punctuation">(</span>map<span class="token punctuation">,</span> <span class="token string">'administrativeBoundaries'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<p>Vous pouvez également retirer une surcouche à tout moment :</p>
+<span class="token comment">// Ou ajouter plusieurs surcouches en même temps</span>
+<span class="token function">addOverlay</span><span class="token punctuation">(</span>map<span class="token punctuation">,</span> <span class="token punctuation">[</span>Overlay<span class="token punctuation">.</span>administrativeBoundaries<span class="token punctuation">,</span> Overlay<span class="token punctuation">.</span>cadastre<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<blockquote>
+<p>Le style de la surcouche s'adapte automatiquement au fond de carte utilisé.</p>
+</blockquote>
+<p>Pour retirer une ou plusieurs surcouches, utilisez la fonction <code>removeOverlay</code> :</p>
 <pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> removeOverlay <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'carte-facile'</span><span class="token punctuation">;</span>
 
-<span class="token comment">// Retrait de la surcouche cadastrale</span>
-<span class="token function">removeOverlay</span><span class="token punctuation">(</span>map<span class="token punctuation">,</span> <span class="token string">'cadastre'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<span class="token comment">// Retirer une seule surcouche</span>
+<span class="token function">removeOverlay</span><span class="token punctuation">(</span>map<span class="token punctuation">,</span> Overlay<span class="token punctuation">.</span>administrativeBoundaries<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Ou retirer plusieurs surcouches en même temps</span>
+<span class="token function">removeOverlay</span><span class="token punctuation">(</span>map<span class="token punctuation">,</span> <span class="token punctuation">[</span>Overlay<span class="token punctuation">.</span>administrativeBoundaries<span class="token punctuation">,</span> Overlay<span class="token punctuation">.</span>cadastre<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 
 <div class="fr-alert fr-alert--warning ">
     <h3 class="fr-alert__title"> Si vous utilisez les liens CDN</h3>
-<p>Ajoutez <code>CarteFacile</code> avant les fonctions <code>addOverlay</code> et <code>removeOverlay</code> :</p>
-<pre class="language-typescript" tabindex="0"><code class="language-typescript">CarteFacile<span class="token punctuation">.</span><span class="token function">addOverlay</span><span class="token punctuation">(</span>map<span class="token punctuation">,</span> <span class="token string">'administrativeBoundaries'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Ajoutez <code>CarteFacile</code> avant <code>addOverlay</code>, <code>removeOverlay</code> et <code>Overlay</code> :</p>
+<pre class="language-typescript" tabindex="0"><code class="language-typescript">CarteFacile<span class="token punctuation">.</span><span class="token function">addOverlay</span><span class="token punctuation">(</span>map<span class="token punctuation">,</span> CarteFacile<span class="token punctuation">.</span>Overlay<span class="token punctuation">.</span>administrativeBoundaries<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 </div>
 <p><br><br></p>
 <h2 id="surcouches-disponibles" tabindex="-1">Surcouches disponibles <a class="header-anchor" href="#surcouches-disponibles">#</a></h2>
@@ -655,9 +655,21 @@ pre[class*="language-"] {
           <td>administrativeBoundaries</td>
           <td>Affiche les limites administratives des régions, départements, EPCI et communes.</td>
       </tr>
+      <tr>
+          <td>levelCurves</td>
+          <td>Affiche les courbes de niveau, permettant de décrire le relief.</td>
+      </tr>
     </tbody>
   </table>
 </div>
+<br>
+<p>Pour afficher toutes les surcouches disponibles, servez-vous de l’autocomplétion de votre IDE avec <code>Overlay.</code>, ou utilisez la méthode suivante pour afficher la liste dans la console du navigateur :</p>
+<pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> Overlay <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'carte-facile'</span><span class="token punctuation">;</span>
+
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Overlay<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Si vous utilisez les liens CDN :</p>
+<pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>CarteFacile<span class="token punctuation">.</span>Overlay<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <br>
 <h2 id="prochaine-etape" tabindex="-1">Prochaine étape <a class="header-anchor" href="#prochaine-etape">#</a></h2>
 <p><a class="fr-btn fr-btn--secondary fr-btn--icon-right fr-icon-arrow-right-line" href="/carte-facile-site/fr/documentation/premiers-pas/masquer-des-couches">
@@ -671,8 +683,7 @@ Masquer des couches
     </div>
   </div>
 </div>
-</main>
-
+    </main>
 <div class="fr-follow">
   <div class="fr-container">
     <div class="fr-grid-row">
@@ -758,7 +769,6 @@ Masquer des couches
     </div>
   </div>
 </footer>
-
 <dialog id="fr-theme-modal" class="fr-modal" role="dialog" aria-labelledby="fr-theme-modal-title">
   <div class="fr-container fr-container--fluid fr-container-md">
     <div class="fr-grid-row fr-grid-row--center">
@@ -824,17 +834,14 @@ Masquer des couches
     </div>
   </div>
 </dialog>
-
-<!-- Current page: /carte-facile-site/fr/documentation/premiers-pas/ajouter-des-surcouches/ -->
-
+    <!-- Current page: /carte-facile-site/fr/documentation/premiers-pas/ajouter-des-surcouches/ -->
 <script>
       const SEARCH_RESULTS_URL = "/carte-facile-site/fr/search-results/";
-  </script>
-  <script type="text/javascript" src="/carte-facile-site/js/search.js"></script><!-- Script en version es6 module et nomodule pour les navigateurs le ne supportant pas -->
-<script type="module" src="/carte-facile-site/js/dsfr.module.min.js"></script>
-<script type="text/javascript" nomodule="" src="/carte-facile-site/js/dsfr.nomodule.min.js"></script>
-<!-- Script Matomo pour le suivi des visites -->
-<script type="text/javascript" src="/carte-facile-site/js/matomo.js"></script>
-
-</body>
+    </script>
+    <script type="text/javascript" src="/carte-facile-site/js/search.js"></script>    <!-- Script en version es6 module et nomodule pour les navigateurs le ne supportant pas -->
+    <script type="module" src="/carte-facile-site/js/dsfr.module.min.js"></script>
+    <script type="text/javascript" nomodule="" src="/carte-facile-site/js/dsfr.nomodule.min.js"></script>
+    <!-- Script Matomo pour le suivi des visites -->
+    <script type="text/javascript" src="/carte-facile-site/js/matomo.js"></script>
+  </body>
 </html>

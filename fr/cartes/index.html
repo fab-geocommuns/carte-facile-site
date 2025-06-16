@@ -1,29 +1,23 @@
 <!doctype html>
 <html lang="fr" data-fr-scheme="system" dir="ltr">
-<head>
-  <meta charset="utf-8">
-  <meta name="format-detection" content="telephone=no,date=no,address=no,email=no,url=no">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <meta name="description" content="Cartes et données géographiques disponibles">
-  <meta name="theme-color" content="#000091">
-  <link rel="apple-touch-icon" href="/carte-facile-site/favicon/apple-touch-icon.png"><!-- 180×180 -->
-  <link rel="icon" href="/carte-facile-site/favicon/favicon.svg" type="image/svg+xml">
-  <link rel="shortcut icon" href="/carte-facile-site/favicon/favicon.ico" type="image/x-icon"><!-- 32×32 -->
-  <link rel="manifest" href="/carte-facile-site/favicon/manifest.webmanifest" crossorigin="use-credentials">
-  <link rel="alternate" href="/carte-facile-site/feed/feed.xml" type="application/atom+xml" title="Carte Facile">
-  <link rel="alternate" href="/carte-facile-site/feed/feed.json" type="application/json" title="Carte Facile">
-
-  <link rel="stylesheet" href="/carte-facile-site/css/dsfr.min.css">
-  <link rel="stylesheet" href="/carte-facile-site/css/utility/utility.min.css">
-
-    <link href="https://unpkg.com/maplibre-gl@5.5.0/dist/maplibre-gl.css" rel="stylesheet">
-    <link href="https://unpkg.com/carte-facile@0.6.2/dist/carte-facile.css" rel="stylesheet">
-    <link rel="stylesheet" href="/carte-facile-site/bundle/kiWp4P9kB-.css">
-
-  <link rel="stylesheet" href="/carte-facile-site/bundle/z-lDvxpAJ-.css">
-
-  <style>/* Defaults */
+  <head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no,date=no,address=no,email=no,url=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Cartes et données géographiques disponibles">
+    <meta name="theme-color" content="#000091">
+    <link rel="apple-touch-icon" href="/carte-facile-site/favicon/apple-touch-icon.png"> <!-- 180×180 -->
+    <link rel="icon" href="/carte-facile-site/favicon/favicon.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="/carte-facile-site/favicon/favicon.ico" type="image/x-icon"> <!-- 32×32 -->
+    <link rel="manifest" href="/carte-facile-site/favicon/manifest.webmanifest" crossorigin="use-credentials">
+    <link rel="alternate" href="/carte-facile-site/feed/feed.xml" type="application/atom+xml" title="Carte Facile">
+    <link rel="alternate" href="/carte-facile-site/feed/feed.json" type="application/json" title="Carte Facile">
+    <link rel="stylesheet" href="/carte-facile-site/css/dsfr.min.css">
+    <link rel="stylesheet" href="/carte-facile-site/css/utility/utility.min.css">
+      <link href="https://unpkg.com/maplibre-gl@^5.5.0/dist/maplibre-gl.css" rel="stylesheet">
+      <link href="https://unpkg.com/carte-facile@^0.7.1/dist/carte-facile.css" rel="stylesheet">  <link rel="stylesheet" href="/carte-facile-site/bundle/kiWp4P9kB-.css">
+ <link rel="stylesheet" href="/carte-facile-site/bundle/z-lDvxpAJ-.css">
+    <style>/* Defaults */
 :root {
     --font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
     --syntax-tab-size: 2;
@@ -345,23 +339,23 @@ pre[class*="language-"] {
 .token.entity {
 	cursor: help;
 }</style>
-
-  <meta name="generator" content="Eleventy v3.0.0">
-
-  <title>Cartes</title>
-</head>
-<body id="top">
+    <meta name="generator" content="Eleventy v3.0.0">
+    <title>Cartes</title>
+  </head>
+  <body id="top">
 <script>
       // Fix FOUC in dark mode
       setDarkBeforeRender = () => {
-          const localScheme = localStorage.getItem('scheme')
-          if (localScheme === 'dark' || (localScheme === 'system' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-              document.documentElement.setAttribute('data-fr-theme', 'dark');
-          }
+        const localScheme = localStorage.getItem('scheme')
+        if (
+          localScheme === 'dark' ||
+          (localScheme === 'system' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)
+        ) {
+          document.documentElement.setAttribute('data-fr-theme', 'dark');
+        }
       }
       setDarkBeforeRender();
-  </script>
-<header role="banner" class="fr-header">
+    </script><header role="banner" class="fr-header">
   <div class="fr-header__body">
     <div class="fr-container">
       <div class="fr-header__body-row">
@@ -480,9 +474,8 @@ pre[class*="language-"] {
 </script>    </div>
   </div>
 </header>
-
-<main id="content">
-  
+    <main id="content">
+      
 <!-- Bloc containing the map -->
 <div id="map">
 <div id="map-picker" class="map-picker" aria-labelledby="map-picker-title">
@@ -555,9 +548,7 @@ pre[class*="language-"] {
         </div>
     </div>
 </div></div>
-</main>
-
-
+    </main>
 <dialog id="fr-theme-modal" class="fr-modal" role="dialog" aria-labelledby="fr-theme-modal-title">
   <div class="fr-container fr-container--fluid fr-container-md">
     <div class="fr-grid-row fr-grid-row--center">
@@ -623,20 +614,17 @@ pre[class*="language-"] {
     </div>
   </div>
 </dialog>
-
-<!-- Current page: /carte-facile-site/fr/cartes/ -->
-
+    <!-- Current page: /carte-facile-site/fr/cartes/ -->
 <script>
       const SEARCH_RESULTS_URL = "/carte-facile-site/fr/search-results/";
-  </script>
-  <script type="text/javascript" src="/carte-facile-site/js/search.js"></script><!-- Script en version es6 module et nomodule pour les navigateurs le ne supportant pas -->
-<script type="module" src="/carte-facile-site/js/dsfr.module.min.js"></script>
-<script type="text/javascript" nomodule="" src="/carte-facile-site/js/dsfr.nomodule.min.js"></script>
-<!-- Script Matomo pour le suivi des visites -->
-<script type="text/javascript" src="/carte-facile-site/js/matomo.js"></script>
-
-  <script src="https://unpkg.com/maplibre-gl@^5.5.0/dist/maplibre-gl.js"></script>
-  <script src="https://unpkg.com/carte-facile@^0.6.1/dist/carte-facile.js"></script>
-  <script src="/carte-facile-site/bundle/FKjVmYYRjL.js"></script>
-</body>
+    </script>
+    <script type="text/javascript" src="/carte-facile-site/js/search.js"></script>    <!-- Script en version es6 module et nomodule pour les navigateurs le ne supportant pas -->
+    <script type="module" src="/carte-facile-site/js/dsfr.module.min.js"></script>
+    <script type="text/javascript" nomodule="" src="/carte-facile-site/js/dsfr.nomodule.min.js"></script>
+    <!-- Script Matomo pour le suivi des visites -->
+    <script type="text/javascript" src="/carte-facile-site/js/matomo.js"></script>
+      <script src="https://unpkg.com/maplibre-gl@^5.5.0/dist/maplibre-gl.js"></script>
+      <script src="https://unpkg.com/carte-facile@^0.7.1/dist/carte-facile.js"></script>
+      <script src="/carte-facile-site/bundle/cZhVHznsbL.js"></script>
+  </body>
 </html>
