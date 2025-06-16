@@ -73,12 +73,27 @@ CarteFacile propose plusieurs styles prédéfinis :
 {{ component("table", {
     headers: ["Style", "Description"],
     data: [
-        ["mapStyles.simple", "Style par défaut, adapté à la plupart des usages"],
-        ["mapStyles.simpleOsm", "Style par défaut, utilisant les données OSM plutôt qu'IGN"],
-        ["mapStyles.desaturated", "Version désaturée, idéale pour la datavisualisation"],
-        ["mapStyles.aerial", "Vue photographies aériennes et satellite"]
+        ["simple", "Style par défaut, adapté à la plupart des usages"],
+        ["simpleOsm", "Style par défaut, utilisant les données OSM plutôt qu'IGN"],
+        ["desaturated", "Version désaturée, idéale pour la datavisualisation"],
+        ["aerial", "Vue photographies aériennes et satellite"]
     ]
 }) }}
+
+Pour afficher tous les styles disponibles, servez-vous de l’autocomplétion de votre IDE avec `mapStyles.`, ou utilisez la méthode suivante pour afficher la liste dans la console du navigateur :
+
+```typescript
+import { mapStyles } from 'carte-facile';
+
+console.log(mapStyles);
+```
+
+Si vous utilisez les liens CDN :
+```typescript
+console.log(CarteFacile.mapStyles);
+```
+
+
 
 <br>
 
