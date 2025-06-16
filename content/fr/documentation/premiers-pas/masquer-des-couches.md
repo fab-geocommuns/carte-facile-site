@@ -19,19 +19,19 @@ Pour masquer ou afficher des groupes de couches spécifiques :
 import { showLayer, hideLayer, LayerGroup } from 'carte-facile';
 
 // Masquer uniquement les bâtiments
-hideLayers(map, LayerGroup.buildings);
+hideLayer(map, LayerGroup.buildings);
 
 // Masquer les rues et leurs labels
-hideLayers(map, [LayerGroup.streets, LayerGroup.street_labels]);
+hideLayer(map, [LayerGroup.streets, LayerGroup.street_labels]);
 
 
 // Utiliser showLayers pour afficher des couches qui auraient été masquées
-showLayers(map, [LayerGroup.cadastral_sections, LayerGroup.buildings]);
+showLayer(map, [LayerGroup.cadastral_sections, LayerGroup.buildings]);
 ```
 :::warning Si vous utilisez les liens CDN
-Ajoutez `CarteFacile` avant les fonctions `hideLayers` et `showLayers`, ainsi qu'avant `LayerGroup` :
+Ajoutez `CarteFacile` avant les fonctions `hideLayer` et `showLayer`, ainsi qu'avant `LayerGroup` :
 ```typescript
-CarteFacile.hideLayers(map, [CarteFacile.LayerGroup.buildings, CarteFacile.LayerGroup.boundaries_epcis]);
+CarteFacile.hideLayer(map, [CarteFacile.LayerGroup.buildings, CarteFacile.LayerGroup.boundaries_epcis]);
 ```
 :::
 
