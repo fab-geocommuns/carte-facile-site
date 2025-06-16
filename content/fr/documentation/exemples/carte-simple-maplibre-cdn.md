@@ -74,11 +74,12 @@ Vous pouvez simplement enregistrer ce code dans un fichier nommé **index.html**
       map.addControl(scale);
 
       // Ajouter des surcouches (dé-commenter les lignes en dessous pour ajouter ces surcouches)
-      //CarteFacile.addOverlay(map, 'administrativeBoundaries');
-      //CarteFacile.addOverlay(map, 'cadastre');
+      //CarteFacile.addOverlay(map, CarteFacile.Overlay.cadastre);
+      //CarteFacile.addOverlay(map, [CarteFacile.Overlay.levelCurves, CarteFacile.Overlay.administrativeBoundaries]);
 
       // Masquer des couches (dé-commenter les lignes en dessous pour masquer ces surcouches)
-      //CarteFacile.hideLayers(map, [CarteFacile.LayerGroup.buildings, CarteFacile.LayerGroup.boundaries_epcis]);
+      //CarteFacile.hideLayer(map, CarteFacile.LayerGroup.buildings);
+      //CarteFacile.hideLayer(map, [CarteFacile.LayerGroup.buildings, CarteFacile.LayerGroup.boundaries_epcis]);
     </script>
   </body>
 </html>

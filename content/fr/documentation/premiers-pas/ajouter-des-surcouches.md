@@ -11,30 +11,35 @@ eleventyNavigation:
 
 Carte Facile permet d'ajouter des surcouches de carte pour enrichir votre visualisation. Le styles des surcouches ajoutées s'adapteront automatiquement à la carte sélectionnée initialement, pour avoir une bonne lisibilité.
 
-Pour ajouter une surcouche à votre carte, utilisez la fonction `addOverlay` :
+Vous pouvez ajouter une ou plusieurs surcouches (par exemple le cadastre ou les limites administratives) à votre carte en utilisant la fonction `addOverlay` :
 
 ```typescript
-import { addOverlay } from 'carte-facile';
+import { addOverlay, Overlay } from 'carte-facile';
 
-// Ajout de la surcouche cadastrale
-addOverlay(map, 'cadastre');
+// Ajouter une seule surcouche
+addOverlay(map, Overlay.administrativeBoundaries);
 
-// Ajout de la surcouche des limites administratives
-addOverlay(map, 'administrativeBoundaries');
+// Ou ajouter plusieurs surcouches en même temps
+addOverlay(map, [Overlay.administrativeBoundaries, Overlay.cadastre]);
 ```
+> Le style de la surcouche s'adapte automatiquement au fond de carte utilisé.
 
-Vous pouvez également retirer une surcouche à tout moment :
+Pour retirer une ou plusieurs surcouches, utilisez la fonction `removeOverlay` :
 
 ```typescript
 import { removeOverlay } from 'carte-facile';
 
-// Retrait de la surcouche cadastrale
-removeOverlay(map, 'cadastre');
+// Retirer une seule surcouche
+removeOverlay(map, Overlay.administrativeBoundaries);
+
+// Ou retirer plusieurs surcouches en même temps
+removeOverlay(map, [Overlay.administrativeBoundaries, Overlay.cadastre]);
 ```
+
 :::warning Si vous utilisez les liens CDN
-Ajoutez `CarteFacile` avant les fonctions `addOverlay` et `removeOverlay` :
+Ajoutez `CarteFacile` avant `addOverlay`, `removeOverlay` et `Overlay` :
 ```typescript
-CarteFacile.addOverlay(map, 'administrativeBoundaries');
+CarteFacile.addOverlay(map, CarteFacile.Overlay.administrativeBoundaries);
 ```
 :::
 
@@ -47,10 +52,26 @@ CarteFacile.addOverlay(map, 'administrativeBoundaries');
     headers: ["Surcouche", "Description"],
     data: [
         ["cadastre", "Affiche les feuilles et les parcelles cadastrales."],
-        ["administrativeBoundaries", "Affiche les limites administratives des régions, départements, EPCI et communes."]
+        ["administrativeBoundaries", "Affiche les limites administratives des régions, départements, EPCI et communes."],
+        ["levelCurves", "Affiche les courbes de niveau, permettant de décrire le relief."]
     ]
 }) }}
 
+<br>
+
+Pour afficher toutes les surcouches disponibles, servez-vous de l’autocomplétion de votre IDE avec `Overlay.`, ou utilisez la méthode suivante pour afficher la liste dans la console du navigateur :
+
+```typescript
+import { Overlay } from 'carte-facile';
+
+console.log(Overlay);
+
+```
+
+Si vous utilisez les liens CDN :
+```typescript
+console.log(CarteFacile.Overlay);
+```
 <br>
 
 ## Prochaine étape

@@ -16,10 +16,10 @@ Pour faciliter la gestion de la visibilité des couches, Carte Facile utilise un
 Pour masquer ou afficher des groupes de couches spécifiques :
 
 ```typescript
-import { showLayers, hideLayers, LayerGroup } from 'carte-facile';
+import { showLayer, hideLayer, LayerGroup } from 'carte-facile';
 
 // Masquer uniquement les bâtiments
-hideLayers(map, [LayerGroup.buildings]);
+hideLayers(map, LayerGroup.buildings);
 
 // Masquer les rues et leurs labels
 hideLayers(map, [LayerGroup.streets, LayerGroup.street_labels]);
@@ -39,10 +39,6 @@ CarteFacile.hideLayers(map, [CarteFacile.LayerGroup.buildings, CarteFacile.Layer
 
 ## Groupes de couches disponibles
 
-Pour obtenir la liste des groupes de couches disponibles, vous pouvez aussi directement utiliser l'autocomplétion de votre IDE avec `LayerGroup.`.
-
-Certains groupes de couches sont spécifiques à certaines cartes ou surcouches.
-
 {% from "components/component.njk" import component with context %}
 {{ component("table", {
     headers: ["Groupes de couches", "Description"],
@@ -60,5 +56,19 @@ Certains groupes de couches sont spécifiques à certaines cartes ou surcouches.
     ]
 }) }}
 
-Le nommage des groupes de couches se base autant que possible sur le schéma de données [Shortbread](https://shortbread-tiles.org/schema/1.0/).
+*Le nommage des groupes de couches se base autant que possible sur le schéma de données [Shortbread](https://shortbread-tiles.org/schema/1.0/).*
 
+
+Pour afficher tous les groupes de couches disponibles, servez-vous de l’autocomplétion de votre IDE avec `LayerGroup.`, ou utilisez la méthode suivante pour afficher la liste dans la console du navigateur :
+
+```typescript
+import { LayerGroup } from 'carte-facile';
+
+console.log(LayerGroup);
+
+```
+
+Si vous utilisez les liens CDN :
+```typescript
+console.log(CarteFacile.LayerGroup);
+```
