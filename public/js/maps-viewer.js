@@ -2,7 +2,7 @@
     // Initialize map
     let map = new maplibregl.Map({
         container: 'map',
-        style: CarteFacile.mapStyle.simple,
+        style: CarteFacile.mapStyles.simple,
         //minZoom: 1.8 // Attention : depuis la version 5 de MapLibre et la visualisation en globe, ajouter un minZoom ici empêche le centrage initial de la carte prévu par défaut dans les styles (cf. https://github.com/maplibre/maplibre-gl-js/issues/5932).
         maxZoom: 18.9,
     });
