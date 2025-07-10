@@ -63,8 +63,7 @@ Vous pouvez simplement enregistrer ce code dans un fichier nommé **index.html**
       });
 
       // Ajout d'un contrôle de navigation
-      const nav = new maplibregl.NavigationControl();
-      map.addControl(nav, "top-right");
+      map.addControl(new maplibregl.NavigationControl());
 
       // Ajout d'une échelle
       const scale = new maplibregl.ScaleControl({
@@ -72,6 +71,9 @@ Vous pouvez simplement enregistrer ce code dans un fichier nommé **index.html**
         unit: "imperial",
       });
       map.addControl(scale);
+
+      // Ajout d'un sélecteur de carte
+      map.addControl(new CarteFacile.MapSelectorControl());
 
       // Ajouter des surcouches (dé-commenter les lignes en dessous pour ajouter ces surcouches)
       //CarteFacile.addOverlay(map, CarteFacile.Overlay.cadastre);
