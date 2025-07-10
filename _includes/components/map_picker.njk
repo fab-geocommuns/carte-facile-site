@@ -1,16 +1,3 @@
-<!-- URLs des images statiques -->
-<script>
-window.mapImages = {
-    simple: "{{ '/img/maps/simple.webp' | url }}",
-    simpleOsm: "{{ '/img/maps/simple.webp' | url }}",
-    desaturated: "{{ '/img/maps/desaturated.webp' | url }}",
-    aerial: "{{ '/img/maps/aerial.webp' | url }}",
-    administrativeBoundaries: "{{ '/img/maps/administrative-boundaries.webp' | url }}",
-    cadastre: "{{ '/img/maps/cadastre.webp' | url }}",
-    levelCurves: "{{ '/img/maps/level-curves.webp' | url }}"
-};
-</script>
-
 <div id="map-picker" 
         class="map-picker" 
         aria-labelledby="map-picker-title">
@@ -20,7 +7,7 @@ window.mapImages = {
             aria-controls="map-picker-content"
             aria-expanded="true">
         <span class="map-picker-toggle__thumbnail"></span>
-        <span class="map-picker-toggle__text fr-btn--icon-left fr-icon-stack-line">Calques</span>
+        <span class="map-picker-toggle__text fr-btn--icon-left fr-icon-stack-line">Cartes</span>
     </button>
     <div class="map-picker--extended">
         <div class="map-picker__header fr-mx-2w fr-mt-2w">
@@ -30,9 +17,9 @@ window.mapImages = {
                 Fermer
             </button>
         </div>
-        <div class="map-picker__content fr-px-2w fr-pb-4w">
+        <div class="map-picker__content fr-px-3w fr-pb-4w">
             <div class="map-picker__styles-list">
-                <h2 id="map-picker-title" class="fr-h5">Cartes</h2>
+                <h2 id="map-picker-title" class="fr-h6">Cartes</h2>
                 <div class="map-picker-grid fr-mb-4w" id="map-picker-grid">
                     <!-- Template pour la carte -->
                     <template id="map-picker-card-template">
@@ -49,7 +36,7 @@ window.mapImages = {
                         </div>
                     </template>
                 </div>
-                <h2 class="fr-h5">Surcouches</h2>
+                <h2 class="fr-h6">Surcouches</h2>
                 <div class="map-picker-grid fr-mb-4w" id="map-picker-overlays-grid">
                     <!-- Template pour les surcouches -->
                     <template id="map-picker-overlay-template">
@@ -71,7 +58,7 @@ window.mapImages = {
                 <button class="fr-btn fr-btn--sm fr-btn--tertiary-no-outline fr-btn--icon-left fr-icon-arrow-left-line fr-mb-2w" id="map-picker-back">
                     Retour à la liste
                 </button>
-                <div class="map-picker-card__img fr-mb-2w" style="position: relative;">   
+                <div class="map-picker-card__img" style="position: relative;">   
                     <span class="map-picker-card__active-icon fr-icon-success-fill" aria-hidden="true"></span>
                     <img id="map-picker-style-thumbnail" class="fr-responsive-img" alt="">
                 </div>

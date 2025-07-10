@@ -24,7 +24,7 @@
         const card = template.content.cloneNode(true).firstElementChild;
         card.dataset.styleUrl = styleKey;
         const metadata = styleObj.metadata?.fr || {};
-        card.querySelector('img').src = window.mapImages[styleKey] || '/img/placeholder.1x1.png';
+        card.querySelector('img').src = CarteFacile.mapThumbnails[styleKey];;
         card.querySelector('img').alt = `Aperçu de carte ${metadata.name || styleKey}`;
         card.querySelector('.map-picker-card__title').textContent = metadata.name || styleKey;
         const icon = card.querySelector('.map-picker-card__active-icon');
@@ -43,7 +43,7 @@
             elements.styleDescription.textContent = clickMetadata.description || '';
             elements.styleUse.textContent = clickMetadata.use || '';
             elements.styleAccessibility.textContent = clickMetadata.accessibility || '';
-            elements.styleThumbnail.src = window.mapImages[styleKey] || '/img/placeholder.1x1.png';
+            elements.styleThumbnail.src = CarteFacile.mapThumbnails[styleKey];
             elements.styleSourceLink.href = `https://github.com/fab-geocommuns/carte-facile/blob/main/src/maps/${name}.json`;
             elements.stylesList.style.display = 'none';
             elements.styleDetails.style.display = 'flex';
@@ -55,11 +55,11 @@
             // Met à jour la miniature du bouton avec le style alternatif
             let altThumbnail;
             if (styleKey === 'simple' || styleKey === 'simpleOsm') {
-                altThumbnail = window.mapImages['aerial'];
+                altThumbnail = CarteFacile.mapThumbnails['aerial'];
             } else if (styleKey === 'desaturated') {
-                altThumbnail = window.mapImages['simple'];
+                altThumbnail = CarteFacile.mapThumbnails['simple'];
             } else {
-                altThumbnail = window.mapImages['simple']; // fallback
+                altThumbnail = CarteFacile.mapThumbnails['simple']; // fallback
             }
             elements.mapPickerToggleThumbnail.style.backgroundImage = `url(${altThumbnail})`;
         });
@@ -75,7 +75,7 @@
         card.querySelector('.map-picker-card__title').textContent = overlayMeta?.name || overlayId;
         const thumbnailId = overlayMeta?.thumbnailId || overlayId;
         const img = card.querySelector('img');
-        img.src = window.mapImages[overlayId] || '/img/placeholder.1x1.png';
+        img.src = CarteFacile.mapThumbnails[overlayId];
         img.alt = `Aperçu de surcouche ${overlayMeta?.name || overlayId}`;
         const icon = card.querySelector('.map-picker-card__active-icon');
         icon.style.display = 'none';
@@ -107,5 +107,5 @@
     elements.styleDetails.style.display = 'none';
 
     // Affiche la miniature du style alternatif dans le bouton au chargement (carte initiale = simple)
-    elements.mapPickerToggleThumbnail.style.backgroundImage = `url(${window.mapImages['aerial']})`;
+    elements.mapPickerToggleThumbnail.style.backgroundImage = `url(${CarteFacile.mapThumbnails['aerial']})`;
 })(); 
