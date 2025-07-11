@@ -28,10 +28,11 @@ hideLayer(map, [LayerGroup.streets, LayerGroup.street_labels]);
 // Utiliser showLayers pour afficher des couches qui auraient été masquées
 showLayer(map, [LayerGroup.cadastral_sections, LayerGroup.buildings]);
 ```
-:::warning Si vous utilisez les liens CDN
-Ajoutez `CarteFacile` avant les fonctions `hideLayer` et `showLayer`, ainsi qu'avant `LayerGroup` :
+
+:::info Si vous utilisez les liens CDN
+Ajoutez `CarteFacile` avant les fonctions `hideLayer` et `showLayer`, et supprimez les lignes d'import. Vous pouvez utiliser directement les noms des groupes de couches entre guillemets au lieu de `CarteFacile.LayerGroup.nomGroupeDeCouches` :
 ```typescript
-CarteFacile.hideLayer(map, [CarteFacile.LayerGroup.buildings, CarteFacile.LayerGroup.boundaries_epcis]);
+CarteFacile.hideLayer(map, ['buildings', 'street_labels']);
 ```
 :::
 
@@ -72,3 +73,12 @@ Si vous utilisez les liens CDN :
 ```typescript
 console.log(CarteFacile.LayerGroup);
 ```
+
+<br>
+
+## Prochaine étape
+
+<a class="fr-btn fr-btn--secondary fr-btn--icon-right fr-icon-arrow-right-line"
+  href={{ "/documentation/ajouter-des-fonctionnalites/selecteur-de-cartes" | locale_url }}>
+  Ajouter un sélecteur de carte
+</a>

@@ -22,7 +22,8 @@ addOverlay(map, Overlay.administrativeBoundaries);
 // Ou ajouter plusieurs surcouches en même temps
 addOverlay(map, [Overlay.administrativeBoundaries, Overlay.cadastre]);
 ```
-> Le style de la surcouche s'adapte automatiquement au fond de carte utilisé.
+
+Le style de la surcouche s'adapte automatiquement au fond de carte utilisé.
 
 Pour retirer une ou plusieurs surcouches, utilisez la fonction `removeOverlay` :
 
@@ -36,10 +37,10 @@ removeOverlay(map, Overlay.administrativeBoundaries);
 removeOverlay(map, [Overlay.administrativeBoundaries, Overlay.cadastre]);
 ```
 
-:::warning Si vous utilisez les liens CDN
-Ajoutez `CarteFacile` avant `addOverlay`, `removeOverlay` et `Overlay` :
+:::info Si vous utilisez les liens CDN
+Ajoutez `CarteFacile` avant `addOverlay` et `removeOverlay`, et supprimez les lignes d'import. Vous pouvez utiliser directement les noms des surcouches entre guillemets au lieu de `CarteFacile.Overlay.nomSurcouche` :
 ```typescript
-CarteFacile.addOverlay(map, CarteFacile.Overlay.administrativeBoundaries);
+CarteFacile.addOverlay(map, ['levelCurves', 'administrativeBoundaries']);
 ```
 :::
 

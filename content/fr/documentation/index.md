@@ -27,6 +27,13 @@ eleventyNavigation:
 
 <br>
 
+### Ajouter des fonctionnalités
+- [**Sélecteur de cartes**]({{ "/documentation/ajouter-des-fonctionnalites/selecteur-de-cartes" | locale_url }}) - Ajouter un sélecteur de cartes et de surcouches.
+- [**Échelle**]({{ "/documentation/ajouter-des-fonctionnalites/echelle" | locale_url }}) - Ajouter une échelle à la carte.
+- [**Géolocalisation**]({{ "/documentation/ajouter-des-fonctionnalites/geolocalisation" | locale_url }}) - Ajouter un bouton de géolocalisation.
+
+<br>
+
 ### Aller plus loin
 
 - [**Concepts fondamentaux**]({{ "/documentation/aller-plus-loin/concepts-fondamentaux" | locale_url }}) - Comprendre les bases de la cartographie web.

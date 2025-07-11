@@ -110,16 +110,6 @@ Pour ajouter des contrôles de navigation :
   map.addControl(nav, 'top-right');
 ```
 
-Pour ajouter une échelle :
-
-```typescript
-  const scale = new maplibregl.ScaleControl({
-      maxWidth: 80,
-      unit: 'imperial'
-  });
-  map.addControl(scale);
-```
-
 Pour changer le style d'une carte existante :
 
 ```typescript
