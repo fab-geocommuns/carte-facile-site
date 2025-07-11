@@ -57,41 +57,12 @@ CarteFacile.mapStyles.simple
 
 Les composants sont construits pour fonctionner avec l'environnement de composants de MapLibre.
 
-### MapSelectorControl
-Interface graphique pour sélection de styles et surcouches
-```typescript
-new MapSelectorControl()
+- [**MapSelectorControl**]({{ "/documentation/references-api/mapselectorcontrol" | locale_url }}) - Interface graphique pour sélectionner les cartes et surcouches.
+- [**ZoomLevelControl**]({{ "/documentation/references-api/zoomlevelcontrol" | locale_url }}) - Affichage du niveau de zoom en temps réel.
 
-// En configurant les cartes et surcouches disponibles
-new MapSelectorControl({ 
-  styles: ['simple', 'aerial'], 
-  overlays: ['cadastre'] 
-})
-```
-Exemple d'un ajout de controleur avec MapLibre, sur un conteneur de carte nommé `map` :
-```typescript
-map.addControl(new MapSelectorControl());
-```
-
-
-### ZoomLevelControl
-Affichage du niveau de zoom en temps réel
-```typescript
-new ZoomLevelControl()
-```
-Exemple d'un ajout de controleur avec MapLibre :
-```typescript
-map.addControl(new ZoomLevelControl());
-```
-
----
+<br>
 
 ## Thèmes
 
-### setTheme()
-Applique un thème d'interface aux composants
-```typescript
-setTheme(map, 'default')  // Thème par défaut
-setTheme(map, 'dsfr')     // Thème DSFR
-```
+- [**setTheme()**]({{ "/documentation/references-api/settheme" | locale_url }}) - Applique un thème d'interface aux composants.
 
