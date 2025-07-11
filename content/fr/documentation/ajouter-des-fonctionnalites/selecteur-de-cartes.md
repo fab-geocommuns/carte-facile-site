@@ -30,6 +30,7 @@ map.addControl(new CarteFacile.MapSelectorControl);
 :::
 
 <br>
+<br>
 
 ## Personnaliser le sélecteur de carte
 

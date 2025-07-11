@@ -44,7 +44,8 @@ CarteFacile.addOverlay(map, ['levelCurves', 'administrativeBoundaries']);
 ```
 :::
 
-<br><br>
+<br>
+<br>
 
 ## Surcouches disponibles
 
@@ -57,6 +58,15 @@ CarteFacile.addOverlay(map, ['levelCurves', 'administrativeBoundaries']);
         ["levelCurves", "Affiche les courbes de niveau, permettant de décrire le relief."]
     ]
 }) }}
+
+:::info Facilitez-vous la tâche avec le sélecteur de cartes !
+Ajoutez rapidement un sélecteur pour permettre à vos utilisateurs de changer de carte ou d’afficher des surcouches en un clic.
+
+<a class="fr-btn fr-btn--secondary fr-btn--icon-right fr-icon-arrow-right-line fr-mt-2w"
+  href={{ "/documentation/ajouter-des-fonctionnalites/selecteur-de-cartes" | locale_url }}>
+  Ajouter un sélecteur de carte
+</a>
+:::
 
 <br>
 

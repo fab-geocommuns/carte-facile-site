@@ -68,6 +68,9 @@ Vous pouvez simplement enregistrer ce code dans un fichier nommé **index.html**
       // Ajout d'une échelle
       map.addControl(new maplibregl.ScaleControl);
 
+      // Ajout d'un bouton de Géolocalisation
+      map.addControl(new maplibregl.GeolocateControl);
+
       // Ajout d'un sélecteur de carte
       map.addControl(new CarteFacile.MapSelectorControl);
 

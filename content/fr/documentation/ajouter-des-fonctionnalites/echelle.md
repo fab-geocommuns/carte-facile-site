@@ -24,11 +24,10 @@ map.addControl(new maplibregl.ScaleControl);
 Vous pouvez configurer la largeur de l'échelle et l'unité de l'échelle. Comme pour tout les contrôleurs de carte dans Maplibre, vous pouvez également préciser sa position sur la carte.
 
 ```typescript
-const scale = new maplibregl.ScaleControl({
+map.addControl(new maplibregl.ScaleControl({
     maxWidth: 80,        // Largeur maximale en pixels
     unit: 'metric'        // 'imperial', 'metric' ou 'nautical'
-});
-map.addControl(scale, 'bottom-right'); // Position personnalisée, parmis 'top-left', 'top-right', 'bottom-left' ou 'bottom-right'
+}), 'bottom-right'); // Position personnalisée, parmis 'top-left', 'top-right', 'bottom-left' ou 'bottom-right'
 ```
 
 Pour plus d'informations, consultez la [documentation Maplibre](https://maplibre.org/maplibre-gl-js/docs/API/classes/ScaleControl/).
