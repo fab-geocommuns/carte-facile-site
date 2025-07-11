@@ -515,9 +515,33 @@ pre[class*="language-"] {
                 </li>
                 <li class="fr-sidemenu__item">
                         <button class="fr-sidemenu__btn" aria-expanded="false" aria-controls="sidemenu-2">
-                            Aller plus loin
+                            Ajouter des fonctionnalités
                         </button>
                         <div class="fr-collapse" id="sidemenu-2">
+                            <ul class="fr-sidemenu__list">
+                                <li class="fr-sidemenu__item">
+                                <a class="fr-sidemenu__link" href="/carte-facile-site/fr/documentation/ajouter-des-fonctionnalites/selecteur-de-cartes/">
+                                    Sélecteur de carte
+                                </a>
+                                </li>
+                                <li class="fr-sidemenu__item">
+                                <a class="fr-sidemenu__link" href="/carte-facile-site/fr/documentation/ajouter-des-fonctionnalites/echelle/">
+                                    Échelle
+                                </a>
+                                </li>
+                                <li class="fr-sidemenu__item">
+                                <a class="fr-sidemenu__link" href="/carte-facile-site/fr/documentation/ajouter-des-fonctionnalites/geolocalisation/">
+                                    Géolocalisation
+                                </a>
+                                </li>
+                            </ul>
+                        </div>
+                </li>
+                <li class="fr-sidemenu__item">
+                        <button class="fr-sidemenu__btn" aria-expanded="false" aria-controls="sidemenu-3">
+                            Aller plus loin
+                        </button>
+                        <div class="fr-collapse" id="sidemenu-3">
                             <ul class="fr-sidemenu__list">
                                 <li class="fr-sidemenu__item">
                                 <a class="fr-sidemenu__link" href="/carte-facile-site/fr/documentation/aller-plus-loin/concepts-fondamentaux/">
@@ -538,10 +562,10 @@ pre[class*="language-"] {
                         </div>
                 </li>
                 <li class="fr-sidemenu__item">
-                        <button class="fr-sidemenu__btn" aria-expanded="false" aria-controls="sidemenu-3">
+                        <button class="fr-sidemenu__btn" aria-expanded="false" aria-controls="sidemenu-4">
                             Exemples
                         </button>
-                        <div class="fr-collapse" id="sidemenu-3">
+                        <div class="fr-collapse" id="sidemenu-4">
                             <ul class="fr-sidemenu__list">
                                 <li class="fr-sidemenu__item">
                                 <a class="fr-sidemenu__link" href="/carte-facile-site/fr/documentation/exemples/carte-simple-maplibre-cdn/" aria-current="page">
@@ -627,10 +651,10 @@ pre[class*="language-"] {
 
     <span class="token comment">&lt;!-- Importation des bibliothèques Carte Facile --></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span>
-      <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://unpkg.com/carte-facile@^0.7.1/dist/carte-facile.css<span class="token punctuation">"</span></span>
+      <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://unpkg.com/carte-facile@^0.8.1/dist/carte-facile.css<span class="token punctuation">"</span></span>
       <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span>
     <span class="token punctuation">/></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://unpkg.com/carte-facile@^0.7.1/dist/carte-facile.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://unpkg.com/carte-facile@^0.8.1/dist/carte-facile.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
 
     <span class="token comment">&lt;!-- Style pour afficher la carte en plein écran --></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
@@ -659,24 +683,25 @@ pre[class*="language-"] {
         <span class="token literal-property property">maxZoom</span><span class="token operator">:</span> <span class="token number">18.9</span><span class="token punctuation">,</span> <span class="token comment">// niveau de zoom maximum, adapté aux cartes utilisant les données IGN</span>
       <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-      <span class="token comment">// Ajout d'un contrôle de navigation</span>
-      <span class="token keyword">const</span> nav <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">maplibregl<span class="token punctuation">.</span>NavigationControl</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      map<span class="token punctuation">.</span><span class="token function">addControl</span><span class="token punctuation">(</span>nav<span class="token punctuation">,</span> <span class="token string">"top-right"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment">// Ajout d'un contrôle de navigation</span>
+      map<span class="token punctuation">.</span><span class="token function">addControl</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">maplibregl<span class="token punctuation">.</span>NavigationControl</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
       <span class="token comment">// Ajout d'une échelle</span>
-      <span class="token keyword">const</span> scale <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">maplibregl<span class="token punctuation">.</span>ScaleControl</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-        <span class="token literal-property property">maxWidth</span><span class="token operator">:</span> <span class="token number">80</span><span class="token punctuation">,</span>
-        <span class="token literal-property property">unit</span><span class="token operator">:</span> <span class="token string">"imperial"</span><span class="token punctuation">,</span>
-      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      map<span class="token punctuation">.</span><span class="token function">addControl</span><span class="token punctuation">(</span>scale<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      map<span class="token punctuation">.</span><span class="token function">addControl</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">maplibregl<span class="token punctuation">.</span>ScaleControl</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token comment">// Ajout d'un bouton de Géolocalisation</span>
+      map<span class="token punctuation">.</span><span class="token function">addControl</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">maplibregl<span class="token punctuation">.</span>GeolocateControl</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token comment">// Ajout d'un sélecteur de carte</span>
+      map<span class="token punctuation">.</span><span class="token function">addControl</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">CarteFacile<span class="token punctuation">.</span>MapSelectorControl</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
       <span class="token comment">// Ajouter des surcouches (dé-commenter les lignes en dessous pour ajouter ces surcouches)</span>
-      <span class="token comment">//CarteFacile.addOverlay(map, CarteFacile.Overlay.cadastre);</span>
-      <span class="token comment">//CarteFacile.addOverlay(map, [CarteFacile.Overlay.levelCurves, CarteFacile.Overlay.administrativeBoundaries]);</span>
+      <span class="token comment">//CarteFacile.addOverlay(map, 'cadastre');</span>
+      <span class="token comment">//CarteFacile.addOverlay(map, ['levelCurves', 'administrativeBoundaries']);</span>
 
       <span class="token comment">// Masquer des couches (dé-commenter les lignes en dessous pour masquer ces surcouches)</span>
-      <span class="token comment">//CarteFacile.hideLayer(map, CarteFacile.LayerGroup.buildings);</span>
-      <span class="token comment">//CarteFacile.hideLayer(map, [CarteFacile.LayerGroup.buildings, CarteFacile.LayerGroup.boundaries_epcis]);</span>
+      <span class="token comment">//CarteFacile.hideLayer(map, 'buildings');</span>
+      <span class="token comment">//CarteFacile.hideLayer(map, ['buildings', 'street_labels']);</span>
     </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>

@@ -515,9 +515,33 @@ pre[class*="language-"] {
                 </li>
                 <li class="fr-sidemenu__item">
                         <button class="fr-sidemenu__btn" aria-expanded="false" aria-controls="sidemenu-2">
-                            Aller plus loin
+                            Ajouter des fonctionnalités
                         </button>
                         <div class="fr-collapse" id="sidemenu-2">
+                            <ul class="fr-sidemenu__list">
+                                <li class="fr-sidemenu__item">
+                                <a class="fr-sidemenu__link" href="/carte-facile-site/fr/documentation/ajouter-des-fonctionnalites/selecteur-de-cartes/">
+                                    Sélecteur de carte
+                                </a>
+                                </li>
+                                <li class="fr-sidemenu__item">
+                                <a class="fr-sidemenu__link" href="/carte-facile-site/fr/documentation/ajouter-des-fonctionnalites/echelle/">
+                                    Échelle
+                                </a>
+                                </li>
+                                <li class="fr-sidemenu__item">
+                                <a class="fr-sidemenu__link" href="/carte-facile-site/fr/documentation/ajouter-des-fonctionnalites/geolocalisation/">
+                                    Géolocalisation
+                                </a>
+                                </li>
+                            </ul>
+                        </div>
+                </li>
+                <li class="fr-sidemenu__item">
+                        <button class="fr-sidemenu__btn" aria-expanded="false" aria-controls="sidemenu-3">
+                            Aller plus loin
+                        </button>
+                        <div class="fr-collapse" id="sidemenu-3">
                             <ul class="fr-sidemenu__list">
                                 <li class="fr-sidemenu__item">
                                 <a class="fr-sidemenu__link" href="/carte-facile-site/fr/documentation/aller-plus-loin/concepts-fondamentaux/">
@@ -538,10 +562,10 @@ pre[class*="language-"] {
                         </div>
                 </li>
                 <li class="fr-sidemenu__item">
-                        <button class="fr-sidemenu__btn" aria-expanded="false" aria-controls="sidemenu-3">
+                        <button class="fr-sidemenu__btn" aria-expanded="false" aria-controls="sidemenu-4">
                             Exemples
                         </button>
-                        <div class="fr-collapse" id="sidemenu-3">
+                        <div class="fr-collapse" id="sidemenu-4">
                             <ul class="fr-sidemenu__list">
                                 <li class="fr-sidemenu__item">
                                 <a class="fr-sidemenu__link" href="/carte-facile-site/fr/documentation/exemples/carte-simple-maplibre-cdn/">
@@ -624,10 +648,10 @@ pre[class*="language-"] {
 <span class="token comment">// Utiliser showLayers pour afficher des couches qui auraient été masquées</span>
 <span class="token function">showLayer</span><span class="token punctuation">(</span>map<span class="token punctuation">,</span> <span class="token punctuation">[</span>LayerGroup<span class="token punctuation">.</span>cadastral_sections<span class="token punctuation">,</span> LayerGroup<span class="token punctuation">.</span>buildings<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 
-<div class="fr-alert fr-alert--warning ">
+<div class="fr-alert fr-alert--info ">
     <h3 class="fr-alert__title"> Si vous utilisez les liens CDN</h3>
-<p>Ajoutez <code>CarteFacile</code> avant les fonctions <code>hideLayer</code> et <code>showLayer</code>, ainsi qu'avant <code>LayerGroup</code> :</p>
-<pre class="language-typescript" tabindex="0"><code class="language-typescript">CarteFacile<span class="token punctuation">.</span><span class="token function">hideLayer</span><span class="token punctuation">(</span>map<span class="token punctuation">,</span> <span class="token punctuation">[</span>CarteFacile<span class="token punctuation">.</span>LayerGroup<span class="token punctuation">.</span>buildings<span class="token punctuation">,</span> CarteFacile<span class="token punctuation">.</span>LayerGroup<span class="token punctuation">.</span>boundaries_epcis<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Ajoutez <code>CarteFacile</code> avant les fonctions <code>hideLayer</code> et <code>showLayer</code>, et supprimez les lignes d'import. Vous pouvez utiliser directement les noms des groupes de couches entre guillemets au lieu de <code>CarteFacile.LayerGroup.nomGroupeDeCouches</code> :</p>
+<pre class="language-typescript" tabindex="0"><code class="language-typescript">CarteFacile<span class="token punctuation">.</span><span class="token function">hideLayer</span><span class="token punctuation">(</span>map<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'buildings'</span><span class="token punctuation">,</span> <span class="token string">'street_labels'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 </div>
 <p><br><br></p>
 <h2 id="groupes-de-couches-disponibles" tabindex="-1">Groupes de couches disponibles <a class="header-anchor" href="#groupes-de-couches-disponibles">#</a></h2>
@@ -692,6 +716,11 @@ pre[class*="language-"] {
 </code></pre>
 <p>Si vous utilisez les liens CDN :</p>
 <pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>CarteFacile<span class="token punctuation">.</span>LayerGroup<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<br>
+<h2 id="prochaine-etape" tabindex="-1">Prochaine étape <a class="header-anchor" href="#prochaine-etape">#</a></h2>
+<p><a class="fr-btn fr-btn--secondary fr-btn--icon-right fr-icon-arrow-right-line" href="/carte-facile-site/fr/documentation/ajouter-des-fonctionnalites/selecteur-de-cartes">
+Ajouter un sélecteur de carte
+</a></p>
 
       <div class="fr-grid-row fr-grid-row--right">
 <a class="fr-grid-row fr-grid-row--right fr-link fr-icon-arrow-up-fill fr-link--icon-left" href="#top">

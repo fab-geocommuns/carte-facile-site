@@ -11,6 +11,8 @@
         backButton: document.getElementById('map-picker-back'),
         styleTitle: document.getElementById('map-picker-style-title'),
         styleDescription: document.getElementById('map-picker-style-description'),
+        styleUse: document.getElementById('map-picker-style-use'),
+        styleAccessibility: document.getElementById('map-picker-style-accessibility'),
         styleThumbnail: document.getElementById('map-picker-style-thumbnail'),
         styleSourceLink: document.getElementById('map-picker-style-source'),
         mapPickerToggleThumbnail: document.getElementById('map-picker-toggle').querySelector('.map-picker-toggle__thumbnail'),
@@ -22,7 +24,7 @@
         const card = template.content.cloneNode(true).firstElementChild;
         card.dataset.styleUrl = styleKey;
         const metadata = styleObj.metadata?.fr || {};
-        card.querySelector('img').src = CarteFacile.mapThumbnails[styleKey];
+        card.querySelector('img').src = CarteFacile.mapThumbnails[styleKey];;
         card.querySelector('img').alt = `Aperçu de carte ${metadata.name || styleKey}`;
         card.querySelector('.map-picker-card__title').textContent = metadata.name || styleKey;
         const icon = card.querySelector('.map-picker-card__active-icon');
@@ -34,10 +36,15 @@
         }
         card.addEventListener('click', () => {
             map.setStyle(CarteFacile.mapStyles[styleKey]);
-            elements.styleTitle.textContent = metadata.name || styleKey;
-            elements.styleDescription.textContent = metadata.description || '';
+            // Récupérer les métadonnées à l'intérieur du click handler
+            const clickMetadata = CarteFacile.mapStyles[styleKey].metadata?.fr || {};
+            const name = CarteFacile.mapStyles[styleKey].name || styleKey;
+            elements.styleTitle.textContent = clickMetadata.name;
+            elements.styleDescription.textContent = clickMetadata.description || '';
+            elements.styleUse.textContent = clickMetadata.use || '';
+            elements.styleAccessibility.textContent = clickMetadata.accessibility || '';
             elements.styleThumbnail.src = CarteFacile.mapThumbnails[styleKey];
-            elements.styleSourceLink.href = `https://github.com/fab-geocommuns/carte-facile/blob/main/src/map/${styleObj.id}.json`;
+            elements.styleSourceLink.href = `https://github.com/fab-geocommuns/carte-facile/blob/main/src/maps/${name}.json`;
             elements.stylesList.style.display = 'none';
             elements.styleDetails.style.display = 'flex';
             // Met à jour l'icône active
@@ -68,11 +75,7 @@
         card.querySelector('.map-picker-card__title').textContent = overlayMeta?.name || overlayId;
         const thumbnailId = overlayMeta?.thumbnailId || overlayId;
         const img = card.querySelector('img');
-        if (CarteFacile.mapThumbnails[thumbnailId]) {
-            img.src = CarteFacile.mapThumbnails[thumbnailId];
-        } else {
-            img.src = '/img/placeholder.1x1.png';
-        }
+        img.src = CarteFacile.mapThumbnails[overlayId];
         img.alt = `Aperçu de surcouche ${overlayMeta?.name || overlayId}`;
         const icon = card.querySelector('.map-picker-card__active-icon');
         icon.style.display = 'none';
@@ -105,6 +108,4 @@
 
     // Affiche la miniature du style alternatif dans le bouton au chargement (carte initiale = simple)
     elements.mapPickerToggleThumbnail.style.backgroundImage = `url(${CarteFacile.mapThumbnails['aerial']})`;
-
-    console.log(CarteFacile.mapOverlays);
 })(); 

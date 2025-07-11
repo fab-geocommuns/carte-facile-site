@@ -3,8 +3,8 @@
 }
 
 .map-picker-toggle {
-    width: 7rem;
-    height: 6rem;
+    width: 6rem;
+    height: 5rem;
     z-index: 3;
     display: none;
     position: absolute;
@@ -47,7 +47,7 @@
 
 .map-picker--extended {
     position: absolute;
-    width: 24rem;
+    width: 20rem;
     max-width: 100%;
     display: flex;
     border-radius: 0.25rem;
@@ -135,7 +135,7 @@
 }
 
 .map-picker-card__img img {
-    aspect-ratio: 1.7777777778;
+    aspect-ratio: 16/9;
     object-fit: cover;
     object-position: 50% 50%;
     width: 100%;
@@ -146,4 +146,11 @@
     font-size: .875rem;
     line-height: 1.5rem;
     font-weight: normal;
+}
+
+.map-picker__style-details .map-picker-card__img {
+    width: 8rem;
+    margin-bottom: 1rem;
+    border-radius: 0.25rem;
+    overflow: hidden;
 }
