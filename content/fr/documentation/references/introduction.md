@@ -9,10 +9,33 @@ eleventyNavigation:
   nav: docs
 ---
 
-Carte Facile est une bibliothèque JavaScript/TypeScript qui simplifie l'intégration de cartes interactives dans vos applications web. Elle fournit une interface unifiée pour accéder à différents fournisseurs de services cartographiques (IGN, OpenStreetMap) tout en offrant des styles prédéfinis et des composants dédiés.
+## Styles et Configuration
+mapStyles - Collection des styles de carte disponibles
+mapThumbnails - URLs des aperçus visuels pour styles et surcouches
+mapOverlays - Configuration complète des surcouches avec variantes
 
-## Fonctions principales
+## Gestion des Surcouches
+addOverlay() - Ajoute une ou plusieurs surcouches à la carte
+removeOverlay() - Supprime une ou plusieurs surcouches de la carte
+Overlay - Constantes des types de surcouches disponibles
 
-### [getMap()](/documentation/api/getmap)
+## Gestion des couches
+showLayer() - Affiche les groupes de couches spécifiés
+hideLayer() - Masque les groupes de couches spécifiés
+LayerGroup - Constantes des groupes de couches disponibles
 
-Fonction principale pour obtenir un style de carte.
+##Composants d'Interface
+MapSelectorControl - Interface graphique pour sélection de styles et surcouches
+ZoomLevelControl - Affichage du niveau de zoom en temps réel
+
+##Thèmes
+setTheme() - Applique un thème d'interface aux composants
+
+## Import
+```typescript
+import { 
+  mapStyles, mapThumbnails, mapOverlays,
+  addOverlay, removeOverlay, showLayer, hideLayer,
+  Overlay, LayerGroup, MapSelectorControl, ZoomLevelControl, setTheme 
+} from 'carte-facile';
+```
