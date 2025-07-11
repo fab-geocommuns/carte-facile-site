@@ -4,8 +4,8 @@ description: Collection des styles de carte disponibles.
 layout: layouts/docs.njk
 eleventyNavigation:
   key: mapStyles
-  parent: Références API
-  order: 2
+  parent: Cartes
+  order: 1
   nav: docs
 ---
 
@@ -25,6 +25,9 @@ Exemple de création de carte avec MapLibre :
 let map = new maplibregl.Map({
   container: 'map', // id du conteneur de la carte
   style: mapStyles.simple, // style de carte
-  maxZoom: 18.9, // niveau de zoom maximum, adapté aux cartes utilisant les données IGN
 });
 ```
+
+Pour connaitre toutes les options possibles sur la création de carte avec MapLibre, consultez la documentation dédiée : 
+- [Map](https://maplibre.org/maplibre-gl-js/docs/API/classes/Map/)
+- [MapOptions](https://maplibre.org/maplibre-gl-js/docs/API/type-aliases/MapOptions/)

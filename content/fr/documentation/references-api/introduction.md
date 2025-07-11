@@ -32,7 +32,7 @@ CarteFacile.mapStyles.simple
 
 ## Cartes
 
-- [**mapStyles**]({{ "/documentation/references-api/mapstyles" | locale_url }}) - Collection des styles de carte disponibles.
+- [**mapStyles**]({{ "/documentation/references-api/cartes/mapstyles" | locale_url }}) - Collection des styles de carte disponibles.
 - [**mapThumbnails**]({{ "/documentation/references-api/mapthumbnails" | locale_url }}) - Aperçus visuels pour les cartes et surcouches.
 
 <br>
