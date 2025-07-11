@@ -30,7 +30,7 @@ CarteFacile.mapStyles.simple
 
 <br>
 
-## Styles et configuration
+## Cartes
 
 - [**mapStyles**]({{ "/documentation/references-api/mapstyles" | locale_url }}) - Collection des styles de carte disponibles.
 - [**mapThumbnails**]({{ "/documentation/references-api/mapthumbnails" | locale_url }}) - Aperçus visuels pour les cartes et surcouches.
@@ -47,40 +47,11 @@ CarteFacile.mapStyles.simple
 
 ## Gestion des couches
 
-### LayerGroup
-Constantes des groupes de couches disponibles
-```typescript
-// Utilisation
-LayerGroup.buildings
+- [**LayerGroup**]({{ "/documentation/references-api/layergroup" | locale_url }}) - Constantes des groupes de couches disponibles.
+- [**hideLayer()**]({{ "/documentation/references-api/hidelayer" | locale_url }}) - Masque les groupes de couches spécifiés.
+- [**showLayer()**]({{ "/documentation/references-api/showlayer" | locale_url }}) - Affiche les groupes de couches spécifiés.
 
-// Voir tous les groupes disponibles
-console.log(Object.values(LayerGroup))
-// ou utilisez l'autocomplétion de votre IDE
-```
-
-### showLayer()
-Affiche les groupes de couches spécifiés
-```typescript
-showLayer(map, LayerGroup.buildings)
-showLayer(map, [LayerGroup.buildings, LayerGroup.streets])
-
-// Variante sans typage ni autocomplétion
-showLayer(map, 'buildings')
-showLayer(map, ['buildings', 'streets'])
-```
-
-### hideLayer()
-Masque les groupes de couches spécifiés
-```typescript
-hideLayer(map, LayerGroup.buildings)
-hideLayer(map, [LayerGroup.buildings, LayerGroup.streets])
-
-// Variante sans typage ni autocomplétion
-hideLayer(map, 'buildings')
-hideLayer(map, ['buildings', 'streets'])
-```
-
----
+<br>
 
 ## Composants d'interface
 
