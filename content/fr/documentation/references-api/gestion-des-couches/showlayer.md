@@ -4,8 +4,8 @@ description: Affiche les groupes de couches spécifiés.
 layout: layouts/docs.njk
 eleventyNavigation:
   key: showLayer()
-  parent: Références API
-  order: 9
+  parent: Gestion des couches
+  order: 3
   nav: docs
 ---
 

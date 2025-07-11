@@ -33,23 +33,23 @@ CarteFacile.mapStyles.simple
 ## Cartes
 
 - [**mapStyles**]({{ "/documentation/references-api/cartes/mapstyles" | locale_url }}) - Collection des styles de carte disponibles.
-- [**mapThumbnails**]({{ "/documentation/references-api/mapthumbnails" | locale_url }}) - Aperçus visuels pour les cartes et surcouches.
+- [**mapThumbnails**]({{ "/documentation/references-api/cartes/mapthumbnails" | locale_url }}) - Aperçus visuels pour les cartes et surcouches.
 
 <br>
 
 ## Gestion des surcouches
 
-- [**Overlay**]({{ "/documentation/references-api/overlay" | locale_url }}) - Constante des types de surcouches disponibles.
-- [**addOverlay()**]({{ "/documentation/references-api/addoverlay" | locale_url }}) - Ajoute une ou plusieurs surcouches à la carte.
-- [**removeOverlay()**]({{ "/documentation/references-api/removeoverlay" | locale_url }}) - Supprime une ou plusieurs surcouches de la carte.
+- [**Overlay**]({{ "/documentation/references-api/gestion-des-surcouches/overlay" | locale_url }}) - Constante des types de surcouches disponibles.
+- [**addOverlay()**]({{ "/documentation/references-api/gestion-des-surcouches/addoverlay" | locale_url }}) - Ajoute une ou plusieurs surcouches à la carte.
+- [**removeOverlay()**]({{ "/documentation/references-api/gestion-des-surcouches/removeoverlay" | locale_url }}) - Supprime une ou plusieurs surcouches de la carte.
 
 <br>
 
 ## Gestion des couches
 
-- [**LayerGroup**]({{ "/documentation/references-api/layergroup" | locale_url }}) - Constantes des groupes de couches disponibles.
-- [**hideLayer()**]({{ "/documentation/references-api/hidelayer" | locale_url }}) - Masque les groupes de couches spécifiés.
-- [**showLayer()**]({{ "/documentation/references-api/showlayer" | locale_url }}) - Affiche les groupes de couches spécifiés.
+- [**LayerGroup**]({{ "/documentation/references-api/gestion-des-couches/layergroup" | locale_url }}) - Constantes des groupes de couches disponibles.
+- [**hideLayer()**]({{ "/documentation/references-api/gestion-des-couches/hidelayer" | locale_url }}) - Masque les groupes de couches spécifiés.
+- [**showLayer()**]({{ "/documentation/references-api/gestion-des-couches/showlayer" | locale_url }}) - Affiche les groupes de couches spécifiés.
 
 <br>
 
@@ -57,12 +57,12 @@ CarteFacile.mapStyles.simple
 
 Les composants sont construits pour fonctionner avec l'environnement de composants de MapLibre.
 
-- [**MapSelectorControl**]({{ "/documentation/references-api/mapselectorcontrol" | locale_url }}) - Interface graphique pour sélectionner les cartes et surcouches.
-- [**ZoomLevelControl**]({{ "/documentation/references-api/zoomlevelcontrol" | locale_url }}) - Affichage du niveau de zoom en temps réel.
+- [**MapSelectorControl**]({{ "/documentation/references-api/composants-interface/mapselectorcontrol" | locale_url }}) - Interface graphique pour sélectionner les cartes et surcouches.
+- [**ZoomLevelControl**]({{ "/documentation/references-api/composants-interface/zoomlevelcontrol" | locale_url }}) - Affichage du niveau de zoom en temps réel.
 
 <br>
 
 ## Thèmes
 
-- [**setTheme()**]({{ "/documentation/references-api/settheme" | locale_url }}) - Applique un thème d'interface aux composants.
+- [**setTheme()**]({{ "/documentation/references-api/themes/settheme" | locale_url }}) - Applique un thème d'interface aux composants.
 

@@ -4,8 +4,8 @@ description: Supprime une ou plusieurs surcouches de la carte.
 layout: layouts/docs.njk
 eleventyNavigation:
   key: removeOverlay()
-  parent: Références API
-  order: 6
+  parent: Gestion des surcouches
+  order: 3
   nav: docs
 ---
 

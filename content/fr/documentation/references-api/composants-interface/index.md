@@ -1,9 +1,9 @@
 ---
 layout: layouts/docs.njk
 eleventyNavigation:
-  key: Cartes
+  key: Composants d'interface
   parent: Références API
-  order: 2
+  order: 5
   nav: docs
   permalink: false
 ---

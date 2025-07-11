@@ -4,8 +4,8 @@ description: Masque les groupes de couches spécifiés.
 layout: layouts/docs.njk
 eleventyNavigation:
   key: hideLayer()
-  parent: Références API
-  order: 8
+  parent: Gestion des couches
+  order: 2
   nav: docs
 ---
 

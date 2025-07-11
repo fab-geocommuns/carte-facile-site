@@ -4,8 +4,8 @@ description: Affichage du niveau de zoom en temps réel.
 layout: layouts/docs.njk
 eleventyNavigation:
   key: ZoomLevelControl
-  parent: Références API
-  order: 11
+  parent: Composants d'interface
+  order: 2
   nav: docs
 ---
 

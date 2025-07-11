@@ -4,8 +4,8 @@ description: Interface graphique pour sélectionner les cartes et surcouches.
 layout: layouts/docs.njk
 eleventyNavigation:
   key: MapSelectorControl
-  parent: Références API
-  order: 10
+  parent: Composants d'interface
+  order: 1
   nav: docs
 ---
 

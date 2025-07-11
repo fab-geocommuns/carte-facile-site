@@ -4,8 +4,8 @@ description: Aperçus visuels pour les cartes et surcouches.
 layout: layouts/docs.njk
 eleventyNavigation:
   key: mapThumbnails
-  parent: Références API
-  order: 3
+  parent: Cartes
+  order: 2
   nav: docs
 ---
 Aperçus visuels pour les cartes et surcouches.

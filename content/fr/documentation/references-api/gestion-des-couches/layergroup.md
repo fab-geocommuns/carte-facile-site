@@ -4,8 +4,8 @@ description: Constantes des groupes de couches disponibles.
 layout: layouts/docs.njk
 eleventyNavigation:
   key: LayerGroup
-  parent: Références API
-  order: 7
+  parent: Gestion des couches
+  order: 1
   nav: docs
 ---
 

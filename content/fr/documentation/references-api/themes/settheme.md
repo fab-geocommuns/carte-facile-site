@@ -4,8 +4,8 @@ description: Applique un thème d'interface aux composants.
 layout: layouts/docs.njk
 eleventyNavigation:
   key: setTheme()
-  parent: Références API
-  order: 12
+  parent: Thèmes
+  order: 1
   nav: docs
 ---
 

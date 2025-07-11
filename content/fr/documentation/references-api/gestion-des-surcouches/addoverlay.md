@@ -4,8 +4,8 @@ description: Ajoute une ou plusieurs surcouches à la carte.
 layout: layouts/docs.njk
 eleventyNavigation:
   key: addOverlay()
-  parent: Références API
-  order: 5
+  parent: Gestion des surcouches
+  order: 2
   nav: docs
 ---
 

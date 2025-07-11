@@ -4,8 +4,8 @@ description: Constante des types de surcouches disponibles.
 layout: layouts/docs.njk
 eleventyNavigation:
   key: Overlay
-  parent: Références API
-  order: 4
+  parent: Gestion des surcouches
+  order: 1
   nav: docs
 ---
 
