@@ -1,7 +1,7 @@
 ---
 eleventyNavigation:
   key: Aller plus loin
-  order: 2
+  order: 3
   nav: docs
   permalink: false
 ---

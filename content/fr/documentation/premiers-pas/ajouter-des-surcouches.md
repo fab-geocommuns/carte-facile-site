@@ -22,7 +22,8 @@ addOverlay(map, Overlay.administrativeBoundaries);
 // Ou ajouter plusieurs surcouches en même temps
 addOverlay(map, [Overlay.administrativeBoundaries, Overlay.cadastre]);
 ```
-> Le style de la surcouche s'adapte automatiquement au fond de carte utilisé.
+
+Le style de la surcouche s'adapte automatiquement au fond de carte utilisé.
 
 Pour retirer une ou plusieurs surcouches, utilisez la fonction `removeOverlay` :
 
@@ -36,14 +37,15 @@ removeOverlay(map, Overlay.administrativeBoundaries);
 removeOverlay(map, [Overlay.administrativeBoundaries, Overlay.cadastre]);
 ```
 
-:::warning Si vous utilisez les liens CDN
-Ajoutez `CarteFacile` avant `addOverlay`, `removeOverlay` et `Overlay` :
+:::info Si vous utilisez les liens CDN
+Ajoutez `CarteFacile` avant `addOverlay` et `removeOverlay`, et supprimez les lignes d'import. Vous pouvez utiliser directement les noms des surcouches entre guillemets au lieu de `CarteFacile.Overlay.nomSurcouche` :
 ```typescript
-CarteFacile.addOverlay(map, CarteFacile.Overlay.administrativeBoundaries);
+CarteFacile.addOverlay(map, ['levelCurves', 'administrativeBoundaries']);
 ```
 :::
 
-<br><br>
+<br>
+<br>
 
 ## Surcouches disponibles
 
@@ -56,6 +58,15 @@ CarteFacile.addOverlay(map, CarteFacile.Overlay.administrativeBoundaries);
         ["levelCurves", "Affiche les courbes de niveau, permettant de décrire le relief."]
     ]
 }) }}
+
+:::info Facilitez-vous la tâche avec le sélecteur de cartes !
+Ajoutez rapidement un sélecteur pour permettre à vos utilisateurs de changer de carte ou d’afficher des surcouches en un clic.
+
+<a class="fr-btn fr-btn--secondary fr-btn--icon-right fr-icon-arrow-right-line fr-mt-2w"
+  href={{ "/documentation/ajouter-des-fonctionnalites/selecteur-de-cartes" | locale_url }}>
+  Ajouter un sélecteur de carte
+</a>
+:::
 
 <br>
 

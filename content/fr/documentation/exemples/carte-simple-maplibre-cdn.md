@@ -62,24 +62,25 @@ Vous pouvez simplement enregistrer ce code dans un fichier nommé **index.html**
         maxZoom: 18.9, // niveau de zoom maximum, adapté aux cartes utilisant les données IGN
       });
 
-      // Ajout d'un contrôle de navigation
-      const nav = new maplibregl.NavigationControl();
-      map.addControl(nav, "top-right");
+            // Ajout d'un contrôle de navigation
+      map.addControl(new maplibregl.NavigationControl);
 
       // Ajout d'une échelle
-      const scale = new maplibregl.ScaleControl({
-        maxWidth: 80,
-        unit: "imperial",
-      });
-      map.addControl(scale);
+      map.addControl(new maplibregl.ScaleControl);
+
+      // Ajout d'un bouton de Géolocalisation
+      map.addControl(new maplibregl.GeolocateControl);
+
+      // Ajout d'un sélecteur de carte
+      map.addControl(new CarteFacile.MapSelectorControl);
 
       // Ajouter des surcouches (dé-commenter les lignes en dessous pour ajouter ces surcouches)
-      //CarteFacile.addOverlay(map, CarteFacile.Overlay.cadastre);
-      //CarteFacile.addOverlay(map, [CarteFacile.Overlay.levelCurves, CarteFacile.Overlay.administrativeBoundaries]);
+      //CarteFacile.addOverlay(map, 'cadastre');
+      //CarteFacile.addOverlay(map, ['levelCurves', 'administrativeBoundaries']);
 
       // Masquer des couches (dé-commenter les lignes en dessous pour masquer ces surcouches)
-      //CarteFacile.hideLayer(map, CarteFacile.LayerGroup.buildings);
-      //CarteFacile.hideLayer(map, [CarteFacile.LayerGroup.buildings, CarteFacile.LayerGroup.boundaries_epcis]);
+      //CarteFacile.hideLayer(map, 'buildings');
+      //CarteFacile.hideLayer(map, ['buildings', 'street_labels']);
     </script>
   </body>
 </html>

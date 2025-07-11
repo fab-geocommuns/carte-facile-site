@@ -80,6 +80,17 @@ CarteFacile propose plusieurs styles prédéfinis :
     ]
 }) }}
 
+:::info Facilitez-vous la tâche avec le sélecteur de cartes !
+Ajoutez rapidement un sélecteur pour permettre à vos utilisateurs de changer de carte ou d’afficher des surcouches en un clic.
+
+<a class="fr-btn fr-btn--secondary fr-btn--icon-right fr-icon-arrow-right-line fr-mt-2w"
+  href={{ "/documentation/ajouter-des-fonctionnalites/selecteur-de-cartes" | locale_url }}>
+  Ajouter un sélecteur de carte
+</a>
+:::
+
+<br>
+
 Pour afficher tous les styles disponibles, servez-vous de l’autocomplétion de votre IDE avec `mapStyles.`, ou utilisez la méthode suivante pour afficher la liste dans la console du navigateur :
 
 ```typescript
@@ -108,16 +119,6 @@ Pour ajouter des contrôles de navigation :
 ```typescript
   const nav = new maplibregl.NavigationControl();
   map.addControl(nav, 'top-right');
-```
-
-Pour ajouter une échelle :
-
-```typescript
-  const scale = new maplibregl.ScaleControl({
-      maxWidth: 80,
-      unit: 'imperial'
-  });
-  map.addControl(scale);
 ```
 
 Pour changer le style d'une carte existante :
