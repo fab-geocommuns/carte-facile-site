@@ -51,6 +51,11 @@ eleventyNavigation:
 
 <br>
 
+### Références API
+- [**Introduction**]({{ "/documentation/references-api/introduction" | locale_url }}) - Présentation des fonctions et collections de l’API Carte Facile.
+
+<br>
+
 ## 📚 Ressources supplémentaires
 
 - [**Documentation officielle de MapLibre**](https://maplibre.org/maplibre-gl-js/docs/) - Documentation complète de MapLibre GL JS, la bibliothèque cartographique utilisée par Carte Facile.

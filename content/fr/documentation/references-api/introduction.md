@@ -1,19 +1,24 @@
 ---
-title: Références
+title: Références API
 description: Cette page référence l'API de Carte facile.
 layout: layouts/docs.njk
 eleventyNavigation:
-  key: Références
-  order: 5
+  key: Introduction
+  parent: Références API
+  order: 1
   nav: docs
 --- 
+
+Documentation complète de l'API Carte facile.
 
 ## Import
 ```typescript
 import { 
   mapStyles, mapThumbnails,
-  addOverlay, removeOverlay, showLayer, hideLayer,
-  Overlay, LayerGroup, MapSelectorControl, ZoomLevelControl, setTheme 
+  Overlay, addOverlay, removeOverlay, 
+  LayerGroup, showLayer, hideLayer,
+  MapSelectorControl, ZoomLevelControl, 
+  setTheme 
 } from 'carte-facile';
 ```
 
@@ -23,88 +28,22 @@ En cas d'utilisation de Carte Facile avec les liens CDN, ne pas faire d'import m
 CarteFacile.mapStyles.simple
 ```
 
----
+<br>
 
 ## Styles et configuration
 
-### mapStyles
-Collection des styles de carte disponibles.
-```typescript
-// Utilisation
-mapStyles.simple
+- [**mapStyles**]({{ "/documentation/references-api/mapstyles" | locale_url }}) - Collection des styles de carte disponibles.
+- [**mapThumbnails**]({{ "/documentation/references-api/mapthumbnails" | locale_url }}) - Aperçus visuels pour les cartes et surcouches.
 
-// Voir tous les styles disponibles  
-console.log(Object.keys(mapStyles))
-// ou utilisez l'autocomplétion de votre IDE
-```
-
-Exemple de création de carte avec MapLibre :
-```typescript
-let map = new maplibregl.Map({
-  container: 'map', // id du conteneur de la carte
-  style: mapStyles.simple, // style de carte
-  maxZoom: 18.9, // niveau de zoom maximum, adapté aux cartes utilisant les données IGN
-});
-```
-
-### mapThumbnails
-URLs des aperçus visuels pour styles et surcouches.
-```typescript
-// Utilisation
-mapThumbnails.simple
-
-// Voir tous les aperçus disponibles
-console.log(Object.keys(mapThumbnails))
-// ou utilisez l'autocomplétion de votre IDE
-```
-
-Exemple d'utilisation pour afficher un aperçu :
-```html
-<!-- Dans le html -->
-<img id="preview" alt="Aperçu carte" />
-```
-```javascript
-// Sélectionner la balise html pour ajouter la source
-document.querySelector('#preview').src = mapThumbnails.simple;
-```
----
+<br>
 
 ## Gestion des surcouches
 
-### Overlay
-Constante des types de surcouches disponibles
-```typescript
-// Utilisation
-Overlay.cadastre
+- [**Overlay**]({{ "/documentation/references-api/overlay" | locale_url }}) - Constante des types de surcouches disponibles.
+- [**addOverlay()**]({{ "/documentation/references-api/addoverlay" | locale_url }}) - Ajoute une ou plusieurs surcouches à la carte.
+- [**removeOverlay()**]({{ "/documentation/references-api/removeoverlay" | locale_url }}) - Supprime une ou plusieurs surcouches de la carte.
 
-// Voir toutes les surcouches disponibles
-console.log(Object.values(Overlay))
-// ou utilisez l'autocomplétion de votre IDE
-```
-
-### addOverlay()
-Ajoute une ou plusieurs surcouches à la carte
-```typescript
-addOverlay(map, Overlay.cadastre)
-addOverlay(map, [Overlay.cadastre, Overlay.administrativeBoundaries])
-
-// Variante sans typage ni autocomplétion
-addOverlay(map, 'cadastre')
-addOverlay(map, ['cadastre', 'administrativeBoundaries'])
-```
-
-### removeOverlay()
-Supprime une ou plusieurs surcouches de la carte
-```typescript
-removeOverlay(map, Overlay.cadastre)
-removeOverlay(map, [Overlay.cadastre, Overlay.administrativeBoundaries])
-
-// Variante sans typage ni autocomplétion
-removeOverlay(map, 'cadastre')
-removeOverlay(map, ['cadastre', 'administrativeBoundaries'])
-```
-
----
+<br>
 
 ## Gestion des couches
 
