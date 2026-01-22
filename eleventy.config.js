@@ -5,19 +5,20 @@ const markdownItAnchor = require("markdown-it-anchor");
 const markdownItAttrs = require("markdown-it-attrs");
 const markdownItContainer = require("markdown-it-container");
 
+const pluginRss = require("@11ty/eleventy-plugin-rss");
+const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const pluginBundle = require("@11ty/eleventy-plugin-bundle");
+const pluginNavigation = require("@11ty/eleventy-navigation");
+const {EleventyHtmlBasePlugin} = require("@11ty/eleventy");
+const {EleventyI18nPlugin} = require("@11ty/eleventy");
+const i18n = require("@codegouvfr/eleventy-plugin-i18n");
+const pluginCalendar = require("@codegouvfr/eleventy-plugin-calendar");
+
 const customMarkdownContainers = require("./utils/markdown-custom-containers");
 
 const {translations} = require("./_data/i18n");
 
-module.exports = async function(eleventyConfig) {
-    // Import plugins dynamically
-    const {EleventyHtmlBasePlugin, EleventyI18nPlugin} = await import("@11ty/eleventy");
-    const pluginRss = (await import("@11ty/eleventy-plugin-rss")).default;
-    const pluginSyntaxHighlight = (await import("@11ty/eleventy-plugin-syntaxhighlight")).default;
-    const pluginBundle = (await import("@11ty/eleventy-plugin-bundle")).default;
-    const pluginNavigation = (await import("@11ty/eleventy-navigation")).default;
-    const i18n = (await import("@codegouvfr/eleventy-plugin-i18n")).default;
-    const pluginCalendar = (await import("@codegouvfr/eleventy-plugin-calendar")).default;
+module.exports = function (eleventyConfig) {
 
     // Copy the contents of the `public` folder to the output folder
     // For example, `./public/css/` ends up in `_site/css/`
@@ -63,15 +64,6 @@ module.exports = async function(eleventyConfig) {
     });
     eleventyConfig.addPlugin(pluginNavigation);
     eleventyConfig.addPlugin(pluginBundle);
-    
-    // Add bundles for CSS and JS
-    eleventyConfig.addBundle("css", {
-      toFileDirectory: "bundle"
-    });
-    eleventyConfig.addBundle("js", {
-      toFileDirectory: "bundle"
-    });
-    
     eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
     eleventyConfig.addPlugin(EleventyI18nPlugin, {
         defaultLanguage: "fr",
