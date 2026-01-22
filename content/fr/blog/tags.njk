@@ -7,11 +7,38 @@
     size: 1,
     alias: "tag",
     before: function(paginationData, fullData) {
-      return this.paginateCollectionTags(this.filterCollectionLang(paginationData, fullData.lang), 6);
+      // Filter by language
+      const filtered = paginationData.filter(entry => entry.data.lang === fullData.lang);
+
+      // Sort by date descending
+      filtered.sort((a, b) => b.date - a.date);
+
+      // Get unique tags
+      const allTags = filtered.map(entry => entry.data.tags).flat();
+      const excludeTags = ['all', 'nav', 'post', 'posts', 'events'];
+      const uniqueTags = allTags.filter((tag, index, tags) =>
+        tags.indexOf(tag) === index && !excludeTags.includes(tag)
+      );
+
+      // Paginate by tag
+      const paginationSize = 6;
+      let tagMap = [];
+      uniqueTags.forEach(tag => {
+        const tagEntries = filtered.filter(entry => entry.data.tags.includes(tag));
+        const pageCount = Math.ceil(tagEntries.length / paginationSize);
+        for (let i = 0; i < pageCount; i++) {
+          tagMap.push({
+            tagName: tag,
+            pageNumber: i,
+            pageData: tagEntries.slice(i * paginationSize, (i + 1) * paginationSize)
+          });
+        }
+      });
+      return tagMap;
     }
   },
   layout: "layouts/page.njk",
-  permalink: "/{{ lang }}/blog/tags/{{ tag.tagName | slugify }}/{% if tag.pageNumber %}{{ pagePrefix }}{{ tag.pageNumber + 1 }}/{% endif %}",
+  permalink: "/{{ lang }}/blog/tags/{{ tag.tagName | slugify }}/{% if tag.pageNumber %}{{ pagePrefix }}{{ tag.pageNumber + 1 }}{% endif %}/",
 }
 ---
 <h2>{{ "filtered_by" | i18n }}

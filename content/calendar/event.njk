@@ -1,7 +1,0 @@
----
-pagination:
-  data: collections.events
-  size: 1
-permalink: "calendar/{{ pagination.items[0] | slugifyEvent }}.ics"
----
-{% set currentEvent = pagination.items[0] %}{{ currentEvent | toCalendarEvent }}

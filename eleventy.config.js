@@ -12,9 +12,9 @@ const pluginNavigation = require("@11ty/eleventy-navigation");
 const {EleventyHtmlBasePlugin} = require("@11ty/eleventy");
 const {EleventyI18nPlugin} = require("@11ty/eleventy");
 const i18n = require("@codegouvfr/eleventy-plugin-i18n");
-const pluginCalendar = require("@codegouvfr/eleventy-plugin-calendar");
 
 const customMarkdownContainers = require("./utils/markdown-custom-containers");
+const UpgradeHelper = require("@11ty/eleventy-upgrade-help");
 
 const {translations} = require("./_data/i18n");
 
@@ -75,7 +75,9 @@ module.exports = function (eleventyConfig) {
             "en": "fr"
         }
     });
-    eleventyConfig.addPlugin(pluginCalendar);
+
+    // Upgrade helper plugin (must be added last)
+    eleventyConfig.addPlugin(UpgradeHelper);
 
     // Custom collections
     eleventyConfig.addCollection("allSortedByPathAsc", function(collectionApi) {
