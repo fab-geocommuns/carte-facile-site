@@ -11,6 +11,14 @@ eleventyNavigation:
 
 En intégrant l’API Adresse à votre site web ou application, vous pouvez ajouter des fonctionnalités basées sur les adresses, les coordonnées géographiques et le géocodage.
 
+:::info API Adresse devient API de Géocodage
+L'API Adresse est intégrée dans le Service de géocodage de la Géoplateforme. L'URL [https://api-adresse.data.gouv.fr/search/](https://api-adresse.data.gouv.fr/search/) est remplacée par [https://data.geopf.fr/geocodage/search/](https://data.geopf.fr/geocodage/search/). 
+<br/>
+La documentation est disponible sur le site de l'IGN : [API Géoplateforme - Géocodage](https://geoservices.ign.fr/documentation/services/services-geoplateforme/geocodage?ref=nsbaseadresselocalesz26ouit-ghost-adresse-data-gouv.functions.fnc.fr-par.scw.cloud).
+:::
+
+<br/>
+
 {% from "components/component.njk" import component with context %}
 {{ component("callout", {
     title: "Documentation officielle",
