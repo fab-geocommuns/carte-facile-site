@@ -337,7 +337,7 @@ pre[class*="language-"] {
 .token.entity {
 	cursor: help;
 }</style>
-    <meta name="generator" content="Eleventy v3.0.0">
+    <meta name="generator" content="Eleventy v3.1.2">
     <title>Carte simple avec MapLibre et liens CDN</title>
   </head>
   <body id="top">
@@ -414,6 +414,11 @@ pre[class*="language-"] {
           </a>
       </li>
       <li class="fr-nav__item">
+          <a class="fr-nav__link" href="/carte-facile-site/fr/composants/">
+            Composants
+          </a>
+      </li>
+      <li class="fr-nav__item">
           <a class="fr-nav__link" href="/carte-facile-site/fr/documentation/">
             Documentation
           </a>
@@ -424,10 +429,10 @@ pre[class*="language-"] {
           </a>
       </li>
       <li class="fr-nav__item">
-          <button class="fr-nav__btn" aria-expanded="false" aria-controls="menu-4">
+          <button class="fr-nav__btn" aria-expanded="false" aria-controls="menu-5">
             À propos
           </button>
-          <div class="fr-collapse fr-menu" id="menu-4">
+          <div class="fr-collapse fr-menu" id="menu-5">
             <ul class="fr-menu__list">
                 <li>
                   <a class="fr-nav__link" href="/carte-facile-site/fr/a-propos/">
@@ -519,6 +524,11 @@ pre[class*="language-"] {
                         </button>
                         <div class="fr-collapse" id="sidemenu-2">
                             <ul class="fr-sidemenu__list">
+                                <li class="fr-sidemenu__item">
+                                <a class="fr-sidemenu__link" href="/carte-facile-site/fr/documentation/ajouter-des-fonctionnalites/recherche/">
+                                    Barre de recherche
+                                </a>
+                                </li>
                                 <li class="fr-sidemenu__item">
                                 <a class="fr-sidemenu__link" href="/carte-facile-site/fr/documentation/ajouter-des-fonctionnalites/selecteur-de-cartes/">
                                     Sélecteur de carte
@@ -651,10 +661,10 @@ pre[class*="language-"] {
 
     <span class="token comment">&lt;!-- Importation des bibliothèques Carte Facile --></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span>
-      <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://unpkg.com/carte-facile@^0.8.3/dist/carte-facile.css<span class="token punctuation">"</span></span>
+      <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://unpkg.com/carte-facile@^0.9.0/dist/carte-facile.css<span class="token punctuation">"</span></span>
       <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span>
     <span class="token punctuation">/></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://unpkg.com/carte-facile@^0.8.3/dist/carte-facile.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://unpkg.com/carte-facile@^0.9.0/dist/carte-facile.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
 
     <span class="token comment">&lt;!-- Style pour afficher la carte en plein écran --></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
@@ -683,7 +693,10 @@ pre[class*="language-"] {
         <span class="token literal-property property">maxZoom</span><span class="token operator">:</span> <span class="token number">18.9</span><span class="token punctuation">,</span> <span class="token comment">// niveau de zoom maximum, adapté aux cartes utilisant les données IGN</span>
       <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-            <span class="token comment">// Ajout d'un contrôle de navigation</span>
+      <span class="token comment">// Ajout d'une barre de recherche</span>
+      map<span class="token punctuation">.</span><span class="token function">addControl</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">CarteFacile<span class="token punctuation">.</span>SearchControl</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token comment">// Ajout d'un contrôle de navigation</span>
       map<span class="token punctuation">.</span><span class="token function">addControl</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">maplibregl<span class="token punctuation">.</span>NavigationControl</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
       <span class="token comment">// Ajout d'une échelle</span>

@@ -337,7 +337,7 @@ pre[class*="language-"] {
 .token.entity {
 	cursor: help;
 }</style>
-    <meta name="generator" content="Eleventy v3.0.0">
+    <meta name="generator" content="Eleventy v3.1.2">
     <title>API Adresse</title>
   </head>
   <body id="top">
@@ -414,6 +414,11 @@ pre[class*="language-"] {
           </a>
       </li>
       <li class="fr-nav__item">
+          <a class="fr-nav__link" href="/carte-facile-site/fr/composants/">
+            Composants
+          </a>
+      </li>
+      <li class="fr-nav__item">
           <a class="fr-nav__link" href="/carte-facile-site/fr/documentation/">
             Documentation
           </a>
@@ -424,10 +429,10 @@ pre[class*="language-"] {
           </a>
       </li>
       <li class="fr-nav__item">
-          <button class="fr-nav__btn" aria-expanded="false" aria-controls="menu-4">
+          <button class="fr-nav__btn" aria-expanded="false" aria-controls="menu-5">
             À propos
           </button>
-          <div class="fr-collapse fr-menu" id="menu-4">
+          <div class="fr-collapse fr-menu" id="menu-5">
             <ul class="fr-menu__list">
                 <li>
                   <a class="fr-nav__link" href="/carte-facile-site/fr/a-propos/">
@@ -519,6 +524,11 @@ pre[class*="language-"] {
                         </button>
                         <div class="fr-collapse" id="sidemenu-2">
                             <ul class="fr-sidemenu__list">
+                                <li class="fr-sidemenu__item">
+                                <a class="fr-sidemenu__link" href="/carte-facile-site/fr/documentation/ajouter-des-fonctionnalites/recherche/">
+                                    Barre de recherche
+                                </a>
+                                </li>
                                 <li class="fr-sidemenu__item">
                                 <a class="fr-sidemenu__link" href="/carte-facile-site/fr/documentation/ajouter-des-fonctionnalites/selecteur-de-cartes/">
                                     Sélecteur de carte
@@ -634,6 +644,14 @@ pre[class*="language-"] {
         </div> 
       </div>
       <p>En intégrant l’API Adresse à votre site web ou application, vous pouvez ajouter des fonctionnalités basées sur les adresses, les coordonnées géographiques et le géocodage.</p>
+
+<div class="fr-alert fr-alert--info ">
+    <h3 class="fr-alert__title"> API Adresse devient API de Géocodage</h3>
+<p>L'API Adresse est intégrée dans le Service de géocodage de la Géoplateforme. L'URL <a href="https://api-adresse.data.gouv.fr/search/">https://api-adresse.data.gouv.fr/search/</a> est remplacée par <a href="https://data.geopf.fr/geocodage/search/">https://data.geopf.fr/geocodage/search/</a>.
+<br>
+La documentation est disponible sur le site de l'IGN : <a href="https://geoservices.ign.fr/documentation/services/services-geoplateforme/geocodage?ref=nsbaseadresselocalesz26ouit-ghost-adresse-data-gouv.functions.fnc.fr-par.scw.cloud">API Géoplateforme - Géocodage</a>.</p>
+</div>
+<br>
 <div class="fr-callout">
   <h3 class="fr-callout__title">Documentation officielle</h3>
   <p class="fr-callout__text">
@@ -665,11 +683,11 @@ pre[class*="language-"] {
 <div class="fr-accordions-group">
 <section class="fr-accordion">
     <h3 class="fr-accordion__title">
-        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-62">
+        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-68">
             Qu'est-ce que le géocodage ?
         </button>
     </h3>
-    <div class="fr-collapse" id="accordion-62">
+    <div class="fr-collapse" id="accordion-68">
 <p>Le <strong>géocodage</strong> consiste à associer des coordonnées géographiques (longitude et latitude) à une adresse postale. Cela permet par exemple de localiser des adresses sur une carte ou de calculer des itinéraires de voyages.</p>
 <p>Pour effectuer un géocodage, il faut :</p>
 <ul>
@@ -681,11 +699,11 @@ pre[class*="language-"] {
 
 <section class="fr-accordion">
     <h3 class="fr-accordion__title">
-        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-87">
+        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-93">
             Comment fonctionne un géocodeur ?
         </button>
     </h3>
-    <div class="fr-collapse" id="accordion-87">
+    <div class="fr-collapse" id="accordion-93">
 <p>Par le biais d'algorithmes, un géocodeur analyse une adresse en la découpant en mots ou groupes de mots, puis compare ces éléments à des données de référence. Les résultats sont ensuite triés, souvent selon la proximité des coordonnées ou d’autres critères comme la taille de la population ou le pays. Certains géocodeurs permettent aussi de rechercher des lieux d’intérêt (POIs) et pas seulement des adresses.</p>
 <p>Le géocodage peut aussi être inversé : à partir de coordonnées géographiques, on peut retrouver une adresse en cherchant la donnée de référence la plus proche.</p>
 </div></section>
@@ -696,11 +714,11 @@ pre[class*="language-"] {
 <div class="fr-accordions-group">
 <section class="fr-accordion">
     <h3 class="fr-accordion__title">
-        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-104">
+        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-110">
             Les données textuelles de l’adresse de référence ne sont pas uniformes.
         </button>
     </h3>
-    <div class="fr-collapse" id="accordion-104">
+    <div class="fr-collapse" id="accordion-110">
 <p>Il s’agit en premier lieu d’uniformiser les différentes manières de décrire le type de voie dans la base de donnée des adresses.</p>
 <p><em><strong>Exemple :</strong> &quot;rue&quot; peut être représenté par les lettres &quot;r&quot; ou &quot;R&quot; ou &quot;rue&quot; ou &quot;Rue&quot;.</em></p>
 <p>Il s’agit également d’omettre les articles lors d’une comparaison.</p>
@@ -712,61 +730,61 @@ pre[class*="language-"] {
 
 <section class="fr-accordion">
     <h3 class="fr-accordion__title">
-        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-127">
+        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-133">
             Plusieurs communes pour un code postal.
         </button>
     </h3>
-    <div class="fr-collapse" id="accordion-127">
+    <div class="fr-collapse" id="accordion-133">
 <p>Cette problématique se pose par exemple lorsqu’on met le nom de la commune dans une adresse. En effet, 68,9% des codes postaux sont associés à plus d’une commune et jusqu’à 46 communes sont rattachées à un même code postal.</p>
 </div></section>
 
 <section class="fr-accordion">
     <h3 class="fr-accordion__title">
-        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-132">
+        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-138">
             Plusieurs codes postaux pour une commune.
         </button>
     </h3>
-    <div class="fr-collapse" id="accordion-132">
+    <div class="fr-collapse" id="accordion-138">
 <p>1,5% des communes ont plus d’un seul code postal sur leur territoire. On compte même jusqu’à 9 codes postaux pour une même commune pour le cas extrême !</p>
 </div></section>
 
 <section class="fr-accordion">
     <h3 class="fr-accordion__title">
-        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-137">
+        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-143">
             Des communes ont des noms identiques.
         </button>
     </h3>
-    <div class="fr-collapse" id="accordion-137">
+    <div class="fr-collapse" id="accordion-143">
 <p>10,6% des communes ont une ou plusieurs communes homonymes.</p>
 </div></section>
 
 <section class="fr-accordion">
     <h3 class="fr-accordion__title">
-        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-142">
+        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-148">
             Des codes postaux n'ont pas le même code que celui du département.
         </button>
     </h3>
-    <div class="fr-collapse" id="accordion-142">
+    <div class="fr-collapse" id="accordion-148">
 <p>Ces cas de figure sont très rares (quelques dizaines).</p>
 </div></section>
 
 <section class="fr-accordion">
     <h3 class="fr-accordion__title">
-        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-147">
+        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-153">
             Plusieurs noms de voie avec un nom identique sont situés à différents endroits pour une même commune.
         </button>
     </h3>
-    <div class="fr-collapse" id="accordion-147">
+    <div class="fr-collapse" id="accordion-153">
 <p>Cette situation s’explique en particulier avec la création des communes nouvelles qui a encouragé le regroupement de communes. Ce problème peut être réglé en ajoutant le nom de la commune déléguée dans l’adresse postale, en renumérotant les rues ou en les renommant. Or les géocodeurs ne gèrent pas forcément bien (voir pas du tout) l’ajout d’adresse de la commune déléguée.</p>
 </div></section>
 
 <section class="fr-accordion">
     <h3 class="fr-accordion__title">
-        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-152">
+        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-158">
             Plusieurs coordonnées pour une même adresse.
         </button>
     </h3>
-    <div class="fr-collapse" id="accordion-152">
+    <div class="fr-collapse" id="accordion-158">
 <p>Il peut exister des différences liées à la vision sur la position du numéro de l’adresse (entrée principale, boîte aux lettres, bâtiment, cage d’escalier, logement, parcelle, position dérivée du segment de la voie de rattachement, point d’accès technique, etc.).</p>
 <p>En effet les données peuvent avoir des référentiels différents selon les acteurs, comme la Poste, l’IGN, le cadastre ou les opérateurs de réseaux (fibre, etc.). Toutefois, la Base Adresse Nationale (BAN) et les Bases Adresses Locales (BAL) permettent d'harmoniser et d'améliorer ces référentiels.</p>
 </div></section>
@@ -776,11 +794,11 @@ pre[class*="language-"] {
 <div class="fr-accordions-group">
 <section class="fr-accordion">
     <h3 class="fr-accordion__title">
-        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-166">
+        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-172">
             Comment faire de l’autocomplétion d’adresse ?
         </button>
     </h3>
-    <div class="fr-collapse" id="accordion-166">
+    <div class="fr-collapse" id="accordion-172">
 <p>Il existe plusieurs solutions pour faire de l’autocomplétion dans un outil web. Vous pouvez vous appuyer sur de nombreuses bibliothèques, celles-ci étant généralement liées à des bibliothèques cartographiques :</p>
 <p><strong>Solutions indépendantes de bibliothèques cartographiques</strong></p>
 <ul>
@@ -817,11 +835,11 @@ pre[class*="language-"] {
 
 <section class="fr-accordion">
     <h3 class="fr-accordion__title">
-        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-266">
+        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-272">
             Comment faire du géocodage par adresse unitaire ?
         </button>
     </h3>
-    <div class="fr-collapse" id="accordion-266">
+    <div class="fr-collapse" id="accordion-272">
 <p>Avec Python, pour faire des appels unitaires, vous pouvez :</p>
 <ul>
 <li><strong>utiliser</strong> <a href="https://gist.githubusercontent.com/ThomasG77/32329a8557135f11cb5656e3bfd4d35c/raw/9bd7883be31d2c9758d4393d72e9dc1ae4c5bed3/geocode-addok-unit-call.py"><strong>le code de ce script</strong></a> ;</li>
@@ -832,11 +850,11 @@ pre[class*="language-"] {
 
 <section class="fr-accordion">
     <h3 class="fr-accordion__title">
-        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-286">
+        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-292">
             Comment réaliser un géocodage massif ?
         </button>
     </h3>
-    <div class="fr-collapse" id="accordion-286">
+    <div class="fr-collapse" id="accordion-292">
 <p>Lorsqu'on choisit cette option, on privilégie l'appel par le endpoint CSV de l'API.</p>
 <p>Il faut préalablement s'assurer que son CSV est bien formaté : il s'avère que le géocodage peut ponctuellement dysfonctionner si le CSV n'est pas bien formaté.</p>
 <p>Il existe une interface graphique pour envoyer des fichiers CSV sur <a href="https://adresse.data.gouv.fr/csv">https://adresse.data.gouv.fr/csv</a> dont la taille maximum est de 50Mo.</p>
@@ -867,11 +885,11 @@ pre[class*="language-"] {
 <div class="fr-accordions-group">
 <section class="fr-accordion">
     <h3 class="fr-accordion__title">
-        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-365">
+        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-371">
             Comment faire si une recherche d’adresse ne fonctionne pas ?
         </button>
     </h3>
-    <div class="fr-collapse" id="accordion-365">
+    <div class="fr-collapse" id="accordion-371">
 <p>Vérifier en utilisant l’<a href="https://adresse.data.gouv.fr/base-adresse-nationale#4.4/46.9/1.7">autocomplétion</a> :</p>
 <ul>
 <li>Tapez votre adresse. Par exemple, &quot;20 avenue de Ségur&quot;. Si le numéro est bien proposé et que la commune est la bonne pour le premier résultat, c’est la manière dont vous avez récupéré l’adresse qui est en cause. Si vous êtes en mode &quot;batch&quot;, la première adresse retournée peut être mauvaise et c’est la 2ème ou 3ème adresse que vous attendiez.</li>
@@ -898,11 +916,11 @@ pre[class*="language-"] {
 
 <section class="fr-accordion">
     <h3 class="fr-accordion__title">
-        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-439">
+        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-445">
             Que faire lorsqu'on est un gros consommateur de l’API Adresse ?
         </button>
     </h3>
-    <div class="fr-collapse" id="accordion-439">
+    <div class="fr-collapse" id="accordion-445">
 <p>Si vous êtes un organisme public, vous pouvez faire une demande pour augmenter les quotas par défaut sur l’API publique <a href="http://api-adresse.data.gouv.fr/">api-adresse.data.gouv.fr</a>.</p>
 <p>Si ce n’est pas le cas, vous pouvez vous autohéberger. Dans ce cas, le plus simple est de passer par l’utilisation de Docker : <a href="https://github.com/etalab/addok-docker#readme">https://github.com/etalab/addok-docker#readme</a>.</p>
 <p>Il est également possible de regarder du côté de Addok, le logiciel open source derrière l’API Adresse si vous avez des besoins plus spécifiques au niveau de votre installation ou de la personnalisation de la recherche : <a href="https://github.com/addok/addok">https://github.com/addok/addok</a>.</p>
@@ -910,11 +928,11 @@ pre[class*="language-"] {
 
 <section class="fr-accordion">
     <h3 class="fr-accordion__title">
-        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-450">
+        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-456">
             Quels autres géocodeurs est-il possible d'utiliser ?
         </button>
     </h3>
-    <div class="fr-collapse" id="accordion-450">
+    <div class="fr-collapse" id="accordion-456">
 <p>Même si nous avons abordé l’usage du géocodeur Addok, utilisé par adresse.data.gouv.fr, il existe d'autres possibilités pour géocoder. Leurs principaux intérêts sont de pouvoir chercher des POIs (un centre commercial, une enseigne, etc.) ainsi que de marcher sur des données internationales, contrairement à <a href="https://adresse.data.gouv.fr/api-doc/adresse">l'instance publique de Addok</a>.</p>
 <p>Il est ainsi possible d'installer des solutions OpenSource comme :</p>
 <ul>

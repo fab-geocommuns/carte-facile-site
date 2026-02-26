@@ -337,7 +337,7 @@ pre[class*="language-"] {
 .token.entity {
 	cursor: help;
 }</style>
-    <meta name="generator" content="Eleventy v3.0.0">
+    <meta name="generator" content="Eleventy v3.1.2">
     <title>API Découpage administratif</title>
   </head>
   <body id="top">
@@ -414,6 +414,11 @@ pre[class*="language-"] {
           </a>
       </li>
       <li class="fr-nav__item">
+          <a class="fr-nav__link" href="/carte-facile-site/fr/composants/">
+            Composants
+          </a>
+      </li>
+      <li class="fr-nav__item">
           <a class="fr-nav__link" href="/carte-facile-site/fr/documentation/">
             Documentation
           </a>
@@ -424,10 +429,10 @@ pre[class*="language-"] {
           </a>
       </li>
       <li class="fr-nav__item">
-          <button class="fr-nav__btn" aria-expanded="false" aria-controls="menu-4">
+          <button class="fr-nav__btn" aria-expanded="false" aria-controls="menu-5">
             À propos
           </button>
-          <div class="fr-collapse fr-menu" id="menu-4">
+          <div class="fr-collapse fr-menu" id="menu-5">
             <ul class="fr-menu__list">
                 <li>
                   <a class="fr-nav__link" href="/carte-facile-site/fr/a-propos/">
@@ -519,6 +524,11 @@ pre[class*="language-"] {
                         </button>
                         <div class="fr-collapse" id="sidemenu-2">
                             <ul class="fr-sidemenu__list">
+                                <li class="fr-sidemenu__item">
+                                <a class="fr-sidemenu__link" href="/carte-facile-site/fr/documentation/ajouter-des-fonctionnalites/recherche/">
+                                    Barre de recherche
+                                </a>
+                                </li>
                                 <li class="fr-sidemenu__item">
                                 <a class="fr-sidemenu__link" href="/carte-facile-site/fr/documentation/ajouter-des-fonctionnalites/selecteur-de-cartes/">
                                     Sélecteur de carte
@@ -633,9 +643,17 @@ pre[class*="language-"] {
           </a>
         </div> 
       </div>
-      <p>L'API Découpage adminnistratif vous permet d'obtenir des données administratives françaises à différentes échelles et selon différentes années (millésimes).
+      <p>L'API Découpage administratif vous permet d'obtenir des données administratives françaises à différentes échelles et selon différentes années (millésimes).
 Vous pouvez par exemple rechercher une commune par nom ou code postal dans un formulaire, ou encore rechercher des EPCI, des départements et des régions.</p>
 <p><em>Concernant les régions et départements, leur nombre étant limité et leurs noms étant relativement stables, il est également possible de gérer ces informations côté client.</em></p>
+
+<div class="fr-alert fr-alert--info ">
+    <h3 class="fr-alert__title"> Découpage administratif dans l'API de Géocodage</h3>
+<p>Les découpages administratifs sont maintenant disponibles via le Service de géocodage de la Géoplateforme. L'URL : <a href="https://data.geopf.fr/geocodage/search/">https://data.geopf.fr/geocodage/search/</a>.
+<br>
+La documentation est disponible sur le site de l'IGN : <a href="https://geoservices.ign.fr/documentation/services/services-geoplateforme/geocodage?ref=nsbaseadresselocalesz26ouit-ghost-adresse-data-gouv.functions.fnc.fr-par.scw.cloud">API Géoplateforme - Géocodage</a>.</p>
+</div>
+<br>
 <div class="fr-callout">
   <h3 class="fr-callout__title">Documentation officielle</h3>
   <p class="fr-callout__text">
@@ -664,11 +682,11 @@ Vous pouvez par exemple rechercher une commune par nom ou code postal dans un fo
 <div class="fr-accordions-group">
 <section class="fr-accordion">
     <h3 class="fr-accordion__title">
-        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-47">
+        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-53">
             Pour récupérer des communes
         </button>
     </h3>
-    <div class="fr-collapse" id="accordion-47">
+    <div class="fr-collapse" id="accordion-53">
 <ul>
 <li><strong>Rechercher par code postal :</strong> <a href="https://geo.api.gouv.fr/communes?codePostal=78000">https://geo.api.gouv.fr/communes?codePostal=78000</a></li>
 <li><strong>Rechercher par code INSEE :</strong> <a href="https://geo.api.gouv.fr/communes?code=44109">https://geo.api.gouv.fr/communes?code=44109</a></li>
@@ -683,11 +701,11 @@ Vous pouvez par exemple rechercher une commune par nom ou code postal dans un fo
 
 <section class="fr-accordion">
     <h3 class="fr-accordion__title">
-        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-89">
+        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-95">
             Pour récupérer des régions et départements
         </button>
     </h3>
-    <div class="fr-collapse" id="accordion-89">
+    <div class="fr-collapse" id="accordion-95">
 <p>Le principal intérêt est la correspondance entre un nom et un code. Par exemple si on veut obtenir le code :</p>
 <ul>
 <li><strong>pour la région :</strong> <a href="https://geo.api.gouv.fr/regions?nom=Auvergne">https://geo.api.gouv.fr/regions?nom=Auvergne</a></li>
@@ -705,11 +723,11 @@ Vous pouvez par exemple rechercher une commune par nom ou code postal dans un fo
 <div class="fr-accordions-group">
 <section class="fr-accordion">
     <h3 class="fr-accordion__title">
-        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-127">
+        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-133">
             Concernant les informations des communes
         </button>
     </h3>
-    <div class="fr-collapse" id="accordion-127">
+    <div class="fr-collapse" id="accordion-133">
 <ul>
 <li>La longueur des noms de commune peut être problématique.</li>
 <li>Il existe une normalisation des noms de communes.</li>
@@ -722,11 +740,11 @@ Vous pouvez par exemple rechercher une commune par nom ou code postal dans un fo
 
 <section class="fr-accordion">
     <h3 class="fr-accordion__title">
-        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-161">
+        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-167">
             Concernant les géométries des communes
         </button>
     </h3>
-    <div class="fr-collapse" id="accordion-161">
+    <div class="fr-collapse" id="accordion-167">
 <ul>
 <li>Si vous souhaitez les GeoJSON avec <strong>le centre de la commune :</strong> rajoutez aux URLs de la première partie <code>&amp;format=geojson&amp;geometry=centre</code> si votre URL contient déjà un <code>?</code> sinon il faut ajouter plutôt <code>?format=geojson&amp;geometry=centre</code></li>
 <li>Si vous souhaitez les GeoJSON avec <strong>le contour de la commune :</strong> rajoutez aux URLs de la première partie <code>&amp;format=geojson&amp;geometry=contour</code> si votre URL contient déjà un <code>?</code> sinon il faut ajouter plutôt <code>?format=geojson&amp;geometry=contour</code></li>
@@ -752,11 +770,11 @@ Vous pouvez par exemple rechercher une commune par nom ou code postal dans un fo
 
 <section class="fr-accordion">
     <h3 class="fr-accordion__title">
-        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-218">
+        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-224">
             Bonnes pratiques à adopter
         </button>
     </h3>
-    <div class="fr-collapse" id="accordion-218">
+    <div class="fr-collapse" id="accordion-224">
 <p>Partout où vous le pouvez, utilisez le code INSEE du COG (<a href="https://www.data.gouv.fr/fr/datasets/code-officiel-geographique-cog/">Code Officiel Géographique</a>) plutôt qu'un code postal ou un nom. Celui-ci est le plus fiable dans le temps même si des cas particuliers emergent parfois suite aux évolutions des communes (fusions ou séparation).</p>
 <p>Avec l'API Découpage Administratif, cette complexité du COG est cachée. Si vous avez des besoins avancés, vous pouvez utiliser soit <a href="https://www.insee.fr/fr/information/2560452">les fichiers du COG</a> soit pour une recherche ponctuel, passer par <a href="https://www.insee.fr/fr/recherche/recherche-geographique?debut=0">l'interface de recherche de commune</a>.</p>
 </div></section>
@@ -766,11 +784,11 @@ Vous pouvez par exemple rechercher une commune par nom ou code postal dans un fo
 <div class="fr-accordions-group">
 <section class="fr-accordion">
     <h3 class="fr-accordion__title">
-        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-232">
+        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-238">
             Utiliser le WFS de l'IGN
         </button>
     </h3>
-    <div class="fr-collapse" id="accordion-232">
+    <div class="fr-collapse" id="accordion-238">
 <p>Un <a href="https://fr.wikipedia.org/wiki/Web_Feature_Service">WFS</a> (Web Feature Service) est un service web d’inspiration SOAP. Il est basé sur une approche en <a href="https://fr.wikipedia.org/wiki/Extensible_Markup_Language">XML</a>.</p>
 <p>Le WFS de l’IGN existe en version 1.0.0, 1.1.0 et 2.0.0. Cette dernière rajoute des facilités en particulier pour paginer les appels. Généralement, sauf si le serveur est très ancien, c'est la version 2.0.0 qu'il faut privilégier.</p>
 <p>Même s'il est possible de retrouver comment fonctionne le WFS en regardant le <a href="https://www.ogc.org/standards/wfs">standard WFS</a>, nous vous recommandons plutôt d'aller sur <a href="https://georezo.net/wiki/main/standards/wfs">la page WFS du site GeoRezo.net</a>. Ce n'est pas un prérequis ici mais pourra vous aider à approfondir le sujet si vous devez utiliser ce standard plus régulièrement.</p>
@@ -829,11 +847,11 @@ ogr2ogr <span class="token parameter variable">-f</span> GeoJSON communes-epci-w
 
 <section class="fr-accordion">
     <h3 class="fr-accordion__title">
-        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-350">
+        <button class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-356">
             Passer par le fichier Admin Express
         </button>
     </h3>
-    <div class="fr-collapse" id="accordion-350">
+    <div class="fr-collapse" id="accordion-356">
 <p>Il s'agit de la solution à privilégier lorsque l'on a besoin de travailler avec les données France entière et qu'on dispose d'un back-end.</p>
 <h4 id="contexte" tabindex="-1">Contexte <a class="header-anchor" href="#contexte">#</a></h4>
 <p>Historiquement, il existait un produit nommé Geofla pour avoir les communes, qui depuis a été remplacé par un nouveau jeu de données dit <strong>Admin Express</strong> qui contient les données suivantes :</p>

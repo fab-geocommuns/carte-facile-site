@@ -337,7 +337,7 @@ pre[class*="language-"] {
 .token.entity {
 	cursor: help;
 }</style>
-    <meta name="generator" content="Eleventy v3.0.0">
+    <meta name="generator" content="Eleventy v3.1.2">
     <title>Mise en page d&#39;un article</title>
   </head>
   <body id="top">
@@ -414,6 +414,11 @@ pre[class*="language-"] {
           </a>
       </li>
       <li class="fr-nav__item">
+          <a class="fr-nav__link" href="/carte-facile-site/fr/composants/">
+            Composants
+          </a>
+      </li>
+      <li class="fr-nav__item">
           <a class="fr-nav__link" href="/carte-facile-site/fr/documentation/">
             Documentation
           </a>
@@ -424,10 +429,10 @@ pre[class*="language-"] {
           </a>
       </li>
       <li class="fr-nav__item">
-          <button class="fr-nav__btn" aria-expanded="false" aria-controls="menu-4">
+          <button class="fr-nav__btn" aria-expanded="false" aria-controls="menu-5">
             À propos
           </button>
-          <div class="fr-collapse fr-menu" id="menu-4">
+          <div class="fr-collapse fr-menu" id="menu-5">
             <ul class="fr-menu__list">
                 <li>
                   <a class="fr-nav__link" href="/carte-facile-site/fr/a-propos/">
@@ -489,7 +494,7 @@ pre[class*="language-"] {
             <h1>Mise en page d&#39;un article</h1>
             <p class="fr-text--xs">
               Publié le
-              <time datetime="2025-12-12">12 décembre 2025</time>
+              <time datetime="2026-02-26">26 février 2026</time>
             </p>
           </hgroup>
         </div>
@@ -513,14 +518,14 @@ pre[class*="language-"] {
 
       <p>La mise en page <a href="https://github.com/codegouvfr/eleventy-dsfr/tree/main/_includes/layouts/post.njk"><code>post.njk</code></a> utilisée pour les articles de blog, permet l'ajout d'une bannière en haut, via la variable <code>image</code> du cartouche :</p>
 <pre class="language-markdown" tabindex="0"><code class="language-markdown"><span class="token front-matter-block"><span class="token punctuation">---</span>
-<span class="token front-matter yaml language-yaml">image:
-  path: ./possum.png
-  alt: A possum</span>
+<span class="token front-matter yaml language-yaml"><span class="token key atrule">image</span><span class="token punctuation">:</span>
+  <span class="token key atrule">path</span><span class="token punctuation">:</span> ./possum.png
+  <span class="token key atrule">alt</span><span class="token punctuation">:</span> A possum</span>
 <span class="token punctuation">---</span></span></code></pre>
 <p><strong>Note :</strong> La variable <code>image.path</code> correspond au chemin relatif du fichier depuis l'emplacement de la page dans le dépôt.</p>
 <p>Le fil d'Ariane peut être affiché automatiquement si la variable <code>showBreadcrumb</code> du cartouche est positionnée :</p>
 <pre class="language-markdown" tabindex="0"><code class="language-markdown"><span class="token front-matter-block"><span class="token punctuation">---</span>
-<span class="token front-matter yaml language-yaml">showBreadcrumb: true</span>
+<span class="token front-matter yaml language-yaml"><span class="token key atrule">showBreadcrumb</span><span class="token punctuation">:</span> <span class="token boolean important">true</span></span>
 <span class="token punctuation">---</span></span></code></pre>
 
     </div>
@@ -541,8 +546,8 @@ pre[class*="language-"] {
       <p class="fr-card__desc"></p>
       <div class="fr-card__start">
           <p class="fr-card__detail fr-icon-time-fill">
-            <time class="postlist-date" datetime="2025-12-12">
-              12 décembre 2025
+            <time class="postlist-date" datetime="2026-02-26">
+              26 février 2026
             </time>
           </p>
       </div>
@@ -564,8 +569,8 @@ pre[class*="language-"] {
       <p class="fr-card__desc"></p>
       <div class="fr-card__start">
           <p class="fr-card__detail fr-icon-time-fill">
-            <time class="postlist-date" datetime="2025-12-12">
-              12 décembre 2025
+            <time class="postlist-date" datetime="2026-02-26">
+              26 février 2026
             </time>
           </p>
       </div>
