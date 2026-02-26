@@ -11,6 +11,12 @@ eleventyNavigation:
 
 Carte Facile propose un composant de barre de recherche basé sur l'API Géoplateforme, permettant de rechercher des adresses, des points d'intérêt et des limites administratives directement depuis la carte. La documentation est disponible sur le site de l'IGN : [API Géoplateforme - Géocodage](https://geoservices.ign.fr/documentation/services/services-geoplateforme/geocodage?ref=nsbaseadresselocalesz26ouit-ghost-adresse-data-gouv.functions.fnc.fr-par.scw.cloud)
 
+:::info
+La barre de recherche Carte Facile ne permet pas encore la recherche de parcelles cadastrales.
+::: 
+
+<br>
+
 L'API expose trois index de recherche :
 
 - **Adresses** (`address`) : numéros de rue, voies, lieux-dits, communes
@@ -18,12 +24,6 @@ L'API expose trois index de recherche :
 - **Parcelles cadastrales** (`parcel`) : recherche par référence cadastrale. 
 
 <br>
-
-:::info
-La barre de recherche Carte Facile ne prend permet pas encore la recherche de parcelles cadastrales.
-::: 
-
-<br><br>
 
 ## Ajouter la barre de recherche
 
@@ -46,6 +46,8 @@ map.addControl(new CarteFacile.SearchControl());
 <br>
 
 ## Personnaliser la barre de recherche
+
+Pour préciser les options telles que le délai et le nombre minimum de caractères minimum avant le déclenchement de la recherche, ou le nombre de résultats affichés.
 
 ```typescript
 import { SearchControl } from 'carte-facile';
@@ -93,6 +95,77 @@ map.addControl(new SearchControl({
   },
 }));
 ```
+
+<br>
+
+## Utiliser le géocodeur sans la barre de recherche
+
+Si votre site dispose déjà d'une barre de recherche (par exemple un champ DSFR), vous pouvez utiliser `GeopfGeocoder` directement sans afficher le composant `SearchControl`.
+
+`GeopfGeocoder` expose trois méthodes utilisables indépendamment :
+
+| Méthode | Rôle |
+| --- | --- |
+| `.search(query)` | Interroge l'API, retourne les résultats |
+| `.onSelect(result, map)` | Déplace la carte, affiche le contour / le marqueur |
+| `.onClear(map)` | Nettoie la carte (supprime contour et marqueur) |
+
+```typescript
+import { GeopfGeocoder } from 'carte-facile';
+
+// Lancer une recherche
+const results = await GeopfGeocoder.search('Lyon');
+
+// Quand l'utilisateur sélectionne un résultat
+await GeopfGeocoder.onSelect(results[0], map);
+// → déplace la carte, affiche le contour ou le marqueur
+
+// Quand l'utilisateur efface la recherche
+GeopfGeocoder.onClear(map);
+// → supprime contour et marqueur
+```
+
+Exemple avec un `<input>` natif :
+
+```typescript
+import { GeopfGeocoder } from 'carte-facile';
+
+const input = document.querySelector<HTMLInputElement>('#search');
+const list  = document.querySelector<HTMLUListElement>('#results');
+
+let debounce: ReturnType<typeof setTimeout>;
+
+input.addEventListener('input', () => {
+  clearTimeout(debounce);
+  const query = input.value.trim();
+
+  if (query.length < 3) {
+    list.innerHTML = '';
+    GeopfGeocoder.onClear(map);
+    return;
+  }
+
+  debounce = setTimeout(async () => {
+    const results = await GeopfGeocoder.search(query);
+
+    list.innerHTML = '';
+    for (const result of results) {
+      const li = document.createElement('li');
+      li.textContent = result.label;
+      li.addEventListener('click', () => {
+        GeopfGeocoder.onSelect(result, map);
+        list.innerHTML = '';
+        input.value = result.label;
+      });
+      list.appendChild(li);
+    }
+  }, 300);
+});
+```
+
+:::info
+`GeopfGeocoder` est un singleton — cette approche fonctionne sans problème pour une seule barre de recherche par carte, ce qui est le cas standard.
+:::
 
 <br>
 
