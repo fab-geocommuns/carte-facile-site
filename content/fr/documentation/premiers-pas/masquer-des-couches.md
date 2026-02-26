@@ -79,6 +79,6 @@ console.log(CarteFacile.LayerGroup);
 ## Prochaine étape
 
 <a class="fr-btn fr-btn--secondary fr-btn--icon-right fr-icon-arrow-right-line"
-  href={{ "/documentation/ajouter-des-fonctionnalites/selecteur-de-cartes" | locale_url }}>
-  Ajouter un sélecteur de carte
+  href={{ "/documentation/ajouter-des-fonctionnalites/recherche" | locale_url }}>
+  Ajouter une barre de recherche
 </a>

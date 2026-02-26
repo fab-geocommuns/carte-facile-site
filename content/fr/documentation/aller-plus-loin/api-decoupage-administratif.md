@@ -9,10 +9,18 @@ eleventyNavigation:
   nav: docs
 ---
 
-L'API Découpage adminnistratif vous permet d'obtenir des données administratives françaises à différentes échelles et selon différentes années (millésimes).
+L'API Découpage administratif vous permet d'obtenir des données administratives françaises à différentes échelles et selon différentes années (millésimes).
 Vous pouvez par exemple rechercher une commune par nom ou code postal dans un formulaire, ou encore rechercher des EPCI, des départements et des régions.
 
 *Concernant les régions et départements, leur nombre étant limité et leurs noms étant relativement stables, il est également possible de gérer ces informations côté client.*
+
+:::info Découpage administratif dans l'API de Géocodage
+Les découpages administratifs sont maintenant disponibles via le Service de géocodage de la Géoplateforme. L'URL : [https://data.geopf.fr/geocodage/search/](https://data.geopf.fr/geocodage/search/). 
+<br/>
+La documentation est disponible sur le site de l'IGN : [API Géoplateforme - Géocodage](https://geoservices.ign.fr/documentation/services/services-geoplateforme/geocodage?ref=nsbaseadresselocalesz26ouit-ghost-adresse-data-gouv.functions.fnc.fr-par.scw.cloud).
+:::
+
+<br/>
 
 {% from "components/component.njk" import component with context %}
 {{ component("callout", {

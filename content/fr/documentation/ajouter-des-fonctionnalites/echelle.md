@@ -5,7 +5,7 @@ layout: layouts/docs.njk
 eleventyNavigation:
   key: Échelle
   parent: Ajouter des fonctionnalités
-  order: 2
+  order: 3
   nav: docs
 ---
 
