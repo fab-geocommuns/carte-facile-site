@@ -5,6 +5,16 @@ showMaps: true
 
 <!-- Bloc containing the map -->
 <div id="map">
+    <div id="components-info-panel" class="components-info-panel fr-p-3w">
+        <h2 class="fr-h6 fr-mb-1w">Composants</h2>
+        <p class="fr-mb-0">Utilisez le <strong>sélecteur de carte</strong> à droite ou la <strong>barre de recherche</strong> en haut à gauche.</p>
+        <div id="components-search-result" class="fr-mt-4w" hidden>
+            <p class="fr-text--bold fr-mb-1w">Données transmises par l'API</p>
+            <div id="components-search-result-ui" class="fr-mb-4w"></div>
+            <p class="fr-text--bold fr-mb-1w">Données brutes</p>
+            <pre class="language-json components-info-panel__json"><code id="components-search-result-json" class="language-json"></code></pre>
+        </div>
+    </div>
 </div>
 
 {% js "maps" %}

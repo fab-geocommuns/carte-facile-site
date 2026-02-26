@@ -10,7 +10,45 @@
     // Add navigation control
     map.addControl(new maplibregl.NavigationControl(), 'top-right');
 
-    map.addControl(new CarteFacile.SearchControl());
+    const renderResultUI = (result) => {
+        const container = document.getElementById('components-search-result-ui');
+        container.innerHTML = '';
+        const props = result.data.properties;
+
+        const badge = document.createElement('span');
+        badge.className = 'fr-badge fr-badge--sm';
+        badge.textContent = result.type;
+        container.appendChild(badge);
+
+        const label = document.createElement('p');
+        label.className = 'fr-text--bold fr-my-1w';
+        label.textContent = result.label;
+        container.appendChild(label);
+
+        const dl = document.createElement('dl');
+        dl.className = 'components-info-panel__dl';
+        for (const [key, value] of Object.entries(props)) {
+            const isObject = typeof value === 'object' && !Array.isArray(value);
+            if (value == null || isObject || key.toLowerCase().includes('geometry')) continue;
+            const item = document.createElement('div');
+            item.className = 'components-info-panel__dl-item';
+            const dt = document.createElement('dt');
+            dt.textContent = key;
+            const dd = document.createElement('dd');
+            dd.textContent = Array.isArray(value) ? value.join(', ') : value;
+            item.append(dt, dd);
+            dl.appendChild(item);
+        }
+        container.appendChild(dl);
+    };
+
+    map.addControl(new CarteFacile.SearchControl({
+        onSelect: (result) => {
+            document.getElementById('components-search-result').hidden = false;
+            renderResultUI(result);
+            document.getElementById('components-search-result-json').textContent = JSON.stringify(result.data.properties, null, 2);
+        },
+    }));
 
     map.addControl(new CarteFacile.MapSelectorControl());
 
