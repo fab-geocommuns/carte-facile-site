@@ -28,6 +28,7 @@ eleventyNavigation:
 <br>
 
 ### Ajouter des fonctionnalités
+- [**Barre de recherche**]({{ "/documentation/ajouter-des-fonctionnalites/recherche" | locale_url }}) - Ajouter une barre de recherche à la carte.
 - [**Sélecteur de cartes**]({{ "/documentation/ajouter-des-fonctionnalites/selecteur-de-cartes" | locale_url }}) - Ajouter un sélecteur de cartes et de surcouches.
 - [**Échelle**]({{ "/documentation/ajouter-des-fonctionnalites/echelle" | locale_url }}) - Ajouter une échelle à la carte.
 - [**Géolocalisation**]({{ "/documentation/ajouter-des-fonctionnalites/geolocalisation" | locale_url }}) - Ajouter un bouton de géolocalisation.
@@ -54,3 +55,4 @@ eleventyNavigation:
 ## 📚 Ressources supplémentaires
 
 - [**Documentation officielle de MapLibre**](https://maplibre.org/maplibre-gl-js/docs/) - Documentation complète de MapLibre GL JS, la bibliothèque cartographique utilisée par Carte Facile.
+- [**Documentation de l'API Géoplateforme**](https://geoservices.ign.fr/documentation/services/services-geoplateforme/geocodage) - Documentation sur le fonctionnement de l'API de géocodage de la Géoplateforme, qui permet d'obtenir des coordonnées à partir d'une adresse ou d’une parcelle cadastrale.

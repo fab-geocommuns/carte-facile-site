@@ -1,41 +1,65 @@
 .components-info-panel {
-    position: absolute;
-    bottom: 0.625rem;
-    left: 0.625rem;
-    z-index: 2;
-    max-width: 20rem;
-    max-height: 88%;
-    overflow: scroll;
-    background-color: var(--background-default-grey);
-    border-radius: 0.25rem;
-    filter: drop-shadow(var(--raised-shadow));
     font-family: Marianne, arial, sans-serif;
 }
 
-.components-info-panel__dl {
-    margin: 0;
+.components-info-panel-toggle {
+    z-index: 2;
+    padding: 0.25rem;
+    display: none;
+    position: absolute;
+    background-color: var(--background-default-grey);
+    color: var(--text-action-high-blue-france);
+    border-radius: 0.25rem;
+    filter: drop-shadow(var(--raised-shadow));
+    bottom: 0.625rem;
+    left: 0.625rem;
+    flex-direction: column;
+    align-items: flex-start;
+    border: none;
+    cursor: pointer;
+}
+
+.components-info-panel-toggle__text {
+    font-size: .875rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+    min-height: 2rem;
+    padding: .25rem .75rem;
+    width: fit-content;
+}
+
+.components-info-panel[aria-expanded="false"] .components-info-panel--extended {
+    display: none;
+}
+
+.components-info-panel[aria-expanded="false"] .components-info-panel-toggle {
+    display: inline-flex;
+}
+
+.components-info-panel--extended {
+    position: absolute;
+    width: 20rem;
+    max-width: 100%;
+    max-height: 88%;
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
+    border-radius: 0.25rem;
+    background-color: var(--background-default-grey);
+    z-index: 2;
+    filter: drop-shadow(var(--raised-shadow));
+    bottom: 0.625rem;
+    left: 0.625rem;
 }
 
-.components-info-panel__dl-item {
+.components-info-panel__header {
     display: flex;
-    gap: 0.5rem;
-    font-size: 0.8125rem;
-    line-height: 1.5;
-    align-items: baseline;
 }
 
-.components-info-panel__dl-item dt {
-    color: var(--text-mention-grey);
-    flex: 0 0 6rem;
-}
-
-.components-info-panel__dl-item dd {
-    margin: 0;
-    font-weight: 700;
-    word-break: break-word;
+.components-info-panel__content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
 }
 
 .components-info-panel__json {
