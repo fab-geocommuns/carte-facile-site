@@ -36,6 +36,11 @@ module.exports = eleventyConfig => {
         };
     });
 
+    // Helper function to filter collection by language
+    eleventyConfig.addFilter("filterCollectionByLang", function(collection, lang) {
+        return collection.filter(entry => entry.data.lang === lang);
+    });
+
     eleventyConfig.addFilter("paginateCollectionTags", function paginateCollection(collection, paginationSize) {
         collection.sort(function (a, b) {
             return b.date - a.date; // sort by date - descending

@@ -62,7 +62,10 @@ Vous pouvez simplement enregistrer ce code dans un fichier nommé **index.html**
         maxZoom: 18.9, // niveau de zoom maximum, adapté aux cartes utilisant les données IGN
       });
 
-            // Ajout d'un contrôle de navigation
+      // Ajout d'une barre de recherche
+      map.addControl(new CarteFacile.SearchControl);
+
+      // Ajout d'un contrôle de navigation
       map.addControl(new maplibregl.NavigationControl);
 
       // Ajout d'une échelle

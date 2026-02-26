@@ -7,3 +7,8 @@ showMaps: true
 <div id="map">
     {% include "components/map_picker.njk" %}
 </div>
+
+{% js "maps" %}
+{% include "public/js/maps-viewer.js" %}
+{% include "public/js/map-picker.js" %}
+{% endjs %}

@@ -4,7 +4,7 @@ title: Guide de contribution
 description: Ce service est construit en open source et toutes les contributions sont les bienvenues !
 eleventyNavigation:
   key: Contribuer
-  order: 3
+  order: 4
   nav: main
 slugOverride: contribuer
 ---

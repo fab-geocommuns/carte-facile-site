@@ -1,13 +1,13 @@
 ---js
 {
-  title: "Composants",
+  title: "Composants de publication",
   description: "Documentation des composants disponibles pour ajouter des contenus spécifiques dans les pages de ce site.",
   pagination: {
     data: "collections.posts",
     size: 6,
     reverse: true,
     before: function(paginationData, fullData) {
-      return this.filterCollectionLang(paginationData, fullData.lang);
+      return paginationData.filter(entry => entry.data.lang === fullData.lang);
     }
   },
   layout: "layouts/page.njk",

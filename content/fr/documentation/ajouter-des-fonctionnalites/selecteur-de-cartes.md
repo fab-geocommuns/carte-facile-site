@@ -5,7 +5,7 @@ layout: layouts/docs.njk
 eleventyNavigation:
   key: Sélecteur de carte
   parent: Ajouter des fonctionnalités
-  order: 1
+  order: 2
   nav: docs
 ---
 

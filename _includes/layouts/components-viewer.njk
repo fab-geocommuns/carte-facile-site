@@ -1,0 +1,46 @@
+---
+layout: layouts/base.njk
+showMaps: true
+---
+
+<!-- Bloc containing the map -->
+<div id="map">
+    <div id="components-info-panel"
+            class="components-info-panel"
+            aria-labelledby="components-info-panel-title">
+        <!-- Bouton toggle (affiché quand réduit) -->
+        <button id="components-info-panel-toggle"
+                class="components-info-panel-toggle"
+                aria-label="Ouvrir l'encart des composants">
+            <span class="components-info-panel-toggle__text fr-btn--icon-left fr-icon-information-line">Composants</span>
+        </button>
+        <!-- Panel étendu -->
+        <div class="components-info-panel--extended">
+            <div class="components-info-panel__header fr-mx-2w fr-mt-2w">
+                <button class="fr-btn--close fr-btn"
+                        aria-label="Fermer l'encart des composants">
+                    Fermer
+                </button>
+            </div>
+            <div class="components-info-panel__content fr-px-3w fr-pb-4w">
+                <h2 id="components-info-panel-title" class="fr-h6">Composants</h2>
+                <p class="fr-mb-3w">Utilisez la <strong>barre de recherche</strong> en haut à gauche pour rechercher des adresses, limites administratives et points d'intérêts, ou utilisez le <strong>sélecteur de carte</strong> à droite pour personnaliser la carte et les surcouches.</p>
+                <a href="{{ "/documentation/" | locale_url }}"
+                    class="fr-btn fr-btn--icon-left fr-icon-book-2-line">
+                    Guide d'installation
+                </a>
+                <div id="components-search-result" class="fr-mt-4w" hidden>
+                    <hr class="fr-pb-3w">
+                    <p class="fr-text--lg fr-text--bold fr-mb-1w">Résultat de la recherche</p>
+                    <p id="components-search-result-label" class="fr-tag fr-mb-2w"></p>
+                    <p class="fr-text--md fr-mb-1w">Données transmises par l'API</p>
+                    <pre class="language-json components-info-panel__json"><code id="components-search-result-json" class="language-json"></code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% js "maps" %}
+{% include "public/js/components-viewer.js" %}
+{% endjs %}

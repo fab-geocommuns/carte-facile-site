@@ -5,7 +5,7 @@ layout: layouts/docs.njk
 eleventyNavigation:
   key: Géolocalisation
   parent: Ajouter des fonctionnalités
-  order: 3
+  order: 4
   nav: docs
 ---
 
