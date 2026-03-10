@@ -17,6 +17,12 @@
     <link rel="alternate" href="/feed/feed.json" type="application/json" title="{{ metadata.title }}">
     <link rel="stylesheet" href="/css/dsfr.min.css">
     <link rel="stylesheet" href="/css/utility/utility.min.css">
+    <!-- Analytics (Telemetrydeck) -->
+    <script
+      src="https://cdn.telemetrydeck.com/websdk/telemetrydeck.min.js"
+      data-app-id="2B5BCBF2-8382-4B74-9E79-3F8971E85D67"
+    ></script>
+    <!-- Map -->
     {% if showMaps %}
       <link href="https://unpkg.com/maplibre-gl@^{{ data.versions.maplibre }}/dist/maplibre-gl.css" rel="stylesheet"/>
       <link href="https://unpkg.com/carte-facile@^{{ data.versions.carteFacile }}/dist/carte-facile.css" rel="stylesheet"/> {% css "maps" %}
