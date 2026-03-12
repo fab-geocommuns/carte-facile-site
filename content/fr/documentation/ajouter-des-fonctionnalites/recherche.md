@@ -9,6 +9,8 @@ eleventyNavigation:
   nav: docs
 ---
 
+*Le barre de recherche est disponible à partir de la version 0.9.0 de la librairie Carte Facile.*
+
 Carte Facile propose un composant de barre de recherche basé sur l'API Géoplateforme, permettant de rechercher des adresses, des points d'intérêt et des limites administratives, avec un affichage du résultat cohérent avec le type d'élément recherché.
 
 La documentation de l'API Géoplateforme est disponible sur le site de l'IGN : [API Géoplateforme - Géocodage](https://geoservices.ign.fr/documentation/services/services-geoplateforme/geocodage?ref=nsbaseadresselocalesz26ouit-ghost-adresse-data-gouv.functions.fnc.fr-par.scw.cloud).

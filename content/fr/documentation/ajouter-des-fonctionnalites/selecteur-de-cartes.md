@@ -9,6 +9,8 @@ eleventyNavigation:
   nav: docs
 ---
 
+*Le sélecteur de cartes est disponible à partir de la version 0.8.1 de la librairie Carte Facile.*
+
 Carte Facile propose un composant de sélecteur de carte, qui permet de basculer entre différentes cartes et surcouches directement depuis l'interface.
 Il est construit afin de s'intégrer avec les autres contrôleurs de la librairie Maplibre, vous permettant d'avoir une utilisation cohérente avec les autres composants.
 
