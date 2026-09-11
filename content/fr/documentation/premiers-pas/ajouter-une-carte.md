@@ -30,7 +30,7 @@ Dans votre fichier javascript, initialisez la carte avec :
 ```typescript
 // Importations nécessaires pour la carte
 import { mapStyles } from 'carte-facile';
-import maplibregl from 'maplibre-gl';
+import * as maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import 'carte-facile/carte-facile.css';
 
@@ -46,14 +46,17 @@ let map = new maplibregl.Map({
 
 ## Cas 2 : avec une installation via liens CDN
 
-Ajoutez dans votre html :
+Une fois l'[import map mise en place]({{ "/documentation/premiers-pas/installation" | locale_url }}#methode-2-installation-via-cdn), le code est identique à celui d'une installation via npm : ajoutez dans votre html un `<script type="module">` qui importe les bibliothèques nécessaires.
 
 ```html
-<script>
+<script type="module">
+    import * as maplibregl from 'maplibre-gl';
+    import { mapStyles } from 'carte-facile';
+
     // Création la carte
     let map = new maplibregl.Map({
         container: 'map', // id du conteneur de la carte
-        style: CarteFacile.mapStyles.simple, // style de carte
+        style: mapStyles.simple, // style de carte
         maxZoom: 18.9, // niveau de zoom maximum, adapté aux cartes utilisant les données IGN
     });
 </script>
@@ -99,12 +102,7 @@ import { mapStyles } from 'carte-facile';
 console.log(mapStyles);
 ```
 
-Si vous utilisez les liens CDN :
-```typescript
-console.log(CarteFacile.mapStyles);
-```
-
-
+*Cette syntaxe fonctionne aussi bien avec une installation npm qu'avec les liens CDN (une fois l'[import map mise en place]({{ "/documentation/premiers-pas/installation" | locale_url }}#methode-2-installation-via-cdn)).*
 
 <br>
 

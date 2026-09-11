@@ -29,12 +29,7 @@ hideLayer(map, [LayerGroup.streets, LayerGroup.street_labels]);
 showLayer(map, [LayerGroup.cadastral_sections, LayerGroup.buildings]);
 ```
 
-:::info Si vous utilisez les liens CDN
-Ajoutez `CarteFacile` avant les fonctions `hideLayer` et `showLayer`, et supprimez les lignes d'import. Vous pouvez utiliser directement les noms des groupes de couches entre guillemets au lieu de `CarteFacile.LayerGroup.nomGroupeDeCouches` :
-```typescript
-CarteFacile.hideLayer(map, ['buildings', 'street_labels']);
-```
-:::
+*Ces fonctions fonctionnent aussi bien avec une installation npm qu'avec les liens CDN (une fois l'[import map mise en place]({{ "/documentation/premiers-pas/installation" | locale_url }}#methode-2-installation-via-cdn)).*
 
 <br><br>
 
@@ -66,12 +61,6 @@ Pour afficher tous les groupes de couches disponibles, servez-vous de l’autoco
 import { LayerGroup } from 'carte-facile';
 
 console.log(LayerGroup);
-
-```
-
-Si vous utilisez les liens CDN :
-```typescript
-console.log(CarteFacile.LayerGroup);
 ```
 
 <br>

@@ -21,19 +21,25 @@ Vous pouvez simplement enregistrer ce code dans un fichier nommé **index.html**
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ma carte</title>
 
-    <!-- Importation des bibliothèques MapLibre GL JS -->
+    <!-- Importation des styles CSS -->
     <link
       href="https://unpkg.com/maplibre-gl@^{{ data.versions.maplibre }}/dist/maplibre-gl.css"
       rel="stylesheet"
     />
-    <script src="https://unpkg.com/maplibre-gl@^{{ data.versions.maplibre }}/dist/maplibre-gl.js"></script>
-
-    <!-- Importation des bibliothèques Carte Facile -->
     <link
       href="https://unpkg.com/carte-facile@^{{ data.versions.carteFacile }}/dist/carte-facile.css"
       rel="stylesheet"
     />
-    <script src="https://unpkg.com/carte-facile@^{{ data.versions.carteFacile }}/dist/carte-facile.js"></script>
+
+    <!-- Import map : indique au navigateur où trouver les bibliothèques MapLibre GL JS et Carte Facile -->
+    <script type="importmap">
+      {
+        "imports": {
+          "maplibre-gl": "https://unpkg.com/maplibre-gl@^{{ data.versions.maplibre }}/dist/maplibre-gl.mjs",
+          "carte-facile": "https://unpkg.com/carte-facile@^{{ data.versions.carteFacile }}/dist/carte-facile.esm.js"
+        }
+      }
+    </script>
 
     <!-- Style pour afficher la carte en plein écran -->
     <style>
@@ -54,16 +60,19 @@ Vous pouvez simplement enregistrer ce code dans un fichier nommé **index.html**
     <div id="map"></div>
 
     <!-- Le script qui initialise la carte -->
-    <script>
+    <script type="module">
+      import * as maplibregl from "maplibre-gl";
+      import { mapStyles, SearchControl, MapSelectorControl, addOverlay, hideLayer } from "carte-facile";
+
       // Création la carte
       let map = new maplibregl.Map({
         container: "map", // id du conteneur de la carte
-        style: CarteFacile.mapStyles.simple, // Style de carte
+        style: mapStyles.simple, // Style de carte
         maxZoom: 18.9, // niveau de zoom maximum, adapté aux cartes utilisant les données IGN
       });
 
       // Ajout d'une barre de recherche
-      map.addControl(new CarteFacile.SearchControl);
+      map.addControl(new SearchControl);
 
       // Ajout d'un contrôle de navigation
       map.addControl(new maplibregl.NavigationControl);
@@ -75,15 +84,15 @@ Vous pouvez simplement enregistrer ce code dans un fichier nommé **index.html**
       map.addControl(new maplibregl.GeolocateControl);
 
       // Ajout d'un sélecteur de carte
-      map.addControl(new CarteFacile.MapSelectorControl);
+      map.addControl(new MapSelectorControl);
 
       // Ajouter des surcouches (dé-commenter les lignes en dessous pour ajouter ces surcouches)
-      //CarteFacile.addOverlay(map, 'cadastre');
-      //CarteFacile.addOverlay(map, ['levelCurves', 'administrativeBoundaries']);
+      //addOverlay(map, 'cadastre');
+      //addOverlay(map, ['levelCurves', 'administrativeBoundaries']);
 
       // Masquer des couches (dé-commenter les lignes en dessous pour masquer ces surcouches)
-      //CarteFacile.hideLayer(map, 'buildings');
-      //CarteFacile.hideLayer(map, ['buildings', 'street_labels']);
+      //hideLayer(map, 'buildings');
+      //hideLayer(map, ['buildings', 'street_labels']);
     </script>
   </body>
 </html>

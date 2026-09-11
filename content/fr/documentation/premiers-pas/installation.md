@@ -34,17 +34,25 @@ Si vous n'utilisez pas de bundler (outil qui gère les imports entre fichiers Ja
 
 Cette méthode est adaptée pour les projets simples, les prototypes ou les tests rapides. Elle ne nécessite pas Node.js.
 
-Pour utiliser cette méthode, ajoutez simplement ces lignes dans le `<head>` de votre page HTML :
+Ajoutez ces lignes dans le `<head>` de votre page HTML :
 
 ```html
-  <!-- Importation des bibliothèques MapLibre GL JS -->
+  <!-- Importation des styles CSS -->
   <link href="https://unpkg.com/maplibre-gl@^{{ data.versions.maplibre }}/dist/maplibre-gl.css" rel="stylesheet" />
-  <script src="https://unpkg.com/maplibre-gl@^{{ data.versions.maplibre }}/dist/maplibre-gl.js"></script>
-
-  <!-- Importation des bibliothèques Carte Facile -->
   <link href="https://unpkg.com/carte-facile@^{{ data.versions.carteFacile }}/dist/carte-facile.css" rel="stylesheet" />
-  <script src="https://unpkg.com/carte-facile@^{{ data.versions.carteFacile }}/dist/carte-facile.js"></script> 
+
+  <!-- Import map : indique au navigateur où trouver les bibliothèques -->
+  <script type="importmap">
+  {
+    "imports": {
+      "maplibre-gl": "https://unpkg.com/maplibre-gl@^{{ data.versions.maplibre }}/dist/maplibre-gl.mjs",
+      "carte-facile": "https://unpkg.com/carte-facile@^{{ data.versions.carteFacile }}/dist/carte-facile.esm.js"
+    }
+  }
+  </script>
 ```
+
+Un exemple de code prêt à l'emploi est disponible ici : [**Carte simple**]({{ "/documentation/exemples/carte-simple-maplibre-cdn" | locale_url }})
 
 <br>
 

@@ -37,12 +37,7 @@ removeOverlay(map, Overlay.administrativeBoundaries);
 removeOverlay(map, [Overlay.administrativeBoundaries, Overlay.cadastre]);
 ```
 
-:::info Si vous utilisez les liens CDN
-Ajoutez `CarteFacile` avant `addOverlay` et `removeOverlay`, et supprimez les lignes d'import. Vous pouvez utiliser directement les noms des surcouches entre guillemets au lieu de `CarteFacile.Overlay.nomSurcouche` :
-```typescript
-CarteFacile.addOverlay(map, ['levelCurves', 'administrativeBoundaries']);
-```
-:::
+*Ces fonctions fonctionnent aussi bien avec une installation npm qu'avec les liens CDN (une fois l'[import map mise en place]({{ "/documentation/premiers-pas/installation" | locale_url }}#methode-2-installation-via-cdn)).*
 
 <br>
 <br>
@@ -76,13 +71,8 @@ Pour afficher toutes les surcouches disponibles, servez-vous de l’autocomplét
 import { Overlay } from 'carte-facile';
 
 console.log(Overlay);
-
 ```
 
-Si vous utilisez les liens CDN :
-```typescript
-console.log(CarteFacile.Overlay);
-```
 <br>
 
 ## Prochaine étape
