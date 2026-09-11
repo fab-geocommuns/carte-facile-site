@@ -24,12 +24,7 @@ import { MapSelectorControl } from 'carte-facile';
 map.addControl(new MapSelectorControl);
 ```
 
-:::info Si vous utilisez les liens CDN
-Ajoutez `CarteFacile` avant `MapSelectorControl` et supprimez la ligne d'import :
-```typescript
-map.addControl(new CarteFacile.MapSelectorControl);
-```
-:::
+*Cette syntaxe fonctionne aussi bien avec une installation npm qu'avec les liens CDN (une fois l'[import map mise en place]({{ "/documentation/premiers-pas/installation" | locale_url }}#methode-2-installation-via-cdn)).*
 
 <br>
 <br>

@@ -31,14 +31,7 @@ import { SearchControl } from 'carte-facile';
 map.addControl(new SearchControl());
 ```
 
-:::info Si vous utilisez les liens CDN
-Ajoutez `CarteFacile` avant `SearchControl` et supprimez la ligne d'import :
-
-```typescript
-map.addControl(new CarteFacile.SearchControl());
-```
-
-:::
+*Cette syntaxe fonctionne aussi bien avec une installation npm qu'avec les liens CDN (une fois l'[import map mise en place]({{ "/documentation/premiers-pas/installation" | locale_url }}#methode-2-installation-via-cdn)).*
 
 <br>
 <br>
