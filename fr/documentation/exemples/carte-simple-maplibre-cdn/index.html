@@ -655,19 +655,25 @@ pre[class*="language-"] {
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>width=device-width, initial-scale=1.0<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Ma carte<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
 
-    <span class="token comment">&lt;!-- Importation des bibliothèques MapLibre GL JS --></span>
+    <span class="token comment">&lt;!-- Importation des styles CSS --></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span>
-      <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://unpkg.com/maplibre-gl@^5.5.0/dist/maplibre-gl.css<span class="token punctuation">"</span></span>
+      <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://unpkg.com/maplibre-gl@^6.9.0/dist/maplibre-gl.css<span class="token punctuation">"</span></span>
       <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span>
     <span class="token punctuation">/></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://unpkg.com/maplibre-gl@^5.5.0/dist/maplibre-gl.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span>
+      <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://unpkg.com/carte-facile@^0.10.0/dist/carte-facile.css<span class="token punctuation">"</span></span>
+      <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span>
+    <span class="token punctuation">/></span></span>
 
-    <span class="token comment">&lt;!-- Importation des bibliothèques Carte Facile --></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span>
-      <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://unpkg.com/carte-facile@^0.9.0/dist/carte-facile.css<span class="token punctuation">"</span></span>
-      <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span>
-    <span class="token punctuation">/></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://unpkg.com/carte-facile@^0.9.0/dist/carte-facile.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+    <span class="token comment">&lt;!-- Import map : indique au navigateur où trouver les bibliothèques MapLibre GL JS et Carte Facile --></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>importmap<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+      <span class="token punctuation">{</span>
+        <span class="token string-property property">"imports"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token string-property property">"maplibre-gl"</span><span class="token operator">:</span> <span class="token string">"https://unpkg.com/maplibre-gl@^6.9.0/dist/maplibre-gl.mjs"</span><span class="token punctuation">,</span>
+          <span class="token string-property property">"carte-facile"</span><span class="token operator">:</span> <span class="token string">"https://unpkg.com/carte-facile@^0.10.0/dist/carte-facile.esm.js"</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
 
     <span class="token comment">&lt;!-- Style pour afficher la carte en plein écran --></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
@@ -688,16 +694,19 @@ pre[class*="language-"] {
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>map<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
 
     <span class="token comment">&lt;!-- Le script qui initialise la carte --></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>module<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+      <span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> maplibregl <span class="token keyword">from</span> <span class="token string">"maplibre-gl"</span><span class="token punctuation">;</span>
+      <span class="token keyword">import</span> <span class="token punctuation">{</span> mapStyles<span class="token punctuation">,</span> SearchControl<span class="token punctuation">,</span> MapSelectorControl<span class="token punctuation">,</span> addOverlay<span class="token punctuation">,</span> hideLayer <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"carte-facile"</span><span class="token punctuation">;</span>
+
       <span class="token comment">// Création la carte</span>
       <span class="token keyword">let</span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">maplibregl<span class="token punctuation">.</span>Map</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
         <span class="token literal-property property">container</span><span class="token operator">:</span> <span class="token string">"map"</span><span class="token punctuation">,</span> <span class="token comment">// id du conteneur de la carte</span>
-        <span class="token literal-property property">style</span><span class="token operator">:</span> CarteFacile<span class="token punctuation">.</span>mapStyles<span class="token punctuation">.</span>simple<span class="token punctuation">,</span> <span class="token comment">// Style de carte</span>
+        <span class="token literal-property property">style</span><span class="token operator">:</span> mapStyles<span class="token punctuation">.</span>simple<span class="token punctuation">,</span> <span class="token comment">// Style de carte</span>
         <span class="token literal-property property">maxZoom</span><span class="token operator">:</span> <span class="token number">18.9</span><span class="token punctuation">,</span> <span class="token comment">// niveau de zoom maximum, adapté aux cartes utilisant les données IGN</span>
       <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
       <span class="token comment">// Ajout d'une barre de recherche</span>
-      map<span class="token punctuation">.</span><span class="token function">addControl</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">CarteFacile<span class="token punctuation">.</span>SearchControl</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      map<span class="token punctuation">.</span><span class="token function">addControl</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">SearchControl</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
       <span class="token comment">// Ajout d'un contrôle de navigation</span>
       map<span class="token punctuation">.</span><span class="token function">addControl</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">maplibregl<span class="token punctuation">.</span>NavigationControl</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -709,15 +718,15 @@ pre[class*="language-"] {
       map<span class="token punctuation">.</span><span class="token function">addControl</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">maplibregl<span class="token punctuation">.</span>GeolocateControl</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
       <span class="token comment">// Ajout d'un sélecteur de carte</span>
-      map<span class="token punctuation">.</span><span class="token function">addControl</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">CarteFacile<span class="token punctuation">.</span>MapSelectorControl</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      map<span class="token punctuation">.</span><span class="token function">addControl</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">MapSelectorControl</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
       <span class="token comment">// Ajouter des surcouches (dé-commenter les lignes en dessous pour ajouter ces surcouches)</span>
-      <span class="token comment">//CarteFacile.addOverlay(map, 'cadastre');</span>
-      <span class="token comment">//CarteFacile.addOverlay(map, ['levelCurves', 'administrativeBoundaries']);</span>
+      <span class="token comment">//addOverlay(map, 'cadastre');</span>
+      <span class="token comment">//addOverlay(map, ['levelCurves', 'administrativeBoundaries']);</span>
 
       <span class="token comment">// Masquer des couches (dé-commenter les lignes en dessous pour masquer ces surcouches)</span>
-      <span class="token comment">//CarteFacile.hideLayer(map, 'buildings');</span>
-      <span class="token comment">//CarteFacile.hideLayer(map, ['buildings', 'street_labels']);</span>
+      <span class="token comment">//hideLayer(map, 'buildings');</span>
+      <span class="token comment">//hideLayer(map, ['buildings', 'street_labels']);</span>
     </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>

@@ -664,12 +664,7 @@ pre[class*="language-"] {
 
 <span class="token comment">// Ou retirer plusieurs surcouches en même temps</span>
 <span class="token function">removeOverlay</span><span class="token punctuation">(</span>map<span class="token punctuation">,</span> <span class="token punctuation">[</span>Overlay<span class="token punctuation">.</span>administrativeBoundaries<span class="token punctuation">,</span> Overlay<span class="token punctuation">.</span>cadastre<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-
-<div class="fr-alert fr-alert--info ">
-    <h3 class="fr-alert__title"> Si vous utilisez les liens CDN</h3>
-<p>Ajoutez <code>CarteFacile</code> avant <code>addOverlay</code> et <code>removeOverlay</code>, et supprimez les lignes d'import. Vous pouvez utiliser directement les noms des surcouches entre guillemets au lieu de <code>CarteFacile.Overlay.nomSurcouche</code> :</p>
-<pre class="language-typescript" tabindex="0"><code class="language-typescript">CarteFacile<span class="token punctuation">.</span><span class="token function">addOverlay</span><span class="token punctuation">(</span>map<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'levelCurves'</span><span class="token punctuation">,</span> <span class="token string">'administrativeBoundaries'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-</div>
+<p><em>Ces fonctions fonctionnent aussi bien avec une installation npm qu'avec les liens CDN (une fois l'<a href="/carte-facile-site/fr/documentation/premiers-pas/installation#methode-2-installation-via-cdn">import map mise en place</a>).</em></p>
 <br>
 <br>
 <h2 id="surcouches-disponibles" tabindex="-1">Surcouches disponibles <a class="header-anchor" href="#surcouches-disponibles">#</a></h2>
@@ -710,10 +705,7 @@ Ajouter un sélecteur de carte
 <p>Pour afficher toutes les surcouches disponibles, servez-vous de l’autocomplétion de votre IDE avec <code>Overlay.</code>, ou utilisez la méthode suivante pour afficher la liste dans la console du navigateur :</p>
 <pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">{</span> Overlay <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'carte-facile'</span><span class="token punctuation">;</span>
 
-<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Overlay<span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<p>Si vous utilisez les liens CDN :</p>
-<pre class="language-typescript" tabindex="0"><code class="language-typescript"><span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>CarteFacile<span class="token punctuation">.</span>Overlay<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Overlay<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <br>
 <h2 id="prochaine-etape" tabindex="-1">Prochaine étape <a class="header-anchor" href="#prochaine-etape">#</a></h2>
 <p><a class="fr-btn fr-btn--secondary fr-btn--icon-right fr-icon-arrow-right-line" href="/carte-facile-site/fr/documentation/premiers-pas/masquer-des-couches">
