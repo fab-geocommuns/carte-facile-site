@@ -19,6 +19,15 @@
     <!-- Map -->
       <link href="https://unpkg.com/maplibre-gl@^6.9.0/dist/maplibre-gl.css" rel="stylesheet">
       <link href="https://unpkg.com/carte-facile@^0.10.0/dist/carte-facile.css" rel="stylesheet">  <link rel="stylesheet" href="/carte-facile-site/bundle/5hOsfxAdey.css">
+      <!-- MapLibre GL JS et Carte Facile sont distribuées uniquement au format ESM (plus de build UMD) -->
+      <script type="importmap">
+      {
+        "imports": {
+          "maplibre-gl": "https://unpkg.com/maplibre-gl@^6.9.0/dist/maplibre-gl.mjs",
+          "carte-facile": "https://unpkg.com/carte-facile@^0.10.0/dist/carte-facile.esm.js"
+        }
+      }
+      </script>
  <link rel="stylesheet" href="/carte-facile-site/bundle/z-lDvxpAJ-.css">
     <style>/* Defaults */
 :root {
@@ -592,8 +601,12 @@ pre[class*="language-"] {
     <script type="text/javascript" nomodule="" src="/carte-facile-site/js/dsfr.nomodule.min.js"></script>
     <!-- Script Matomo pour le suivi des visites -->
     <script type="text/javascript" src="/carte-facile-site/js/matomo.js"></script>
-      <script src="https://unpkg.com/maplibre-gl@^6.9.0/dist/maplibre-gl.js"></script>
-      <script src="https://unpkg.com/carte-facile@^0.10.0/dist/carte-facile.js"></script>
-      <script src="/carte-facile-site/bundle/cwP1SKPAf3.js"></script>
+      <script type="module">
+        import * as maplibregl from 'maplibre-gl';
+        import * as CarteFacile from 'carte-facile';
+        window.maplibregl = maplibregl;
+        window.CarteFacile = CarteFacile;
+      </script>
+      <script type="module" src="/carte-facile-site/bundle/cwP1SKPAf3.js"></script>
   </body>
 </html>
