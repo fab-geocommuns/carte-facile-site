@@ -31,6 +31,15 @@
       {% include "public/css/components-viewer.css" %}
       {% include "public/css/icons.css" %}
       {% endcss %} <link rel="stylesheet" href="{% getBundleFileUrl 'css', 'maps' %}">
+      <!-- MapLibre GL JS et Carte Facile sont distribuées uniquement au format ESM (plus de build UMD) -->
+      <script type="importmap">
+      {
+        "imports": {
+          "maplibre-gl": "https://unpkg.com/maplibre-gl@^{{ data.versions.maplibre }}/dist/maplibre-gl.mjs",
+          "carte-facile": "https://unpkg.com/carte-facile@^{{ data.versions.carteFacile }}/dist/carte-facile.esm.js"
+        }
+      }
+      </script>
     {% endif %}
     {% css %}
     {% include "public/css/index.css" %}
@@ -81,9 +90,13 @@
     <!-- Script Matomo pour le suivi des visites -->
     <script type="text/javascript" src="/js/matomo.js"></script>
     {% if showMaps %}
-      <script src="https://unpkg.com/maplibre-gl@^{{ data.versions.maplibre }}/dist/maplibre-gl.js"></script>
-      <script src="https://unpkg.com/carte-facile@^{{ data.versions.carteFacile }}/dist/carte-facile.js"></script>
-      <script src="{% getBundleFileUrl 'js', 'maps' %}"></script>
+      <script type="module">
+        import * as maplibregl from 'maplibre-gl';
+        import * as CarteFacile from 'carte-facile';
+        window.maplibregl = maplibregl;
+        window.CarteFacile = CarteFacile;
+      </script>
+      <script type="module" src="{% getBundleFileUrl 'js', 'maps' %}"></script>
     {% endif %}
   </body>
 </html>
